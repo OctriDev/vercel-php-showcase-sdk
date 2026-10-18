@@ -79,8 +79,12 @@ class UserEventPayloadVariant39Rule implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::stringValue($data->type),
@@ -125,7 +129,9 @@ class UserEventPayloadVariant39 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rule") || $data->rule === null) { throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null"); }
+        if (!property_exists($data, "rule") || $data->rule === null) {
+            throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null");
+        }
         return new self(
             rule: SdkClient::hydrateClass($data->rule, UserEventPayloadVariant39Rule::class),
         );
@@ -192,8 +198,12 @@ class UserEventPayloadVariant40Rule implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::stringValue($data->type),
@@ -237,7 +247,9 @@ class UserEventPayloadVariant40 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rule") || $data->rule === null) { throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null"); }
+        if (!property_exists($data, "rule") || $data->rule === null) {
+            throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null");
+        }
         return new self(
             rule: SdkClient::hydrateClass($data->rule, UserEventPayloadVariant40Rule::class),
         );
@@ -304,8 +316,12 @@ class UserEventPayloadVariant41Rule implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::stringValue($data->type),

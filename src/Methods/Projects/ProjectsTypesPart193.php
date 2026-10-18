@@ -106,7 +106,9 @@ class UpdateProjectOptionsAllowlistPathsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
         );
@@ -147,7 +149,9 @@ class UpdateProjectOptionsAllowlist implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paths") || $data->paths === null) { throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null"); }
+        if (!property_exists($data, "paths") || $data->paths === null) {
+            throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null");
+        }
         return new self(
             paths: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateProjectOptionsAllowlistPathsItem::class), SdkClient::arrayValue($data->paths))),
         );
@@ -163,11 +167,26 @@ final readonly class UpdateProjectDismissedToastsItemActionEnum implements SdkOp
     public const ACCEPT = "accept";
     public const DELETE = "delete";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateProjectDismissedToastsItemValueVariant4 implements \JsonSerializable
@@ -207,8 +226,12 @@ class UpdateProjectDismissedToastsItemValueVariant4 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "previousValue") || $data->previousValue === null) { throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null"); }
-        if (!property_exists($data, "currentValue") || $data->currentValue === null) { throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null"); }
+        if (!property_exists($data, "previousValue") || $data->previousValue === null) {
+            throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null");
+        }
+        if (!property_exists($data, "currentValue") || $data->currentValue === null) {
+            throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null");
+        }
         return new self(
             previousValue: (is_bool($data->previousValue) ? SdkClient::boolValue($data->previousValue) : (is_float($data->previousValue) || is_int($data->previousValue) ? SdkClient::floatValue($data->previousValue) : SdkClient::stringValue($data->previousValue))),
             currentValue: (is_bool($data->currentValue) ? SdkClient::boolValue($data->currentValue) : (is_float($data->currentValue) || is_int($data->currentValue) ? SdkClient::floatValue($data->currentValue) : SdkClient::stringValue($data->currentValue))),
@@ -281,10 +304,18 @@ class UpdateProjectDismissedToastsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) { throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null"); }
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) {
+            throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null");
+        }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             dismissedAt: SdkClient::floatValue($data->dismissedAt),
@@ -301,9 +332,24 @@ final readonly class UpdateProjectResponseAliasItemConfiguredByEnum implements S
     public const DNS_01 = "dns-01";
     public const HTTP = "http";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

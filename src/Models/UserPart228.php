@@ -29,11 +29,26 @@ final readonly class UserEventPayloadVariant431NextValueVariant1TeamPermissionsI
     public const V0VIEWER = "V0Viewer";
     public const WORKFLOWDECRYPTOR = "WorkflowDecryptor";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UserEventPayloadVariant431NextValueVariant1TeamRolesItemEnum implements SdkOpenEnum
@@ -47,11 +62,26 @@ final readonly class UserEventPayloadVariant431NextValueVariant1TeamRolesItemEnu
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant431NextValueVariant1 implements \JsonSerializable
@@ -93,7 +123,9 @@ class UserEventPayloadVariant431NextValueVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) { throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null"); }
+        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) {
+            throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null");
+        }
         return new self(
             teamRoles: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant431NextValueVariant1TeamRolesItemEnum::class), SdkClient::arrayValue($data->teamRoles))),
             teamPermissions: (property_exists($data, "teamPermissions") && $data->teamPermissions !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant431NextValueVariant1TeamPermissionsItemEnum::class), SdkClient::arrayValue($data->teamPermissions))) : SdkNotGiven::Value),
@@ -112,11 +144,26 @@ final readonly class UserEventPayloadVariant431NextValueEnum implements SdkOpenE
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant431PreviousValueVariant0 implements \JsonSerializable
@@ -150,7 +197,9 @@ class UserEventPayloadVariant431PreviousValueVariant0 implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) { throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null"); }
+        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) {
+            throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null");
+        }
         return new self(
             accessGroupId: SdkClient::stringValue($data->accessGroupId),
         );
@@ -179,11 +228,26 @@ final readonly class UserEventPayloadVariant431PreviousValueVariant1TeamPermissi
     public const V0VIEWER = "V0Viewer";
     public const WORKFLOWDECRYPTOR = "WorkflowDecryptor";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UserEventPayloadVariant431PreviousValueVariant1TeamRolesItemEnum implements SdkOpenEnum
@@ -197,11 +261,26 @@ final readonly class UserEventPayloadVariant431PreviousValueVariant1TeamRolesIte
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant431PreviousValueVariant1 implements \JsonSerializable
@@ -243,7 +322,9 @@ class UserEventPayloadVariant431PreviousValueVariant1 implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) { throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null"); }
+        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) {
+            throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null");
+        }
         return new self(
             teamRoles: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant431PreviousValueVariant1TeamRolesItemEnum::class), SdkClient::arrayValue($data->teamRoles))),
             teamPermissions: (property_exists($data, "teamPermissions") && $data->teamPermissions !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant431PreviousValueVariant1TeamPermissionsItemEnum::class), SdkClient::arrayValue($data->teamPermissions))) : SdkNotGiven::Value),
@@ -262,11 +343,26 @@ final readonly class UserEventPayloadVariant431PreviousValueEnum implements SdkO
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant431 implements UserEventPayload, \JsonSerializable

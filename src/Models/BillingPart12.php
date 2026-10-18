@@ -113,9 +113,15 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationIncreasePlanIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "productAlias") || $data->productAlias === null) { throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null"); }
-        if (!property_exists($data, "productId") || $data->productId === null) { throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null"); }
-        if (!property_exists($data, "quantity") || $data->quantity === null) { throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null"); }
+        if (!property_exists($data, "productAlias") || $data->productAlias === null) {
+            throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null");
+        }
+        if (!property_exists($data, "productId") || $data->productId === null) {
+            throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null");
+        }
+        if (!property_exists($data, "quantity") || $data->quantity === null) {
+            throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null");
+        }
         return new self(
             productAlias: SdkClient::stringValue($data->productAlias),
             productId: SdkClient::stringValue($data->productId),
@@ -136,11 +142,26 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentConfiguratio
     public const END_OF_TERM = "end_of_term";
     public const IMMEDIATE = "immediate";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -151,11 +172,26 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentConfiguratio
     public const COPPER = "copper";
     public const ORB = "orb";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -206,8 +242,12 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationIncreasePlanIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "endDate") || $data->endDate === null) { throw new SdkValidationError("endDate", 'required', "Required property 'endDate' is missing or null"); }
-        if (!property_exists($data, "startDate") || $data->startDate === null) { throw new SdkValidationError("startDate", 'required', "Required property 'startDate' is missing or null"); }
+        if (!property_exists($data, "endDate") || $data->endDate === null) {
+            throw new SdkValidationError("endDate", 'required', "Required property 'endDate' is missing or null");
+        }
+        if (!property_exists($data, "startDate") || $data->startDate === null) {
+            throw new SdkValidationError("startDate", 'required', "Required property 'startDate' is missing or null");
+        }
         return new self(
             endDate: SdkClient::stringValue($data->endDate),
             startDate: SdkClient::stringValue($data->startDate),

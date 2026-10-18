@@ -81,7 +81,9 @@ class UserEventPayloadVariant211Geolocation implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "country") || $data->country === null) { throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null"); }
+        if (!property_exists($data, "country") || $data->country === null) {
+            throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null");
+        }
         return new self(
             country: SdkClient::hydrateClass($data->country, UserEventPayloadVariant211GeolocationCountry::class),
             city: (property_exists($data, "city") && $data->city !== null ? SdkClient::hydrateClass($data->city, UserEventPayloadVariant211GeolocationCity::class) : SdkNotGiven::Value),

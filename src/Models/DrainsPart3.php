@@ -44,8 +44,12 @@ class CreateDrainRequestFilterFilterVariant1 implements CreateDrainRequestFilter
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "text") || $data->text === null) { throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "text") || $data->text === null) {
+            throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null");
+        }
         return new self(
             type: SdkClient::stringValue($data->type),
             text: SdkClient::stringValue($data->text),
@@ -92,7 +96,9 @@ class CreateDrainRequestSourceVariant0 implements CreateDrainRequestSource, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalResourceId") || $data->externalResourceId === null) { throw new SdkValidationError("externalResourceId", 'required', "Required property 'externalResourceId' is missing or null"); }
+        if (!property_exists($data, "externalResourceId") || $data->externalResourceId === null) {
+            throw new SdkValidationError("externalResourceId", 'required', "Required property 'externalResourceId' is missing or null");
+        }
         return new self(
             externalResourceId: SdkClient::stringValue($data->externalResourceId),
             kind: (property_exists($data, "kind") && $data->kind !== null ? SdkClient::stringValue($data->kind) : SdkNotGiven::Value),
@@ -139,7 +145,9 @@ class CreateDrainRequestSourceVariant1 implements CreateDrainRequestSource, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "resourceId") || $data->resourceId === null) { throw new SdkValidationError("resourceId", 'required', "Required property 'resourceId' is missing or null"); }
+        if (!property_exists($data, "resourceId") || $data->resourceId === null) {
+            throw new SdkValidationError("resourceId", 'required', "Required property 'resourceId' is missing or null");
+        }
         return new self(
             resourceId: SdkClient::stringValue($data->resourceId),
             kind: (property_exists($data, "kind") && $data->kind !== null ? SdkClient::stringValue($data->kind) : SdkNotGiven::Value),
@@ -178,7 +186,9 @@ class CreateDrainRequestSourceVariant2 implements CreateDrainRequestSource, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
         );
@@ -216,7 +226,9 @@ class CreateDrainRequestSourceVariant3 implements CreateDrainRequestSource, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
         );
@@ -228,11 +240,26 @@ final readonly class CreateDrainResponseVariant0DeliveryHttpCompressionEnum impl
     public const GZIP = "gzip";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateDrainResponseVariant0DeliveryHttpEncodingEnum implements SdkOpenEnum
@@ -240,22 +267,52 @@ final readonly class CreateDrainResponseVariant0DeliveryHttpEncodingEnum impleme
     public const JSON = "json";
     public const NDJSON = "ndjson";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateDrainResponseVariant0DeliveryHttpSecretINTEGRATIONSECRETKindEnum implements SdkOpenEnum
 {
     public const INTEGRATION_SECRET = "INTEGRATION_SECRET";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDrainResponseVariant0DeliveryHttpSecretINTEGRATIONSECRET implements \JsonSerializable
@@ -289,7 +346,9 @@ class CreateDrainResponseVariant0DeliveryHttpSecretINTEGRATIONSECRET implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateStringEnumOrString($data->kind, CreateDrainResponseVariant0DeliveryHttpSecretINTEGRATIONSECRETKindEnum::class),
         );

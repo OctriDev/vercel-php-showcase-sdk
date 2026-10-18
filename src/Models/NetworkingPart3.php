@@ -173,15 +173,33 @@ class PrivateLinkEndpoint implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) { throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "endpointId") || $data->endpointId === null) { throw new SdkValidationError("endpointId", 'required', "Required property 'endpointId' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) { throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null"); }
+        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) {
+            throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "endpointId") || $data->endpointId === null) {
+            throw new SdkValidationError("endpointId", 'required', "Required property 'endpointId' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) {
+            throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null");
+        }
         return new self(
             awsServiceName: SdkClient::stringValue($data->awsServiceName),
             createdAt: SdkClient::floatValue($data->createdAt),

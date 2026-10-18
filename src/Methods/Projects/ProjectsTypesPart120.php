@@ -15,11 +15,26 @@ final readonly class CreateProjectOidcTokenConfigIssuerModeEnum implements SdkOp
     public const TEAM = "team";
     public const GLOBAL = "global";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -89,11 +104,26 @@ final readonly class CreateProjectResourceConfigBuildMachineTypeEnum implements 
     public const STANDARD = "standard";
     public const ELASTIC = "elastic";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateProjectResourceConfigFunctionDefaultMemoryTypeEnum implements SdkOpenEnum
@@ -103,11 +133,26 @@ final readonly class CreateProjectResourceConfigFunctionDefaultMemoryTypeEnum im
     public const PERFORMANCE = "performance";
     public const PERFORMANCE_XL = "performance_xl";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateProjectResourceConfigBuildMachineSelectionEnum implements SdkOpenEnum
@@ -115,11 +160,26 @@ final readonly class CreateProjectResourceConfigBuildMachineSelectionEnum implem
     public const ELASTIC = "elastic";
     public const FIXED = "fixed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateProjectResourceConfigBuildMachineElasticReasonEnum implements SdkOpenEnum
@@ -135,11 +195,26 @@ final readonly class CreateProjectResourceConfigBuildMachineElasticReasonEnum im
     public const SHORT_BUILD_DURATION = "short-build-duration";
     public const ENTERPRISE_FLOOR = "enterprise-floor";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateProjectResourceConfigBuildMachineElasticTransitionDirectionEnum implements SdkOpenEnum
@@ -147,11 +222,26 @@ final readonly class CreateProjectResourceConfigBuildMachineElasticTransitionDir
     public const UPGRADE = "upgrade";
     public const DOWNGRADE = "downgrade";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateProjectResourceConfigBuildMachineElasticTransition implements \JsonSerializable
@@ -197,9 +287,15 @@ class CreateProjectResourceConfigBuildMachineElasticTransition implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "at") || $data->at === null) { throw new SdkValidationError("at", 'required', "Required property 'at' is missing or null"); }
-        if (!property_exists($data, "direction") || $data->direction === null) { throw new SdkValidationError("direction", 'required', "Required property 'direction' is missing or null"); }
-        if (!property_exists($data, "algorithmVersion") || $data->algorithmVersion === null) { throw new SdkValidationError("algorithmVersion", 'required', "Required property 'algorithmVersion' is missing or null"); }
+        if (!property_exists($data, "at") || $data->at === null) {
+            throw new SdkValidationError("at", 'required', "Required property 'at' is missing or null");
+        }
+        if (!property_exists($data, "direction") || $data->direction === null) {
+            throw new SdkValidationError("direction", 'required', "Required property 'direction' is missing or null");
+        }
+        if (!property_exists($data, "algorithmVersion") || $data->algorithmVersion === null) {
+            throw new SdkValidationError("algorithmVersion", 'required', "Required property 'algorithmVersion' is missing or null");
+        }
         return new self(
             at: SdkClient::floatValue($data->at),
             direction: SdkClient::hydrateStringEnumOrString($data->direction, CreateProjectResourceConfigBuildMachineElasticTransitionDirectionEnum::class),
@@ -213,11 +309,26 @@ final readonly class CreateProjectResourceConfigBuildQueueConfigurationEnum impl
     public const SKIP_NAMESPACE_QUEUE = "SKIP_NAMESPACE_QUEUE";
     public const WAIT_FOR_NAMESPACE_QUEUE = "WAIT_FOR_NAMESPACE_QUEUE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateProjectResourceConfigBuildQueue implements \JsonSerializable

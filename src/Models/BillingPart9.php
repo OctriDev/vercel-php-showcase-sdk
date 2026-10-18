@@ -197,17 +197,39 @@ class BuyCreditsResponseVariant1PurchaseIntent implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "currency") || $data->currency === null) { throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "subtotal") || $data->subtotal === null) { throw new SdkValidationError("subtotal", 'required', "Required property 'subtotal' is missing or null"); }
-        if (!property_exists($data, "tax") || $data->tax === null) { throw new SdkValidationError("tax", 'required', "Required property 'tax' is missing or null"); }
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "configuration") || $data->configuration === null) {
+            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "currency") || $data->currency === null) {
+            throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "subtotal") || $data->subtotal === null) {
+            throw new SdkValidationError("subtotal", 'required', "Required property 'subtotal' is missing or null");
+        }
+        if (!property_exists($data, "tax") || $data->tax === null) {
+            throw new SdkValidationError("tax", 'required', "Required property 'tax' is missing or null");
+        }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             configuration: SdkClient::hydrateUnion($data->configuration, [BuyCreditsResponseVariant1PurchaseIntentConfigurationCreditTopup::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainName::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChange::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPriceInterval::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscription::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionIntent::class, BuyCreditsResponseVariant1PurchaseIntentConfigurationSubscription::class], null, []),
             createdAt: SdkClient::stringValue($data->createdAt),
@@ -264,7 +286,9 @@ class BuyCreditsResponseVariant1 implements BuyCreditsResponse, \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "purchaseIntent") || $data->purchaseIntent === null) { throw new SdkValidationError("purchaseIntent", 'required', "Required property 'purchaseIntent' is missing or null"); }
+        if (!property_exists($data, "purchaseIntent") || $data->purchaseIntent === null) {
+            throw new SdkValidationError("purchaseIntent", 'required', "Required property 'purchaseIntent' is missing or null");
+        }
         return new self(
             purchaseIntent: SdkClient::hydrateClass($data->purchaseIntent, BuyCreditsResponseVariant1PurchaseIntent::class),
         );
@@ -331,8 +355,12 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQua
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "productAlias") || $data->productAlias === null) { throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null"); }
-        if (!property_exists($data, "quantity") || $data->quantity === null) { throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null"); }
+        if (!property_exists($data, "productAlias") || $data->productAlias === null) {
+            throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null");
+        }
+        if (!property_exists($data, "quantity") || $data->quantity === null) {
+            throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null");
+        }
         return new self(
             productAlias: SdkClient::stringValue($data->productAlias),
             quantity: SdkClient::floatValue($data->quantity),

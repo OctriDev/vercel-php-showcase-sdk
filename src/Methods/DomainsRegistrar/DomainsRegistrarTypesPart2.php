@@ -38,7 +38,9 @@ class GetBulkPriceResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "results") || $data->results === null) { throw new SdkValidationError("results", 'required', "Required property 'results' is missing or null"); }
+        if (!property_exists($data, "results") || $data->results === null) {
+            throw new SdkValidationError("results", 'required', "Required property 'results' is missing or null");
+        }
         return new self(
             results: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetBulkPriceResponseResultsItem::class), SdkClient::arrayValue($data->results))),
         );
@@ -86,8 +88,12 @@ class GetBulkAvailabilityResponseResultsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "available") || $data->available === null) { throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "available") || $data->available === null) {
+            throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             available: SdkClient::boolValue($data->available),
@@ -126,7 +132,9 @@ class GetBulkAvailabilityResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "results") || $data->results === null) { throw new SdkValidationError("results", 'required', "Required property 'results' is missing or null"); }
+        if (!property_exists($data, "results") || $data->results === null) {
+            throw new SdkValidationError("results", 'required', "Required property 'results' is missing or null");
+        }
         return new self(
             results: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetBulkAvailabilityResponseResultsItem::class), SdkClient::arrayValue($data->results))),
         );
@@ -164,7 +172,9 @@ class GetDomainAuthCodeResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "authCode") || $data->authCode === null) { throw new SdkValidationError("authCode", 'required', "Required property 'authCode' is missing or null"); }
+        if (!property_exists($data, "authCode") || $data->authCode === null) {
+            throw new SdkValidationError("authCode", 'required', "Required property 'authCode' is missing or null");
+        }
         return new self(
             authCode: SdkClient::stringValue($data->authCode),
         );

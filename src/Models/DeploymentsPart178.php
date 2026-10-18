@@ -872,34 +872,90 @@ class GetDeploymentResponseVariant1 implements GetDeploymentResponse, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "aliasAssigned") || $data->aliasAssigned === null) { throw new SdkValidationError("aliasAssigned", 'required', "Required property 'aliasAssigned' is missing or null"); }
-        if (!property_exists($data, "bootedAt") || $data->bootedAt === null) { throw new SdkValidationError("bootedAt", 'required', "Required property 'bootedAt' is missing or null"); }
-        if (!property_exists($data, "build") || $data->build === null) { throw new SdkValidationError("build", 'required', "Required property 'build' is missing or null"); }
-        if (!property_exists($data, "buildingAt") || $data->buildingAt === null) { throw new SdkValidationError("buildingAt", 'required', "Required property 'buildingAt' is missing or null"); }
-        if (!property_exists($data, "buildSkipped") || $data->buildSkipped === null) { throw new SdkValidationError("buildSkipped", 'required', "Required property 'buildSkipped' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "createdIn") || $data->createdIn === null) { throw new SdkValidationError("createdIn", 'required', "Required property 'createdIn' is missing or null"); }
-        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
-        if (!property_exists($data, "duration") || $data->duration === null) { throw new SdkValidationError("duration", 'required', "Required property 'duration' is missing or null"); }
-        if (!property_exists($data, "env") || $data->env === null) { throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "inspectorUrl")) { throw new SdkValidationError("inspectorUrl", 'required', "Missing required property 'inspectorUrl'"); }
-        if (!property_exists($data, "isInConcurrentBuildsQueue") || $data->isInConcurrentBuildsQueue === null) { throw new SdkValidationError("isInConcurrentBuildsQueue", 'required', "Required property 'isInConcurrentBuildsQueue' is missing or null"); }
-        if (!property_exists($data, "isInSystemBuildsQueue") || $data->isInSystemBuildsQueue === null) { throw new SdkValidationError("isInSystemBuildsQueue", 'required', "Required property 'isInSystemBuildsQueue' is missing or null"); }
-        if (!property_exists($data, "meta") || $data->meta === null) { throw new SdkValidationError("meta", 'required', "Required property 'meta' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "plan") || $data->plan === null) { throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectSettings") || $data->projectSettings === null) { throw new SdkValidationError("projectSettings", 'required', "Required property 'projectSettings' is missing or null"); }
-        if (!property_exists($data, "public") || $data->public === null) { throw new SdkValidationError("public", 'required', "Required property 'public' is missing or null"); }
-        if (!property_exists($data, "readyState") || $data->readyState === null) { throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null"); }
-        if (!property_exists($data, "regions") || $data->regions === null) { throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null"); }
-        if (!property_exists($data, "routes")) { throw new SdkValidationError("routes", 'required', "Missing required property 'routes'"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "aliasAssigned") || $data->aliasAssigned === null) {
+            throw new SdkValidationError("aliasAssigned", 'required', "Required property 'aliasAssigned' is missing or null");
+        }
+        if (!property_exists($data, "bootedAt") || $data->bootedAt === null) {
+            throw new SdkValidationError("bootedAt", 'required', "Required property 'bootedAt' is missing or null");
+        }
+        if (!property_exists($data, "build") || $data->build === null) {
+            throw new SdkValidationError("build", 'required', "Required property 'build' is missing or null");
+        }
+        if (!property_exists($data, "buildingAt") || $data->buildingAt === null) {
+            throw new SdkValidationError("buildingAt", 'required', "Required property 'buildingAt' is missing or null");
+        }
+        if (!property_exists($data, "buildSkipped") || $data->buildSkipped === null) {
+            throw new SdkValidationError("buildSkipped", 'required', "Required property 'buildSkipped' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "createdIn") || $data->createdIn === null) {
+            throw new SdkValidationError("createdIn", 'required', "Required property 'createdIn' is missing or null");
+        }
+        if (!property_exists($data, "creator") || $data->creator === null) {
+            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
+        }
+        if (!property_exists($data, "duration") || $data->duration === null) {
+            throw new SdkValidationError("duration", 'required', "Required property 'duration' is missing or null");
+        }
+        if (!property_exists($data, "env") || $data->env === null) {
+            throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "inspectorUrl")) {
+            throw new SdkValidationError("inspectorUrl", 'required', "Missing required property 'inspectorUrl'");
+        }
+        if (!property_exists($data, "isInConcurrentBuildsQueue") || $data->isInConcurrentBuildsQueue === null) {
+            throw new SdkValidationError("isInConcurrentBuildsQueue", 'required', "Required property 'isInConcurrentBuildsQueue' is missing or null");
+        }
+        if (!property_exists($data, "isInSystemBuildsQueue") || $data->isInSystemBuildsQueue === null) {
+            throw new SdkValidationError("isInSystemBuildsQueue", 'required', "Required property 'isInSystemBuildsQueue' is missing or null");
+        }
+        if (!property_exists($data, "meta") || $data->meta === null) {
+            throw new SdkValidationError("meta", 'required', "Required property 'meta' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "plan") || $data->plan === null) {
+            throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectSettings") || $data->projectSettings === null) {
+            throw new SdkValidationError("projectSettings", 'required', "Required property 'projectSettings' is missing or null");
+        }
+        if (!property_exists($data, "public") || $data->public === null) {
+            throw new SdkValidationError("public", 'required', "Required property 'public' is missing or null");
+        }
+        if (!property_exists($data, "readyState") || $data->readyState === null) {
+            throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null");
+        }
+        if (!property_exists($data, "regions") || $data->regions === null) {
+            throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null");
+        }
+        if (!property_exists($data, "routes")) {
+            throw new SdkValidationError("routes", 'required', "Missing required property 'routes'");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             aliasAssigned: SdkClient::boolValue($data->aliasAssigned),
             bootedAt: SdkClient::floatValue($data->bootedAt),

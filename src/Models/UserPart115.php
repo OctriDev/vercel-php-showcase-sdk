@@ -66,7 +66,9 @@ class UserEventPayloadVariant178 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configVersion") || $data->configVersion === null) { throw new SdkValidationError("configVersion", 'required', "Required property 'configVersion' is missing or null"); }
+        if (!property_exists($data, "configVersion") || $data->configVersion === null) {
+            throw new SdkValidationError("configVersion", 'required', "Required property 'configVersion' is missing or null");
+        }
         return new self(
             configVersion: (is_float($data->configVersion) || is_int($data->configVersion) ? SdkClient::floatValue($data->configVersion) : SdkClient::stringValue($data->configVersion)),
             configChangeCount: (property_exists($data, "configChangeCount") && $data->configChangeCount !== null ? SdkClient::floatValue($data->configChangeCount) : SdkNotGiven::Value),
@@ -162,11 +164,21 @@ class UserEventPayloadVariant179 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configChangeCount") || $data->configChangeCount === null) { throw new SdkValidationError("configChangeCount", 'required', "Required property 'configChangeCount' is missing or null"); }
-        if (!property_exists($data, "configChanges") || $data->configChanges === null) { throw new SdkValidationError("configChanges", 'required', "Required property 'configChanges' is missing or null"); }
-        if (!property_exists($data, "configVersion") || $data->configVersion === null) { throw new SdkValidationError("configVersion", 'required', "Required property 'configVersion' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "restore") || $data->restore === null) { throw new SdkValidationError("restore", 'required', "Required property 'restore' is missing or null"); }
+        if (!property_exists($data, "configChangeCount") || $data->configChangeCount === null) {
+            throw new SdkValidationError("configChangeCount", 'required', "Required property 'configChangeCount' is missing or null");
+        }
+        if (!property_exists($data, "configChanges") || $data->configChanges === null) {
+            throw new SdkValidationError("configChanges", 'required', "Required property 'configChanges' is missing or null");
+        }
+        if (!property_exists($data, "configVersion") || $data->configVersion === null) {
+            throw new SdkValidationError("configVersion", 'required', "Required property 'configVersion' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "restore") || $data->restore === null) {
+            throw new SdkValidationError("restore", 'required', "Required property 'restore' is missing or null");
+        }
         return new self(
             configChangeCount: SdkClient::floatValue($data->configChangeCount),
             configChanges: array_values(array_map(static fn($item) => SdkClient::stringMapValue($item), SdkClient::arrayValue($data->configChanges))),
@@ -184,11 +196,26 @@ final readonly class UserEventPayloadVariant180RuleGroupsValueActionEnum impleme
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant180RuleGroupsValue implements \JsonSerializable
@@ -230,7 +257,9 @@ class UserEventPayloadVariant180RuleGroupsValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant180RuleGroupsValueActionEnum::class) : SdkNotGiven::Value),
@@ -293,9 +322,15 @@ class UserEventPayloadVariant180 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "ruleGroups") || $data->ruleGroups === null) { throw new SdkValidationError("ruleGroups", 'required', "Required property 'ruleGroups' is missing or null"); }
-        if (!property_exists($data, "rulesetName") || $data->rulesetName === null) { throw new SdkValidationError("rulesetName", 'required', "Required property 'rulesetName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "ruleGroups") || $data->ruleGroups === null) {
+            throw new SdkValidationError("ruleGroups", 'required', "Required property 'ruleGroups' is missing or null");
+        }
+        if (!property_exists($data, "rulesetName") || $data->rulesetName === null) {
+            throw new SdkValidationError("rulesetName", 'required', "Required property 'rulesetName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             ruleGroups: SdkClient::mapValues(SdkClient::stringMapValue($data->ruleGroups), static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant180RuleGroupsValue::class)),
@@ -313,9 +348,24 @@ final readonly class UserEventPayloadVariant181ActionEnum implements SdkOpenEnum
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

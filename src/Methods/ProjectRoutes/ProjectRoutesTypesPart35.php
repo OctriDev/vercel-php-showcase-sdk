@@ -52,8 +52,12 @@ class GenerateRouteResponseRouteActionsItemHeadersItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "op") || $data->op === null) {
+            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             op: SdkClient::hydrateStringEnumOrString($data->op, GenerateRouteResponseRouteActionsItemHeadersItemOpEnum::class),
@@ -68,11 +72,26 @@ final readonly class GenerateRouteResponseRouteActionsItemSubTypeEnum implements
     public const TRANSFORM_REQUEST_HEADER = "transform-request-header";
     public const TRANSFORM_REQUEST_QUERY = "transform-request-query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GenerateRouteResponseRouteActionsItemTypeEnum implements SdkOpenEnum
@@ -82,11 +101,26 @@ final readonly class GenerateRouteResponseRouteActionsItemTypeEnum implements Sd
     public const REWRITE = "rewrite";
     public const SET_STATUS = "set-status";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GenerateRouteResponseRouteActionsItem implements \JsonSerializable
@@ -152,7 +186,9 @@ class GenerateRouteResponseRouteActionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GenerateRouteResponseRouteActionsItemTypeEnum::class),
             dest: (property_exists($data, "dest") && $data->dest !== null ? SdkClient::stringValue($data->dest) : SdkNotGiven::Value),
@@ -170,11 +206,26 @@ final readonly class GenerateRouteResponseRouteConditionsItemFieldEnum implement
     public const HOST = "host";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GenerateRouteResponseRouteConditionsItemOperatorEnum implements SdkOpenEnum
@@ -184,11 +235,26 @@ final readonly class GenerateRouteResponseRouteConditionsItemOperatorEnum implem
     public const EXISTS = "exists";
     public const RE = "re";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GenerateRouteResponseRouteConditionsItem implements \JsonSerializable
@@ -250,9 +316,15 @@ class GenerateRouteResponseRouteConditionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "field") || $data->field === null) { throw new SdkValidationError("field", 'required', "Required property 'field' is missing or null"); }
-        if (!property_exists($data, "missing") || $data->missing === null) { throw new SdkValidationError("missing", 'required', "Required property 'missing' is missing or null"); }
-        if (!property_exists($data, "operator") || $data->operator === null) { throw new SdkValidationError("operator", 'required', "Required property 'operator' is missing or null"); }
+        if (!property_exists($data, "field") || $data->field === null) {
+            throw new SdkValidationError("field", 'required', "Required property 'field' is missing or null");
+        }
+        if (!property_exists($data, "missing") || $data->missing === null) {
+            throw new SdkValidationError("missing", 'required', "Required property 'missing' is missing or null");
+        }
+        if (!property_exists($data, "operator") || $data->operator === null) {
+            throw new SdkValidationError("operator", 'required', "Required property 'operator' is missing or null");
+        }
         return new self(
             field: SdkClient::hydrateStringEnumOrString($data->field, GenerateRouteResponseRouteConditionsItemFieldEnum::class),
             missing: SdkClient::boolValue($data->missing),
@@ -269,11 +341,26 @@ final readonly class GenerateRouteResponseRoutePathConditionSyntaxEnum implement
     public const PATH_TO_REGEXP = "path-to-regexp";
     public const REGEX = "regex";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GenerateRouteResponseRoutePathCondition implements \JsonSerializable
@@ -313,8 +400,12 @@ class GenerateRouteResponseRoutePathCondition implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "syntax") || $data->syntax === null) { throw new SdkValidationError("syntax", 'required', "Required property 'syntax' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "syntax") || $data->syntax === null) {
+            throw new SdkValidationError("syntax", 'required', "Required property 'syntax' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             syntax: SdkClient::hydrateStringEnumOrString($data->syntax, GenerateRouteResponseRoutePathConditionSyntaxEnum::class),
             value: SdkClient::stringValue($data->value),

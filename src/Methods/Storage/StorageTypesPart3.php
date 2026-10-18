@@ -83,8 +83,12 @@ class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploymentsActions
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
         return new self(
             environments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environments))),
             slug: SdkClient::stringValue($data->slug),
@@ -129,8 +133,12 @@ class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeployments implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actions") || $data->actions === null) { throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null"); }
-        if (!property_exists($data, "required") || $data->required === null) { throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null"); }
+        if (!property_exists($data, "actions") || $data->actions === null) {
+            throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null");
+        }
+        if (!property_exists($data, "required") || $data->required === null) {
+            throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null");
+        }
         return new self(
             actions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploymentsActionsItem::class), SdkClient::arrayValue($data->actions))),
             required: SdkClient::boolValue($data->required),
@@ -215,11 +223,26 @@ final readonly class CreateStorageStoresBlobResponseStoreProjectsMetadataItemFra
     public const XMCP = "xmcp";
     public const ZOLA = "zola";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateStorageStoresBlobResponseStoreProjectsMetadataItem implements \JsonSerializable
@@ -315,12 +338,24 @@ class CreateStorageStoresBlobResponseStoreProjectsMetadataItem implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "environmentVariables") || $data->environmentVariables === null) { throw new SdkValidationError("environmentVariables", 'required', "Required property 'environmentVariables' is missing or null"); }
-        if (!property_exists($data, "envVarPrefix")) { throw new SdkValidationError("envVarPrefix", 'required', "Missing required property 'envVarPrefix'"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "environmentVariables") || $data->environmentVariables === null) {
+            throw new SdkValidationError("environmentVariables", 'required', "Required property 'environmentVariables' is missing or null");
+        }
+        if (!property_exists($data, "envVarPrefix")) {
+            throw new SdkValidationError("envVarPrefix", 'required', "Missing required property 'envVarPrefix'");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             environments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environments))),
             environmentVariables: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environmentVariables))),

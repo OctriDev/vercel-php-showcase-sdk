@@ -72,10 +72,18 @@ class UserEventPayloadVariant232 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enforced") || $data->enforced === null) { throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null"); }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
-        if (!property_exists($data, "organizationSlug") || $data->organizationSlug === null) { throw new SdkValidationError("organizationSlug", 'required', "Required property 'organizationSlug' is missing or null"); }
-        if (!property_exists($data, "previousEnforced") || $data->previousEnforced === null) { throw new SdkValidationError("previousEnforced", 'required', "Required property 'previousEnforced' is missing or null"); }
+        if (!property_exists($data, "enforced") || $data->enforced === null) {
+            throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null");
+        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
+            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
+        }
+        if (!property_exists($data, "organizationSlug") || $data->organizationSlug === null) {
+            throw new SdkValidationError("organizationSlug", 'required', "Required property 'organizationSlug' is missing or null");
+        }
+        if (!property_exists($data, "previousEnforced") || $data->previousEnforced === null) {
+            throw new SdkValidationError("previousEnforced", 'required', "Required property 'previousEnforced' is missing or null");
+        }
         return new self(
             enforced: SdkClient::boolValue($data->enforced),
             organizationId: SdkClient::stringValue($data->organizationId),
@@ -93,11 +101,26 @@ final readonly class UserEventPayloadVariant233ModeEnum implements SdkOpenEnum
     public const ORGANIZATION = "organization";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -108,11 +131,26 @@ final readonly class UserEventPayloadVariant233PreviousModeEnum implements SdkOp
     public const ORGANIZATION = "organization";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant233 implements UserEventPayload, \JsonSerializable
@@ -190,11 +228,21 @@ class UserEventPayloadVariant233 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
-        if (!property_exists($data, "previousMode") || $data->previousMode === null) { throw new SdkValidationError("previousMode", 'required', "Required property 'previousMode' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "teamName") || $data->teamName === null) { throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
+            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
+        }
+        if (!property_exists($data, "previousMode") || $data->previousMode === null) {
+            throw new SdkValidationError("previousMode", 'required', "Required property 'previousMode' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "teamName") || $data->teamName === null) {
+            throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, UserEventPayloadVariant233ModeEnum::class),
             organizationId: SdkClient::stringValue($data->organizationId),
@@ -243,7 +291,9 @@ class UserEventPayloadVariant234SiftRoute implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
         );
@@ -329,9 +379,15 @@ class UserEventPayloadVariant234 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cause") || $data->cause === null) { throw new SdkValidationError("cause", 'required', "Required property 'cause' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "cause") || $data->cause === null) {
+            throw new SdkValidationError("cause", 'required', "Required property 'cause' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
         return new self(
             cause: SdkClient::stringValue($data->cause),
             ownerId: SdkClient::stringValue($data->ownerId),

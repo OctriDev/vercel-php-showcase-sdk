@@ -197,9 +197,15 @@ class ConnectCreateConnectorRequestDataTypeLinearApplication implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "clientId") || $data->clientId === null) {
+            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             clientId: SdkClient::stringValue($data->clientId),
@@ -341,7 +347,9 @@ class ConnectCreateConnectorRequestDataTypeLinear implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
+        if (!property_exists($data, "clientId") || $data->clientId === null) {
+            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
+        }
         return new self(
             clientId: SdkClient::stringValue($data->clientId),
             appId: (property_exists($data, "appId") && $data->appId !== null ? SdkClient::stringValue($data->appId) : SdkNotGiven::Value),

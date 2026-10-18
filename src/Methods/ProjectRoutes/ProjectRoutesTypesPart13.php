@@ -233,7 +233,9 @@ class GetRoutesResponseVariant2RoutesItemRoute implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
+        if (!property_exists($data, "src") || $data->src === null) {
+            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
+        }
         return new self(
             src: SdkClient::stringValue($data->src),
             caseSensitive: (property_exists($data, "caseSensitive") && $data->caseSensitive !== null ? SdkClient::boolValue($data->caseSensitive) : SdkNotGiven::Value),
@@ -272,11 +274,26 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteTypeEnum implements
     public const SET_STATUS = "set_status";
     public const TRANSFORM = "transform";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -288,9 +305,24 @@ final readonly class GetRoutesResponseVariant2RoutesItemSrcSyntaxEnum implements
     public const PATH_TO_REGEXP = "path-to-regexp";
     public const REGEX = "regex";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

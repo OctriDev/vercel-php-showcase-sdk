@@ -53,9 +53,15 @@ class UpdateFirewallConfigBodyVariant14 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             action: SdkClient::stringValue($data->action),
             id: SdkClient::hydrateStringEnumOrString($data->id, UpdateFirewallConfigBodyVariant14IdEnum::class),
@@ -114,7 +120,9 @@ class UpdateFirewallConfigBodyVariant15 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::stringValue($data->action),
             id: (property_exists($data, "id") && $data->id !== null ? SdkClient::stringValue($data->id) : SdkNotGiven::Value),
@@ -130,11 +138,26 @@ final readonly class UpdateFirewallConfigBodyVariant16ValueActionEnum implements
     public const LOG = "log";
     public const BYPASS = "bypass";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateFirewallConfigBodyVariant16Value implements \JsonSerializable
@@ -188,9 +211,15 @@ class UpdateFirewallConfigBodyVariant16Value implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "hostname") || $data->hostname === null) { throw new SdkValidationError("hostname", 'required', "Required property 'hostname' is missing or null"); }
-        if (!property_exists($data, "ip") || $data->ip === null) { throw new SdkValidationError("ip", 'required', "Required property 'ip' is missing or null"); }
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "hostname") || $data->hostname === null) {
+            throw new SdkValidationError("hostname", 'required', "Required property 'hostname' is missing or null");
+        }
+        if (!property_exists($data, "ip") || $data->ip === null) {
+            throw new SdkValidationError("ip", 'required', "Required property 'ip' is missing or null");
+        }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             hostname: SdkClient::stringValue($data->hostname),
             ip: SdkClient::stringValue($data->ip),
@@ -248,8 +277,12 @@ class UpdateFirewallConfigBodyVariant16 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             action: SdkClient::stringValue($data->action),
             value: SdkClient::hydrateClass($data->value, UpdateFirewallConfigBodyVariant16Value::class),
@@ -265,11 +298,26 @@ final readonly class UpdateFirewallConfigBodyVariant17ValueActionEnum implements
     public const LOG = "log";
     public const BYPASS = "bypass";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateFirewallConfigBodyVariant17Value implements \JsonSerializable
@@ -323,9 +371,15 @@ class UpdateFirewallConfigBodyVariant17Value implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "hostname") || $data->hostname === null) { throw new SdkValidationError("hostname", 'required', "Required property 'hostname' is missing or null"); }
-        if (!property_exists($data, "ip") || $data->ip === null) { throw new SdkValidationError("ip", 'required', "Required property 'ip' is missing or null"); }
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "hostname") || $data->hostname === null) {
+            throw new SdkValidationError("hostname", 'required', "Required property 'hostname' is missing or null");
+        }
+        if (!property_exists($data, "ip") || $data->ip === null) {
+            throw new SdkValidationError("ip", 'required', "Required property 'ip' is missing or null");
+        }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             hostname: SdkClient::stringValue($data->hostname),
             ip: SdkClient::stringValue($data->ip),

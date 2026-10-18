@@ -93,7 +93,9 @@ class ListProjectsResponseItemRollingReleaseGateChecksItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, ListProjectsResponseItemRollingReleaseGateChecksItemTypeEnum::class),
             excludePaths: (property_exists($data, "excludePaths") && $data->excludePaths !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->excludePaths))) : SdkNotGiven::Value),
@@ -196,10 +198,18 @@ class ListProjectsResponseItemRollingReleaseGate implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "checks") || $data->checks === null) { throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null"); }
-        if (!property_exists($data, "dryRun") || $data->dryRun === null) { throw new SdkValidationError("dryRun", 'required', "Required property 'dryRun' is missing or null"); }
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "checks") || $data->checks === null) {
+            throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null");
+        }
+        if (!property_exists($data, "dryRun") || $data->dryRun === null) {
+            throw new SdkValidationError("dryRun", 'required', "Required property 'dryRun' is missing or null");
+        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseItemRollingReleaseGateActionEnum::class),
             checks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseItemRollingReleaseGateChecksItem::class), SdkClient::arrayValue($data->checks))),
@@ -285,7 +295,9 @@ class ListProjectsResponseItemRollingReleaseStagesItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             targetPercentage: SdkClient::floatValue($data->targetPercentage),
             duration: (property_exists($data, "duration") && $data->duration !== null ? SdkClient::floatValue($data->duration) : SdkNotGiven::Value),

@@ -152,26 +152,66 @@ class CountEventsResponseDataVariant0 implements CountEventsResponseData, \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "browserName") || $data->browserName === null) { throw new SdkValidationError("browserName", 'required', "Required property 'browserName' is missing or null"); }
-        if (!property_exists($data, "country") || $data->country === null) { throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null"); }
-        if (!property_exists($data, "deviceType") || $data->deviceType === null) { throw new SdkValidationError("deviceType", 'required', "Required property 'deviceType' is missing or null"); }
-        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
-        if (!property_exists($data, "eventData") || $data->eventData === null) { throw new SdkValidationError("eventData", 'required', "Required property 'eventData' is missing or null"); }
-        if (!property_exists($data, "eventName") || $data->eventName === null) { throw new SdkValidationError("eventName", 'required', "Required property 'eventName' is missing or null"); }
-        if (!property_exists($data, "flags") || $data->flags === null) { throw new SdkValidationError("flags", 'required', "Required property 'flags' is missing or null"); }
-        if (!property_exists($data, "osName") || $data->osName === null) { throw new SdkValidationError("osName", 'required', "Required property 'osName' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
-        if (!property_exists($data, "referrerHostname") || $data->referrerHostname === null) { throw new SdkValidationError("referrerHostname", 'required', "Required property 'referrerHostname' is missing or null"); }
-        if (!property_exists($data, "requestHostname") || $data->requestHostname === null) { throw new SdkValidationError("requestHostname", 'required', "Required property 'requestHostname' is missing or null"); }
-        if (!property_exists($data, "requestPath") || $data->requestPath === null) { throw new SdkValidationError("requestPath", 'required', "Required property 'requestPath' is missing or null"); }
-        if (!property_exists($data, "route") || $data->route === null) { throw new SdkValidationError("route", 'required', "Required property 'route' is missing or null"); }
-        if (!property_exists($data, "utmCampaign") || $data->utmCampaign === null) { throw new SdkValidationError("utmCampaign", 'required', "Required property 'utmCampaign' is missing or null"); }
-        if (!property_exists($data, "utmContent") || $data->utmContent === null) { throw new SdkValidationError("utmContent", 'required', "Required property 'utmContent' is missing or null"); }
-        if (!property_exists($data, "utmMedium") || $data->utmMedium === null) { throw new SdkValidationError("utmMedium", 'required', "Required property 'utmMedium' is missing or null"); }
-        if (!property_exists($data, "utmSource") || $data->utmSource === null) { throw new SdkValidationError("utmSource", 'required', "Required property 'utmSource' is missing or null"); }
-        if (!property_exists($data, "utmTerm") || $data->utmTerm === null) { throw new SdkValidationError("utmTerm", 'required', "Required property 'utmTerm' is missing or null"); }
-        if (!property_exists($data, "visitorId") || $data->visitorId === null) { throw new SdkValidationError("visitorId", 'required', "Required property 'visitorId' is missing or null"); }
+        if (!property_exists($data, "browserName") || $data->browserName === null) {
+            throw new SdkValidationError("browserName", 'required', "Required property 'browserName' is missing or null");
+        }
+        if (!property_exists($data, "country") || $data->country === null) {
+            throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null");
+        }
+        if (!property_exists($data, "deviceType") || $data->deviceType === null) {
+            throw new SdkValidationError("deviceType", 'required', "Required property 'deviceType' is missing or null");
+        }
+        if (!property_exists($data, "environment") || $data->environment === null) {
+            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
+        }
+        if (!property_exists($data, "eventData") || $data->eventData === null) {
+            throw new SdkValidationError("eventData", 'required', "Required property 'eventData' is missing or null");
+        }
+        if (!property_exists($data, "eventName") || $data->eventName === null) {
+            throw new SdkValidationError("eventName", 'required', "Required property 'eventName' is missing or null");
+        }
+        if (!property_exists($data, "flags") || $data->flags === null) {
+            throw new SdkValidationError("flags", 'required', "Required property 'flags' is missing or null");
+        }
+        if (!property_exists($data, "osName") || $data->osName === null) {
+            throw new SdkValidationError("osName", 'required', "Required property 'osName' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
+        if (!property_exists($data, "referrerHostname") || $data->referrerHostname === null) {
+            throw new SdkValidationError("referrerHostname", 'required', "Required property 'referrerHostname' is missing or null");
+        }
+        if (!property_exists($data, "requestHostname") || $data->requestHostname === null) {
+            throw new SdkValidationError("requestHostname", 'required', "Required property 'requestHostname' is missing or null");
+        }
+        if (!property_exists($data, "requestPath") || $data->requestPath === null) {
+            throw new SdkValidationError("requestPath", 'required', "Required property 'requestPath' is missing or null");
+        }
+        if (!property_exists($data, "route") || $data->route === null) {
+            throw new SdkValidationError("route", 'required', "Required property 'route' is missing or null");
+        }
+        if (!property_exists($data, "utmCampaign") || $data->utmCampaign === null) {
+            throw new SdkValidationError("utmCampaign", 'required', "Required property 'utmCampaign' is missing or null");
+        }
+        if (!property_exists($data, "utmContent") || $data->utmContent === null) {
+            throw new SdkValidationError("utmContent", 'required', "Required property 'utmContent' is missing or null");
+        }
+        if (!property_exists($data, "utmMedium") || $data->utmMedium === null) {
+            throw new SdkValidationError("utmMedium", 'required', "Required property 'utmMedium' is missing or null");
+        }
+        if (!property_exists($data, "utmSource") || $data->utmSource === null) {
+            throw new SdkValidationError("utmSource", 'required', "Required property 'utmSource' is missing or null");
+        }
+        if (!property_exists($data, "utmTerm") || $data->utmTerm === null) {
+            throw new SdkValidationError("utmTerm", 'required', "Required property 'utmTerm' is missing or null");
+        }
+        if (!property_exists($data, "visitorId") || $data->visitorId === null) {
+            throw new SdkValidationError("visitorId", 'required', "Required property 'visitorId' is missing or null");
+        }
         return new self(
             browserName: SdkClient::stringValue($data->browserName),
             country: SdkClient::stringValue($data->country),
@@ -234,8 +274,12 @@ class CountEventsResponseDataVariant1 implements CountEventsResponseData, \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "visitors") || $data->visitors === null) { throw new SdkValidationError("visitors", 'required', "Required property 'visitors' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "visitors") || $data->visitors === null) {
+            throw new SdkValidationError("visitors", 'required', "Required property 'visitors' is missing or null");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             visitors: SdkClient::floatValue($data->visitors),

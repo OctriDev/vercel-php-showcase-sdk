@@ -124,12 +124,24 @@ class GetConfigurationResponseVariant0TransferRequestTransferToMarketplace imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "requester") || $data->requester === null) { throw new SdkValidationError("requester", 'required', "Required property 'requester' is missing or null"); }
-        if (!property_exists($data, "requestId") || $data->requestId === null) { throw new SdkValidationError("requestId", 'required', "Required property 'requestId' is missing or null"); }
-        if (!property_exists($data, "transferId") || $data->transferId === null) { throw new SdkValidationError("transferId", 'required', "Required property 'transferId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
+            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "requester") || $data->requester === null) {
+            throw new SdkValidationError("requester", 'required', "Required property 'requester' is missing or null");
+        }
+        if (!property_exists($data, "requestId") || $data->requestId === null) {
+            throw new SdkValidationError("requestId", 'required', "Required property 'requestId' is missing or null");
+        }
+        if (!property_exists($data, "transferId") || $data->transferId === null) {
+            throw new SdkValidationError("transferId", 'required', "Required property 'transferId' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             expiresAt: SdkClient::floatValue($data->expiresAt),
@@ -192,7 +204,9 @@ class GetConfigurationResponseVariant0TransferRequestTransferFromMarketplaceRequ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             email: (property_exists($data, "email") && $data->email !== null ? SdkClient::stringValue($data->email) : SdkNotGiven::Value),
@@ -301,12 +315,24 @@ class GetConfigurationResponseVariant0TransferRequestTransferFromMarketplace imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "requester") || $data->requester === null) { throw new SdkValidationError("requester", 'required', "Required property 'requester' is missing or null"); }
-        if (!property_exists($data, "requestId") || $data->requestId === null) { throw new SdkValidationError("requestId", 'required', "Required property 'requestId' is missing or null"); }
-        if (!property_exists($data, "transferId") || $data->transferId === null) { throw new SdkValidationError("transferId", 'required', "Required property 'transferId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
+            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "requester") || $data->requester === null) {
+            throw new SdkValidationError("requester", 'required', "Required property 'requester' is missing or null");
+        }
+        if (!property_exists($data, "requestId") || $data->requestId === null) {
+            throw new SdkValidationError("requestId", 'required', "Required property 'requestId' is missing or null");
+        }
+        if (!property_exists($data, "transferId") || $data->transferId === null) {
+            throw new SdkValidationError("transferId", 'required', "Required property 'transferId' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             expiresAt: SdkClient::floatValue($data->expiresAt),
@@ -327,9 +353,24 @@ final readonly class GetConfigurationResponseVariant0TypeEnum implements SdkOpen
 {
     public const INTEGRATION_CONFIGURATION = "integration-configuration";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

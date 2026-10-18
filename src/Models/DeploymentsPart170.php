@@ -92,8 +92,12 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "destination") || $data->destination === null) { throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "destination") || $data->destination === null) {
+            throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
         return new self(
             destination: (is_object($data->destination) ? SdkClient::hydrateClass($data->destination, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemDestinationService::class) : (is_string($data->destination) ? SdkClient::stringValue($data->destination) : SdkClient::hydrateClass($data->destination, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemDestinationService::class))),
             source: SdkClient::stringValue($data->source),
@@ -114,11 +118,26 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
 {
     public const SERVICE = "service";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemVariant0DestinationService implements \JsonSerializable
@@ -176,7 +195,9 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "service") || $data->service === null) { throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null"); }
+        if (!property_exists($data, "service") || $data->service === null) {
+            throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null");
+        }
         return new self(
             service: SdkClient::stringValue($data->service),
             path: (property_exists($data, "path") && $data->path !== null ? SdkClient::stringValue($data->path) : SdkNotGiven::Value),
@@ -189,11 +210,26 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
 {
     public const HOST = "host";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemVariant0HasItemHostValueVariant1 implements \JsonSerializable

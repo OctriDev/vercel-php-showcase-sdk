@@ -56,10 +56,18 @@ class ListDeploymentCheckRunsResponseRunsItemVariant1ExpectationRef implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) { throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null"); }
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
-        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) { throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null"); }
+        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) {
+            throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null");
+        }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
+            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
+        }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
+            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) {
+            throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null");
+        }
         return new self(
             invocationAttempt: SdkClient::floatValue($data->invocationAttempt),
             invocationId: SdkClient::stringValue($data->invocationId),
@@ -75,11 +83,26 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1RequiresEnum
     public const DEPLOYMENT_URL = "deployment-url";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1StatusEnum implements SdkOpenEnum
@@ -88,11 +111,26 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1StatusEnum i
     public const QUEUED = "queued";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListDeploymentCheckRunsResponseRunsItemVariant1TaskSummary implements \JsonSerializable
@@ -144,10 +182,18 @@ class ListDeploymentCheckRunsResponseRunsItemVariant1TaskSummary implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "failed") || $data->failed === null) { throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null"); }
-        if (!property_exists($data, "pending") || $data->pending === null) { throw new SdkValidationError("pending", 'required', "Required property 'pending' is missing or null"); }
-        if (!property_exists($data, "succeeded") || $data->succeeded === null) { throw new SdkValidationError("succeeded", 'required', "Required property 'succeeded' is missing or null"); }
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
+        if (!property_exists($data, "failed") || $data->failed === null) {
+            throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null");
+        }
+        if (!property_exists($data, "pending") || $data->pending === null) {
+            throw new SdkValidationError("pending", 'required', "Required property 'pending' is missing or null");
+        }
+        if (!property_exists($data, "succeeded") || $data->succeeded === null) {
+            throw new SdkValidationError("succeeded", 'required', "Required property 'succeeded' is missing or null");
+        }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
         return new self(
             failed: SdkClient::floatValue($data->failed),
             pending: SdkClient::floatValue($data->pending),
@@ -166,11 +212,26 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1SourceConfig
 {
     public const VERCEL_CI = "vercel-ci";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -233,10 +294,18 @@ class ListDeploymentCheckRunsResponseRunsItemVariant1SourceConfig implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "subKind") || $data->subKind === null) { throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null"); }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
+            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
+        }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
+            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "subKind") || $data->subKind === null) {
+            throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null");
+        }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             jobDefinitionId: SdkClient::stringValue($data->jobDefinitionId),
@@ -256,11 +325,26 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1SourcePlatfo
 {
     public const VERCEL_CI_SENTINEL = "vercel-ci-sentinel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -303,8 +387,12 @@ class ListDeploymentCheckRunsResponseRunsItemVariant1SourcePlatform implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "subKind") || $data->subKind === null) { throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "subKind") || $data->subKind === null) {
+            throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null");
+        }
         return new self(
             origin: SdkClient::hydrateEnum($data->origin, ListDeploymentCheckRunsResponseRunsItemVariant1SourcePlatformOriginEnum::class),
             subKind: SdkClient::hydrateStringEnumOrString($data->subKind, ListDeploymentCheckRunsResponseRunsItemVariant1SourcePlatformSubKindEnum::class),

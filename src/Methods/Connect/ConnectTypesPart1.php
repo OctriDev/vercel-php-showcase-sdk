@@ -13,11 +13,26 @@ final readonly class ListConnectorsSort implements SdkOpenEnum
     public const CREATEDAT = "createdAt";
     public const UPDATEDAT = "updatedAt";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConnectorTokenAuthorizationDetailsItem implements \JsonSerializable
@@ -109,9 +124,15 @@ class GetConnectorTokenResponseConnector implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::stringValue($data->type),
@@ -249,10 +270,18 @@ class GetConnectorTokenResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connector") || $data->connector === null) { throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null"); }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
-        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
-        if (!property_exists($data, "tokenId") || $data->tokenId === null) { throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null"); }
+        if (!property_exists($data, "connector") || $data->connector === null) {
+            throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null");
+        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
+            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
+        }
+        if (!property_exists($data, "token") || $data->token === null) {
+            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
+        }
+        if (!property_exists($data, "tokenId") || $data->tokenId === null) {
+            throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null");
+        }
         return new self(
             connector: SdkClient::hydrateClass($data->connector, GetConnectorTokenResponseConnector::class),
             expiresAt: SdkClient::floatValue($data->expiresAt),

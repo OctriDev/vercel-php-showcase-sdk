@@ -135,10 +135,18 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "effectiveBehavior") || $data->effectiveBehavior === null) { throw new SdkValidationError("effectiveBehavior", 'required', "Required property 'effectiveBehavior' is missing or null"); }
-        if (!property_exists($data, "orbPriceId") || $data->orbPriceId === null) { throw new SdkValidationError("orbPriceId", 'required', "Required property 'orbPriceId' is missing or null"); }
-        if (!property_exists($data, "pricingSource") || $data->pricingSource === null) { throw new SdkValidationError("pricingSource", 'required', "Required property 'pricingSource' is missing or null"); }
-        if (!property_exists($data, "productId") || $data->productId === null) { throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null"); }
+        if (!property_exists($data, "effectiveBehavior") || $data->effectiveBehavior === null) {
+            throw new SdkValidationError("effectiveBehavior", 'required', "Required property 'effectiveBehavior' is missing or null");
+        }
+        if (!property_exists($data, "orbPriceId") || $data->orbPriceId === null) {
+            throw new SdkValidationError("orbPriceId", 'required', "Required property 'orbPriceId' is missing or null");
+        }
+        if (!property_exists($data, "pricingSource") || $data->pricingSource === null) {
+            throw new SdkValidationError("pricingSource", 'required', "Required property 'pricingSource' is missing or null");
+        }
+        if (!property_exists($data, "productId") || $data->productId === null) {
+            throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null");
+        }
         return new self(
             effectiveBehavior: SdkClient::hydrateStringEnumOrString($data->effectiveBehavior, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItemQuantityOutputEffectiveBehaviorEnum::class),
             orbPriceId: SdkClient::stringValue($data->orbPriceId),
@@ -212,9 +220,15 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
-        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "options") || $data->options === null) {
+            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
+        }
+        if (!property_exists($data, "output") || $data->output === null) {
+            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItemQuantityOptions::class),
             output: SdkClient::hydrateClass($data->output, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItemQuantityOutput::class),
@@ -227,11 +241,26 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSyn
 {
     public const SYNC = "sync";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -268,7 +297,9 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSync implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSyncModeEnum::class),
         );
@@ -279,11 +310,26 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsy
 {
     public const ASYNC = "async";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsyncStatusEnum implements SdkOpenEnum
@@ -293,11 +339,26 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsy
     public const PENDING = "pending";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -340,8 +401,12 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsync implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsyncModeEnum::class),
             status: SdkClient::hydrateStringEnumOrString($data->status, BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateAsyncStatusEnum::class),

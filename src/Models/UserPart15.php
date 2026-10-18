@@ -87,10 +87,18 @@ class UserEventUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar") || $data->avatar === null) { throw new SdkValidationError("avatar", 'required', "Required property 'avatar' is missing or null"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "avatar") || $data->avatar === null) {
+            throw new SdkValidationError("avatar", 'required', "Required property 'avatar' is missing or null");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             avatar: SdkClient::stringValue($data->avatar),
             email: SdkClient::stringValue($data->email),
@@ -311,11 +319,21 @@ class UserEvent implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "entities") || $data->entities === null) { throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "principalId") || $data->principalId === null) { throw new SdkValidationError("principalId", 'required', "Required property 'principalId' is missing or null"); }
-        if (!property_exists($data, "text") || $data->text === null) { throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "entities") || $data->entities === null) {
+            throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "principalId") || $data->principalId === null) {
+            throw new SdkValidationError("principalId", 'required', "Required property 'principalId' is missing or null");
+        }
+        if (!property_exists($data, "text") || $data->text === null) {
+            throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             entities: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventEntitiesItem::class), SdkClient::arrayValue($data->entities))),

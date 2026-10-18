@@ -130,19 +130,45 @@ class UpdateProjectCheckResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blocks") || $data->blocks === null) { throw new SdkValidationError("blocks", 'required', "Required property 'blocks' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "isRerequestable") || $data->isRerequestable === null) { throw new SdkValidationError("isRerequestable", 'required', "Required property 'isRerequestable' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "requires") || $data->requires === null) { throw new SdkValidationError("requires", 'required', "Required property 'requires' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
-        if (!property_exists($data, "sourceKind") || $data->sourceKind === null) { throw new SdkValidationError("sourceKind", 'required', "Required property 'sourceKind' is missing or null"); }
-        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
-        if (!property_exists($data, "timeout") || $data->timeout === null) { throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "blocks") || $data->blocks === null) {
+            throw new SdkValidationError("blocks", 'required', "Required property 'blocks' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "isRerequestable") || $data->isRerequestable === null) {
+            throw new SdkValidationError("isRerequestable", 'required', "Required property 'isRerequestable' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "requires") || $data->requires === null) {
+            throw new SdkValidationError("requires", 'required', "Required property 'requires' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
+        if (!property_exists($data, "sourceKind") || $data->sourceKind === null) {
+            throw new SdkValidationError("sourceKind", 'required', "Required property 'sourceKind' is missing or null");
+        }
+        if (!property_exists($data, "targets") || $data->targets === null) {
+            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
+        }
+        if (!property_exists($data, "timeout") || $data->timeout === null) {
+            throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             blocks: SdkClient::hydrateStringEnumOrString($data->blocks, UpdateProjectCheckResponseBlocksEnum::class),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -194,7 +220,9 @@ class DeleteProjectCheckResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "success") || $data->success === null) { throw new SdkValidationError("success", 'required', "Required property 'success' is missing or null"); }
+        if (!property_exists($data, "success") || $data->success === null) {
+            throw new SdkValidationError("success", 'required', "Required property 'success' is missing or null");
+        }
         return new self(
             success: SdkClient::boolValue($data->success),
         );
@@ -232,7 +260,9 @@ class ListCheckRunsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "runs") || $data->runs === null) { throw new SdkValidationError("runs", 'required', "Required property 'runs' is missing or null"); }
+        if (!property_exists($data, "runs") || $data->runs === null) {
+            throw new SdkValidationError("runs", 'required', "Required property 'runs' is missing or null");
+        }
         return new self(
             runs: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, ListCheckRunsResponseRunsItem::class, [ListCheckRunsResponseRunsItemVariant0::class, ListCheckRunsResponseRunsItemVariant1::class], null, []), SdkClient::arrayValue($data->runs))),
         );
@@ -270,7 +300,9 @@ class ListDeploymentCheckRunsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "runs") || $data->runs === null) { throw new SdkValidationError("runs", 'required', "Required property 'runs' is missing or null"); }
+        if (!property_exists($data, "runs") || $data->runs === null) {
+            throw new SdkValidationError("runs", 'required', "Required property 'runs' is missing or null");
+        }
         return new self(
             runs: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, ListDeploymentCheckRunsResponseRunsItem::class, [ListDeploymentCheckRunsResponseRunsItemVariant0::class, ListDeploymentCheckRunsResponseRunsItemVariant1::class], null, []), SdkClient::arrayValue($data->runs))),
         );

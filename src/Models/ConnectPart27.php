@@ -148,8 +148,12 @@ class ConnectCreateConnectorRequestRequestDataTypeLinear implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
-        if (!property_exists($data, "clientSecret") || $data->clientSecret === null) { throw new SdkValidationError("clientSecret", 'required', "Required property 'clientSecret' is missing or null"); }
+        if (!property_exists($data, "clientId") || $data->clientId === null) {
+            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
+        }
+        if (!property_exists($data, "clientSecret") || $data->clientSecret === null) {
+            throw new SdkValidationError("clientSecret", 'required', "Required property 'clientSecret' is missing or null");
+        }
         return new self(
             clientId: SdkClient::stringValue($data->clientId),
             clientSecret: SdkClient::stringValue($data->clientSecret),
@@ -208,7 +212,9 @@ class ConnectCreateConnectorRequestRequestDataTypeLinq implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apiToken") || $data->apiToken === null) { throw new SdkValidationError("apiToken", 'required', "Required property 'apiToken' is missing or null"); }
+        if (!property_exists($data, "apiToken") || $data->apiToken === null) {
+            throw new SdkValidationError("apiToken", 'required', "Required property 'apiToken' is missing or null");
+        }
         return new self(
             apiToken: SdkClient::stringValue($data->apiToken),
             phoneNumbers: (property_exists($data, "phoneNumbers") && $data->phoneNumbers !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->phoneNumbers))) : SdkNotGiven::Value),
@@ -271,9 +277,15 @@ class ConnectCreateConnectorRequestRequestDataTypeSalesforce implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consumerKey") || $data->consumerKey === null) { throw new SdkValidationError("consumerKey", 'required', "Required property 'consumerKey' is missing or null"); }
-        if (!property_exists($data, "consumerSecret") || $data->consumerSecret === null) { throw new SdkValidationError("consumerSecret", 'required', "Required property 'consumerSecret' is missing or null"); }
-        if (!property_exists($data, "loginHost") || $data->loginHost === null) { throw new SdkValidationError("loginHost", 'required', "Required property 'loginHost' is missing or null"); }
+        if (!property_exists($data, "consumerKey") || $data->consumerKey === null) {
+            throw new SdkValidationError("consumerKey", 'required', "Required property 'consumerKey' is missing or null");
+        }
+        if (!property_exists($data, "consumerSecret") || $data->consumerSecret === null) {
+            throw new SdkValidationError("consumerSecret", 'required', "Required property 'consumerSecret' is missing or null");
+        }
+        if (!property_exists($data, "loginHost") || $data->loginHost === null) {
+            throw new SdkValidationError("loginHost", 'required', "Required property 'loginHost' is missing or null");
+        }
         return new self(
             consumerKey: SdkClient::stringValue($data->consumerKey),
             consumerSecret: SdkClient::stringValue($data->consumerSecret),
@@ -339,8 +351,12 @@ class ConnectCreateConnectorRequestRequestDataTypeSendblue implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apiKeyId") || $data->apiKeyId === null) { throw new SdkValidationError("apiKeyId", 'required', "Required property 'apiKeyId' is missing or null"); }
-        if (!property_exists($data, "apiSecretKey") || $data->apiSecretKey === null) { throw new SdkValidationError("apiSecretKey", 'required', "Required property 'apiSecretKey' is missing or null"); }
+        if (!property_exists($data, "apiKeyId") || $data->apiKeyId === null) {
+            throw new SdkValidationError("apiKeyId", 'required', "Required property 'apiKeyId' is missing or null");
+        }
+        if (!property_exists($data, "apiSecretKey") || $data->apiSecretKey === null) {
+            throw new SdkValidationError("apiSecretKey", 'required', "Required property 'apiSecretKey' is missing or null");
+        }
         return new self(
             apiKeyId: SdkClient::stringValue($data->apiKeyId),
             apiSecretKey: SdkClient::stringValue($data->apiSecretKey),
