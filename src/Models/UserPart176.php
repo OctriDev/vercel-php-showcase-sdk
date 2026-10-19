@@ -57,7 +57,9 @@ class UserEventPayloadVariant316Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             id: (property_exists($data, "id") && $data->id !== null ? SdkClient::stringValue($data->id) : SdkNotGiven::Value),
@@ -75,11 +77,26 @@ final readonly class UserEventPayloadVariant316ProjectMembershipRoleEnum impleme
     public const PROJECT_GUEST = "PROJECT_GUEST";
     public const PROJECT_VIEWER = "PROJECT_VIEWER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -152,9 +169,15 @@ class UserEventPayloadVariant316ProjectMembership implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             role: SdkClient::hydrateStringEnumOrString($data->role, UserEventPayloadVariant316ProjectMembershipRoleEnum::class),
@@ -209,8 +232,12 @@ class UserEventPayloadVariant316 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
-        if (!property_exists($data, "projectMembership")) { throw new SdkValidationError("projectMembership", 'required', "Missing required property 'projectMembership'"); }
+        if (!property_exists($data, "project") || $data->project === null) {
+            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
+        }
+        if (!property_exists($data, "projectMembership")) {
+            throw new SdkValidationError("projectMembership", 'required', "Missing required property 'projectMembership'");
+        }
         return new self(
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant316Project::class),
             projectMembership: ($data->projectMembership === null ? null : SdkClient::hydrateClass($data->projectMembership, UserEventPayloadVariant316ProjectMembership::class)),
@@ -228,11 +255,26 @@ final readonly class UserEventPayloadVariant317ProjectRoleEnum implements SdkOpe
     public const PROJECT_GUEST = "PROJECT_GUEST";
     public const PROJECT_VIEWER = "PROJECT_VIEWER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -317,9 +359,15 @@ class UserEventPayloadVariant317Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invitedUserName") || $data->invitedUserName === null) { throw new SdkValidationError("invitedUserName", 'required', "Required property 'invitedUserName' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "invitedUserName") || $data->invitedUserName === null) {
+            throw new SdkValidationError("invitedUserName", 'required', "Required property 'invitedUserName' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
         return new self(
             invitedUserName: SdkClient::stringValue($data->invitedUserName),
             name: SdkClient::stringValue($data->name),

@@ -185,15 +185,33 @@ class UserEventPayloadVariant120JobCursorOriginNowComment implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headInfo") || $data->headInfo === null) { throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null"); }
-        if (!property_exists($data, "installationId") || $data->installationId === null) { throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null"); }
-        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
-        if (!property_exists($data, "prId") || $data->prId === null) { throw new SdkValidationError("prId", 'required', "Required property 'prId' is missing or null"); }
-        if (!property_exists($data, "projectId")) { throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "headInfo") || $data->headInfo === null) {
+            throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null");
+        }
+        if (!property_exists($data, "installationId") || $data->installationId === null) {
+            throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null");
+        }
+        if (!property_exists($data, "owner") || $data->owner === null) {
+            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
+        }
+        if (!property_exists($data, "prId") || $data->prId === null) {
+            throw new SdkValidationError("prId", 'required', "Required property 'prId' is missing or null");
+        }
+        if (!property_exists($data, "projectId")) {
+            throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             headInfo: SdkClient::hydrateClass($data->headInfo, UserEventPayloadVariant120JobCursorOriginNowCommentHeadInfo::class),
             installationId: SdkClient::stringValue($data->installationId),
@@ -248,7 +266,9 @@ class UserEventPayloadVariant120 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
+        if (!property_exists($data, "job") || $data->job === null) {
+            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
+        }
         return new self(
             job: SdkClient::hydrateUnion($data->job, [UserEventPayloadVariant120JobBitbucketPush::class, UserEventPayloadVariant120JobBitbucketNowComment::class, UserEventPayloadVariant120JobPr::class, UserEventPayloadVariant120JobPush::class, UserEventPayloadVariant120JobNowComment::class, UserEventPayloadVariant120JobGitlabPush::class, UserEventPayloadVariant120JobGitlabNowComment::class, UserEventPayloadVariant120JobVercelPush::class, UserEventPayloadVariant120JobCursorOriginPush::class, UserEventPayloadVariant120JobCursorOriginNowComment::class], null, []),
         );
@@ -293,7 +313,9 @@ class UserEventPayloadVariant121NewTeam implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
         );
@@ -338,7 +360,9 @@ class UserEventPayloadVariant121OldTeam implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
         );

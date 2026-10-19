@@ -90,13 +90,27 @@ class GetDeploymentEventsResponseItemVariant3 implements GetDeploymentEventsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "info") || $data->info === null) { throw new SdkValidationError("info", 'required', "Required property 'info' is missing or null"); }
-        if (!property_exists($data, "serial") || $data->serial === null) { throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "date") || $data->date === null) {
+            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "info") || $data->info === null) {
+            throw new SdkValidationError("info", 'required', "Required property 'info' is missing or null");
+        }
+        if (!property_exists($data, "serial") || $data->serial === null) {
+            throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             created: SdkClient::floatValue($data->created),
             date: SdkClient::floatValue($data->date),
@@ -115,11 +129,26 @@ final readonly class GetDeploymentEventsResponseItemVariant4TypeEnum implements 
 {
     public const ALIAS_ASSIGNED = "alias-assigned";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentEventsResponseItemVariant4AliasError implements \JsonSerializable
@@ -159,8 +188,12 @@ class GetDeploymentEventsResponseItemVariant4AliasError implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -221,8 +254,12 @@ class GetDeploymentEventsResponseItemVariant4AliasWarning implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -293,12 +330,24 @@ class GetDeploymentEventsResponseItemVariant4 implements GetDeploymentEventsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
-        if (!property_exists($data, "aliasError")) { throw new SdkValidationError("aliasError", 'required', "Missing required property 'aliasError'"); }
-        if (!property_exists($data, "aliasWarning")) { throw new SdkValidationError("aliasWarning", 'required', "Missing required property 'aliasWarning'"); }
+        if (!property_exists($data, "date") || $data->date === null) {
+            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "alias") || $data->alias === null) {
+            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
+        }
+        if (!property_exists($data, "aliasError")) {
+            throw new SdkValidationError("aliasError", 'required', "Missing required property 'aliasError'");
+        }
+        if (!property_exists($data, "aliasWarning")) {
+            throw new SdkValidationError("aliasWarning", 'required', "Missing required property 'aliasWarning'");
+        }
         return new self(
             date: SdkClient::floatValue($data->date),
             deploymentId: SdkClient::stringValue($data->deploymentId),

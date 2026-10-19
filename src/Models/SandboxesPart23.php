@@ -205,8 +205,12 @@ class CreateSandboxesV4RequestNetworkPolicyVariant0InjectionRulesItem implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "headers") || $data->headers === null) { throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "headers") || $data->headers === null) {
+            throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             headers: SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)),
@@ -298,7 +302,9 @@ class CreateSandboxesV4RequestNetworkPolicyVariant0 implements CreateSandboxesV4
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, CreateSandboxesV4RequestNetworkPolicyVariant0ModeEnum::class),
             allowedDomains: (property_exists($data, "allowedDomains") && $data->allowedDomains !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->allowedDomains))) : SdkNotGiven::Value),

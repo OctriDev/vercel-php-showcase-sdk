@@ -76,8 +76,12 @@ class UserEventPayloadVariant333 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -156,8 +160,12 @@ class UserEventPayloadVariant334 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),

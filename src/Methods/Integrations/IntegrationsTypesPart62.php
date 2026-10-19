@@ -220,12 +220,24 @@ class CreateIntegrationStoreDirectResponseStore implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectsMetadata") || $data->projectsMetadata === null) { throw new SdkValidationError("projectsMetadata", 'required', "Required property 'projectsMetadata' is missing or null"); }
-        if (!property_exists($data, "status")) { throw new SdkValidationError("status", 'required', "Missing required property 'status'"); }
-        if (!property_exists($data, "usageQuotaExceeded") || $data->usageQuotaExceeded === null) { throw new SdkValidationError("usageQuotaExceeded", 'required', "Required property 'usageQuotaExceeded' is missing or null"); }
-        if (!property_exists($data, "externalResourceId") || $data->externalResourceId === null) { throw new SdkValidationError("externalResourceId", 'required', "Required property 'externalResourceId' is missing or null"); }
-        if (!property_exists($data, "product") || $data->product === null) { throw new SdkValidationError("product", 'required', "Required property 'product' is missing or null"); }
-        if (!property_exists($data, "secrets") || $data->secrets === null) { throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null"); }
+        if (!property_exists($data, "projectsMetadata") || $data->projectsMetadata === null) {
+            throw new SdkValidationError("projectsMetadata", 'required', "Required property 'projectsMetadata' is missing or null");
+        }
+        if (!property_exists($data, "status")) {
+            throw new SdkValidationError("status", 'required', "Missing required property 'status'");
+        }
+        if (!property_exists($data, "usageQuotaExceeded") || $data->usageQuotaExceeded === null) {
+            throw new SdkValidationError("usageQuotaExceeded", 'required', "Required property 'usageQuotaExceeded' is missing or null");
+        }
+        if (!property_exists($data, "externalResourceId") || $data->externalResourceId === null) {
+            throw new SdkValidationError("externalResourceId", 'required', "Required property 'externalResourceId' is missing or null");
+        }
+        if (!property_exists($data, "product") || $data->product === null) {
+            throw new SdkValidationError("product", 'required', "Required property 'product' is missing or null");
+        }
+        if (!property_exists($data, "secrets") || $data->secrets === null) {
+            throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null");
+        }
         return new self(
             projectsMetadata: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateIntegrationStoreDirectResponseStoreProjectsMetadataItem::class), SdkClient::arrayValue($data->projectsMetadata))),
             status: ($data->status === null ? null : SdkClient::hydrateStringEnumOrString($data->status, CreateIntegrationStoreDirectResponseStoreStatusEnum::class)),
@@ -284,7 +296,9 @@ class CreateIntegrationStoreDirectResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "store")) { throw new SdkValidationError("store", 'required', "Missing required property 'store'"); }
+        if (!property_exists($data, "store")) {
+            throw new SdkValidationError("store", 'required', "Missing required property 'store'");
+        }
         return new self(
             store: ($data->store === null ? null : SdkClient::hydrateClass($data->store, CreateIntegrationStoreDirectResponseStore::class)),
         );

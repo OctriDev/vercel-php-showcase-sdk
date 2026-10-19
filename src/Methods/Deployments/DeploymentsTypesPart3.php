@@ -147,8 +147,12 @@ class CancelDeploymentResponseAttributionGitUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "login") || $data->login === null) { throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "login") || $data->login === null) {
+            throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null");
+        }
         return new self(
             id: (is_float($data->id) || is_int($data->id) ? SdkClient::floatValue($data->id) : SdkClient::stringValue($data->id)),
             login: SdkClient::stringValue($data->login),
@@ -218,8 +222,12 @@ class CancelDeploymentResponseAttributionVercelUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             username: SdkClient::stringValue($data->username),
@@ -331,7 +339,9 @@ class CancelDeploymentResponseBuild implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "env") || $data->env === null) { throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null"); }
+        if (!property_exists($data, "env") || $data->env === null) {
+            throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null");
+        }
         return new self(
             env: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->env))),
         );

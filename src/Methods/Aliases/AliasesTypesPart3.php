@@ -69,7 +69,9 @@ class ListAliasesResponseAliasesItemDeployment implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             meta: (property_exists($data, "meta") && $data->meta !== null ? SdkClient::stringValue($data->meta) : SdkNotGiven::Value),
@@ -126,8 +128,12 @@ class ListAliasesResponseAliasesItemMicrofrontendsApplicationsItem implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fallbackHost") || $data->fallbackHost === null) { throw new SdkValidationError("fallbackHost", 'required', "Required property 'fallbackHost' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "fallbackHost") || $data->fallbackHost === null) {
+            throw new SdkValidationError("fallbackHost", 'required', "Required property 'fallbackHost' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             fallbackHost: SdkClient::stringValue($data->fallbackHost),
             projectId: SdkClient::stringValue($data->projectId),
@@ -166,7 +172,9 @@ class ListAliasesResponseAliasesItemMicrofrontendsDefaultApp implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
         );
@@ -213,8 +221,12 @@ class ListAliasesResponseAliasesItemMicrofrontends implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "applications") || $data->applications === null) { throw new SdkValidationError("applications", 'required', "Required property 'applications' is missing or null"); }
-        if (!property_exists($data, "defaultApp") || $data->defaultApp === null) { throw new SdkValidationError("defaultApp", 'required', "Required property 'defaultApp' is missing or null"); }
+        if (!property_exists($data, "applications") || $data->applications === null) {
+            throw new SdkValidationError("applications", 'required', "Required property 'applications' is missing or null");
+        }
+        if (!property_exists($data, "defaultApp") || $data->defaultApp === null) {
+            throw new SdkValidationError("defaultApp", 'required', "Required property 'defaultApp' is missing or null");
+        }
         return new self(
             applications: SdkClient::decodeUnionValue($data->applications, [static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListAliasesResponseAliasesItemMicrofrontendsApplicationsItem::class), SdkClient::arrayValue($value))), static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListAliasesResponseAliasesItemMicrofrontendsApplicationsItem::class), SdkClient::arrayValue($value))), static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListAliasesResponseAliasesItemMicrofrontendsApplicationsItem::class), SdkClient::arrayValue($value)))]),
             defaultApp: SdkClient::hydrateClass($data->defaultApp, ListAliasesResponseAliasesItemMicrofrontendsDefaultApp::class),
@@ -281,9 +293,15 @@ class ListAliasesResponseAliasesItemProtectionBypassValueShareableLink implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "scope") || $data->scope === null) {
+            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             createdBy: SdkClient::stringValue($data->createdBy),
@@ -298,11 +316,26 @@ final readonly class ListAliasesResponseAliasesItemProtectionBypassValueUserAcce
     public const GRANTED = "granted";
     public const REQUESTED = "requested";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum ListAliasesResponseAliasesItemProtectionBypassValueUserScopeEnum: string implements SdkWireEnum

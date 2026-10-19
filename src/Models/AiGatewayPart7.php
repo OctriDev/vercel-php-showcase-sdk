@@ -429,13 +429,27 @@ class AiGatewayVirtualModelConfig implements GetAiGatewayVirtualModelConfigRespo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "deleted") || $data->deleted === null) { throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "virtualModelSlug") || $data->virtualModelSlug === null) { throw new SdkValidationError("virtualModelSlug", 'required', "Required property 'virtualModelSlug' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "deleted") || $data->deleted === null) {
+            throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "virtualModelSlug") || $data->virtualModelSlug === null) {
+            throw new SdkValidationError("virtualModelSlug", 'required', "Required property 'virtualModelSlug' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             deleted: SdkClient::boolValue($data->deleted),

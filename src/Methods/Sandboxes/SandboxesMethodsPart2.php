@@ -213,16 +213,16 @@ trait SandboxesMethodsPart2
             "/v2/sandboxes/sessions/" . SdkClient::encodePathSegment($sessionId) . "/cmd",
             config: $clientConfig,
             query: [
-            'cmdId' => new SdkQueryValue($cmdId, "form", true),
-            'teamId' => new SdkQueryValue($teamId, "form", true),
-            'slug' => new SdkQueryValue($slug, "form", true),
-        ],
+                'cmdId' => new SdkQueryValue($cmdId, "form", true),
+                'teamId' => new SdkQueryValue($teamId, "form", true),
+                'slug' => new SdkQueryValue($slug, "form", true),
+            ],
             body: ['command' => $command, 'args' => $args, 'cwd' => $cwd, 'env' => $env, 'sudo' => $sudo, 'wait' => $wait, 'logs' => $logs, 'timeout' => $timeout, 'attachStdin' => $attachStdin],
             contentType: 'application/json',
             operationId: 'runSessionCommandStream',
             streamFormat: 'ndjson',
             streamMediaType: 'application/x-ndjson',
-            requestOptions: $requestOptions
+            requestOptions: $requestOptions,
         ) as $_ev) {
             if ($_ev->data === '[DONE]') {
                 return;

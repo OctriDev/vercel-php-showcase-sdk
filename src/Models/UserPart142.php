@@ -169,11 +169,21 @@ class UserEventPayloadVariant238Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "allowUnsafeScriptSrcKeywords") || $data->allowUnsafeScriptSrcKeywords === null) { throw new SdkValidationError("allowUnsafeScriptSrcKeywords", 'required', "Required property 'allowUnsafeScriptSrcKeywords' is missing or null"); }
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "enforcePercentage") || $data->enforcePercentage === null) { throw new SdkValidationError("enforcePercentage", 'required', "Required property 'enforcePercentage' is missing or null"); }
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
-        if (!property_exists($data, "newResourceBlockingPolicy") || $data->newResourceBlockingPolicy === null) { throw new SdkValidationError("newResourceBlockingPolicy", 'required', "Required property 'newResourceBlockingPolicy' is missing or null"); }
+        if (!property_exists($data, "allowUnsafeScriptSrcKeywords") || $data->allowUnsafeScriptSrcKeywords === null) {
+            throw new SdkValidationError("allowUnsafeScriptSrcKeywords", 'required', "Required property 'allowUnsafeScriptSrcKeywords' is missing or null");
+        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "enforcePercentage") || $data->enforcePercentage === null) {
+            throw new SdkValidationError("enforcePercentage", 'required', "Required property 'enforcePercentage' is missing or null");
+        }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
+        if (!property_exists($data, "newResourceBlockingPolicy") || $data->newResourceBlockingPolicy === null) {
+            throw new SdkValidationError("newResourceBlockingPolicy", 'required', "Required property 'newResourceBlockingPolicy' is missing or null");
+        }
         return new self(
             allowUnsafeScriptSrcKeywords: SdkClient::boolValue($data->allowUnsafeScriptSrcKeywords),
             enabled: SdkClient::boolValue($data->enabled),
@@ -246,9 +256,15 @@ class UserEventPayloadVariant238 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "previous")) { throw new SdkValidationError("previous", 'required', "Missing required property 'previous'"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "previous")) {
+            throw new SdkValidationError("previous", 'required', "Missing required property 'previous'");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant238Next::class),
             previous: ($data->previous === null ? null : SdkClient::hydrateClass($data->previous, UserEventPayloadVariant238Previous::class)),
@@ -322,10 +338,18 @@ class UserEventPayloadVariant239 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headerName") || $data->headerName === null) { throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null"); }
-        if (!property_exists($data, "justification") || $data->justification === null) { throw new SdkValidationError("justification", 'required', "Required property 'justification' is missing or null"); }
-        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) { throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "headerName") || $data->headerName === null) {
+            throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null");
+        }
+        if (!property_exists($data, "justification") || $data->justification === null) {
+            throw new SdkValidationError("justification", 'required', "Required property 'justification' is missing or null");
+        }
+        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) {
+            throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             headerName: SdkClient::stringValue($data->headerName),
             justification: SdkClient::stringValue($data->justification),

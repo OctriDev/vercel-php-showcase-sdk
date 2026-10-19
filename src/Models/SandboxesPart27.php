@@ -52,8 +52,12 @@ class CreateSandboxesV4RequestSourceVariant2 implements CreateSandboxesV4Request
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
-        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) { throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
+        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) {
+            throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null");
+        }
         return new self(
             type: $data->type,
             snapshotId: SdkClient::stringValue($data->snapshotId),
@@ -219,13 +223,27 @@ class Drive implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "maxSizeBytes") || $data->maxSizeBytes === null) { throw new SdkValidationError("maxSizeBytes", 'required', "Required property 'maxSizeBytes' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "maxSizeBytes") || $data->maxSizeBytes === null) {
+            throw new SdkValidationError("maxSizeBytes", 'required', "Required property 'maxSizeBytes' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),
@@ -247,22 +265,52 @@ final readonly class GetSessionCommandLogsResponseVariant0DataCodeEnum implement
 {
     public const SANDBOX_STREAM_CLOSED = "sandbox_stream_closed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetSessionCommandLogsResponseVariant0DataMessageEnum implements SdkOpenEnum
 {
     public const SANDBOX_STREAM_WAS_CLOSED_AND_IS_NOT_ACCEPTING_COMMANDS = "Sandbox stream was closed and is not accepting commands.";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSessionCommandLogsResponseVariant0Data implements \JsonSerializable
@@ -302,8 +350,12 @@ class GetSessionCommandLogsResponseVariant0Data implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetSessionCommandLogsResponseVariant0DataCodeEnum::class),
             message: SdkClient::hydrateStringEnumOrString($data->message, GetSessionCommandLogsResponseVariant0DataMessageEnum::class),

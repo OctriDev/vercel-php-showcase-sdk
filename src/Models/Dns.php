@@ -46,7 +46,9 @@ class CreateRecordResponseVariant0 implements CreateRecordResponse, \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "updated") || $data->updated === null) { throw new SdkValidationError("updated", 'required', "Required property 'updated' is missing or null"); }
+        if (!property_exists($data, "updated") || $data->updated === null) {
+            throw new SdkValidationError("updated", 'required', "Required property 'updated' is missing or null");
+        }
         return new self(
             updated: SdkClient::floatValue($data->updated),
             uid: (property_exists($data, "uid") && $data->uid !== null ? SdkClient::stringValue($data->uid) : SdkNotGiven::Value),
@@ -89,7 +91,9 @@ class CreateRecordResponseVariant1 implements CreateRecordResponse, \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             uid: SdkClient::stringValue($data->uid),
         );

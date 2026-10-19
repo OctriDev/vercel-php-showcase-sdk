@@ -38,7 +38,9 @@ class GetConfigurationProductsResponseProductsItemProtocolsMessaging implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsMessagingStatusEnum::class),
         );
@@ -50,11 +52,26 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsObserv
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsObservability implements \JsonSerializable
@@ -88,7 +105,9 @@ class GetConfigurationProductsResponseProductsItemProtocolsObservability impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsObservabilityStatusEnum::class),
         );
@@ -100,11 +119,26 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsOtherS
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsOther implements \JsonSerializable
@@ -138,7 +172,9 @@ class GetConfigurationProductsResponseProductsItemProtocolsOther implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsOtherStatusEnum::class),
         );
@@ -150,11 +186,26 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsStorag
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsStorageRepl implements \JsonSerializable
@@ -202,8 +253,12 @@ class GetConfigurationProductsResponseProductsItemProtocolsStorageRepl implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "supportsReadOnlyMode") || $data->supportsReadOnlyMode === null) { throw new SdkValidationError("supportsReadOnlyMode", 'required', "Required property 'supportsReadOnlyMode' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "supportsReadOnlyMode") || $data->supportsReadOnlyMode === null) {
+            throw new SdkValidationError("supportsReadOnlyMode", 'required', "Required property 'supportsReadOnlyMode' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             supportsReadOnlyMode: SdkClient::boolValue($data->supportsReadOnlyMode),
@@ -251,7 +306,9 @@ class GetConfigurationProductsResponseProductsItemProtocolsStorage implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsStorageStatusEnum::class),
             repl: (property_exists($data, "repl") && $data->repl !== null ? SdkClient::hydrateClass($data->repl, GetConfigurationProductsResponseProductsItemProtocolsStorageRepl::class) : SdkNotGiven::Value),
@@ -264,11 +321,26 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsTraceD
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetConfigurationProductsResponseProductsItemProtocolsTraceDrainFormatEnum implements SdkOpenEnum
@@ -276,11 +348,26 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsTraceD
     public const JSON = "json";
     public const PROTO = "proto";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsTraceDrain implements \JsonSerializable
@@ -334,9 +421,15 @@ class GetConfigurationProductsResponseProductsItemProtocolsTraceDrain implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "format") || $data->format === null) { throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "format") || $data->format === null) {
+            throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsTraceDrainStatusEnum::class),
             endpoint: SdkClient::stringValue($data->endpoint),

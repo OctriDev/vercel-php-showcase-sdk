@@ -190,11 +190,21 @@ class GetAliasResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "deploymentId")) { throw new SdkValidationError("deploymentId", 'required', "Missing required property 'deploymentId'"); }
-        if (!property_exists($data, "projectId")) { throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "alias") || $data->alias === null) {
+            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
+        }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId")) {
+            throw new SdkValidationError("deploymentId", 'required', "Missing required property 'deploymentId'");
+        }
+        if (!property_exists($data, "projectId")) {
+            throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             alias: SdkClient::stringValue($data->alias),
             created: SdkClient::stringValue($data->created),
@@ -218,11 +228,26 @@ final readonly class DeleteAliasResponseStatusEnum implements SdkOpenEnum
 {
     public const SUCCESS = "SUCCESS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class DeleteAliasResponse implements \JsonSerializable
@@ -256,7 +281,9 @@ class DeleteAliasResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, DeleteAliasResponseStatusEnum::class),
         );
@@ -311,8 +338,12 @@ class PatchUrlProtectionBypassBodyVariant0Revoke implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "secret") || $data->secret === null) { throw new SdkValidationError("secret", 'required', "Required property 'secret' is missing or null"); }
-        if (!property_exists($data, "regenerate") || $data->regenerate === null) { throw new SdkValidationError("regenerate", 'required', "Required property 'regenerate' is missing or null"); }
+        if (!property_exists($data, "secret") || $data->secret === null) {
+            throw new SdkValidationError("secret", 'required', "Required property 'secret' is missing or null");
+        }
+        if (!property_exists($data, "regenerate") || $data->regenerate === null) {
+            throw new SdkValidationError("regenerate", 'required', "Required property 'regenerate' is missing or null");
+        }
         return new self(
             secret: SdkClient::stringValue($data->secret),
             regenerate: SdkClient::boolValue($data->regenerate),

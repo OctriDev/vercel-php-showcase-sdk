@@ -150,13 +150,27 @@ class GetKmsIssuerResponseSigningKeysItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
-        if (!property_exists($data, "keyId") || $data->keyId === null) { throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null"); }
-        if (!property_exists($data, "publicKeyFingerprint") || $data->publicKeyFingerprint === null) { throw new SdkValidationError("publicKeyFingerprint", 'required', "Required property 'publicKeyFingerprint' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
+            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
+            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
+        }
+        if (!property_exists($data, "keyId") || $data->keyId === null) {
+            throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null");
+        }
+        if (!property_exists($data, "publicKeyFingerprint") || $data->publicKeyFingerprint === null) {
+            throw new SdkValidationError("publicKeyFingerprint", 'required', "Required property 'publicKeyFingerprint' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             algorithm: SdkClient::stringValue($data->algorithm),
             createdAt: SdkClient::stringValue($data->createdAt),
@@ -271,15 +285,33 @@ class GetKmsIssuerResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "policies") || $data->policies === null) { throw new SdkValidationError("policies", 'required', "Required property 'policies' is missing or null"); }
-        if (!property_exists($data, "signingKeys") || $data->signingKeys === null) { throw new SdkValidationError("signingKeys", 'required', "Required property 'signingKeys' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
+            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "policies") || $data->policies === null) {
+            throw new SdkValidationError("policies", 'required', "Required property 'policies' is missing or null");
+        }
+        if (!property_exists($data, "signingKeys") || $data->signingKeys === null) {
+            throw new SdkValidationError("signingKeys", 'required', "Required property 'signingKeys' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             algorithm: SdkClient::hydrateStringEnumOrString($data->algorithm, GetKmsIssuerResponseAlgorithmEnum::class),
             createdAt: SdkClient::stringValue($data->createdAt),
@@ -308,11 +340,26 @@ final readonly class UpdateKmsIssuerResponseAlgorithmEnum implements SdkOpenEnum
     public const RS384 = "RS384";
     public const RS512 = "RS512";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateKmsIssuerResponseOriginEnum implements SdkOpenEnum
@@ -320,9 +367,24 @@ final readonly class UpdateKmsIssuerResponseOriginEnum implements SdkOpenEnum
     public const EXTERNAL = "external";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

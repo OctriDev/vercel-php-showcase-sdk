@@ -17,11 +17,26 @@ final readonly class CreateApiKeysAiGatewayQuotaRefreshPeriodEnum implements Sdk
     public const MONTHLY = "monthly";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -98,7 +113,9 @@ class CreateApiKeysAiGatewayQuota implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
+            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
+        }
         return new self(
             limitAmount: SdkClient::floatValue($data->limitAmount),
             includeByokInQuota: (property_exists($data, "includeByokInQuota") && $data->includeByokInQuota !== null ? SdkClient::boolValue($data->includeByokInQuota) : SdkNotGiven::Value),
@@ -153,8 +170,12 @@ class CreateApiKeysResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apiKeyString") || $data->apiKeyString === null) { throw new SdkValidationError("apiKeyString", 'required', "Required property 'apiKeyString' is missing or null"); }
-        if (!property_exists($data, "apiKey") || $data->apiKey === null) { throw new SdkValidationError("apiKey", 'required', "Required property 'apiKey' is missing or null"); }
+        if (!property_exists($data, "apiKeyString") || $data->apiKeyString === null) {
+            throw new SdkValidationError("apiKeyString", 'required', "Required property 'apiKeyString' is missing or null");
+        }
+        if (!property_exists($data, "apiKey") || $data->apiKey === null) {
+            throw new SdkValidationError("apiKey", 'required', "Required property 'apiKey' is missing or null");
+        }
         return new self(
             apiKeyString: SdkClient::stringValue($data->apiKeyString),
             apiKey: SdkClient::hydrateClass($data->apiKey, APIKey::class),

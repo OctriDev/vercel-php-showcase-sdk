@@ -38,7 +38,9 @@ class UpdateMicrofrontendsGroupResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "updatedMicrofrontendsGroup") || $data->updatedMicrofrontendsGroup === null) { throw new SdkValidationError("updatedMicrofrontendsGroup", 'required', "Required property 'updatedMicrofrontendsGroup' is missing or null"); }
+        if (!property_exists($data, "updatedMicrofrontendsGroup") || $data->updatedMicrofrontendsGroup === null) {
+            throw new SdkValidationError("updatedMicrofrontendsGroup", 'required', "Required property 'updatedMicrofrontendsGroup' is missing or null");
+        }
         return new self(
             updatedMicrofrontendsGroup: SdkClient::hydrateClass($data->updatedMicrofrontendsGroup, UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup::class),
         );

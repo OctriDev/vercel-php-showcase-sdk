@@ -12,11 +12,26 @@ final readonly class GetDomainConfigStrict implements SdkOpenEnum
     public const TRUE = "true";
     public const FALSE = "false";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ReplaceDomainsByDomainRecordsResponse implements \JsonSerializable
@@ -50,7 +65,9 @@ class ReplaceDomainsByDomainRecordsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "recordIds") || $data->recordIds === null) { throw new SdkValidationError("recordIds", 'required', "Required property 'recordIds' is missing or null"); }
+        if (!property_exists($data, "recordIds") || $data->recordIds === null) {
+            throw new SdkValidationError("recordIds", 'required', "Required property 'recordIds' is missing or null");
+        }
         return new self(
             recordIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->recordIds))),
         );
@@ -70,11 +87,26 @@ final readonly class GetDomainsRecordsByRecordIdResponseRecordTypeEnum implement
     public const SRV = "SRV";
     public const TXT = "TXT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDomainsRecordsByRecordIdResponseTypeEnum implements SdkOpenEnum
@@ -90,11 +122,26 @@ final readonly class GetDomainsRecordsByRecordIdResponseTypeEnum implements SdkO
     public const SRV = "SRV";
     public const TXT = "TXT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDomainsRecordsByRecordIdResponse implements \JsonSerializable
@@ -188,13 +235,27 @@ class GetDomainsRecordsByRecordIdResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "recordType") || $data->recordType === null) { throw new SdkValidationError("recordType", 'required', "Required property 'recordType' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "creator") || $data->creator === null) {
+            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
+        }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "recordType") || $data->recordType === null) {
+            throw new SdkValidationError("recordType", 'required', "Required property 'recordType' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             creator: SdkClient::stringValue($data->creator),
             domain: SdkClient::stringValue($data->domain),
@@ -218,11 +279,26 @@ final readonly class GetDomainConfigResponseAcceptedChallengesItemEnum implement
     public const DNS_01 = "dns-01";
     public const HTTP_01 = "http-01";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -235,11 +311,26 @@ final readonly class GetDomainConfigResponseConfiguredByEnum implements SdkOpenE
     public const DNS_01 = "dns-01";
     public const HTTP = "http";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -282,8 +373,12 @@ class GetDomainConfigResponseRecommendedCNAMEItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rank") || $data->rank === null) { throw new SdkValidationError("rank", 'required', "Required property 'rank' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "rank") || $data->rank === null) {
+            throw new SdkValidationError("rank", 'required', "Required property 'rank' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             rank: SdkClient::floatValue($data->rank),
             value: SdkClient::stringValue($data->value),
@@ -331,8 +426,12 @@ class GetDomainConfigResponseRecommendedIPv4Item implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rank") || $data->rank === null) { throw new SdkValidationError("rank", 'required', "Required property 'rank' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "rank") || $data->rank === null) {
+            throw new SdkValidationError("rank", 'required', "Required property 'rank' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             rank: SdkClient::floatValue($data->rank),
             value: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->value))),

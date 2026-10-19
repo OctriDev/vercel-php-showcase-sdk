@@ -170,15 +170,33 @@ class GetVercelCiInvocationResponseInvocation implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
-        if (!property_exists($data, "attempt") || $data->attempt === null) { throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "repositoryKey") || $data->repositoryKey === null) { throw new SdkValidationError("repositoryKey", 'required', "Required property 'repositoryKey' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "commitSha") || $data->commitSha === null) { throw new SdkValidationError("commitSha", 'required', "Required property 'commitSha' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
+            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
+        }
+        if (!property_exists($data, "attempt") || $data->attempt === null) {
+            throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "repositoryKey") || $data->repositoryKey === null) {
+            throw new SdkValidationError("repositoryKey", 'required', "Required property 'repositoryKey' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "commitSha") || $data->commitSha === null) {
+            throw new SdkValidationError("commitSha", 'required', "Required property 'commitSha' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             attempt: SdkClient::floatValue($data->attempt),
@@ -239,8 +257,12 @@ class GetVercelCiInvocationResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocation") || $data->invocation === null) { throw new SdkValidationError("invocation", 'required', "Required property 'invocation' is missing or null"); }
-        if (!property_exists($data, "repositories") || $data->repositories === null) { throw new SdkValidationError("repositories", 'required', "Required property 'repositories' is missing or null"); }
+        if (!property_exists($data, "invocation") || $data->invocation === null) {
+            throw new SdkValidationError("invocation", 'required', "Required property 'invocation' is missing or null");
+        }
+        if (!property_exists($data, "repositories") || $data->repositories === null) {
+            throw new SdkValidationError("repositories", 'required', "Required property 'repositories' is missing or null");
+        }
         return new self(
             invocation: SdkClient::hydrateClass($data->invocation, GetVercelCiInvocationResponseInvocation::class),
             repositories: SdkClient::stringMapValue($data->repositories),
@@ -285,8 +307,12 @@ class RetryVercelCiInvocationResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
-        if (!property_exists($data, "attempt") || $data->attempt === null) { throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null"); }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
+            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
+        }
+        if (!property_exists($data, "attempt") || $data->attempt === null) {
+            throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null");
+        }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             attempt: SdkClient::floatValue($data->attempt),

@@ -11,11 +11,26 @@ final readonly class DeleteAuthTokenReason implements SdkOpenEnum
 {
     public const LOGOUT = "logout";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class DeleteAuthTokenLogoutSource implements SdkOpenEnum
@@ -23,11 +38,26 @@ final readonly class DeleteAuthTokenLogoutSource implements SdkOpenEnum
     public const V0 = "v0";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -127,10 +157,18 @@ class ExchangeSsoTokenBodyAuthorizationCode implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "client_id") || $data->client_id === null) { throw new SdkValidationError("client_id", 'required', "Required property 'client_id' is missing or null"); }
-        if (!property_exists($data, "client_secret") || $data->client_secret === null) { throw new SdkValidationError("client_secret", 'required', "Required property 'client_secret' is missing or null"); }
-        if (!property_exists($data, "grant_type") || $data->grant_type === null) { throw new SdkValidationError("grant_type", 'required', "Required property 'grant_type' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "client_id") || $data->client_id === null) {
+            throw new SdkValidationError("client_id", 'required', "Required property 'client_id' is missing or null");
+        }
+        if (!property_exists($data, "client_secret") || $data->client_secret === null) {
+            throw new SdkValidationError("client_secret", 'required', "Required property 'client_secret' is missing or null");
+        }
+        if (!property_exists($data, "grant_type") || $data->grant_type === null) {
+            throw new SdkValidationError("grant_type", 'required', "Required property 'grant_type' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             clientId: SdkClient::stringValue($data->client_id),
@@ -215,10 +253,18 @@ class ExchangeSsoTokenBodyRefreshToken implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) { throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null"); }
-        if (!property_exists($data, "client_id") || $data->client_id === null) { throw new SdkValidationError("client_id", 'required', "Required property 'client_id' is missing or null"); }
-        if (!property_exists($data, "client_secret") || $data->client_secret === null) { throw new SdkValidationError("client_secret", 'required', "Required property 'client_secret' is missing or null"); }
-        if (!property_exists($data, "grant_type") || $data->grant_type === null) { throw new SdkValidationError("grant_type", 'required', "Required property 'grant_type' is missing or null"); }
+        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) {
+            throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null");
+        }
+        if (!property_exists($data, "client_id") || $data->client_id === null) {
+            throw new SdkValidationError("client_id", 'required', "Required property 'client_id' is missing or null");
+        }
+        if (!property_exists($data, "client_secret") || $data->client_secret === null) {
+            throw new SdkValidationError("client_secret", 'required', "Required property 'client_secret' is missing or null");
+        }
+        if (!property_exists($data, "grant_type") || $data->grant_type === null) {
+            throw new SdkValidationError("grant_type", 'required', "Required property 'grant_type' is missing or null");
+        }
         return new self(
             refreshToken: SdkClient::stringValue($data->refresh_token),
             clientId: SdkClient::stringValue($data->client_id),
@@ -276,8 +322,12 @@ class CreateAuthTokenResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bearerToken") || $data->bearerToken === null) { throw new SdkValidationError("bearerToken", 'required', "Required property 'bearerToken' is missing or null"); }
-        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
+        if (!property_exists($data, "bearerToken") || $data->bearerToken === null) {
+            throw new SdkValidationError("bearerToken", 'required', "Required property 'bearerToken' is missing or null");
+        }
+        if (!property_exists($data, "token") || $data->token === null) {
+            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
+        }
         return new self(
             bearerToken: SdkClient::stringValue($data->bearerToken),
             token: SdkClient::hydrateClass($data->token, AuthToken::class),
@@ -323,7 +373,9 @@ class GetAuthTokenResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
+        if (!property_exists($data, "token") || $data->token === null) {
+            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
+        }
         return new self(
             token: SdkClient::hydrateClass($data->token, AuthToken::class),
         );

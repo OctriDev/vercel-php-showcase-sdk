@@ -55,8 +55,12 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOption
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fixedPriceQuantity") || $data->fixedPriceQuantity === null) { throw new SdkValidationError("fixedPriceQuantity", 'required', "Required property 'fixedPriceQuantity' is missing or null"); }
-        if (!property_exists($data, "replacesPriceId") || $data->replacesPriceId === null) { throw new SdkValidationError("replacesPriceId", 'required', "Required property 'replacesPriceId' is missing or null"); }
+        if (!property_exists($data, "fixedPriceQuantity") || $data->fixedPriceQuantity === null) {
+            throw new SdkValidationError("fixedPriceQuantity", 'required', "Required property 'fixedPriceQuantity' is missing or null");
+        }
+        if (!property_exists($data, "replacesPriceId") || $data->replacesPriceId === null) {
+            throw new SdkValidationError("replacesPriceId", 'required', "Required property 'replacesPriceId' is missing or null");
+        }
         return new self(
             fixedPriceQuantity: SdkClient::floatValue($data->fixedPriceQuantity),
             replacesPriceId: SdkClient::stringValue($data->replacesPriceId),
@@ -195,7 +199,9 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOption
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalPlanId") || $data->externalPlanId === null) { throw new SdkValidationError("externalPlanId", 'required', "Required property 'externalPlanId' is missing or null"); }
+        if (!property_exists($data, "externalPlanId") || $data->externalPlanId === null) {
+            throw new SdkValidationError("externalPlanId", 'required', "Required property 'externalPlanId' is missing or null");
+        }
         return new self(
             externalPlanId: SdkClient::stringValue($data->externalPlanId),
             addPrices: (property_exists($data, "addPrices") && $data->addPrices !== null ? array_values(array_map(static fn($item) => ((is_array($item) || is_object($item)) ? SdkClient::hydrateObjectUnionOrMap($item, static fn($value) => SdkClient::hydrateClass($value, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOptionsAddPricesItemVariant0::class), static fn($value) => SdkClient::stringMapValue($value)) : SdkClient::hydrateObjectUnionOrMap($item, static fn($value) => SdkClient::hydrateClass($value, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOptionsAddPricesItemVariant0::class), static fn($value) => SdkClient::stringMapValue($value))), SdkClient::arrayValue($data->addPrices))) : SdkNotGiven::Value),
@@ -245,7 +251,9 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOutput
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pendingSubscriptionChangeId") || $data->pendingSubscriptionChangeId === null) { throw new SdkValidationError("pendingSubscriptionChangeId", 'required', "Required property 'pendingSubscriptionChangeId' is missing or null"); }
+        if (!property_exists($data, "pendingSubscriptionChangeId") || $data->pendingSubscriptionChangeId === null) {
+            throw new SdkValidationError("pendingSubscriptionChangeId", 'required', "Required property 'pendingSubscriptionChangeId' is missing or null");
+        }
         return new self(
             pendingSubscriptionChangeId: SdkClient::stringValue($data->pendingSubscriptionChangeId),
         );
@@ -303,9 +311,15 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscription imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
-        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "options") || $data->options === null) {
+            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
+        }
+        if (!property_exists($data, "output") || $data->output === null) {
+            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOptions::class),
             output: SdkClient::hydrateClass($data->output, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionOutput::class),

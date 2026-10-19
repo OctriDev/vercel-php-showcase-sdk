@@ -81,7 +81,9 @@ class DeleteProjectAvatarResponseRollingReleaseStagesItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             targetPercentage: SdkClient::floatValue($data->targetPercentage),
             duration: (property_exists($data, "duration") && $data->duration !== null ? SdkClient::floatValue($data->duration) : SdkNotGiven::Value),
@@ -165,7 +167,9 @@ class DeleteProjectAvatarResponseRollingRelease implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
+        if (!property_exists($data, "target") || $data->target === null) {
+            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
+        }
         return new self(
             target: SdkClient::stringValue($data->target),
             canaryResponseHeader: (property_exists($data, "canaryResponseHeader") && $data->canaryResponseHeader !== null ? SdkClient::boolValue($data->canaryResponseHeader) : SdkNotGiven::Value),
@@ -197,11 +201,26 @@ final readonly class DeleteProjectAvatarResponseSandboxFailoverRegionsItemEnum i
     public const SYD1 = "syd1";
     public const YUL1 = "yul1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class DeleteProjectAvatarResponseSandboxRegionEnum implements SdkOpenEnum
@@ -226,11 +245,26 @@ final readonly class DeleteProjectAvatarResponseSandboxRegionEnum implements Sdk
     public const SYD1 = "syd1";
     public const YUL1 = "yul1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class DeleteProjectAvatarResponseSandbox implements \JsonSerializable
@@ -285,11 +319,26 @@ final readonly class DeleteProjectAvatarResponseSecurityLogHeadersEnum implement
 {
     public const UNKNOWN = "*";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class DeleteProjectAvatarResponseSecurityManagedRulesAiBotsActionEnum implements SdkOpenEnum
@@ -298,9 +347,24 @@ final readonly class DeleteProjectAvatarResponseSecurityManagedRulesAiBotsAction
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

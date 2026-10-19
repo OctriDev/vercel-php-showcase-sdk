@@ -105,7 +105,9 @@ class GetDeploymentsResponseDeploymentsItemCreator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             uid: SdkClient::stringValue($data->uid),
             email: (property_exists($data, "email") && $data->email !== null ? SdkClient::stringValue($data->email) : SdkNotGiven::Value),
@@ -159,7 +161,9 @@ class GetDeploymentsResponseDeploymentsItemCustomEnvironment implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             slug: (property_exists($data, "slug") && $data->slug !== null ? SdkClient::stringValue($data->slug) : SdkNotGiven::Value),
@@ -176,11 +180,26 @@ final readonly class GetDeploymentsResponseDeploymentsItemManualProvisioningStat
     public const PENDING = "PENDING";
     public const TIMEOUT = "TIMEOUT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentsResponseDeploymentsItemManualProvisioning implements \JsonSerializable
@@ -230,7 +249,9 @@ class GetDeploymentsResponseDeploymentsItemManualProvisioning implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
         return new self(
             state: SdkClient::hydrateStringEnumOrString($data->state, GetDeploymentsResponseDeploymentsItemManualProvisioningStateEnum::class),
             completedAt: (property_exists($data, "completedAt") && $data->completedAt !== null ? SdkClient::floatValue($data->completedAt) : SdkNotGiven::Value),
@@ -245,11 +266,26 @@ final readonly class GetDeploymentsResponseDeploymentsItemOomReportEnum implemen
 {
     public const OUT_OF_MEMORY = "out-of-memory";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -302,7 +338,9 @@ class GetDeploymentsResponseDeploymentsItemPlatformCreator implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             avatar: (property_exists($data, "avatar") && $data->avatar !== null ? SdkClient::stringValue($data->avatar) : SdkNotGiven::Value),
@@ -318,9 +356,24 @@ final readonly class GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum
     public const ID = "id";
     public const URL = "url";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -53,9 +53,15 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainName implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
-        if (!property_exists($data, "output")) { throw new SdkValidationError("output", 'required', "Missing required property 'output'"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "options") || $data->options === null) {
+            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
+        }
+        if (!property_exists($data, "output")) {
+            throw new SdkValidationError("output", 'required', "Missing required property 'output'");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainNameOptions::class),
             output: ($data->output === null ? null : $data->output),
@@ -69,11 +75,26 @@ final readonly class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPla
     public const END_OF_SUBSCRIPTION_TERM = "end_of_subscription_term";
     public const IMMEDIATE = "immediate";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -124,8 +145,12 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOptionsR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fixedPriceQuantity") || $data->fixedPriceQuantity === null) { throw new SdkValidationError("fixedPriceQuantity", 'required', "Required property 'fixedPriceQuantity' is missing or null"); }
-        if (!property_exists($data, "replacesPriceId") || $data->replacesPriceId === null) { throw new SdkValidationError("replacesPriceId", 'required', "Required property 'replacesPriceId' is missing or null"); }
+        if (!property_exists($data, "fixedPriceQuantity") || $data->fixedPriceQuantity === null) {
+            throw new SdkValidationError("fixedPriceQuantity", 'required', "Required property 'fixedPriceQuantity' is missing or null");
+        }
+        if (!property_exists($data, "replacesPriceId") || $data->replacesPriceId === null) {
+            throw new SdkValidationError("replacesPriceId", 'required', "Required property 'replacesPriceId' is missing or null");
+        }
         return new self(
             fixedPriceQuantity: SdkClient::floatValue($data->fixedPriceQuantity),
             replacesPriceId: SdkClient::stringValue($data->replacesPriceId),
@@ -222,8 +247,12 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOptions 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "effectiveDate") || $data->effectiveDate === null) { throw new SdkValidationError("effectiveDate", 'required', "Required property 'effectiveDate' is missing or null"); }
-        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) { throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null"); }
+        if (!property_exists($data, "effectiveDate") || $data->effectiveDate === null) {
+            throw new SdkValidationError("effectiveDate", 'required', "Required property 'effectiveDate' is missing or null");
+        }
+        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) {
+            throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null");
+        }
         return new self(
             effectiveDate: ((is_array($data->effectiveDate) || is_object($data->effectiveDate)) ? SdkClient::stringMapValue($data->effectiveDate) : SdkClient::hydrateStringEnumOrString($data->effectiveDate, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOptionsEffectiveDateEnum::class)),
             orbSubscriptionId: SdkClient::stringValue($data->orbSubscriptionId),
@@ -270,7 +299,9 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOutput i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pendingSubscriptionChangeId") || $data->pendingSubscriptionChangeId === null) { throw new SdkValidationError("pendingSubscriptionChangeId", 'required', "Required property 'pendingSubscriptionChangeId' is missing or null"); }
+        if (!property_exists($data, "pendingSubscriptionChangeId") || $data->pendingSubscriptionChangeId === null) {
+            throw new SdkValidationError("pendingSubscriptionChangeId", 'required', "Required property 'pendingSubscriptionChangeId' is missing or null");
+        }
         return new self(
             pendingSubscriptionChangeId: SdkClient::stringValue($data->pendingSubscriptionChangeId),
         );
@@ -328,9 +359,15 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChange impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
-        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "options") || $data->options === null) {
+            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
+        }
+        if (!property_exists($data, "output") || $data->output === null) {
+            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOptions::class),
             output: SdkClient::hydrateClass($data->output, BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbPlanChangeOutput::class),

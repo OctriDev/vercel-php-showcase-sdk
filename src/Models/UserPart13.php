@@ -65,9 +65,15 @@ class UserEventEntitiesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "end") || $data->end === null) { throw new SdkValidationError("end", 'required', "Required property 'end' is missing or null"); }
-        if (!property_exists($data, "start") || $data->start === null) { throw new SdkValidationError("start", 'required', "Required property 'start' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "end") || $data->end === null) {
+            throw new SdkValidationError("end", 'required', "Required property 'end' is missing or null");
+        }
+        if (!property_exists($data, "start") || $data->start === null) {
+            throw new SdkValidationError("start", 'required', "Required property 'start' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             end: SdkClient::floatValue($data->end),
             start: SdkClient::floatValue($data->start),

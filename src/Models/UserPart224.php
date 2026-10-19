@@ -174,7 +174,9 @@ class UserEventPayloadVariant414 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "previousRole") || $data->previousRole === null) { throw new SdkValidationError("previousRole", 'required', "Required property 'previousRole' is missing or null"); }
+        if (!property_exists($data, "previousRole") || $data->previousRole === null) {
+            throw new SdkValidationError("previousRole", 'required', "Required property 'previousRole' is missing or null");
+        }
         return new self(
             previousRole: SdkClient::stringValue($data->previousRole),
             directoryType: (property_exists($data, "directoryType") && $data->directoryType !== null ? SdkClient::stringValue($data->directoryType) : SdkNotGiven::Value),
@@ -251,7 +253,9 @@ class UserEventPayloadVariant415 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "authorized") || $data->authorized === null) { throw new SdkValidationError("authorized", 'required', "Required property 'authorized' is missing or null"); }
+        if (!property_exists($data, "authorized") || $data->authorized === null) {
+            throw new SdkValidationError("authorized", 'required', "Required property 'authorized' is missing or null");
+        }
         return new self(
             authorized: SdkClient::boolValue($data->authorized),
             email: (property_exists($data, "email") && $data->email !== null ? SdkClient::stringValue($data->email) : SdkNotGiven::Value),
@@ -295,7 +299,9 @@ class UserEventPayloadVariant416 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enforced") || $data->enforced === null) { throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null"); }
+        if (!property_exists($data, "enforced") || $data->enforced === null) {
+            throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null");
+        }
         return new self(
             enforced: SdkClient::boolValue($data->enforced),
         );

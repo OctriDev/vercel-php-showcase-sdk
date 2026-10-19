@@ -12,11 +12,26 @@ final readonly class ListRepositoryTagsSortBy implements SdkOpenEnum
     public const UPDATEDAT = "updatedAt";
     public const TAG = "tag";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListRepositoryTagsSortOrder implements SdkOpenEnum
@@ -24,11 +39,26 @@ final readonly class ListRepositoryTagsSortOrder implements SdkOpenEnum
     public const ASC = "asc";
     public const DESC = "desc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateRepositoryResponse implements \JsonSerializable
@@ -66,7 +96,9 @@ class CreateRepositoryResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "repository") || $data->repository === null) { throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null"); }
+        if (!property_exists($data, "repository") || $data->repository === null) {
+            throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null");
+        }
         return new self(
             repository: SdkClient::hydrateClass($data->repository, VcrRepository::class),
         );
@@ -108,7 +140,9 @@ class GetRepositoryResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "repository") || $data->repository === null) { throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null"); }
+        if (!property_exists($data, "repository") || $data->repository === null) {
+            throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null");
+        }
         return new self(
             repository: SdkClient::hydrateClass($data->repository, VcrRepository::class),
         );
@@ -150,7 +184,9 @@ class AddRepositoryPermissionResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "permission") || $data->permission === null) { throw new SdkValidationError("permission", 'required', "Required property 'permission' is missing or null"); }
+        if (!property_exists($data, "permission") || $data->permission === null) {
+            throw new SdkValidationError("permission", 'required', "Required property 'permission' is missing or null");
+        }
         return new self(
             permission: SdkClient::hydrateClass($data->permission, VcrRepositoryPermission::class),
         );
@@ -163,11 +199,26 @@ final readonly class ListRepositoryTagsResponseTagsItemKindEnum implements SdkOp
     public const INDEX = "index";
     public const MANIFEST = "manifest";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListRepositoryTagsResponseTagsItemStatusEnum implements SdkOpenEnum
@@ -177,11 +228,26 @@ final readonly class ListRepositoryTagsResponseTagsItemStatusEnum implements Sdk
     public const READY = "ready";
     public const UNOPTIMIZED = "unoptimized";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListRepositoryTagsResponseTagsItem implements \JsonSerializable
@@ -281,14 +347,30 @@ class ListRepositoryTagsResponseTagsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "imageId") || $data->imageId === null) { throw new SdkValidationError("imageId", 'required', "Required property 'imageId' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "manifestDigest") || $data->manifestDigest === null) { throw new SdkValidationError("manifestDigest", 'required', "Required property 'manifestDigest' is missing or null"); }
-        if (!property_exists($data, "sizeInBytes") || $data->sizeInBytes === null) { throw new SdkValidationError("sizeInBytes", 'required', "Required property 'sizeInBytes' is missing or null"); }
-        if (!property_exists($data, "status")) { throw new SdkValidationError("status", 'required', "Missing required property 'status'"); }
-        if (!property_exists($data, "tag") || $data->tag === null) { throw new SdkValidationError("tag", 'required', "Required property 'tag' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "imageId") || $data->imageId === null) {
+            throw new SdkValidationError("imageId", 'required', "Required property 'imageId' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "manifestDigest") || $data->manifestDigest === null) {
+            throw new SdkValidationError("manifestDigest", 'required', "Required property 'manifestDigest' is missing or null");
+        }
+        if (!property_exists($data, "sizeInBytes") || $data->sizeInBytes === null) {
+            throw new SdkValidationError("sizeInBytes", 'required', "Required property 'sizeInBytes' is missing or null");
+        }
+        if (!property_exists($data, "status")) {
+            throw new SdkValidationError("status", 'required', "Missing required property 'status'");
+        }
+        if (!property_exists($data, "tag") || $data->tag === null) {
+            throw new SdkValidationError("tag", 'required', "Required property 'tag' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::stringValue($data->createdAt),
             imageId: SdkClient::stringValue($data->imageId),

@@ -93,7 +93,9 @@ class UserEventPayloadVariant352ProjectWebAnalytics implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             canceledAt: (property_exists($data, "canceledAt") && $data->canceledAt !== null ? SdkClient::floatValue($data->canceledAt) : SdkNotGiven::Value),
@@ -173,8 +175,12 @@ class UserEventPayloadVariant352 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -239,9 +245,15 @@ class UserEventPayloadVariant353 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) { throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null"); }
-        if (!property_exists($data, "gitProviderGroupDescriptor") || $data->gitProviderGroupDescriptor === null) { throw new SdkValidationError("gitProviderGroupDescriptor", 'required', "Required property 'gitProviderGroupDescriptor' is missing or null"); }
-        if (!property_exists($data, "gitScope") || $data->gitScope === null) { throw new SdkValidationError("gitScope", 'required', "Required property 'gitScope' is missing or null"); }
+        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) {
+            throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null");
+        }
+        if (!property_exists($data, "gitProviderGroupDescriptor") || $data->gitProviderGroupDescriptor === null) {
+            throw new SdkValidationError("gitProviderGroupDescriptor", 'required', "Required property 'gitProviderGroupDescriptor' is missing or null");
+        }
+        if (!property_exists($data, "gitScope") || $data->gitScope === null) {
+            throw new SdkValidationError("gitScope", 'required', "Required property 'gitScope' is missing or null");
+        }
         return new self(
             gitProvider: SdkClient::stringValue($data->gitProvider),
             gitProviderGroupDescriptor: SdkClient::stringValue($data->gitProviderGroupDescriptor),
@@ -295,8 +307,12 @@ class UserEventPayloadVariant354 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectionId") || $data->connectionId === null) { throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null"); }
-        if (!property_exists($data, "connectionType") || $data->connectionType === null) { throw new SdkValidationError("connectionType", 'required', "Required property 'connectionType' is missing or null"); }
+        if (!property_exists($data, "connectionId") || $data->connectionId === null) {
+            throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null");
+        }
+        if (!property_exists($data, "connectionType") || $data->connectionType === null) {
+            throw new SdkValidationError("connectionType", 'required', "Required property 'connectionType' is missing or null");
+        }
         return new self(
             connectionId: SdkClient::stringValue($data->connectionId),
             connectionType: SdkClient::stringValue($data->connectionType),
@@ -311,9 +327,24 @@ final readonly class UserEventPayloadVariant355ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

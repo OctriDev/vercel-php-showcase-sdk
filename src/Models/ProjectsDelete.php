@@ -59,7 +59,9 @@ class DeleteProjectAvatarResponseCreatorVariant0ViaAppApp implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             clientId: (property_exists($data, "clientId") && $data->clientId !== null ? SdkClient::stringValue($data->clientId) : SdkNotGiven::Value),
@@ -112,8 +114,12 @@ class DeleteProjectAvatarResponseCreatorVariant0ViaApp implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "app") || $data->app === null) { throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "app") || $data->app === null) {
+            throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             app: SdkClient::hydrateClass($data->app, DeleteProjectAvatarResponseCreatorVariant0ViaAppApp::class),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseCreatorVariant0ViaAppTypeEnum::class),
@@ -158,8 +164,12 @@ class DeleteProjectAvatarResponseCreatorVariant0ViaIntegrationIntegration implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
+            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -212,8 +222,12 @@ class DeleteProjectAvatarResponseCreatorVariant0ViaIntegration implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "integration") || $data->integration === null) {
+            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             integration: SdkClient::hydrateClass($data->integration, DeleteProjectAvatarResponseCreatorVariant0ViaIntegrationIntegration::class),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseCreatorVariant0ViaIntegrationTypeEnum::class),
@@ -252,7 +266,9 @@ class DeleteProjectAvatarResponseCreatorVariant0User implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
         );
@@ -302,9 +318,15 @@ class DeleteProjectAvatarResponseCreatorVariant0 implements DeleteProjectAvatarR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "via")) { throw new SdkValidationError("via", 'required', "Missing required property 'via'"); }
-        if (!property_exists($data, "user") || $data->user === null) { throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "via")) {
+            throw new SdkValidationError("via", 'required', "Missing required property 'via'");
+        }
+        if (!property_exists($data, "user") || $data->user === null) {
+            throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseCreatorVariant0TypeEnum::class),
             via: ($data->via === null ? null : SdkClient::hydrateUnion($data->via, [DeleteProjectAvatarResponseCreatorVariant0ViaApp::class, DeleteProjectAvatarResponseCreatorVariant0ViaIntegration::class], null, [])),

@@ -52,8 +52,12 @@ class UserEventPayloadVariant488 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             projectId: SdkClient::stringValue($data->projectId),
@@ -109,8 +113,12 @@ class UserEventPayloadVariant489PolicyClaimsItemValuesItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
-        if (!property_exists($data, "wildcards") || $data->wildcards === null) { throw new SdkValidationError("wildcards", 'required', "Required property 'wildcards' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
+        if (!property_exists($data, "wildcards") || $data->wildcards === null) {
+            throw new SdkValidationError("wildcards", 'required', "Required property 'wildcards' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             wildcards: SdkClient::boolValue($data->wildcards),
@@ -166,8 +174,12 @@ class UserEventPayloadVariant489PolicyClaimsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "values") || $data->values === null) { throw new SdkValidationError("values", 'required', "Required property 'values' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "values") || $data->values === null) {
+            throw new SdkValidationError("values", 'required', "Required property 'values' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             values: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant489PolicyClaimsItemValuesItem::class), SdkClient::arrayValue($data->values))),
@@ -213,7 +225,9 @@ class UserEventPayloadVariant489PolicyResources implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectIds") || $data->projectIds === null) { throw new SdkValidationError("projectIds", 'required', "Required property 'projectIds' is missing or null"); }
+        if (!property_exists($data, "projectIds") || $data->projectIds === null) {
+            throw new SdkValidationError("projectIds", 'required', "Required property 'projectIds' is missing or null");
+        }
         return new self(
             projectIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->projectIds))),
         );

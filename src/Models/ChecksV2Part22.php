@@ -53,9 +53,15 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceApi implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "selection") || $data->selection === null) { throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null"); }
-        if (!property_exists($data, "subKind") || $data->subKind === null) { throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "selection") || $data->selection === null) {
+            throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null");
+        }
+        if (!property_exists($data, "subKind") || $data->subKind === null) {
+            throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null");
+        }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiOriginEnum::class),
             selection: SdkClient::hydrateUnion($data->selection, [ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionInvocation::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionDeployment::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionJob::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepo::class], null, []),
@@ -265,16 +271,36 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0 implements ListDeploymentC
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "timeout") || $data->timeout === null) { throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "checkId") || $data->checkId === null) { throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "timeout") || $data->timeout === null) {
+            throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "checkId") || $data->checkId === null) {
+            throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             deploymentId: SdkClient::stringValue($data->deploymentId),
@@ -312,11 +338,26 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1BlocksEnum i
     public const DEPLOYMENT_START = "deployment-start";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1ConclusionEnum implements SdkOpenEnum
@@ -328,9 +369,24 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant1ConclusionEn
     public const SUCCEEDED = "succeeded";
     public const TIMEOUT = "timeout";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

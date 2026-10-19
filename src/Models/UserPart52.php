@@ -72,10 +72,18 @@ class UserEventPayloadVariant93 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "documentId") || $data->documentId === null) { throw new SdkValidationError("documentId", 'required', "Required property 'documentId' is missing or null"); }
-        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) { throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
+        if (!property_exists($data, "documentId") || $data->documentId === null) {
+            throw new SdkValidationError("documentId", 'required', "Required property 'documentId' is missing or null");
+        }
+        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) {
+            throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "title") || $data->title === null) {
+            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
+        }
         return new self(
             documentId: SdkClient::stringValue($data->documentId),
             fingerprint: SdkClient::stringValue($data->fingerprint),
@@ -153,10 +161,18 @@ class UserEventPayloadVariant94DocumentsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "documentId") || $data->documentId === null) { throw new SdkValidationError("documentId", 'required', "Required property 'documentId' is missing or null"); }
-        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) { throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
+        if (!property_exists($data, "documentId") || $data->documentId === null) {
+            throw new SdkValidationError("documentId", 'required', "Required property 'documentId' is missing or null");
+        }
+        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) {
+            throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "title") || $data->title === null) {
+            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
+        }
         return new self(
             documentId: SdkClient::stringValue($data->documentId),
             fingerprint: SdkClient::stringValue($data->fingerprint),
@@ -211,8 +227,12 @@ class UserEventPayloadVariant94 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "documents") || $data->documents === null) { throw new SdkValidationError("documents", 'required', "Required property 'documents' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "documents") || $data->documents === null) {
+            throw new SdkValidationError("documents", 'required', "Required property 'documents' is missing or null");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             documents: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant94DocumentsItem::class), SdkClient::arrayValue($data->documents))),
@@ -268,8 +288,12 @@ class UserEventPayloadVariant95Configuration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -312,7 +336,9 @@ class UserEventPayloadVariant95 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
+        if (!property_exists($data, "configuration") || $data->configuration === null) {
+            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
+        }
         return new self(
             configuration: SdkClient::hydrateClass($data->configuration, UserEventPayloadVariant95Configuration::class),
         );

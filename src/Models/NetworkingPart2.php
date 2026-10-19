@@ -199,14 +199,30 @@ class Network implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "awsAccountId") || $data->awsAccountId === null) { throw new SdkValidationError("awsAccountId", 'required', "Required property 'awsAccountId' is missing or null"); }
-        if (!property_exists($data, "awsRegion") || $data->awsRegion === null) { throw new SdkValidationError("awsRegion", 'required', "Required property 'awsRegion' is missing or null"); }
-        if (!property_exists($data, "cidr") || $data->cidr === null) { throw new SdkValidationError("cidr", 'required', "Required property 'cidr' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "awsAccountId") || $data->awsAccountId === null) {
+            throw new SdkValidationError("awsAccountId", 'required', "Required property 'awsAccountId' is missing or null");
+        }
+        if (!property_exists($data, "awsRegion") || $data->awsRegion === null) {
+            throw new SdkValidationError("awsRegion", 'required', "Required property 'awsRegion' is missing or null");
+        }
+        if (!property_exists($data, "cidr") || $data->cidr === null) {
+            throw new SdkValidationError("cidr", 'required', "Required property 'cidr' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
         return new self(
             awsAccountId: SdkClient::stringValue($data->awsAccountId),
             awsRegion: SdkClient::stringValue($data->awsRegion),
@@ -240,9 +256,24 @@ final readonly class PrivateLinkEndpointStatusEnum implements SdkOpenEnum
     public const PROVISIONING = "provisioning";
     public const REJECTED = "rejected";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

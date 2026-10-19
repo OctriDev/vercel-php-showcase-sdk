@@ -62,11 +62,21 @@ class ExchangeSsoTokenResponseVariant1 implements ExchangeSsoTokenResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access_token") || $data->access_token === null) { throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null"); }
-        if (!property_exists($data, "expires_in") || $data->expires_in === null) { throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null"); }
-        if (!property_exists($data, "id_token") || $data->id_token === null) { throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null"); }
-        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) { throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null"); }
-        if (!property_exists($data, "token_type") || $data->token_type === null) { throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null"); }
+        if (!property_exists($data, "access_token") || $data->access_token === null) {
+            throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null");
+        }
+        if (!property_exists($data, "expires_in") || $data->expires_in === null) {
+            throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null");
+        }
+        if (!property_exists($data, "id_token") || $data->id_token === null) {
+            throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null");
+        }
+        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) {
+            throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null");
+        }
+        if (!property_exists($data, "token_type") || $data->token_type === null) {
+            throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null");
+        }
         return new self(
             accessToken: SdkClient::stringValue($data->access_token),
             expiresIn: SdkClient::floatValue($data->expires_in),
@@ -120,9 +130,15 @@ class ListAuthTokensResponseVariant0Pagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
-        if (!property_exists($data, "prev")) { throw new SdkValidationError("prev", 'required', "Missing required property 'prev'"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
+        if (!property_exists($data, "prev")) {
+            throw new SdkValidationError("prev", 'required', "Missing required property 'prev'");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
@@ -168,8 +184,12 @@ class ListAuthTokensResponseVariant0 implements ListAuthTokensResponse, \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
-        if (!property_exists($data, "tokens") || $data->tokens === null) { throw new SdkValidationError("tokens", 'required', "Required property 'tokens' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
+        if (!property_exists($data, "tokens") || $data->tokens === null) {
+            throw new SdkValidationError("tokens", 'required', "Required property 'tokens' is missing or null");
+        }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ListAuthTokensResponseVariant0Pagination::class),
             tokens: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AuthToken::class), SdkClient::arrayValue($data->tokens))),
@@ -218,8 +238,12 @@ class ListAuthTokensResponseVariant1 implements ListAuthTokensResponse, \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
-        if (!property_exists($data, "tokens") || $data->tokens === null) { throw new SdkValidationError("tokens", 'required', "Required property 'tokens' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
+        if (!property_exists($data, "tokens") || $data->tokens === null) {
+            throw new SdkValidationError("tokens", 'required', "Required property 'tokens' is missing or null");
+        }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),
             tokens: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AuthToken::class), SdkClient::arrayValue($data->tokens))),

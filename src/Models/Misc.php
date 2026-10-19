@@ -75,10 +75,18 @@ class RateLimitNotice implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "remaining") || $data->remaining === null) { throw new SdkValidationError("remaining", 'required', "Required property 'remaining' is missing or null"); }
-        if (!property_exists($data, "reset") || $data->reset === null) { throw new SdkValidationError("reset", 'required', "Required property 'reset' is missing or null"); }
-        if (!property_exists($data, "resetMs") || $data->resetMs === null) { throw new SdkValidationError("resetMs", 'required', "Required property 'resetMs' is missing or null"); }
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
+        if (!property_exists($data, "remaining") || $data->remaining === null) {
+            throw new SdkValidationError("remaining", 'required', "Required property 'remaining' is missing or null");
+        }
+        if (!property_exists($data, "reset") || $data->reset === null) {
+            throw new SdkValidationError("reset", 'required', "Required property 'reset' is missing or null");
+        }
+        if (!property_exists($data, "resetMs") || $data->resetMs === null) {
+            throw new SdkValidationError("resetMs", 'required', "Required property 'resetMs' is missing or null");
+        }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
         return new self(
             remaining: SdkClient::intValue($data->remaining),
             reset: SdkClient::intValue($data->reset),
@@ -119,7 +127,9 @@ class RegistrantFieldVariant0RequiredWhenVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value_in") || $data->value_in === null) { throw new SdkValidationError("value_in", 'required', "Required property 'value_in' is missing or null"); }
+        if (!property_exists($data, "value_in") || $data->value_in === null) {
+            throw new SdkValidationError("value_in", 'required', "Required property 'value_in' is missing or null");
+        }
         return new self(
             valueIn: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->value_in))),
         );
@@ -176,8 +186,12 @@ class RegistrantFieldVariant0OptionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             label: SdkClient::stringValue($data->label),
@@ -269,9 +283,15 @@ class RegistrantFieldVariant0 implements RegistrantField, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
-        if (!property_exists($data, "required") || $data->required === null) { throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) {
+            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
+        }
+        if (!property_exists($data, "required") || $data->required === null) {
+            throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             description: SdkClient::stringValue($data->description),
             required: SdkClient::boolValue($data->required),
@@ -316,7 +336,9 @@ class RegistrantFieldVariant1RequiredWhenVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value_in") || $data->value_in === null) { throw new SdkValidationError("value_in", 'required', "Required property 'value_in' is missing or null"); }
+        if (!property_exists($data, "value_in") || $data->value_in === null) {
+            throw new SdkValidationError("value_in", 'required', "Required property 'value_in' is missing or null");
+        }
         return new self(
             valueIn: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->value_in))),
         );

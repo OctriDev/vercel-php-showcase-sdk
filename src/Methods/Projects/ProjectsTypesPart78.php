@@ -154,7 +154,9 @@ class ListProjectsResponseVariant2ProjectsItemDefaultResourceConfig implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) { throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null"); }
+        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) {
+            throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null");
+        }
         return new self(
             functionDefaultRegions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions))),
             buildMachineElasticLastUpdated: (property_exists($data, "buildMachineElasticLastUpdated") && $data->buildMachineElasticLastUpdated !== null ? SdkClient::floatValue($data->buildMachineElasticLastUpdated) : SdkNotGiven::Value),
@@ -278,11 +280,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDep
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDeploymentSourcesItemEnvironmentsItemSystemTypeEnum: string implements SdkWireEnum
@@ -327,8 +344,12 @@ class ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDeploymentSourcesI
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "target") || $data->target === null) {
+            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             target: SdkClient::hydrateStringEnumOrString($data->target, ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDeploymentSourcesItemEnvironmentsItemSystemTargetEnum::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemDeploymentPolicyDeploymentSourcesItemEnvironmentsItemSystemTypeEnum::class),

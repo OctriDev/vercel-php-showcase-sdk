@@ -65,9 +65,15 @@ class UserEventPayloadVariant29Credential implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "providerSlug") || $data->providerSlug === null) { throw new SdkValidationError("providerSlug", 'required', "Required property 'providerSlug' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "providerSlug") || $data->providerSlug === null) {
+            throw new SdkValidationError("providerSlug", 'required', "Required property 'providerSlug' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -141,10 +147,18 @@ class UserEventPayloadVariant29 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "added") || $data->added === null) { throw new SdkValidationError("added", 'required', "Required property 'added' is missing or null"); }
-        if (!property_exists($data, "changed") || $data->changed === null) { throw new SdkValidationError("changed", 'required', "Required property 'changed' is missing or null"); }
-        if (!property_exists($data, "credential") || $data->credential === null) { throw new SdkValidationError("credential", 'required', "Required property 'credential' is missing or null"); }
-        if (!property_exists($data, "removed") || $data->removed === null) { throw new SdkValidationError("removed", 'required', "Required property 'removed' is missing or null"); }
+        if (!property_exists($data, "added") || $data->added === null) {
+            throw new SdkValidationError("added", 'required', "Required property 'added' is missing or null");
+        }
+        if (!property_exists($data, "changed") || $data->changed === null) {
+            throw new SdkValidationError("changed", 'required', "Required property 'changed' is missing or null");
+        }
+        if (!property_exists($data, "credential") || $data->credential === null) {
+            throw new SdkValidationError("credential", 'required', "Required property 'credential' is missing or null");
+        }
+        if (!property_exists($data, "removed") || $data->removed === null) {
+            throw new SdkValidationError("removed", 'required', "Required property 'removed' is missing or null");
+        }
         return new self(
             added: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->added))),
             changed: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->changed))),
@@ -189,7 +203,9 @@ class UserEventPayloadVariant30 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
         );
@@ -241,8 +257,12 @@ class UserEventPayloadVariant31 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
-        if (!property_exists($data, "purchaseIntentId") || $data->purchaseIntentId === null) { throw new SdkValidationError("purchaseIntentId", 'required', "Required property 'purchaseIntentId' is missing or null"); }
+        if (!property_exists($data, "amount") || $data->amount === null) {
+            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
+        }
+        if (!property_exists($data, "purchaseIntentId") || $data->purchaseIntentId === null) {
+            throw new SdkValidationError("purchaseIntentId", 'required', "Required property 'purchaseIntentId' is missing or null");
+        }
         return new self(
             amount: SdkClient::stringValue($data->amount),
             purchaseIntentId: SdkClient::stringValue($data->purchaseIntentId),
@@ -295,8 +315,12 @@ class UserEventPayloadVariant32 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "added") || $data->added === null) { throw new SdkValidationError("added", 'required', "Required property 'added' is missing or null"); }
-        if (!property_exists($data, "removed") || $data->removed === null) { throw new SdkValidationError("removed", 'required', "Required property 'removed' is missing or null"); }
+        if (!property_exists($data, "added") || $data->added === null) {
+            throw new SdkValidationError("added", 'required', "Required property 'added' is missing or null");
+        }
+        if (!property_exists($data, "removed") || $data->removed === null) {
+            throw new SdkValidationError("removed", 'required', "Required property 'removed' is missing or null");
+        }
         return new self(
             added: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->added))),
             removed: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->removed))),

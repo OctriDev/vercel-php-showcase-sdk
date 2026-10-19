@@ -64,8 +64,12 @@ class UserEventPayloadVariant269 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -129,9 +133,15 @@ class UserEventPayloadVariant270 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enableAffectedProjectsDeployments") || $data->enableAffectedProjectsDeployments === null) { throw new SdkValidationError("enableAffectedProjectsDeployments", 'required', "Required property 'enableAffectedProjectsDeployments' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "enableAffectedProjectsDeployments") || $data->enableAffectedProjectsDeployments === null) {
+            throw new SdkValidationError("enableAffectedProjectsDeployments", 'required', "Required property 'enableAffectedProjectsDeployments' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             enableAffectedProjectsDeployments: SdkClient::boolValue($data->enableAffectedProjectsDeployments),
             projectId: SdkClient::stringValue($data->projectId),
@@ -195,9 +205,15 @@ class UserEventPayloadVariant271 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enableExternalRewriteCaching") || $data->enableExternalRewriteCaching === null) { throw new SdkValidationError("enableExternalRewriteCaching", 'required', "Required property 'enableExternalRewriteCaching' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "enableExternalRewriteCaching") || $data->enableExternalRewriteCaching === null) {
+            throw new SdkValidationError("enableExternalRewriteCaching", 'required', "Required property 'enableExternalRewriteCaching' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             enableExternalRewriteCaching: SdkClient::boolValue($data->enableExternalRewriteCaching),
             projectId: SdkClient::stringValue($data->projectId),
@@ -271,10 +287,18 @@ class UserEventPayloadVariant272 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "previous") || $data->previous === null) {
+            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             next: SdkClient::stringMapValue($data->next),
             previous: SdkClient::stringMapValue($data->previous),
@@ -339,9 +363,15 @@ class UserEventPayloadVariant273 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "productionDeploymentsFastLane") || $data->productionDeploymentsFastLane === null) { throw new SdkValidationError("productionDeploymentsFastLane", 'required', "Required property 'productionDeploymentsFastLane' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "productionDeploymentsFastLane") || $data->productionDeploymentsFastLane === null) {
+            throw new SdkValidationError("productionDeploymentsFastLane", 'required', "Required property 'productionDeploymentsFastLane' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             productionDeploymentsFastLane: SdkClient::boolValue($data->productionDeploymentsFastLane),
             projectId: SdkClient::stringValue($data->projectId),

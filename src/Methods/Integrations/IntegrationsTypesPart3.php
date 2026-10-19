@@ -44,8 +44,12 @@ class SearchRepoResponseVariant3GitAccount implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "namespaceId")) { throw new SdkValidationError("namespaceId", 'required', "Missing required property 'namespaceId'"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "namespaceId")) {
+            throw new SdkValidationError("namespaceId", 'required', "Missing required property 'namespaceId'");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             namespaceId: ($data->namespaceId === null ? null : (is_float($data->namespaceId) || is_int($data->namespaceId) ? SdkClient::floatValue($data->namespaceId) : SdkClient::stringValue($data->namespaceId))),
             provider: SdkClient::hydrateStringEnumOrString($data->provider, SearchRepoResponseVariant3GitAccountProviderEnum::class),
@@ -90,8 +94,12 @@ class SearchRepoResponseVariant3ReposItemOwner implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: (is_float($data->id) || is_int($data->id) ? SdkClient::floatValue($data->id) : SdkClient::stringValue($data->id)),
             name: SdkClient::stringValue($data->name),
@@ -104,11 +112,26 @@ final readonly class SearchRepoResponseVariant3ReposItemOwnerTypeEnum implements
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class SearchRepoResponseVariant3ReposItemProviderEnum implements SdkOpenEnum
@@ -121,11 +144,26 @@ final readonly class SearchRepoResponseVariant3ReposItemProviderEnum implements 
     public const GITLAB = "gitlab";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class SearchRepoResponseVariant3ReposItem implements \JsonSerializable
@@ -219,17 +257,39 @@ class SearchRepoResponseVariant3ReposItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) { throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "namespace") || $data->namespace === null) { throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null"); }
-        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
-        if (!property_exists($data, "ownerType") || $data->ownerType === null) { throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null"); }
-        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) {
+            throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "namespace") || $data->namespace === null) {
+            throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null");
+        }
+        if (!property_exists($data, "owner") || $data->owner === null) {
+            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
+        }
+        if (!property_exists($data, "ownerType") || $data->ownerType === null) {
+            throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null");
+        }
+        if (!property_exists($data, "private") || $data->private === null) {
+            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             defaultBranch: SdkClient::stringValue($data->defaultBranch),
             id: (is_float($data->id) || is_int($data->id) ? SdkClient::floatValue($data->id) : SdkClient::stringValue($data->id)),
@@ -283,8 +343,12 @@ class SearchRepoResponseVariant3 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitAccount") || $data->gitAccount === null) { throw new SdkValidationError("gitAccount", 'required', "Required property 'gitAccount' is missing or null"); }
-        if (!property_exists($data, "repos") || $data->repos === null) { throw new SdkValidationError("repos", 'required', "Required property 'repos' is missing or null"); }
+        if (!property_exists($data, "gitAccount") || $data->gitAccount === null) {
+            throw new SdkValidationError("gitAccount", 'required', "Required property 'gitAccount' is missing or null");
+        }
+        if (!property_exists($data, "repos") || $data->repos === null) {
+            throw new SdkValidationError("repos", 'required', "Required property 'repos' is missing or null");
+        }
         return new self(
             gitAccount: SdkClient::hydrateClass($data->gitAccount, SearchRepoResponseVariant3GitAccount::class),
             repos: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SearchRepoResponseVariant3ReposItem::class), SdkClient::arrayValue($data->repos))),
@@ -331,7 +395,9 @@ class GetBillingPlansResponsePlansItemDetailsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
         return new self(
             label: SdkClient::stringValue($data->label),
             value: (property_exists($data, "value") && $data->value !== null ? SdkClient::stringValue($data->value) : SdkNotGiven::Value),

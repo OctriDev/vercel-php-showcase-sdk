@@ -54,7 +54,9 @@ class AiGatewayEvaluationFallbackConditionVariant0 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "confidenceBelow") || $data->confidenceBelow === null) { throw new SdkValidationError("confidenceBelow", 'required', "Required property 'confidenceBelow' is missing or null"); }
+        if (!property_exists($data, "confidenceBelow") || $data->confidenceBelow === null) {
+            throw new SdkValidationError("confidenceBelow", 'required', "Required property 'confidenceBelow' is missing or null");
+        }
         return new self(
             confidenceBelow: SdkClient::floatValue($data->confidenceBelow),
             question: (property_exists($data, "question") && $data->question !== null ? SdkClient::stringValue($data->question) : SdkNotGiven::Value),
@@ -109,7 +111,9 @@ class AiGatewayEvaluationFallbackConditionVariant1 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "probabilityBetween") || $data->probabilityBetween === null) { throw new SdkValidationError("probabilityBetween", 'required', "Required property 'probabilityBetween' is missing or null"); }
+        if (!property_exists($data, "probabilityBetween") || $data->probabilityBetween === null) {
+            throw new SdkValidationError("probabilityBetween", 'required', "Required property 'probabilityBetween' is missing or null");
+        }
         return new self(
             probabilityBetween: array_values(array_map(static fn($item) => SdkClient::floatValue($item), SdkClient::arrayValue($data->probabilityBetween))),
             question: (property_exists($data, "question") && $data->question !== null ? SdkClient::stringValue($data->question) : SdkNotGiven::Value),
@@ -152,7 +156,9 @@ class AiGatewayEvaluationFallbackConditionVariant2 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "any") || $data->any === null) { throw new SdkValidationError("any", 'required', "Required property 'any' is missing or null"); }
+        if (!property_exists($data, "any") || $data->any === null) {
+            throw new SdkValidationError("any", 'required', "Required property 'any' is missing or null");
+        }
         return new self(
             any: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, AiGatewayEvaluationFallbackCondition::class, [AiGatewayEvaluationFallbackConditionVariant0::class, AiGatewayEvaluationFallbackConditionVariant1::class, AiGatewayEvaluationFallbackConditionVariant2::class, AiGatewayEvaluationFallbackConditionVariant3::class, AiGatewayEvaluationFallbackConditionVariant4::class], null, []), SdkClient::arrayValue($data->any))),
         );
@@ -194,7 +200,9 @@ class AiGatewayEvaluationFallbackConditionVariant3 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "all") || $data->all === null) { throw new SdkValidationError("all", 'required', "Required property 'all' is missing or null"); }
+        if (!property_exists($data, "all") || $data->all === null) {
+            throw new SdkValidationError("all", 'required', "Required property 'all' is missing or null");
+        }
         return new self(
             all: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, AiGatewayEvaluationFallbackCondition::class, [AiGatewayEvaluationFallbackConditionVariant0::class, AiGatewayEvaluationFallbackConditionVariant1::class, AiGatewayEvaluationFallbackConditionVariant2::class, AiGatewayEvaluationFallbackConditionVariant3::class, AiGatewayEvaluationFallbackConditionVariant4::class], null, []), SdkClient::arrayValue($data->all))),
         );
@@ -249,8 +257,12 @@ class AiGatewayEvaluationFallbackConditionVariant4AtLeast implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "conditions") || $data->conditions === null) {
+            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
+        }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, AiGatewayEvaluationFallbackCondition::class, [AiGatewayEvaluationFallbackConditionVariant0::class, AiGatewayEvaluationFallbackConditionVariant1::class, AiGatewayEvaluationFallbackConditionVariant2::class, AiGatewayEvaluationFallbackConditionVariant3::class, AiGatewayEvaluationFallbackConditionVariant4::class], null, []), SdkClient::arrayValue($data->conditions))),
             count: SdkClient::floatValue($data->count),
@@ -293,7 +305,9 @@ class AiGatewayEvaluationFallbackConditionVariant4 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "atLeast") || $data->atLeast === null) { throw new SdkValidationError("atLeast", 'required', "Required property 'atLeast' is missing or null"); }
+        if (!property_exists($data, "atLeast") || $data->atLeast === null) {
+            throw new SdkValidationError("atLeast", 'required', "Required property 'atLeast' is missing or null");
+        }
         return new self(
             atLeast: SdkClient::hydrateClass($data->atLeast, AiGatewayEvaluationFallbackConditionVariant4AtLeast::class),
         );
@@ -338,7 +352,9 @@ class AiGatewayRouterList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routers") || $data->routers === null) { throw new SdkValidationError("routers", 'required', "Required property 'routers' is missing or null"); }
+        if (!property_exists($data, "routers") || $data->routers === null) {
+            throw new SdkValidationError("routers", 'required', "Required property 'routers' is missing or null");
+        }
         return new self(
             routers: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayVirtualModelConfig::class), SdkClient::arrayValue($data->routers))),
         );

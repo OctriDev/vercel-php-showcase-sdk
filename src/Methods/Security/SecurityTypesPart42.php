@@ -55,8 +55,12 @@ class UpdateFirewallConfigBodyFirewallEnabled implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UpdateFirewallConfigBodyFirewallEnabledActionEnum::class),
             value: SdkClient::hydrateClass($data->value, UpdateFirewallConfigBodyFirewallEnabledValue::class),
@@ -69,11 +73,26 @@ final readonly class UpdateFirewallConfigBodyRulesInsertActionEnum implements Sd
 {
     public const RULES_INSERT = "rules.insert";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItemTypeEnum implements SdkOpenEnum
@@ -112,11 +131,26 @@ final readonly class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemC
     public const RULESET = "ruleset";
     public const RESPONSE_CODE = "response_code";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItemOpEnum implements SdkOpenEnum
@@ -137,11 +171,26 @@ final readonly class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemC
     public const LTE = "lte";
     public const LIST = "list";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItem implements \JsonSerializable
@@ -205,8 +254,12 @@ class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItem i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "op") || $data->op === null) {
+            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItemTypeEnum::class),
             op: SdkClient::hydrateStringEnumOrString($data->op, UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItemOpEnum::class),
@@ -248,7 +301,9 @@ class UpdateFirewallConfigBodyRulesInsertValueConditionGroupItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "conditions") || $data->conditions === null) {
+            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
+        }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateFirewallConfigBodyRulesInsertValueConditionGroupItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );
@@ -261,11 +316,26 @@ final readonly class UpdateFirewallConfigBodyRulesInsertValueActionMitigateActio
     public const CHALLENGE = "challenge";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateFirewallConfigBodyRulesInsertValueActionMitigate implements \JsonSerializable
@@ -299,7 +369,9 @@ class UpdateFirewallConfigBodyRulesInsertValueActionMitigate implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UpdateFirewallConfigBodyRulesInsertValueActionMitigateActionEnum::class),
         );

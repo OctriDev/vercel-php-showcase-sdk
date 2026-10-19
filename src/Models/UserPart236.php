@@ -55,8 +55,12 @@ class UserEventPayloadVariant461Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) { throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) {
+            throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             totpVerified: SdkClient::boolValue($data->totpVerified),
@@ -112,8 +116,12 @@ class UserEventPayloadVariant461Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) { throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) {
+            throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             totpVerified: SdkClient::boolValue($data->totpVerified),
@@ -166,8 +174,12 @@ class UserEventPayloadVariant461 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "previous") || $data->previous === null) {
+            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
+        }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant461Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant461Previous::class),
@@ -184,11 +196,26 @@ final readonly class UserEventPayloadVariant462DecisionBasisEnum implements SdkO
     public const NONE = "none";
     public const WORKSPACE_MX = "workspace-mx";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -201,11 +228,26 @@ final readonly class UserEventPayloadVariant462DecisionMxOutcomeEnum implements 
     public const NON_GOOGLE = "non-google";
     public const NOT_CHECKED = "not-checked";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -296,12 +338,24 @@ class UserEventPayloadVariant462Decision implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "authoritative") || $data->authoritative === null) { throw new SdkValidationError("authoritative", 'required', "Required property 'authoritative' is missing or null"); }
-        if (!property_exists($data, "basis") || $data->basis === null) { throw new SdkValidationError("basis", 'required', "Required property 'basis' is missing or null"); }
-        if (!property_exists($data, "emailDomain") || $data->emailDomain === null) { throw new SdkValidationError("emailDomain", 'required', "Required property 'emailDomain' is missing or null"); }
-        if (!property_exists($data, "emailVerified") || $data->emailVerified === null) { throw new SdkValidationError("emailVerified", 'required', "Required property 'emailVerified' is missing or null"); }
-        if (!property_exists($data, "hostedDomainMatch") || $data->hostedDomainMatch === null) { throw new SdkValidationError("hostedDomainMatch", 'required', "Required property 'hostedDomainMatch' is missing or null"); }
-        if (!property_exists($data, "mxOutcome") || $data->mxOutcome === null) { throw new SdkValidationError("mxOutcome", 'required', "Required property 'mxOutcome' is missing or null"); }
+        if (!property_exists($data, "authoritative") || $data->authoritative === null) {
+            throw new SdkValidationError("authoritative", 'required', "Required property 'authoritative' is missing or null");
+        }
+        if (!property_exists($data, "basis") || $data->basis === null) {
+            throw new SdkValidationError("basis", 'required', "Required property 'basis' is missing or null");
+        }
+        if (!property_exists($data, "emailDomain") || $data->emailDomain === null) {
+            throw new SdkValidationError("emailDomain", 'required', "Required property 'emailDomain' is missing or null");
+        }
+        if (!property_exists($data, "emailVerified") || $data->emailVerified === null) {
+            throw new SdkValidationError("emailVerified", 'required', "Required property 'emailVerified' is missing or null");
+        }
+        if (!property_exists($data, "hostedDomainMatch") || $data->hostedDomainMatch === null) {
+            throw new SdkValidationError("hostedDomainMatch", 'required', "Required property 'hostedDomainMatch' is missing or null");
+        }
+        if (!property_exists($data, "mxOutcome") || $data->mxOutcome === null) {
+            throw new SdkValidationError("mxOutcome", 'required', "Required property 'mxOutcome' is missing or null");
+        }
         return new self(
             authoritative: SdkClient::boolValue($data->authoritative),
             basis: SdkClient::hydrateStringEnumOrString($data->basis, UserEventPayloadVariant462DecisionBasisEnum::class),
@@ -321,11 +375,26 @@ final readonly class UserEventPayloadVariant462OutcomeEnum implements SdkOpenEnu
     public const ACCOUNT_MATCHED = "account-matched";
     public const LINKING_REQUIRED = "linking-required";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -335,9 +404,24 @@ final readonly class UserEventPayloadVariant462ProviderEnum implements SdkOpenEn
 {
     public const GOOGLE = "google";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

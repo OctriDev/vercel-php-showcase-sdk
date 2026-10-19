@@ -62,9 +62,15 @@ class UserEventPayloadVariant479 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
-        if (!property_exists($data, "peering") || $data->peering === null) { throw new SdkValidationError("peering", 'required', "Required property 'peering' is missing or null"); }
-        if (!property_exists($data, "team") || $data->team === null) { throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null"); }
+        if (!property_exists($data, "configuration") || $data->configuration === null) {
+            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
+        }
+        if (!property_exists($data, "peering") || $data->peering === null) {
+            throw new SdkValidationError("peering", 'required', "Required property 'peering' is missing or null");
+        }
+        if (!property_exists($data, "team") || $data->team === null) {
+            throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null");
+        }
         return new self(
             configuration: SdkClient::hydrateClass($data->configuration, UserEventPayloadVariant479Configuration::class),
             peering: SdkClient::hydrateClass($data->peering, UserEventPayloadVariant479Peering::class),
@@ -123,7 +129,9 @@ class UserEventPayloadVariant480Configuration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -181,7 +189,9 @@ class UserEventPayloadVariant480Peering implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -237,8 +247,12 @@ class UserEventPayloadVariant480Team implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -313,9 +327,15 @@ class UserEventPayloadVariant480 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
-        if (!property_exists($data, "peering") || $data->peering === null) { throw new SdkValidationError("peering", 'required', "Required property 'peering' is missing or null"); }
-        if (!property_exists($data, "team") || $data->team === null) { throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null"); }
+        if (!property_exists($data, "configuration") || $data->configuration === null) {
+            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
+        }
+        if (!property_exists($data, "peering") || $data->peering === null) {
+            throw new SdkValidationError("peering", 'required', "Required property 'peering' is missing or null");
+        }
+        if (!property_exists($data, "team") || $data->team === null) {
+            throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null");
+        }
         return new self(
             configuration: SdkClient::hydrateClass($data->configuration, UserEventPayloadVariant480Configuration::class),
             peering: SdkClient::hydrateClass($data->peering, UserEventPayloadVariant480Peering::class),
@@ -333,9 +353,24 @@ final readonly class UserEventPayloadVariant481TierEnum implements SdkOpenEnum
     public const PLUS = "plus";
     public const PRO = "pro";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

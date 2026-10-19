@@ -88,8 +88,12 @@ class AuthTokenScopesItemVariant0 implements AuthTokenScopesItem, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             type: SdkClient::hydrateEnum($data->type, AuthTokenScopesItemVariant0TypeEnum::class),
@@ -123,11 +127,26 @@ final readonly class AuthTokenScopesItemVariant1OriginEnum implements SdkOpenEnu
     public const SMS = "sms";
     public const TOKEN_EXCHANGE_OIDC = "token-exchange-oidc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -217,9 +236,15 @@ class AuthTokenScopesItemVariant1 implements AuthTokenScopesItem, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             teamId: SdkClient::stringValue($data->teamId),
@@ -289,9 +314,15 @@ class ExchangeSsoTokenResponseVariant0 implements ExchangeSsoTokenResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access_token")) { throw new SdkValidationError("access_token", 'required', "Missing required property 'access_token'"); }
-        if (!property_exists($data, "id_token") || $data->id_token === null) { throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null"); }
-        if (!property_exists($data, "token_type")) { throw new SdkValidationError("token_type", 'required', "Missing required property 'token_type'"); }
+        if (!property_exists($data, "access_token")) {
+            throw new SdkValidationError("access_token", 'required', "Missing required property 'access_token'");
+        }
+        if (!property_exists($data, "id_token") || $data->id_token === null) {
+            throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null");
+        }
+        if (!property_exists($data, "token_type")) {
+            throw new SdkValidationError("token_type", 'required', "Missing required property 'token_type'");
+        }
         return new self(
             accessToken: ($data->access_token === null ? null : SdkClient::stringValue($data->access_token)),
             idToken: SdkClient::stringValue($data->id_token),

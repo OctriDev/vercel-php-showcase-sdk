@@ -72,10 +72,18 @@ class UserEventPayloadVariant72 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
-        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) { throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null"); }
-        if (!property_exists($data, "lineItemCount") || $data->lineItemCount === null) { throw new SdkValidationError("lineItemCount", 'required', "Required property 'lineItemCount' is missing or null"); }
-        if (!property_exists($data, "refundReason") || $data->refundReason === null) { throw new SdkValidationError("refundReason", 'required', "Required property 'refundReason' is missing or null"); }
+        if (!property_exists($data, "amount") || $data->amount === null) {
+            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
+        }
+        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) {
+            throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null");
+        }
+        if (!property_exists($data, "lineItemCount") || $data->lineItemCount === null) {
+            throw new SdkValidationError("lineItemCount", 'required', "Required property 'lineItemCount' is missing or null");
+        }
+        if (!property_exists($data, "refundReason") || $data->refundReason === null) {
+            throw new SdkValidationError("refundReason", 'required', "Required property 'refundReason' is missing or null");
+        }
         return new self(
             amount: SdkClient::floatValue($data->amount),
             invoiceId: SdkClient::stringValue($data->invoiceId),
@@ -95,11 +103,26 @@ final readonly class UserEventPayloadVariant73SettlementMethodEnum implements Sd
     public const REFUNDED_PAID = "refunded-paid";
     public const REFUNDED_PAYMENT_PENDING = "refunded-payment-pending";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant73 implements UserEventPayload, \JsonSerializable
@@ -167,10 +190,18 @@ class UserEventPayloadVariant73 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
-        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) { throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null"); }
-        if (!property_exists($data, "newInvoiceId") || $data->newInvoiceId === null) { throw new SdkValidationError("newInvoiceId", 'required', "Required property 'newInvoiceId' is missing or null"); }
-        if (!property_exists($data, "settlementMethod") || $data->settlementMethod === null) { throw new SdkValidationError("settlementMethod", 'required', "Required property 'settlementMethod' is missing or null"); }
+        if (!property_exists($data, "amount") || $data->amount === null) {
+            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
+        }
+        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) {
+            throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null");
+        }
+        if (!property_exists($data, "newInvoiceId") || $data->newInvoiceId === null) {
+            throw new SdkValidationError("newInvoiceId", 'required', "Required property 'newInvoiceId' is missing or null");
+        }
+        if (!property_exists($data, "settlementMethod") || $data->settlementMethod === null) {
+            throw new SdkValidationError("settlementMethod", 'required', "Required property 'settlementMethod' is missing or null");
+        }
         return new self(
             amount: SdkClient::floatValue($data->amount),
             invoiceId: SdkClient::stringValue($data->invoiceId),
@@ -215,7 +246,9 @@ class UserEventPayloadVariant74 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "subscriptionId") || $data->subscriptionId === null) { throw new SdkValidationError("subscriptionId", 'required', "Required property 'subscriptionId' is missing or null"); }
+        if (!property_exists($data, "subscriptionId") || $data->subscriptionId === null) {
+            throw new SdkValidationError("subscriptionId", 'required', "Required property 'subscriptionId' is missing or null");
+        }
         return new self(
             subscriptionId: SdkClient::stringValue($data->subscriptionId),
         );
@@ -267,8 +300,12 @@ class UserEventPayloadVariant75 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paymentMethodId") || $data->paymentMethodId === null) { throw new SdkValidationError("paymentMethodId", 'required', "Required property 'paymentMethodId' is missing or null"); }
-        if (!property_exists($data, "subscriptionId") || $data->subscriptionId === null) { throw new SdkValidationError("subscriptionId", 'required', "Required property 'subscriptionId' is missing or null"); }
+        if (!property_exists($data, "paymentMethodId") || $data->paymentMethodId === null) {
+            throw new SdkValidationError("paymentMethodId", 'required', "Required property 'paymentMethodId' is missing or null");
+        }
+        if (!property_exists($data, "subscriptionId") || $data->subscriptionId === null) {
+            throw new SdkValidationError("subscriptionId", 'required', "Required property 'subscriptionId' is missing or null");
+        }
         return new self(
             paymentMethodId: SdkClient::stringValue($data->paymentMethodId),
             subscriptionId: SdkClient::stringValue($data->subscriptionId),
@@ -335,7 +372,9 @@ class UserEventPayloadVariant76 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paymentMethodId") || $data->paymentMethodId === null) { throw new SdkValidationError("paymentMethodId", 'required', "Required property 'paymentMethodId' is missing or null"); }
+        if (!property_exists($data, "paymentMethodId") || $data->paymentMethodId === null) {
+            throw new SdkValidationError("paymentMethodId", 'required', "Required property 'paymentMethodId' is missing or null");
+        }
         return new self(
             paymentMethodId: SdkClient::stringValue($data->paymentMethodId),
             brand: (property_exists($data, "brand") && $data->brand !== null ? SdkClient::stringValue($data->brand) : SdkNotGiven::Value),

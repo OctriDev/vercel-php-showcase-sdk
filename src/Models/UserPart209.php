@@ -84,11 +84,26 @@ final readonly class UserEventPayloadVariant383StoreTypeEnum implements SdkOpenE
     public const POSTGRES = "postgres";
     public const REDIS = "redis";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant383 implements UserEventPayload, \JsonSerializable
@@ -126,7 +141,9 @@ class UserEventPayloadVariant383 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeType") || $data->storeType === null) { throw new SdkValidationError("storeType", 'required', "Required property 'storeType' is missing or null"); }
+        if (!property_exists($data, "storeType") || $data->storeType === null) {
+            throw new SdkValidationError("storeType", 'required', "Required property 'storeType' is missing or null");
+        }
         return new self(
             storeType: SdkClient::hydrateStringEnumOrString($data->storeType, UserEventPayloadVariant383StoreTypeEnum::class),
         );
@@ -144,11 +161,26 @@ final readonly class UserEventPayloadVariant384StoreTypeEnum implements SdkOpenE
     public const POSTGRES = "postgres";
     public const REDIS = "redis";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -211,8 +243,12 @@ class UserEventPayloadVariant384Store implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant384StoreTypeEnum::class),
@@ -256,7 +292,9 @@ class UserEventPayloadVariant384 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "store") || $data->store === null) { throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null"); }
+        if (!property_exists($data, "store") || $data->store === null) {
+            throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null");
+        }
         return new self(
             store: SdkClient::hydrateClass($data->store, UserEventPayloadVariant384Store::class),
         );
@@ -274,11 +312,26 @@ final readonly class UserEventPayloadVariant385StoreTypeEnum implements SdkOpenE
     public const POSTGRES = "postgres";
     public const REDIS = "redis";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -341,8 +394,12 @@ class UserEventPayloadVariant385Store implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant385StoreTypeEnum::class),

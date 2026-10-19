@@ -44,8 +44,12 @@ class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemHost i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemHostTypeEnum::class),
             value: (is_object($data->value) ? SdkClient::hydrateClass($data->value, CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemHostValueVariant1::class) : (is_string($data->value) ? SdkClient::stringValue($data->value) : SdkClient::hydrateClass($data->value, CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemHostValueVariant1::class))),
@@ -59,11 +63,26 @@ final readonly class CancelDeploymentResponseServicesItemVariant1RedirectsItemMi
     public const HEADER = "header";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemVariant1ValueVariant1 implements \JsonSerializable
@@ -240,8 +259,12 @@ class CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemVarian
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::hydrateStringEnumOrString($data->type, CancelDeploymentResponseServicesItemVariant1RedirectsItemMissingItemVariant1TypeEnum::class),
@@ -327,8 +350,12 @@ class CancelDeploymentResponseServicesItemVariant1RedirectsItem implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "destination") || $data->destination === null) { throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "destination") || $data->destination === null) {
+            throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
         return new self(
             destination: SdkClient::stringValue($data->destination),
             source: SdkClient::stringValue($data->source),

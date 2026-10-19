@@ -59,10 +59,18 @@ class ListProjectsDomainsResponseVariant0DomainsItemVerificationItem implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             reason: SdkClient::stringValue($data->reason),
@@ -185,10 +193,18 @@ class ListProjectsDomainsResponseVariant0DomainsItem implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apexName") || $data->apexName === null) { throw new SdkValidationError("apexName", 'required', "Required property 'apexName' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "verified") || $data->verified === null) { throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null"); }
+        if (!property_exists($data, "apexName") || $data->apexName === null) {
+            throw new SdkValidationError("apexName", 'required', "Required property 'apexName' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "verified") || $data->verified === null) {
+            throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null");
+        }
         return new self(
             apexName: SdkClient::stringValue($data->apexName),
             name: SdkClient::stringValue($data->name),
@@ -248,9 +264,15 @@ class ListProjectsDomainsResponseVariant0Pagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
-        if (!property_exists($data, "prev")) { throw new SdkValidationError("prev", 'required', "Missing required property 'prev'"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
+        if (!property_exists($data, "prev")) {
+            throw new SdkValidationError("prev", 'required', "Missing required property 'prev'");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::floatValue($data->next)),
@@ -296,8 +318,12 @@ class ListProjectsDomainsResponseVariant0 implements ListProjectsDomainsResponse
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domains") || $data->domains === null) { throw new SdkValidationError("domains", 'required', "Required property 'domains' is missing or null"); }
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "domains") || $data->domains === null) {
+            throw new SdkValidationError("domains", 'required', "Required property 'domains' is missing or null");
+        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
         return new self(
             domains: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsDomainsResponseVariant0DomainsItem::class), SdkClient::arrayValue($data->domains))),
             pagination: SdkClient::hydrateClass($data->pagination, ListProjectsDomainsResponseVariant0Pagination::class),

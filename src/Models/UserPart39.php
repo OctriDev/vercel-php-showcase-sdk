@@ -74,9 +74,15 @@ class UserEventPayloadVariant58 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "alias") || $data->alias === null) {
+            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant58ActionEnum::class),
             alias: SdkClient::stringValue($data->alias),
@@ -131,8 +137,12 @@ class UserEventPayloadVariant59 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
-        if (!property_exists($data, "deploymentUrl") || $data->deploymentUrl === null) { throw new SdkValidationError("deploymentUrl", 'required', "Required property 'deploymentUrl' is missing or null"); }
+        if (!property_exists($data, "alias") || $data->alias === null) {
+            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
+        }
+        if (!property_exists($data, "deploymentUrl") || $data->deploymentUrl === null) {
+            throw new SdkValidationError("deploymentUrl", 'required', "Required property 'deploymentUrl' is missing or null");
+        }
         return new self(
             alias: SdkClient::stringValue($data->alias),
             deploymentUrl: SdkClient::stringValue($data->deploymentUrl),

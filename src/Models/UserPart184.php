@@ -72,10 +72,18 @@ class UserEventPayloadVariant335 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
-        if (!property_exists($data, "previous")) { throw new SdkValidationError("previous", 'required', "Missing required property 'previous'"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
+        if (!property_exists($data, "previous")) {
+            throw new SdkValidationError("previous", 'required', "Missing required property 'previous'");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             next: ($data->next === null ? null : SdkClient::hydrateClass($data->next, UserEventPayloadVariant335Next::class)),
             previous: ($data->previous === null ? null : SdkClient::hydrateClass($data->previous, UserEventPayloadVariant335Previous::class)),
@@ -154,8 +162,12 @@ class UserEventPayloadVariant336 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -173,11 +185,26 @@ final readonly class UserEventPayloadVariant337NextIssuerModeEnum implements Sdk
     public const GLOBAL = "global";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -218,7 +245,9 @@ class UserEventPayloadVariant337Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issuerMode") || $data->issuerMode === null) { throw new SdkValidationError("issuerMode", 'required', "Required property 'issuerMode' is missing or null"); }
+        if (!property_exists($data, "issuerMode") || $data->issuerMode === null) {
+            throw new SdkValidationError("issuerMode", 'required', "Required property 'issuerMode' is missing or null");
+        }
         return new self(
             issuerMode: SdkClient::hydrateStringEnumOrString($data->issuerMode, UserEventPayloadVariant337NextIssuerModeEnum::class),
         );
@@ -233,11 +262,26 @@ final readonly class UserEventPayloadVariant337PreviousIssuerModeEnum implements
     public const GLOBAL = "global";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**

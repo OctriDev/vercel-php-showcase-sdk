@@ -52,8 +52,12 @@ class CreateCheckResponseOutputMetricsVirtualExperienceScore implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
-        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
+        if (!property_exists($data, "value")) {
+            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
+        }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, CreateCheckResponseOutputMetricsVirtualExperienceScoreSourceEnum::class),
             value: ($data->value === null ? null : SdkClient::floatValue($data->value)),
@@ -119,10 +123,18 @@ class CreateCheckResponseOutputMetrics implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "CLS") || $data->CLS === null) { throw new SdkValidationError("CLS", 'required', "Required property 'CLS' is missing or null"); }
-        if (!property_exists($data, "FCP") || $data->FCP === null) { throw new SdkValidationError("FCP", 'required', "Required property 'FCP' is missing or null"); }
-        if (!property_exists($data, "LCP") || $data->LCP === null) { throw new SdkValidationError("LCP", 'required', "Required property 'LCP' is missing or null"); }
-        if (!property_exists($data, "TBT") || $data->TBT === null) { throw new SdkValidationError("TBT", 'required', "Required property 'TBT' is missing or null"); }
+        if (!property_exists($data, "CLS") || $data->CLS === null) {
+            throw new SdkValidationError("CLS", 'required', "Required property 'CLS' is missing or null");
+        }
+        if (!property_exists($data, "FCP") || $data->FCP === null) {
+            throw new SdkValidationError("FCP", 'required', "Required property 'FCP' is missing or null");
+        }
+        if (!property_exists($data, "LCP") || $data->LCP === null) {
+            throw new SdkValidationError("LCP", 'required', "Required property 'LCP' is missing or null");
+        }
+        if (!property_exists($data, "TBT") || $data->TBT === null) {
+            throw new SdkValidationError("TBT", 'required', "Required property 'TBT' is missing or null");
+        }
         return new self(
             cls: SdkClient::hydrateClass($data->CLS, CreateCheckResponseOutputMetricsCLS::class),
             fcp: SdkClient::hydrateClass($data->FCP, CreateCheckResponseOutputMetricsFCP::class),
@@ -178,11 +190,26 @@ final readonly class CreateCheckResponseStatusEnum implements SdkOpenEnum
     public const REGISTERED = "registered";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateCheckResponse implements \JsonSerializable
@@ -322,14 +349,30 @@ class CreateCheckResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blocking") || $data->blocking === null) { throw new SdkValidationError("blocking", 'required', "Required property 'blocking' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "blocking") || $data->blocking === null) {
+            throw new SdkValidationError("blocking", 'required', "Required property 'blocking' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             blocking: SdkClient::boolValue($data->blocking),
             createdAt: SdkClient::floatValue($data->createdAt),

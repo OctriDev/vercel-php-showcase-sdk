@@ -79,8 +79,12 @@ class AuthUserFeatureBlocksSpeedInsightsFree implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blockReason") || $data->blockReason === null) { throw new SdkValidationError("blockReason", 'required', "Required property 'blockReason' is missing or null"); }
-        if (!property_exists($data, "isCurrentlyBlocked") || $data->isCurrentlyBlocked === null) { throw new SdkValidationError("isCurrentlyBlocked", 'required', "Required property 'isCurrentlyBlocked' is missing or null"); }
+        if (!property_exists($data, "blockReason") || $data->blockReason === null) {
+            throw new SdkValidationError("blockReason", 'required', "Required property 'blockReason' is missing or null");
+        }
+        if (!property_exists($data, "isCurrentlyBlocked") || $data->isCurrentlyBlocked === null) {
+            throw new SdkValidationError("isCurrentlyBlocked", 'required', "Required property 'isCurrentlyBlocked' is missing or null");
+        }
         return new self(
             blockReason: SdkClient::hydrateStringEnumOrString($data->blockReason, AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum::class),
             isCurrentlyBlocked: SdkClient::boolValue($data->isCurrentlyBlocked),
@@ -152,7 +156,9 @@ class AuthUserFeatureBlocksWebAnalytics implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "isCurrentlyBlocked") || $data->isCurrentlyBlocked === null) { throw new SdkValidationError("isCurrentlyBlocked", 'required', "Required property 'isCurrentlyBlocked' is missing or null"); }
+        if (!property_exists($data, "isCurrentlyBlocked") || $data->isCurrentlyBlocked === null) {
+            throw new SdkValidationError("isCurrentlyBlocked", 'required', "Required property 'isCurrentlyBlocked' is missing or null");
+        }
         return new self(
             isCurrentlyBlocked: SdkClient::boolValue($data->isCurrentlyBlocked),
             blockedFrom: (property_exists($data, "blockedFrom") && $data->blockedFrom !== null ? SdkClient::floatValue($data->blockedFrom) : SdkNotGiven::Value),
@@ -233,11 +239,26 @@ final readonly class AuthUserImportFlowGitProviderEnum implements SdkOpenEnum
     public const GITLAB = "gitlab";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -288,8 +309,12 @@ class AuthUserPreferredScopesAndGitNamespacesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitNamespaceId")) { throw new SdkValidationError("gitNamespaceId", 'required', "Missing required property 'gitNamespaceId'"); }
-        if (!property_exists($data, "scopeId") || $data->scopeId === null) { throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null"); }
+        if (!property_exists($data, "gitNamespaceId")) {
+            throw new SdkValidationError("gitNamespaceId", 'required', "Missing required property 'gitNamespaceId'");
+        }
+        if (!property_exists($data, "scopeId") || $data->scopeId === null) {
+            throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null");
+        }
         return new self(
             gitNamespaceId: ($data->gitNamespaceId === null ? null : (is_float($data->gitNamespaceId) || is_int($data->gitNamespaceId) ? SdkClient::floatValue($data->gitNamespaceId) : SdkClient::stringValue($data->gitNamespaceId))),
             scopeId: SdkClient::stringValue($data->scopeId),

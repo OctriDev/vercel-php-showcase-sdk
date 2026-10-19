@@ -50,9 +50,15 @@ class UpdateFlagSettingsEntitiesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
-        if (!property_exists($data, "attributes") || $data->attributes === null) { throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
+        if (!property_exists($data, "attributes") || $data->attributes === null) {
+            throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
             label: SdkClient::stringValue($data->label),
@@ -98,8 +104,12 @@ class UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             label: SdkClient::stringValue($data->label),
             value: SdkClient::stringValue($data->value),
@@ -152,8 +162,12 @@ class UpdateFlagSettingsResponseEntitiesItemAttributesItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::stringValue($data->type),
@@ -205,9 +219,15 @@ class UpdateFlagSettingsResponseEntitiesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attributes") || $data->attributes === null) { throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "attributes") || $data->attributes === null) {
+            throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
         return new self(
             attributes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateFlagSettingsResponseEntitiesItemAttributesItem::class), SdkClient::arrayValue($data->attributes))),
             kind: SdkClient::stringValue($data->kind),
@@ -281,10 +301,18 @@ class UpdateFlagSettingsResponseMetadata implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "activeFlagCount") || $data->activeFlagCount === null) { throw new SdkValidationError("activeFlagCount", 'required', "Required property 'activeFlagCount' is missing or null"); }
-        if (!property_exists($data, "archivedFlagCount") || $data->archivedFlagCount === null) { throw new SdkValidationError("archivedFlagCount", 'required', "Required property 'archivedFlagCount' is missing or null"); }
-        if (!property_exists($data, "packSizeInBytes") || $data->packSizeInBytes === null) { throw new SdkValidationError("packSizeInBytes", 'required', "Required property 'packSizeInBytes' is missing or null"); }
-        if (!property_exists($data, "segmentCount") || $data->segmentCount === null) { throw new SdkValidationError("segmentCount", 'required', "Required property 'segmentCount' is missing or null"); }
+        if (!property_exists($data, "activeFlagCount") || $data->activeFlagCount === null) {
+            throw new SdkValidationError("activeFlagCount", 'required', "Required property 'activeFlagCount' is missing or null");
+        }
+        if (!property_exists($data, "archivedFlagCount") || $data->archivedFlagCount === null) {
+            throw new SdkValidationError("archivedFlagCount", 'required', "Required property 'archivedFlagCount' is missing or null");
+        }
+        if (!property_exists($data, "packSizeInBytes") || $data->packSizeInBytes === null) {
+            throw new SdkValidationError("packSizeInBytes", 'required', "Required property 'packSizeInBytes' is missing or null");
+        }
+        if (!property_exists($data, "segmentCount") || $data->segmentCount === null) {
+            throw new SdkValidationError("segmentCount", 'required', "Required property 'segmentCount' is missing or null");
+        }
         return new self(
             activeFlagCount: SdkClient::floatValue($data->activeFlagCount),
             archivedFlagCount: SdkClient::floatValue($data->archivedFlagCount),
@@ -300,9 +328,24 @@ final readonly class UpdateFlagSettingsResponseTypeNameEnum implements SdkOpenEn
 {
     public const SETTINGS = "settings";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -44,8 +44,12 @@ class ListDrivesResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
@@ -90,8 +94,12 @@ class ListDrivesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drives") || $data->drives === null) { throw new SdkValidationError("drives", 'required', "Required property 'drives' is missing or null"); }
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "drives") || $data->drives === null) {
+            throw new SdkValidationError("drives", 'required', "Required property 'drives' is missing or null");
+        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
         return new self(
             drives: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, Drive::class), SdkClient::arrayValue($data->drives))),
             pagination: SdkClient::hydrateClass($data->pagination, ListDrivesResponsePagination::class),
@@ -134,7 +142,9 @@ class GetDriveResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drive") || $data->drive === null) { throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null"); }
+        if (!property_exists($data, "drive") || $data->drive === null) {
+            throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null");
+        }
         return new self(
             drive: SdkClient::hydrateClass($data->drive, Drive::class),
         );
@@ -176,7 +186,9 @@ class GetOrCreateDriveResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drive") || $data->drive === null) { throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null"); }
+        if (!property_exists($data, "drive") || $data->drive === null) {
+            throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null");
+        }
         return new self(
             drive: SdkClient::hydrateClass($data->drive, Drive::class),
         );
@@ -218,7 +230,9 @@ class DeleteDriveResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drive") || $data->drive === null) { throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null"); }
+        if (!property_exists($data, "drive") || $data->drive === null) {
+            throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null");
+        }
         return new self(
             drive: SdkClient::hydrateClass($data->drive, Drive::class),
         );
@@ -260,7 +274,9 @@ class ForkDriveResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drive") || $data->drive === null) { throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null"); }
+        if (!property_exists($data, "drive") || $data->drive === null) {
+            throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null");
+        }
         return new self(
             drive: SdkClient::hydrateClass($data->drive, Drive::class),
         );
@@ -304,8 +320,12 @@ class ListSessionSnapshotsResponseVariant1Pagination implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),

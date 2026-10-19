@@ -90,13 +90,27 @@ class CreateDrainRequestDeliveryVariant2 implements CreateDrainRequestDelivery, 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "encoding") || $data->encoding === null) { throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null"); }
-        if (!property_exists($data, "compression") || $data->compression === null) { throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null"); }
-        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) { throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null"); }
-        if (!property_exists($data, "roleArn") || $data->roleArn === null) { throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "encoding") || $data->encoding === null) {
+            throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null");
+        }
+        if (!property_exists($data, "compression") || $data->compression === null) {
+            throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null");
+        }
+        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) {
+            throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null");
+        }
+        if (!property_exists($data, "roleArn") || $data->roleArn === null) {
+            throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
         return new self(
             type: SdkClient::stringValue($data->type),
             endpoint: SdkClient::stringValue($data->endpoint),
@@ -160,11 +174,26 @@ final readonly class CreateDrainRequestFilterFilterVariant0LogSourcesItemEnum im
     public const FIREWALL = "firewall";
     public const REDIRECT = "redirect";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDrainRequestFilterFilterVariant0Log implements \JsonSerializable
@@ -211,11 +240,26 @@ final readonly class CreateDrainRequestFilterFilterVariant0DeploymentEnvironment
     public const PRODUCTION = "production";
     public const PREVIEW = "preview";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDrainRequestFilterFilterVariant0Deployment implements \JsonSerializable
@@ -312,7 +356,9 @@ class CreateDrainRequestFilterFilterVariant0 implements CreateDrainRequestFilter
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::stringValue($data->type),
             project: (property_exists($data, "project") && $data->project !== null ? SdkClient::hydrateClass($data->project, CreateDrainRequestFilterFilterVariant0Project::class) : SdkNotGiven::Value),

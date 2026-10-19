@@ -98,9 +98,15 @@ class CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperi
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             slug: SdkClient::stringValue($data->slug),
@@ -120,11 +126,26 @@ final readonly class HeadInstallationsByIntegrationConfigurationIdResourcesByRes
     public const EXPERIMENTATION = "experimentation";
     public const FLAGS = "flags";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse implements \JsonSerializable
@@ -178,9 +199,15 @@ class HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperime
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "digest") || $data->digest === null) { throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null"); }
-        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "digest") || $data->digest === null) {
+            throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null");
+        }
+        if (!property_exists($data, "items") || $data->items === null) {
+            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             digest: SdkClient::stringValue($data->digest),
             items: SdkClient::mapValues(SdkClient::stringMapValue($data->items), static fn($item) => ($item === null ? null : ((is_array($item) || is_object($item)) ? SdkClient::mapValues(SdkClient::stringMapValue($item), static fn($item2) => ($item2 === null ? null : $item2)) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),
@@ -195,11 +222,26 @@ final readonly class GetInstallationsByIntegrationConfigurationIdResourcesByReso
     public const EXPERIMENTATION = "experimentation";
     public const FLAGS = "flags";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse implements \JsonSerializable
@@ -253,9 +295,15 @@ class GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "digest") || $data->digest === null) { throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null"); }
-        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "digest") || $data->digest === null) {
+            throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null");
+        }
+        if (!property_exists($data, "items") || $data->items === null) {
+            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             digest: SdkClient::stringValue($data->digest),
             items: SdkClient::mapValues(SdkClient::stringMapValue($data->items), static fn($item) => ($item === null ? null : ((is_array($item) || is_object($item)) ? SdkClient::mapValues(SdkClient::stringMapValue($item), static fn($item2) => ($item2 === null ? null : $item2)) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),
@@ -270,11 +318,26 @@ final readonly class ReplaceInstallationsByIntegrationConfigurationIdResourcesBy
     public const EXPERIMENTATION = "experimentation";
     public const FLAGS = "flags";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigResponse implements \JsonSerializable
@@ -328,9 +391,15 @@ class ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExper
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "digest") || $data->digest === null) { throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null"); }
-        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "digest") || $data->digest === null) {
+            throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null");
+        }
+        if (!property_exists($data, "items") || $data->items === null) {
+            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             digest: SdkClient::stringValue($data->digest),
             items: SdkClient::mapValues(SdkClient::stringMapValue($data->items), static fn($item) => ($item === null ? null : ((is_array($item) || is_object($item)) ? SdkClient::mapValues(SdkClient::stringMapValue($item), static fn($item2) => ($item2 === null ? null : $item2)) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),

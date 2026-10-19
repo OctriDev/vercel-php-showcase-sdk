@@ -74,9 +74,15 @@ class UserEventPayloadVariant297 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant297Next::class),
             projectId: SdkClient::stringValue($data->projectId),
@@ -100,11 +106,26 @@ final readonly class UserEventPayloadVariant298GitProviderEnum implements SdkOpe
     public const V0 = "v0";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant298 implements UserEventPayload, \JsonSerializable
@@ -182,11 +203,21 @@ class UserEventPayloadVariant298 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) { throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null"); }
-        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) { throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null"); }
-        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) { throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) {
+            throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null");
+        }
+        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) {
+            throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null");
+        }
+        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) {
+            throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             gitProvider: SdkClient::hydrateStringEnumOrString($data->gitProvider, UserEventPayloadVariant298GitProviderEnum::class),
             gitRepoId: SdkClient::stringValue($data->gitRepoId),
@@ -252,9 +283,15 @@ class UserEventPayloadVariant299 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) { throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) {
+            throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             onPullRequest: SdkClient::boolValue($data->onPullRequest),
             projectId: SdkClient::stringValue($data->projectId),
@@ -318,9 +355,15 @@ class UserEventPayloadVariant300 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onCommit") || $data->onCommit === null) { throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "onCommit") || $data->onCommit === null) {
+            throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             onCommit: SdkClient::boolValue($data->onCommit),
             projectId: SdkClient::stringValue($data->projectId),

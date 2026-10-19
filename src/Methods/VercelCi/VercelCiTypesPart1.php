@@ -15,11 +15,26 @@ final readonly class GetVercelCiRepositorySettingsProvider implements SdkOpenEnu
     public const GITLAB = "gitlab";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateVercelCiRepositorySettingsProvider implements SdkOpenEnum
@@ -30,11 +45,26 @@ final readonly class UpdateVercelCiRepositorySettingsProvider implements SdkOpen
     public const GITLAB = "gitlab";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListVercelCiInvocationsProvider implements SdkOpenEnum
@@ -44,11 +74,26 @@ final readonly class ListVercelCiInvocationsProvider implements SdkOpenEnum
     public const BITBUCKET = "bitbucket";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetVercelCiRepositorySettingsResponse implements \JsonSerializable
@@ -116,10 +161,18 @@ class GetVercelCiRepositorySettingsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
-        if (!property_exists($data, "repository") || $data->repository === null) { throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null"); }
-        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) { throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
+            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
+        }
+        if (!property_exists($data, "repository") || $data->repository === null) {
+            throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null");
+        }
+        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) {
+            throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null");
+        }
         return new self(
             provider: SdkClient::stringValue($data->provider),
             organizationId: SdkClient::stringValue($data->organizationId),
@@ -196,10 +249,18 @@ class UpdateVercelCiRepositorySettingsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
-        if (!property_exists($data, "repository") || $data->repository === null) { throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null"); }
-        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) { throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
+            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
+        }
+        if (!property_exists($data, "repository") || $data->repository === null) {
+            throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null");
+        }
+        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) {
+            throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null");
+        }
         return new self(
             provider: SdkClient::stringValue($data->provider),
             organizationId: SdkClient::stringValue($data->organizationId),
@@ -242,7 +303,9 @@ class ListVercelCiInvocationsResponseInvocationsItemSkipped implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
         return new self(
             reason: SdkClient::stringValue($data->reason),
         );
@@ -280,7 +343,9 @@ class ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
+            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
+        }
         return new self(
             startedAt: SdkClient::floatValue($data->startedAt),
         );
@@ -318,7 +383,9 @@ class ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
         return new self(
             reason: SdkClient::stringValue($data->reason),
         );

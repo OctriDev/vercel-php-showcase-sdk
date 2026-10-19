@@ -261,7 +261,9 @@ class ConnectCreateConnectorRequest implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
         return new self(
             data: ((is_array($data->data) || is_object($data->data)) ? SdkClient::hydrateObjectUnionOrMap($data->data, static fn($value) => SdkClient::hydrateUnion($value, [ConnectCreateConnectorRequestDataTypeOauth::class, ConnectCreateConnectorRequestDataTypeApiKey::class, ConnectCreateConnectorRequestDataTypeGithub::class, ConnectCreateConnectorRequestDataTypeLinear::class, ConnectCreateConnectorRequestDataTypeLinq::class, ConnectCreateConnectorRequestDataTypeSalesforce::class, ConnectCreateConnectorRequestDataTypeSendblue::class, ConnectCreateConnectorRequestDataTypeSlack::class, ConnectCreateConnectorRequestDataTypeSnowflake::class, ConnectCreateConnectorRequestDataTypeSnowflakeWif::class, ConnectCreateConnectorRequestDataTypePhoton::class], null, []), static fn($value) => SdkClient::stringMapValue($value)) : SdkClient::hydrateObjectUnionOrMap($data->data, static fn($value) => SdkClient::hydrateUnion($value, [ConnectCreateConnectorRequestDataTypeOauth::class, ConnectCreateConnectorRequestDataTypeApiKey::class, ConnectCreateConnectorRequestDataTypeGithub::class, ConnectCreateConnectorRequestDataTypeLinear::class, ConnectCreateConnectorRequestDataTypeLinq::class, ConnectCreateConnectorRequestDataTypeSalesforce::class, ConnectCreateConnectorRequestDataTypeSendblue::class, ConnectCreateConnectorRequestDataTypeSlack::class, ConnectCreateConnectorRequestDataTypeSnowflake::class, ConnectCreateConnectorRequestDataTypeSnowflakeWif::class, ConnectCreateConnectorRequestDataTypePhoton::class], null, []), static fn($value) => SdkClient::stringMapValue($value))),
             icon: (property_exists($data, "icon") && $data->icon !== null ? SdkClient::stringValue($data->icon) : SdkNotGiven::Value),
@@ -294,9 +296,24 @@ final readonly class ConnectCreateConnectorRequestRequestDataTypeOauthServerConf
     public const SIG = "sig";
     public const ENC = "enc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

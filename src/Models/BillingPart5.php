@@ -131,12 +131,24 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionIntent
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "productId") || $data->productId === null) { throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null"); }
-        if (!property_exists($data, "quantity") || $data->quantity === null) { throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null"); }
-        if (!property_exists($data, "unitAmount") || $data->unitAmount === null) { throw new SdkValidationError("unitAmount", 'required', "Required property 'unitAmount' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) {
+            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "productId") || $data->productId === null) {
+            throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null");
+        }
+        if (!property_exists($data, "quantity") || $data->quantity === null) {
+            throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null");
+        }
+        if (!property_exists($data, "unitAmount") || $data->unitAmount === null) {
+            throw new SdkValidationError("unitAmount", 'required', "Required property 'unitAmount' is missing or null");
+        }
         return new self(
             description: SdkClient::stringValue($data->description),
             id: SdkClient::stringValue($data->id),
@@ -250,11 +262,21 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationOrbSubscriptionIntent
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "orbCustomerId") || $data->orbCustomerId === null) { throw new SdkValidationError("orbCustomerId", 'required', "Required property 'orbCustomerId' is missing or null"); }
-        if (!property_exists($data, "orbExternalCustomerId") || $data->orbExternalCustomerId === null) { throw new SdkValidationError("orbExternalCustomerId", 'required', "Required property 'orbExternalCustomerId' is missing or null"); }
-        if (!property_exists($data, "orbExternalPlanId") || $data->orbExternalPlanId === null) { throw new SdkValidationError("orbExternalPlanId", 'required', "Required property 'orbExternalPlanId' is missing or null"); }
-        if (!property_exists($data, "orbPlanId") || $data->orbPlanId === null) { throw new SdkValidationError("orbPlanId", 'required', "Required property 'orbPlanId' is missing or null"); }
-        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) { throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null"); }
+        if (!property_exists($data, "orbCustomerId") || $data->orbCustomerId === null) {
+            throw new SdkValidationError("orbCustomerId", 'required', "Required property 'orbCustomerId' is missing or null");
+        }
+        if (!property_exists($data, "orbExternalCustomerId") || $data->orbExternalCustomerId === null) {
+            throw new SdkValidationError("orbExternalCustomerId", 'required', "Required property 'orbExternalCustomerId' is missing or null");
+        }
+        if (!property_exists($data, "orbExternalPlanId") || $data->orbExternalPlanId === null) {
+            throw new SdkValidationError("orbExternalPlanId", 'required', "Required property 'orbExternalPlanId' is missing or null");
+        }
+        if (!property_exists($data, "orbPlanId") || $data->orbPlanId === null) {
+            throw new SdkValidationError("orbPlanId", 'required', "Required property 'orbPlanId' is missing or null");
+        }
+        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) {
+            throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null");
+        }
         return new self(
             orbCustomerId: SdkClient::stringValue($data->orbCustomerId),
             orbExternalCustomerId: SdkClient::stringValue($data->orbExternalCustomerId),

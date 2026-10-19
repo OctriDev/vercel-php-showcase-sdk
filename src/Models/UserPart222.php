@@ -192,11 +192,26 @@ final readonly class UserEventPayloadVariant413SourceEnum implements SdkOpenEnum
     public const SAML = "saml";
     public const TEAMS = "teams";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant413 implements UserEventPayload, \JsonSerializable
@@ -318,7 +333,9 @@ class UserEventPayloadVariant413 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "requestedTeamName") || $data->requestedTeamName === null) { throw new SdkValidationError("requestedTeamName", 'required', "Required property 'requestedTeamName' is missing or null"); }
+        if (!property_exists($data, "requestedTeamName") || $data->requestedTeamName === null) {
+            throw new SdkValidationError("requestedTeamName", 'required', "Required property 'requestedTeamName' is missing or null");
+        }
         return new self(
             requestedTeamName: SdkClient::stringValue($data->requestedTeamName),
             bitbucketUsername: (property_exists($data, "bitbucketUsername") && $data->bitbucketUsername !== null ? SdkClient::stringValue($data->bitbucketUsername) : SdkNotGiven::Value),

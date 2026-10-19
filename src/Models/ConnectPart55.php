@@ -346,7 +346,9 @@ class ConnectUpsertProjectConnectionRequest implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
         return new self(
             environments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environments))),
         );

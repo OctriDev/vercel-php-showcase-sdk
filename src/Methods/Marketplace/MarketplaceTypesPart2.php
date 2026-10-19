@@ -49,7 +49,9 @@ class GetAccountInfoResponseContact implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -114,8 +116,12 @@ class GetAccountInfoResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "contact")) { throw new SdkValidationError("contact", 'required', "Missing required property 'contact'"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "contact")) {
+            throw new SdkValidationError("contact", 'required', "Missing required property 'contact'");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             contact: ($data->contact === null ? null : SdkClient::hydrateClass($data->contact, GetAccountInfoResponseContact::class)),
             url: SdkClient::stringValue($data->url),
@@ -132,11 +138,26 @@ final readonly class GetMemberResponseRoleEnum implements SdkOpenEnum
     public const ADMIN = "ADMIN";
     public const USER = "USER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetMemberResponse implements \JsonSerializable
@@ -196,8 +217,12 @@ class GetMemberResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             role: SdkClient::hydrateStringEnumOrString($data->role, GetMemberResponseRoleEnum::class),
@@ -211,11 +236,26 @@ final readonly class RotateInstallationCredentialResponseTokenTypeEnum implement
 {
     public const OAUTH2_TOKEN = "oauth2-token";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class RotateInstallationCredentialResponse implements \JsonSerializable
@@ -267,10 +307,18 @@ class RotateInstallationCredentialResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access_token") || $data->access_token === null) { throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null"); }
-        if (!property_exists($data, "expires_in") || $data->expires_in === null) { throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null"); }
-        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
-        if (!property_exists($data, "token_type") || $data->token_type === null) { throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null"); }
+        if (!property_exists($data, "access_token") || $data->access_token === null) {
+            throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null");
+        }
+        if (!property_exists($data, "expires_in") || $data->expires_in === null) {
+            throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null");
+        }
+        if (!property_exists($data, "scope") || $data->scope === null) {
+            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
+        }
+        if (!property_exists($data, "token_type") || $data->token_type === null) {
+            throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null");
+        }
         return new self(
             accessToken: SdkClient::stringValue($data->access_token),
             expiresIn: SdkClient::floatValue($data->expires_in),
@@ -317,8 +365,12 @@ class RevokeInstallationCredentialResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "already_revoked") || $data->already_revoked === null) { throw new SdkValidationError("already_revoked", 'required', "Required property 'already_revoked' is missing or null"); }
-        if (!property_exists($data, "revoked") || $data->revoked === null) { throw new SdkValidationError("revoked", 'required', "Required property 'revoked' is missing or null"); }
+        if (!property_exists($data, "already_revoked") || $data->already_revoked === null) {
+            throw new SdkValidationError("already_revoked", 'required', "Required property 'already_revoked' is missing or null");
+        }
+        if (!property_exists($data, "revoked") || $data->revoked === null) {
+            throw new SdkValidationError("revoked", 'required', "Required property 'revoked' is missing or null");
+        }
         return new self(
             alreadyRevoked: SdkClient::boolValue($data->already_revoked),
             revoked: SdkClient::boolValue($data->revoked),
@@ -332,9 +384,24 @@ final readonly class GetIntegrationResourcesResponseResourcesItemNotificationLev
     public const INFO = "info";
     public const WARN = "warn";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -45,7 +45,9 @@ class DeleteAuthTokenResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tokenId") || $data->tokenId === null) { throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null"); }
+        if (!property_exists($data, "tokenId") || $data->tokenId === null) {
+            throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null");
+        }
         return new self(
             tokenId: SdkClient::stringValue($data->tokenId),
         );
