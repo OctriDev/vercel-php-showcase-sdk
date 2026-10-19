@@ -62,15 +62,9 @@ class UserEventPayloadVariant212 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) {
-            throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) { throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -114,9 +108,7 @@ class UserEventPayloadVariant213 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invoiceCollection") || $data->invoiceCollection === null) {
-            throw new SdkValidationError("invoiceCollection", 'required', "Required property 'invoiceCollection' is missing or null");
-        }
+        if (!property_exists($data, "invoiceCollection") || $data->invoiceCollection === null) { throw new SdkValidationError("invoiceCollection", 'required', "Required property 'invoiceCollection' is missing or null"); }
         return new self(
             invoiceCollection: SdkClient::boolValue($data->invoiceCollection),
         );
@@ -191,18 +183,10 @@ class UserEventPayloadVariant214PeriodsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "endDate") || $data->endDate === null) {
-            throw new SdkValidationError("endDate", 'required', "Required property 'endDate' is missing or null");
-        }
-        if (!property_exists($data, "percent") || $data->percent === null) {
-            throw new SdkValidationError("percent", 'required', "Required property 'percent' is missing or null");
-        }
-        if (!property_exists($data, "periodNumber") || $data->periodNumber === null) {
-            throw new SdkValidationError("periodNumber", 'required', "Required property 'periodNumber' is missing or null");
-        }
-        if (!property_exists($data, "startDate") || $data->startDate === null) {
-            throw new SdkValidationError("startDate", 'required', "Required property 'startDate' is missing or null");
-        }
+        if (!property_exists($data, "endDate") || $data->endDate === null) { throw new SdkValidationError("endDate", 'required', "Required property 'endDate' is missing or null"); }
+        if (!property_exists($data, "percent") || $data->percent === null) { throw new SdkValidationError("percent", 'required', "Required property 'percent' is missing or null"); }
+        if (!property_exists($data, "periodNumber") || $data->periodNumber === null) { throw new SdkValidationError("periodNumber", 'required', "Required property 'periodNumber' is missing or null"); }
+        if (!property_exists($data, "startDate") || $data->startDate === null) { throw new SdkValidationError("startDate", 'required', "Required property 'startDate' is missing or null"); }
         return new self(
             endDate: SdkClient::stringValue($data->endDate),
             percent: SdkClient::stringValue($data->percent),
@@ -247,9 +231,7 @@ class UserEventPayloadVariant214 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "periods") || $data->periods === null) {
-            throw new SdkValidationError("periods", 'required', "Required property 'periods' is missing or null");
-        }
+        if (!property_exists($data, "periods") || $data->periods === null) { throw new SdkValidationError("periods", 'required', "Required property 'periods' is missing or null"); }
         return new self(
             periods: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant214PeriodsItem::class), SdkClient::arrayValue($data->periods))),
         );
@@ -327,9 +309,7 @@ class UserEventPayloadVariant215 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             allowedIntegrationCount: (property_exists($data, "allowedIntegrationCount") && $data->allowedIntegrationCount !== null ? SdkClient::floatValue($data->allowedIntegrationCount) : SdkNotGiven::Value),

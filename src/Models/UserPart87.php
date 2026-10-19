@@ -55,12 +55,8 @@ class UserEventPayloadVariant120JobCursorOriginNowCommentGitComments implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onCommit") || $data->onCommit === null) {
-            throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null");
-        }
-        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) {
-            throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null");
-        }
+        if (!property_exists($data, "onCommit") || $data->onCommit === null) { throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null"); }
+        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) { throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null"); }
         return new self(
             onCommit: SdkClient::boolValue($data->onCommit),
             onPullRequest: SdkClient::boolValue($data->onPullRequest),
@@ -156,24 +152,12 @@ class UserEventPayloadVariant120JobCursorOriginNowCommentHeadInfo implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "owner") || $data->owner === null) {
-            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "ref") || $data->ref === null) {
-            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
-        }
-        if (!property_exists($data, "repo") || $data->repo === null) {
-            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
-        }
-        if (!property_exists($data, "repoId") || $data->repoId === null) {
-            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
-        }
-        if (!property_exists($data, "sha") || $data->sha === null) {
-            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
-        }
+        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
+        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
+        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
+        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
         return new self(
             owner: SdkClient::stringValue($data->owner),
             ownerId: SdkClient::stringValue($data->ownerId),
@@ -192,26 +176,11 @@ final readonly class UserEventPayloadVariant120JobCursorOriginNowCommentProvider
 {
     public const CURSOR_ORIGIN = "cursor-origin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**

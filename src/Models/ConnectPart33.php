@@ -45,9 +45,7 @@ class ConnectReconsent implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             scope: SdkClient::hydrateStringEnumOrString($data->scope, ConnectReconsentScopeEnum::class),
         );
@@ -92,9 +90,7 @@ class ConnectReplaceTriggerDestinationsRequest implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "destinations") || $data->destinations === null) {
-            throw new SdkValidationError("destinations", 'required', "Required property 'destinations' is missing or null");
-        }
+        if (!property_exists($data, "destinations") || $data->destinations === null) { throw new SdkValidationError("destinations", 'required', "Required property 'destinations' is missing or null"); }
         return new self(
             destinations: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, ConnectTriggerDestinationInput::class, [ConnectTriggerDestinationInputVariant0::class, ConnectTriggerDestinationInputVariant1::class, ConnectTriggerDestinationInputVariant2::class], null, []), SdkClient::arrayValue($data->destinations))),
         );
@@ -109,26 +105,11 @@ final readonly class ConnectServiceSyncStatusEnum implements SdkOpenEnum
     public const DONE = "done";
     public const REQUIRED = "required";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -181,9 +162,7 @@ class ConnectServiceSync implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, ConnectServiceSyncStatusEnum::class),
             errors: (property_exists($data, "errors") && $data->errors !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectServiceSyncError::class), SdkClient::arrayValue($data->errors))) : SdkNotGiven::Value),
@@ -253,9 +232,7 @@ class ConnectServiceSyncError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             message: SdkClient::stringValue($data->message),
             fields: (property_exists($data, "fields") && $data->fields !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->fields))) : SdkNotGiven::Value),
@@ -302,9 +279,7 @@ class ConnectTriggerConfiguration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
         );

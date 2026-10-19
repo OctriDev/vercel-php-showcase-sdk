@@ -66,9 +66,7 @@ class UserEventPayloadVariant90 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             cn: (property_exists($data, "cn") && $data->cn !== null ? SdkClient::stringValue($data->cn) : SdkNotGiven::Value),
@@ -181,12 +179,8 @@ class UserEventPayloadVariant92Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoAddReviewers") || $data->autoAddReviewers === null) {
-            throw new SdkValidationError("autoAddReviewers", 'required', "Required property 'autoAddReviewers' is missing or null");
-        }
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
+        if (!property_exists($data, "autoAddReviewers") || $data->autoAddReviewers === null) { throw new SdkValidationError("autoAddReviewers", 'required', "Required property 'autoAddReviewers' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
         return new self(
             autoAddReviewers: SdkClient::boolValue($data->autoAddReviewers),
             enabled: SdkClient::boolValue($data->enabled),
@@ -242,12 +236,8 @@ class UserEventPayloadVariant92Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoAddReviewers") || $data->autoAddReviewers === null) {
-            throw new SdkValidationError("autoAddReviewers", 'required', "Required property 'autoAddReviewers' is missing or null");
-        }
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
+        if (!property_exists($data, "autoAddReviewers") || $data->autoAddReviewers === null) { throw new SdkValidationError("autoAddReviewers", 'required', "Required property 'autoAddReviewers' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
         return new self(
             autoAddReviewers: SdkClient::boolValue($data->autoAddReviewers),
             enabled: SdkClient::boolValue($data->enabled),
@@ -320,18 +310,10 @@ class UserEventPayloadVariant92 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitOwnerName") || $data->gitOwnerName === null) {
-            throw new SdkValidationError("gitOwnerName", 'required', "Required property 'gitOwnerName' is missing or null");
-        }
-        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) {
-            throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null");
-        }
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
+        if (!property_exists($data, "gitOwnerName") || $data->gitOwnerName === null) { throw new SdkValidationError("gitOwnerName", 'required', "Required property 'gitOwnerName' is missing or null"); }
+        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) { throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
         return new self(
             gitOwnerName: SdkClient::stringValue($data->gitOwnerName),
             gitRepositoryName: SdkClient::stringValue($data->gitRepositoryName),

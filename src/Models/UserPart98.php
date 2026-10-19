@@ -74,15 +74,9 @@ class UserEventPayloadVariant153 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "tags") || $data->tags === null) {
-            throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "tags") || $data->tags === null) { throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -147,15 +141,9 @@ class UserEventPayloadVariant154 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "path") || $data->path === null) {
-            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             path: SdkClient::stringValue($data->path),
             projectId: SdkClient::stringValue($data->projectId),
@@ -209,12 +197,8 @@ class UserEventPayloadVariant155 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -277,15 +261,9 @@ class UserEventPayloadVariant156 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigDigest") || $data->edgeConfigDigest === null) {
-            throw new SdkValidationError("edgeConfigDigest", 'required', "Required property 'edgeConfigDigest' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
-            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
-        }
+        if (!property_exists($data, "edgeConfigDigest") || $data->edgeConfigDigest === null) { throw new SdkValidationError("edgeConfigDigest", 'required', "Required property 'edgeConfigDigest' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
         return new self(
             edgeConfigDigest: SdkClient::stringValue($data->edgeConfigDigest),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
@@ -359,18 +337,10 @@ class UserEventPayloadVariant157 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigDigest") || $data->edgeConfigDigest === null) {
-            throw new SdkValidationError("edgeConfigDigest", 'required', "Required property 'edgeConfigDigest' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
-            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigBackupVersionId") || $data->edgeConfigBackupVersionId === null) {
-            throw new SdkValidationError("edgeConfigBackupVersionId", 'required', "Required property 'edgeConfigBackupVersionId' is missing or null");
-        }
+        if (!property_exists($data, "edgeConfigDigest") || $data->edgeConfigDigest === null) { throw new SdkValidationError("edgeConfigDigest", 'required', "Required property 'edgeConfigDigest' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
+        if (!property_exists($data, "edgeConfigBackupVersionId") || $data->edgeConfigBackupVersionId === null) { throw new SdkValidationError("edgeConfigBackupVersionId", 'required', "Required property 'edgeConfigBackupVersionId' is missing or null"); }
         return new self(
             edgeConfigDigest: SdkClient::stringValue($data->edgeConfigDigest),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),

@@ -81,9 +81,7 @@ class CreateSandboxesV3RequestNetworkPolicyVariant1AllowValueItemResponse implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "statusCode") || $data->statusCode === null) {
-            throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null");
-        }
+        if (!property_exists($data, "statusCode") || $data->statusCode === null) { throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null"); }
         return new self(
             statusCode: SdkClient::intValue($data->statusCode),
             headers: (property_exists($data, "headers") && $data->headers !== null ? SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)) : SdkNotGiven::Value),

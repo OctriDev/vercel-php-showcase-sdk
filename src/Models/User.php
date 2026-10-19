@@ -85,21 +85,11 @@ class AuthUserAccountUpdateContextManagedTeamsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar")) {
-            throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "workEmail") || $data->workEmail === null) {
-            throw new SdkValidationError("workEmail", 'required', "Required property 'workEmail' is missing or null");
-        }
+        if (!property_exists($data, "avatar")) { throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "workEmail") || $data->workEmail === null) { throw new SdkValidationError("workEmail", 'required', "Required property 'workEmail' is missing or null"); }
         return new self(
             avatar: ($data->avatar === null ? null : SdkClient::stringValue($data->avatar)),
             name: SdkClient::stringValue($data->name),
@@ -168,15 +158,9 @@ class AuthUserAccountUpdateContextOrganization implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -255,15 +239,9 @@ class AuthUserAccountUpdateContext implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "canOptOut") || $data->canOptOut === null) {
-            throw new SdkValidationError("canOptOut", 'required', "Required property 'canOptOut' is missing or null");
-        }
-        if (!property_exists($data, "managedTeams") || $data->managedTeams === null) {
-            throw new SdkValidationError("managedTeams", 'required', "Required property 'managedTeams' is missing or null");
-        }
-        if (!property_exists($data, "verifiedEmuDomains") || $data->verifiedEmuDomains === null) {
-            throw new SdkValidationError("verifiedEmuDomains", 'required', "Required property 'verifiedEmuDomains' is missing or null");
-        }
+        if (!property_exists($data, "canOptOut") || $data->canOptOut === null) { throw new SdkValidationError("canOptOut", 'required', "Required property 'canOptOut' is missing or null"); }
+        if (!property_exists($data, "managedTeams") || $data->managedTeams === null) { throw new SdkValidationError("managedTeams", 'required', "Required property 'managedTeams' is missing or null"); }
+        if (!property_exists($data, "verifiedEmuDomains") || $data->verifiedEmuDomains === null) { throw new SdkValidationError("verifiedEmuDomains", 'required', "Required property 'verifiedEmuDomains' is missing or null"); }
         return new self(
             canOptOut: SdkClient::boolValue($data->canOptOut),
             managedTeams: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AuthUserAccountUpdateContextManagedTeamsItem::class), SdkClient::arrayValue($data->managedTeams))),
@@ -281,26 +259,11 @@ final readonly class AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum
     public const CLOSED = "closed";
     public const OPEN = "open";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -311,26 +274,11 @@ final readonly class AuthUserActiveDashboardViewsItemRecentsViewPreferenceEnum i
     public const CLOSED = "closed";
     public const OPEN = "open";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -341,24 +289,9 @@ final readonly class AuthUserActiveDashboardViewsItemViewPreferenceEnum implemen
     public const CARDS = "cards";
     public const LIST = "list";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

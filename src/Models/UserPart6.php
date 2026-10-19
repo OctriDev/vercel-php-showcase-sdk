@@ -52,26 +52,11 @@ final readonly class AuthUserSoftBlockBlockedDueToOverageTypeEnum implements Sdk
     public const WAFRATELIMITREQUEST = "wafRateLimitRequest";
     public const WEBANALYTICSEVENT = "webAnalyticsEvent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -89,26 +74,11 @@ final readonly class AuthUserSoftBlockReasonEnum implements SdkOpenEnum
     public const SUBSCRIPTION_EXPIRED = "SUBSCRIPTION_EXPIRED";
     public const UNPAID_INVOICE = "UNPAID_INVOICE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -183,12 +153,8 @@ class AuthUserSoftBlock implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blockedAt") || $data->blockedAt === null) {
-            throw new SdkValidationError("blockedAt", 'required', "Required property 'blockedAt' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "blockedAt") || $data->blockedAt === null) { throw new SdkValidationError("blockedAt", 'required', "Required property 'blockedAt' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             blockedAt: SdkClient::floatValue($data->blockedAt),
             reason: SdkClient::hydrateStringEnumOrString($data->reason, AuthUserSoftBlockReasonEnum::class),

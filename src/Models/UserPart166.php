@@ -82,21 +82,11 @@ class UserEventPayloadVariant287 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
-        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) {
-            throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null");
-        }
-        if (!property_exists($data, "enableSchedulesByDefault") || $data->enableSchedulesByDefault === null) {
-            throw new SdkValidationError("enableSchedulesByDefault", 'required', "Required property 'enableSchedulesByDefault' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) { throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null"); }
+        if (!property_exists($data, "enableSchedulesByDefault") || $data->enableSchedulesByDefault === null) { throw new SdkValidationError("enableSchedulesByDefault", 'required', "Required property 'enableSchedulesByDefault' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
             customEnvironmentSlug: SdkClient::stringValue($data->customEnvironmentSlug),
@@ -184,18 +174,10 @@ class UserEventPayloadVariant288 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
-        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) {
-            throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) { throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
             customEnvironmentSlug: SdkClient::stringValue($data->customEnvironmentSlug),
@@ -271,18 +253,10 @@ class UserEventPayloadVariant289 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
-        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) {
-            throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentSlug") || $data->customEnvironmentSlug === null) { throw new SdkValidationError("customEnvironmentSlug", 'required', "Required property 'customEnvironmentSlug' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
             customEnvironmentSlug: SdkClient::stringValue($data->customEnvironmentSlug),
@@ -349,12 +323,8 @@ class UserEventPayloadVariant290 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enableFunctionsBeta") || $data->enableFunctionsBeta === null) {
-            throw new SdkValidationError("enableFunctionsBeta", 'required', "Required property 'enableFunctionsBeta' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "enableFunctionsBeta") || $data->enableFunctionsBeta === null) { throw new SdkValidationError("enableFunctionsBeta", 'required', "Required property 'enableFunctionsBeta' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             enableFunctionsBeta: SdkClient::boolValue($data->enableFunctionsBeta),
             projectId: SdkClient::stringValue($data->projectId),

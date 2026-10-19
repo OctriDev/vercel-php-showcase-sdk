@@ -82,21 +82,11 @@ class UserEventPayloadVariant36 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "moderationPolicyCount") || $data->moderationPolicyCount === null) {
-            throw new SdkValidationError("moderationPolicyCount", 'required', "Required property 'moderationPolicyCount' is missing or null");
-        }
-        if (!property_exists($data, "piiRedaction") || $data->piiRedaction === null) {
-            throw new SdkValidationError("piiRedaction", 'required', "Required property 'piiRedaction' is missing or null");
-        }
-        if (!property_exists($data, "policiesAdded") || $data->policiesAdded === null) {
-            throw new SdkValidationError("policiesAdded", 'required', "Required property 'policiesAdded' is missing or null");
-        }
-        if (!property_exists($data, "policiesModified") || $data->policiesModified === null) {
-            throw new SdkValidationError("policiesModified", 'required', "Required property 'policiesModified' is missing or null");
-        }
-        if (!property_exists($data, "policiesRemoved") || $data->policiesRemoved === null) {
-            throw new SdkValidationError("policiesRemoved", 'required', "Required property 'policiesRemoved' is missing or null");
-        }
+        if (!property_exists($data, "moderationPolicyCount") || $data->moderationPolicyCount === null) { throw new SdkValidationError("moderationPolicyCount", 'required', "Required property 'moderationPolicyCount' is missing or null"); }
+        if (!property_exists($data, "piiRedaction") || $data->piiRedaction === null) { throw new SdkValidationError("piiRedaction", 'required', "Required property 'piiRedaction' is missing or null"); }
+        if (!property_exists($data, "policiesAdded") || $data->policiesAdded === null) { throw new SdkValidationError("policiesAdded", 'required', "Required property 'policiesAdded' is missing or null"); }
+        if (!property_exists($data, "policiesModified") || $data->policiesModified === null) { throw new SdkValidationError("policiesModified", 'required', "Required property 'policiesModified' is missing or null"); }
+        if (!property_exists($data, "policiesRemoved") || $data->policiesRemoved === null) { throw new SdkValidationError("policiesRemoved", 'required', "Required property 'policiesRemoved' is missing or null"); }
         return new self(
             moderationPolicyCount: SdkClient::floatValue($data->moderationPolicyCount),
             piiRedaction: SdkClient::hydrateClass($data->piiRedaction, UserEventPayloadVariant36PiiRedaction::class),
@@ -142,9 +132,7 @@ class UserEventPayloadVariant37 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "regions") || $data->regions === null) {
-            throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null");
-        }
+        if (!property_exists($data, "regions") || $data->regions === null) { throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null"); }
         return new self(
             regions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->regions))),
         );
@@ -159,26 +147,11 @@ final readonly class UserEventPayloadVariant38RetentionCeilingModeEnum implement
     public const DAYS = "days";
     public const UNTIL_REQUESTED = "until-requested";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -189,26 +162,11 @@ final readonly class UserEventPayloadVariant38RetentionDefaultModeEnum implement
     public const DAYS = "days";
     public const UNTIL_REQUESTED = "until-requested";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -283,12 +241,8 @@ class UserEventPayloadVariant38Retention implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ceilingMode") || $data->ceilingMode === null) {
-            throw new SdkValidationError("ceilingMode", 'required', "Required property 'ceilingMode' is missing or null");
-        }
-        if (!property_exists($data, "defaultMode") || $data->defaultMode === null) {
-            throw new SdkValidationError("defaultMode", 'required', "Required property 'defaultMode' is missing or null");
-        }
+        if (!property_exists($data, "ceilingMode") || $data->ceilingMode === null) { throw new SdkValidationError("ceilingMode", 'required', "Required property 'ceilingMode' is missing or null"); }
+        if (!property_exists($data, "defaultMode") || $data->defaultMode === null) { throw new SdkValidationError("defaultMode", 'required', "Required property 'defaultMode' is missing or null"); }
         return new self(
             ceilingMode: SdkClient::hydrateStringEnumOrString($data->ceilingMode, UserEventPayloadVariant38RetentionCeilingModeEnum::class),
             defaultMode: SdkClient::hydrateStringEnumOrString($data->defaultMode, UserEventPayloadVariant38RetentionDefaultModeEnum::class),
@@ -333,9 +287,7 @@ class UserEventPayloadVariant38 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "retention") || $data->retention === null) {
-            throw new SdkValidationError("retention", 'required', "Required property 'retention' is missing or null");
-        }
+        if (!property_exists($data, "retention") || $data->retention === null) { throw new SdkValidationError("retention", 'required', "Required property 'retention' is missing or null"); }
         return new self(
             retention: SdkClient::hydrateClass($data->retention, UserEventPayloadVariant38Retention::class),
         );

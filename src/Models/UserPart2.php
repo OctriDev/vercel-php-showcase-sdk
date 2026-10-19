@@ -81,9 +81,7 @@ class AuthUserActiveDashboardViewsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "scopeId") || $data->scopeId === null) {
-            throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null");
-        }
+        if (!property_exists($data, "scopeId") || $data->scopeId === null) { throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null"); }
         return new self(
             scopeId: SdkClient::stringValue($data->scopeId),
             favoritesViewPreference: (property_exists($data, "favoritesViewPreference") ? ($data->favoritesViewPreference === null ? null : SdkClient::hydrateStringEnumOrString($data->favoritesViewPreference, AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum::class)) : SdkNotGiven::Value),
@@ -187,12 +185,8 @@ class AuthUserDismissedToastsItemDismissalsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "scopeId") || $data->scopeId === null) {
-            throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "scopeId") || $data->scopeId === null) { throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             scopeId: SdkClient::stringValue($data->scopeId),
@@ -248,12 +242,8 @@ class AuthUserDismissedToastsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "dismissals") || $data->dismissals === null) {
-            throw new SdkValidationError("dismissals", 'required', "Required property 'dismissals' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "dismissals") || $data->dismissals === null) { throw new SdkValidationError("dismissals", 'required', "Required property 'dismissals' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             dismissals: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AuthUserDismissedToastsItemDismissalsItem::class), SdkClient::arrayValue($data->dismissals))),
             name: SdkClient::stringValue($data->name),
@@ -309,12 +299,8 @@ class AuthUserFavoriteProjectsAndSpacesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             teamId: SdkClient::stringValue($data->teamId),
@@ -331,24 +317,9 @@ final readonly class AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum imple
     public const HARD_BLOCKED = "hard_blocked";
     public const LIMITS_EXCEEDED = "limits_exceeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

@@ -92,18 +92,10 @@ class UploadProjectAvatarResponseMicrofrontendsVariant0 implements UploadProject
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) {
-            throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) { throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),
@@ -226,15 +218,9 @@ class UploadProjectAvatarResponseMicrofrontendsVariant1 implements UploadProject
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),
@@ -299,15 +285,9 @@ class UploadProjectAvatarResponseMicrofrontendsVariant2 implements UploadProject
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => $item, SdkClient::arrayValue($data->groupIds))),
@@ -356,9 +336,7 @@ class UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             value: SdkClient::stringValue($data->value),
             note: (property_exists($data, "note") && $data->note !== null ? SdkClient::stringValue($data->note) : SdkNotGiven::Value),

@@ -44,12 +44,8 @@ class ListSessionSnapshotsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "snapshots") || $data->snapshots === null) {
-            throw new SdkValidationError("snapshots", 'required', "Required property 'snapshots' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "snapshots") || $data->snapshots === null) { throw new SdkValidationError("snapshots", 'required', "Required property 'snapshots' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ListSessionSnapshotsResponseVariant1Pagination::class),
             snapshots: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, Snapshot::class), SdkClient::arrayValue($data->snapshots))),
@@ -92,9 +88,7 @@ class GetSessionSnapshotResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "snapshot") || $data->snapshot === null) {
-            throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null");
-        }
+        if (!property_exists($data, "snapshot") || $data->snapshot === null) { throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null"); }
         return new self(
             snapshot: SdkClient::hydrateClass($data->snapshot, Snapshot::class),
         );
@@ -136,9 +130,7 @@ class DeleteSessionSnapshotResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "snapshot") || $data->snapshot === null) {
-            throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null");
-        }
+        if (!property_exists($data, "snapshot") || $data->snapshot === null) { throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null"); }
         return new self(
             snapshot: SdkClient::hydrateClass($data->snapshot, Snapshot::class),
         );
@@ -182,12 +174,8 @@ class ListSessionsResponseVariant1Pagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
@@ -232,12 +220,8 @@ class ListSessionsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "sessions") || $data->sessions === null) {
-            throw new SdkValidationError("sessions", 'required', "Required property 'sessions' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "sessions") || $data->sessions === null) { throw new SdkValidationError("sessions", 'required', "Required property 'sessions' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ListSessionsResponseVariant1Pagination::class),
             sessions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, Session::class), SdkClient::arrayValue($data->sessions))),
@@ -286,12 +270,8 @@ class GetSessionResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),
             session: SdkClient::hydrateClass($data->session, Session::class),
@@ -356,18 +336,10 @@ class GetNamedSandboxResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "resumed") || $data->resumed === null) {
-            throw new SdkValidationError("resumed", 'required', "Required property 'resumed' is missing or null");
-        }
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "resumed") || $data->resumed === null) { throw new SdkValidationError("resumed", 'required', "Required property 'resumed' is missing or null"); }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             resumed: SdkClient::boolValue($data->resumed),
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),

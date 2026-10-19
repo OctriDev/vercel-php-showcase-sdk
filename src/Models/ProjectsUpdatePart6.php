@@ -44,12 +44,8 @@ class UpdateMicrofrontendsResponseEnvItemContentHintVariant12 implements UpdateM
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, UpdateMicrofrontendsResponseEnvItemContentHintVariant12TypeEnum::class),
@@ -99,12 +95,8 @@ class UpdateMicrofrontendsResponseEnvItemContentHintVariant13 implements UpdateM
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, UpdateMicrofrontendsResponseEnvItemContentHintVariant13TypeEnum::class),
@@ -154,12 +146,8 @@ class UpdateMicrofrontendsResponseEnvItemContentHintVariant14 implements UpdateM
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, UpdateMicrofrontendsResponseEnvItemContentHintVariant14TypeEnum::class),
@@ -227,21 +215,11 @@ class UpdateMicrofrontendsResponseEnvItemContentHintVariant15 implements UpdateM
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
-            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) {
-            throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null");
-        }
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) { throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -294,12 +272,8 @@ class UpdateMicrofrontendsResponseEnvItemContentHintVariant16 implements UpdateM
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             type: SdkClient::hydrateEnum($data->type, UpdateMicrofrontendsResponseEnvItemContentHintVariant16TypeEnum::class),
@@ -342,9 +316,7 @@ class UpdateMicrofrontendsResponseExpirationVariant0 implements UpdateMicrofront
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
         return new self(
             expiresAt: SdkClient::floatValue($data->expiresAt),
         );

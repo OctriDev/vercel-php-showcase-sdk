@@ -89,9 +89,7 @@ class GetDeploymentsResponseDeploymentsItemSeatBlock implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blockCode") || $data->blockCode === null) {
-            throw new SdkValidationError("blockCode", 'required', "Required property 'blockCode' is missing or null");
-        }
+        if (!property_exists($data, "blockCode") || $data->blockCode === null) { throw new SdkValidationError("blockCode", 'required', "Required property 'blockCode' is missing or null"); }
         return new self(
             blockCode: SdkClient::hydrateStringEnumOrString($data->blockCode, GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum::class),
             gitProvider: (property_exists($data, "gitProvider") && $data->gitProvider !== null ? SdkClient::hydrateStringEnumOrString($data->gitProvider, GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum::class) : SdkNotGiven::Value),
@@ -118,26 +116,11 @@ final readonly class GetDeploymentsResponseDeploymentsItemSourceEnum implements 
     public const REDEPLOY = "redeploy";
     public const V0_WEB = "v0-web";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -154,26 +137,11 @@ final readonly class GetDeploymentsResponseDeploymentsItemStateEnum implements S
     public const QUEUED = "QUEUED";
     public const READY = "READY";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -184,26 +152,11 @@ final readonly class GetDeploymentsResponseDeploymentsItemTargetEnum implements 
     public const PRODUCTION = "production";
     public const STAGING = "staging";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -213,24 +166,9 @@ final readonly class GetDeploymentsResponseDeploymentsItemTypeEnum implements Sd
 {
     public const LAMBDAS = "LAMBDAS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

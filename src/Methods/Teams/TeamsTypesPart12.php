@@ -51,12 +51,8 @@ class CreateTeamResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             slug: SdkClient::stringValue($data->slug),
@@ -95,9 +91,7 @@ class PostTeamDsyncRolesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ok") || $data->ok === null) {
-            throw new SdkValidationError("ok", 'required', "Required property 'ok' is missing or null");
-        }
+        if (!property_exists($data, "ok") || $data->ok === null) { throw new SdkValidationError("ok", 'required', "Required property 'ok' is missing or null"); }
         return new self(
             ok: SdkClient::boolValue($data->ok),
         );
@@ -152,12 +146,8 @@ class DeleteTeamReasonsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
         return new self(
             slug: SdkClient::stringValue($data->slug),
             description: SdkClient::stringValue($data->description),
@@ -215,9 +205,7 @@ class DeleteTeamResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             newDefaultTeamIdError: (property_exists($data, "newDefaultTeamIdError") && $data->newDefaultTeamIdError !== null ? SdkClient::boolValue($data->newDefaultTeamIdError) : SdkNotGiven::Value),
@@ -260,9 +248,7 @@ class DeleteTeamInviteCodeResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
         );
@@ -332,9 +318,7 @@ class UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             enablePolyrepoBranchRouting: (property_exists($data, "enablePolyrepoBranchRouting") && $data->enablePolyrepoBranchRouting !== null ? SdkClient::boolValue($data->enablePolyrepoBranchRouting) : SdkNotGiven::Value),

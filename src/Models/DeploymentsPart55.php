@@ -161,21 +161,11 @@ class CreateDeploymentResponseVariant1Config implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionMemoryType") || $data->functionMemoryType === null) {
-            throw new SdkValidationError("functionMemoryType", 'required', "Required property 'functionMemoryType' is missing or null");
-        }
-        if (!property_exists($data, "functionTimeout")) {
-            throw new SdkValidationError("functionTimeout", 'required', "Missing required property 'functionTimeout'");
-        }
-        if (!property_exists($data, "functionType") || $data->functionType === null) {
-            throw new SdkValidationError("functionType", 'required', "Required property 'functionType' is missing or null");
-        }
-        if (!property_exists($data, "secureComputeFallbackRegion")) {
-            throw new SdkValidationError("secureComputeFallbackRegion", 'required', "Missing required property 'secureComputeFallbackRegion'");
-        }
-        if (!property_exists($data, "secureComputePrimaryRegion")) {
-            throw new SdkValidationError("secureComputePrimaryRegion", 'required', "Missing required property 'secureComputePrimaryRegion'");
-        }
+        if (!property_exists($data, "functionMemoryType") || $data->functionMemoryType === null) { throw new SdkValidationError("functionMemoryType", 'required', "Required property 'functionMemoryType' is missing or null"); }
+        if (!property_exists($data, "functionTimeout")) { throw new SdkValidationError("functionTimeout", 'required', "Missing required property 'functionTimeout'"); }
+        if (!property_exists($data, "functionType") || $data->functionType === null) { throw new SdkValidationError("functionType", 'required', "Required property 'functionType' is missing or null"); }
+        if (!property_exists($data, "secureComputeFallbackRegion")) { throw new SdkValidationError("secureComputeFallbackRegion", 'required', "Missing required property 'secureComputeFallbackRegion'"); }
+        if (!property_exists($data, "secureComputePrimaryRegion")) { throw new SdkValidationError("secureComputePrimaryRegion", 'required', "Missing required property 'secureComputePrimaryRegion'"); }
         return new self(
             functionMemoryType: SdkClient::hydrateStringEnumOrString($data->functionMemoryType, CreateDeploymentResponseVariant1ConfigFunctionMemoryTypeEnum::class),
             functionTimeout: ($data->functionTimeout === null ? null : SdkClient::floatValue($data->functionTimeout)),
@@ -199,26 +189,11 @@ final readonly class CreateDeploymentResponseVariant1CreatorTypeEnum implements 
     public const SYSTEM = "system";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -295,9 +270,7 @@ class CreateDeploymentResponseVariant1Creator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             uid: SdkClient::stringValue($data->uid),
             avatar: (property_exists($data, "avatar") && $data->avatar !== null ? SdkClient::stringValue($data->avatar) : SdkNotGiven::Value),
@@ -344,12 +317,8 @@ class CreateDeploymentResponseVariant1CronsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "path") || $data->path === null) {
-            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
-        }
-        if (!property_exists($data, "schedule") || $data->schedule === null) {
-            throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null");
-        }
+        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
+        if (!property_exists($data, "schedule") || $data->schedule === null) { throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null"); }
         return new self(
             path: SdkClient::stringValue($data->path),
             schedule: SdkClient::stringValue($data->schedule),
@@ -366,24 +335,9 @@ final readonly class CreateDeploymentResponseVariant1CustomEnvironmentVariant0Br
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

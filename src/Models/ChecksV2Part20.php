@@ -13,26 +13,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0StatusEnum i
     public const QUEUED = "queued";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListDeploymentCheckRunsResponseRunsItemVariant0TaskSummary implements \JsonSerializable
@@ -84,18 +69,10 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0TaskSummary implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "failed") || $data->failed === null) {
-            throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null");
-        }
-        if (!property_exists($data, "pending") || $data->pending === null) {
-            throw new SdkValidationError("pending", 'required', "Required property 'pending' is missing or null");
-        }
-        if (!property_exists($data, "succeeded") || $data->succeeded === null) {
-            throw new SdkValidationError("succeeded", 'required', "Required property 'succeeded' is missing or null");
-        }
-        if (!property_exists($data, "total") || $data->total === null) {
-            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
-        }
+        if (!property_exists($data, "failed") || $data->failed === null) { throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null"); }
+        if (!property_exists($data, "pending") || $data->pending === null) { throw new SdkValidationError("pending", 'required', "Required property 'pending' is missing or null"); }
+        if (!property_exists($data, "succeeded") || $data->succeeded === null) { throw new SdkValidationError("succeeded", 'required', "Required property 'succeeded' is missing or null"); }
+        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
         return new self(
             failed: SdkClient::floatValue($data->failed),
             pending: SdkClient::floatValue($data->pending),
@@ -109,26 +86,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceIntegr
 {
     public const INTEGRATION = "integration";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListDeploymentCheckRunsResponseRunsItemVariant0SourceIntegration implements \JsonSerializable
@@ -190,15 +152,9 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceIntegration implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
-            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -213,26 +169,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceWebhoo
 {
     public const WEBHOOK = "webhook";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListDeploymentCheckRunsResponseRunsItemVariant0SourceWebhook implements \JsonSerializable
@@ -274,9 +215,7 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceWebhook implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
         return new self(
             kind: SdkClient::hydrateStringEnumOrString($data->kind, ListDeploymentCheckRunsResponseRunsItemVariant0SourceWebhookKindEnum::class),
             webhookId: (property_exists($data, "webhookId") && $data->webhookId !== null ? SdkClient::stringValue($data->webhookId) : SdkNotGiven::Value),
@@ -288,26 +227,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitPro
 {
     public const GIT_PROVIDER = "git-provider";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitProviderProviderEnum implements SdkOpenEnum
@@ -316,26 +240,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitPro
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitProvider implements \JsonSerializable
@@ -381,15 +290,9 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitProvider implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) {
-            throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "provider") || $data->provider === null) {
-            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
-        }
+        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) { throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
         return new self(
             externalCheckName: SdkClient::stringValue($data->externalCheckName),
             kind: SdkClient::hydrateStringEnumOrString($data->kind, ListDeploymentCheckRunsResponseRunsItemVariant0SourceGitProviderKindEnum::class),
@@ -403,50 +306,20 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVercel
     public const API = "api";
     public const PLATFORM = "platform";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVercelNativeCheckSubKindEnum implements SdkOpenEnum
 {
     public const VERCEL_NATIVE_CHECK = "vercel-native-check";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

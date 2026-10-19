@@ -15,26 +15,11 @@ final readonly class ListContractCommitmentsResponseContractCommitmentCategoryEn
     public const SPEND = "Spend";
     public const USAGE = "Usage";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -197,36 +182,16 @@ class ListContractCommitmentsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "BillingCurrency") || $data->BillingCurrency === null) {
-            throw new SdkValidationError("BillingCurrency", 'required', "Required property 'BillingCurrency' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentCategory") || $data->ContractCommitmentCategory === null) {
-            throw new SdkValidationError("ContractCommitmentCategory", 'required', "Required property 'ContractCommitmentCategory' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentId") || $data->ContractCommitmentId === null) {
-            throw new SdkValidationError("ContractCommitmentId", 'required', "Required property 'ContractCommitmentId' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentPeriodEnd") || $data->ContractCommitmentPeriodEnd === null) {
-            throw new SdkValidationError("ContractCommitmentPeriodEnd", 'required', "Required property 'ContractCommitmentPeriodEnd' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentPeriodStart") || $data->ContractCommitmentPeriodStart === null) {
-            throw new SdkValidationError("ContractCommitmentPeriodStart", 'required', "Required property 'ContractCommitmentPeriodStart' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentType") || $data->ContractCommitmentType === null) {
-            throw new SdkValidationError("ContractCommitmentType", 'required', "Required property 'ContractCommitmentType' is missing or null");
-        }
-        if (!property_exists($data, "ContractCommitmentUnit") || $data->ContractCommitmentUnit === null) {
-            throw new SdkValidationError("ContractCommitmentUnit", 'required', "Required property 'ContractCommitmentUnit' is missing or null");
-        }
-        if (!property_exists($data, "ContractId") || $data->ContractId === null) {
-            throw new SdkValidationError("ContractId", 'required', "Required property 'ContractId' is missing or null");
-        }
-        if (!property_exists($data, "ContractPeriodEnd") || $data->ContractPeriodEnd === null) {
-            throw new SdkValidationError("ContractPeriodEnd", 'required', "Required property 'ContractPeriodEnd' is missing or null");
-        }
-        if (!property_exists($data, "ContractPeriodStart") || $data->ContractPeriodStart === null) {
-            throw new SdkValidationError("ContractPeriodStart", 'required', "Required property 'ContractPeriodStart' is missing or null");
-        }
+        if (!property_exists($data, "BillingCurrency") || $data->BillingCurrency === null) { throw new SdkValidationError("BillingCurrency", 'required', "Required property 'BillingCurrency' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentCategory") || $data->ContractCommitmentCategory === null) { throw new SdkValidationError("ContractCommitmentCategory", 'required', "Required property 'ContractCommitmentCategory' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentId") || $data->ContractCommitmentId === null) { throw new SdkValidationError("ContractCommitmentId", 'required', "Required property 'ContractCommitmentId' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentPeriodEnd") || $data->ContractCommitmentPeriodEnd === null) { throw new SdkValidationError("ContractCommitmentPeriodEnd", 'required', "Required property 'ContractCommitmentPeriodEnd' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentPeriodStart") || $data->ContractCommitmentPeriodStart === null) { throw new SdkValidationError("ContractCommitmentPeriodStart", 'required', "Required property 'ContractCommitmentPeriodStart' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentType") || $data->ContractCommitmentType === null) { throw new SdkValidationError("ContractCommitmentType", 'required', "Required property 'ContractCommitmentType' is missing or null"); }
+        if (!property_exists($data, "ContractCommitmentUnit") || $data->ContractCommitmentUnit === null) { throw new SdkValidationError("ContractCommitmentUnit", 'required', "Required property 'ContractCommitmentUnit' is missing or null"); }
+        if (!property_exists($data, "ContractId") || $data->ContractId === null) { throw new SdkValidationError("ContractId", 'required', "Required property 'ContractId' is missing or null"); }
+        if (!property_exists($data, "ContractPeriodEnd") || $data->ContractPeriodEnd === null) { throw new SdkValidationError("ContractPeriodEnd", 'required', "Required property 'ContractPeriodEnd' is missing or null"); }
+        if (!property_exists($data, "ContractPeriodStart") || $data->ContractPeriodStart === null) { throw new SdkValidationError("ContractPeriodStart", 'required', "Required property 'ContractPeriodStart' is missing or null"); }
         return new self(
             billingCurrency: SdkClient::stringValue($data->BillingCurrency),
             contractCommitmentCategory: SdkClient::hydrateStringEnumOrString($data->ContractCommitmentCategory, ListContractCommitmentsResponseContractCommitmentCategoryEnum::class),
@@ -252,26 +217,11 @@ final readonly class BuyCreditsItemTypeEnum implements SdkOpenEnum
 {
     public const CREDITS = "credits";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -283,26 +233,11 @@ final readonly class BuyCreditsItemCreditTypeEnum implements SdkOpenEnum
     public const GATEWAY = "gateway";
     public const AGENT = "agent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class BuyCreditsItem implements \JsonSerializable
@@ -360,15 +295,9 @@ class BuyCreditsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "creditType") || $data->creditType === null) {
-            throw new SdkValidationError("creditType", 'required', "Required property 'creditType' is missing or null");
-        }
-        if (!property_exists($data, "amount") || $data->amount === null) {
-            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "creditType") || $data->creditType === null) { throw new SdkValidationError("creditType", 'required', "Required property 'creditType' is missing or null"); }
+        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, BuyCreditsItemTypeEnum::class),
             creditType: SdkClient::hydrateStringEnumOrString($data->creditType, BuyCreditsItemCreditTypeEnum::class),

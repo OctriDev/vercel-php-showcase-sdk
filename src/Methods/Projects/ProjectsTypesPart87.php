@@ -44,12 +44,8 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemH
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHostTypeEnum::class),
             value: SdkClient::hydrateClass($data->value, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHostValue::class),
@@ -61,26 +57,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemV
 {
     public const BLOCK_LEGAL_CWC = "block_legal_cwc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1Mitigate implements \JsonSerializable
@@ -114,9 +95,7 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1Mitigate
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1MitigateActionEnum::class),
         );
@@ -168,12 +147,8 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1 impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "has") || $data->has === null) {
-            throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null");
-        }
-        if (!property_exists($data, "mitigate") || $data->mitigate === null) {
-            throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null");
-        }
+        if (!property_exists($data, "has") || $data->has === null) { throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null"); }
+        if (!property_exists($data, "mitigate") || $data->mitigate === null) { throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null"); }
         return new self(
             has: array_values(array_map(static fn($item) => SdkClient::hydrateUnion($item, [ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHeader::class, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHost::class], null, []), SdkClient::arrayValue($data->has))),
             mitigate: SdkClient::hydrateClass($data->mitigate, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1Mitigate::class),
@@ -229,9 +204,7 @@ class ListProjectsResponseVariant2ProjectsItemIpBucketsItem implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bucket") || $data->bucket === null) {
-            throw new SdkValidationError("bucket", 'required', "Required property 'bucket' is missing or null");
-        }
+        if (!property_exists($data, "bucket") || $data->bucket === null) { throw new SdkValidationError("bucket", 'required', "Required property 'bucket' is missing or null"); }
         return new self(
             bucket: SdkClient::stringValue($data->bucket),
             default_: (property_exists($data, "default") && $data->default !== null ? SdkClient::boolValue($data->default) : SdkNotGiven::Value),
@@ -271,9 +244,7 @@ class ListProjectsResponseVariant2ProjectsItemJobsFlagDefinitionsPresent impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -311,9 +282,7 @@ class ListProjectsResponseVariant2ProjectsItemJobsLint implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -351,9 +320,7 @@ class ListProjectsResponseVariant2ProjectsItemJobsMfeConfigPresent implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );

@@ -53,26 +53,11 @@ final readonly class DeleteProjectAvatarResponseDefaultResourceConfigFunctionDef
     public const STANDARD = "standard";
     public const STANDARD_LEGACY = "standard_legacy";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -84,26 +69,11 @@ final readonly class DeleteProjectAvatarResponseDefaultResourceConfigElasticBuil
     public const STANDARD = "standard";
     public const TURBO = "turbo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -156,15 +126,9 @@ class DeleteProjectAvatarResponseDefaultResourceConfigElasticBuildMachine implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cores") || $data->cores === null) {
-            throw new SdkValidationError("cores", 'required', "Required property 'cores' is missing or null");
-        }
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
-        if (!property_exists($data, "memory") || $data->memory === null) {
-            throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null");
-        }
+        if (!property_exists($data, "cores") || $data->cores === null) { throw new SdkValidationError("cores", 'required', "Required property 'cores' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "memory") || $data->memory === null) { throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null"); }
         return new self(
             cores: SdkClient::floatValue($data->cores),
             label: SdkClient::hydrateStringEnumOrString($data->label, DeleteProjectAvatarResponseDefaultResourceConfigElasticBuildMachineLabelEnum::class),
@@ -320,9 +284,7 @@ class DeleteProjectAvatarResponseDefaultResourceConfig implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) {
-            throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null");
-        }
+        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) { throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null"); }
         return new self(
             functionDefaultRegions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions))),
             buildMachineElasticLastUpdated: (property_exists($data, "buildMachineElasticLastUpdated") && $data->buildMachineElasticLastUpdated !== null ? SdkClient::floatValue($data->buildMachineElasticLastUpdated) : SdkNotGiven::Value),

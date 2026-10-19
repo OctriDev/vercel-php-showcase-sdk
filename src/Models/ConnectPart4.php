@@ -60,12 +60,8 @@ class ConnectConnectorCreatedByVariant0 implements ConnectConnectorCreatedBy, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateEnum($data->type, ConnectConnectorCreatedByVariant0TypeEnum::class),
@@ -79,26 +75,11 @@ final readonly class ConnectConnectorCreatedByVariant1EnvironmentEnum implements
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -164,15 +145,9 @@ class ConnectConnectorCreatedByVariant1 implements ConnectConnectorCreatedBy, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             environment: SdkClient::hydrateStringEnumOrString($data->environment, ConnectConnectorCreatedByVariant1EnvironmentEnum::class),
             id: SdkClient::stringValue($data->id),
@@ -299,15 +274,9 @@ class ConnectConnectorCreateResultAppTokens implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) {
-            throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null");
-        }
-        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) {
-            throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null");
-        }
-        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) {
-            throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null");
-        }
+        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) { throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null"); }
+        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) { throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null"); }
+        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) { throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null"); }
         return new self(
             crossInstallation: SdkClient::boolValue($data->crossInstallation),
             isStaticCredential: SdkClient::boolValue($data->isStaticCredential),
@@ -329,26 +298,11 @@ final readonly class ConnectConnectorCreateResultCreationModeEnum implements Sdk
     public const MANAGED = "managed";
     public const MANUAL = "manual";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**

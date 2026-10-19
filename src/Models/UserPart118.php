@@ -84,18 +84,10 @@ class UserEventPayloadVariant187 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fromDeploymentId") || $data->fromDeploymentId === null) {
-            throw new SdkValidationError("fromDeploymentId", 'required', "Required property 'fromDeploymentId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) {
-            throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null");
-        }
+        if (!property_exists($data, "fromDeploymentId") || $data->fromDeploymentId === null) { throw new SdkValidationError("fromDeploymentId", 'required', "Required property 'fromDeploymentId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) { throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null"); }
         return new self(
             fromDeploymentId: SdkClient::stringValue($data->fromDeploymentId),
             projectId: SdkClient::stringValue($data->projectId),
@@ -171,18 +163,10 @@ class UserEventPayloadVariant188 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationName") || $data->integrationName === null) {
-            throw new SdkValidationError("integrationName", 'required', "Required property 'integrationName' is missing or null");
-        }
-        if (!property_exists($data, "integrationSlug") || $data->integrationSlug === null) {
-            throw new SdkValidationError("integrationSlug", 'required', "Required property 'integrationSlug' is missing or null");
-        }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "integrationName") || $data->integrationName === null) { throw new SdkValidationError("integrationName", 'required', "Required property 'integrationName' is missing or null"); }
+        if (!property_exists($data, "integrationSlug") || $data->integrationSlug === null) { throw new SdkValidationError("integrationSlug", 'required', "Required property 'integrationSlug' is missing or null"); }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -240,12 +224,8 @@ class UserEventPayloadVariant189NewOwner implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             username: SdkClient::stringValue($data->username),
@@ -340,21 +320,11 @@ class UserEventPayloadVariant189 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationSlug") || $data->integrationSlug === null) {
-            throw new SdkValidationError("integrationSlug", 'required', "Required property 'integrationSlug' is missing or null");
-        }
-        if (!property_exists($data, "newOwner")) {
-            throw new SdkValidationError("newOwner", 'required', "Missing required property 'newOwner'");
-        }
-        if (!property_exists($data, "userId") || $data->userId === null) {
-            throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null");
-        }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "integrationSlug") || $data->integrationSlug === null) { throw new SdkValidationError("integrationSlug", 'required', "Required property 'integrationSlug' is missing or null"); }
+        if (!property_exists($data, "newOwner")) { throw new SdkValidationError("newOwner", 'required', "Missing required property 'newOwner'"); }
+        if (!property_exists($data, "userId") || $data->userId === null) { throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null"); }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),

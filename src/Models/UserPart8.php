@@ -129,27 +129,13 @@ class AuthUserLimited implements GetAuthUserResponseUser, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar")) {
-            throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'");
-        }
-        if (!property_exists($data, "defaultTeamId")) {
-            throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'");
-        }
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "limited") || $data->limited === null) {
-            throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null");
-        }
-        if (!property_exists($data, "name")) {
-            throw new SdkValidationError("name", 'required', "Missing required property 'name'");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "avatar")) { throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'"); }
+        if (!property_exists($data, "defaultTeamId")) { throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'"); }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "limited") || $data->limited === null) { throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null"); }
+        if (!property_exists($data, "name")) { throw new SdkValidationError("name", 'required', "Missing required property 'name'"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             avatar: ($data->avatar === null ? null : SdkClient::stringValue($data->avatar)),
             defaultTeamId: ($data->defaultTeamId === null ? null : SdkClient::stringValue($data->defaultTeamId)),
@@ -202,9 +188,7 @@ class DeploymentCheckUpdatedPayloadNext implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -249,9 +233,7 @@ class DeploymentCheckUpdatedPayloadPrevious implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -350,18 +332,10 @@ class DeploymentCheckUpdatedPayload implements UserEventPayload, \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "checkId") || $data->checkId === null) {
-            throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null");
-        }
-        if (!property_exists($data, "checkName") || $data->checkName === null) {
-            throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "checkId") || $data->checkId === null) { throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null"); }
+        if (!property_exists($data, "checkName") || $data->checkName === null) { throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             checkId: SdkClient::stringValue($data->checkId),
             checkName: SdkClient::stringValue($data->checkName),

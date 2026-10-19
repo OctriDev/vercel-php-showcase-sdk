@@ -38,9 +38,7 @@ class GetOrderResponseErrorVariant0 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant0CodeEnum::class),
         );
@@ -51,26 +49,11 @@ final readonly class GetOrderResponseErrorVariant1CodeEnum implements SdkOpenEnu
 {
     public const TLD_OUTAGE = "tld-outage";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseErrorVariant1DetailsTldsItem implements \JsonSerializable
@@ -110,12 +93,8 @@ class GetOrderResponseErrorVariant1DetailsTldsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tldName") || $data->tldName === null) {
-            throw new SdkValidationError("tldName", 'required', "Required property 'tldName' is missing or null");
-        }
-        if (!property_exists($data, "endsAt") || $data->endsAt === null) {
-            throw new SdkValidationError("endsAt", 'required', "Required property 'endsAt' is missing or null");
-        }
+        if (!property_exists($data, "tldName") || $data->tldName === null) { throw new SdkValidationError("tldName", 'required', "Required property 'tldName' is missing or null"); }
+        if (!property_exists($data, "endsAt") || $data->endsAt === null) { throw new SdkValidationError("endsAt", 'required', "Required property 'endsAt' is missing or null"); }
         return new self(
             tldName: SdkClient::stringValue($data->tldName),
             endsAt: SdkClient::stringValue($data->endsAt),
@@ -154,9 +133,7 @@ class GetOrderResponseErrorVariant1Details implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tlds") || $data->tlds === null) {
-            throw new SdkValidationError("tlds", 'required', "Required property 'tlds' is missing or null");
-        }
+        if (!property_exists($data, "tlds") || $data->tlds === null) { throw new SdkValidationError("tlds", 'required', "Required property 'tlds' is missing or null"); }
         return new self(
             tlds: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetOrderResponseErrorVariant1DetailsTldsItem::class), SdkClient::arrayValue($data->tlds))),
         );
@@ -200,12 +177,8 @@ class GetOrderResponseErrorVariant1 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "details") || $data->details === null) {
-            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant1CodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseErrorVariant1Details::class),
@@ -217,26 +190,11 @@ final readonly class GetOrderResponseErrorVariant2CodeEnum implements SdkOpenEnu
 {
     public const PRICE_MISMATCH = "price-mismatch";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseErrorVariant2Details implements \JsonSerializable
@@ -278,9 +236,7 @@ class GetOrderResponseErrorVariant2Details implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expectedPrice") || $data->expectedPrice === null) {
-            throw new SdkValidationError("expectedPrice", 'required', "Required property 'expectedPrice' is missing or null");
-        }
+        if (!property_exists($data, "expectedPrice") || $data->expectedPrice === null) { throw new SdkValidationError("expectedPrice", 'required', "Required property 'expectedPrice' is missing or null"); }
         return new self(
             expectedPrice: SdkClient::floatValue($data->expectedPrice),
             actualPrice: (property_exists($data, "actualPrice") && $data->actualPrice !== null ? SdkClient::floatValue($data->actualPrice) : SdkNotGiven::Value),
@@ -325,12 +281,8 @@ class GetOrderResponseErrorVariant2 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "details") || $data->details === null) {
-            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant2CodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseErrorVariant2Details::class),
@@ -342,26 +294,11 @@ final readonly class GetOrderResponseErrorVariant3CodeEnum implements SdkOpenEnu
 {
     public const UNEXPECTED_ERROR = "unexpected-error";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseErrorVariant3 implements GetOrderResponseError, \JsonSerializable
@@ -395,9 +332,7 @@ class GetOrderResponseErrorVariant3 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant3CodeEnum::class),
         );

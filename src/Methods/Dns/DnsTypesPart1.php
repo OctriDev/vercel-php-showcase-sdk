@@ -20,26 +20,11 @@ final readonly class CreateRecordType implements SdkOpenEnum
     public const TXT = "TXT";
     public const NS = "NS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateRecordType implements SdkOpenEnum
@@ -55,26 +40,11 @@ final readonly class UpdateRecordType implements SdkOpenEnum
     public const TXT = "TXT";
     public const NS = "NS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetRecordsResponseVariant1RecordsItemTypeEnum implements SdkOpenEnum
@@ -90,26 +60,11 @@ final readonly class GetRecordsResponseVariant1RecordsItemTypeEnum implements Sd
     public const SRV = "SRV";
     public const TXT = "TXT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetRecordsResponseVariant1RecordsItem implements \JsonSerializable
@@ -229,36 +184,16 @@ class GetRecordsResponseVariant1RecordsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created")) {
-            throw new SdkValidationError("created", 'required', "Missing required property 'created'");
-        }
-        if (!property_exists($data, "createdAt")) {
-            throw new SdkValidationError("createdAt", 'required', "Missing required property 'createdAt'");
-        }
-        if (!property_exists($data, "creator") || $data->creator === null) {
-            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "updated")) {
-            throw new SdkValidationError("updated", 'required', "Missing required property 'updated'");
-        }
-        if (!property_exists($data, "updatedAt")) {
-            throw new SdkValidationError("updatedAt", 'required', "Missing required property 'updatedAt'");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "created")) { throw new SdkValidationError("created", 'required', "Missing required property 'created'"); }
+        if (!property_exists($data, "createdAt")) { throw new SdkValidationError("createdAt", 'required', "Missing required property 'createdAt'"); }
+        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "updated")) { throw new SdkValidationError("updated", 'required', "Missing required property 'updated'"); }
+        if (!property_exists($data, "updatedAt")) { throw new SdkValidationError("updatedAt", 'required', "Missing required property 'updatedAt'"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             created: ($data->created === null ? null : SdkClient::floatValue($data->created)),
             createdAt: ($data->createdAt === null ? null : SdkClient::floatValue($data->createdAt)),
@@ -309,9 +244,7 @@ class GetRecordsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "records") || $data->records === null) {
-            throw new SdkValidationError("records", 'required', "Required property 'records' is missing or null");
-        }
+        if (!property_exists($data, "records") || $data->records === null) { throw new SdkValidationError("records", 'required', "Required property 'records' is missing or null"); }
         return new self(
             records: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetRecordsResponseVariant1RecordsItem::class), SdkClient::arrayValue($data->records))),
         );
@@ -331,24 +264,9 @@ final readonly class GetRecordsResponseVariant2RecordsItemTypeEnum implements Sd
     public const SRV = "SRV";
     public const TXT = "TXT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

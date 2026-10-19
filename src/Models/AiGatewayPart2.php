@@ -107,24 +107,12 @@ class AiGatewayBudgetDefault implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
-            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
-        }
-        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) {
-            throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null");
-        }
-        if (!property_exists($data, "scopeType") || $data->scopeType === null) {
-            throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
+        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) { throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null"); }
+        if (!property_exists($data, "scopeType") || $data->scopeType === null) { throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -175,9 +163,7 @@ class AiGatewayBudgetDefaultList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaults") || $data->defaults === null) {
-            throw new SdkValidationError("defaults", 'required', "Required property 'defaults' is missing or null");
-        }
+        if (!property_exists($data, "defaults") || $data->defaults === null) { throw new SdkValidationError("defaults", 'required', "Required property 'defaults' is missing or null"); }
         return new self(
             defaults: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayBudgetDefault::class), SdkClient::arrayValue($data->defaults))),
         );
@@ -252,18 +238,10 @@ class AiGatewayBudgetListDefaultCoveredCounts implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "api-key") || get_object_vars($data)["api-key"] === null) {
-            throw new SdkValidationError("api-key", 'required', "Required property 'api-key' is missing or null");
-        }
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
-        if (!property_exists($data, "team") || $data->team === null) {
-            throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null");
-        }
-        if (!property_exists($data, "user") || $data->user === null) {
-            throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null");
-        }
+        if (!property_exists($data, "api-key") || get_object_vars($data)["api-key"] === null) { throw new SdkValidationError("api-key", 'required', "Required property 'api-key' is missing or null"); }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "team") || $data->team === null) { throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null"); }
+        if (!property_exists($data, "user") || $data->user === null) { throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null"); }
         return new self(
             apiKey: SdkClient::floatValue(get_object_vars($data)["api-key"]),
             project: SdkClient::floatValue($data->project),
@@ -335,9 +313,7 @@ class AiGatewayBudgetList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "budgets") || $data->budgets === null) {
-            throw new SdkValidationError("budgets", 'required', "Required property 'budgets' is missing or null");
-        }
+        if (!property_exists($data, "budgets") || $data->budgets === null) { throw new SdkValidationError("budgets", 'required', "Required property 'budgets' is missing or null"); }
         return new self(
             budgets: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayBudget::class), SdkClient::arrayValue($data->budgets))),
             defaultCoveredCounts: (property_exists($data, "defaultCoveredCounts") && $data->defaultCoveredCounts !== null ? SdkClient::hydrateClass($data->defaultCoveredCounts, AiGatewayBudgetListDefaultCoveredCounts::class) : SdkNotGiven::Value),

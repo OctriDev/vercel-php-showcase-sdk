@@ -44,12 +44,8 @@ class CreateProjectResponseEnvItemContentHintVariant14 implements CreateProjectR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, CreateProjectResponseEnvItemContentHintVariant14TypeEnum::class),
@@ -117,21 +113,11 @@ class CreateProjectResponseEnvItemContentHintVariant15 implements CreateProjectR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
-            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) {
-            throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null");
-        }
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) { throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -184,12 +170,8 @@ class CreateProjectResponseEnvItemContentHintVariant16 implements CreateProjectR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             type: SdkClient::hydrateEnum($data->type, CreateProjectResponseEnvItemContentHintVariant16TypeEnum::class),
@@ -232,9 +214,7 @@ class CreateProjectResponseExpirationVariant0 implements CreateProjectResponseEx
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
         return new self(
             expiresAt: SdkClient::floatValue($data->expiresAt),
         );
@@ -286,12 +266,8 @@ class CreateProjectResponseExpirationVariant1 implements CreateProjectResponseEx
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "lockedAt") || $data->lockedAt === null) {
-            throw new SdkValidationError("lockedAt", 'required', "Required property 'lockedAt' is missing or null");
-        }
-        if (!property_exists($data, "lockedBy") || $data->lockedBy === null) {
-            throw new SdkValidationError("lockedBy", 'required', "Required property 'lockedBy' is missing or null");
-        }
+        if (!property_exists($data, "lockedAt") || $data->lockedAt === null) { throw new SdkValidationError("lockedAt", 'required', "Required property 'lockedAt' is missing or null"); }
+        if (!property_exists($data, "lockedBy") || $data->lockedBy === null) { throw new SdkValidationError("lockedBy", 'required', "Required property 'lockedBy' is missing or null"); }
         return new self(
             lockedAt: SdkClient::floatValue($data->lockedAt),
             lockedBy: SdkClient::stringValue($data->lockedBy),
@@ -344,12 +320,8 @@ class CreateProjectResponseInternalRoutesItemVariant0 implements CreateProjectRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) {
-            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             src: SdkClient::stringValue($data->src),
             status: SdkClient::floatValue($data->status),
@@ -362,26 +334,11 @@ final readonly class CreateProjectResponseInternalRoutesItemVariant1HasItemHeade
 {
     public const X_VERCEL_IP_COUNTRY = "x-vercel-ip-country";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 enum CreateProjectResponseInternalRoutesItemVariant1HasItemHeaderTypeEnum: string implements SdkWireEnum

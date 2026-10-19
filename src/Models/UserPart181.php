@@ -45,9 +45,7 @@ class UserEventPayloadVariant326PasswordProtectionVariant0 implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UserEventPayloadVariant326PasswordProtectionVariant0DeploymentTypeEnum::class),
         );
@@ -64,26 +62,11 @@ final readonly class UserEventPayloadVariant326PasswordProtectionEnum implements
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant326 implements UserEventPayload, \JsonSerializable
@@ -167,12 +150,8 @@ class UserEventPayloadVariant326 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "oldPasswordProtection")) {
-            throw new SdkValidationError("oldPasswordProtection", 'required', "Missing required property 'oldPasswordProtection'");
-        }
-        if (!property_exists($data, "passwordProtection")) {
-            throw new SdkValidationError("passwordProtection", 'required', "Missing required property 'passwordProtection'");
-        }
+        if (!property_exists($data, "oldPasswordProtection")) { throw new SdkValidationError("oldPasswordProtection", 'required', "Missing required property 'oldPasswordProtection'"); }
+        if (!property_exists($data, "passwordProtection")) { throw new SdkValidationError("passwordProtection", 'required', "Missing required property 'passwordProtection'"); }
         return new self(
             oldPasswordProtection: ($data->oldPasswordProtection === null ? null : (is_object($data->oldPasswordProtection) ? SdkClient::hydrateClass($data->oldPasswordProtection, UserEventPayloadVariant326OldPasswordProtectionVariant0::class) : (is_string($data->oldPasswordProtection) ? SdkClient::hydrateStringEnumOrString($data->oldPasswordProtection, UserEventPayloadVariant326OldPasswordProtectionEnum::class) : SdkClient::hydrateClass($data->oldPasswordProtection, UserEventPayloadVariant326OldPasswordProtectionVariant0::class)))),
             passwordProtection: ($data->passwordProtection === null ? null : (is_object($data->passwordProtection) ? SdkClient::hydrateClass($data->passwordProtection, UserEventPayloadVariant326PasswordProtectionVariant0::class) : (is_string($data->passwordProtection) ? SdkClient::hydrateStringEnumOrString($data->passwordProtection, UserEventPayloadVariant326PasswordProtectionEnum::class) : SdkClient::hydrateClass($data->passwordProtection, UserEventPayloadVariant326PasswordProtectionVariant0::class)))),
@@ -218,9 +197,7 @@ class UserEventPayloadVariant327 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
         );
@@ -272,12 +249,8 @@ class UserEventPayloadVariant328 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             expiresAt: SdkClient::floatValue($data->expiresAt),
             projectId: SdkClient::stringValue($data->projectId),
@@ -294,26 +267,11 @@ final readonly class UserEventPayloadVariant329ReasonCodeEnum implements SdkOpen
     public const BUDGET_REACHED = "BUDGET_REACHED";
     public const PUBLIC_API = "PUBLIC_API";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant329 implements UserEventPayload, \JsonSerializable
@@ -375,9 +333,7 @@ class UserEventPayloadVariant329 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: (property_exists($data, "projectName") && $data->projectName !== null ? SdkClient::stringValue($data->projectName) : SdkNotGiven::Value),

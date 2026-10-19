@@ -44,12 +44,8 @@ class UpdateDrainResponseVariant0DeliveryInternal implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target") || $data->target === null) {
-            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             target: SdkClient::hydrateStringEnumOrString($data->target, UpdateDrainResponseVariant0DeliveryInternalTargetEnum::class),
             type: SdkClient::hydrateEnum($data->type, UpdateDrainResponseVariant0DeliveryInternalTypeEnum::class),
@@ -65,26 +61,11 @@ final readonly class UpdateDrainResponseVariant0DisabledReasonEnum implements Sd
     public const FEATURE_NOT_AVAILABLE = "feature-not-available";
     public const LIMITS_EXCEEDED = "limits-exceeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateDrainResponseVariant0SamplingItemEnvEnum implements SdkOpenEnum
@@ -92,52 +73,22 @@ final readonly class UpdateDrainResponseVariant0SamplingItemEnvEnum implements S
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateDrainResponseVariant0SamplingItemTypeEnum implements SdkOpenEnum
 {
     public const HEAD_SAMPLING = "head_sampling";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateDrainResponseVariant0SamplingItem implements \JsonSerializable
@@ -193,12 +144,8 @@ class UpdateDrainResponseVariant0SamplingItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rate") || $data->rate === null) {
-            throw new SdkValidationError("rate", 'required', "Required property 'rate' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "rate") || $data->rate === null) { throw new SdkValidationError("rate", 'required', "Required property 'rate' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             rate: SdkClient::floatValue($data->rate),
             type: SdkClient::hydrateStringEnumOrString($data->type, UpdateDrainResponseVariant0SamplingItemTypeEnum::class),
@@ -308,26 +255,11 @@ final readonly class UpdateDrainResponseVariant0SourceSelfServedDefaultForEnum i
 {
     public const EVE_TRACING = "eve-tracing";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 enum UpdateDrainResponseVariant0SourceSelfServedKindEnum: string implements SdkWireEnum
@@ -378,9 +310,7 @@ class UpdateDrainResponseVariant0SourceSelfServed implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, UpdateDrainResponseVariant0SourceSelfServedKindEnum::class),
             defaultFor: (property_exists($data, "defaultFor") && $data->defaultFor !== null ? SdkClient::hydrateStringEnumOrString($data->defaultFor, UpdateDrainResponseVariant0SourceSelfServedDefaultForEnum::class) : SdkNotGiven::Value),

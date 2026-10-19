@@ -38,9 +38,7 @@ class GetOrderResponseDomainsItemVariant0ErrorClaimsNoticeRequired implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorClaimsNoticeRequiredCodeEnum::class),
         );
@@ -51,26 +49,11 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUnt
 {
     public const CANNOT_TRANSFER_IN_UNTIL = "cannot-transfer-in-until";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUntilDetails implements \JsonSerializable
@@ -104,9 +87,7 @@ class GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUntilDetails imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "numDaysUntilTransferrable") || $data->numDaysUntilTransferrable === null) {
-            throw new SdkValidationError("numDaysUntilTransferrable", 'required', "Required property 'numDaysUntilTransferrable' is missing or null");
-        }
+        if (!property_exists($data, "numDaysUntilTransferrable") || $data->numDaysUntilTransferrable === null) { throw new SdkValidationError("numDaysUntilTransferrable", 'required', "Required property 'numDaysUntilTransferrable' is missing or null"); }
         return new self(
             numDaysUntilTransferrable: SdkClient::floatValue($data->numDaysUntilTransferrable),
         );
@@ -150,12 +131,8 @@ class GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUntil implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "details") || $data->details === null) {
-            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUntilCodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseDomainsItemVariant0ErrorCannotTransferInUntilDetails::class),
@@ -167,26 +144,11 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorAccountTransferRequ
 {
     public const ACCOUNT_TRANSFER_REQUIRED = "account-transfer-required";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseDomainsItemVariant0ErrorAccountTransferRequired implements \JsonSerializable
@@ -220,9 +182,7 @@ class GetOrderResponseDomainsItemVariant0ErrorAccountTransferRequired implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorAccountTransferRequiredCodeEnum::class),
         );
@@ -233,26 +193,11 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorPriceChangeCodeEnum
 {
     public const PRICE_CHANGE = "price-change";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseDomainsItemVariant0ErrorPriceChange implements \JsonSerializable
@@ -286,9 +231,7 @@ class GetOrderResponseDomainsItemVariant0ErrorPriceChange implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorPriceChangeCodeEnum::class),
         );
@@ -299,26 +242,11 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorUnavailableLegalCod
 {
     public const UNAVAILABLE_LEGAL = "unavailable-legal";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseDomainsItemVariant0ErrorUnavailableLegal implements \JsonSerializable
@@ -352,9 +280,7 @@ class GetOrderResponseDomainsItemVariant0ErrorUnavailableLegal implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorUnavailableLegalCodeEnum::class),
         );
@@ -365,26 +291,11 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorInvalidContactCodeE
 {
     public const INVALID_CONTACT = "invalid-contact";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetOrderResponseDomainsItemVariant0ErrorInvalidContactDetailsInvalidFieldEnum implements SdkOpenEnum
@@ -402,24 +313,9 @@ final readonly class GetOrderResponseDomainsItemVariant0ErrorInvalidContactDetai
     public const COMPANYNAME = "companyName";
     public const FAX = "fax";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

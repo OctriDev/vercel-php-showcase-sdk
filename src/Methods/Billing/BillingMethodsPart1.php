@@ -28,15 +28,15 @@ trait BillingMethodsPart1
             "/v1/billing/charges",
             config: $clientConfig,
             query: [
-                'from' => new SdkQueryValue($from, "form", true),
-                'to' => new SdkQueryValue($to, "form", true),
-                'teamId' => new SdkQueryValue($teamId, "form", true),
-                'slug' => new SdkQueryValue($slug, "form", true),
-            ],
+            'from' => new SdkQueryValue($from, "form", true),
+            'to' => new SdkQueryValue($to, "form", true),
+            'teamId' => new SdkQueryValue($teamId, "form", true),
+            'slug' => new SdkQueryValue($slug, "form", true),
+        ],
             operationId: 'listBillingCharges',
             streamFormat: 'ndjson',
             streamMediaType: 'application/jsonl',
-            requestOptions: $requestOptions,
+            requestOptions: $requestOptions
         ) as $_ev) {
             if ($_ev->data === '[DONE]') {
                 return;
@@ -62,13 +62,13 @@ trait BillingMethodsPart1
             "/v1/billing/contract-commitments",
             config: $clientConfig,
             query: [
-                'teamId' => new SdkQueryValue($teamId, "form", true),
-                'slug' => new SdkQueryValue($slug, "form", true),
-            ],
+            'teamId' => new SdkQueryValue($teamId, "form", true),
+            'slug' => new SdkQueryValue($slug, "form", true),
+        ],
             operationId: 'listContractCommitments',
             streamFormat: 'ndjson',
             streamMediaType: 'application/jsonl',
-            requestOptions: $requestOptions,
+            requestOptions: $requestOptions
         ) as $_ev) {
             if ($_ev->data === '[DONE]') {
                 return;

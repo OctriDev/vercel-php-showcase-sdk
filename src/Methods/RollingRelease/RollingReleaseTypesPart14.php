@@ -97,21 +97,11 @@ class CompleteRollingReleaseResponseRollingReleaseNextStage implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) {
-            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
-        }
-        if (!property_exists($data, "index") || $data->index === null) {
-            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
-        }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
-            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
-        }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
-            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
-        }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
-            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
-        }
+        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
+        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),
@@ -213,21 +203,11 @@ class CompleteRollingReleaseResponseRollingReleaseStagesItem implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) {
-            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
-        }
-        if (!property_exists($data, "index") || $data->index === null) {
-            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
-        }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
-            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
-        }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
-            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
-        }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
-            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
-        }
+        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
+        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),
@@ -248,26 +228,11 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseStateEnum imple
     public const ACTIVE = "ACTIVE";
     public const COMPLETE = "COMPLETE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -277,24 +242,9 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseSubstateEnum im
 {
     public const PAUSED = "PAUSED";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

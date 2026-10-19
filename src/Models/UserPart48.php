@@ -45,9 +45,7 @@ class UserEventPayloadVariant80Data implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "planSlug") || $data->planSlug === null) {
-            throw new SdkValidationError("planSlug", 'required', "Required property 'planSlug' is missing or null");
-        }
+        if (!property_exists($data, "planSlug") || $data->planSlug === null) { throw new SdkValidationError("planSlug", 'required', "Required property 'planSlug' is missing or null"); }
         return new self(
             planSlug: SdkClient::hydrateStringEnumOrString($data->planSlug, UserEventPayloadVariant80DataPlanSlugEnum::class),
         );
@@ -111,12 +109,8 @@ class UserEventPayloadVariant80 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant80ActionEnum::class),
             data: SdkClient::hydrateClass($data->data, UserEventPayloadVariant80Data::class),
@@ -132,26 +126,11 @@ final readonly class UserEventPayloadVariant81ActionEnum implements SdkOpenEnum
 {
     public const MUTATE = "mutate";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant81 implements UserEventPayload, \JsonSerializable
@@ -211,12 +190,8 @@ class UserEventPayloadVariant81 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant81ActionEnum::class),
             data: SdkClient::stringMapValue($data->data),
@@ -272,9 +247,7 @@ class UserEventPayloadVariant82 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "productAliases") || $data->productAliases === null) {
-            throw new SdkValidationError("productAliases", 'required', "Required property 'productAliases' is missing or null");
-        }
+        if (!property_exists($data, "productAliases") || $data->productAliases === null) { throw new SdkValidationError("productAliases", 'required', "Required property 'productAliases' is missing or null"); }
         return new self(
             productAliases: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->productAliases))),
             subscriptionId: (property_exists($data, "subscriptionId") && $data->subscriptionId !== null ? SdkClient::stringValue($data->subscriptionId) : SdkNotGiven::Value),
@@ -330,12 +303,8 @@ class UserEventPayloadVariant83Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

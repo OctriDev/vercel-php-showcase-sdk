@@ -38,9 +38,7 @@ class FlagEnvironmentsValueRulesItemOutcomeExperiment implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, FlagEnvironmentsValueRulesItemOutcomeExperimentTypeEnum::class),
         );
@@ -90,15 +88,9 @@ class FlagEnvironmentsValueRulesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "outcome") || $data->outcome === null) {
-            throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "outcome") || $data->outcome === null) { throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, FlagEnvironmentsValueRulesItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
             id: SdkClient::stringValue($data->id),
@@ -146,9 +138,7 @@ class FlagEnvironmentsValueTargetsValueValueValueItem implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             value: SdkClient::stringValue($data->value),
             note: (property_exists($data, "note") && $data->note !== null ? SdkClient::stringValue($data->note) : SdkNotGiven::Value),
@@ -229,18 +219,10 @@ class FlagEnvironmentsValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
-        if (!property_exists($data, "fallthrough") || $data->fallthrough === null) {
-            throw new SdkValidationError("fallthrough", 'required', "Required property 'fallthrough' is missing or null");
-        }
-        if (!property_exists($data, "pausedOutcome") || $data->pausedOutcome === null) {
-            throw new SdkValidationError("pausedOutcome", 'required', "Required property 'pausedOutcome' is missing or null");
-        }
-        if (!property_exists($data, "rules") || $data->rules === null) {
-            throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "fallthrough") || $data->fallthrough === null) { throw new SdkValidationError("fallthrough", 'required', "Required property 'fallthrough' is missing or null"); }
+        if (!property_exists($data, "pausedOutcome") || $data->pausedOutcome === null) { throw new SdkValidationError("pausedOutcome", 'required', "Required property 'pausedOutcome' is missing or null"); }
+        if (!property_exists($data, "rules") || $data->rules === null) { throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             fallthrough: SdkClient::hydrateUnion($data->fallthrough, [FlagEnvironmentsValueFallthroughVariant::class, FlagEnvironmentsValueFallthroughSplit::class, FlagEnvironmentsValueFallthroughRollout::class, FlagEnvironmentsValueFallthroughExperiment::class], null, []),
@@ -269,26 +251,11 @@ final readonly class FlagKindEnum implements SdkOpenEnum
     public const NUMBER = "number";
     public const STRING = "string";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -299,26 +266,11 @@ final readonly class FlagStateEnum implements SdkOpenEnum
     public const ACTIVE = "active";
     public const ARCHIVED = "archived";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**

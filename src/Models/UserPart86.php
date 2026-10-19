@@ -449,33 +449,15 @@ class UserEventPayloadVariant120JobCursorOriginPush implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headInfo") || $data->headInfo === null) {
-            throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null");
-        }
-        if (!property_exists($data, "installationId") || $data->installationId === null) {
-            throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null");
-        }
-        if (!property_exists($data, "owner") || $data->owner === null) {
-            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
-        }
-        if (!property_exists($data, "provider") || $data->provider === null) {
-            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
-        }
-        if (!property_exists($data, "ref") || $data->ref === null) {
-            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
-        }
-        if (!property_exists($data, "repo") || $data->repo === null) {
-            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
-        }
-        if (!property_exists($data, "repoId") || $data->repoId === null) {
-            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
-        }
-        if (!property_exists($data, "sha") || $data->sha === null) {
-            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "headInfo") || $data->headInfo === null) { throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null"); }
+        if (!property_exists($data, "installationId") || $data->installationId === null) { throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null"); }
+        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
+        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
+        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
+        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             headInfo: SdkClient::hydrateClass($data->headInfo, UserEventPayloadVariant120JobCursorOriginPushHeadInfo::class),
             installationId: SdkClient::stringValue($data->installationId),

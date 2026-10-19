@@ -16,26 +16,11 @@ final readonly class GetRuntimeLogsResponseLevelEnum implements SdkOpenEnum
     public const TRACE = "trace";
     public const WARNING = "warning";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetRuntimeLogsResponseSourceEnum implements SdkOpenEnum
@@ -46,26 +31,11 @@ final readonly class GetRuntimeLogsResponseSourceEnum implements SdkOpenEnum
     public const REQUEST = "request";
     public const SERVERLESS = "serverless";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetRuntimeLogsResponse implements \JsonSerializable
@@ -153,36 +123,16 @@ class GetRuntimeLogsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) {
-            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
-        }
-        if (!property_exists($data, "level") || $data->level === null) {
-            throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "messageTruncated") || $data->messageTruncated === null) {
-            throw new SdkValidationError("messageTruncated", 'required', "Required property 'messageTruncated' is missing or null");
-        }
-        if (!property_exists($data, "requestMethod") || $data->requestMethod === null) {
-            throw new SdkValidationError("requestMethod", 'required', "Required property 'requestMethod' is missing or null");
-        }
-        if (!property_exists($data, "requestPath") || $data->requestPath === null) {
-            throw new SdkValidationError("requestPath", 'required', "Required property 'requestPath' is missing or null");
-        }
-        if (!property_exists($data, "responseStatusCode") || $data->responseStatusCode === null) {
-            throw new SdkValidationError("responseStatusCode", 'required', "Required property 'responseStatusCode' is missing or null");
-        }
-        if (!property_exists($data, "rowId") || $data->rowId === null) {
-            throw new SdkValidationError("rowId", 'required', "Required property 'rowId' is missing or null");
-        }
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "timestampInMs") || $data->timestampInMs === null) {
-            throw new SdkValidationError("timestampInMs", 'required', "Required property 'timestampInMs' is missing or null");
-        }
+        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "level") || $data->level === null) { throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "messageTruncated") || $data->messageTruncated === null) { throw new SdkValidationError("messageTruncated", 'required', "Required property 'messageTruncated' is missing or null"); }
+        if (!property_exists($data, "requestMethod") || $data->requestMethod === null) { throw new SdkValidationError("requestMethod", 'required', "Required property 'requestMethod' is missing or null"); }
+        if (!property_exists($data, "requestPath") || $data->requestPath === null) { throw new SdkValidationError("requestPath", 'required', "Required property 'requestPath' is missing or null"); }
+        if (!property_exists($data, "responseStatusCode") || $data->responseStatusCode === null) { throw new SdkValidationError("responseStatusCode", 'required', "Required property 'responseStatusCode' is missing or null"); }
+        if (!property_exists($data, "rowId") || $data->rowId === null) { throw new SdkValidationError("rowId", 'required', "Required property 'rowId' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "timestampInMs") || $data->timestampInMs === null) { throw new SdkValidationError("timestampInMs", 'required', "Required property 'timestampInMs' is missing or null"); }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             level: SdkClient::hydrateStringEnumOrString($data->level, GetRuntimeLogsResponseLevelEnum::class),

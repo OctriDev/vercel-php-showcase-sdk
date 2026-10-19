@@ -63,12 +63,8 @@ class GetIntegrationResourcesResponseResourcesItemNotification implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "level") || $data->level === null) {
-            throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null");
-        }
-        if (!property_exists($data, "title") || $data->title === null) {
-            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
-        }
+        if (!property_exists($data, "level") || $data->level === null) { throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null"); }
+        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
         return new self(
             level: SdkClient::hydrateStringEnumOrString($data->level, GetIntegrationResourcesResponseResourcesItemNotificationLevelEnum::class),
             title: SdkClient::stringValue($data->title),
@@ -84,26 +80,11 @@ final readonly class GetIntegrationResourcesResponseResourcesItemProtocolSetting
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItem implements \JsonSerializable
@@ -143,12 +124,8 @@ class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAuthentication
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target") || $data->target === null) {
-            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             target: SdkClient::hydrateStringEnumOrString($data->target, GetIntegrationResourcesResponseResourcesItemProtocolSettingsAuthenticationAppUrlsItemTargetEnum::class),
             url: SdkClient::stringValue($data->url),
@@ -334,24 +311,9 @@ final readonly class GetIntegrationResourcesResponseResourcesItemStatusEnum impl
     public const SUSPENDED = "suspended";
     public const UNINSTALLED = "uninstalled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

@@ -300,42 +300,18 @@ class GetConfigurationResponseVariant0 implements GetConfigurationResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "notification") || $data->notification === null) {
-            throw new SdkValidationError("notification", 'required', "Required property 'notification' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "projectSelection") || $data->projectSelection === null) {
-            throw new SdkValidationError("projectSelection", 'required', "Required property 'projectSelection' is missing or null");
-        }
-        if (!property_exists($data, "scopes") || $data->scopes === null) {
-            throw new SdkValidationError("scopes", 'required', "Required property 'scopes' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "transferRequest") || $data->transferRequest === null) {
-            throw new SdkValidationError("transferRequest", 'required', "Required property 'transferRequest' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
-        if (!property_exists($data, "userId") || $data->userId === null) {
-            throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "notification") || $data->notification === null) { throw new SdkValidationError("notification", 'required', "Required property 'notification' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "projectSelection") || $data->projectSelection === null) { throw new SdkValidationError("projectSelection", 'required', "Required property 'projectSelection' is missing or null"); }
+        if (!property_exists($data, "scopes") || $data->scopes === null) { throw new SdkValidationError("scopes", 'required', "Required property 'scopes' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "transferRequest") || $data->transferRequest === null) { throw new SdkValidationError("transferRequest", 'required', "Required property 'transferRequest' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "userId") || $data->userId === null) { throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),

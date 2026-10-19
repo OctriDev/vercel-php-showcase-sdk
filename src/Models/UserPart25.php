@@ -64,12 +64,8 @@ class UserEventPayloadVariant24 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apiKey") || $data->apiKey === null) {
-            throw new SdkValidationError("apiKey", 'required', "Required property 'apiKey' is missing or null");
-        }
-        if (!property_exists($data, "change") || $data->change === null) {
-            throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null");
-        }
+        if (!property_exists($data, "apiKey") || $data->apiKey === null) { throw new SdkValidationError("apiKey", 'required', "Required property 'apiKey' is missing or null"); }
+        if (!property_exists($data, "change") || $data->change === null) { throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null"); }
         return new self(
             apiKey: SdkClient::hydrateClass($data->apiKey, UserEventPayloadVariant24ApiKey::class),
             change: SdkClient::hydrateStringEnumOrString($data->change, UserEventPayloadVariant24ChangeEnum::class),
@@ -89,26 +85,11 @@ final readonly class UserEventPayloadVariant25ChangeEnum implements SdkOpenEnum
     public const ENABLE_COMMITMENT = "enable-commitment";
     public const UPDATE = "update";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -159,12 +140,8 @@ class UserEventPayloadVariant25Commitment implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deferredInvoiceTargetBalance") || $data->deferredInvoiceTargetBalance === null) {
-            throw new SdkValidationError("deferredInvoiceTargetBalance", 'required', "Required property 'deferredInvoiceTargetBalance' is missing or null");
-        }
-        if (!property_exists($data, "maximumMonthlySpend")) {
-            throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'");
-        }
+        if (!property_exists($data, "deferredInvoiceTargetBalance") || $data->deferredInvoiceTargetBalance === null) { throw new SdkValidationError("deferredInvoiceTargetBalance", 'required', "Required property 'deferredInvoiceTargetBalance' is missing or null"); }
+        if (!property_exists($data, "maximumMonthlySpend")) { throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'"); }
         return new self(
             deferredInvoiceTargetBalance: SdkClient::stringValue($data->deferredInvoiceTargetBalance),
             maximumMonthlySpend: ($data->maximumMonthlySpend === null ? null : SdkClient::stringValue($data->maximumMonthlySpend)),
@@ -230,15 +207,9 @@ class UserEventPayloadVariant25Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "maximumMonthlySpend")) {
-            throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'");
-        }
-        if (!property_exists($data, "minimumBalance") || $data->minimumBalance === null) {
-            throw new SdkValidationError("minimumBalance", 'required', "Required property 'minimumBalance' is missing or null");
-        }
-        if (!property_exists($data, "targetBalance") || $data->targetBalance === null) {
-            throw new SdkValidationError("targetBalance", 'required', "Required property 'targetBalance' is missing or null");
-        }
+        if (!property_exists($data, "maximumMonthlySpend")) { throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'"); }
+        if (!property_exists($data, "minimumBalance") || $data->minimumBalance === null) { throw new SdkValidationError("minimumBalance", 'required', "Required property 'minimumBalance' is missing or null"); }
+        if (!property_exists($data, "targetBalance") || $data->targetBalance === null) { throw new SdkValidationError("targetBalance", 'required', "Required property 'targetBalance' is missing or null"); }
         return new self(
             maximumMonthlySpend: ($data->maximumMonthlySpend === null ? null : SdkClient::stringValue($data->maximumMonthlySpend)),
             minimumBalance: SdkClient::stringValue($data->minimumBalance),
@@ -305,15 +276,9 @@ class UserEventPayloadVariant25Settings implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "maximumMonthlySpend")) {
-            throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'");
-        }
-        if (!property_exists($data, "minimumBalance") || $data->minimumBalance === null) {
-            throw new SdkValidationError("minimumBalance", 'required', "Required property 'minimumBalance' is missing or null");
-        }
-        if (!property_exists($data, "targetBalance") || $data->targetBalance === null) {
-            throw new SdkValidationError("targetBalance", 'required', "Required property 'targetBalance' is missing or null");
-        }
+        if (!property_exists($data, "maximumMonthlySpend")) { throw new SdkValidationError("maximumMonthlySpend", 'required', "Missing required property 'maximumMonthlySpend'"); }
+        if (!property_exists($data, "minimumBalance") || $data->minimumBalance === null) { throw new SdkValidationError("minimumBalance", 'required', "Required property 'minimumBalance' is missing or null"); }
+        if (!property_exists($data, "targetBalance") || $data->targetBalance === null) { throw new SdkValidationError("targetBalance", 'required', "Required property 'targetBalance' is missing or null"); }
         return new self(
             maximumMonthlySpend: ($data->maximumMonthlySpend === null ? null : SdkClient::stringValue($data->maximumMonthlySpend)),
             minimumBalance: SdkClient::stringValue($data->minimumBalance),

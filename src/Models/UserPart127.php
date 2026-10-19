@@ -27,26 +27,11 @@ final readonly class UserEventPayloadVariant211FactorsItemOriginEnum implements 
     public const SAML = "saml";
     public const WEBAUTHN = "webauthn";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -135,9 +120,7 @@ class UserEventPayloadVariant211FactorsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, UserEventPayloadVariant211FactorsItemOriginEnum::class),
             legacy: (property_exists($data, "legacy") && $data->legacy !== null ? SdkClient::boolValue($data->legacy) : SdkNotGiven::Value),
@@ -168,26 +151,11 @@ final readonly class UserEventPayloadVariant211FactorsItemVariant0OriginEnum imp
     public const SAML = "saml";
     public const WEBAUTHN = "webauthn";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -276,9 +244,7 @@ class UserEventPayloadVariant211FactorsItemVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, UserEventPayloadVariant211FactorsItemVariant0OriginEnum::class),
             legacy: (property_exists($data, "legacy") && $data->legacy !== null ? SdkClient::boolValue($data->legacy) : SdkNotGiven::Value),
@@ -298,26 +264,11 @@ final readonly class UserEventPayloadVariant211FactorsItemVariant1OriginEnum imp
     public const TOTP = "totp";
     public const WEBAUTHN = "webauthn";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -358,9 +309,7 @@ class UserEventPayloadVariant211FactorsItemVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, UserEventPayloadVariant211FactorsItemVariant1OriginEnum::class),
         );

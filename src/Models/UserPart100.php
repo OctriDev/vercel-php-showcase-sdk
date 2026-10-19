@@ -79,12 +79,8 @@ class UserEventPayloadVariant160ToAccount implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant160ToAccountTypeEnum::class),
@@ -149,15 +145,9 @@ class UserEventPayloadVariant160 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfig") || $data->edgeConfig === null) {
-            throw new SdkValidationError("edgeConfig", 'required', "Required property 'edgeConfig' is missing or null");
-        }
-        if (!property_exists($data, "fromAccount") || $data->fromAccount === null) {
-            throw new SdkValidationError("fromAccount", 'required', "Required property 'fromAccount' is missing or null");
-        }
-        if (!property_exists($data, "toAccount") || $data->toAccount === null) {
-            throw new SdkValidationError("toAccount", 'required', "Required property 'toAccount' is missing or null");
-        }
+        if (!property_exists($data, "edgeConfig") || $data->edgeConfig === null) { throw new SdkValidationError("edgeConfig", 'required', "Required property 'edgeConfig' is missing or null"); }
+        if (!property_exists($data, "fromAccount") || $data->fromAccount === null) { throw new SdkValidationError("fromAccount", 'required', "Required property 'fromAccount' is missing or null"); }
+        if (!property_exists($data, "toAccount") || $data->toAccount === null) { throw new SdkValidationError("toAccount", 'required', "Required property 'toAccount' is missing or null"); }
         return new self(
             edgeConfig: SdkClient::hydrateClass($data->edgeConfig, UserEventPayloadVariant160EdgeConfig::class),
             fromAccount: SdkClient::hydrateClass($data->fromAccount, UserEventPayloadVariant160FromAccount::class),
@@ -231,18 +221,10 @@ class UserEventPayloadVariant161 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
-            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigTokenId") || $data->edgeConfigTokenId === null) {
-            throw new SdkValidationError("edgeConfigTokenId", 'required', "Required property 'edgeConfigTokenId' is missing or null");
-        }
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
+        if (!property_exists($data, "edgeConfigTokenId") || $data->edgeConfigTokenId === null) { throw new SdkValidationError("edgeConfigTokenId", 'required', "Required property 'edgeConfigTokenId' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
         return new self(
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
             edgeConfigSlug: SdkClient::stringValue($data->edgeConfigSlug),
@@ -307,15 +289,9 @@ class UserEventPayloadVariant162 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
-            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigTokenIds") || $data->edgeConfigTokenIds === null) {
-            throw new SdkValidationError("edgeConfigTokenIds", 'required', "Required property 'edgeConfigTokenIds' is missing or null");
-        }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
+        if (!property_exists($data, "edgeConfigTokenIds") || $data->edgeConfigTokenIds === null) { throw new SdkValidationError("edgeConfigTokenIds", 'required', "Required property 'edgeConfigTokenIds' is missing or null"); }
         return new self(
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
             edgeConfigSlug: SdkClient::stringValue($data->edgeConfigSlug),
@@ -369,12 +345,8 @@ class UserEventPayloadVariant163 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             name: SdkClient::stringValue($data->name),

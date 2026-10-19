@@ -55,12 +55,8 @@ class UserEventPayloadVariant33PrivateModel implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "providerSlug") || $data->providerSlug === null) {
-            throw new SdkValidationError("providerSlug", 'required', "Required property 'providerSlug' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "providerSlug") || $data->providerSlug === null) { throw new SdkValidationError("providerSlug", 'required', "Required property 'providerSlug' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             providerSlug: SdkClient::stringValue($data->providerSlug),
             slug: SdkClient::stringValue($data->slug),
@@ -103,9 +99,7 @@ class UserEventPayloadVariant33 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "privateModel") || $data->privateModel === null) {
-            throw new SdkValidationError("privateModel", 'required', "Required property 'privateModel' is missing or null");
-        }
+        if (!property_exists($data, "privateModel") || $data->privateModel === null) { throw new SdkValidationError("privateModel", 'required', "Required property 'privateModel' is missing or null"); }
         return new self(
             privateModel: SdkClient::hydrateClass($data->privateModel, UserEventPayloadVariant33PrivateModel::class),
         );
@@ -150,9 +144,7 @@ class UserEventPayloadVariant34PrivateModel implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             slug: SdkClient::stringValue($data->slug),
         );
@@ -194,9 +186,7 @@ class UserEventPayloadVariant34 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "privateModel") || $data->privateModel === null) {
-            throw new SdkValidationError("privateModel", 'required', "Required property 'privateModel' is missing or null");
-        }
+        if (!property_exists($data, "privateModel") || $data->privateModel === null) { throw new SdkValidationError("privateModel", 'required', "Required property 'privateModel' is missing or null"); }
         return new self(
             privateModel: SdkClient::hydrateClass($data->privateModel, UserEventPayloadVariant34PrivateModel::class),
         );
@@ -241,9 +231,7 @@ class UserEventPayloadVariant35PrivateProvider implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             slug: SdkClient::stringValue($data->slug),
         );
@@ -285,9 +273,7 @@ class UserEventPayloadVariant35 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "privateProvider") || $data->privateProvider === null) {
-            throw new SdkValidationError("privateProvider", 'required', "Required property 'privateProvider' is missing or null");
-        }
+        if (!property_exists($data, "privateProvider") || $data->privateProvider === null) { throw new SdkValidationError("privateProvider", 'required', "Required property 'privateProvider' is missing or null"); }
         return new self(
             privateProvider: SdkClient::hydrateClass($data->privateProvider, UserEventPayloadVariant35PrivateProvider::class),
         );
@@ -342,12 +328,8 @@ class UserEventPayloadVariant36PiiRedaction implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "from") || $data->from === null) {
-            throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null");
-        }
-        if (!property_exists($data, "to") || $data->to === null) {
-            throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null");
-        }
+        if (!property_exists($data, "from") || $data->from === null) { throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null"); }
+        if (!property_exists($data, "to") || $data->to === null) { throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null"); }
         return new self(
             from: SdkClient::boolValue($data->from),
             to: SdkClient::boolValue($data->to),

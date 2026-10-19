@@ -28,13 +28,13 @@ trait SandboxesMethodsPart3
             "/v2/sandboxes/sessions/" . SdkClient::encodePathSegment($sessionId) . "/cmd/" . SdkClient::encodePathSegment($cmdId) . "/logs",
             config: $clientConfig,
             query: [
-                'teamId' => new SdkQueryValue($teamId, "form", true),
-                'slug' => new SdkQueryValue($slug, "form", true),
-            ],
+            'teamId' => new SdkQueryValue($teamId, "form", true),
+            'slug' => new SdkQueryValue($slug, "form", true),
+        ],
             operationId: 'getSessionCommandLogs',
             streamFormat: 'ndjson',
             streamMediaType: 'application/x-ndjson',
-            requestOptions: $requestOptions,
+            requestOptions: $requestOptions
         ) as $_ev) {
             if ($_ev->data === '[DONE]') {
                 return;

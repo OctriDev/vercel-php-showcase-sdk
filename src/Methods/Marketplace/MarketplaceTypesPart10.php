@@ -64,12 +64,8 @@ class UpdateResourceSecretsVariant1SecretsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             value: SdkClient::stringValue($data->value),
@@ -122,9 +118,7 @@ class UpdateResourceSecretsVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "secrets") || $data->secrets === null) {
-            throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null");
-        }
+        if (!property_exists($data, "secrets") || $data->secrets === null) { throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null"); }
         return new self(
             secrets: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateResourceSecretsVariant1SecretsItem::class), SdkClient::arrayValue($data->secrets))),
             partial: (property_exists($data, "partial") && $data->partial !== null ? SdkClient::boolValue($data->partial) : SdkNotGiven::Value),
@@ -231,9 +225,7 @@ class UpdateResourceCustomClaimsClaimRulesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "claims") || $data->claims === null) {
-            throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null");
-        }
+        if (!property_exists($data, "claims") || $data->claims === null) { throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null"); }
         return new self(
             claims: SdkClient::mapValues(SdkClient::stringMapValue($data->claims), static fn($item) => ($item === null ? null : (is_array($item) ? array_values(array_map(static fn($item2) => SdkClient::stringValue($item2), SdkClient::arrayValue($item))) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),
             when: (property_exists($data, "when") && $data->when !== null ? SdkClient::hydrateClass($data->when, UpdateResourceCustomClaimsClaimRulesItemWhen::class) : SdkNotGiven::Value),
@@ -344,9 +336,7 @@ class UpdateResourceResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
         );

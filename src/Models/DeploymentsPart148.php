@@ -50,15 +50,9 @@ class GetDeploymentResponseVariant1RoutesItemVariant2 implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "continue") || $data->continue === null) {
-            throw new SdkValidationError("continue", 'required', "Required property 'continue' is missing or null");
-        }
-        if (!property_exists($data, "middleware") || $data->middleware === null) {
-            throw new SdkValidationError("middleware", 'required', "Required property 'middleware' is missing or null");
-        }
-        if (!property_exists($data, "src") || $data->src === null) {
-            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
-        }
+        if (!property_exists($data, "continue") || $data->continue === null) { throw new SdkValidationError("continue", 'required', "Required property 'continue' is missing or null"); }
+        if (!property_exists($data, "middleware") || $data->middleware === null) { throw new SdkValidationError("middleware", 'required', "Required property 'middleware' is missing or null"); }
+        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
         return new self(
             continue_: SdkClient::boolValue($data->continue),
             middleware: SdkClient::intValue($data->middleware),
@@ -75,26 +69,11 @@ final readonly class GetDeploymentResponseVariant1SeatBlockBlockCodeEnum impleme
     public const COMMIT_AUTHOR_REQUIRED = "COMMIT_AUTHOR_REQUIRED";
     public const TEAM_ACCESS_REQUIRED = "TEAM_ACCESS_REQUIRED";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -106,26 +85,11 @@ final readonly class GetDeploymentResponseVariant1SeatBlockGitProviderEnum imple
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -210,9 +174,7 @@ class GetDeploymentResponseVariant1SeatBlock implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blockCode") || $data->blockCode === null) {
-            throw new SdkValidationError("blockCode", 'required', "Required property 'blockCode' is missing or null");
-        }
+        if (!property_exists($data, "blockCode") || $data->blockCode === null) { throw new SdkValidationError("blockCode", 'required', "Required property 'blockCode' is missing or null"); }
         return new self(
             blockCode: SdkClient::hydrateStringEnumOrString($data->blockCode, GetDeploymentResponseVariant1SeatBlockBlockCodeEnum::class),
             gitProvider: (property_exists($data, "gitProvider") && $data->gitProvider !== null ? SdkClient::hydrateStringEnumOrString($data->gitProvider, GetDeploymentResponseVariant1SeatBlockGitProviderEnum::class) : SdkNotGiven::Value),
@@ -230,26 +192,11 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
     public const _4GI = "4Gi";
     public const _8GI = "8Gi";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfigDaemonResourcesRequests implements \JsonSerializable
@@ -283,9 +230,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfig
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "memory") || $data->memory === null) {
-            throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null");
-        }
+        if (!property_exists($data, "memory") || $data->memory === null) { throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null"); }
         return new self(
             memory: SdkClient::hydrateStringEnumOrString($data->memory, GetDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfigDaemonResourcesRequestsMemoryEnum::class),
         );
@@ -323,9 +268,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfig
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "requests") || $data->requests === null) {
-            throw new SdkValidationError("requests", 'required', "Required property 'requests' is missing or null");
-        }
+        if (!property_exists($data, "requests") || $data->requests === null) { throw new SdkValidationError("requests", 'required', "Required property 'requests' is missing or null"); }
         return new self(
             requests: SdkClient::hydrateClass($data->requests, GetDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfigDaemonResourcesRequests::class),
         );

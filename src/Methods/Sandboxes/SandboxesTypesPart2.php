@@ -12,26 +12,11 @@ final readonly class CreateSandboxesV4Architecture implements SdkOpenEnum
     public const AMD64 = "amd64";
     public const ARM64 = "arm64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateSandboxesV4Region implements SdkOpenEnum
@@ -56,26 +41,11 @@ final readonly class CreateSandboxesV4Region implements SdkOpenEnum
     public const HND1 = "hnd1";
     public const KIX1 = "kix1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListNamedSandboxesResponsePagination implements \JsonSerializable
@@ -115,12 +85,8 @@ class ListNamedSandboxesResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
@@ -165,12 +131,8 @@ class ListNamedSandboxesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "sandboxes") || $data->sandboxes === null) {
-            throw new SdkValidationError("sandboxes", 'required', "Required property 'sandboxes' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "sandboxes") || $data->sandboxes === null) { throw new SdkValidationError("sandboxes", 'required', "Required property 'sandboxes' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ListNamedSandboxesResponsePagination::class),
             sandboxes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, NamedSandbox::class), SdkClient::arrayValue($data->sandboxes))),
@@ -299,9 +261,7 @@ class CreateSandboxesV2KeepLastSnapshots implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
         return new self(
             count: SdkClient::intValue($data->count),
             expiration: (property_exists($data, "expiration") ? ($data->expiration === null ? null : $data->expiration) : SdkNotGiven::Value),
@@ -361,15 +321,9 @@ class CreateSandboxesV2Response implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),

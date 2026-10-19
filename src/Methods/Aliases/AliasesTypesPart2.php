@@ -89,15 +89,9 @@ class ListAliasesForDeploymentResponseAliasesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias") || $data->alias === null) {
-            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
-        }
-        if (!property_exists($data, "created") || $data->created === null) {
-            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             alias: SdkClient::stringValue($data->alias),
             created: SdkClient::stringValue($data->created),
@@ -143,9 +137,7 @@ class ListAliasesForDeploymentResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "aliases") || $data->aliases === null) {
-            throw new SdkValidationError("aliases", 'required', "Required property 'aliases' is missing or null");
-        }
+        if (!property_exists($data, "aliases") || $data->aliases === null) { throw new SdkValidationError("aliases", 'required', "Required property 'aliases' is missing or null"); }
         return new self(
             aliases: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListAliasesForDeploymentResponseAliasesItem::class), SdkClient::arrayValue($data->aliases))),
         );
@@ -219,15 +211,9 @@ class AssignAliasResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias") || $data->alias === null) {
-            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
-        }
-        if (!property_exists($data, "created") || $data->created === null) {
-            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             alias: SdkClient::stringValue($data->alias),
             created: SdkClient::stringValue($data->created),
@@ -299,9 +285,7 @@ class ListAliasesResponseAliasesItemCreator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             uid: SdkClient::stringValue($data->uid),
             email: (property_exists($data, "email") && $data->email !== null ? SdkClient::stringValue($data->email) : SdkNotGiven::Value),

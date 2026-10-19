@@ -341,9 +341,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2Builder imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "use") || $data->use === null) {
-            throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null");
-        }
+        if (!property_exists($data, "use") || $data->use === null) { throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null"); }
         return new self(
             use_: SdkClient::stringValue($data->use),
             config: (property_exists($data, "config") && $data->config !== null ? SdkClient::hydrateClass($data->config, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfig::class) : SdkNotGiven::Value),

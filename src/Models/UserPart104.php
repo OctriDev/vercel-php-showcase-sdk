@@ -165,9 +165,7 @@ class UserEventPayloadVariant168UpdateDiff implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "changedValue") || $data->changedValue === null) {
-            throw new SdkValidationError("changedValue", 'required', "Required property 'changedValue' is missing or null");
-        }
+        if (!property_exists($data, "changedValue") || $data->changedValue === null) { throw new SdkValidationError("changedValue", 'required', "Required property 'changedValue' is missing or null"); }
         return new self(
             changedValue: SdkClient::boolValue($data->changedValue),
             changedComment: (property_exists($data, "changedComment") && $data->changedComment !== null ? SdkClient::boolValue($data->changedComment) : SdkNotGiven::Value),

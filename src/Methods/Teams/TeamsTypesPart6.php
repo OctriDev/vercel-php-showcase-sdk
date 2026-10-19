@@ -155,26 +155,11 @@ final readonly class GetTeamAccessRequestResponseJoinedFromOriginEnum implements
     public const SAML = "saml";
     public const TEAMS = "teams";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -291,9 +276,7 @@ class GetTeamAccessRequestResponseJoinedFrom implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, GetTeamAccessRequestResponseJoinedFromOriginEnum::class),
             commitId: (property_exists($data, "commitId") && $data->commitId !== null ? SdkClient::stringValue($data->commitId) : SdkNotGiven::Value),

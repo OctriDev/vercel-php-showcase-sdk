@@ -11,26 +11,11 @@ final readonly class GetOrderResponseErrorVariant4CodeEnum implements SdkOpenEnu
 {
     public const CLAIMS_REQUIRED = "claims-required";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseErrorVariant4Details implements \JsonSerializable
@@ -70,12 +55,8 @@ class GetOrderResponseErrorVariant4Details implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "domainNames") || $data->domainNames === null) {
-            throw new SdkValidationError("domainNames", 'required', "Required property 'domainNames' is missing or null");
-        }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "domainNames") || $data->domainNames === null) { throw new SdkValidationError("domainNames", 'required', "Required property 'domainNames' is missing or null"); }
         return new self(
             message: SdkClient::stringValue($data->message),
             domainNames: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->domainNames))),
@@ -120,12 +101,8 @@ class GetOrderResponseErrorVariant4 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "details") || $data->details === null) {
-            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant4CodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseErrorVariant4Details::class),
@@ -137,26 +114,11 @@ final readonly class GetOrderResponseErrorVariant5CodeEnum implements SdkOpenEnu
 {
     public const DOMAIN_MISMATCH = "domain-mismatch";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetOrderResponseErrorVariant5 implements GetOrderResponseError, \JsonSerializable
@@ -190,9 +152,7 @@ class GetOrderResponseErrorVariant5 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseErrorVariant5CodeEnum::class),
         );
@@ -238,9 +198,7 @@ class GetOrderResponseErrorVariant6 implements GetOrderResponseError, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
             details: (property_exists($data, "details") ? $data->details : SdkNotGiven::Value),

@@ -58,15 +58,9 @@ class GetEdgeConfigBackupResponseVariant1BackupItemsValue implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             updatedAt: SdkClient::floatValue($data->updatedAt),
@@ -129,18 +123,10 @@ class GetEdgeConfigBackupResponseVariant1Backup implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "digest") || $data->digest === null) {
-            throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null");
-        }
-        if (!property_exists($data, "items") || $data->items === null) {
-            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "digest") || $data->digest === null) { throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null"); }
+        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             digest: SdkClient::stringValue($data->digest),
             items: SdkClient::mapValues(SdkClient::stringMapValue($data->items), static fn($item) => SdkClient::hydrateClass($item, GetEdgeConfigBackupResponseVariant1BackupItemsValue::class)),
@@ -275,15 +261,9 @@ class GetEdgeConfigBackupResponseVariant1User implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             id: SdkClient::stringValue($data->id),
@@ -349,21 +329,11 @@ class GetEdgeConfigBackupResponseVariant1 implements GetEdgeConfigBackupResponse
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "backup") || $data->backup === null) {
-            throw new SdkValidationError("backup", 'required', "Required property 'backup' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
-            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
-        }
-        if (!property_exists($data, "metadata") || $data->metadata === null) {
-            throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null");
-        }
-        if (!property_exists($data, "user") || $data->user === null) {
-            throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null");
-        }
+        if (!property_exists($data, "backup") || $data->backup === null) { throw new SdkValidationError("backup", 'required', "Required property 'backup' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "metadata") || $data->metadata === null) { throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null"); }
+        if (!property_exists($data, "user") || $data->user === null) { throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null"); }
         return new self(
             backup: SdkClient::hydrateClass($data->backup, GetEdgeConfigBackupResponseVariant1Backup::class),
             id: SdkClient::stringValue($data->id),

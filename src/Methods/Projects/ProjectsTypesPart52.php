@@ -154,9 +154,7 @@ class ListProjectsResponseVariant1ProjectsItemResourceConfig implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) {
-            throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null");
-        }
+        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) { throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null"); }
         return new self(
             functionDefaultRegions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions))),
             buildMachineElasticLastUpdated: (property_exists($data, "buildMachineElasticLastUpdated") && $data->buildMachineElasticLastUpdated !== null ? SdkClient::floatValue($data->buildMachineElasticLastUpdated) : SdkNotGiven::Value),
@@ -185,26 +183,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemRollingReleaseGateA
     public const PAUSE = "pause";
     public const ROLLBACK = "rollback";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -214,26 +197,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemRollingReleaseGateC
 {
     public const ERROR_RATE_5XX = "error-rate-5xx";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -322,9 +290,7 @@ class ListProjectsResponseVariant1ProjectsItemRollingReleaseGateChecksItem imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, ListProjectsResponseVariant1ProjectsItemRollingReleaseGateChecksItemTypeEnum::class),
             excludePaths: (property_exists($data, "excludePaths") && $data->excludePaths !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->excludePaths))) : SdkNotGiven::Value),

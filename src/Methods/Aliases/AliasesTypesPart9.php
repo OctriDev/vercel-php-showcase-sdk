@@ -98,9 +98,7 @@ class PatchUrlProtectionBypassBodyVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             scope: $data->scope,
         );
@@ -111,26 +109,11 @@ final readonly class PatchUrlProtectionBypassBodyVariant2OverrideScopeEnum imple
 {
     public const ALIAS_PROTECTION_OVERRIDE = "alias-protection-override";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class PatchUrlProtectionBypassBodyVariant2OverrideActionEnum implements SdkOpenEnum
@@ -138,26 +121,11 @@ final readonly class PatchUrlProtectionBypassBodyVariant2OverrideActionEnum impl
     public const CREATE = "create";
     public const REVOKE = "revoke";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class PatchUrlProtectionBypassBodyVariant2Override implements \JsonSerializable
@@ -197,12 +165,8 @@ class PatchUrlProtectionBypassBodyVariant2Override implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
         return new self(
             scope: SdkClient::hydrateStringEnumOrString($data->scope, PatchUrlProtectionBypassBodyVariant2OverrideScopeEnum::class),
             action: SdkClient::hydrateStringEnumOrString($data->action, PatchUrlProtectionBypassBodyVariant2OverrideActionEnum::class),
@@ -241,9 +205,7 @@ class PatchUrlProtectionBypassBodyVariant2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "override") || $data->override === null) {
-            throw new SdkValidationError("override", 'required', "Required property 'override' is missing or null");
-        }
+        if (!property_exists($data, "override") || $data->override === null) { throw new SdkValidationError("override", 'required', "Required property 'override' is missing or null"); }
         return new self(
             override: SdkClient::hydrateClass($data->override, PatchUrlProtectionBypassBodyVariant2Override::class),
         );

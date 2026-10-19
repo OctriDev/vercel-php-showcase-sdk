@@ -13,26 +13,11 @@ final readonly class CreateAccessGroupProjectRole implements SdkOpenEnum
     public const PROJECT_VIEWER = "PROJECT_VIEWER";
     public const PROJECT_DEVELOPER = "PROJECT_DEVELOPER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateAccessGroupProjectRole implements SdkOpenEnum
@@ -41,52 +26,22 @@ final readonly class UpdateAccessGroupProjectRole implements SdkOpenEnum
     public const PROJECT_VIEWER = "PROJECT_VIEWER";
     public const PROJECT_DEVELOPER = "PROJECT_DEVELOPER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ReadAccessGroupResponseEntitlementsItemEnum implements SdkOpenEnum
 {
     public const V0 = "v0";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ReadAccessGroupResponseTeamPermissionsItemEnum implements SdkOpenEnum
@@ -111,26 +66,11 @@ final readonly class ReadAccessGroupResponseTeamPermissionsItemEnum implements S
     public const V0VIEWER = "V0Viewer";
     public const WORKFLOWDECRYPTOR = "WorkflowDecryptor";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ReadAccessGroupResponse implements \JsonSerializable
@@ -262,30 +202,14 @@ class ReadAccessGroupResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) {
-            throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "isDsyncManaged") || $data->isDsyncManaged === null) {
-            throw new SdkValidationError("isDsyncManaged", 'required', "Required property 'isDsyncManaged' is missing or null");
-        }
-        if (!property_exists($data, "membersCount") || $data->membersCount === null) {
-            throw new SdkValidationError("membersCount", 'required', "Required property 'membersCount' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "projectsCount") || $data->projectsCount === null) {
-            throw new SdkValidationError("projectsCount", 'required', "Required property 'projectsCount' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) { throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "isDsyncManaged") || $data->isDsyncManaged === null) { throw new SdkValidationError("isDsyncManaged", 'required', "Required property 'isDsyncManaged' is missing or null"); }
+        if (!property_exists($data, "membersCount") || $data->membersCount === null) { throw new SdkValidationError("membersCount", 'required', "Required property 'membersCount' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "projectsCount") || $data->projectsCount === null) { throw new SdkValidationError("projectsCount", 'required', "Required property 'projectsCount' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             accessGroupId: SdkClient::stringValue($data->accessGroupId),
             createdAt: SdkClient::stringValue($data->createdAt),
@@ -311,26 +235,11 @@ final readonly class UpdateAccessGroupProjectsItemRoleEnum implements SdkOpenEnu
     public const PROJECT_VIEWER = "PROJECT_VIEWER";
     public const PROJECT_DEVELOPER = "PROJECT_DEVELOPER";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateAccessGroupProjectsItem implements \JsonSerializable
@@ -378,12 +287,8 @@ class UpdateAccessGroupProjectsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "role")) {
-            throw new SdkValidationError("role", 'required', "Missing required property 'role'");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "role")) { throw new SdkValidationError("role", 'required', "Missing required property 'role'"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             role: ($data->role === null ? null : SdkClient::hydrateStringEnumOrString($data->role, UpdateAccessGroupProjectsItemRoleEnum::class)),
@@ -395,24 +300,9 @@ final readonly class UpdateAccessGroupResponseEntitlementsItemEnum implements Sd
 {
     public const V0 = "v0";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

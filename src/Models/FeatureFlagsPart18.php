@@ -60,12 +60,8 @@ class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cmp") || $data->cmp === null) {
-            throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null");
-        }
-        if (!property_exists($data, "lhs") || $data->lhs === null) {
-            throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null");
-        }
+        if (!property_exists($data, "cmp") || $data->cmp === null) { throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null"); }
+        if (!property_exists($data, "lhs") || $data->lhs === null) { throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null"); }
         return new self(
             cmp: SdkClient::hydrateStringEnumOrString($data->cmp, UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpEnum::class),
             lhs: SdkClient::hydrateUnion($data->lhs, [UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsSegment::class, UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsEntity::class], null, []),
@@ -111,9 +107,7 @@ class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeAll implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeAllTypeEnum::class),
         );
@@ -124,26 +118,11 @@ final readonly class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplitB
 {
     public const ENTITY = "entity";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplitBase implements \JsonSerializable
@@ -189,15 +168,9 @@ class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplitBase implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attribute") || $data->attribute === null) {
-            throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "attribute") || $data->attribute === null) { throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             attribute: SdkClient::stringValue($data->attribute),
             kind: SdkClient::stringValue($data->kind),
@@ -254,15 +227,9 @@ class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplit implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "base") || $data->base === null) {
-            throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null");
-        }
-        if (!property_exists($data, "passPromille") || $data->passPromille === null) {
-            throw new SdkValidationError("passPromille", 'required', "Required property 'passPromille' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "base") || $data->base === null) { throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null"); }
+        if (!property_exists($data, "passPromille") || $data->passPromille === null) { throw new SdkValidationError("passPromille", 'required', "Required property 'passPromille' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             base: SdkClient::hydrateClass($data->base, UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeSplitBase::class),
             passPromille: SdkClient::floatValue($data->passPromille),
@@ -314,15 +281,9 @@ class UpdateFlagSegmentResponseVariant0DataRulesItem implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "outcome") || $data->outcome === null) {
-            throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "outcome") || $data->outcome === null) { throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
             id: SdkClient::stringValue($data->id),

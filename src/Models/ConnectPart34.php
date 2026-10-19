@@ -81,9 +81,7 @@ class ConnectTriggerDestination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             branch: (property_exists($data, "branch") && $data->branch !== null ? SdkClient::stringValue($data->branch) : SdkNotGiven::Value),
@@ -140,9 +138,7 @@ class ConnectTriggerDestinationInputVariant0 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             path: (property_exists($data, "path") && $data->path !== null ? SdkClient::stringValue($data->path) : SdkNotGiven::Value),
@@ -207,12 +203,8 @@ class ConnectTriggerDestinationInputVariant1 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "branch") || $data->branch === null) {
-            throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "branch") || $data->branch === null) { throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             branch: SdkClient::stringValue($data->branch),
@@ -278,12 +270,8 @@ class ConnectTriggerDestinationInputVariant2 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
@@ -300,24 +288,9 @@ final readonly class ConnectUpdateConnectorRequestDataTypeOauthServerConfigJwksK
     public const SIG = "sig";
     public const ENC = "enc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

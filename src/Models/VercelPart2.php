@@ -45,9 +45,7 @@ class VercelNotFoundError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) {
-            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
-        }
+        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
         return new self(
             error: SdkClient::hydrateClass($data->error, VercelNotFoundErrorError::class),
         );
@@ -114,12 +112,8 @@ class VercelRateLimitErrorError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -166,9 +160,7 @@ class VercelRateLimitError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) {
-            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
-        }
+        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
         return new self(
             error: SdkClient::hydrateClass($data->error, VercelRateLimitErrorError::class),
         );

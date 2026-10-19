@@ -78,9 +78,7 @@ class ListProjectsResponseVariant1ProjectsItemSecurityRulesetsValue implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant1ProjectsItemSecurityRulesetsValueActionEnum::class),
             actionDuration: (property_exists($data, "actionDuration") ? ($data->actionDuration === null ? null : SdkClient::stringValue($data->actionDuration)) : SdkNotGiven::Value),

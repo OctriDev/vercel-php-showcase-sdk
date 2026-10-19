@@ -66,15 +66,9 @@ class AggregateEventsResponseQuery implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limit") || $data->limit === null) {
-            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
-        }
-        if (!property_exists($data, "since") || $data->since === null) {
-            throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null");
-        }
-        if (!property_exists($data, "until") || $data->until === null) {
-            throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null");
-        }
+        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
+        if (!property_exists($data, "since") || $data->since === null) { throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null"); }
+        if (!property_exists($data, "until") || $data->until === null) { throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null"); }
         return new self(
             limit: SdkClient::floatValue($data->limit),
             since: SdkClient::stringValue($data->since),
@@ -128,15 +122,9 @@ class AggregateEventsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "query") || $data->query === null) {
-            throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "query") || $data->query === null) { throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             data: SdkClient::decodeUnionValue($data->data, [static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AggregateEventsResponseDataItem::class), SdkClient::arrayValue($value))), static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AggregateEventsResponseDataItem::class), SdkClient::arrayValue($value)))]),
             query: SdkClient::hydrateClass($data->query, AggregateEventsResponseQuery::class),
@@ -190,12 +178,8 @@ class CountPageviewsResponseQuery implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "since") || $data->since === null) {
-            throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null");
-        }
-        if (!property_exists($data, "until") || $data->until === null) {
-            throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null");
-        }
+        if (!property_exists($data, "since") || $data->since === null) { throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null"); }
+        if (!property_exists($data, "until") || $data->until === null) { throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null"); }
         return new self(
             since: SdkClient::stringValue($data->since),
             until: SdkClient::stringValue($data->until),
@@ -251,15 +235,9 @@ class CountPageviewsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "query") || $data->query === null) {
-            throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "query") || $data->query === null) { throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             data: SdkClient::hydrateUnionAs($data->data, CountPageviewsResponseData::class, [CountPageviewsResponseDataVariant0::class, CountPageviewsResponseDataVariant1::class], null, []),
             query: SdkClient::hydrateClass($data->query, CountPageviewsResponseQuery::class),
@@ -313,12 +291,8 @@ class CountEventsResponseQuery implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "since") || $data->since === null) {
-            throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null");
-        }
-        if (!property_exists($data, "until") || $data->until === null) {
-            throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null");
-        }
+        if (!property_exists($data, "since") || $data->since === null) { throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null"); }
+        if (!property_exists($data, "until") || $data->until === null) { throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null"); }
         return new self(
             since: SdkClient::stringValue($data->since),
             until: SdkClient::stringValue($data->until),

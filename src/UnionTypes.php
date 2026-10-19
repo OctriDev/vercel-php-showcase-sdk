@@ -235,7 +235,9 @@ interface VcrImageLayer {}
 /** A tagged union member whose tag names no branch this SDK knows, kept as received. */
 abstract class SdkUnknownMember implements \JsonSerializable
 {
-    final public function __construct(public readonly mixed $raw) {}
+    final public function __construct(public readonly mixed $raw)
+    {
+    }
 
     public function jsonSerialize(): mixed
     {
@@ -244,13 +246,21 @@ abstract class SdkUnknownMember implements \JsonSerializable
 }
 
 /** A `GetDomainContactVerificationResponse` whose tag names no branch this SDK knows, kept as received. */
-final class UnknownGetDomainContactVerificationResponse extends SdkUnknownMember implements GetDomainContactVerificationResponse {}
+final class UnknownGetDomainContactVerificationResponse extends SdkUnknownMember implements GetDomainContactVerificationResponse
+{
+}
 
 /** A `ListFlagsV2ResponseDataItem` whose tag names no branch this SDK knows, kept as received. */
-final class UnknownListFlagsV2ResponseDataItem extends SdkUnknownMember implements ListFlagsV2ResponseDataItem {}
+final class UnknownListFlagsV2ResponseDataItem extends SdkUnknownMember implements ListFlagsV2ResponseDataItem
+{
+}
 
 /** A `ListTeamFlagsV2ResponseDataItem` whose tag names no branch this SDK knows, kept as received. */
-final class UnknownListTeamFlagsV2ResponseDataItem extends SdkUnknownMember implements ListTeamFlagsV2ResponseDataItem {}
+final class UnknownListTeamFlagsV2ResponseDataItem extends SdkUnknownMember implements ListTeamFlagsV2ResponseDataItem
+{
+}
 
 /** A `ListTeamsResponseTeamsItem` whose tag names no branch this SDK knows, kept as received. */
-final class UnknownListTeamsResponseTeamsItem extends SdkUnknownMember implements ListTeamsResponseTeamsItem {}
+final class UnknownListTeamsResponseTeamsItem extends SdkUnknownMember implements ListTeamsResponseTeamsItem
+{
+}

@@ -206,15 +206,9 @@ class UserEventPayloadVariant253 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "plan") || $data->plan === null) {
-            throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null");
-        }
-        if (!property_exists($data, "actorId") || $data->actorId === null) {
-            throw new SdkValidationError("actorId", 'required', "Required property 'actorId' is missing or null");
-        }
-        if (!property_exists($data, "actorType") || $data->actorType === null) {
-            throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null");
-        }
+        if (!property_exists($data, "plan") || $data->plan === null) { throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null"); }
+        if (!property_exists($data, "actorId") || $data->actorId === null) { throw new SdkValidationError("actorId", 'required', "Required property 'actorId' is missing or null"); }
+        if (!property_exists($data, "actorType") || $data->actorType === null) { throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null"); }
         return new self(
             plan: SdkClient::stringValue($data->plan),
             actorId: SdkClient::stringValue($data->actorId),

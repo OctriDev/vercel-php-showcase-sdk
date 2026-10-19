@@ -72,18 +72,10 @@ class UserEventPayloadVariant240 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headerName") || $data->headerName === null) {
-            throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null");
-        }
-        if (!property_exists($data, "justification")) {
-            throw new SdkValidationError("justification", 'required', "Missing required property 'justification'");
-        }
-        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) {
-            throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "headerName") || $data->headerName === null) { throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null"); }
+        if (!property_exists($data, "justification")) { throw new SdkValidationError("justification", 'required', "Missing required property 'justification'"); }
+        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) { throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             headerName: SdkClient::stringValue($data->headerName),
             justification: ($data->justification === null ? null : SdkClient::stringValue($data->justification)),
@@ -212,27 +204,13 @@ class UserEventPayloadVariant241 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectSrcCount") || $data->connectSrcCount === null) {
-            throw new SdkValidationError("connectSrcCount", 'required', "Required property 'connectSrcCount' is missing or null");
-        }
-        if (!property_exists($data, "connectSrcOriginCount") || $data->connectSrcOriginCount === null) {
-            throw new SdkValidationError("connectSrcOriginCount", 'required', "Required property 'connectSrcOriginCount' is missing or null");
-        }
-        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) {
-            throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null");
-        }
-        if (!property_exists($data, "headerCount") || $data->headerCount === null) {
-            throw new SdkValidationError("headerCount", 'required', "Required property 'headerCount' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "scriptCount") || $data->scriptCount === null) {
-            throw new SdkValidationError("scriptCount", 'required', "Required property 'scriptCount' is missing or null");
-        }
+        if (!property_exists($data, "connectSrcCount") || $data->connectSrcCount === null) { throw new SdkValidationError("connectSrcCount", 'required', "Required property 'connectSrcCount' is missing or null"); }
+        if (!property_exists($data, "connectSrcOriginCount") || $data->connectSrcOriginCount === null) { throw new SdkValidationError("connectSrcOriginCount", 'required', "Required property 'connectSrcOriginCount' is missing or null"); }
+        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) { throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null"); }
+        if (!property_exists($data, "headerCount") || $data->headerCount === null) { throw new SdkValidationError("headerCount", 'required', "Required property 'headerCount' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "scriptCount") || $data->scriptCount === null) { throw new SdkValidationError("scriptCount", 'required', "Required property 'scriptCount' is missing or null"); }
         return new self(
             connectSrcCount: SdkClient::floatValue($data->connectSrcCount),
             connectSrcOriginCount: SdkClient::floatValue($data->connectSrcOriginCount),
@@ -255,26 +233,11 @@ final readonly class UserEventPayloadVariant242ApprovalScopeEnum implements SdkO
     public const ALL = "all";
     public const PREVIEW = "preview";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -285,24 +248,9 @@ final readonly class UserEventPayloadVariant242KindEnum implements SdkOpenEnum
     public const CONNECTSRC = "connectSrc";
     public const SCRIPT = "script";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

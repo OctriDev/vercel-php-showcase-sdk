@@ -116,30 +116,14 @@ class ListProjectsResponseVariant1ProjectsItemLinkCursorOrigin implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) {
-            throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null");
-        }
-        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) {
-            throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null");
-        }
-        if (!property_exists($data, "owner") || $data->owner === null) {
-            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) {
-            throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null");
-        }
-        if (!property_exists($data, "repo") || $data->repo === null) {
-            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
-        }
-        if (!property_exists($data, "repoId") || $data->repoId === null) {
-            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) { throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null"); }
+        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) { throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null"); }
+        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) { throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null"); }
+        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
+        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             deployHooks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseVariant1ProjectsItemLinkCursorOriginDeployHooksItem::class), SdkClient::arrayValue($data->deployHooks))),
             gitCredentialId: SdkClient::stringValue($data->gitCredentialId),
@@ -169,26 +153,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemNodeVersionEnum imp
     public const _26_X = "26.x";
     public const _8_10_X = "8.10.x";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -199,26 +168,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemOidcTokenConfigIssu
     public const GLOBAL = "global";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant1ProjectsItemOidcTokenConfig implements \JsonSerializable
@@ -284,26 +238,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemPassportDeploymentT
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant1ProjectsItemPassport implements \JsonSerializable
@@ -343,12 +282,8 @@ class ListProjectsResponseVariant1ProjectsItemPassport implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectorId") || $data->connectorId === null) {
-            throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null");
-        }
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "connectorId") || $data->connectorId === null) { throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             connectorId: SdkClient::stringValue($data->connectorId),
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, ListProjectsResponseVariant1ProjectsItemPassportDeploymentTypeEnum::class),
@@ -369,26 +304,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemResourceConfigBuild
     public const SHORT_BUILD_DURATION = "short-build-duration";
     public const SUSTAINED_HIGH_CPU = "sustained-high-cpu";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListProjectsResponseVariant1ProjectsItemResourceConfigBuildMachineElasticTransitionDirectionEnum implements SdkOpenEnum
@@ -396,24 +316,9 @@ final readonly class ListProjectsResponseVariant1ProjectsItemResourceConfigBuild
     public const DOWNGRADE = "downgrade";
     public const UPGRADE = "upgrade";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

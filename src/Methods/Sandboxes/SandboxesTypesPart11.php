@@ -81,9 +81,7 @@ class UpdateSessionNetworkPolicyBodyVariant1AllowValueItemResponse implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "statusCode") || $data->statusCode === null) {
-            throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null");
-        }
+        if (!property_exists($data, "statusCode") || $data->statusCode === null) { throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null"); }
         return new self(
             statusCode: SdkClient::intValue($data->statusCode),
             headers: (property_exists($data, "headers") && $data->headers !== null ? SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)) : SdkNotGiven::Value),
@@ -302,9 +300,7 @@ class UpdateSessionNetworkPolicyResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             session: SdkClient::hydrateClass($data->session, Session::class),
         );

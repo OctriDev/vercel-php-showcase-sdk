@@ -50,15 +50,9 @@ class SearchVercelCiLogsResponseInvocationsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
-            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
-        }
-        if (!property_exists($data, "attempt") || $data->attempt === null) {
-            throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null");
-        }
-        if (!property_exists($data, "tasks") || $data->tasks === null) {
-            throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null");
-        }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
+        if (!property_exists($data, "attempt") || $data->attempt === null) { throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null"); }
+        if (!property_exists($data, "tasks") || $data->tasks === null) { throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null"); }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             attempt: SdkClient::floatValue($data->attempt),
@@ -108,12 +102,8 @@ class SearchVercelCiLogsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocations") || $data->invocations === null) {
-            throw new SdkValidationError("invocations", 'required', "Required property 'invocations' is missing or null");
-        }
-        if (!property_exists($data, "hasMore") || $data->hasMore === null) {
-            throw new SdkValidationError("hasMore", 'required', "Required property 'hasMore' is missing or null");
-        }
+        if (!property_exists($data, "invocations") || $data->invocations === null) { throw new SdkValidationError("invocations", 'required', "Required property 'invocations' is missing or null"); }
+        if (!property_exists($data, "hasMore") || $data->hasMore === null) { throw new SdkValidationError("hasMore", 'required', "Required property 'hasMore' is missing or null"); }
         return new self(
             invocations: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SearchVercelCiLogsResponseInvocationsItem::class), SdkClient::arrayValue($data->invocations))),
             hasMore: SdkClient::boolValue($data->hasMore),
@@ -164,15 +154,9 @@ class GetVercelCiJobRunLogsResponseLinesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "level") || $data->level === null) {
-            throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null");
-        }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
-            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "level") || $data->level === null) { throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             level: SdkClient::stringValue($data->level),
             timestamp: SdkClient::floatValue($data->timestamp),
@@ -212,9 +196,7 @@ class GetVercelCiJobRunLogsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "lines") || $data->lines === null) {
-            throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null");
-        }
+        if (!property_exists($data, "lines") || $data->lines === null) { throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null"); }
         return new self(
             lines: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetVercelCiJobRunLogsResponseLinesItem::class), SdkClient::arrayValue($data->lines))),
         );
@@ -264,15 +246,9 @@ class GetVercelCiTaskRunLogsResponseLinesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "level") || $data->level === null) {
-            throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null");
-        }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
-            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "level") || $data->level === null) { throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             level: SdkClient::stringValue($data->level),
             timestamp: SdkClient::floatValue($data->timestamp),
@@ -312,9 +288,7 @@ class GetVercelCiTaskRunLogsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "lines") || $data->lines === null) {
-            throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null");
-        }
+        if (!property_exists($data, "lines") || $data->lines === null) { throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null"); }
         return new self(
             lines: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetVercelCiTaskRunLogsResponseLinesItem::class), SdkClient::arrayValue($data->lines))),
         );

@@ -52,12 +52,8 @@ class ListProjectsResponseVariant1ProjectsItemGitComments implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onCommit") || $data->onCommit === null) {
-            throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null");
-        }
-        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) {
-            throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null");
-        }
+        if (!property_exists($data, "onCommit") || $data->onCommit === null) { throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null"); }
+        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) { throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null"); }
         return new self(
             onCommit: SdkClient::boolValue($data->onCommit),
             onPullRequest: SdkClient::boolValue($data->onPullRequest),
@@ -113,12 +109,8 @@ class ListProjectsResponseVariant1ProjectsItemGitProviderOptionsConsolidatedGitC
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) {
-            throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) { throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             propagateFailures: SdkClient::boolValue($data->propagateFailures),
@@ -134,26 +126,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemGitProviderOptionsC
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant1ProjectsItemGitProviderOptions implements \JsonSerializable
@@ -239,9 +216,7 @@ class ListProjectsResponseVariant1ProjectsItemGitProviderOptions implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createDeployments") || $data->createDeployments === null) {
-            throw new SdkValidationError("createDeployments", 'required', "Required property 'createDeployments' is missing or null");
-        }
+        if (!property_exists($data, "createDeployments") || $data->createDeployments === null) { throw new SdkValidationError("createDeployments", 'required', "Required property 'createDeployments' is missing or null"); }
         return new self(
             createDeployments: SdkClient::hydrateStringEnumOrString($data->createDeployments, ListProjectsResponseVariant1ProjectsItemGitProviderOptionsCreateDeploymentsEnum::class),
             consolidatedGitCommitStatus: (property_exists($data, "consolidatedGitCommitStatus") && $data->consolidatedGitCommitStatus !== null ? SdkClient::hydrateClass($data->consolidatedGitCommitStatus, ListProjectsResponseVariant1ProjectsItemGitProviderOptionsConsolidatedGitCommitStatus::class) : SdkNotGiven::Value),
@@ -297,12 +272,8 @@ class ListProjectsResponseVariant1ProjectsItemInternalRoutesItemVariant0 impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) {
-            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             src: SdkClient::stringValue($data->src),
             status: SdkClient::floatValue($data->status),
@@ -315,26 +286,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemInternalRoutesItemV
 {
     public const X_VERCEL_IP_COUNTRY = "x-vercel-ip-country";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 enum ListProjectsResponseVariant1ProjectsItemInternalRoutesItemVariant1HasItemHeaderTypeEnum: string implements SdkWireEnum
@@ -373,9 +329,7 @@ class ListProjectsResponseVariant1ProjectsItemInternalRoutesItemVariant1HasItemH
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) {
-            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
-        }
+        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );

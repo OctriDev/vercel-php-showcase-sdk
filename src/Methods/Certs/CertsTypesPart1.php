@@ -62,21 +62,11 @@ class GetCertByIdResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) {
-            throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null");
-        }
-        if (!property_exists($data, "cns") || $data->cns === null) {
-            throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) { throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null"); }
+        if (!property_exists($data, "cns") || $data->cns === null) { throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             autoRenew: SdkClient::boolValue($data->autoRenew),
             cns: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->cns))),
@@ -142,21 +132,11 @@ class GetCertsResponseCertsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) {
-            throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null");
-        }
-        if (!property_exists($data, "cns") || $data->cns === null) {
-            throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) { throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null"); }
+        if (!property_exists($data, "cns") || $data->cns === null) { throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             autoRenew: SdkClient::boolValue($data->autoRenew),
             cns: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->cns))),
@@ -208,12 +188,8 @@ class GetCertsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "certs") || $data->certs === null) {
-            throw new SdkValidationError("certs", 'required', "Required property 'certs' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "certs") || $data->certs === null) { throw new SdkValidationError("certs", 'required', "Required property 'certs' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             certs: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetCertsResponseCertsItem::class), SdkClient::arrayValue($data->certs))),
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),
@@ -276,21 +252,11 @@ class IssueCertResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) {
-            throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null");
-        }
-        if (!property_exists($data, "cns") || $data->cns === null) {
-            throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) { throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null"); }
+        if (!property_exists($data, "cns") || $data->cns === null) { throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             autoRenew: SdkClient::boolValue($data->autoRenew),
             cns: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->cns))),
@@ -356,21 +322,11 @@ class UploadCertResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) {
-            throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null");
-        }
-        if (!property_exists($data, "cns") || $data->cns === null) {
-            throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) { throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null"); }
+        if (!property_exists($data, "cns") || $data->cns === null) { throw new SdkValidationError("cns", 'required', "Required property 'cns' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             autoRenew: SdkClient::boolValue($data->autoRenew),
             cns: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->cns))),

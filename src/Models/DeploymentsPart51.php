@@ -141,26 +141,11 @@ final readonly class CreateDeploymentResponseVariant0ReadyStateEnum implements S
     public const QUEUED = "QUEUED";
     public const READY = "READY";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -171,26 +156,11 @@ final readonly class CreateDeploymentResponseVariant0TargetEnum implements SdkOp
     public const PRODUCTION = "production";
     public const STAGING = "staging";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateDeploymentResponseVariant0 implements CreateDeploymentResponse, \JsonSerializable
@@ -306,18 +276,10 @@ class CreateDeploymentResponseVariant0 implements CreateDeploymentResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "aliasAssigned") || $data->aliasAssigned === null) {
-            throw new SdkValidationError("aliasAssigned", 'required', "Required property 'aliasAssigned' is missing or null");
-        }
-        if (!property_exists($data, "duration") || $data->duration === null) {
-            throw new SdkValidationError("duration", 'required', "Required property 'duration' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "readyState") || $data->readyState === null) {
-            throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null");
-        }
+        if (!property_exists($data, "aliasAssigned") || $data->aliasAssigned === null) { throw new SdkValidationError("aliasAssigned", 'required', "Required property 'aliasAssigned' is missing or null"); }
+        if (!property_exists($data, "duration") || $data->duration === null) { throw new SdkValidationError("duration", 'required', "Required property 'duration' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "readyState") || $data->readyState === null) { throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null"); }
         return new self(
             aliasAssigned: SdkClient::boolValue($data->aliasAssigned),
             duration: SdkClient::hydrateClass($data->duration, CreateDeploymentResponseVariant0Duration::class),
@@ -373,12 +335,8 @@ class CreateDeploymentResponseVariant1AliasError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),

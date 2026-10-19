@@ -78,9 +78,7 @@ class UserEventPayloadVariant68 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appName") || $data->appName === null) {
-            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
-        }
+        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
         return new self(
             appName: SdkClient::stringValue($data->appName),
             app: (property_exists($data, "app") && $data->app !== null ? SdkClient::hydrateClass($data->app, UserEventPayloadVariant68App::class) : SdkNotGiven::Value),
@@ -171,12 +169,8 @@ class UserEventPayloadVariant69 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) {
-            throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) { throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             attackModeEnabled: SdkClient::boolValue($data->attackModeEnabled),
             projectId: SdkClient::stringValue($data->projectId),
@@ -244,12 +238,8 @@ class UserEventPayloadVariant70 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "autoExposeSystemEnvs") || $data->autoExposeSystemEnvs === null) {
-            throw new SdkValidationError("autoExposeSystemEnvs", 'required', "Required property 'autoExposeSystemEnvs' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "autoExposeSystemEnvs") || $data->autoExposeSystemEnvs === null) { throw new SdkValidationError("autoExposeSystemEnvs", 'required', "Required property 'autoExposeSystemEnvs' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             autoExposeSystemEnvs: SdkClient::boolValue($data->autoExposeSystemEnvs),
             projectName: SdkClient::stringValue($data->projectName),

@@ -101,9 +101,7 @@ class DeleteSandboxResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
         return new self(
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),
         );
@@ -141,9 +139,7 @@ class ListSessionCommandsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "commands") || $data->commands === null) {
-            throw new SdkValidationError("commands", 'required', "Required property 'commands' is missing or null");
-        }
+        if (!property_exists($data, "commands") || $data->commands === null) { throw new SdkValidationError("commands", 'required', "Required property 'commands' is missing or null"); }
         return new self(
             commands: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SessionCommand::class), SdkClient::arrayValue($data->commands))),
         );
@@ -185,9 +181,7 @@ class RunSessionCommandResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "command") || $data->command === null) {
-            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
-        }
+        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
         return new self(
             command: SdkClient::hydrateClass($data->command, SessionCommand::class),
         );
@@ -198,52 +192,22 @@ final readonly class RunSessionCommandStreamResponseVariant0DataCodeEnum impleme
 {
     public const SANDBOX_STREAM_CLOSED = "sandbox_stream_closed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class RunSessionCommandStreamResponseVariant0DataMessageEnum implements SdkOpenEnum
 {
     public const SANDBOX_STREAM_WAS_CLOSED_AND_IS_NOT_ACCEPTING_COMMANDS = "Sandbox stream was closed and is not accepting commands.";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class RunSessionCommandStreamResponseVariant0Data implements \JsonSerializable
@@ -283,12 +247,8 @@ class RunSessionCommandStreamResponseVariant0Data implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, RunSessionCommandStreamResponseVariant0DataCodeEnum::class),
             message: SdkClient::hydrateStringEnumOrString($data->message, RunSessionCommandStreamResponseVariant0DataMessageEnum::class),
@@ -333,12 +293,8 @@ class RunSessionCommandStreamResponseVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "stream") || $data->stream === null) {
-            throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "stream") || $data->stream === null) { throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null"); }
         return new self(
             data: SdkClient::hydrateClass($data->data, RunSessionCommandStreamResponseVariant0Data::class),
             stream: SdkClient::stringValue($data->stream),

@@ -90,9 +90,7 @@ class UpdateSandboxRequestNetworkPolicyVariant0 implements UpdateSandboxRequestN
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) {
-            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
-        }
+        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, UpdateSandboxRequestNetworkPolicyVariant0ModeEnum::class),
             allowedDomains: (property_exists($data, "allowedDomains") && $data->allowedDomains !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->allowedDomains))) : SdkNotGiven::Value),

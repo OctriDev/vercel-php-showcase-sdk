@@ -66,9 +66,7 @@ class UserEventPayloadVariant121 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             url: SdkClient::stringValue($data->url),
             newTeam: (property_exists($data, "newTeam") && $data->newTeam !== null ? SdkClient::hydrateClass($data->newTeam, UserEventPayloadVariant121NewTeam::class) : SdkNotGiven::Value),
@@ -84,26 +82,11 @@ final readonly class UserEventPayloadVariant122ReasonEnum implements SdkOpenEnum
 {
     public const IP_ALLOW_LIST = "ip_allow_list";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant122 implements UserEventPayload, \JsonSerializable
@@ -205,21 +188,11 @@ class UserEventPayloadVariant122 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitCommitterName") || $data->gitCommitterName === null) {
-            throw new SdkValidationError("gitCommitterName", 'required', "Required property 'gitCommitterName' is missing or null");
-        }
-        if (!property_exists($data, "gitUserPlatform") || $data->gitUserPlatform === null) {
-            throw new SdkValidationError("gitUserPlatform", 'required', "Required property 'gitUserPlatform' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "sha") || $data->sha === null) {
-            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
-        }
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
+        if (!property_exists($data, "gitCommitterName") || $data->gitCommitterName === null) { throw new SdkValidationError("gitCommitterName", 'required', "Required property 'gitCommitterName' is missing or null"); }
+        if (!property_exists($data, "gitUserPlatform") || $data->gitUserPlatform === null) { throw new SdkValidationError("gitUserPlatform", 'required', "Required property 'gitUserPlatform' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
         return new self(
             gitCommitterName: SdkClient::stringValue($data->gitCommitterName),
             gitUserPlatform: SdkClient::stringValue($data->gitUserPlatform),
@@ -300,18 +273,10 @@ class UserEventPayloadVariant123Deployment implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "meta") || $data->meta === null) {
-            throw new SdkValidationError("meta", 'required', "Required property 'meta' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "meta") || $data->meta === null) { throw new SdkValidationError("meta", 'required', "Required property 'meta' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             meta: SdkClient::mapValues(SdkClient::stringMapValue($data->meta), static fn($item) => SdkClient::stringValue($item)),

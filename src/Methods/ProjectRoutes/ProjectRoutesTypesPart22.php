@@ -54,15 +54,9 @@ class GetRoutesResponseVariant3 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limit") || $data->limit === null) {
-            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
-        }
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             limit: SdkClient::hydrateClass($data->limit, GetRoutesResponseVariant3Limit::class),
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetRoutesResponseVariant3RoutesItem::class), SdkClient::arrayValue($data->routes))),
@@ -78,26 +72,11 @@ final readonly class StageRoutesRoutesItemRouteHasItemTypeEnum implements SdkOpe
     public const COOKIE = "cookie";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class StageRoutesRoutesItemRouteHasItem implements \JsonSerializable
@@ -164,26 +143,11 @@ final readonly class StageRoutesRoutesItemRouteMissingItemTypeEnum implements Sd
     public const COOKIE = "cookie";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class StageRoutesRoutesItemRouteMissingItem implements \JsonSerializable
@@ -249,26 +213,11 @@ final readonly class StageRoutesRoutesItemRouteTransformsItemTypeEnum implements
     public const REQUEST_QUERY = "request.query";
     public const RESPONSE_HEADERS = "response.headers";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class StageRoutesRoutesItemRouteTransformsItemOpEnum implements SdkOpenEnum
@@ -277,26 +226,11 @@ final readonly class StageRoutesRoutesItemRouteTransformsItemOpEnum implements S
     public const SET = "set";
     public const DELETE = "delete";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class StageRoutesRoutesItemRouteTransformsItem implements \JsonSerializable

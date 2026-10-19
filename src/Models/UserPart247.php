@@ -274,21 +274,11 @@ class UserEventPayloadVariant487 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appName") || $data->appName === null) {
-            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
-        }
-        if (!property_exists($data, "atTTL") || $data->atTTL === null) {
-            throw new SdkValidationError("atTTL", 'required', "Required property 'atTTL' is missing or null");
-        }
-        if (!property_exists($data, "authMethod") || $data->authMethod === null) {
-            throw new SdkValidationError("authMethod", 'required', "Required property 'authMethod' is missing or null");
-        }
-        if (!property_exists($data, "grantType") || $data->grantType === null) {
-            throw new SdkValidationError("grantType", 'required', "Required property 'grantType' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
+        if (!property_exists($data, "atTTL") || $data->atTTL === null) { throw new SdkValidationError("atTTL", 'required', "Required property 'atTTL' is missing or null"); }
+        if (!property_exists($data, "authMethod") || $data->authMethod === null) { throw new SdkValidationError("authMethod", 'required', "Required property 'authMethod' is missing or null"); }
+        if (!property_exists($data, "grantType") || $data->grantType === null) { throw new SdkValidationError("grantType", 'required', "Required property 'grantType' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             appName: SdkClient::stringValue($data->appName),
             atTtl: SdkClient::floatValue($data->atTTL),

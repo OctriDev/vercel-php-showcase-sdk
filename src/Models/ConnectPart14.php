@@ -99,18 +99,10 @@ class ConnectCreateConnectorRequestDataTypeGithub implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appId") || $data->appId === null) {
-            throw new SdkValidationError("appId", 'required', "Required property 'appId' is missing or null");
-        }
-        if (!property_exists($data, "appSlug") || $data->appSlug === null) {
-            throw new SdkValidationError("appSlug", 'required', "Required property 'appSlug' is missing or null");
-        }
-        if (!property_exists($data, "appName") || $data->appName === null) {
-            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
-        }
-        if (!property_exists($data, "clientId") || $data->clientId === null) {
-            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
-        }
+        if (!property_exists($data, "appId") || $data->appId === null) { throw new SdkValidationError("appId", 'required', "Required property 'appId' is missing or null"); }
+        if (!property_exists($data, "appSlug") || $data->appSlug === null) { throw new SdkValidationError("appSlug", 'required', "Required property 'appSlug' is missing or null"); }
+        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
+        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
         return new self(
             appId: SdkClient::intValue($data->appId),
             appSlug: SdkClient::stringValue($data->appSlug),
@@ -192,15 +184,9 @@ class ConnectCreateConnectorRequestDataTypeLinearOwnerOrganization implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             slug: SdkClient::stringValue($data->slug),

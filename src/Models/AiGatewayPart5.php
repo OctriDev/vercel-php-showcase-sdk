@@ -55,12 +55,8 @@ class AiGatewayRuleList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "nextCursor")) {
-            throw new SdkValidationError("nextCursor", 'required', "Missing required property 'nextCursor'");
-        }
-        if (!property_exists($data, "rules") || $data->rules === null) {
-            throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null");
-        }
+        if (!property_exists($data, "nextCursor")) { throw new SdkValidationError("nextCursor", 'required', "Missing required property 'nextCursor'"); }
+        if (!property_exists($data, "rules") || $data->rules === null) { throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null"); }
         return new self(
             nextCursor: ($data->nextCursor === null ? null : SdkClient::stringValue($data->nextCursor)),
             rules: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayRule::class), SdkClient::arrayValue($data->rules))),
@@ -75,26 +71,11 @@ final readonly class AiGatewayVirtualModelConfigCachingEnum implements SdkOpenEn
 {
     public const AUTO = "auto";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -108,26 +89,11 @@ final readonly class AiGatewayVirtualModelConfigHasItemEnum implements SdkOpenEn
     public const TOOL_USE = "tool-use";
     public const VISION = "vision";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -139,26 +105,11 @@ final readonly class AiGatewayVirtualModelConfigInferenceRegionProvidersValueSco
     public const SPECIFIC = "specific";
     public const ZONE = "zone";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -242,26 +193,11 @@ final readonly class AiGatewayVirtualModelConfigInferenceRegionScopeEnum impleme
     public const SPECIFIC = "specific";
     public const ZONE = "zone";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -399,9 +335,7 @@ class AiGatewayVirtualModelConfigModelsItemVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
         return new self(
             slug: SdkClient::stringValue($data->slug),
             intelligence: (property_exists($data, "intelligence") && $data->intelligence !== null ? SdkClient::floatValue($data->intelligence) : SdkNotGiven::Value),

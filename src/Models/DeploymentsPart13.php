@@ -82,15 +82,9 @@ class CancelDeploymentResponseMicrofrontendsVariant1 implements CancelDeployment
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultAppProjectName") || $data->defaultAppProjectName === null) {
-            throw new SdkValidationError("defaultAppProjectName", 'required', "Required property 'defaultAppProjectName' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) {
-            throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null");
-        }
+        if (!property_exists($data, "defaultAppProjectName") || $data->defaultAppProjectName === null) { throw new SdkValidationError("defaultAppProjectName", 'required', "Required property 'defaultAppProjectName' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) { throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null"); }
         return new self(
             defaultAppProjectName: SdkClient::stringValue($data->defaultAppProjectName),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),
@@ -108,26 +102,11 @@ final readonly class CancelDeploymentResponseRoutesItemVariant0DestinationServic
 {
     public const SERVICE = "service";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CancelDeploymentResponseRoutesItemVariant0DestinationService implements \JsonSerializable
@@ -185,9 +164,7 @@ class CancelDeploymentResponseRoutesItemVariant0DestinationService implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "service") || $data->service === null) {
-            throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null");
-        }
+        if (!property_exists($data, "service") || $data->service === null) { throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null"); }
         return new self(
             service: SdkClient::stringValue($data->service),
             path: (property_exists($data, "path") && $data->path !== null ? SdkClient::stringValue($data->path) : SdkNotGiven::Value),
@@ -200,26 +177,11 @@ final readonly class CancelDeploymentResponseRoutesItemVariant0HasItemHostTypeEn
 {
     public const HOST = "host";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CancelDeploymentResponseRoutesItemVariant0HasItemHostValueVariant1 implements \JsonSerializable

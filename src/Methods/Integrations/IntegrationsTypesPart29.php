@@ -12,26 +12,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsAiStat
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsAi implements \JsonSerializable
@@ -65,9 +50,7 @@ class GetConfigurationProductsResponseProductsItemProtocolsAi implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsAiStatusEnum::class),
         );
@@ -79,26 +62,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsAuthen
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsAuthentication implements \JsonSerializable
@@ -144,9 +112,7 @@ class GetConfigurationProductsResponseProductsItemProtocolsAuthentication implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsAuthenticationStatusEnum::class),
             appUrlRegistrationSupport: (property_exists($data, "appUrlRegistrationSupport") && $data->appUrlRegistrationSupport !== null ? SdkClient::boolValue($data->appUrlRegistrationSupport) : SdkNotGiven::Value),
@@ -159,26 +125,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsChecks
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsChecks implements \JsonSerializable
@@ -212,9 +163,7 @@ class GetConfigurationProductsResponseProductsItemProtocolsChecks implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsChecksStatusEnum::class),
         );
@@ -226,26 +175,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsExperi
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsExperimentation implements \JsonSerializable
@@ -287,9 +221,7 @@ class GetConfigurationProductsResponseProductsItemProtocolsExperimentation imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsExperimentationStatusEnum::class),
             edgeConfigSyncingSupport: (property_exists($data, "edgeConfigSyncingSupport") && $data->edgeConfigSyncingSupport !== null ? SdkClient::boolValue($data->edgeConfigSyncingSupport) : SdkNotGiven::Value),
@@ -302,26 +234,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsLogDra
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetConfigurationProductsResponseProductsItemProtocolsLogDrainFormatEnum implements SdkOpenEnum
@@ -329,26 +246,11 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsLogDra
     public const JSON = "json";
     public const NDJSON = "ndjson";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemProtocolsLogDrain implements \JsonSerializable
@@ -402,15 +304,9 @@ class GetConfigurationProductsResponseProductsItemProtocolsLogDrain implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
-            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
-        }
-        if (!property_exists($data, "format") || $data->format === null) {
-            throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
+        if (!property_exists($data, "format") || $data->format === null) { throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetConfigurationProductsResponseProductsItemProtocolsLogDrainStatusEnum::class),
             endpoint: SdkClient::stringValue($data->endpoint),
@@ -425,24 +321,9 @@ final readonly class GetConfigurationProductsResponseProductsItemProtocolsMessag
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

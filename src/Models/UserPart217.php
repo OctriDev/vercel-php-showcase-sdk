@@ -52,12 +52,8 @@ class UserEventPayloadVariant400 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
-        if (!property_exists($data, "previous")) {
-            throw new SdkValidationError("previous", 'required', "Missing required property 'previous'");
-        }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "previous")) { throw new SdkValidationError("previous", 'required', "Missing required property 'previous'"); }
         return new self(
             next: ($data->next === null ? null : SdkClient::hydrateClass($data->next, UserEventPayloadVariant400Next::class)),
             previous: ($data->previous === null ? null : SdkClient::hydrateClass($data->previous, UserEventPayloadVariant400Previous::class)),
@@ -112,9 +108,7 @@ class UserEventPayloadVariant401 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             domain: (property_exists($data, "domain") && $data->domain !== null ? SdkClient::stringValue($data->domain) : SdkNotGiven::Value),
@@ -130,26 +124,11 @@ final readonly class UserEventPayloadVariant402EnvironmentEnum implements SdkOpe
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant402 implements UserEventPayload, \JsonSerializable
@@ -217,18 +196,10 @@ class UserEventPayloadVariant402 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled")) {
-            throw new SdkValidationError("enabled", 'required', "Missing required property 'enabled'");
-        }
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "enabled")) { throw new SdkValidationError("enabled", 'required', "Missing required property 'enabled'"); }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             enabled: ($data->enabled === null ? null : SdkClient::boolValue($data->enabled)),
             environment: SdkClient::hydrateStringEnumOrString($data->environment, UserEventPayloadVariant402EnvironmentEnum::class),
@@ -250,26 +221,11 @@ final readonly class UserEventPayloadVariant403EnabledEnum implements SdkOpenEnu
     public const ON = "on";
     public const ON_FORCE = "on-force";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -280,26 +236,11 @@ final readonly class UserEventPayloadVariant403EnvironmentEnum implements SdkOpe
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant403 implements UserEventPayload, \JsonSerializable
@@ -347,12 +288,8 @@ class UserEventPayloadVariant403 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
         return new self(
             enabled: SdkClient::hydrateStringEnumOrString($data->enabled, UserEventPayloadVariant403EnabledEnum::class),
             environment: SdkClient::hydrateStringEnumOrString($data->environment, UserEventPayloadVariant403EnvironmentEnum::class),

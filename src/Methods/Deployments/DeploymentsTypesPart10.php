@@ -44,12 +44,8 @@ class CancelDeploymentResponseLambdasItemOutputItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionName") || $data->functionName === null) {
-            throw new SdkValidationError("functionName", 'required', "Required property 'functionName' is missing or null");
-        }
-        if (!property_exists($data, "path") || $data->path === null) {
-            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
-        }
+        if (!property_exists($data, "functionName") || $data->functionName === null) { throw new SdkValidationError("functionName", 'required', "Required property 'functionName' is missing or null"); }
+        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
         return new self(
             functionName: SdkClient::stringValue($data->functionName),
             path: SdkClient::stringValue($data->path),
@@ -129,12 +125,8 @@ class CancelDeploymentResponseLambdasItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "output") || $data->output === null) {
-            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             output: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CancelDeploymentResponseLambdasItemOutputItem::class), SdkClient::arrayValue($data->output))),
@@ -155,26 +147,11 @@ final readonly class CancelDeploymentResponseManualProvisioningStateEnum impleme
     public const PENDING = "PENDING";
     public const TIMEOUT = "TIMEOUT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -227,9 +204,7 @@ class CancelDeploymentResponseManualProvisioning implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "state") || $data->state === null) {
-            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
-        }
+        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
         return new self(
             state: SdkClient::hydrateStringEnumOrString($data->state, CancelDeploymentResponseManualProvisioningStateEnum::class),
             completedAt: (property_exists($data, "completedAt") && $data->completedAt !== null ? SdkClient::floatValue($data->completedAt) : SdkNotGiven::Value),
@@ -253,24 +228,9 @@ final readonly class CancelDeploymentResponseNodeVersionEnum implements SdkOpenE
     public const _26_X = "26.x";
     public const _8_10_X = "8.10.x";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

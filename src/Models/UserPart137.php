@@ -82,21 +82,11 @@ class UserEventPayloadVariant225 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "directoryGroupId") || $data->directoryGroupId === null) {
-            throw new SdkValidationError("directoryGroupId", 'required', "Required property 'directoryGroupId' is missing or null");
-        }
-        if (!property_exists($data, "directoryId") || $data->directoryId === null) {
-            throw new SdkValidationError("directoryId", 'required', "Required property 'directoryId' is missing or null");
-        }
-        if (!property_exists($data, "groupName") || $data->groupName === null) {
-            throw new SdkValidationError("groupName", 'required', "Required property 'groupName' is missing or null");
-        }
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
-            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
-        }
+        if (!property_exists($data, "directoryGroupId") || $data->directoryGroupId === null) { throw new SdkValidationError("directoryGroupId", 'required', "Required property 'directoryGroupId' is missing or null"); }
+        if (!property_exists($data, "directoryId") || $data->directoryId === null) { throw new SdkValidationError("directoryId", 'required', "Required property 'directoryId' is missing or null"); }
+        if (!property_exists($data, "groupName") || $data->groupName === null) { throw new SdkValidationError("groupName", 'required', "Required property 'groupName' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
         return new self(
             directoryGroupId: SdkClient::stringValue($data->directoryGroupId),
             directoryId: SdkClient::stringValue($data->directoryId),
@@ -162,15 +152,9 @@ class UserEventPayloadVariant226 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "directoryGroupId") || $data->directoryGroupId === null) {
-            throw new SdkValidationError("directoryGroupId", 'required', "Required property 'directoryGroupId' is missing or null");
-        }
-        if (!property_exists($data, "directoryId") || $data->directoryId === null) {
-            throw new SdkValidationError("directoryId", 'required', "Required property 'directoryId' is missing or null");
-        }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
-            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
-        }
+        if (!property_exists($data, "directoryGroupId") || $data->directoryGroupId === null) { throw new SdkValidationError("directoryGroupId", 'required', "Required property 'directoryGroupId' is missing or null"); }
+        if (!property_exists($data, "directoryId") || $data->directoryId === null) { throw new SdkValidationError("directoryId", 'required', "Required property 'directoryId' is missing or null"); }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
         return new self(
             directoryGroupId: SdkClient::stringValue($data->directoryGroupId),
             directoryId: SdkClient::stringValue($data->directoryId),
@@ -264,24 +248,12 @@ class UserEventPayloadVariant227 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "copiedDomains") || $data->copiedDomains === null) {
-            throw new SdkValidationError("copiedDomains", 'required', "Required property 'copiedDomains' is missing or null");
-        }
-        if (!property_exists($data, "enabledOrganizationEmu") || $data->enabledOrganizationEmu === null) {
-            throw new SdkValidationError("enabledOrganizationEmu", 'required', "Required property 'enabledOrganizationEmu' is missing or null");
-        }
-        if (!property_exists($data, "enabledTeamIds") || $data->enabledTeamIds === null) {
-            throw new SdkValidationError("enabledTeamIds", 'required', "Required property 'enabledTeamIds' is missing or null");
-        }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
-            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "teamSlug") || $data->teamSlug === null) {
-            throw new SdkValidationError("teamSlug", 'required', "Required property 'teamSlug' is missing or null");
-        }
+        if (!property_exists($data, "copiedDomains") || $data->copiedDomains === null) { throw new SdkValidationError("copiedDomains", 'required', "Required property 'copiedDomains' is missing or null"); }
+        if (!property_exists($data, "enabledOrganizationEmu") || $data->enabledOrganizationEmu === null) { throw new SdkValidationError("enabledOrganizationEmu", 'required', "Required property 'enabledOrganizationEmu' is missing or null"); }
+        if (!property_exists($data, "enabledTeamIds") || $data->enabledTeamIds === null) { throw new SdkValidationError("enabledTeamIds", 'required', "Required property 'enabledTeamIds' is missing or null"); }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "teamSlug") || $data->teamSlug === null) { throw new SdkValidationError("teamSlug", 'required', "Required property 'teamSlug' is missing or null"); }
         return new self(
             copiedDomains: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->copiedDomains))),
             enabledOrganizationEmu: SdkClient::boolValue($data->enabledOrganizationEmu),
@@ -308,24 +280,9 @@ final readonly class UserEventPayloadVariant228TriggerEnum implements SdkOpenEnu
     public const TEAM_REMOVED = "team_removed";
     public const TOGGLE = "toggle";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

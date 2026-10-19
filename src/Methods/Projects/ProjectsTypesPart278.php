@@ -67,21 +67,11 @@ class DeleteProjectAvatarResponseProtectionBypassValueIntegrationAutomationBypas
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -164,15 +154,9 @@ class DeleteProjectAvatarResponseProtectionBypassValueAutomationBypass implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             createdBy: SdkClient::stringValue($data->createdBy),
@@ -274,26 +258,11 @@ final readonly class DeleteProjectAvatarResponseResourceConfigBuildMachineElasti
     public const SHORT_BUILD_DURATION = "short-build-duration";
     public const SUSTAINED_HIGH_CPU = "sustained-high-cpu";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class DeleteProjectAvatarResponseResourceConfigBuildMachineElasticTransitionDirectionEnum implements SdkOpenEnum
@@ -301,26 +270,11 @@ final readonly class DeleteProjectAvatarResponseResourceConfigBuildMachineElasti
     public const DOWNGRADE = "downgrade";
     public const UPGRADE = "upgrade";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class DeleteProjectAvatarResponseResourceConfigBuildMachineElasticTransition implements \JsonSerializable
@@ -366,15 +320,9 @@ class DeleteProjectAvatarResponseResourceConfigBuildMachineElasticTransition imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithmVersion") || $data->algorithmVersion === null) {
-            throw new SdkValidationError("algorithmVersion", 'required', "Required property 'algorithmVersion' is missing or null");
-        }
-        if (!property_exists($data, "at") || $data->at === null) {
-            throw new SdkValidationError("at", 'required', "Required property 'at' is missing or null");
-        }
-        if (!property_exists($data, "direction") || $data->direction === null) {
-            throw new SdkValidationError("direction", 'required', "Required property 'direction' is missing or null");
-        }
+        if (!property_exists($data, "algorithmVersion") || $data->algorithmVersion === null) { throw new SdkValidationError("algorithmVersion", 'required', "Required property 'algorithmVersion' is missing or null"); }
+        if (!property_exists($data, "at") || $data->at === null) { throw new SdkValidationError("at", 'required', "Required property 'at' is missing or null"); }
+        if (!property_exists($data, "direction") || $data->direction === null) { throw new SdkValidationError("direction", 'required', "Required property 'direction' is missing or null"); }
         return new self(
             algorithmVersion: SdkClient::stringValue($data->algorithmVersion),
             at: SdkClient::floatValue($data->at),
@@ -388,24 +336,9 @@ final readonly class DeleteProjectAvatarResponseResourceConfigBuildMachineSelect
     public const ELASTIC = "elastic";
     public const FIXED = "fixed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

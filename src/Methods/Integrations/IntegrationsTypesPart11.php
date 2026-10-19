@@ -54,9 +54,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueArrayItemsTypeEnum::class),
             default_: (property_exists($data, "default") && $data->default !== null ? SdkClient::floatValue($data->default) : SdkNotGiven::Value),
@@ -69,52 +67,22 @@ final readonly class GetConfigurationProductsResponseProductsItemMetadataSchemaP
 {
     public const ARRAY = "array";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueArrayUiControlEnum implements SdkOpenEnum
 {
     public const SLIDER = "slider";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueArrayUiDescriptionVariant1 implements \JsonSerializable
@@ -148,9 +116,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expr") || $data->expr === null) {
-            throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null");
-        }
+        if (!property_exists($data, "expr") || $data->expr === null) { throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null"); }
         return new self(
             expr: SdkClient::stringValue($data->expr),
         );
@@ -188,9 +154,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expr") || $data->expr === null) {
-            throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null");
-        }
+        if (!property_exists($data, "expr") || $data->expr === null) { throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null"); }
         return new self(
             expr: SdkClient::stringValue($data->expr),
         );
@@ -202,26 +166,11 @@ final readonly class GetConfigurationProductsResponseProductsItemMetadataSchemaP
     public const CREATE = "create";
     public const UPDATE = "update";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueArrayUiFormattedValue implements \JsonSerializable
@@ -255,9 +204,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expr") || $data->expr === null) {
-            throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null");
-        }
+        if (!property_exists($data, "expr") || $data->expr === null) { throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null"); }
         return new self(
             expr: SdkClient::stringValue($data->expr),
         );
@@ -295,9 +242,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expr") || $data->expr === null) {
-            throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null");
-        }
+        if (!property_exists($data, "expr") || $data->expr === null) { throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null"); }
         return new self(
             expr: SdkClient::stringValue($data->expr),
         );
@@ -309,26 +254,11 @@ final readonly class GetConfigurationProductsResponseProductsItemMetadataSchemaP
     public const CREATE = "create";
     public const UPDATE = "update";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueArrayUiReadOnlyVariant0 implements \JsonSerializable
@@ -362,9 +292,7 @@ class GetConfigurationProductsResponseProductsItemMetadataSchemaPropertiesValueA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "expr") || $data->expr === null) {
-            throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null");
-        }
+        if (!property_exists($data, "expr") || $data->expr === null) { throw new SdkValidationError("expr", 'required', "Required property 'expr' is missing or null"); }
         return new self(
             expr: SdkClient::stringValue($data->expr),
         );
@@ -376,24 +304,9 @@ final readonly class GetConfigurationProductsResponseProductsItemMetadataSchemaP
     public const CREATE = "create";
     public const UPDATE = "update";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

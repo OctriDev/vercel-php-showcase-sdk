@@ -62,15 +62,9 @@ class UserEventPayloadVariant466 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) {
-            throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) { throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -154,21 +148,11 @@ class UserEventPayloadVariant467 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "digest") || $data->digest === null) {
-            throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "reference") || $data->reference === null) {
-            throw new SdkValidationError("reference", 'required', "Required property 'reference' is missing or null");
-        }
-        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) {
-            throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null");
-        }
+        if (!property_exists($data, "digest") || $data->digest === null) { throw new SdkValidationError("digest", 'required', "Required property 'digest' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "reference") || $data->reference === null) { throw new SdkValidationError("reference", 'required', "Required property 'reference' is missing or null"); }
+        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) { throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null"); }
         return new self(
             digest: SdkClient::stringValue($data->digest),
             projectId: SdkClient::stringValue($data->projectId),
@@ -244,18 +228,10 @@ class UserEventPayloadVariant468 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "reference") || $data->reference === null) {
-            throw new SdkValidationError("reference", 'required', "Required property 'reference' is missing or null");
-        }
-        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) {
-            throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "reference") || $data->reference === null) { throw new SdkValidationError("reference", 'required', "Required property 'reference' is missing or null"); }
+        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) { throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -340,21 +316,11 @@ class UserEventPayloadVariant469 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) {
-            throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null");
-        }
-        if (!property_exists($data, "sharedWithTeamId") || $data->sharedWithTeamId === null) {
-            throw new SdkValidationError("sharedWithTeamId", 'required', "Required property 'sharedWithTeamId' is missing or null");
-        }
-        if (!property_exists($data, "sharedWithTeamSlug") || $data->sharedWithTeamSlug === null) {
-            throw new SdkValidationError("sharedWithTeamSlug", 'required', "Required property 'sharedWithTeamSlug' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "repositoryName") || $data->repositoryName === null) { throw new SdkValidationError("repositoryName", 'required', "Required property 'repositoryName' is missing or null"); }
+        if (!property_exists($data, "sharedWithTeamId") || $data->sharedWithTeamId === null) { throw new SdkValidationError("sharedWithTeamId", 'required', "Required property 'sharedWithTeamId' is missing or null"); }
+        if (!property_exists($data, "sharedWithTeamSlug") || $data->sharedWithTeamSlug === null) { throw new SdkValidationError("sharedWithTeamSlug", 'required', "Required property 'sharedWithTeamSlug' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),

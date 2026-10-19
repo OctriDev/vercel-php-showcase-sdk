@@ -11,26 +11,11 @@ final readonly class DeleteSecurityFirewallConfigByConfigVersionResponse impleme
 {
     public const UNKNOWN = "";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetSecurityFirewallEventsSort implements SdkOpenEnum
@@ -38,26 +23,11 @@ final readonly class GetSecurityFirewallEventsSort implements SdkOpenEnum
     public const STARTTIME_DESC = "startTime:desc";
     public const STARTTIME_ASC = "startTime:asc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetSecurityFirewallEventsRuleKind implements SdkOpenEnum
@@ -65,26 +35,11 @@ final readonly class GetSecurityFirewallEventsRuleKind implements SdkOpenEnum
     public const SYSTEM = "system";
     public const CUSTOM = "custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetSecurityFirewallEventsSummaryRuleKind implements SdkOpenEnum
@@ -92,26 +47,11 @@ final readonly class GetSecurityFirewallEventsSummaryRuleKind implements SdkOpen
     public const SYSTEM = "system";
     public const CUSTOM = "custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateAttackChallengeModeBodyVariant0 implements \JsonSerializable
@@ -157,15 +97,9 @@ class UpdateAttackChallengeModeBodyVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) {
-            throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null");
-        }
-        if (!property_exists($data, "attackModeActiveUntil") || $data->attackModeActiveUntil === null) {
-            throw new SdkValidationError("attackModeActiveUntil", 'required', "Required property 'attackModeActiveUntil' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) { throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null"); }
+        if (!property_exists($data, "attackModeActiveUntil") || $data->attackModeActiveUntil === null) { throw new SdkValidationError("attackModeActiveUntil", 'required', "Required property 'attackModeActiveUntil' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             attackModeEnabled: SdkClient::boolValue($data->attackModeEnabled),
@@ -211,12 +145,8 @@ class UpdateAttackChallengeModeBodyVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) {
-            throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) { throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             attackModeEnabled: SdkClient::boolValue($data->attackModeEnabled),
@@ -261,12 +191,8 @@ class UpdateAttackChallengeModeResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) {
-            throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null");
-        }
-        if (!property_exists($data, "attackModeUpdatedAt") || $data->attackModeUpdatedAt === null) {
-            throw new SdkValidationError("attackModeUpdatedAt", 'required', "Required property 'attackModeUpdatedAt' is missing or null");
-        }
+        if (!property_exists($data, "attackModeEnabled") || $data->attackModeEnabled === null) { throw new SdkValidationError("attackModeEnabled", 'required', "Required property 'attackModeEnabled' is missing or null"); }
+        if (!property_exists($data, "attackModeUpdatedAt") || $data->attackModeUpdatedAt === null) { throw new SdkValidationError("attackModeUpdatedAt", 'required', "Required property 'attackModeUpdatedAt' is missing or null"); }
         return new self(
             attackModeEnabled: SdkClient::boolValue($data->attackModeEnabled),
             attackModeUpdatedAt: SdkClient::floatValue($data->attackModeUpdatedAt),
@@ -292,26 +218,11 @@ final readonly class GetSecurityFirewallConfigResponseActiveConditionsItemCondit
     public const SUB = "sub";
     public const SUF = "suf";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItemConditionsItemTypeEnum implements SdkOpenEnum
@@ -351,26 +262,11 @@ final readonly class GetSecurityFirewallConfigResponseActiveConditionsItemCondit
     public const TRUSTED_SOURCE = "trusted_source";
     public const USER_AGENT = "user_agent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItemConditionsItem implements \JsonSerializable
@@ -434,12 +330,8 @@ class GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItemCon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "op") || $data->op === null) {
-            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             op: SdkClient::hydrateStringEnumOrString($data->op, GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItemConditionsItemOpEnum::class),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItemConditionsItemTypeEnum::class),

@@ -189,27 +189,13 @@ class Snapshot implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "lastUsedAt") || $data->lastUsedAt === null) {
-            throw new SdkValidationError("lastUsedAt", 'required', "Required property 'lastUsedAt' is missing or null");
-        }
-        if (!property_exists($data, "sizeBytes") || $data->sizeBytes === null) {
-            throw new SdkValidationError("sizeBytes", 'required', "Required property 'sizeBytes' is missing or null");
-        }
-        if (!property_exists($data, "sourceSessionId") || $data->sourceSessionId === null) {
-            throw new SdkValidationError("sourceSessionId", 'required', "Required property 'sourceSessionId' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "lastUsedAt") || $data->lastUsedAt === null) { throw new SdkValidationError("lastUsedAt", 'required', "Required property 'lastUsedAt' is missing or null"); }
+        if (!property_exists($data, "sizeBytes") || $data->sizeBytes === null) { throw new SdkValidationError("sizeBytes", 'required', "Required property 'sizeBytes' is missing or null"); }
+        if (!property_exists($data, "sourceSessionId") || $data->sourceSessionId === null) { throw new SdkValidationError("sourceSessionId", 'required', "Required property 'sourceSessionId' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),
@@ -264,9 +250,7 @@ class StopSessionResponseVariant0 implements StopSessionResponse, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             session: SdkClient::hydrateClass($data->session, Session::class),
         );
@@ -328,15 +312,9 @@ class StopSessionResponseVariant1 implements StopSessionResponse, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
-        if (!property_exists($data, "snapshot") || $data->snapshot === null) {
-            throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null");
-        }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
+        if (!property_exists($data, "snapshot") || $data->snapshot === null) { throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null"); }
         return new self(
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),
             session: SdkClient::hydrateClass($data->session, Session::class),
@@ -356,24 +334,9 @@ final readonly class UpdateSandboxRequestNetworkPolicyVariant0ModeEnum implement
     public const DEFAULT_ALLOW = "default-allow";
     public const DEFAULT_DENY = "default-deny";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

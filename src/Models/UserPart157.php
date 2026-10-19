@@ -62,15 +62,9 @@ class UserEventPayloadVariant264 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "directoryListing") || $data->directoryListing === null) {
-            throw new SdkValidationError("directoryListing", 'required', "Required property 'directoryListing' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "directoryListing") || $data->directoryListing === null) { throw new SdkValidationError("directoryListing", 'required', "Required property 'directoryListing' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             directoryListing: SdkClient::boolValue($data->directoryListing),
             projectId: SdkClient::stringValue($data->projectId),
@@ -185,15 +179,9 @@ class UserEventPayloadVariant265PrevProjectAnalytics implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) {
-            throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null");
-        }
-        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) {
-            throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) { throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null"); }
+        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) { throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             disabledAt: SdkClient::floatValue($data->disabledAt),
             enabledAt: SdkClient::floatValue($data->enabledAt),
@@ -312,15 +300,9 @@ class UserEventPayloadVariant265ProjectAnalytics implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) {
-            throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null");
-        }
-        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) {
-            throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) { throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null"); }
+        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) { throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             disabledAt: SdkClient::floatValue($data->disabledAt),
             enabledAt: SdkClient::floatValue($data->enabledAt),

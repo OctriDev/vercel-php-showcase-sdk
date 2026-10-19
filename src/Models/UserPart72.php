@@ -507,36 +507,16 @@ class UserEventPayloadVariant120JobPush implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headInfo") || $data->headInfo === null) {
-            throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null");
-        }
-        if (!property_exists($data, "installationId") || $data->installationId === null) {
-            throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null");
-        }
-        if (!property_exists($data, "isPrivate") || $data->isPrivate === null) {
-            throw new SdkValidationError("isPrivate", 'required', "Required property 'isPrivate' is missing or null");
-        }
-        if (!property_exists($data, "org") || $data->org === null) {
-            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
-        }
-        if (!property_exists($data, "prId")) {
-            throw new SdkValidationError("prId", 'required', "Missing required property 'prId'");
-        }
-        if (!property_exists($data, "provider") || $data->provider === null) {
-            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
-        }
-        if (!property_exists($data, "repo") || $data->repo === null) {
-            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
-        }
-        if (!property_exists($data, "repoId") || $data->repoId === null) {
-            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
-        }
-        if (!property_exists($data, "repoPushedAt")) {
-            throw new SdkValidationError("repoPushedAt", 'required', "Missing required property 'repoPushedAt'");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "headInfo") || $data->headInfo === null) { throw new SdkValidationError("headInfo", 'required', "Required property 'headInfo' is missing or null"); }
+        if (!property_exists($data, "installationId") || $data->installationId === null) { throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null"); }
+        if (!property_exists($data, "isPrivate") || $data->isPrivate === null) { throw new SdkValidationError("isPrivate", 'required', "Required property 'isPrivate' is missing or null"); }
+        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
+        if (!property_exists($data, "prId")) { throw new SdkValidationError("prId", 'required', "Missing required property 'prId'"); }
+        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
+        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
+        if (!property_exists($data, "repoPushedAt")) { throw new SdkValidationError("repoPushedAt", 'required', "Missing required property 'repoPushedAt'"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             headInfo: SdkClient::hydrateClass($data->headInfo, UserEventPayloadVariant120JobPushHeadInfo::class),
             installationId: SdkClient::floatValue($data->installationId),

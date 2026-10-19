@@ -321,9 +321,7 @@ class ConnectCreateConnectorRequestDataTypeOauth implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "clientId") || $data->clientId === null) {
-            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
-        }
+        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
         return new self(
             clientId: SdkClient::stringValue($data->clientId),
             serverUrl: (property_exists($data, "serverUrl") && $data->serverUrl !== null ? SdkClient::stringValue($data->serverUrl) : SdkNotGiven::Value),

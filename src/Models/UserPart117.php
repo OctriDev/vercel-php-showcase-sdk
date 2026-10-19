@@ -42,9 +42,7 @@ class UserEventPayloadVariant185 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, UserEventPayloadVariant185SourceEnum::class),
         );
@@ -62,26 +60,11 @@ final readonly class UserEventPayloadVariant186FailureStageEnum implements SdkOp
     public const UNKNOWN = "unknown";
     public const VALIDATION = "validation";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -92,26 +75,11 @@ final readonly class UserEventPayloadVariant186OutcomeEnum implements SdkOpenEnu
     public const FAILURE = "failure";
     public const SUCCESS = "success";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -124,26 +92,11 @@ final readonly class UserEventPayloadVariant186ProviderEnum implements SdkOpenEn
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant186 implements UserEventPayload, \JsonSerializable
@@ -305,39 +258,17 @@ class UserEventPayloadVariant186 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actorAccountId")) {
-            throw new SdkValidationError("actorAccountId", 'required', "Missing required property 'actorAccountId'");
-        }
-        if (!property_exists($data, "actorLogin")) {
-            throw new SdkValidationError("actorLogin", 'required', "Missing required property 'actorLogin'");
-        }
-        if (!property_exists($data, "destinationBranch")) {
-            throw new SdkValidationError("destinationBranch", 'required', "Missing required property 'destinationBranch'");
-        }
-        if (!property_exists($data, "destinationRepo") || $data->destinationRepo === null) {
-            throw new SdkValidationError("destinationRepo", 'required', "Required property 'destinationRepo' is missing or null");
-        }
-        if (!property_exists($data, "installationId")) {
-            throw new SdkValidationError("installationId", 'required', "Missing required property 'installationId'");
-        }
-        if (!property_exists($data, "outcome") || $data->outcome === null) {
-            throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null");
-        }
-        if (!property_exists($data, "provider") || $data->provider === null) {
-            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
-        }
-        if (!property_exists($data, "resultCommitSha")) {
-            throw new SdkValidationError("resultCommitSha", 'required', "Missing required property 'resultCommitSha'");
-        }
-        if (!property_exists($data, "sourceCommitSha")) {
-            throw new SdkValidationError("sourceCommitSha", 'required', "Missing required property 'sourceCommitSha'");
-        }
-        if (!property_exists($data, "sourceRepo")) {
-            throw new SdkValidationError("sourceRepo", 'required', "Missing required property 'sourceRepo'");
-        }
-        if (!property_exists($data, "usedAppToken") || $data->usedAppToken === null) {
-            throw new SdkValidationError("usedAppToken", 'required', "Required property 'usedAppToken' is missing or null");
-        }
+        if (!property_exists($data, "actorAccountId")) { throw new SdkValidationError("actorAccountId", 'required', "Missing required property 'actorAccountId'"); }
+        if (!property_exists($data, "actorLogin")) { throw new SdkValidationError("actorLogin", 'required', "Missing required property 'actorLogin'"); }
+        if (!property_exists($data, "destinationBranch")) { throw new SdkValidationError("destinationBranch", 'required', "Missing required property 'destinationBranch'"); }
+        if (!property_exists($data, "destinationRepo") || $data->destinationRepo === null) { throw new SdkValidationError("destinationRepo", 'required', "Required property 'destinationRepo' is missing or null"); }
+        if (!property_exists($data, "installationId")) { throw new SdkValidationError("installationId", 'required', "Missing required property 'installationId'"); }
+        if (!property_exists($data, "outcome") || $data->outcome === null) { throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "resultCommitSha")) { throw new SdkValidationError("resultCommitSha", 'required', "Missing required property 'resultCommitSha'"); }
+        if (!property_exists($data, "sourceCommitSha")) { throw new SdkValidationError("sourceCommitSha", 'required', "Missing required property 'sourceCommitSha'"); }
+        if (!property_exists($data, "sourceRepo")) { throw new SdkValidationError("sourceRepo", 'required', "Missing required property 'sourceRepo'"); }
+        if (!property_exists($data, "usedAppToken") || $data->usedAppToken === null) { throw new SdkValidationError("usedAppToken", 'required', "Required property 'usedAppToken' is missing or null"); }
         return new self(
             actorAccountId: ($data->actorAccountId === null ? null : SdkClient::stringValue($data->actorAccountId)),
             actorLogin: ($data->actorLogin === null ? null : SdkClient::stringValue($data->actorLogin)),

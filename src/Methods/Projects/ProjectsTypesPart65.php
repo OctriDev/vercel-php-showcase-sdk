@@ -11,52 +11,22 @@ final readonly class ListProjectsResponseVariant1ProjectsItemTierEnum implements
 {
     public const PRIORITY = "priority";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueItemToAllCustomPresetEnum implements SdkOpenEnum
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -105,9 +75,7 @@ class ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slugs") || $data->slugs === null) {
-            throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null");
-        }
+        if (!property_exists($data, "slugs") || $data->slugs === null) { throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null"); }
         return new self(
             slugs: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))),
             preset: (property_exists($data, "preset") && $data->preset !== null ? SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueItemToAllCustomPresetEnum::class) : SdkNotGiven::Value),
@@ -119,26 +87,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcP
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -187,9 +140,7 @@ class ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "preset") || $data->preset === null) {
-            throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null");
-        }
+        if (!property_exists($data, "preset") || $data->preset === null) { throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null"); }
         return new self(
             preset: SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueItemToAllCustom2PresetEnum::class),
             slugs: (property_exists($data, "slugs") && $data->slugs !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))) : SdkNotGiven::Value),
@@ -242,12 +193,8 @@ class ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "to") || $data->to === null) {
-            throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null");
-        }
-        if (!property_exists($data, "claims") || $data->claims === null) {
-            throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null");
-        }
+        if (!property_exists($data, "to") || $data->to === null) { throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null"); }
+        if (!property_exists($data, "claims") || $data->claims === null) { throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null"); }
         return new self(
             to: SdkClient::hydrateUnion($data->to, [ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueItemToAllCustom::class, ListProjectsResponseVariant1ProjectsItemTrustedSourcesOidcProvidersValueItemToAllCustom2::class], null, []),
             claims: SdkClient::mapValues(SdkClient::stringMapValue($data->claims), static fn($item) => array_values(array_map(static fn($item2) => SdkClient::stringValue($item2), SdkClient::arrayValue($item)))),
@@ -260,26 +207,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemTrustedSourcesProje
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -328,9 +260,7 @@ class ListProjectsResponseVariant1ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slugs") || $data->slugs === null) {
-            throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null");
-        }
+        if (!property_exists($data, "slugs") || $data->slugs === null) { throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null"); }
         return new self(
             slugs: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))),
             preset: (property_exists($data, "preset") && $data->preset !== null ? SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant1ProjectsItemTrustedSourcesProjectsValueCustomAllowItemFromAllCustomPresetEnum::class) : SdkNotGiven::Value),
@@ -342,26 +272,11 @@ final readonly class ListProjectsResponseVariant1ProjectsItemTrustedSourcesProje
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -410,9 +325,7 @@ class ListProjectsResponseVariant1ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "preset") || $data->preset === null) {
-            throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null");
-        }
+        if (!property_exists($data, "preset") || $data->preset === null) { throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null"); }
         return new self(
             preset: SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant1ProjectsItemTrustedSourcesProjectsValueCustomAllowItemFromAllCustom2PresetEnum::class),
             slugs: (property_exists($data, "slugs") && $data->slugs !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))) : SdkNotGiven::Value),
@@ -424,24 +337,9 @@ final readonly class ListProjectsResponseVariant1ProjectsItemTrustedSourcesProje
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

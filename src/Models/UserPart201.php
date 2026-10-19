@@ -317,24 +317,12 @@ class UserEventPayloadVariant374 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bitbucketEmail") || $data->bitbucketEmail === null) {
-            throw new SdkValidationError("bitbucketEmail", 'required', "Required property 'bitbucketEmail' is missing or null");
-        }
-        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) {
-            throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null");
-        }
-        if (!property_exists($data, "bitbucketName") || $data->bitbucketName === null) {
-            throw new SdkValidationError("bitbucketName", 'required', "Required property 'bitbucketName' is missing or null");
-        }
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) {
-            throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null");
-        }
-        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) {
-            throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null");
-        }
+        if (!property_exists($data, "bitbucketEmail") || $data->bitbucketEmail === null) { throw new SdkValidationError("bitbucketEmail", 'required', "Required property 'bitbucketEmail' is missing or null"); }
+        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) { throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null"); }
+        if (!property_exists($data, "bitbucketName") || $data->bitbucketName === null) { throw new SdkValidationError("bitbucketName", 'required', "Required property 'bitbucketName' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) { throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null"); }
+        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) { throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null"); }
         return new self(
             bitbucketEmail: SdkClient::stringValue($data->bitbucketEmail),
             bitbucketLogin: SdkClient::stringValue($data->bitbucketLogin),

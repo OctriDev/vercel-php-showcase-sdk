@@ -306,39 +306,17 @@ class UploadProjectAvatarResponseAliasItemDeployment implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "createdIn") || $data->createdIn === null) {
-            throw new SdkValidationError("createdIn", 'required', "Required property 'createdIn' is missing or null");
-        }
-        if (!property_exists($data, "creator")) {
-            throw new SdkValidationError("creator", 'required', "Missing required property 'creator'");
-        }
-        if (!property_exists($data, "deploymentHostname") || $data->deploymentHostname === null) {
-            throw new SdkValidationError("deploymentHostname", 'required', "Required property 'deploymentHostname' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "plan") || $data->plan === null) {
-            throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null");
-        }
-        if (!property_exists($data, "private") || $data->private === null) {
-            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
-        }
-        if (!property_exists($data, "readyState") || $data->readyState === null) {
-            throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "createdIn") || $data->createdIn === null) { throw new SdkValidationError("createdIn", 'required', "Required property 'createdIn' is missing or null"); }
+        if (!property_exists($data, "creator")) { throw new SdkValidationError("creator", 'required', "Missing required property 'creator'"); }
+        if (!property_exists($data, "deploymentHostname") || $data->deploymentHostname === null) { throw new SdkValidationError("deploymentHostname", 'required', "Required property 'deploymentHostname' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "plan") || $data->plan === null) { throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null"); }
+        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
+        if (!property_exists($data, "readyState") || $data->readyState === null) { throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             createdIn: SdkClient::stringValue($data->createdIn),

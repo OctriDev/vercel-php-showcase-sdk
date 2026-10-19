@@ -55,15 +55,9 @@ class GetRollingReleaseBillingStatusResponseVariant0 implements GetRollingReleas
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) {
-            throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) { throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             availableSlots: SdkClient::intValue($data->availableSlots),
             message: SdkClient::stringValue($data->message),
@@ -76,26 +70,11 @@ final readonly class GetRollingReleaseBillingStatusResponseVariant1AvailableSlot
 {
     public const UNLIMITED = "unlimited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 enum GetRollingReleaseBillingStatusResponseVariant1ReasonEnum: string implements SdkWireEnum
@@ -146,15 +125,9 @@ class GetRollingReleaseBillingStatusResponseVariant1 implements GetRollingReleas
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) {
-            throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) { throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             availableSlots: SdkClient::hydrateStringEnumOrString($data->availableSlots, GetRollingReleaseBillingStatusResponseVariant1AvailableSlotsEnum::class),
             message: SdkClient::stringValue($data->message),
@@ -217,18 +190,10 @@ class GetRollingReleaseBillingStatusResponseVariant2 implements GetRollingReleas
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) {
-            throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null");
-        }
-        if (!property_exists($data, "enabledProjects") || $data->enabledProjects === null) {
-            throw new SdkValidationError("enabledProjects", 'required', "Required property 'enabledProjects' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) { throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null"); }
+        if (!property_exists($data, "enabledProjects") || $data->enabledProjects === null) { throw new SdkValidationError("enabledProjects", 'required', "Required property 'enabledProjects' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             availableSlots: SdkClient::intValue($data->availableSlots),
             enabledProjects: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->enabledProjects))),
@@ -286,15 +251,9 @@ class GetRollingReleaseBillingStatusResponseVariant3 implements GetRollingReleas
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) {
-            throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "availableSlots") || $data->availableSlots === null) { throw new SdkValidationError("availableSlots", 'required', "Required property 'availableSlots' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             availableSlots: SdkClient::floatValue($data->availableSlots),
             message: SdkClient::stringValue($data->message),
@@ -334,9 +293,7 @@ class UpdateRollingReleaseConfigResponseVariant0 implements UpdateRollingRelease
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rollingRelease")) {
-            throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'");
-        }
+        if (!property_exists($data, "rollingRelease")) { throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'"); }
         return new self(
             rollingRelease: ($data->rollingRelease === null ? null : $data->rollingRelease),
         );

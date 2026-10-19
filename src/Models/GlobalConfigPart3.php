@@ -97,21 +97,11 @@ class GlobalConfigItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
@@ -213,21 +203,11 @@ class GlobalConfigToken implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
-        if (!property_exists($data, "partialToken") || $data->partialToken === null) {
-            throw new SdkValidationError("partialToken", 'required', "Required property 'partialToken' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "partialToken") || $data->partialToken === null) { throw new SdkValidationError("partialToken", 'required', "Required property 'partialToken' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
@@ -243,26 +223,11 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant0OperationEnum i
 {
     public const CREATE = "create";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class PatchEdgeConfigItemsRequestItemsItemVariant0 implements PatchEdgeConfigItemsRequestItemsItem, \JsonSerializable
@@ -316,15 +281,9 @@ class PatchEdgeConfigItemsRequestItemsItemVariant0 implements PatchEdgeConfigIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operation") || $data->operation === null) {
-            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             operation: SdkClient::hydrateStringEnumOrString($data->operation, PatchEdgeConfigItemsRequestItemsItemVariant0OperationEnum::class),
             key: SdkClient::stringValue($data->key),
@@ -339,24 +298,9 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant1OperationEnum i
     public const UPDATE = "update";
     public const UPSERT = "upsert";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

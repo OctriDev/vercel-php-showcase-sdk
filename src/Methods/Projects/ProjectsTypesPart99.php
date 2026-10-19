@@ -38,9 +38,7 @@ class ListProjectsResponseVariant2ProjectsItemOptionsAllowlist implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paths") || $data->paths === null) {
-            throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null");
-        }
+        if (!property_exists($data, "paths") || $data->paths === null) { throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null"); }
         return new self(
             paths: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseVariant2ProjectsItemOptionsAllowlistPathsItem::class), SdkClient::arrayValue($data->paths))),
         );
@@ -54,26 +52,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemPassportDeploymentT
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant2ProjectsItemPassport implements \JsonSerializable
@@ -113,12 +96,8 @@ class ListProjectsResponseVariant2ProjectsItemPassport implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectorId") || $data->connectorId === null) {
-            throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null");
-        }
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "connectorId") || $data->connectorId === null) { throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             connectorId: SdkClient::stringValue($data->connectorId),
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, ListProjectsResponseVariant2ProjectsItemPassportDeploymentTypeEnum::class),
@@ -133,26 +112,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemPasswordProtectionD
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -189,9 +153,7 @@ class ListProjectsResponseVariant2ProjectsItemPasswordProtection implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, ListProjectsResponseVariant2ProjectsItemPasswordProtectionDeploymentTypeEnum::class),
         );

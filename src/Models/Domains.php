@@ -38,9 +38,7 @@ class UpdateDomainsResponseVariant0 implements UpdateDomainsResponse, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "moved") || $data->moved === null) {
-            throw new SdkValidationError("moved", 'required', "Required property 'moved' is missing or null");
-        }
+        if (!property_exists($data, "moved") || $data->moved === null) { throw new SdkValidationError("moved", 'required', "Required property 'moved' is missing or null"); }
         return new self(
             moved: SdkClient::boolValue($data->moved),
         );
@@ -84,12 +82,8 @@ class UpdateDomainsResponseVariant1 implements UpdateDomainsResponse, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "moved") || $data->moved === null) {
-            throw new SdkValidationError("moved", 'required', "Required property 'moved' is missing or null");
-        }
-        if (!property_exists($data, "token") || $data->token === null) {
-            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
-        }
+        if (!property_exists($data, "moved") || $data->moved === null) { throw new SdkValidationError("moved", 'required', "Required property 'moved' is missing or null"); }
+        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
         return new self(
             moved: SdkClient::boolValue($data->moved),
             token: SdkClient::stringValue($data->token),
@@ -103,26 +97,11 @@ final readonly class UpdateDomainsResponseVariant2EchModeEnum implements SdkOpen
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateDomainsResponseVariant2 implements UpdateDomainsResponse, \JsonSerializable
@@ -180,9 +159,7 @@ class UpdateDomainsResponseVariant2 implements UpdateDomainsResponse, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "echMode") || $data->echMode === null) {
-            throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null");
-        }
+        if (!property_exists($data, "echMode") || $data->echMode === null) { throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null"); }
         return new self(
             echMode: SdkClient::hydrateStringEnumOrString($data->echMode, UpdateDomainsResponseVariant2EchModeEnum::class),
             customNameservers: (property_exists($data, "customNameservers") && $data->customNameservers !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->customNameservers))) : SdkNotGiven::Value),

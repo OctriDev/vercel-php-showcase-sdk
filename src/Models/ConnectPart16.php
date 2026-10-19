@@ -101,12 +101,8 @@ class ConnectCreateConnectorRequestDataTypeSalesforce implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consumerKey") || $data->consumerKey === null) {
-            throw new SdkValidationError("consumerKey", 'required', "Required property 'consumerKey' is missing or null");
-        }
-        if (!property_exists($data, "loginHost") || $data->loginHost === null) {
-            throw new SdkValidationError("loginHost", 'required', "Required property 'loginHost' is missing or null");
-        }
+        if (!property_exists($data, "consumerKey") || $data->consumerKey === null) { throw new SdkValidationError("consumerKey", 'required', "Required property 'consumerKey' is missing or null"); }
+        if (!property_exists($data, "loginHost") || $data->loginHost === null) { throw new SdkValidationError("loginHost", 'required', "Required property 'loginHost' is missing or null"); }
         return new self(
             consumerKey: SdkClient::stringValue($data->consumerKey),
             loginHost: SdkClient::stringValue($data->loginHost),
@@ -164,9 +160,7 @@ class ConnectCreateConnectorRequestDataTypeSendblue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "apiKeyId") || $data->apiKeyId === null) {
-            throw new SdkValidationError("apiKeyId", 'required', "Required property 'apiKeyId' is missing or null");
-        }
+        if (!property_exists($data, "apiKeyId") || $data->apiKeyId === null) { throw new SdkValidationError("apiKeyId", 'required', "Required property 'apiKeyId' is missing or null"); }
         return new self(
             apiKeyId: SdkClient::stringValue($data->apiKeyId),
             phoneNumbers: (property_exists($data, "phoneNumbers") && $data->phoneNumbers !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->phoneNumbers))) : SdkNotGiven::Value),
@@ -236,9 +230,7 @@ class ConnectCreateConnectorRequestDataTypeSlackSlackTeam implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -319,12 +311,8 @@ class ConnectCreateConnectorRequestDataTypeSlackSlashCommandsItem implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "command") || $data->command === null) {
-            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
-        }
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
+        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
         return new self(
             command: SdkClient::stringValue($data->command),
             description: SdkClient::stringValue($data->description),
@@ -342,24 +330,9 @@ final readonly class ConnectCreateConnectorRequestDataTypeSlackShortcutsItemType
     public const GLOBAL = "global";
     public const MESSAGE = "message";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

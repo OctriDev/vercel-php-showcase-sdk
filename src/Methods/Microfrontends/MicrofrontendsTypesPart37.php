@@ -84,12 +84,8 @@ class GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant1 i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routing") || $data->routing === null) {
-            throw new SdkValidationError("routing", 'required', "Required property 'routing' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "routing") || $data->routing === null) { throw new SdkValidationError("routing", 'required', "Required property 'routing' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             routing: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant1RoutingItem::class), SdkClient::arrayValue($data->routing))),
             projectId: SdkClient::stringValue($data->projectId),
@@ -166,26 +162,11 @@ final readonly class GetMicrofrontendsConfigForProjectResponseConfigVersionEnum 
 {
     public const _1 = "1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -258,9 +239,7 @@ class GetMicrofrontendsConfigForProjectResponseConfig implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "applications") || $data->applications === null) {
-            throw new SdkValidationError("applications", 'required', "Required property 'applications' is missing or null");
-        }
+        if (!property_exists($data, "applications") || $data->applications === null) { throw new SdkValidationError("applications", 'required', "Required property 'applications' is missing or null"); }
         return new self(
             applications: SdkClient::mapValues(SdkClient::stringMapValue($data->applications), static fn($item) => SdkClient::hydrateUnion($item, [GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant0::class, GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant1::class], null, [])),
             schema: (property_exists($data, "\$schema") && get_object_vars($data)["\$schema"] !== null ? SdkClient::stringValue(get_object_vars($data)["\$schema"]) : SdkNotGiven::Value),
@@ -305,9 +284,7 @@ class GetMicrofrontendsConfigForProjectResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "config")) {
-            throw new SdkValidationError("config", 'required', "Missing required property 'config'");
-        }
+        if (!property_exists($data, "config")) { throw new SdkValidationError("config", 'required', "Missing required property 'config'"); }
         return new self(
             config: ($data->config === null ? null : SdkClient::hydrateClass($data->config, GetMicrofrontendsConfigForProjectResponseConfig::class)),
         );
@@ -364,9 +341,7 @@ class CreateMicrofrontendsGroupWithApplicationsDefaultApp implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             defaultRoute: (property_exists($data, "defaultRoute") && $data->defaultRoute !== null ? SdkClient::stringValue($data->defaultRoute) : SdkNotGiven::Value),

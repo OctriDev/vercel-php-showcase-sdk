@@ -135,36 +135,16 @@ class UserEventPayloadVariant489Policy implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "claims") || $data->claims === null) {
-            throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null");
-        }
-        if (!property_exists($data, "clientId") || $data->clientId === null) {
-            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "issuerUrl") || $data->issuerUrl === null) {
-            throw new SdkValidationError("issuerUrl", 'required', "Required property 'issuerUrl' is missing or null");
-        }
-        if (!property_exists($data, "name")) {
-            throw new SdkValidationError("name", 'required', "Missing required property 'name'");
-        }
-        if (!property_exists($data, "permissions") || $data->permissions === null) {
-            throw new SdkValidationError("permissions", 'required', "Required property 'permissions' is missing or null");
-        }
-        if (!property_exists($data, "policyId") || $data->policyId === null) {
-            throw new SdkValidationError("policyId", 'required', "Required property 'policyId' is missing or null");
-        }
-        if (!property_exists($data, "resources")) {
-            throw new SdkValidationError("resources", 'required', "Missing required property 'resources'");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "claims") || $data->claims === null) { throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null"); }
+        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "issuerUrl") || $data->issuerUrl === null) { throw new SdkValidationError("issuerUrl", 'required', "Required property 'issuerUrl' is missing or null"); }
+        if (!property_exists($data, "name")) { throw new SdkValidationError("name", 'required', "Missing required property 'name'"); }
+        if (!property_exists($data, "permissions") || $data->permissions === null) { throw new SdkValidationError("permissions", 'required', "Required property 'permissions' is missing or null"); }
+        if (!property_exists($data, "policyId") || $data->policyId === null) { throw new SdkValidationError("policyId", 'required', "Required property 'policyId' is missing or null"); }
+        if (!property_exists($data, "resources")) { throw new SdkValidationError("resources", 'required', "Missing required property 'resources'"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             claims: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant489PolicyClaimsItem::class), SdkClient::arrayValue($data->claims))),
             clientId: SdkClient::stringValue($data->clientId),
@@ -227,9 +207,7 @@ class UserEventPayloadVariant489 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "policy") || $data->policy === null) {
-            throw new SdkValidationError("policy", 'required', "Required property 'policy' is missing or null");
-        }
+        if (!property_exists($data, "policy") || $data->policy === null) { throw new SdkValidationError("policy", 'required', "Required property 'policy' is missing or null"); }
         return new self(
             policy: SdkClient::hydrateClass($data->policy, UserEventPayloadVariant489Policy::class),
             appName: (property_exists($data, "appName") && $data->appName !== null ? SdkClient::stringValue($data->appName) : SdkNotGiven::Value),
@@ -285,12 +263,8 @@ class UserEventPayloadVariant490AfterClaimsItemValuesItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
-        if (!property_exists($data, "wildcards") || $data->wildcards === null) {
-            throw new SdkValidationError("wildcards", 'required', "Required property 'wildcards' is missing or null");
-        }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "wildcards") || $data->wildcards === null) { throw new SdkValidationError("wildcards", 'required', "Required property 'wildcards' is missing or null"); }
         return new self(
             value: SdkClient::stringValue($data->value),
             wildcards: SdkClient::boolValue($data->wildcards),
@@ -346,12 +320,8 @@ class UserEventPayloadVariant490AfterClaimsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "values") || $data->values === null) {
-            throw new SdkValidationError("values", 'required', "Required property 'values' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "values") || $data->values === null) { throw new SdkValidationError("values", 'required', "Required property 'values' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             values: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant490AfterClaimsItemValuesItem::class), SdkClient::arrayValue($data->values))),

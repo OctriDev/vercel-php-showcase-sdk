@@ -44,12 +44,8 @@ class GetSessionCommandLogsResponseVariant0 implements GetSessionCommandLogsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "stream") || $data->stream === null) {
-            throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "stream") || $data->stream === null) { throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null"); }
         return new self(
             data: SdkClient::hydrateClass($data->data, GetSessionCommandLogsResponseVariant0Data::class),
             stream: SdkClient::stringValue($data->stream),
@@ -94,12 +90,8 @@ class GetSessionCommandLogsResponseVariant1 implements GetSessionCommandLogsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "stream") || $data->stream === null) {
-            throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "stream") || $data->stream === null) { throw new SdkValidationError("stream", 'required', "Required property 'stream' is missing or null"); }
         return new self(
             data: SdkClient::stringValue($data->data),
             stream: SdkClient::stringValue($data->stream),
@@ -115,26 +107,11 @@ final readonly class NamedSandboxArchitectureEnum implements SdkOpenEnum
     public const AMD64 = "amd64";
     public const ARM64 = "arm64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -162,26 +139,11 @@ final readonly class NamedSandboxFailoverRegionsItemEnum implements SdkOpenEnum
     public const SYD1 = "syd1";
     public const YUL1 = "yul1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -244,12 +206,8 @@ class NamedSandboxKeepLastSnapshots implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
-        if (!property_exists($data, "deleteEvicted") || $data->deleteEvicted === null) {
-            throw new SdkValidationError("deleteEvicted", 'required', "Required property 'deleteEvicted' is missing or null");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "deleteEvicted") || $data->deleteEvicted === null) { throw new SdkValidationError("deleteEvicted", 'required', "Required property 'deleteEvicted' is missing or null"); }
         return new self(
             count: SdkClient::floatValue($data->count),
             deleteEvicted: SdkClient::boolValue($data->deleteEvicted),
@@ -264,26 +222,11 @@ final readonly class NamedSandboxMountsValueModeEnum implements SdkOpenEnum
     public const READ_WRITE = "read-write";
     public const SNAPSHOT = "snapshot";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -336,9 +279,7 @@ class NamedSandboxMountsValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drive") || $data->drive === null) {
-            throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null");
-        }
+        if (!property_exists($data, "drive") || $data->drive === null) { throw new SdkValidationError("drive", 'required', "Required property 'drive' is missing or null"); }
         return new self(
             drive: SdkClient::stringValue($data->drive),
             mode: (property_exists($data, "mode") && $data->mode !== null ? SdkClient::hydrateStringEnumOrString($data->mode, NamedSandboxMountsValueModeEnum::class) : SdkNotGiven::Value),
@@ -358,24 +299,9 @@ final readonly class NamedSandboxNetworkPolicyModeEnum implements SdkOpenEnum
     public const DEFAULT_DENY = "default-deny";
     public const DENY_ALL = "deny-all";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

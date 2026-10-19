@@ -54,9 +54,7 @@ class CreateMicrofrontendsGroupWithApplicationsOtherApplicationsItem implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             defaultRoute: (property_exists($data, "defaultRoute") && $data->defaultRoute !== null ? SdkClient::stringValue($data->defaultRoute) : SdkNotGiven::Value),
@@ -131,27 +129,13 @@ class CreateMicrofrontendsGroupWithApplicationsResponseNewMicrofrontendsGroup im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "enablePolyrepoBranchRouting") || $data->enablePolyrepoBranchRouting === null) {
-            throw new SdkValidationError("enablePolyrepoBranchRouting", 'required', "Required property 'enablePolyrepoBranchRouting' is missing or null");
-        }
-        if (!property_exists($data, "fallbackEnvironment") || $data->fallbackEnvironment === null) {
-            throw new SdkValidationError("fallbackEnvironment", 'required', "Required property 'fallbackEnvironment' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "enablePolyrepoBranchRouting") || $data->enablePolyrepoBranchRouting === null) { throw new SdkValidationError("enablePolyrepoBranchRouting", 'required', "Required property 'enablePolyrepoBranchRouting' is missing or null"); }
+        if (!property_exists($data, "fallbackEnvironment") || $data->fallbackEnvironment === null) { throw new SdkValidationError("fallbackEnvironment", 'required', "Required property 'fallbackEnvironment' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             enablePolyrepoBranchRouting: SdkClient::boolValue($data->enablePolyrepoBranchRouting),
@@ -195,9 +179,7 @@ class CreateMicrofrontendsGroupWithApplicationsResponse implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "newMicrofrontendsGroup") || $data->newMicrofrontendsGroup === null) {
-            throw new SdkValidationError("newMicrofrontendsGroup", 'required', "Required property 'newMicrofrontendsGroup' is missing or null");
-        }
+        if (!property_exists($data, "newMicrofrontendsGroup") || $data->newMicrofrontendsGroup === null) { throw new SdkValidationError("newMicrofrontendsGroup", 'required', "Required property 'newMicrofrontendsGroup' is missing or null"); }
         return new self(
             newMicrofrontendsGroup: SdkClient::hydrateClass($data->newMicrofrontendsGroup, CreateMicrofrontendsGroupWithApplicationsResponseNewMicrofrontendsGroup::class),
         );

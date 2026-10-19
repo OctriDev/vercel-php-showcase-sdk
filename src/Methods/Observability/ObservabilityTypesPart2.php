@@ -68,24 +68,12 @@ class GetObservabilitySchemaByMetricIdResponseItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "aggregations") || $data->aggregations === null) {
-            throw new SdkValidationError("aggregations", 'required', "Required property 'aggregations' is missing or null");
-        }
-        if (!property_exists($data, "defaultAggregation") || $data->defaultAggregation === null) {
-            throw new SdkValidationError("defaultAggregation", 'required', "Required property 'defaultAggregation' is missing or null");
-        }
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
-        if (!property_exists($data, "dimensions") || $data->dimensions === null) {
-            throw new SdkValidationError("dimensions", 'required', "Required property 'dimensions' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "unit") || $data->unit === null) {
-            throw new SdkValidationError("unit", 'required', "Required property 'unit' is missing or null");
-        }
+        if (!property_exists($data, "aggregations") || $data->aggregations === null) { throw new SdkValidationError("aggregations", 'required', "Required property 'aggregations' is missing or null"); }
+        if (!property_exists($data, "defaultAggregation") || $data->defaultAggregation === null) { throw new SdkValidationError("defaultAggregation", 'required', "Required property 'defaultAggregation' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
+        if (!property_exists($data, "dimensions") || $data->dimensions === null) { throw new SdkValidationError("dimensions", 'required', "Required property 'dimensions' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "unit") || $data->unit === null) { throw new SdkValidationError("unit", 'required', "Required property 'unit' is missing or null"); }
         return new self(
             aggregations: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->aggregations))),
             defaultAggregation: SdkClient::stringValue($data->defaultAggregation),

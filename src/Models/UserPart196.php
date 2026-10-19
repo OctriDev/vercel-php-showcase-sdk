@@ -92,24 +92,12 @@ class UserEventPayloadVariant361 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "driveName") || $data->driveName === null) {
-            throw new SdkValidationError("driveName", 'required', "Required property 'driveName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "region") || $data->region === null) {
-            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
-        }
-        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) {
-            throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null");
-        }
-        if (!property_exists($data, "snapshotName") || $data->snapshotName === null) {
-            throw new SdkValidationError("snapshotName", 'required', "Required property 'snapshotName' is missing or null");
-        }
+        if (!property_exists($data, "driveName") || $data->driveName === null) { throw new SdkValidationError("driveName", 'required', "Required property 'driveName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
+        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) { throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null"); }
+        if (!property_exists($data, "snapshotName") || $data->snapshotName === null) { throw new SdkValidationError("snapshotName", 'required', "Required property 'snapshotName' is missing or null"); }
         return new self(
             driveName: SdkClient::stringValue($data->driveName),
             projectId: SdkClient::stringValue($data->projectId),
@@ -186,18 +174,10 @@ class UserEventPayloadVariant362 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) {
-            throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null");
-        }
-        if (!property_exists($data, "targetRegions") || $data->targetRegions === null) {
-            throw new SdkValidationError("targetRegions", 'required', "Required property 'targetRegions' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) { throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null"); }
+        if (!property_exists($data, "targetRegions") || $data->targetRegions === null) { throw new SdkValidationError("targetRegions", 'required', "Required property 'targetRegions' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -272,18 +252,10 @@ class UserEventPayloadVariant363 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "sandboxId") || $data->sandboxId === null) {
-            throw new SdkValidationError("sandboxId", 'required', "Required property 'sandboxId' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "sandboxId") || $data->sandboxId === null) { throw new SdkValidationError("sandboxId", 'required', "Required property 'sandboxId' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             name: SdkClient::stringValue($data->name),
@@ -338,12 +310,8 @@ class UserEventPayloadVariant364 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "instances") || $data->instances === null) {
-            throw new SdkValidationError("instances", 'required', "Required property 'instances' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "instances") || $data->instances === null) { throw new SdkValidationError("instances", 'required', "Required property 'instances' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             instances: SdkClient::floatValue($data->instances),
             url: SdkClient::stringValue($data->url),

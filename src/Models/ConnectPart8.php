@@ -55,12 +55,8 @@ class ConnectConnectorList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectors") || $data->connectors === null) {
-            throw new SdkValidationError("connectors", 'required', "Required property 'connectors' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "connectors") || $data->connectors === null) { throw new SdkValidationError("connectors", 'required', "Required property 'connectors' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             connectors: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectConnector::class), SdkClient::arrayValue($data->connectors))),
             pagination: SdkClient::hydrateClass($data->pagination, ConnectPagination::class),
@@ -116,12 +112,8 @@ class ConnectConnectorProjectConnectionList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "projects") || $data->projects === null) {
-            throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "projects") || $data->projects === null) { throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ConnectPagination::class),
             projects: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectProjectConnection::class), SdkClient::arrayValue($data->projects))),
@@ -182,12 +174,8 @@ class ConnectConnectorUpdatedByVariant0 implements ConnectConnectorUpdatedBy, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateEnum($data->type, ConnectConnectorUpdatedByVariant0TypeEnum::class),
@@ -201,26 +189,11 @@ final readonly class ConnectConnectorUpdatedByVariant1EnvironmentEnum implements
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -286,15 +259,9 @@ class ConnectConnectorUpdatedByVariant1 implements ConnectConnectorUpdatedBy, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             environment: SdkClient::hydrateStringEnumOrString($data->environment, ConnectConnectorUpdatedByVariant1EnvironmentEnum::class),
             id: SdkClient::stringValue($data->id),
