@@ -65,9 +65,15 @@ class ContactPendingVerification implements GetDomainContactVerificationResponse
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "verified") || $data->verified === null) { throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null"); }
-        if (!property_exists($data, "verifyBy") || $data->verifyBy === null) { throw new SdkValidationError("verifyBy", 'required', "Required property 'verifyBy' is missing or null"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "verified") || $data->verified === null) {
+            throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null");
+        }
+        if (!property_exists($data, "verifyBy") || $data->verifyBy === null) {
+            throw new SdkValidationError("verifyBy", 'required', "Required property 'verifyBy' is missing or null");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
         return new self(
             verified: SdkClient::boolValue($data->verified),
             verifyBy: SdkClient::stringValue($data->verifyBy),
@@ -114,7 +120,9 @@ class ContactVerified implements GetDomainContactVerificationResponse, \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "verified") || $data->verified === null) { throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null"); }
+        if (!property_exists($data, "verified") || $data->verified === null) {
+            throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null");
+        }
         return new self(
             verified: SdkClient::boolValue($data->verified),
         );

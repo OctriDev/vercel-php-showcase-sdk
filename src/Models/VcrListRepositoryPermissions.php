@@ -57,7 +57,9 @@ class VcrRepositoryPermissionList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "permissions") || $data->permissions === null) { throw new SdkValidationError("permissions", 'required', "Required property 'permissions' is missing or null"); }
+        if (!property_exists($data, "permissions") || $data->permissions === null) {
+            throw new SdkValidationError("permissions", 'required', "Required property 'permissions' is missing or null");
+        }
         return new self(
             permissions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, VcrRepositoryPermission::class), SdkClient::arrayValue($data->permissions))),
             nextCursor: (property_exists($data, "nextCursor") && $data->nextCursor !== null ? SdkClient::stringValue($data->nextCursor) : SdkNotGiven::Value),

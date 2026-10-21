@@ -199,14 +199,30 @@ class UserEventPayloadVariant381PrevBudget implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "fixedBudget") || $data->fixedBudget === null) { throw new SdkValidationError("fixedBudget", 'required', "Required property 'fixedBudget' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "isActive") || $data->isActive === null) { throw new SdkValidationError("isActive", 'required', "Required property 'isActive' is missing or null"); }
-        if (!property_exists($data, "notifiedAt") || $data->notifiedAt === null) { throw new SdkValidationError("notifiedAt", 'required', "Required property 'notifiedAt' is missing or null"); }
-        if (!property_exists($data, "previousSpend") || $data->previousSpend === null) { throw new SdkValidationError("previousSpend", 'required', "Required property 'previousSpend' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "fixedBudget") || $data->fixedBudget === null) {
+            throw new SdkValidationError("fixedBudget", 'required', "Required property 'fixedBudget' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "isActive") || $data->isActive === null) {
+            throw new SdkValidationError("isActive", 'required', "Required property 'isActive' is missing or null");
+        }
+        if (!property_exists($data, "notifiedAt") || $data->notifiedAt === null) {
+            throw new SdkValidationError("notifiedAt", 'required', "Required property 'notifiedAt' is missing or null");
+        }
+        if (!property_exists($data, "previousSpend") || $data->previousSpend === null) {
+            throw new SdkValidationError("previousSpend", 'required', "Required property 'previousSpend' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             fixedBudget: SdkClient::floatValue($data->fixedBudget),
@@ -322,7 +338,9 @@ class UserEventPayloadVariant381 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "budget") || $data->budget === null) { throw new SdkValidationError("budget", 'required', "Required property 'budget' is missing or null"); }
+        if (!property_exists($data, "budget") || $data->budget === null) {
+            throw new SdkValidationError("budget", 'required', "Required property 'budget' is missing or null");
+        }
         return new self(
             budget: SdkClient::hydrateClass($data->budget, UserEventPayloadVariant381Budget::class),
             prevBudget: (property_exists($data, "prevBudget") && $data->prevBudget !== null ? SdkClient::hydrateClass($data->prevBudget, UserEventPayloadVariant381PrevBudget::class) : SdkNotGiven::Value),

@@ -90,13 +90,27 @@ class GetDeploymentEventsResponseItemVariant1 implements GetDeploymentEventsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "info") || $data->info === null) { throw new SdkValidationError("info", 'required', "Required property 'info' is missing or null"); }
-        if (!property_exists($data, "serial") || $data->serial === null) { throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "date") || $data->date === null) {
+            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "info") || $data->info === null) {
+            throw new SdkValidationError("info", 'required', "Required property 'info' is missing or null");
+        }
+        if (!property_exists($data, "serial") || $data->serial === null) {
+            throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             created: SdkClient::floatValue($data->created),
             date: SdkClient::floatValue($data->date),
@@ -188,8 +202,12 @@ class GetDeploymentEventsResponseItemVariant2PayloadInfo implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             type: SdkClient::stringValue($data->type),
@@ -211,11 +229,26 @@ final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyVercelCa
     public const REVALIDATED = "REVALIDATED";
     public const STALE = "STALE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyWafActionEnum implements SdkOpenEnum
@@ -226,9 +259,24 @@ final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyWafActio
     public const LOG = "log";
     public const RATE_LIMIT = "rate_limit";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

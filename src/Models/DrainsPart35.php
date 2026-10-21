@@ -64,10 +64,18 @@ class UpdateDrainResponseVariant0DeliveryOtlphttp implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "encoding") || $data->encoding === null) { throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null"); }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "headers") || $data->headers === null) { throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "encoding") || $data->encoding === null) {
+            throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null");
+        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "headers") || $data->headers === null) {
+            throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             encoding: SdkClient::hydrateStringEnumOrString($data->encoding, UpdateDrainResponseVariant0DeliveryOtlphttpEncodingEnum::class),
             endpoint: SdkClient::hydrateClass($data->endpoint, UpdateDrainResponseVariant0DeliveryOtlphttpEndpoint::class),
@@ -126,9 +134,15 @@ class UpdateDrainResponseVariant0DeliveryClickhouse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "table") || $data->table === null) { throw new SdkValidationError("table", 'required', "Required property 'table' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "table") || $data->table === null) {
+            throw new SdkValidationError("table", 'required', "Required property 'table' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             endpoint: SdkClient::stringValue($data->endpoint),
             table: SdkClient::stringValue($data->table),
@@ -141,11 +155,26 @@ final readonly class UpdateDrainResponseVariant0DeliveryS3CompressionEnum implem
 {
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateDrainResponseVariant0DeliveryS3EncodingEnum implements SdkOpenEnum
@@ -153,22 +182,52 @@ final readonly class UpdateDrainResponseVariant0DeliveryS3EncodingEnum implement
     public const JSON = "json";
     public const NDJSON = "ndjson";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateDrainResponseVariant0DeliveryS3FileStructureEnum implements SdkOpenEnum
 {
     public const HIVE = "hive";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateDrainResponseVariant0DeliveryS3ObjectAclEnum implements SdkOpenEnum
@@ -181,11 +240,26 @@ final readonly class UpdateDrainResponseVariant0DeliveryS3ObjectAclEnum implemen
     public const PUBLIC_READ = "public-read";
     public const PUBLIC_READ_WRITE = "public-read-write";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateDrainResponseVariant0DeliveryS3ServerSideEncryptionEnum implements SdkOpenEnum
@@ -194,11 +268,26 @@ final readonly class UpdateDrainResponseVariant0DeliveryS3ServerSideEncryptionEn
     public const AWS_KMS = "aws:kms";
     public const AWS_KMS_DSSE = "aws:kms:dsse";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum UpdateDrainResponseVariant0DeliveryS3TypeEnum: string implements SdkWireEnum
@@ -289,13 +378,27 @@ class UpdateDrainResponseVariant0DeliveryS3 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "compression") || $data->compression === null) { throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null"); }
-        if (!property_exists($data, "encoding") || $data->encoding === null) { throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null"); }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) { throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
-        if (!property_exists($data, "roleArn") || $data->roleArn === null) { throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "compression") || $data->compression === null) {
+            throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null");
+        }
+        if (!property_exists($data, "encoding") || $data->encoding === null) {
+            throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null");
+        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) {
+            throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
+        if (!property_exists($data, "roleArn") || $data->roleArn === null) {
+            throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             compression: SdkClient::hydrateStringEnumOrString($data->compression, UpdateDrainResponseVariant0DeliveryS3CompressionEnum::class),
             encoding: SdkClient::hydrateStringEnumOrString($data->encoding, UpdateDrainResponseVariant0DeliveryS3EncodingEnum::class),
@@ -314,11 +417,26 @@ final readonly class UpdateDrainResponseVariant0DeliveryInternalTargetEnum imple
 {
     public const VERCEL_OTEL_TRACES_DB = "vercel-otel-traces-db";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum UpdateDrainResponseVariant0DeliveryInternalTypeEnum: string implements SdkWireEnum

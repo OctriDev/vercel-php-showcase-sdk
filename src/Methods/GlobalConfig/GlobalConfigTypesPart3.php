@@ -52,8 +52,12 @@ class GetEdgeConfigBackupsResponseBackupsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
+            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             lastModified: SdkClient::floatValue($data->lastModified),
@@ -101,7 +105,9 @@ class GetEdgeConfigBackupsResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "hasNext") || $data->hasNext === null) { throw new SdkValidationError("hasNext", 'required', "Required property 'hasNext' is missing or null"); }
+        if (!property_exists($data, "hasNext") || $data->hasNext === null) {
+            throw new SdkValidationError("hasNext", 'required', "Required property 'hasNext' is missing or null");
+        }
         return new self(
             hasNext: SdkClient::boolValue($data->hasNext),
             next: (property_exists($data, "next") && $data->next !== null ? SdkClient::stringValue($data->next) : SdkNotGiven::Value),
@@ -146,8 +152,12 @@ class GetEdgeConfigBackupsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "backups") || $data->backups === null) { throw new SdkValidationError("backups", 'required', "Required property 'backups' is missing or null"); }
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "backups") || $data->backups === null) {
+            throw new SdkValidationError("backups", 'required', "Required property 'backups' is missing or null");
+        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
         return new self(
             backups: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetEdgeConfigBackupsResponseBackupsItem::class), SdkClient::arrayValue($data->backups))),
             pagination: SdkClient::hydrateClass($data->pagination, GetEdgeConfigBackupsResponsePagination::class),

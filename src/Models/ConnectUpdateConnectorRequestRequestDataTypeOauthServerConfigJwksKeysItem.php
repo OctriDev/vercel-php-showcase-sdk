@@ -96,7 +96,9 @@ class ConnectUpdateConnectorRequestRequestDataTypeOauthServerConfigJwksKeysItem 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kty") || $data->kty === null) { throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null"); }
+        if (!property_exists($data, "kty") || $data->kty === null) {
+            throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null");
+        }
         return new self(
             kty: SdkClient::stringValue($data->kty),
             kid: (property_exists($data, "kid") && $data->kid !== null ? SdkClient::stringValue($data->kid) : SdkNotGiven::Value),
@@ -152,7 +154,9 @@ class ConnectUpdateConnectorRequestRequestDataTypeOauthServerConfigJwks implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
+        if (!property_exists($data, "keys") || $data->keys === null) {
+            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
+        }
         return new self(
             keys: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectUpdateConnectorRequestRequestDataTypeOauthServerConfigJwksKeysItem::class), SdkClient::arrayValue($data->keys))),
             additionalProperties: array_diff_key(SdkClient::stringMapValue($data), array_flip(["keys"])),

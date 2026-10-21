@@ -66,9 +66,15 @@ class ExchangeSsoTokenResponseVariant0 implements ExchangeSsoTokenResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access_token")) { throw new SdkValidationError("access_token", 'required', "Missing required property 'access_token'"); }
-        if (!property_exists($data, "id_token") || $data->id_token === null) { throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null"); }
-        if (!property_exists($data, "token_type")) { throw new SdkValidationError("token_type", 'required', "Missing required property 'token_type'"); }
+        if (!property_exists($data, "access_token")) {
+            throw new SdkValidationError("access_token", 'required', "Missing required property 'access_token'");
+        }
+        if (!property_exists($data, "id_token") || $data->id_token === null) {
+            throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null");
+        }
+        if (!property_exists($data, "token_type")) {
+            throw new SdkValidationError("token_type", 'required', "Missing required property 'token_type'");
+        }
         return new self(
             accessToken: ($data->access_token === null ? null : SdkClient::stringValue($data->access_token)),
             idToken: SdkClient::stringValue($data->id_token),
@@ -134,11 +140,21 @@ class ExchangeSsoTokenResponseVariant1 implements ExchangeSsoTokenResponse, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access_token") || $data->access_token === null) { throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null"); }
-        if (!property_exists($data, "expires_in") || $data->expires_in === null) { throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null"); }
-        if (!property_exists($data, "id_token") || $data->id_token === null) { throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null"); }
-        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) { throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null"); }
-        if (!property_exists($data, "token_type") || $data->token_type === null) { throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null"); }
+        if (!property_exists($data, "access_token") || $data->access_token === null) {
+            throw new SdkValidationError("access_token", 'required', "Required property 'access_token' is missing or null");
+        }
+        if (!property_exists($data, "expires_in") || $data->expires_in === null) {
+            throw new SdkValidationError("expires_in", 'required', "Required property 'expires_in' is missing or null");
+        }
+        if (!property_exists($data, "id_token") || $data->id_token === null) {
+            throw new SdkValidationError("id_token", 'required', "Required property 'id_token' is missing or null");
+        }
+        if (!property_exists($data, "refresh_token") || $data->refresh_token === null) {
+            throw new SdkValidationError("refresh_token", 'required', "Required property 'refresh_token' is missing or null");
+        }
+        if (!property_exists($data, "token_type") || $data->token_type === null) {
+            throw new SdkValidationError("token_type", 'required', "Required property 'token_type' is missing or null");
+        }
         return new self(
             accessToken: SdkClient::stringValue($data->access_token),
             expiresIn: SdkClient::floatValue($data->expires_in),

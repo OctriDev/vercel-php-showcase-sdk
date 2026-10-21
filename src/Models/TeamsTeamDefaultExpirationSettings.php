@@ -115,11 +115,26 @@ final readonly class TeamDefaultPassportDeploymentTypeEnum implements SdkOpenEnu
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -170,8 +185,12 @@ class TeamDefaultPassport implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectorId") || $data->connectorId === null) { throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null"); }
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "connectorId") || $data->connectorId === null) {
+            throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null");
+        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             connectorId: SdkClient::stringValue($data->connectorId),
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, TeamDefaultPassportDeploymentTypeEnum::class),
@@ -217,7 +236,9 @@ class TeamDefaultProjectJobsFlagDefinitionsPresent implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
+        if (!property_exists($data, "targets") || $data->targets === null) {
+            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
+        }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -262,7 +283,9 @@ class TeamDefaultProjectJobsLint implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
+        if (!property_exists($data, "targets") || $data->targets === null) {
+            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
+        }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -307,7 +330,9 @@ class TeamDefaultProjectJobsMfeConfigPresent implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
+        if (!property_exists($data, "targets") || $data->targets === null) {
+            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
+        }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );

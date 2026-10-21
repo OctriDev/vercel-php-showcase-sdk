@@ -72,10 +72,18 @@ class UserEventPayloadVariant206 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
-        if (!property_exists($data, "issuerName") || $data->issuerName === null) { throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "policyKey") || $data->policyKey === null) { throw new SdkValidationError("policyKey", 'required', "Required property 'policyKey' is missing or null"); }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
+            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
+        }
+        if (!property_exists($data, "issuerName") || $data->issuerName === null) {
+            throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "policyKey") || $data->policyKey === null) {
+            throw new SdkValidationError("policyKey", 'required', "Required property 'policyKey' is missing or null");
+        }
         return new self(
             issuerId: SdkClient::stringValue($data->issuerId),
             issuerName: SdkClient::stringValue($data->issuerName),
@@ -132,7 +140,9 @@ class UserEventPayloadVariant207 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "logDrainUrl")) { throw new SdkValidationError("logDrainUrl", 'required', "Missing required property 'logDrainUrl'"); }
+        if (!property_exists($data, "logDrainUrl")) {
+            throw new SdkValidationError("logDrainUrl", 'required', "Missing required property 'logDrainUrl'");
+        }
         return new self(
             logDrainUrl: ($data->logDrainUrl === null ? null : SdkClient::stringValue($data->logDrainUrl)),
             integrationName: (property_exists($data, "integrationName") && $data->integrationName !== null ? SdkClient::stringValue($data->integrationName) : SdkNotGiven::Value),
@@ -187,7 +197,9 @@ class UserEventPayloadVariant208 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "logDrainUrl") || $data->logDrainUrl === null) { throw new SdkValidationError("logDrainUrl", 'required', "Required property 'logDrainUrl' is missing or null"); }
+        if (!property_exists($data, "logDrainUrl") || $data->logDrainUrl === null) {
+            throw new SdkValidationError("logDrainUrl", 'required', "Required property 'logDrainUrl' is missing or null");
+        }
         return new self(
             logDrainUrl: SdkClient::stringValue($data->logDrainUrl),
             integrationName: (property_exists($data, "integrationName") && $data->integrationName !== null ? SdkClient::stringValue($data->integrationName) : SdkNotGiven::Value),
@@ -210,11 +222,26 @@ final readonly class UserEventPayloadVariant209ProviderEnum implements SdkOpenEn
     public const GOOGLE = "google";
     public const SAML = "saml";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant209 implements UserEventPayload, \JsonSerializable
@@ -262,8 +289,12 @@ class UserEventPayloadVariant209 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "login") || $data->login === null) { throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "login") || $data->login === null) {
+            throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             login: SdkClient::stringValue($data->login),
             provider: SdkClient::hydrateStringEnumOrString($data->provider, UserEventPayloadVariant209ProviderEnum::class),
@@ -286,11 +317,26 @@ final readonly class UserEventPayloadVariant210ProviderEnum implements SdkOpenEn
     public const GOOGLE = "google";
     public const SAML = "saml";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant210 implements UserEventPayload, \JsonSerializable
@@ -328,7 +374,9 @@ class UserEventPayloadVariant210 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             provider: SdkClient::hydrateStringEnumOrString($data->provider, UserEventPayloadVariant210ProviderEnum::class),
         );

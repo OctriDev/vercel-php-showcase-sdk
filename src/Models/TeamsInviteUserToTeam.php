@@ -21,11 +21,26 @@ final readonly class InvitedTeamMemberRoleEnum implements SdkOpenEnum
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -53,11 +68,26 @@ final readonly class InvitedTeamMemberTeamPermissionsItemEnum implements SdkOpen
     public const V0VIEWER = "V0Viewer";
     public const WORKFLOWDECRYPTOR = "WorkflowDecryptor";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -74,11 +104,26 @@ final readonly class InvitedTeamMemberTeamRolesItemEnum implements SdkOpenEnum
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -173,10 +218,18 @@ class InvitedTeamMember implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             role: SdkClient::hydrateStringEnumOrString($data->role, InvitedTeamMemberRoleEnum::class),

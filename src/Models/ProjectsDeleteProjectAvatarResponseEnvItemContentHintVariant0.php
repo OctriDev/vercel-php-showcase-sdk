@@ -44,8 +44,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant0 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant0TypeEnum::class),
@@ -95,8 +99,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant1 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant1TypeEnum::class),
@@ -146,8 +154,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant2 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant2TypeEnum::class),
@@ -197,8 +209,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant3 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant3TypeEnum::class),
@@ -248,8 +264,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant4 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant4TypeEnum::class),
@@ -299,8 +319,12 @@ class DeleteProjectAvatarResponseEnvItemContentHintVariant5 implements DeletePro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, DeleteProjectAvatarResponseEnvItemContentHintVariant5TypeEnum::class),

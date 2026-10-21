@@ -57,7 +57,9 @@ class UserEventPayloadVariant173UpdateDiffNewProjectsItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: (property_exists($data, "projectName") && $data->projectName !== null ? SdkClient::stringValue($data->projectName) : SdkNotGiven::Value),
@@ -115,7 +117,9 @@ class UserEventPayloadVariant173UpdateDiffOldProjectsItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: (property_exists($data, "projectName") && $data->projectName !== null ? SdkClient::stringValue($data->projectName) : SdkNotGiven::Value),
@@ -315,8 +319,12 @@ class UserEventPayloadVariant173UpdateDiff implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "changedValue") || $data->changedValue === null) { throw new SdkValidationError("changedValue", 'required', "Required property 'changedValue' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "changedValue") || $data->changedValue === null) {
+            throw new SdkValidationError("changedValue", 'required', "Required property 'changedValue' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             changedValue: SdkClient::boolValue($data->changedValue),
             id: SdkClient::stringValue($data->id),

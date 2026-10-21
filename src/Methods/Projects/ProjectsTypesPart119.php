@@ -86,9 +86,15 @@ class CreateProjectEnvironmentVariablesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "target") || $data->target === null) {
+            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             target: (is_array($data->target) ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, CreateProjectEnvironmentVariablesItemTargetItemEnum::class), SdkClient::arrayValue($data->target))) : SdkClient::hydrateStringEnumOrString($data->target, CreateProjectEnvironmentVariablesItemTargetEnum::class)),
@@ -111,11 +117,26 @@ final readonly class CreateProjectGitRepositoryTypeEnum implements SdkOpenEnum
     public const VERCEL = "vercel";
     public const CURSOR_ORIGIN = "cursor-origin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -166,8 +187,12 @@ class CreateProjectGitRepository implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             repo: SdkClient::stringValue($data->repo),
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateProjectGitRepositoryTypeEnum::class),
@@ -182,11 +207,26 @@ final readonly class CreateProjectSsoProtectionDeploymentTypeEnum implements Sdk
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     public const ALL_EXCEPT_CUSTOM_DOMAINS = "all_except_custom_domains";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -223,7 +263,9 @@ class CreateProjectSsoProtection implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, CreateProjectSsoProtectionDeploymentTypeEnum::class),
         );
@@ -255,11 +297,26 @@ final readonly class CreateProjectSandboxRegionEnum implements SdkOpenEnum
     public const HND1 = "hnd1";
     public const KIX1 = "kix1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateProjectSandboxFailoverRegionsItemEnum implements SdkOpenEnum
@@ -284,11 +341,26 @@ final readonly class CreateProjectSandboxFailoverRegionsItemEnum implements SdkO
     public const HND1 = "hnd1";
     public const KIX1 = "kix1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**

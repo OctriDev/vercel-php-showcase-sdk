@@ -45,7 +45,9 @@ class NetworkHostedZones implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
         );
@@ -90,7 +92,9 @@ class NetworkPeeringConnections implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
         );
@@ -145,8 +149,12 @@ class NetworkProjects implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "ids") || $data->ids === null) { throw new SdkValidationError("ids", 'required', "Required property 'ids' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "ids") || $data->ids === null) {
+            throw new SdkValidationError("ids", 'required', "Required property 'ids' is missing or null");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             ids: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->ids))),
@@ -164,9 +172,24 @@ final readonly class NetworkStatusEnum implements SdkOpenEnum
     public const ERROR = "error";
     public const READY = "ready";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

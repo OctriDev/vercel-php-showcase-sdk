@@ -86,11 +86,21 @@ class CreateDeploymentResponseVariant1GitSourceVercel2 implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "sha") || $data->sha === null) {
+            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             org: SdkClient::stringValue($data->org),
             ref: SdkClient::stringValue($data->ref),
@@ -108,11 +118,26 @@ final readonly class CreateDeploymentResponseVariant1GitSourceCursorOrigin2TypeE
 {
     public const CURSOR_ORIGIN = "cursor-origin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1GitSourceCursorOrigin2 implements \JsonSerializable
@@ -176,12 +201,24 @@ class CreateDeploymentResponseVariant1GitSourceCursorOrigin2 implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "owner") || $data->owner === null) {
+            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "sha") || $data->sha === null) {
+            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             owner: SdkClient::stringValue($data->owner),
             ref: SdkClient::stringValue($data->ref),
@@ -198,11 +235,26 @@ final readonly class CreateDeploymentResponseVariant1ImagesContentDispositionTyp
     public const ATTACHMENT = "attachment";
     public const INLINE = "inline";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateDeploymentResponseVariant1ImagesFormatsItemEnum implements SdkOpenEnum
@@ -210,11 +262,26 @@ final readonly class CreateDeploymentResponseVariant1ImagesFormatsItemEnum imple
     public const IMAGE_AVIF = "image/avif";
     public const IMAGE_WEBP = "image/webp";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1ImagesLocalPatternsItem implements \JsonSerializable
@@ -281,9 +348,24 @@ final readonly class CreateDeploymentResponseVariant1ImagesRemotePatternsItemPro
     public const HTTP = "http";
     public const HTTPS = "https";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

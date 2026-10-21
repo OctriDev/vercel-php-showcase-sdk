@@ -45,7 +45,9 @@ class UserEventPayloadVariant487GeolocationMostSpecificSubdivisionNames implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
+        if (!property_exists($data, "en") || $data->en === null) {
+            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
+        }
         return new self(
             en: SdkClient::stringValue($data->en),
         );
@@ -90,7 +92,9 @@ class UserEventPayloadVariant487GeolocationMostSpecificSubdivision implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
+        if (!property_exists($data, "names") || $data->names === null) {
+            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
+        }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant487GeolocationMostSpecificSubdivisionNames::class),
         );
@@ -171,7 +175,9 @@ class UserEventPayloadVariant487Geolocation implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "country") || $data->country === null) { throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null"); }
+        if (!property_exists($data, "country") || $data->country === null) {
+            throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null");
+        }
         return new self(
             country: SdkClient::hydrateClass($data->country, UserEventPayloadVariant487GeolocationCountry::class),
             city: (property_exists($data, "city") && $data->city !== null ? SdkClient::hydrateClass($data->city, UserEventPayloadVariant487GeolocationCity::class) : SdkNotGiven::Value),
@@ -190,11 +196,26 @@ final readonly class UserEventPayloadVariant487GrantTypeEnum implements SdkOpenE
     public const URN_IETF_PARAMS_OAUTH_GRANT_TYPE_DEVICE_CODE = "urn:ietf:params:oauth:grant-type:device_code";
     public const URN_IETF_PARAMS_OAUTH_GRANT_TYPE_TOKEN_EXCHANGE = "urn:ietf:params:oauth:grant-type:token-exchange";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -204,11 +225,26 @@ final readonly class UserEventPayloadVariant487RefreshTokenPrefixEnum implements
 {
     public const VCR = "vcr_";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -218,9 +254,24 @@ final readonly class UserEventPayloadVariant487TokenPrefixEnum implements SdkOpe
 {
     public const VCA = "vca_";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

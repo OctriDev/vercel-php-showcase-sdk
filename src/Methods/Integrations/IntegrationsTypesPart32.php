@@ -50,9 +50,15 @@ class GetConfigurationProductsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
-        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
-        if (!property_exists($data, "products") || $data->products === null) { throw new SdkValidationError("products", 'required', "Required property 'products' is missing or null"); }
+        if (!property_exists($data, "configuration") || $data->configuration === null) {
+            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
+        }
+        if (!property_exists($data, "integration") || $data->integration === null) {
+            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
+        }
+        if (!property_exists($data, "products") || $data->products === null) {
+            throw new SdkValidationError("products", 'required', "Required property 'products' is missing or null");
+        }
         return new self(
             configuration: SdkClient::hydrateClass($data->configuration, GetConfigurationProductsResponseConfiguration::class),
             integration: SdkClient::hydrateClass($data->integration, GetConfigurationProductsResponseIntegration::class),
@@ -67,22 +73,52 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProjectFilterGitPr
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvidersEnum implements SdkOpenEnum
 {
     public const UNKNOWN = "*";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateIntegrationStoreDirectResponseStoreProjectFilterGit implements \JsonSerializable
@@ -132,7 +168,9 @@ class CreateIntegrationStoreDirectResponseStoreProjectFilterGit implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "providers") || $data->providers === null) { throw new SdkValidationError("providers", 'required', "Required property 'providers' is missing or null"); }
+        if (!property_exists($data, "providers") || $data->providers === null) {
+            throw new SdkValidationError("providers", 'required', "Required property 'providers' is missing or null");
+        }
         return new self(
             providers: (is_array($data->providers) ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvidersItemEnum::class), SdkClient::arrayValue($data->providers))) : SdkClient::hydrateStringEnumOrString($data->providers, CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvidersEnum::class)),
             owners: (property_exists($data, "owners") && $data->owners !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->owners))) : SdkNotGiven::Value),
@@ -217,8 +255,12 @@ class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeploymentsAc
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
         return new self(
             environments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environments))),
             slug: SdkClient::stringValue($data->slug),
@@ -263,8 +305,12 @@ class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeployments i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actions") || $data->actions === null) { throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null"); }
-        if (!property_exists($data, "required") || $data->required === null) { throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null"); }
+        if (!property_exists($data, "actions") || $data->actions === null) {
+            throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null");
+        }
+        if (!property_exists($data, "required") || $data->required === null) {
+            throw new SdkValidationError("required", 'required', "Required property 'required' is missing or null");
+        }
         return new self(
             actions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeploymentsActionsItem::class), SdkClient::arrayValue($data->actions))),
             required: SdkClient::boolValue($data->required),

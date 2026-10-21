@@ -84,8 +84,12 @@ class GetDeploymentEventsResponseItemVariant2PayloadInfo implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             type: SdkClient::stringValue($data->type),
@@ -107,11 +111,26 @@ final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyVercelCa
     public const REVALIDATED = "REVALIDATED";
     public const STALE = "STALE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyWafActionEnum implements SdkOpenEnum
@@ -122,11 +141,26 @@ final readonly class GetDeploymentEventsResponseItemVariant2PayloadProxyWafActio
     public const LOG = "log";
     public const RATE_LIMIT = "rate_limit";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentEventsResponseItemVariant2PayloadProxy implements \JsonSerializable
@@ -300,9 +334,15 @@ class GetDeploymentEventsResponseItemVariant2PayloadProxy implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "host") || $data->host === null) { throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null"); }
-        if (!property_exists($data, "method") || $data->method === null) { throw new SdkValidationError("method", 'required', "Required property 'method' is missing or null"); }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "host") || $data->host === null) {
+            throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null");
+        }
+        if (!property_exists($data, "method") || $data->method === null) {
+            throw new SdkValidationError("method", 'required', "Required property 'method' is missing or null");
+        }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
+            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
+        }
         return new self(
             host: SdkClient::stringValue($data->host),
             method: SdkClient::stringValue($data->method),

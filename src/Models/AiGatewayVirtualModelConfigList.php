@@ -55,8 +55,12 @@ class AiGatewayVirtualModelConfigList implements GetAiGatewayVirtualModelConfigR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cursor")) { throw new SdkValidationError("cursor", 'required', "Missing required property 'cursor'"); }
-        if (!property_exists($data, "virtualModelConfigs") || $data->virtualModelConfigs === null) { throw new SdkValidationError("virtualModelConfigs", 'required', "Required property 'virtualModelConfigs' is missing or null"); }
+        if (!property_exists($data, "cursor")) {
+            throw new SdkValidationError("cursor", 'required', "Missing required property 'cursor'");
+        }
+        if (!property_exists($data, "virtualModelConfigs") || $data->virtualModelConfigs === null) {
+            throw new SdkValidationError("virtualModelConfigs", 'required', "Required property 'virtualModelConfigs' is missing or null");
+        }
         return new self(
             cursor: ($data->cursor === null ? null : SdkClient::stringValue($data->cursor)),
             virtualModelConfigs: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayVirtualModelConfig::class), SdkClient::arrayValue($data->virtualModelConfigs))),

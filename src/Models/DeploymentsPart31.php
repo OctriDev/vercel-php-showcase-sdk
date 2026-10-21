@@ -11,11 +11,26 @@ final readonly class CancelDeploymentResponseServicesItemVariant1FunctionsValueA
 {
     public const STRICT = "strict";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CancelDeploymentResponseServicesItemVariant1FunctionsValueAffinity implements \JsonSerializable
@@ -49,7 +64,9 @@ class CancelDeploymentResponseServicesItemVariant1FunctionsValueAffinity impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, CancelDeploymentResponseServicesItemVariant1FunctionsValueAffinityModeEnum::class),
         );
@@ -61,11 +78,26 @@ final readonly class CancelDeploymentResponseServicesItemVariant1FunctionsValueA
     public const ARM64 = "arm64";
     public const X86_64 = "x86_64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -182,9 +214,15 @@ class CancelDeploymentResponseServicesItemVariant1FunctionsValueExperimentalTrig
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consumer") || $data->consumer === null) { throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null"); }
-        if (!property_exists($data, "topic") || $data->topic === null) { throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "consumer") || $data->consumer === null) {
+            throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null");
+        }
+        if (!property_exists($data, "topic") || $data->topic === null) {
+            throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             consumer: SdkClient::stringValue($data->consumer),
             topic: SdkClient::stringValue($data->topic),
@@ -301,8 +339,12 @@ class CancelDeploymentResponseServicesItemVariant1FunctionsValueExperimentalTrig
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "topic") || $data->topic === null) { throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "topic") || $data->topic === null) {
+            throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             topic: SdkClient::stringValue($data->topic),
             type: SdkClient::hydrateEnum($data->type, CancelDeploymentResponseServicesItemVariant1FunctionsValueExperimentalTriggersItemQueueV2betaTypeEnum::class),

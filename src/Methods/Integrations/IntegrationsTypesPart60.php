@@ -12,11 +12,26 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProductLogDrainSta
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum implements SdkOpenEnum
@@ -34,11 +49,26 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProductPrimaryProt
     public const VIDEO = "video";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateIntegrationStoreDirectResponseStoreProductSupportedProtocolsItemEnum implements SdkOpenEnum
@@ -56,11 +86,26 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProductSupportedPr
     public const VIDEO = "video";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateIntegrationStoreDirectResponseStoreProduct implements \JsonSerializable
@@ -258,9 +303,15 @@ class CreateIntegrationStoreDirectResponseStoreProduct implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
-        if (!property_exists($data, "supportedProtocols") || $data->supportedProtocols === null) { throw new SdkValidationError("supportedProtocols", 'required', "Required property 'supportedProtocols' is missing or null"); }
+        if (!property_exists($data, "integration") || $data->integration === null) {
+            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
+        }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
+            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "supportedProtocols") || $data->supportedProtocols === null) {
+            throw new SdkValidationError("supportedProtocols", 'required', "Required property 'supportedProtocols' is missing or null");
+        }
         return new self(
             integration: SdkClient::hydrateClass($data->integration, CreateIntegrationStoreDirectResponseStoreProductIntegration::class),
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
@@ -293,11 +344,26 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAu
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthenticationAppUrlsItem implements \JsonSerializable
@@ -337,8 +403,12 @@ class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthenticationApp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "target") || $data->target === null) {
+            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             target: SdkClient::hydrateStringEnumOrString($data->target, CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthenticationAppUrlsItemTargetEnum::class),
             url: SdkClient::stringValue($data->url),

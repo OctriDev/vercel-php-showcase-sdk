@@ -42,7 +42,9 @@ class UserEventPayloadVariant475 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customAlertTitle") || $data->customAlertTitle === null) { throw new SdkValidationError("customAlertTitle", 'required', "Required property 'customAlertTitle' is missing or null"); }
+        if (!property_exists($data, "customAlertTitle") || $data->customAlertTitle === null) {
+            throw new SdkValidationError("customAlertTitle", 'required', "Required property 'customAlertTitle' is missing or null");
+        }
         return new self(
             customAlertTitle: SdkClient::stringValue($data->customAlertTitle),
         );
@@ -104,9 +106,15 @@ class UserEventPayloadVariant476 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) { throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null"); }
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
-        if (!property_exists($data, "repository") || $data->repository === null) { throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null"); }
+        if (!property_exists($data, "ciEnabled") || $data->ciEnabled === null) {
+            throw new SdkValidationError("ciEnabled", 'required', "Required property 'ciEnabled' is missing or null");
+        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
+            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
+        }
+        if (!property_exists($data, "repository") || $data->repository === null) {
+            throw new SdkValidationError("repository", 'required', "Required property 'repository' is missing or null");
+        }
         return new self(
             ciEnabled: SdkClient::boolValue($data->ciEnabled),
             organizationId: SdkClient::stringValue($data->organizationId),
@@ -170,9 +178,15 @@ class UserEventPayloadVariant477 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "protectedProjectCount") || $data->protectedProjectCount === null) { throw new SdkValidationError("protectedProjectCount", 'required', "Required property 'protectedProjectCount' is missing or null"); }
-        if (!property_exists($data, "protectionEnabled") || $data->protectionEnabled === null) { throw new SdkValidationError("protectionEnabled", 'required', "Required property 'protectionEnabled' is missing or null"); }
-        if (!property_exists($data, "vulnerabilities") || $data->vulnerabilities === null) { throw new SdkValidationError("vulnerabilities", 'required', "Required property 'vulnerabilities' is missing or null"); }
+        if (!property_exists($data, "protectedProjectCount") || $data->protectedProjectCount === null) {
+            throw new SdkValidationError("protectedProjectCount", 'required', "Required property 'protectedProjectCount' is missing or null");
+        }
+        if (!property_exists($data, "protectionEnabled") || $data->protectionEnabled === null) {
+            throw new SdkValidationError("protectionEnabled", 'required', "Required property 'protectionEnabled' is missing or null");
+        }
+        if (!property_exists($data, "vulnerabilities") || $data->vulnerabilities === null) {
+            throw new SdkValidationError("vulnerabilities", 'required', "Required property 'vulnerabilities' is missing or null");
+        }
         return new self(
             protectedProjectCount: SdkClient::floatValue($data->protectedProjectCount),
             protectionEnabled: SdkClient::boolValue($data->protectionEnabled),
@@ -231,7 +245,9 @@ class UserEventPayloadVariant478Configuration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -307,10 +323,18 @@ class UserEventPayloadVariant478Peering implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accountId") || $data->accountId === null) { throw new SdkValidationError("accountId", 'required', "Required property 'accountId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
-        if (!property_exists($data, "vpcId") || $data->vpcId === null) { throw new SdkValidationError("vpcId", 'required', "Required property 'vpcId' is missing or null"); }
+        if (!property_exists($data, "accountId") || $data->accountId === null) {
+            throw new SdkValidationError("accountId", 'required', "Required property 'accountId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
+        if (!property_exists($data, "vpcId") || $data->vpcId === null) {
+            throw new SdkValidationError("vpcId", 'required', "Required property 'vpcId' is missing or null");
+        }
         return new self(
             accountId: SdkClient::stringValue($data->accountId),
             id: SdkClient::stringValue($data->id),

@@ -69,11 +69,26 @@ final readonly class AcceptProjectTransferRequestResponsePartnerCallsItemResultS
     public const ERRORED = "errored";
     public const FULFILLED = "fulfilled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class AcceptProjectTransferRequestResponsePartnerCallsItemResult implements \JsonSerializable
@@ -123,7 +138,9 @@ class AcceptProjectTransferRequestResponsePartnerCallsItemResult implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, AcceptProjectTransferRequestResponsePartnerCallsItemResultStatusEnum::class),
             code: (property_exists($data, "code") && $data->code !== null ? SdkClient::stringValue($data->code) : SdkNotGiven::Value),
@@ -175,9 +192,15 @@ class AcceptProjectTransferRequestResponsePartnerCallsItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "installationId") || $data->installationId === null) { throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null"); }
-        if (!property_exists($data, "resourceIds") || $data->resourceIds === null) { throw new SdkValidationError("resourceIds", 'required', "Required property 'resourceIds' is missing or null"); }
-        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
+        if (!property_exists($data, "installationId") || $data->installationId === null) {
+            throw new SdkValidationError("installationId", 'required', "Required property 'installationId' is missing or null");
+        }
+        if (!property_exists($data, "resourceIds") || $data->resourceIds === null) {
+            throw new SdkValidationError("resourceIds", 'required', "Required property 'resourceIds' is missing or null");
+        }
+        if (!property_exists($data, "result") || $data->result === null) {
+            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
+        }
         return new self(
             installationId: SdkClient::stringValue($data->installationId),
             resourceIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->resourceIds))),
@@ -235,10 +258,18 @@ class AcceptProjectTransferRequestResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "partnerCalls") || $data->partnerCalls === null) { throw new SdkValidationError("partnerCalls", 'required', "Required property 'partnerCalls' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
-        if (!property_exists($data, "resourceTransferErrors") || $data->resourceTransferErrors === null) { throw new SdkValidationError("resourceTransferErrors", 'required', "Required property 'resourceTransferErrors' is missing or null"); }
-        if (!property_exists($data, "transferredStoreIds") || $data->transferredStoreIds === null) { throw new SdkValidationError("transferredStoreIds", 'required', "Required property 'transferredStoreIds' is missing or null"); }
+        if (!property_exists($data, "partnerCalls") || $data->partnerCalls === null) {
+            throw new SdkValidationError("partnerCalls", 'required', "Required property 'partnerCalls' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
+        if (!property_exists($data, "resourceTransferErrors") || $data->resourceTransferErrors === null) {
+            throw new SdkValidationError("resourceTransferErrors", 'required', "Required property 'resourceTransferErrors' is missing or null");
+        }
+        if (!property_exists($data, "transferredStoreIds") || $data->transferredStoreIds === null) {
+            throw new SdkValidationError("transferredStoreIds", 'required', "Required property 'transferredStoreIds' is missing or null");
+        }
         return new self(
             partnerCalls: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AcceptProjectTransferRequestResponsePartnerCallsItem::class), SdkClient::arrayValue($data->partnerCalls))),
             projectName: SdkClient::stringValue($data->projectName),
@@ -296,8 +327,12 @@ class UpdateProjectProtectionBypassRevoke implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "secret") || $data->secret === null) { throw new SdkValidationError("secret", 'required', "Required property 'secret' is missing or null"); }
-        if (!property_exists($data, "regenerate") || $data->regenerate === null) { throw new SdkValidationError("regenerate", 'required', "Required property 'regenerate' is missing or null"); }
+        if (!property_exists($data, "secret") || $data->secret === null) {
+            throw new SdkValidationError("secret", 'required', "Required property 'secret' is missing or null");
+        }
+        if (!property_exists($data, "regenerate") || $data->regenerate === null) {
+            throw new SdkValidationError("regenerate", 'required', "Required property 'regenerate' is missing or null");
+        }
         return new self(
             secret: SdkClient::stringValue($data->secret),
             regenerate: SdkClient::boolValue($data->regenerate),

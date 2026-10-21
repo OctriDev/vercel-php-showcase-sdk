@@ -64,10 +64,18 @@ class CreateProjectResponseLinkVariant5DeployHooksItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -174,13 +182,27 @@ class CreateProjectResponseLinkVariant5 implements CreateProjectResponseLink, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) { throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null"); }
-        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) { throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null"); }
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) { throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) {
+            throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null");
+        }
+        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) {
+            throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null");
+        }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) {
+            throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             deployHooks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateProjectResponseLinkVariant5DeployHooksItem::class), SdkClient::arrayValue($data->deployHooks))),
             gitCredentialId: SdkClient::stringValue($data->gitCredentialId),
@@ -253,10 +275,18 @@ class CreateProjectResponseLinkVariant6DeployHooksItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

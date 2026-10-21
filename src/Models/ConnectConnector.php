@@ -475,20 +475,48 @@ class ConnectConnector implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "displayName") || $data->displayName === null) { throw new SdkValidationError("displayName", 'required', "Required property 'displayName' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "service") || $data->service === null) { throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null"); }
-        if (!property_exists($data, "supportedSubjectTypes") || $data->supportedSubjectTypes === null) { throw new SdkValidationError("supportedSubjectTypes", 'required', "Required property 'supportedSubjectTypes' is missing or null"); }
-        if (!property_exists($data, "supportsIcon") || $data->supportsIcon === null) { throw new SdkValidationError("supportsIcon", 'required', "Required property 'supportsIcon' is missing or null"); }
-        if (!property_exists($data, "supportsInstallation") || $data->supportsInstallation === null) { throw new SdkValidationError("supportsInstallation", 'required', "Required property 'supportsInstallation' is missing or null"); }
-        if (!property_exists($data, "supportsRevocation") || $data->supportsRevocation === null) { throw new SdkValidationError("supportsRevocation", 'required', "Required property 'supportsRevocation' is missing or null"); }
-        if (!property_exists($data, "supportsTriggers") || $data->supportsTriggers === null) { throw new SdkValidationError("supportsTriggers", 'required', "Required property 'supportsTriggers' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "typeName") || $data->typeName === null) { throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null"); }
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "displayName") || $data->displayName === null) {
+            throw new SdkValidationError("displayName", 'required', "Required property 'displayName' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "service") || $data->service === null) {
+            throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null");
+        }
+        if (!property_exists($data, "supportedSubjectTypes") || $data->supportedSubjectTypes === null) {
+            throw new SdkValidationError("supportedSubjectTypes", 'required', "Required property 'supportedSubjectTypes' is missing or null");
+        }
+        if (!property_exists($data, "supportsIcon") || $data->supportsIcon === null) {
+            throw new SdkValidationError("supportsIcon", 'required', "Required property 'supportsIcon' is missing or null");
+        }
+        if (!property_exists($data, "supportsInstallation") || $data->supportsInstallation === null) {
+            throw new SdkValidationError("supportsInstallation", 'required', "Required property 'supportsInstallation' is missing or null");
+        }
+        if (!property_exists($data, "supportsRevocation") || $data->supportsRevocation === null) {
+            throw new SdkValidationError("supportsRevocation", 'required', "Required property 'supportsRevocation' is missing or null");
+        }
+        if (!property_exists($data, "supportsTriggers") || $data->supportsTriggers === null) {
+            throw new SdkValidationError("supportsTriggers", 'required', "Required property 'supportsTriggers' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "typeName") || $data->typeName === null) {
+            throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null");
+        }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             displayName: SdkClient::stringValue($data->displayName),

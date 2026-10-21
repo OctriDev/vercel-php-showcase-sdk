@@ -42,7 +42,9 @@ class UserEventPayloadVariant426 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consent") || $data->consent === null) { throw new SdkValidationError("consent", 'required', "Required property 'consent' is missing or null"); }
+        if (!property_exists($data, "consent") || $data->consent === null) {
+            throw new SdkValidationError("consent", 'required', "Required property 'consent' is missing or null");
+        }
         return new self(
             consent: SdkClient::hydrateStringEnumOrString($data->consent, UserEventPayloadVariant426ConsentEnum::class),
         );
@@ -173,7 +175,9 @@ class UserEventPayloadVariant428 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) { throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null"); }
+        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) {
+            throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null");
+        }
         return new self(
             deletedCount: SdkClient::floatValue($data->deletedCount),
         );
@@ -189,11 +193,26 @@ final readonly class UserEventPayloadVariant429EnabledEnum implements SdkOpenEnu
     public const OFF = "off";
     public const ON = "on";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant429 implements UserEventPayload, \JsonSerializable
@@ -231,7 +250,9 @@ class UserEventPayloadVariant429 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::hydrateStringEnumOrString($data->enabled, UserEventPayloadVariant429EnabledEnum::class),
         );
@@ -246,11 +267,26 @@ final readonly class UserEventPayloadVariant430ScopeEnum implements SdkOpenEnum
     public const DASHBOARD = "dashboard";
     public const LOG_DRAINS = "log-drains";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant430 implements UserEventPayload, \JsonSerializable
@@ -298,8 +334,12 @@ class UserEventPayloadVariant430 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "scope") || $data->scope === null) {
+            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             scope: SdkClient::hydrateStringEnumOrString($data->scope, UserEventPayloadVariant430ScopeEnum::class),
@@ -338,7 +378,9 @@ class UserEventPayloadVariant431NextValueVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) { throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null"); }
+        if (!property_exists($data, "accessGroupId") || $data->accessGroupId === null) {
+            throw new SdkValidationError("accessGroupId", 'required', "Required property 'accessGroupId' is missing or null");
+        }
         return new self(
             accessGroupId: SdkClient::stringValue($data->accessGroupId),
         );

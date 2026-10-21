@@ -47,8 +47,12 @@ class GetDeploymentResponseVariant2AliasError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -109,8 +113,12 @@ class GetDeploymentResponseVariant2AliasWarning implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -127,11 +135,26 @@ final readonly class GetDeploymentResponseVariant2ChecksConclusionEnum implement
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDeploymentResponseVariant2ChecksStateEnum implements SdkOpenEnum
@@ -140,11 +163,26 @@ final readonly class GetDeploymentResponseVariant2ChecksStateEnum implements Sdk
     public const REGISTERED = "registered";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -157,11 +195,26 @@ final readonly class GetDeploymentResponseVariant2CreatorTypeEnum implements Sdk
     public const SYSTEM = "system";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -238,7 +291,9 @@ class GetDeploymentResponseVariant2Creator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) {
+            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
+        }
         return new self(
             uid: SdkClient::stringValue($data->uid),
             avatar: (property_exists($data, "avatar") && $data->avatar !== null ? SdkClient::stringValue($data->avatar) : SdkNotGiven::Value),
@@ -257,11 +312,26 @@ final readonly class GetDeploymentResponseVariant2CustomEnvironmentVariant0Branc
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -312,8 +382,12 @@ class GetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcher implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "pattern") || $data->pattern === null) {
+            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             pattern: SdkClient::stringValue($data->pattern),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetDeploymentResponseVariant2CustomEnvironmentVariant0BranchMatcherTypeEnum::class),

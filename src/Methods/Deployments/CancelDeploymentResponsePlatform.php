@@ -77,9 +77,15 @@ class CancelDeploymentResponsePlatform implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "creator") || $data->creator === null) {
+            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
+        }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
         return new self(
             creator: SdkClient::hydrateClass($data->creator, CancelDeploymentResponsePlatformCreator::class),
             origin: SdkClient::hydrateClass($data->origin, CancelDeploymentResponsePlatformOrigin::class),
@@ -137,8 +143,12 @@ class CancelDeploymentResponseProject implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -224,11 +234,26 @@ final readonly class CancelDeploymentResponseProjectSettingsFrameworkEnum implem
     public const XMCP = "xmcp";
     public const ZOLA = "zola";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CancelDeploymentResponseProjectSettingsNodeVersionEnum implements SdkOpenEnum
@@ -244,11 +269,26 @@ final readonly class CancelDeploymentResponseProjectSettingsNodeVersionEnum impl
     public const _26_X = "26.x";
     public const _8_10_X = "8.10.x";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CancelDeploymentResponseProjectSettingsSpeedInsights implements \JsonSerializable
@@ -334,7 +374,9 @@ class CancelDeploymentResponseProjectSettingsSpeedInsights implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             canceledAt: (property_exists($data, "canceledAt") && $data->canceledAt !== null ? SdkClient::floatValue($data->canceledAt) : SdkNotGiven::Value),

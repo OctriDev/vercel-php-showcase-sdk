@@ -75,10 +75,18 @@ class ConnectCreateConnectorRequestDataTypeSlackShortcutsItem implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "callbackId") || $data->callbackId === null) { throw new SdkValidationError("callbackId", 'required', "Required property 'callbackId' is missing or null"); }
-        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "callbackId") || $data->callbackId === null) {
+            throw new SdkValidationError("callbackId", 'required', "Required property 'callbackId' is missing or null");
+        }
+        if (!property_exists($data, "description") || $data->description === null) {
+            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, ConnectCreateConnectorRequestDataTypeSlackShortcutsItemTypeEnum::class),
             name: SdkClient::stringValue($data->name),
@@ -218,9 +226,15 @@ class ConnectCreateConnectorRequestDataTypeSlack implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appId") || $data->appId === null) { throw new SdkValidationError("appId", 'required', "Required property 'appId' is missing or null"); }
-        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
-        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
+        if (!property_exists($data, "appId") || $data->appId === null) {
+            throw new SdkValidationError("appId", 'required', "Required property 'appId' is missing or null");
+        }
+        if (!property_exists($data, "appName") || $data->appName === null) {
+            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
+        }
+        if (!property_exists($data, "clientId") || $data->clientId === null) {
+            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
+        }
         return new self(
             appId: SdkClient::stringValue($data->appId),
             appName: SdkClient::stringValue($data->appName),
@@ -309,7 +323,9 @@ class ConnectCreateConnectorRequestDataTypeSnowflake implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accountIdentifier") || $data->accountIdentifier === null) { throw new SdkValidationError("accountIdentifier", 'required', "Required property 'accountIdentifier' is missing or null"); }
+        if (!property_exists($data, "accountIdentifier") || $data->accountIdentifier === null) {
+            throw new SdkValidationError("accountIdentifier", 'required', "Required property 'accountIdentifier' is missing or null");
+        }
         return new self(
             accountIdentifier: SdkClient::stringValue($data->accountIdentifier),
             clientName: (property_exists($data, "clientName") && $data->clientName !== null ? SdkClient::stringValue($data->clientName) : SdkNotGiven::Value),

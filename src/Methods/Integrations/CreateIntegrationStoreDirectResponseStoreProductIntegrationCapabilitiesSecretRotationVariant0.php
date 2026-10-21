@@ -46,7 +46,9 @@ class CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilitiesSec
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "maxDelayHours") || $data->maxDelayHours === null) { throw new SdkValidationError("maxDelayHours", 'required', "Required property 'maxDelayHours' is missing or null"); }
+        if (!property_exists($data, "maxDelayHours") || $data->maxDelayHours === null) {
+            throw new SdkValidationError("maxDelayHours", 'required', "Required property 'maxDelayHours' is missing or null");
+        }
         return new self(
             maxDelayHours: SdkClient::floatValue($data->maxDelayHours),
             customRotationWarning: (property_exists($data, "customRotationWarning") && $data->customRotationWarning !== null ? SdkClient::stringValue($data->customRotationWarning) : SdkNotGiven::Value),
@@ -332,10 +334,18 @@ class CreateIntegrationStoreDirectResponseStoreProductIntegration implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "icon") || $data->icon === null) { throw new SdkValidationError("icon", 'required', "Required property 'icon' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "icon") || $data->icon === null) {
+            throw new SdkValidationError("icon", 'required', "Required property 'icon' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
         return new self(
             icon: SdkClient::stringValue($data->icon),
             id: SdkClient::stringValue($data->id),

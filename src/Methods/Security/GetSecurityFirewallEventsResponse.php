@@ -44,8 +44,12 @@ class GetSecurityFirewallEventsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actions") || $data->actions === null) { throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null"); }
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "actions") || $data->actions === null) {
+            throw new SdkValidationError("actions", 'required', "Required property 'actions' is missing or null");
+        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
         return new self(
             actions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetSecurityFirewallEventsResponseActionsItem::class), SdkClient::arrayValue($data->actions))),
             pagination: SdkClient::hydrateClass($data->pagination, GetSecurityFirewallEventsResponsePagination::class),
@@ -114,12 +118,24 @@ class GetSecurityFirewallEventsSummaryResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blockingIps") || $data->blockingIps === null) { throw new SdkValidationError("blockingIps", 'required', "Required property 'blockingIps' is missing or null"); }
-        if (!property_exists($data, "byAction") || $data->byAction === null) { throw new SdkValidationError("byAction", 'required', "Required property 'byAction' is missing or null"); }
-        if (!property_exists($data, "byActionType") || $data->byActionType === null) { throw new SdkValidationError("byActionType", 'required', "Required property 'byActionType' is missing or null"); }
-        if (!property_exists($data, "challengingIps") || $data->challengingIps === null) { throw new SdkValidationError("challengingIps", 'required', "Required property 'challengingIps' is missing or null"); }
-        if (!property_exists($data, "other") || $data->other === null) { throw new SdkValidationError("other", 'required', "Required property 'other' is missing or null"); }
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
+        if (!property_exists($data, "blockingIps") || $data->blockingIps === null) {
+            throw new SdkValidationError("blockingIps", 'required', "Required property 'blockingIps' is missing or null");
+        }
+        if (!property_exists($data, "byAction") || $data->byAction === null) {
+            throw new SdkValidationError("byAction", 'required', "Required property 'byAction' is missing or null");
+        }
+        if (!property_exists($data, "byActionType") || $data->byActionType === null) {
+            throw new SdkValidationError("byActionType", 'required', "Required property 'byActionType' is missing or null");
+        }
+        if (!property_exists($data, "challengingIps") || $data->challengingIps === null) {
+            throw new SdkValidationError("challengingIps", 'required', "Required property 'challengingIps' is missing or null");
+        }
+        if (!property_exists($data, "other") || $data->other === null) {
+            throw new SdkValidationError("other", 'required', "Required property 'other' is missing or null");
+        }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
         return new self(
             blockingIps: SdkClient::floatValue($data->blockingIps),
             byAction: SdkClient::mapValues(SdkClient::stringMapValue($data->byAction), static fn($item) => SdkClient::floatValue($item)),
@@ -188,10 +204,18 @@ class GenerateFirewallRuleResponseRuleActionMitigateRateLimit implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algo") || $data->algo === null) { throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null"); }
-        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
-        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
-        if (!property_exists($data, "window") || $data->window === null) { throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null"); }
+        if (!property_exists($data, "algo") || $data->algo === null) {
+            throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null");
+        }
+        if (!property_exists($data, "keys") || $data->keys === null) {
+            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
+        }
+        if (!property_exists($data, "limit") || $data->limit === null) {
+            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
+        }
+        if (!property_exists($data, "window") || $data->window === null) {
+            throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null");
+        }
         return new self(
             algo: SdkClient::stringValue($data->algo),
             keys: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->keys))),
@@ -239,8 +263,12 @@ class GenerateFirewallRuleResponseRuleActionMitigateRedirect implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "location") || $data->location === null) { throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null"); }
-        if (!property_exists($data, "permanent") || $data->permanent === null) { throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null"); }
+        if (!property_exists($data, "location") || $data->location === null) {
+            throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null");
+        }
+        if (!property_exists($data, "permanent") || $data->permanent === null) {
+            throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null");
+        }
         return new self(
             location: SdkClient::stringValue($data->location),
             permanent: SdkClient::boolValue($data->permanent),
@@ -303,7 +331,9 @@ class GenerateFirewallRuleResponseRuleActionMitigate implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::stringValue($data->action),
             actionDuration: (property_exists($data, "actionDuration") ? ($data->actionDuration === null ? null : SdkClient::stringValue($data->actionDuration)) : SdkNotGiven::Value),

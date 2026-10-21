@@ -43,7 +43,9 @@ class ListCheckRunsResponseRunsItemVariant0SourceApiSelectionDeployment implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionDeploymentKindEnum::class),
         );
@@ -92,8 +94,12 @@ class ListCheckRunsResponseRunsItemVariant0SourceApiSelectionJob implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "job") || $data->job === null) {
+            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             job: SdkClient::stringValue($data->job),
             kind: SdkClient::hydrateEnum($data->kind, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionJobKindEnum::class),
@@ -105,11 +111,26 @@ final readonly class ListCheckRunsResponseRunsItemVariant0SourceApiSelectionTurb
 {
     public const TURBOREPO = "Turborepo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum ListCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepoKindEnum: string implements SdkWireEnum
@@ -174,10 +195,18 @@ class ListCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepo implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "filters") || $data->filters === null) { throw new SdkValidationError("filters", 'required', "Required property 'filters' is missing or null"); }
-        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "task") || $data->task === null) { throw new SdkValidationError("task", 'required', "Required property 'task' is missing or null"); }
+        if (!property_exists($data, "filters") || $data->filters === null) {
+            throw new SdkValidationError("filters", 'required', "Required property 'filters' is missing or null");
+        }
+        if (!property_exists($data, "job") || $data->job === null) {
+            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "task") || $data->task === null) {
+            throw new SdkValidationError("task", 'required', "Required property 'task' is missing or null");
+        }
         return new self(
             filters: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->filters))),
             job: SdkClient::hydrateStringEnumOrString($data->job, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepoJobEnum::class),
@@ -192,11 +221,26 @@ final readonly class ListCheckRunsResponseRunsItemVariant0SourceApiSubKindEnum i
 {
     public const VERCEL_CI_CHECK = "vercel-ci-check";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -245,9 +289,15 @@ class ListCheckRunsResponseRunsItemVariant0SourceApi implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "selection") || $data->selection === null) { throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null"); }
-        if (!property_exists($data, "subKind") || $data->subKind === null) { throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "selection") || $data->selection === null) {
+            throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null");
+        }
+        if (!property_exists($data, "subKind") || $data->subKind === null) {
+            throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null");
+        }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, ListCheckRunsResponseRunsItemVariant0SourceApiOriginEnum::class),
             selection: SdkClient::hydrateUnion($data->selection, [ListCheckRunsResponseRunsItemVariant0SourceApiSelectionInvocation::class, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionDeployment::class, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionJob::class, ListCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepo::class], null, []),

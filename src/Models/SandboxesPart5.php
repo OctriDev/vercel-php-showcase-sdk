@@ -81,7 +81,9 @@ class CreateSandboxesByNameForkV2RequestNetworkPolicyVariant1AllowValueItemRespo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "statusCode") || $data->statusCode === null) { throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null"); }
+        if (!property_exists($data, "statusCode") || $data->statusCode === null) {
+            throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null");
+        }
         return new self(
             statusCode: SdkClient::intValue($data->statusCode),
             headers: (property_exists($data, "headers") && $data->headers !== null ? SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)) : SdkNotGiven::Value),
@@ -276,11 +278,26 @@ final readonly class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0Mode
     public const DEFAULT_ALLOW = "default-allow";
     public const DEFAULT_DENY = "default-deny";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**

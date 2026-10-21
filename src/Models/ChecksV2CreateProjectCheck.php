@@ -121,7 +121,9 @@ class CreateProjectCheckRequestSourceVariant1 implements CreateProjectCheckReque
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
             webhookId: (property_exists($data, "webhookId") && $data->webhookId !== null ? SdkClient::stringValue($data->webhookId) : SdkNotGiven::Value),
@@ -133,11 +135,26 @@ final readonly class CreateProjectCheckRequestSourceVariant2ProviderEnum impleme
 {
     public const GITHUB = "github";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateProjectCheckRequestSourceVariant2 implements CreateProjectCheckRequestSource, \JsonSerializable
@@ -183,9 +200,15 @@ class CreateProjectCheckRequestSourceVariant2 implements CreateProjectCheckReque
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) { throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) {
+            throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
             externalCheckName: SdkClient::stringValue($data->externalCheckName),
@@ -258,9 +281,15 @@ class CreateProjectCheckResponseSourceVariant0 implements CreateProjectCheckResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
+            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -315,7 +344,9 @@ class CreateProjectCheckResponseSourceVariant1 implements CreateProjectCheckResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, CreateProjectCheckResponseSourceVariant1KindEnum::class),
             webhookId: (property_exists($data, "webhookId") && $data->webhookId !== null ? SdkClient::stringValue($data->webhookId) : SdkNotGiven::Value),
@@ -334,9 +365,24 @@ final readonly class CreateProjectCheckResponseSourceVariant2ProviderEnum implem
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -55,8 +55,12 @@ class ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSourcesItemSour
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "namespace") || $data->namespace === null) { throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "namespace") || $data->namespace === null) {
+            throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             namespace_: SdkClient::stringValue($data->namespace),
             provider: SdkClient::hydrateStringEnumOrString($data->provider, ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSourcesItemSourcesItemGitlabProviderEnum::class),
@@ -111,9 +115,15 @@ class ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSourcesItem imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "sources") || $data->sources === null) { throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "sources") || $data->sources === null) {
+            throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             environments: array_values(array_map(static fn($item) => SdkClient::hydrateUnion($item, [ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSourcesItemEnvironmentsItemSystem::class, ListProjectsResponseVariant2ProjectsItemDeploymentPolicyGitSourcesItemEnvironmentsItemCustom::class], null, []), SdkClient::arrayValue($data->environments))),
@@ -179,11 +189,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemDismissedToastsItem
     public const CANCEL = "cancel";
     public const DELETE = "delete";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemDismissedToastsItemValueVariant2 implements \JsonSerializable
@@ -223,8 +248,12 @@ class ListProjectsResponseVariant2ProjectsItemDismissedToastsItemValueVariant2 i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "currentValue") || $data->currentValue === null) { throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null"); }
-        if (!property_exists($data, "previousValue") || $data->previousValue === null) { throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null"); }
+        if (!property_exists($data, "currentValue") || $data->currentValue === null) {
+            throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null");
+        }
+        if (!property_exists($data, "previousValue") || $data->previousValue === null) {
+            throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null");
+        }
         return new self(
             currentValue: (is_bool($data->currentValue) ? SdkClient::boolValue($data->currentValue) : (is_float($data->currentValue) || is_int($data->currentValue) ? SdkClient::floatValue($data->currentValue) : SdkClient::stringValue($data->currentValue))),
             previousValue: (is_bool($data->previousValue) ? SdkClient::boolValue($data->previousValue) : (is_float($data->previousValue) || is_int($data->previousValue) ? SdkClient::floatValue($data->previousValue) : SdkClient::stringValue($data->previousValue))),
@@ -281,10 +310,18 @@ class ListProjectsResponseVariant2ProjectsItemDismissedToastsItem implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) { throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) {
+            throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "value")) {
+            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemDismissedToastsItemActionEnum::class),
             dismissedAt: SdkClient::floatValue($data->dismissedAt),
@@ -336,8 +373,12 @@ class ListProjectsResponseVariant2ProjectsItemEnvItemContentHintRedisUrl impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemEnvItemContentHintRedisUrlTypeEnum::class),

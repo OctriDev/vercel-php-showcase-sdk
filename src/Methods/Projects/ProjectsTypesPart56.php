@@ -68,8 +68,12 @@ class ListProjectsResponseVariant1ProjectsItemSecurityFirewallRoutesItemMitigate
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "rule_id") || $data->rule_id === null) { throw new SdkValidationError("rule_id", 'required', "Required property 'rule_id' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "rule_id") || $data->rule_id === null) {
+            throw new SdkValidationError("rule_id", 'required', "Required property 'rule_id' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant1ProjectsItemSecurityFirewallRoutesItemMitigateActionEnum::class),
             ruleId: SdkClient::stringValue($data->rule_id),
@@ -84,11 +88,26 @@ final readonly class ListProjectsResponseVariant1ProjectsItemSecurityFirewallRou
 {
     public const RESPONSE_STATUS = "response_status";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant1ProjectsItemSecurityFirewallRoutesItemResponseHasItemValueVariant1 implements \JsonSerializable
@@ -276,7 +295,9 @@ class ListProjectsResponseVariant1ProjectsItemSecurityFirewallRoutesItemResponse
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, ListProjectsResponseVariant1ProjectsItemSecurityFirewallRoutesItemResponseHasItemTypeEnum::class),
             key: (property_exists($data, "key") && $data->key !== null ? SdkClient::stringValue($data->key) : SdkNotGiven::Value),

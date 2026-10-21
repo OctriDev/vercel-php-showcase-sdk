@@ -52,8 +52,12 @@ class UserEventPayloadVariant405 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) { throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null"); }
-        if (!property_exists($data, "inviteIds") || $data->inviteIds === null) { throw new SdkValidationError("inviteIds", 'required', "Required property 'inviteIds' is missing or null"); }
+        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) {
+            throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null");
+        }
+        if (!property_exists($data, "inviteIds") || $data->inviteIds === null) {
+            throw new SdkValidationError("inviteIds", 'required', "Required property 'inviteIds' is missing or null");
+        }
         return new self(
             deletedCount: SdkClient::floatValue($data->deletedCount),
             inviteIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->inviteIds))),
@@ -109,8 +113,12 @@ class UserEventPayloadVariant406InvitedUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             username: SdkClient::stringValue($data->username),

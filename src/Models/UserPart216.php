@@ -122,9 +122,15 @@ class UserEventPayloadVariant398 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "by") || $data->by === null) { throw new SdkValidationError("by", 'required', "Required property 'by' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "by") || $data->by === null) {
+            throw new SdkValidationError("by", 'required', "Required property 'by' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
         return new self(
             by: SdkClient::stringValue($data->by),
             slug: SdkClient::stringValue($data->slug),
@@ -145,11 +151,26 @@ final readonly class UserEventPayloadVariant399ScopeEnum implements SdkOpenEnum
 {
     public const ORGANIZATION = "organization";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant399 implements UserEventPayload, \JsonSerializable
@@ -199,7 +220,9 @@ class UserEventPayloadVariant399 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             scope: (property_exists($data, "scope") && $data->scope !== null ? SdkClient::hydrateStringEnumOrString($data->scope, UserEventPayloadVariant399ScopeEnum::class) : SdkNotGiven::Value),

@@ -13,11 +13,26 @@ final readonly class GetSecurityFirewallConfigResponseDraftManagedRulesVercelRul
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset implements \JsonSerializable
@@ -83,7 +98,9 @@ class GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesetActionEnum::class) : SdkNotGiven::Value),
@@ -187,11 +204,26 @@ final readonly class GetSecurityFirewallConfigResponseDraftRulesetsItemCondition
     public const SUB = "sub";
     public const SUF = "suf";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemConditionsItemTypeEnum implements SdkOpenEnum
@@ -231,11 +263,26 @@ final readonly class GetSecurityFirewallConfigResponseDraftRulesetsItemCondition
     public const TRUSTED_SOURCE = "trusted_source";
     public const USER_AGENT = "user_agent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemConditionsItem implements \JsonSerializable
@@ -299,8 +346,12 @@ class GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemCondit
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "op") || $data->op === null) {
+            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             op: SdkClient::hydrateStringEnumOrString($data->op, GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemConditionsItemOpEnum::class),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemConditionsItemTypeEnum::class),
@@ -342,7 +393,9 @@ class GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItem imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "conditions") || $data->conditions === null) {
+            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
+        }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetSecurityFirewallConfigResponseDraftRulesetsItemConditionGroupItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );

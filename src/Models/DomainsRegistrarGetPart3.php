@@ -83,8 +83,12 @@ class GetOrderResponseDomainsItemVariant0ErrorInvalidContact implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "details") || $data->details === null) {
+            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
+        }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant0ErrorInvalidContactCodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseDomainsItemVariant0ErrorInvalidContactDetails::class),
@@ -131,7 +135,9 @@ class GetOrderResponseDomainsItemVariant0ErrorVariant10 implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             details: (property_exists($data, "details") ? $data->details : SdkNotGiven::Value),
@@ -216,12 +222,24 @@ class GetOrderResponseDomainsItemVariant0 implements GetOrderResponseDomainsItem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "purchaseType") || $data->purchaseType === null) { throw new SdkValidationError("purchaseType", 'required', "Required property 'purchaseType' is missing or null"); }
-        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) { throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null"); }
-        if (!property_exists($data, "years") || $data->years === null) { throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null"); }
-        if (!property_exists($data, "domainName") || $data->domainName === null) { throw new SdkValidationError("domainName", 'required', "Required property 'domainName' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "price") || $data->price === null) { throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null"); }
+        if (!property_exists($data, "purchaseType") || $data->purchaseType === null) {
+            throw new SdkValidationError("purchaseType", 'required', "Required property 'purchaseType' is missing or null");
+        }
+        if (!property_exists($data, "autoRenew") || $data->autoRenew === null) {
+            throw new SdkValidationError("autoRenew", 'required', "Required property 'autoRenew' is missing or null");
+        }
+        if (!property_exists($data, "years") || $data->years === null) {
+            throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null");
+        }
+        if (!property_exists($data, "domainName") || $data->domainName === null) {
+            throw new SdkValidationError("domainName", 'required', "Required property 'domainName' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "price") || $data->price === null) {
+            throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null");
+        }
         return new self(
             purchaseType: SdkClient::hydrateEnum($data->purchaseType, GetOrderResponseDomainsItemVariant0PurchaseTypeEnum::class),
             autoRenew: SdkClient::boolValue($data->autoRenew),
@@ -247,22 +265,52 @@ final readonly class GetOrderResponseDomainsItemVariant1StatusEnum implements Sd
     public const REFUNDED = "refunded";
     public const REFUND_FAILED = "refund-failed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCodeCodeEnum implements SdkOpenEnum
 {
     public const UNSUPPORTED_LANGUAGE_CODE = "unsupported-language-code";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCodeDetails implements \JsonSerializable
@@ -296,7 +344,9 @@ class GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCodeDetails imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "detectedLanguageCode") || $data->detectedLanguageCode === null) { throw new SdkValidationError("detectedLanguageCode", 'required', "Required property 'detectedLanguageCode' is missing or null"); }
+        if (!property_exists($data, "detectedLanguageCode") || $data->detectedLanguageCode === null) {
+            throw new SdkValidationError("detectedLanguageCode", 'required', "Required property 'detectedLanguageCode' is missing or null");
+        }
         return new self(
             detectedLanguageCode: SdkClient::stringValue($data->detectedLanguageCode),
         );
@@ -340,8 +390,12 @@ class GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCode implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "details") || $data->details === null) { throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "details") || $data->details === null) {
+            throw new SdkValidationError("details", 'required', "Required property 'details' is missing or null");
+        }
         return new self(
             code: SdkClient::hydrateStringEnumOrString($data->code, GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCodeCodeEnum::class),
             details: SdkClient::hydrateClass($data->details, GetOrderResponseDomainsItemVariant1ErrorUnsupportedLanguageCodeDetails::class),

@@ -101,9 +101,15 @@ class TeamLimitedSamlDirectory implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectedAt") || $data->connectedAt === null) { throw new SdkValidationError("connectedAt", 'required', "Required property 'connectedAt' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "connectedAt") || $data->connectedAt === null) {
+            throw new SdkValidationError("connectedAt", 'required', "Required property 'connectedAt' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             connectedAt: SdkClient::floatValue($data->connectedAt),
             state: SdkClient::stringValue($data->state),
@@ -177,7 +183,9 @@ class TeamLimitedSaml implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enforced") || $data->enforced === null) { throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null"); }
+        if (!property_exists($data, "enforced") || $data->enforced === null) {
+            throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null");
+        }
         return new self(
             enforced: SdkClient::boolValue($data->enforced),
             connection: (property_exists($data, "connection") && $data->connection !== null ? SdkClient::hydrateClass($data->connection, TeamLimitedSamlConnection::class) : SdkNotGiven::Value),
@@ -332,13 +340,27 @@ class TeamLimited implements ListTeamsResponseTeamsItem, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar")) { throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "limited") || $data->limited === null) { throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null"); }
-        if (!property_exists($data, "limitedBy") || $data->limitedBy === null) { throw new SdkValidationError("limitedBy", 'required', "Required property 'limitedBy' is missing or null"); }
-        if (!property_exists($data, "name")) { throw new SdkValidationError("name", 'required', "Missing required property 'name'"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "avatar")) {
+            throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "limited") || $data->limited === null) {
+            throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null");
+        }
+        if (!property_exists($data, "limitedBy") || $data->limitedBy === null) {
+            throw new SdkValidationError("limitedBy", 'required', "Required property 'limitedBy' is missing or null");
+        }
+        if (!property_exists($data, "name")) {
+            throw new SdkValidationError("name", 'required', "Missing required property 'name'");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
         return new self(
             avatar: ($data->avatar === null ? null : SdkClient::stringValue($data->avatar)),
             createdAt: SdkClient::floatValue($data->createdAt),

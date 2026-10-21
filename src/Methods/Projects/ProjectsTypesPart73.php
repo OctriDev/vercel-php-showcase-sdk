@@ -84,12 +84,24 @@ class ListProjectsResponseVariant2ProjectsItemConnectConfigurationsItem implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) { throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null"); }
-        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) { throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "envId") || $data->envId === null) { throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null"); }
-        if (!property_exists($data, "passive") || $data->passive === null) { throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) {
+            throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null");
+        }
+        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) {
+            throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "envId") || $data->envId === null) {
+            throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null");
+        }
+        if (!property_exists($data, "passive") || $data->passive === null) {
+            throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             buildsEnabled: SdkClient::boolValue($data->buildsEnabled),
             connectConfigurationId: SdkClient::stringValue($data->connectConfigurationId),
@@ -155,7 +167,9 @@ class ListProjectsResponseVariant2ProjectsItemCreatorUserViaAppApp implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             clientId: (property_exists($data, "clientId") && $data->clientId !== null ? SdkClient::stringValue($data->clientId) : SdkNotGiven::Value),
@@ -208,8 +222,12 @@ class ListProjectsResponseVariant2ProjectsItemCreatorUserViaApp implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "app") || $data->app === null) { throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "app") || $data->app === null) {
+            throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             app: SdkClient::hydrateClass($data->app, ListProjectsResponseVariant2ProjectsItemCreatorUserViaAppApp::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemCreatorUserViaAppTypeEnum::class),
@@ -254,8 +272,12 @@ class ListProjectsResponseVariant2ProjectsItemCreatorUserViaIntegrationIntegrati
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
+            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -308,8 +330,12 @@ class ListProjectsResponseVariant2ProjectsItemCreatorUserViaIntegration implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "integration") || $data->integration === null) {
+            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             integration: SdkClient::hydrateClass($data->integration, ListProjectsResponseVariant2ProjectsItemCreatorUserViaIntegrationIntegration::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemCreatorUserViaIntegrationTypeEnum::class),

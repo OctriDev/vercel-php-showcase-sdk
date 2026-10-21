@@ -44,8 +44,12 @@ class EditProjectEnvResponseContentHintVariant6 implements EditProjectEnvRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant6TypeEnum::class),
@@ -95,8 +99,12 @@ class EditProjectEnvResponseContentHintVariant7 implements EditProjectEnvRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant7TypeEnum::class),
@@ -146,8 +154,12 @@ class EditProjectEnvResponseContentHintVariant8 implements EditProjectEnvRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant8TypeEnum::class),
@@ -197,8 +209,12 @@ class EditProjectEnvResponseContentHintVariant9 implements EditProjectEnvRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant9TypeEnum::class),
@@ -248,8 +264,12 @@ class EditProjectEnvResponseContentHintVariant10 implements EditProjectEnvRespon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant10TypeEnum::class),
@@ -299,8 +319,12 @@ class EditProjectEnvResponseContentHintVariant11 implements EditProjectEnvRespon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, EditProjectEnvResponseContentHintVariant11TypeEnum::class),

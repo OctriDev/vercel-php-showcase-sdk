@@ -124,10 +124,18 @@ class RestoreRedirectsResponseVersion implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
+            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
+        }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -185,9 +193,15 @@ class RestoreRedirectsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "failedToRestore") || $data->failedToRestore === null) { throw new SdkValidationError("failedToRestore", 'required', "Required property 'failedToRestore' is missing or null"); }
-        if (!property_exists($data, "restored") || $data->restored === null) { throw new SdkValidationError("restored", 'required', "Required property 'restored' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "failedToRestore") || $data->failedToRestore === null) {
+            throw new SdkValidationError("failedToRestore", 'required', "Required property 'failedToRestore' is missing or null");
+        }
+        if (!property_exists($data, "restored") || $data->restored === null) {
+            throw new SdkValidationError("restored", 'required', "Required property 'restored' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             failedToRestore: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->failedToRestore))),
             restored: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->restored))),
@@ -313,10 +327,18 @@ class GetVersionsResponseVersionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
+            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
+        }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),

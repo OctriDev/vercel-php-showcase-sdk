@@ -200,10 +200,18 @@ class FilterProjectEnvsResponseVariant2EnvsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) { throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) {
+            throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             securityIssues: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, FilterProjectEnvsResponseVariant2EnvsItemSecurityIssuesItemEnum::class), SdkClient::arrayValue($data->securityIssues))),
@@ -267,8 +275,12 @@ class FilterProjectEnvsResponseVariant2 implements FilterProjectEnvsResponse, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "envs") || $data->envs === null) { throw new SdkValidationError("envs", 'required', "Required property 'envs' is missing or null"); }
-        if (!property_exists($data, "hiddenProductionEnvCount") || $data->hiddenProductionEnvCount === null) { throw new SdkValidationError("hiddenProductionEnvCount", 'required', "Required property 'hiddenProductionEnvCount' is missing or null"); }
+        if (!property_exists($data, "envs") || $data->envs === null) {
+            throw new SdkValidationError("envs", 'required', "Required property 'envs' is missing or null");
+        }
+        if (!property_exists($data, "hiddenProductionEnvCount") || $data->hiddenProductionEnvCount === null) {
+            throw new SdkValidationError("hiddenProductionEnvCount", 'required', "Required property 'hiddenProductionEnvCount' is missing or null");
+        }
         return new self(
             envs: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, FilterProjectEnvsResponseVariant2EnvsItem::class), SdkClient::arrayValue($data->envs))),
             hiddenProductionEnvCount: SdkClient::floatValue($data->hiddenProductionEnvCount),

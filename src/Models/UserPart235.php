@@ -64,8 +64,12 @@ class UserEventPayloadVariant456 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "previous") || $data->previous === null) {
+            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
+        }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant456Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant456Previous::class),
@@ -82,11 +86,26 @@ final readonly class UserEventPayloadVariant457ContextEnum implements SdkOpenEnu
     public const LOGIN = "login";
     public const SUDO = "sudo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant457 implements UserEventPayload, \JsonSerializable
@@ -136,7 +155,9 @@ class UserEventPayloadVariant457 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "remaining") || $data->remaining === null) { throw new SdkValidationError("remaining", 'required', "Required property 'remaining' is missing or null"); }
+        if (!property_exists($data, "remaining") || $data->remaining === null) {
+            throw new SdkValidationError("remaining", 'required', "Required property 'remaining' is missing or null");
+        }
         return new self(
             remaining: SdkClient::floatValue($data->remaining),
             context: (property_exists($data, "context") && $data->context !== null ? SdkClient::hydrateStringEnumOrString($data->context, UserEventPayloadVariant457ContextEnum::class) : SdkNotGiven::Value),
@@ -179,7 +200,9 @@ class UserEventPayloadVariant458 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mfaEnabled") || $data->mfaEnabled === null) { throw new SdkValidationError("mfaEnabled", 'required', "Required property 'mfaEnabled' is missing or null"); }
+        if (!property_exists($data, "mfaEnabled") || $data->mfaEnabled === null) {
+            throw new SdkValidationError("mfaEnabled", 'required', "Required property 'mfaEnabled' is missing or null");
+        }
         return new self(
             mfaEnabled: SdkClient::boolValue($data->mfaEnabled),
         );
@@ -234,8 +257,12 @@ class UserEventPayloadVariant459Mfa implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) { throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) {
+            throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             totpVerified: SdkClient::boolValue($data->totpVerified),
@@ -278,7 +305,9 @@ class UserEventPayloadVariant459 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mfa") || $data->mfa === null) { throw new SdkValidationError("mfa", 'required', "Required property 'mfa' is missing or null"); }
+        if (!property_exists($data, "mfa") || $data->mfa === null) {
+            throw new SdkValidationError("mfa", 'required', "Required property 'mfa' is missing or null");
+        }
         return new self(
             mfa: SdkClient::hydrateClass($data->mfa, UserEventPayloadVariant459Mfa::class),
         );
@@ -330,8 +359,12 @@ class UserEventPayloadVariant460 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) { throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "totpVerified") || $data->totpVerified === null) {
+            throw new SdkValidationError("totpVerified", 'required', "Required property 'totpVerified' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             totpVerified: SdkClient::boolValue($data->totpVerified),

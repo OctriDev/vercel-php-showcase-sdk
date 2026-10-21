@@ -16,11 +16,26 @@ final readonly class TeamBillingPlanEnum implements SdkOpenEnum
     public const HOBBY = "hobby";
     public const PRO = "pro";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -61,7 +76,9 @@ class TeamBilling implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "plan") || $data->plan === null) { throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null"); }
+        if (!property_exists($data, "plan") || $data->plan === null) {
+            throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null");
+        }
         return new self(
             plan: SdkClient::hydrateStringEnumOrString($data->plan, TeamBillingPlanEnum::class),
         );
@@ -122,11 +139,26 @@ final readonly class TeamDefaultContinuousUsageKindEnum implements SdkOpenEnum
     public const METERED = "metered";
     public const UNMETERED = "unmetered";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -167,7 +199,9 @@ class TeamDefaultDeploymentProtectionPasswordProtection implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::stringValue($data->deploymentType),
         );
@@ -212,7 +246,9 @@ class TeamDefaultDeploymentProtectionSsoProtection implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::stringValue($data->deploymentType),
         );

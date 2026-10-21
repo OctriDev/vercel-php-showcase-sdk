@@ -38,7 +38,9 @@ class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0 implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
         return new self(
             type: $data->type,
         );
@@ -88,9 +90,15 @@ class UpdateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1 implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "attribute") || $data->attribute === null) { throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "attribute") || $data->attribute === null) {
+            throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null");
+        }
         return new self(
             type: $data->type,
             kind: SdkClient::stringValue($data->kind),
@@ -130,7 +138,9 @@ class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0 implements UpdateFlag
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
         return new self(
             type: $data->type,
         );
@@ -180,9 +190,15 @@ class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "attribute") || $data->attribute === null) { throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "attribute") || $data->attribute === null) {
+            throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null");
+        }
         return new self(
             type: $data->type,
             kind: SdkClient::stringValue($data->kind),
@@ -234,9 +250,15 @@ class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1 implements UpdateFlag
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
-        if (!property_exists($data, "base") || $data->base === null) { throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null"); }
-        if (!property_exists($data, "passPromille") || $data->passPromille === null) { throw new SdkValidationError("passPromille", 'required', "Required property 'passPromille' is missing or null"); }
+        if (!property_exists($data, "type")) {
+            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
+        }
+        if (!property_exists($data, "base") || $data->base === null) {
+            throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null");
+        }
+        if (!property_exists($data, "passPromille") || $data->passPromille === null) {
+            throw new SdkValidationError("passPromille", 'required', "Required property 'passPromille' is missing or null");
+        }
         return new self(
             type: $data->type,
             base: SdkClient::hydrateClass($data->base, UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base::class),
@@ -284,7 +306,9 @@ class UpdateFlagSegmentResponseVariant0DataExcludeValueValueItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             note: (property_exists($data, "note") && $data->note !== null ? SdkClient::stringValue($data->note) : SdkNotGiven::Value),
@@ -331,7 +355,9 @@ class UpdateFlagSegmentResponseVariant0DataIncludeValueValueItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             note: (property_exists($data, "note") && $data->note !== null ? SdkClient::stringValue($data->note) : SdkNotGiven::Value),

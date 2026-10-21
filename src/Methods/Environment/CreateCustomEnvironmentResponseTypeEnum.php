@@ -16,11 +16,26 @@ final readonly class CreateCustomEnvironmentResponseTypeEnum implements SdkOpenE
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -149,11 +164,21 @@ class CreateCustomEnvironmentResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),
@@ -202,7 +227,9 @@ class ListEnvironmentCustomResponseAccountLimit implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
         return new self(
             total: SdkClient::floatValue($data->total),
         );
@@ -218,11 +245,26 @@ final readonly class ListEnvironmentCustomResponseEnvironmentsItemBranchMatcherT
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -273,8 +315,12 @@ class ListEnvironmentCustomResponseEnvironmentsItemBranchMatcher implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "pattern") || $data->pattern === null) {
+            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             pattern: SdkClient::stringValue($data->pattern),
             type: SdkClient::hydrateStringEnumOrString($data->type, ListEnvironmentCustomResponseEnvironmentsItemBranchMatcherTypeEnum::class),
@@ -334,10 +380,18 @@ class ListEnvironmentCustomResponseEnvironmentsItemDomainsItemVerificationItem i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             reason: SdkClient::stringValue($data->reason),

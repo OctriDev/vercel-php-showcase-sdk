@@ -15,11 +15,26 @@ final readonly class FilterProjectEnvsResponseVariant0VisibilityEnum implements 
     public const CONFIG = "config";
     public const SECRET = "secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class FilterProjectEnvsResponseVariant0 implements FilterProjectEnvsResponse, \JsonSerializable
@@ -215,10 +230,18 @@ class FilterProjectEnvsResponseVariant0 implements FilterProjectEnvsResponse, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) { throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) {
+            throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             securityIssues: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, FilterProjectEnvsResponseVariant0SecurityIssuesItemEnum::class), SdkClient::arrayValue($data->securityIssues))),
@@ -287,8 +310,12 @@ class FilterProjectEnvsResponseVariant1EnvsItemContentHintRedisUrl implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, FilterProjectEnvsResponseVariant1EnvsItemContentHintRedisUrlTypeEnum::class),
@@ -338,8 +365,12 @@ class FilterProjectEnvsResponseVariant1EnvsItemContentHintRedisRestApiUrl implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, FilterProjectEnvsResponseVariant1EnvsItemContentHintRedisRestApiUrlTypeEnum::class),

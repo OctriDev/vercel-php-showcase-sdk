@@ -44,8 +44,12 @@ class RemoveProjectEnvResponseVariant1ContentHintPostgresUrlNoSsl implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseVariant1ContentHintPostgresUrlNoSslTypeEnum::class),
@@ -113,11 +117,21 @@ class RemoveProjectEnvResponseVariant1ContentHintIntegrationStoreSecret implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
-        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) { throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null"); }
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
+            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) {
+            throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null");
+        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -170,8 +184,12 @@ class RemoveProjectEnvResponseVariant1ContentHintFlagsConnectionString implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseVariant1ContentHintFlagsConnectionStringTypeEnum::class),
@@ -183,11 +201,26 @@ final readonly class RemoveProjectEnvResponseVariant1InternalContentHintTypeEnum
 {
     public const FLAGS_SECRET = "flags-secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -234,8 +267,12 @@ class RemoveProjectEnvResponseVariant1InternalContentHint implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "encryptedValue") || $data->encryptedValue === null) { throw new SdkValidationError("encryptedValue", 'required', "Required property 'encryptedValue' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "encryptedValue") || $data->encryptedValue === null) {
+            throw new SdkValidationError("encryptedValue", 'required', "Required property 'encryptedValue' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             encryptedValue: SdkClient::stringValue($data->encryptedValue),
             type: SdkClient::hydrateStringEnumOrString($data->type, RemoveProjectEnvResponseVariant1InternalContentHintTypeEnum::class),
@@ -249,11 +286,26 @@ final readonly class RemoveProjectEnvResponseVariant1TargetItemEnum implements S
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class RemoveProjectEnvResponseVariant1TargetEnum implements SdkOpenEnum
@@ -262,11 +314,26 @@ final readonly class RemoveProjectEnvResponseVariant1TargetEnum implements SdkOp
     public const PREVIEW = "preview";
     public const DEVELOPMENT = "development";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class RemoveProjectEnvResponseVariant1TypeEnum implements SdkOpenEnum
@@ -277,11 +344,26 @@ final readonly class RemoveProjectEnvResponseVariant1TypeEnum implements SdkOpen
     public const SENSITIVE = "sensitive";
     public const SYSTEM = "system";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -292,9 +374,24 @@ final readonly class RemoveProjectEnvResponseVariant1VisibilityEnum implements S
     public const CONFIG = "config";
     public const SECRET = "secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

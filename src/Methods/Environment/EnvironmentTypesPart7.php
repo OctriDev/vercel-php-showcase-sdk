@@ -13,11 +13,26 @@ final readonly class DeleteSharedEnvVariableResponseFailedItemErrorTargetEnum im
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class DeleteSharedEnvVariableResponseFailedItemErrorValueItemEnum implements SdkOpenEnum
@@ -26,11 +41,26 @@ final readonly class DeleteSharedEnvVariableResponseFailedItemErrorValueItemEnum
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class DeleteSharedEnvVariableResponseFailedItemError implements \JsonSerializable
@@ -142,8 +172,12 @@ class DeleteSharedEnvVariableResponseFailedItemError implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -191,7 +225,9 @@ class DeleteSharedEnvVariableResponseFailedItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
+        if (!property_exists($data, "error") || $data->error === null) {
+            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
+        }
         return new self(
             error: SdkClient::hydrateClass($data->error, DeleteSharedEnvVariableResponseFailedItemError::class),
         );
@@ -235,8 +271,12 @@ class DeleteSharedEnvVariableResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deleted") || $data->deleted === null) { throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null"); }
-        if (!property_exists($data, "failed") || $data->failed === null) { throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null"); }
+        if (!property_exists($data, "deleted") || $data->deleted === null) {
+            throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null");
+        }
+        if (!property_exists($data, "failed") || $data->failed === null) {
+            throw new SdkValidationError("failed", 'required', "Required property 'failed' is missing or null");
+        }
         return new self(
             deleted: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->deleted))),
             failed: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, DeleteSharedEnvVariableResponseFailedItem::class), SdkClient::arrayValue($data->failed))),
@@ -253,11 +293,26 @@ final readonly class GetSharedEnvVarResponseTargetItemEnum implements SdkOpenEnu
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -270,9 +325,24 @@ final readonly class GetSharedEnvVarResponseTypeEnum implements SdkOpenEnum
     public const SENSITIVE = "sensitive";
     public const SYSTEM = "system";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

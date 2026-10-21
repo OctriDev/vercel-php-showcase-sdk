@@ -85,12 +85,24 @@ class RevokeKmsSigningKeyResponsePoliciesItemVariant0 implements RevokeKmsSignin
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "teamId") || $data->teamId === null) {
+            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::stringValue($data->createdAt),
             environments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environments))),
@@ -165,10 +177,18 @@ class RevokeKmsSigningKeyResponsePoliciesItemVariant1 implements RevokeKmsSignin
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "clientId") || $data->clientId === null) { throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "clientId") || $data->clientId === null) {
+            throw new SdkValidationError("clientId", 'required', "Required property 'clientId' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             clientId: SdkClient::stringValue($data->clientId),
             createdAt: SdkClient::stringValue($data->createdAt),

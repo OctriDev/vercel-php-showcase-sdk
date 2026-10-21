@@ -45,7 +45,9 @@ class ConnectTriggerConfiguration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
         );
@@ -126,7 +128,9 @@ class ConnectTriggerDestination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             branch: (property_exists($data, "branch") && $data->branch !== null ? SdkClient::stringValue($data->branch) : SdkNotGiven::Value),
@@ -144,11 +148,26 @@ final readonly class ConnectUpdateConnectorRequestDataTypeOauthServerConfigJwksK
     public const SIG = "sig";
     public const ENC = "enc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -243,7 +262,9 @@ class ConnectUpdateConnectorRequestDataTypeOauthServerConfigJwksKeysItem impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kty") || $data->kty === null) { throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null"); }
+        if (!property_exists($data, "kty") || $data->kty === null) {
+            throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null");
+        }
         return new self(
             kty: SdkClient::stringValue($data->kty),
             kid: (property_exists($data, "kid") && $data->kid !== null ? SdkClient::stringValue($data->kid) : SdkNotGiven::Value),
@@ -299,7 +320,9 @@ class ConnectUpdateConnectorRequestDataTypeOauthServerConfigJwks implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
+        if (!property_exists($data, "keys") || $data->keys === null) {
+            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
+        }
         return new self(
             keys: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectUpdateConnectorRequestDataTypeOauthServerConfigJwksKeysItem::class), SdkClient::arrayValue($data->keys))),
             additionalProperties: array_diff_key(SdkClient::stringMapValue($data), array_flip(["keys"])),

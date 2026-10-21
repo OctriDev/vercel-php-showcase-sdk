@@ -38,7 +38,9 @@ class GetVersionsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "versions") || $data->versions === null) { throw new SdkValidationError("versions", 'required', "Required property 'versions' is missing or null"); }
+        if (!property_exists($data, "versions") || $data->versions === null) {
+            throw new SdkValidationError("versions", 'required', "Required property 'versions' is missing or null");
+        }
         return new self(
             versions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetVersionsResponseVersionsItem::class), SdkClient::arrayValue($data->versions))),
         );
@@ -162,10 +164,18 @@ class UpdateVersionResponseVersion implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
+            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
+        }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -211,7 +221,9 @@ class UpdateVersionResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             version: SdkClient::hydrateClass($data->version, UpdateVersionResponseVersion::class),
         );

@@ -44,8 +44,12 @@ class GetDeploymentResponseVariant1LambdasItemOutputItem implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionName") || $data->functionName === null) { throw new SdkValidationError("functionName", 'required', "Required property 'functionName' is missing or null"); }
-        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
+        if (!property_exists($data, "functionName") || $data->functionName === null) {
+            throw new SdkValidationError("functionName", 'required', "Required property 'functionName' is missing or null");
+        }
+        if (!property_exists($data, "path") || $data->path === null) {
+            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
+        }
         return new self(
             functionName: SdkClient::stringValue($data->functionName),
             path: SdkClient::stringValue($data->path),
@@ -125,8 +129,12 @@ class GetDeploymentResponseVariant1LambdasItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "output") || $data->output === null) {
+            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             output: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetDeploymentResponseVariant1LambdasItemOutputItem::class), SdkClient::arrayValue($data->output))),
@@ -147,11 +155,26 @@ final readonly class GetDeploymentResponseVariant1ManualProvisioningStateEnum im
     public const PENDING = "PENDING";
     public const TIMEOUT = "TIMEOUT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -204,7 +227,9 @@ class GetDeploymentResponseVariant1ManualProvisioning implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
         return new self(
             state: SdkClient::hydrateStringEnumOrString($data->state, GetDeploymentResponseVariant1ManualProvisioningStateEnum::class),
             completedAt: (property_exists($data, "completedAt") && $data->completedAt !== null ? SdkClient::floatValue($data->completedAt) : SdkNotGiven::Value),
@@ -277,8 +302,12 @@ class GetDeploymentResponseVariant1MicrofrontendsVariant0 implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultAppProjectName") || $data->defaultAppProjectName === null) { throw new SdkValidationError("defaultAppProjectName", 'required', "Required property 'defaultAppProjectName' is missing or null"); }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "defaultAppProjectName") || $data->defaultAppProjectName === null) {
+            throw new SdkValidationError("defaultAppProjectName", 'required', "Required property 'defaultAppProjectName' is missing or null");
+        }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
+            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
+        }
         return new self(
             defaultAppProjectName: SdkClient::stringValue($data->defaultAppProjectName),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),
@@ -297,9 +326,24 @@ final readonly class GetDeploymentResponseVariant1MicrofrontendsVariant1MfeConfi
     public const SUCCESS = "success";
     public const WAITING_ON_BUILD = "waiting_on_build";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

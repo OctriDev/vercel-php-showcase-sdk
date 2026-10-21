@@ -72,10 +72,18 @@ class UserEventPayloadVariant375 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) { throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null"); }
-        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) { throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null"); }
-        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) { throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) {
+            throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null");
+        }
+        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) {
+            throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null");
+        }
+        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) {
+            throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             githubLogin: SdkClient::stringValue($data->githubLogin),
@@ -170,12 +178,24 @@ class UserEventPayloadVariant376 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "gitlabEmail") || $data->gitlabEmail === null) { throw new SdkValidationError("gitlabEmail", 'required', "Required property 'gitlabEmail' is missing or null"); }
-        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) { throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null"); }
-        if (!property_exists($data, "gitlabName") || $data->gitlabName === null) { throw new SdkValidationError("gitlabName", 'required', "Required property 'gitlabName' is missing or null"); }
-        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) { throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null"); }
-        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) { throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "gitlabEmail") || $data->gitlabEmail === null) {
+            throw new SdkValidationError("gitlabEmail", 'required', "Required property 'gitlabEmail' is missing or null");
+        }
+        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) {
+            throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null");
+        }
+        if (!property_exists($data, "gitlabName") || $data->gitlabName === null) {
+            throw new SdkValidationError("gitlabName", 'required', "Required property 'gitlabName' is missing or null");
+        }
+        if (!property_exists($data, "zeitAccount") || $data->zeitAccount === null) {
+            throw new SdkValidationError("zeitAccount", 'required', "Required property 'zeitAccount' is missing or null");
+        }
+        if (!property_exists($data, "zeitAccountType") || $data->zeitAccountType === null) {
+            throw new SdkValidationError("zeitAccountType", 'required', "Required property 'zeitAccountType' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             gitlabEmail: SdkClient::stringValue($data->gitlabEmail),
@@ -235,8 +255,12 @@ class UserEventPayloadVariant377Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sampleRatePercent")) { throw new SdkValidationError("sampleRatePercent", 'required', "Missing required property 'sampleRatePercent'"); }
-        if (!property_exists($data, "spendLimitInDollars")) { throw new SdkValidationError("spendLimitInDollars", 'required', "Missing required property 'spendLimitInDollars'"); }
+        if (!property_exists($data, "sampleRatePercent")) {
+            throw new SdkValidationError("sampleRatePercent", 'required', "Missing required property 'sampleRatePercent'");
+        }
+        if (!property_exists($data, "spendLimitInDollars")) {
+            throw new SdkValidationError("spendLimitInDollars", 'required', "Missing required property 'spendLimitInDollars'");
+        }
         return new self(
             sampleRatePercent: ($data->sampleRatePercent === null ? null : SdkClient::floatValue($data->sampleRatePercent)),
             spendLimitInDollars: ($data->spendLimitInDollars === null ? null : SdkClient::floatValue($data->spendLimitInDollars)),
@@ -335,9 +359,15 @@ class UserEventPayloadVariant377 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
-        if (!property_exists($data, "sampleRatePercent")) { throw new SdkValidationError("sampleRatePercent", 'required', "Missing required property 'sampleRatePercent'"); }
-        if (!property_exists($data, "spendLimitInDollars")) { throw new SdkValidationError("spendLimitInDollars", 'required', "Missing required property 'spendLimitInDollars'"); }
+        if (!property_exists($data, "previous") || $data->previous === null) {
+            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
+        }
+        if (!property_exists($data, "sampleRatePercent")) {
+            throw new SdkValidationError("sampleRatePercent", 'required', "Missing required property 'sampleRatePercent'");
+        }
+        if (!property_exists($data, "spendLimitInDollars")) {
+            throw new SdkValidationError("spendLimitInDollars", 'required', "Missing required property 'spendLimitInDollars'");
+        }
         return new self(
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant377Previous::class),
             sampleRatePercent: ($data->sampleRatePercent === null ? null : SdkClient::floatValue($data->sampleRatePercent)),

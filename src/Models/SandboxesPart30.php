@@ -369,13 +369,27 @@ class NamedSandbox implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "currentSessionId") || $data->currentSessionId === null) { throw new SdkValidationError("currentSessionId", 'required', "Required property 'currentSessionId' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "persistent") || $data->persistent === null) { throw new SdkValidationError("persistent", 'required', "Required property 'persistent' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "statusUpdatedAt") || $data->statusUpdatedAt === null) { throw new SdkValidationError("statusUpdatedAt", 'required', "Required property 'statusUpdatedAt' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "currentSessionId") || $data->currentSessionId === null) {
+            throw new SdkValidationError("currentSessionId", 'required', "Required property 'currentSessionId' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "persistent") || $data->persistent === null) {
+            throw new SdkValidationError("persistent", 'required', "Required property 'persistent' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "statusUpdatedAt") || $data->statusUpdatedAt === null) {
+            throw new SdkValidationError("statusUpdatedAt", 'required', "Required property 'statusUpdatedAt' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             currentSessionId: SdkClient::stringValue($data->currentSessionId),

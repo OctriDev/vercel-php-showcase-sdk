@@ -46,7 +46,9 @@ class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesAiBots impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesAiBotsActionEnum::class) : SdkNotGiven::Value),
@@ -60,11 +62,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSecurityManagedRule
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesBotFilter implements \JsonSerializable
@@ -106,7 +123,9 @@ class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesBotFilter impl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesBotFilterActionEnum::class) : SdkNotGiven::Value),
@@ -120,11 +139,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSecurityManagedRule
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesOwasp implements \JsonSerializable
@@ -166,7 +200,9 @@ class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesOwasp implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesOwaspActionEnum::class) : SdkNotGiven::Value),
@@ -180,11 +216,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSecurityManagedRule
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesTrafficSources implements \JsonSerializable
@@ -226,7 +277,9 @@ class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesTrafficSources
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesTrafficSourcesActionEnum::class) : SdkNotGiven::Value),
@@ -240,11 +293,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSecurityManagedRule
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesVercelRuleset implements \JsonSerializable
@@ -286,7 +354,9 @@ class ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesVercelRuleset 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, ListProjectsResponseVariant2ProjectsItemSecurityManagedRulesVercelRulesetActionEnum::class) : SdkNotGiven::Value),

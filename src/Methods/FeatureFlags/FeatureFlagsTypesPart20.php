@@ -80,10 +80,18 @@ class ListFlagVersionsResponseVersionsItemDataEnvironmentsValue implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
-        if (!property_exists($data, "fallthrough") || $data->fallthrough === null) { throw new SdkValidationError("fallthrough", 'required', "Required property 'fallthrough' is missing or null"); }
-        if (!property_exists($data, "pausedOutcome") || $data->pausedOutcome === null) { throw new SdkValidationError("pausedOutcome", 'required', "Required property 'pausedOutcome' is missing or null"); }
-        if (!property_exists($data, "rules") || $data->rules === null) { throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
+        if (!property_exists($data, "fallthrough") || $data->fallthrough === null) {
+            throw new SdkValidationError("fallthrough", 'required', "Required property 'fallthrough' is missing or null");
+        }
+        if (!property_exists($data, "pausedOutcome") || $data->pausedOutcome === null) {
+            throw new SdkValidationError("pausedOutcome", 'required', "Required property 'pausedOutcome' is missing or null");
+        }
+        if (!property_exists($data, "rules") || $data->rules === null) {
+            throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             fallthrough: SdkClient::hydrateUnion($data->fallthrough, [ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallthroughVariant::class, ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallthroughSplit::class, ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallthroughRollout::class, ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallthroughExperiment::class], null, []),
@@ -107,11 +115,26 @@ final readonly class ListFlagVersionsResponseVersionsItemDataStateEnum implement
     public const ACTIVE = "active";
     public const ARCHIVED = "archived";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListFlagVersionsResponseVersionsItemDataVariantsItem implements \JsonSerializable
@@ -167,8 +190,12 @@ class ListFlagVersionsResponseVersionsItemDataVariantsItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "value")) {
+            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             value: ($data->value === null ? null : ((is_array($data->value) || is_object($data->value)) ? SdkClient::stringMapValue($data->value) : (is_bool($data->value) ? SdkClient::boolValue($data->value) : (is_float($data->value) || is_int($data->value) ? SdkClient::floatValue($data->value) : SdkClient::stringValue($data->value))))),
@@ -259,10 +286,18 @@ class ListFlagVersionsResponseVersionsItemData implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
-        if (!property_exists($data, "seed") || $data->seed === null) { throw new SdkValidationError("seed", 'required', "Required property 'seed' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "variants") || $data->variants === null) { throw new SdkValidationError("variants", 'required', "Required property 'variants' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) {
+            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
+        }
+        if (!property_exists($data, "seed") || $data->seed === null) {
+            throw new SdkValidationError("seed", 'required', "Required property 'seed' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "variants") || $data->variants === null) {
+            throw new SdkValidationError("variants", 'required', "Required property 'variants' is missing or null");
+        }
         return new self(
             environments: SdkClient::mapValues(SdkClient::stringMapValue($data->environments), static fn($item) => SdkClient::hydrateClass($item, ListFlagVersionsResponseVersionsItemDataEnvironmentsValue::class)),
             seed: SdkClient::floatValue($data->seed),
@@ -313,8 +348,12 @@ class ListFlagVersionsResponseVersionsItemMetadataCreator implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

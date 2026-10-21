@@ -46,7 +46,9 @@ class UpdateProjectCheckResponseSourceVariant1 implements UpdateProjectCheckResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, UpdateProjectCheckResponseSourceVariant1KindEnum::class),
             webhookId: (property_exists($data, "webhookId") && $data->webhookId !== null ? SdkClient::stringValue($data->webhookId) : SdkNotGiven::Value),
@@ -65,11 +67,26 @@ final readonly class UpdateProjectCheckResponseSourceVariant2ProviderEnum implem
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateProjectCheckResponseSourceVariant2 implements UpdateProjectCheckResponseSource, \JsonSerializable
@@ -115,9 +132,15 @@ class UpdateProjectCheckResponseSourceVariant2 implements UpdateProjectCheckResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) { throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) {
+            throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             externalCheckName: SdkClient::stringValue($data->externalCheckName),
             kind: SdkClient::hydrateEnum($data->kind, UpdateProjectCheckResponseSourceVariant2KindEnum::class),

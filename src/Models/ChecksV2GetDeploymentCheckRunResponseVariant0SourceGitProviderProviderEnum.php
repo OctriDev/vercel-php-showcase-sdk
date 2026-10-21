@@ -13,11 +13,26 @@ final readonly class GetDeploymentCheckRunResponseVariant0SourceGitProviderProvi
     public const GITHUB = "github";
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentCheckRunResponseVariant0SourceGitProvider implements \JsonSerializable
@@ -63,9 +78,15 @@ class GetDeploymentCheckRunResponseVariant0SourceGitProvider implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) { throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) {
+            throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             externalCheckName: SdkClient::stringValue($data->externalCheckName),
             kind: SdkClient::hydrateStringEnumOrString($data->kind, GetDeploymentCheckRunResponseVariant0SourceGitProviderKindEnum::class),
@@ -79,22 +100,52 @@ final readonly class GetDeploymentCheckRunResponseVariant0SourceVercelNativeChec
     public const API = "api";
     public const PLATFORM = "platform";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDeploymentCheckRunResponseVariant0SourceVercelNativeCheckSubKindEnum implements SdkOpenEnum
 {
     public const VERCEL_NATIVE_CHECK = "vercel-native-check";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -152,11 +203,26 @@ final readonly class GetDeploymentCheckRunResponseVariant0SourceApiOriginEnum im
 {
     public const API = "api";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum GetDeploymentCheckRunResponseVariant0SourceApiSelectionInvocationKindEnum: string implements SdkWireEnum
@@ -195,7 +261,9 @@ class GetDeploymentCheckRunResponseVariant0SourceApiSelectionInvocation implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, GetDeploymentCheckRunResponseVariant0SourceApiSelectionInvocationKindEnum::class),
         );
@@ -238,7 +306,9 @@ class GetDeploymentCheckRunResponseVariant0SourceApiSelectionDeployment implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, GetDeploymentCheckRunResponseVariant0SourceApiSelectionDeploymentKindEnum::class),
         );
@@ -287,8 +357,12 @@ class GetDeploymentCheckRunResponseVariant0SourceApiSelectionJob implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "job") || $data->job === null) {
+            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             job: SdkClient::stringValue($data->job),
             kind: SdkClient::hydrateEnum($data->kind, GetDeploymentCheckRunResponseVariant0SourceApiSelectionJobKindEnum::class),
@@ -300,11 +374,26 @@ final readonly class GetDeploymentCheckRunResponseVariant0SourceApiSelectionTurb
 {
     public const TURBOREPO = "Turborepo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum GetDeploymentCheckRunResponseVariant0SourceApiSelectionTurborepoKindEnum: string implements SdkWireEnum

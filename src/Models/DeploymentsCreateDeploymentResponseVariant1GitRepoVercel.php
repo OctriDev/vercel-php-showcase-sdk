@@ -80,14 +80,30 @@ class CreateDeploymentResponseVariant1GitRepoVercel implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) { throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "ownerType") || $data->ownerType === null) { throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null"); }
-        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
-        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) {
+            throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "ownerType") || $data->ownerType === null) {
+            throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null");
+        }
+        if (!property_exists($data, "path") || $data->path === null) {
+            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
+        }
+        if (!property_exists($data, "private") || $data->private === null) {
+            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             defaultBranch: SdkClient::stringValue($data->defaultBranch),
             name: SdkClient::stringValue($data->name),
@@ -106,11 +122,26 @@ final readonly class CreateDeploymentResponseVariant1GitRepoCursorOriginOwnerTyp
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum CreateDeploymentResponseVariant1GitRepoCursorOriginTypeEnum: string implements SdkWireEnum
@@ -205,15 +236,33 @@ class CreateDeploymentResponseVariant1GitRepoCursorOrigin implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) { throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
-        if (!property_exists($data, "ownerType") || $data->ownerType === null) { throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null"); }
-        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
-        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) {
+            throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "owner") || $data->owner === null) {
+            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
+        }
+        if (!property_exists($data, "ownerType") || $data->ownerType === null) {
+            throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null");
+        }
+        if (!property_exists($data, "path") || $data->path === null) {
+            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
+        }
+        if (!property_exists($data, "private") || $data->private === null) {
+            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             defaultBranch: SdkClient::stringValue($data->defaultBranch),
             name: SdkClient::stringValue($data->name),
@@ -232,11 +281,26 @@ final readonly class CreateDeploymentResponseVariant1GitSourceGithubTypeEnum imp
 {
     public const GITHUB = "github";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1GitSourceGithub implements \JsonSerializable
@@ -300,8 +364,12 @@ class CreateDeploymentResponseVariant1GitSourceGithub implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             repoId: (is_float($data->repoId) || is_int($data->repoId) ? SdkClient::floatValue($data->repoId) : SdkClient::stringValue($data->repoId)),
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateDeploymentResponseVariant1GitSourceGithubTypeEnum::class),
@@ -316,9 +384,24 @@ final readonly class CreateDeploymentResponseVariant1GitSourceGithub2TypeEnum im
 {
     public const GITHUB = "github";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

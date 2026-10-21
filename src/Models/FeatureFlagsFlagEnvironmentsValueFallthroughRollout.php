@@ -82,13 +82,27 @@ class FlagEnvironmentsValueFallthroughRollout implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "base") || $data->base === null) { throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null"); }
-        if (!property_exists($data, "defaultVariantId") || $data->defaultVariantId === null) { throw new SdkValidationError("defaultVariantId", 'required', "Required property 'defaultVariantId' is missing or null"); }
-        if (!property_exists($data, "rollFromVariantId") || $data->rollFromVariantId === null) { throw new SdkValidationError("rollFromVariantId", 'required', "Required property 'rollFromVariantId' is missing or null"); }
-        if (!property_exists($data, "rollToVariantId") || $data->rollToVariantId === null) { throw new SdkValidationError("rollToVariantId", 'required', "Required property 'rollToVariantId' is missing or null"); }
-        if (!property_exists($data, "slots") || $data->slots === null) { throw new SdkValidationError("slots", 'required', "Required property 'slots' is missing or null"); }
-        if (!property_exists($data, "startTimestamp") || $data->startTimestamp === null) { throw new SdkValidationError("startTimestamp", 'required', "Required property 'startTimestamp' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "base") || $data->base === null) {
+            throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null");
+        }
+        if (!property_exists($data, "defaultVariantId") || $data->defaultVariantId === null) {
+            throw new SdkValidationError("defaultVariantId", 'required', "Required property 'defaultVariantId' is missing or null");
+        }
+        if (!property_exists($data, "rollFromVariantId") || $data->rollFromVariantId === null) {
+            throw new SdkValidationError("rollFromVariantId", 'required', "Required property 'rollFromVariantId' is missing or null");
+        }
+        if (!property_exists($data, "rollToVariantId") || $data->rollToVariantId === null) {
+            throw new SdkValidationError("rollToVariantId", 'required', "Required property 'rollToVariantId' is missing or null");
+        }
+        if (!property_exists($data, "slots") || $data->slots === null) {
+            throw new SdkValidationError("slots", 'required', "Required property 'slots' is missing or null");
+        }
+        if (!property_exists($data, "startTimestamp") || $data->startTimestamp === null) {
+            throw new SdkValidationError("startTimestamp", 'required', "Required property 'startTimestamp' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             base: SdkClient::hydrateClass($data->base, FlagEnvironmentsValueFallthroughRolloutBase::class),
             defaultVariantId: SdkClient::stringValue($data->defaultVariantId),
@@ -138,7 +152,9 @@ class FlagEnvironmentsValueFallthroughExperiment implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, FlagEnvironmentsValueFallthroughExperimentTypeEnum::class),
         );
@@ -149,11 +165,26 @@ final readonly class FlagEnvironmentsValuePausedOutcomeTypeEnum implements SdkOp
 {
     public const VARIANT = "variant";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class FlagEnvironmentsValuePausedOutcome implements \JsonSerializable
@@ -193,8 +224,12 @@ class FlagEnvironmentsValuePausedOutcome implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "variantId") || $data->variantId === null) { throw new SdkValidationError("variantId", 'required', "Required property 'variantId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "variantId") || $data->variantId === null) {
+            throw new SdkValidationError("variantId", 'required', "Required property 'variantId' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, FlagEnvironmentsValuePausedOutcomeTypeEnum::class),
             variantId: SdkClient::stringValue($data->variantId),
@@ -239,8 +274,12 @@ class FlagEnvironmentsValueReuse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
-        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
+        if (!property_exists($data, "environment") || $data->environment === null) {
+            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
+        }
         return new self(
             active: SdkClient::boolValue($data->active),
             environment: SdkClient::stringValue($data->environment),
@@ -274,11 +313,26 @@ final readonly class FlagEnvironmentsValueRulesItemConditionsItemCmpEnum impleme
     public const REGEX_2 = "regex";
     public const STARTSWITH_2 = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class FlagEnvironmentsValueRulesItemConditionsItemCmpOptions implements \JsonSerializable

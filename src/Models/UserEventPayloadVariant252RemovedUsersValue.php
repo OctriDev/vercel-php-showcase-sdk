@@ -60,8 +60,12 @@ class UserEventPayloadVariant252RemovedUsersValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "confirmed") || $data->confirmed === null) { throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "confirmed") || $data->confirmed === null) {
+            throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
         return new self(
             confirmed: SdkClient::boolValue($data->confirmed),
             role: SdkClient::hydrateStringEnumOrString($data->role, UserEventPayloadVariant252RemovedUsersValueRoleEnum::class),
@@ -238,7 +242,9 @@ class UserEventPayloadVariant252 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "plan") || $data->plan === null) { throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null"); }
+        if (!property_exists($data, "plan") || $data->plan === null) {
+            throw new SdkValidationError("plan", 'required', "Required property 'plan' is missing or null");
+        }
         return new self(
             plan: SdkClient::stringValue($data->plan),
             automated: (property_exists($data, "automated") && $data->automated !== null ? SdkClient::boolValue($data->automated) : SdkNotGiven::Value),
@@ -278,9 +284,24 @@ final readonly class UserEventPayloadVariant253RemovedUsersValueJoinedFromOrigin
     public const SAML = "saml";
     public const TEAMS = "teams";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

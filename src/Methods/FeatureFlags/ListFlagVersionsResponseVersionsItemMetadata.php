@@ -131,12 +131,24 @@ class ListFlagVersionsResponseVersionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "changedEnvironments") || $data->changedEnvironments === null) { throw new SdkValidationError("changedEnvironments", 'required', "Required property 'changedEnvironments' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "flagId") || $data->flagId === null) { throw new SdkValidationError("flagId", 'required', "Required property 'flagId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "revision") || $data->revision === null) { throw new SdkValidationError("revision", 'required', "Required property 'revision' is missing or null"); }
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "changedEnvironments") || $data->changedEnvironments === null) {
+            throw new SdkValidationError("changedEnvironments", 'required', "Required property 'changedEnvironments' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "flagId") || $data->flagId === null) {
+            throw new SdkValidationError("flagId", 'required', "Required property 'flagId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "revision") || $data->revision === null) {
+            throw new SdkValidationError("revision", 'required', "Required property 'revision' is missing or null");
+        }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
         return new self(
             changedEnvironments: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->changedEnvironments))),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -188,8 +200,12 @@ class ListFlagVersionsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
-        if (!property_exists($data, "versions") || $data->versions === null) { throw new SdkValidationError("versions", 'required', "Required property 'versions' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
+        if (!property_exists($data, "versions") || $data->versions === null) {
+            throw new SdkValidationError("versions", 'required', "Required property 'versions' is missing or null");
+        }
         return new self(
             pagination: SdkClient::stringMapValue($data->pagination),
             versions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListFlagVersionsResponseVersionsItem::class), SdkClient::arrayValue($data->versions))),
@@ -234,8 +250,12 @@ class GetFlagSettingsResponseEntitiesItemAttributesItemLabelsItem implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             label: SdkClient::stringValue($data->label),
             value: SdkClient::stringValue($data->value),
@@ -288,8 +308,12 @@ class GetFlagSettingsResponseEntitiesItemAttributesItem implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::stringValue($data->type),
@@ -341,9 +365,15 @@ class GetFlagSettingsResponseEntitiesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attributes") || $data->attributes === null) { throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "attributes") || $data->attributes === null) {
+            throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
         return new self(
             attributes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetFlagSettingsResponseEntitiesItemAttributesItem::class), SdkClient::arrayValue($data->attributes))),
             kind: SdkClient::stringValue($data->kind),

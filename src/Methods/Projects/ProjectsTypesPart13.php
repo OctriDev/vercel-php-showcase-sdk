@@ -16,11 +16,26 @@ final readonly class ListProjectsResponseItemResourceConfigElasticBuildMachineLa
     public const STANDARD = "standard";
     public const TURBO = "turbo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -73,9 +88,15 @@ class ListProjectsResponseItemResourceConfigElasticBuildMachine implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cores") || $data->cores === null) { throw new SdkValidationError("cores", 'required', "Required property 'cores' is missing or null"); }
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
-        if (!property_exists($data, "memory") || $data->memory === null) { throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null"); }
+        if (!property_exists($data, "cores") || $data->cores === null) {
+            throw new SdkValidationError("cores", 'required', "Required property 'cores' is missing or null");
+        }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
+        if (!property_exists($data, "memory") || $data->memory === null) {
+            throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null");
+        }
         return new self(
             cores: SdkClient::floatValue($data->cores),
             label: SdkClient::hydrateStringEnumOrString($data->label, ListProjectsResponseItemResourceConfigElasticBuildMachineLabelEnum::class),
@@ -231,7 +252,9 @@ class ListProjectsResponseItemResourceConfig implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) { throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null"); }
+        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) {
+            throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null");
+        }
         return new self(
             functionDefaultRegions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions))),
             buildMachineElasticLastUpdated: (property_exists($data, "buildMachineElasticLastUpdated") && $data->buildMachineElasticLastUpdated !== null ? SdkClient::floatValue($data->buildMachineElasticLastUpdated) : SdkNotGiven::Value),
@@ -260,11 +283,26 @@ final readonly class ListProjectsResponseItemRollingReleaseGateActionEnum implem
     public const PAUSE = "pause";
     public const ROLLBACK = "rollback";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -274,9 +312,24 @@ final readonly class ListProjectsResponseItemRollingReleaseGateChecksItemTypeEnu
 {
     public const ERROR_RATE_5XX = "error-rate-5xx";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

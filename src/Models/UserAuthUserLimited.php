@@ -129,13 +129,27 @@ class AuthUserLimited implements GetAuthUserResponseUser, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar")) { throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'"); }
-        if (!property_exists($data, "defaultTeamId")) { throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "limited") || $data->limited === null) { throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null"); }
-        if (!property_exists($data, "name")) { throw new SdkValidationError("name", 'required', "Missing required property 'name'"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "avatar")) {
+            throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'");
+        }
+        if (!property_exists($data, "defaultTeamId")) {
+            throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "limited") || $data->limited === null) {
+            throw new SdkValidationError("limited", 'required', "Required property 'limited' is missing or null");
+        }
+        if (!property_exists($data, "name")) {
+            throw new SdkValidationError("name", 'required', "Missing required property 'name'");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             avatar: ($data->avatar === null ? null : SdkClient::stringValue($data->avatar)),
             defaultTeamId: ($data->defaultTeamId === null ? null : SdkClient::stringValue($data->defaultTeamId)),

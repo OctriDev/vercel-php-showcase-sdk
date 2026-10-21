@@ -74,9 +74,15 @@ class CreateDeploymentResponseVariant1GitSourceGithub2 implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             org: SdkClient::stringValue($data->org),
             repo: SdkClient::stringValue($data->repo),
@@ -92,11 +98,26 @@ final readonly class CreateDeploymentResponseVariant1GitSourceGithubCustomHostTy
 {
     public const GITHUB_CUSTOM_HOST = "github-custom-host";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1GitSourceGithubCustomHost implements \JsonSerializable
@@ -166,9 +187,15 @@ class CreateDeploymentResponseVariant1GitSourceGithubCustomHost implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "host") || $data->host === null) { throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "host") || $data->host === null) {
+            throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             host: SdkClient::stringValue($data->host),
             repoId: (is_float($data->repoId) || is_int($data->repoId) ? SdkClient::floatValue($data->repoId) : SdkClient::stringValue($data->repoId)),
@@ -184,11 +211,26 @@ final readonly class CreateDeploymentResponseVariant1GitSourceGithubCustomHost2T
 {
     public const GITHUB_CUSTOM_HOST = "github-custom-host";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1GitSourceGithubCustomHost2 implements \JsonSerializable
@@ -264,10 +306,18 @@ class CreateDeploymentResponseVariant1GitSourceGithubCustomHost2 implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "host") || $data->host === null) { throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null"); }
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "host") || $data->host === null) {
+            throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null");
+        }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             host: SdkClient::stringValue($data->host),
             org: SdkClient::stringValue($data->org),
@@ -284,9 +334,24 @@ final readonly class CreateDeploymentResponseVariant1GitSourceGithubLimitedTypeE
 {
     public const GITHUB_LIMITED = "github-limited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -55,8 +55,12 @@ class UserEventPayloadVariant251PreviousPassport implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectorId") || $data->connectorId === null) { throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null"); }
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "connectorId") || $data->connectorId === null) {
+            throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null");
+        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             connectorId: SdkClient::stringValue($data->connectorId),
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UserEventPayloadVariant251PreviousPassportDeploymentTypeEnum::class),
@@ -155,8 +159,12 @@ class UserEventPayloadVariant251 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
-        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "next") || $data->next === null) {
+            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
+        }
+        if (!property_exists($data, "previous") || $data->previous === null) {
+            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
+        }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant251Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant251Previous::class),
@@ -186,11 +194,26 @@ final readonly class UserEventPayloadVariant252RemovedUsersValueJoinedFromOrigin
     public const SAML = "saml";
     public const TEAMS = "teams";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant252RemovedUsersValueJoinedFrom implements \JsonSerializable
@@ -304,7 +327,9 @@ class UserEventPayloadVariant252RemovedUsersValueJoinedFrom implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, UserEventPayloadVariant252RemovedUsersValueJoinedFromOriginEnum::class),
             commitId: (property_exists($data, "commitId") && $data->commitId !== null ? SdkClient::stringValue($data->commitId) : SdkNotGiven::Value),
@@ -332,9 +357,24 @@ final readonly class UserEventPayloadVariant252RemovedUsersValueRoleEnum impleme
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

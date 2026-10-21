@@ -17,11 +17,26 @@ final readonly class UserEventPayloadVariant347SsoProtectionVariant0DeploymentTy
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -86,7 +101,9 @@ class UserEventPayloadVariant347SsoProtectionVariant0 implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UserEventPayloadVariant347SsoProtectionVariant0DeploymentTypeEnum::class),
             april2026SecurityIncidentMigrationAppliedFrom: (property_exists($data, "april2026SecurityIncidentMigrationAppliedFrom") ? ($data->april2026SecurityIncidentMigrationAppliedFrom === null ? null : SdkClient::hydrateStringEnumOrString($data->april2026SecurityIncidentMigrationAppliedFrom, UserEventPayloadVariant347SsoProtectionVariant0April2026SecurityIncidentMigrationAppliedFromEnum::class)) : SdkNotGiven::Value),
@@ -105,11 +122,26 @@ final readonly class UserEventPayloadVariant347SsoProtectionEnum implements SdkO
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant347 implements UserEventPayload, \JsonSerializable
@@ -181,8 +213,12 @@ class UserEventPayloadVariant347 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "oldSsoProtection")) { throw new SdkValidationError("oldSsoProtection", 'required', "Missing required property 'oldSsoProtection'"); }
-        if (!property_exists($data, "ssoProtection")) { throw new SdkValidationError("ssoProtection", 'required', "Missing required property 'ssoProtection'"); }
+        if (!property_exists($data, "oldSsoProtection")) {
+            throw new SdkValidationError("oldSsoProtection", 'required', "Missing required property 'oldSsoProtection'");
+        }
+        if (!property_exists($data, "ssoProtection")) {
+            throw new SdkValidationError("ssoProtection", 'required', "Missing required property 'ssoProtection'");
+        }
         return new self(
             oldSsoProtection: ($data->oldSsoProtection === null ? null : (is_object($data->oldSsoProtection) ? SdkClient::hydrateClass($data->oldSsoProtection, UserEventPayloadVariant347OldSsoProtectionVariant0::class) : (is_string($data->oldSsoProtection) ? SdkClient::hydrateStringEnumOrString($data->oldSsoProtection, UserEventPayloadVariant347OldSsoProtectionEnum::class) : SdkClient::hydrateClass($data->oldSsoProtection, UserEventPayloadVariant347OldSsoProtectionVariant0::class)))),
             ssoProtection: ($data->ssoProtection === null ? null : (is_object($data->ssoProtection) ? SdkClient::hydrateClass($data->ssoProtection, UserEventPayloadVariant347SsoProtectionVariant0::class) : (is_string($data->ssoProtection) ? SdkClient::hydrateStringEnumOrString($data->ssoProtection, UserEventPayloadVariant347SsoProtectionEnum::class) : SdkClient::hydrateClass($data->ssoProtection, UserEventPayloadVariant347SsoProtectionVariant0::class)))),
@@ -266,7 +302,9 @@ class UserEventPayloadVariant348NextProjectStaticIps implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             buildRegion: (property_exists($data, "buildRegion") && $data->buildRegion !== null ? SdkClient::stringValue($data->buildRegion) : SdkNotGiven::Value),
@@ -326,7 +364,9 @@ class UserEventPayloadVariant348NextProject implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "staticIps") || $data->staticIps === null) { throw new SdkValidationError("staticIps", 'required', "Required property 'staticIps' is missing or null"); }
+        if (!property_exists($data, "staticIps") || $data->staticIps === null) {
+            throw new SdkValidationError("staticIps", 'required', "Required property 'staticIps' is missing or null");
+        }
         return new self(
             staticIps: SdkClient::hydrateClass($data->staticIps, UserEventPayloadVariant348NextProjectStaticIps::class),
             id: (property_exists($data, "id") && $data->id !== null ? SdkClient::stringValue($data->id) : SdkNotGiven::Value),

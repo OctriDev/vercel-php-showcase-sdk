@@ -64,8 +64,12 @@ class ConnectCreateConnectorRequestRequestDataTypePhoton implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectSecret") || $data->projectSecret === null) { throw new SdkValidationError("projectSecret", 'required', "Required property 'projectSecret' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectSecret") || $data->projectSecret === null) {
+            throw new SdkValidationError("projectSecret", 'required', "Required property 'projectSecret' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectSecret: SdkClient::stringValue($data->projectSecret),
@@ -328,7 +332,9 @@ class ConnectCreateConnectorRequestRequest implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
         return new self(
             data: ((is_array($data->data) || is_object($data->data)) ? SdkClient::hydrateObjectUnionOrMap($data->data, static fn($value) => SdkClient::hydrateUnion($value, [ConnectCreateConnectorRequestRequestDataTypeOauth::class, ConnectCreateConnectorRequestRequestDataTypeApiKey::class, ConnectCreateConnectorRequestRequestDataTypeGithub::class, ConnectCreateConnectorRequestRequestDataTypeLinear::class, ConnectCreateConnectorRequestRequestDataTypeLinq::class, ConnectCreateConnectorRequestRequestDataTypeSalesforce::class, ConnectCreateConnectorRequestRequestDataTypeSendblue::class, ConnectCreateConnectorRequestRequestDataTypeSlack::class, ConnectCreateConnectorRequestRequestDataTypeSnowflake::class, ConnectCreateConnectorRequestRequestDataTypeSnowflakeWif::class, ConnectCreateConnectorRequestRequestDataTypePhoton::class], null, []), static fn($value) => SdkClient::stringMapValue($value)) : SdkClient::hydrateObjectUnionOrMap($data->data, static fn($value) => SdkClient::hydrateUnion($value, [ConnectCreateConnectorRequestRequestDataTypeOauth::class, ConnectCreateConnectorRequestRequestDataTypeApiKey::class, ConnectCreateConnectorRequestRequestDataTypeGithub::class, ConnectCreateConnectorRequestRequestDataTypeLinear::class, ConnectCreateConnectorRequestRequestDataTypeLinq::class, ConnectCreateConnectorRequestRequestDataTypeSalesforce::class, ConnectCreateConnectorRequestRequestDataTypeSendblue::class, ConnectCreateConnectorRequestRequestDataTypeSlack::class, ConnectCreateConnectorRequestRequestDataTypeSnowflake::class, ConnectCreateConnectorRequestRequestDataTypeSnowflakeWif::class, ConnectCreateConnectorRequestRequestDataTypePhoton::class], null, []), static fn($value) => SdkClient::stringMapValue($value))),
             icon: (property_exists($data, "icon") && $data->icon !== null ? SdkClient::stringValue($data->icon) : SdkNotGiven::Value),

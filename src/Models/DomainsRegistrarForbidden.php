@@ -65,9 +65,15 @@ class Forbidden implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             status: SdkClient::intValue($data->status),
             code: SdkClient::hydrateEnum($data->code, ForbiddenCodeEnum::class),
@@ -124,8 +130,12 @@ class HttpApiDecodeError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issues") || $data->issues === null) { throw new SdkValidationError("issues", 'required', "Required property 'issues' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "issues") || $data->issues === null) {
+            throw new SdkValidationError("issues", 'required', "Required property 'issues' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             issues: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, Issue::class), SdkClient::arrayValue($data->issues))),
             message: SdkClient::stringValue($data->message),
@@ -140,11 +150,26 @@ final readonly class InternalServerErrorCodeEnum implements SdkOpenEnum
 {
     public const INTERNAL_SERVER_ERROR = "internal_server_error";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -205,9 +230,15 @@ class InternalServerError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             status: SdkClient::intValue($data->status),
             code: SdkClient::hydrateStringEnumOrString($data->code, InternalServerErrorCodeEnum::class),
@@ -223,11 +254,26 @@ final readonly class InvalidAdditionalContactInfoCodeEnum implements SdkOpenEnum
 {
     public const INVALID_ADDITIONAL_CONTACT_INFO = "invalid_additional_contact_info";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -288,9 +334,15 @@ class InvalidAdditionalContactInfo implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             status: SdkClient::intValue($data->status),
             code: SdkClient::hydrateStringEnumOrString($data->code, InvalidAdditionalContactInfoCodeEnum::class),
@@ -306,9 +358,24 @@ final readonly class IssuePathItemSymbolTagEnum implements SdkOpenEnum
 {
     public const SYMBOL = "symbol";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

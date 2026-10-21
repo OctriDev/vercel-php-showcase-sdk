@@ -44,8 +44,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsPhp implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsPhpActionEnum::class),
             active: SdkClient::boolValue($data->active),
@@ -58,11 +62,26 @@ final readonly class GetSecurityFirewallConfigResponseVersionsItemCrsRceActionEn
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseVersionsItemCrsRce implements \JsonSerializable
@@ -102,8 +121,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsRce implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsRceActionEnum::class),
             active: SdkClient::boolValue($data->active),
@@ -116,11 +139,26 @@ final readonly class GetSecurityFirewallConfigResponseVersionsItemCrsRfiActionEn
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseVersionsItemCrsRfi implements \JsonSerializable
@@ -160,8 +198,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsRfi implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsRfiActionEnum::class),
             active: SdkClient::boolValue($data->active),
@@ -174,11 +216,26 @@ final readonly class GetSecurityFirewallConfigResponseVersionsItemCrsSdActionEnu
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseVersionsItemCrsSd implements \JsonSerializable
@@ -218,8 +275,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsSd implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsSdActionEnum::class),
             active: SdkClient::boolValue($data->active),
@@ -232,11 +293,26 @@ final readonly class GetSecurityFirewallConfigResponseVersionsItemCrsSfActionEnu
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseVersionsItemCrsSf implements \JsonSerializable
@@ -276,8 +352,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsSf implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsSfActionEnum::class),
             active: SdkClient::boolValue($data->active),
@@ -290,11 +370,26 @@ final readonly class GetSecurityFirewallConfigResponseVersionsItemCrsSqliActionE
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetSecurityFirewallConfigResponseVersionsItemCrsSqli implements \JsonSerializable
@@ -334,8 +429,12 @@ class GetSecurityFirewallConfigResponseVersionsItemCrsSqli implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetSecurityFirewallConfigResponseVersionsItemCrsSqliActionEnum::class),
             active: SdkClient::boolValue($data->active),

@@ -89,9 +89,15 @@ class ListEventType implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "categories") || $data->categories === null) { throw new SdkValidationError("categories", 'required', "Required property 'categories' is missing or null"); }
-        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "categories") || $data->categories === null) {
+            throw new SdkValidationError("categories", 'required', "Required property 'categories' is missing or null");
+        }
+        if (!property_exists($data, "description") || $data->description === null) {
+            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             categories: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, ListEventTypeCategoriesItemEnum::class), SdkClient::arrayValue($data->categories))),
             description: SdkClient::stringValue($data->description),
@@ -131,11 +137,26 @@ final readonly class ListEventTypesResponseCategoriesItemNameEnum implements Sdk
     public const VERCEL_APP = "vercel-app";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -186,8 +207,12 @@ class ListEventTypesResponseCategoriesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) {
+            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             label: SdkClient::stringValue($data->label),
             name: SdkClient::hydrateStringEnumOrString($data->name, ListEventTypesResponseCategoriesItemNameEnum::class),
@@ -243,8 +268,12 @@ class ListEventTypesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "categories") || $data->categories === null) { throw new SdkValidationError("categories", 'required', "Required property 'categories' is missing or null"); }
-        if (!property_exists($data, "types") || $data->types === null) { throw new SdkValidationError("types", 'required', "Required property 'types' is missing or null"); }
+        if (!property_exists($data, "categories") || $data->categories === null) {
+            throw new SdkValidationError("categories", 'required', "Required property 'categories' is missing or null");
+        }
+        if (!property_exists($data, "types") || $data->types === null) {
+            throw new SdkValidationError("types", 'required', "Required property 'types' is missing or null");
+        }
         return new self(
             categories: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListEventTypesResponseCategoriesItem::class), SdkClient::arrayValue($data->categories))),
             types: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListEventType::class), SdkClient::arrayValue($data->types))),
@@ -281,11 +310,26 @@ final readonly class UserEventCategoriesItemEnum implements SdkOpenEnum
     public const VERCEL_APP = "vercel-app";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -317,9 +361,24 @@ final readonly class UserEventEntitiesItemTypeEnum implements SdkOpenEnum
     public const SYSTEM = "system";
     public const TARGET = "target";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

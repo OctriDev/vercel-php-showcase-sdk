@@ -183,10 +183,18 @@ class TeamLimitedMembership implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "confirmed") || $data->confirmed === null) { throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null"); }
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "confirmed") || $data->confirmed === null) {
+            throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null");
+        }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
         return new self(
             confirmed: SdkClient::boolValue($data->confirmed),
             created: SdkClient::floatValue($data->created),
@@ -213,11 +221,26 @@ final readonly class TeamLimitedSamlConnectionSyncStateEnum implements SdkOpenEn
     public const ACTIVE = "ACTIVE";
     public const SETUP = "SETUP";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -324,10 +347,18 @@ class TeamLimitedSamlConnection implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectedAt") || $data->connectedAt === null) { throw new SdkValidationError("connectedAt", 'required', "Required property 'connectedAt' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "connectedAt") || $data->connectedAt === null) {
+            throw new SdkValidationError("connectedAt", 'required', "Required property 'connectedAt' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             connectedAt: SdkClient::floatValue($data->connectedAt),
             state: SdkClient::stringValue($data->state),
@@ -348,9 +379,24 @@ final readonly class TeamLimitedSamlDirectorySyncStateEnum implements SdkOpenEnu
     public const ACTIVE = "ACTIVE";
     public const SETUP = "SETUP";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

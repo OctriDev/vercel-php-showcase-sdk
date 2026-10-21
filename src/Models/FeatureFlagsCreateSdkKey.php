@@ -16,11 +16,26 @@ final readonly class FlagsSdkKeyWithSecretsTypeEnum implements SdkOpenEnum
     public const MOBILE = "mobile";
     public const SERVER = "server";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -177,15 +192,33 @@ class FlagsSdkKeyWithSecrets implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
-        if (!property_exists($data, "hashKey") || $data->hashKey === null) { throw new SdkValidationError("hashKey", 'required', "Required property 'hashKey' is missing or null"); }
-        if (!property_exists($data, "partialKeyValue") || $data->partialKeyValue === null) { throw new SdkValidationError("partialKeyValue", 'required', "Required property 'partialKeyValue' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "keyValue") || $data->keyValue === null) { throw new SdkValidationError("keyValue", 'required', "Required property 'keyValue' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "environment") || $data->environment === null) {
+            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
+        }
+        if (!property_exists($data, "hashKey") || $data->hashKey === null) {
+            throw new SdkValidationError("hashKey", 'required', "Required property 'hashKey' is missing or null");
+        }
+        if (!property_exists($data, "partialKeyValue") || $data->partialKeyValue === null) {
+            throw new SdkValidationError("partialKeyValue", 'required', "Required property 'partialKeyValue' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "keyValue") || $data->keyValue === null) {
+            throw new SdkValidationError("keyValue", 'required', "Required property 'keyValue' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             createdBy: SdkClient::stringValue($data->createdBy),

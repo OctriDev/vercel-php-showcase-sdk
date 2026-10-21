@@ -81,7 +81,9 @@ class ConnectConnectorUpdateResult implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connector") || $data->connector === null) { throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null"); }
+        if (!property_exists($data, "connector") || $data->connector === null) {
+            throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null");
+        }
         return new self(
             connector: SdkClient::hydrateClass($data->connector, ConnectConnector::class),
             reconsentNeeded: (property_exists($data, "reconsentNeeded") && $data->reconsentNeeded !== null ? SdkClient::hydrateClass($data->reconsentNeeded, ConnectReconsent::class) : SdkNotGiven::Value),
@@ -99,11 +101,26 @@ final readonly class ConnectCreateConnectorRequestDataTypeOauthServerConfigJwksK
     public const SIG = "sig";
     public const ENC = "enc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -198,7 +215,9 @@ class ConnectCreateConnectorRequestDataTypeOauthServerConfigJwksKeysItem impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kty") || $data->kty === null) { throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null"); }
+        if (!property_exists($data, "kty") || $data->kty === null) {
+            throw new SdkValidationError("kty", 'required', "Required property 'kty' is missing or null");
+        }
         return new self(
             kty: SdkClient::stringValue($data->kty),
             kid: (property_exists($data, "kid") && $data->kid !== null ? SdkClient::stringValue($data->kid) : SdkNotGiven::Value),
@@ -254,7 +273,9 @@ class ConnectCreateConnectorRequestDataTypeOauthServerConfigJwks implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
+        if (!property_exists($data, "keys") || $data->keys === null) {
+            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
+        }
         return new self(
             keys: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ConnectCreateConnectorRequestDataTypeOauthServerConfigJwksKeysItem::class), SdkClient::arrayValue($data->keys))),
             additionalProperties: array_diff_key(SdkClient::stringMapValue($data), array_flip(["keys"])),

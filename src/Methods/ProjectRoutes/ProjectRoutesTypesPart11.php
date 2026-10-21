@@ -52,8 +52,12 @@ class GetRoutesResponseVariant2RoutesItemRouteMissingItemVariant1 implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetRoutesResponseVariant2RoutesItemRouteMissingItemVariant1TypeEnum::class),
@@ -67,11 +71,26 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteMitigateActionEnum 
     public const CHALLENGE = "challenge";
     public const DENY = "deny";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetRoutesResponseVariant2RoutesItemRouteMitigate implements \JsonSerializable
@@ -105,7 +124,9 @@ class GetRoutesResponseVariant2RoutesItemRouteMitigate implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetRoutesResponseVariant2RoutesItemRouteMitigateActionEnum::class),
         );
@@ -118,11 +139,26 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteTransformsItemVaria
     public const DELETE = "delete";
     public const SET = "set";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetRoutesResponseVariant2RoutesItemRouteTransformsItemVariant0TargetKeyVariant1 implements \JsonSerializable
@@ -276,7 +312,9 @@ class GetRoutesResponseVariant2RoutesItemRouteTransformsItemVariant0Target imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
         return new self(
             key: (is_object($data->key) ? SdkClient::hydrateClass($data->key, GetRoutesResponseVariant2RoutesItemRouteTransformsItemVariant0TargetKeyVariant1::class) : (is_string($data->key) ? SdkClient::stringValue($data->key) : SdkClient::hydrateClass($data->key, GetRoutesResponseVariant2RoutesItemRouteTransformsItemVariant0TargetKeyVariant1::class))),
         );
@@ -289,9 +327,24 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteTransformsItemVaria
     public const REQUEST_QUERY = "request.query";
     public const RESPONSE_HEADERS = "response.headers";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

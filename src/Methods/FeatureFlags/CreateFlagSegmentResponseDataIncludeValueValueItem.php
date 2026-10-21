@@ -46,7 +46,9 @@ class CreateFlagSegmentResponseDataIncludeValueValueItem implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             note: (property_exists($data, "note") && $data->note !== null ? SdkClient::stringValue($data->note) : SdkNotGiven::Value),
@@ -80,11 +82,26 @@ final readonly class CreateFlagSegmentResponseDataRulesItemConditionsItemCmpEnum
     public const REGEX_2 = "regex";
     public const STARTSWITH_2 = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptions implements \JsonSerializable
@@ -173,7 +190,9 @@ class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2ItemsItemVa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::floatValue($data->value),
             label: (property_exists($data, "label") && $data->label !== null ? SdkClient::stringValue($data->label) : SdkNotGiven::Value),
@@ -229,7 +248,9 @@ class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2ItemsItemVa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
             label: (property_exists($data, "label") && $data->label !== null ? SdkClient::stringValue($data->label) : SdkNotGiven::Value),
@@ -243,11 +264,26 @@ final readonly class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVari
     public const LIST = "list";
     public const LIST_INLINE = "list/inline";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2 implements \JsonSerializable
@@ -287,8 +323,12 @@ class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2 implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "items") || $data->items === null) {
+            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             items: array_values(array_map(static fn($item) => SdkClient::hydrateUnion($item, [CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2ItemsItemVariant0::class, CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2ItemsItemVariant1::class], null, []), SdkClient::arrayValue($data->items))),
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2TypeEnum::class),
@@ -300,9 +340,24 @@ final readonly class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsRege
 {
     public const REGEX = "regex";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

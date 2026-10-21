@@ -45,8 +45,12 @@ class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant0 im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "command") || $data->command === null) {
+            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
+        }
         Validation::validateConst("kind", $data->kind, "command");
         return new self(
             kind: SdkClient::stringValue($data->kind),
@@ -99,9 +103,15 @@ class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant1 im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "target") || $data->target === null) {
+            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
+        }
         Validation::validateConst("kind", $data->kind, "deployment");
         return new self(
             kind: SdkClient::stringValue($data->kind),

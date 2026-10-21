@@ -62,9 +62,15 @@ class UserEventPayloadVariant306 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitCommitStatus") || $data->gitCommitStatus === null) { throw new SdkValidationError("gitCommitStatus", 'required', "Required property 'gitCommitStatus' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "gitCommitStatus") || $data->gitCommitStatus === null) {
+            throw new SdkValidationError("gitCommitStatus", 'required', "Required property 'gitCommitStatus' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             gitCommitStatus: SdkClient::boolValue($data->gitCommitStatus),
             projectId: SdkClient::stringValue($data->projectId),
@@ -128,9 +134,15 @@ class UserEventPayloadVariant307 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitLFS") || $data->gitLFS === null) { throw new SdkValidationError("gitLFS", 'required', "Required property 'gitLFS' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "gitLFS") || $data->gitLFS === null) {
+            throw new SdkValidationError("gitLFS", 'required', "Required property 'gitLFS' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             gitLfs: SdkClient::boolValue($data->gitLFS),
             projectId: SdkClient::stringValue($data->projectId),
@@ -187,8 +199,12 @@ class UserEventPayloadVariant308ConsolidatedGitCommitStatus implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) { throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) {
+            throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             propagateFailures: SdkClient::boolValue($data->propagateFailures),
@@ -251,9 +267,15 @@ class UserEventPayloadVariant308 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consolidatedGitCommitStatus")) { throw new SdkValidationError("consolidatedGitCommitStatus", 'required', "Missing required property 'consolidatedGitCommitStatus'"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "consolidatedGitCommitStatus")) {
+            throw new SdkValidationError("consolidatedGitCommitStatus", 'required', "Missing required property 'consolidatedGitCommitStatus'");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             consolidatedGitCommitStatus: ($data->consolidatedGitCommitStatus === null ? null : SdkClient::hydrateClass($data->consolidatedGitCommitStatus, UserEventPayloadVariant308ConsolidatedGitCommitStatus::class)),
             projectId: SdkClient::stringValue($data->projectId),

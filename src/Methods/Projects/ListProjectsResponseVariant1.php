@@ -44,8 +44,12 @@ class ListProjectsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
-        if (!property_exists($data, "projects") || $data->projects === null) { throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
+        if (!property_exists($data, "projects") || $data->projects === null) {
+            throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null");
+        }
         return new self(
             pagination: SdkClient::hydrateUnionAs($data->pagination, ListProjectsResponseVariant1PaginationVariant0::class, [Pagination::class], null, []),
             projects: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseVariant1ProjectsItem::class), SdkClient::arrayValue($data->projects))),
@@ -101,8 +105,12 @@ class ListProjectsResponseVariant2PaginationVariant0 implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
         return new self(
             count: SdkClient::floatValue($data->count),
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
@@ -117,11 +125,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemAliasItemConfigured
     public const DNS_01 = "dns-01";
     public const HTTP = "http";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentAliasError implements \JsonSerializable
@@ -161,8 +184,12 @@ class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentAliasError impl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -179,11 +206,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemAliasItemDeployment
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentBranchMatcher implements \JsonSerializable
@@ -231,8 +273,12 @@ class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentBranchMatcher i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "pattern") || $data->pattern === null) {
+            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             pattern: SdkClient::stringValue($data->pattern),
             type: SdkClient::hydrateStringEnumOrString($data->type, ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentBranchMatcherTypeEnum::class),
@@ -287,7 +333,9 @@ class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentBuildsItem impl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "use") || $data->use === null) { throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null"); }
+        if (!property_exists($data, "use") || $data->use === null) {
+            throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null");
+        }
         return new self(
             use_: SdkClient::stringValue($data->use),
             dest: (property_exists($data, "dest") && $data->dest !== null ? SdkClient::stringValue($data->dest) : SdkNotGiven::Value),
@@ -303,11 +351,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemAliasItemDeployment
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListProjectsResponseVariant2ProjectsItemAliasItemDeploymentChecksStateEnum implements SdkOpenEnum
@@ -316,9 +379,24 @@ final readonly class ListProjectsResponseVariant2ProjectsItemAliasItemDeployment
     public const REGISTERED = "registered";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

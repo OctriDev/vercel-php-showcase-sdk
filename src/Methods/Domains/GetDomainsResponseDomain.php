@@ -208,20 +208,48 @@ class GetDomainsResponseDomain implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "boughtAt")) { throw new SdkValidationError("boughtAt", 'required', "Missing required property 'boughtAt'"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
-        if (!property_exists($data, "echMode") || $data->echMode === null) { throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null"); }
-        if (!property_exists($data, "expiresAt")) { throw new SdkValidationError("expiresAt", 'required', "Missing required property 'expiresAt'"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "intendedNameservers") || $data->intendedNameservers === null) { throw new SdkValidationError("intendedNameservers", 'required', "Required property 'intendedNameservers' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "nameservers") || $data->nameservers === null) { throw new SdkValidationError("nameservers", 'required', "Required property 'nameservers' is missing or null"); }
-        if (!property_exists($data, "serviceType") || $data->serviceType === null) { throw new SdkValidationError("serviceType", 'required', "Required property 'serviceType' is missing or null"); }
-        if (!property_exists($data, "suffix") || $data->suffix === null) { throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null"); }
-        if (!property_exists($data, "teamId")) { throw new SdkValidationError("teamId", 'required', "Missing required property 'teamId'"); }
-        if (!property_exists($data, "userId") || $data->userId === null) { throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null"); }
-        if (!property_exists($data, "verified") || $data->verified === null) { throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null"); }
+        if (!property_exists($data, "boughtAt")) {
+            throw new SdkValidationError("boughtAt", 'required', "Missing required property 'boughtAt'");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "creator") || $data->creator === null) {
+            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
+        }
+        if (!property_exists($data, "echMode") || $data->echMode === null) {
+            throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null");
+        }
+        if (!property_exists($data, "expiresAt")) {
+            throw new SdkValidationError("expiresAt", 'required', "Missing required property 'expiresAt'");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "intendedNameservers") || $data->intendedNameservers === null) {
+            throw new SdkValidationError("intendedNameservers", 'required', "Required property 'intendedNameservers' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "nameservers") || $data->nameservers === null) {
+            throw new SdkValidationError("nameservers", 'required', "Required property 'nameservers' is missing or null");
+        }
+        if (!property_exists($data, "serviceType") || $data->serviceType === null) {
+            throw new SdkValidationError("serviceType", 'required', "Required property 'serviceType' is missing or null");
+        }
+        if (!property_exists($data, "suffix") || $data->suffix === null) {
+            throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null");
+        }
+        if (!property_exists($data, "teamId")) {
+            throw new SdkValidationError("teamId", 'required', "Missing required property 'teamId'");
+        }
+        if (!property_exists($data, "userId") || $data->userId === null) {
+            throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null");
+        }
+        if (!property_exists($data, "verified") || $data->verified === null) {
+            throw new SdkValidationError("verified", 'required', "Required property 'verified' is missing or null");
+        }
         return new self(
             boughtAt: ($data->boughtAt === null ? null : SdkClient::floatValue($data->boughtAt)),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -276,7 +304,9 @@ class GetDomainsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
         return new self(
             domain: SdkClient::hydrateClass($data->domain, GetDomainsResponseDomain::class),
         );

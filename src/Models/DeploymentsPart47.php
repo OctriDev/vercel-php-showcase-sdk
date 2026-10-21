@@ -216,10 +216,18 @@ class CancelDeploymentResponseServicesItemVariant1 implements CancelDeploymentRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builder") || $data->builder === null) { throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "root") || $data->root === null) { throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null"); }
-        if (!property_exists($data, "schema") || $data->schema === null) { throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null"); }
+        if (!property_exists($data, "builder") || $data->builder === null) {
+            throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "root") || $data->root === null) {
+            throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null");
+        }
+        if (!property_exists($data, "schema") || $data->schema === null) {
+            throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null");
+        }
         return new self(
             builder: SdkClient::hydrateClass($data->builder, CancelDeploymentResponseServicesItemVariant1Builder::class),
             name: SdkClient::stringValue($data->name),
@@ -254,11 +262,26 @@ final readonly class CreateDeploymentRequestFilesItemVariant0EncodingEnum implem
     public const BASE64 = "base64";
     public const UTF_8 = "utf-8";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentRequestFilesItemVariant0 implements CreateDeploymentRequestFilesItem, \JsonSerializable
@@ -318,8 +341,12 @@ class CreateDeploymentRequestFilesItemVariant0 implements CreateDeploymentReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
-        if (!property_exists($data, "file") || $data->file === null) { throw new SdkValidationError("file", 'required', "Required property 'file' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
+        if (!property_exists($data, "file") || $data->file === null) {
+            throw new SdkValidationError("file", 'required', "Required property 'file' is missing or null");
+        }
         return new self(
             data: SdkClient::stringValue($data->data),
             file: SdkClient::stringValue($data->file),

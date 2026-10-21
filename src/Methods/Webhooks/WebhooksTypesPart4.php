@@ -112,12 +112,24 @@ class GetWebhookResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "events") || $data->events === null) { throw new SdkValidationError("events", 'required', "Required property 'events' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "events") || $data->events === null) {
+            throw new SdkValidationError("events", 'required', "Required property 'events' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             events: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, GetWebhookResponseEventsItemEnum::class), SdkClient::arrayValue($data->events))),

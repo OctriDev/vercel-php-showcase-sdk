@@ -44,8 +44,12 @@ class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             value: SdkClient::stringValue($data->value),
@@ -90,8 +94,12 @@ class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0 implements Up
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "secrets") || $data->secrets === null) { throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "secrets") || $data->secrets === null) {
+            throw new SdkValidationError("secrets", 'required', "Required property 'secrets' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
             secrets: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem::class), SdkClient::arrayValue($data->secrets))),
@@ -198,7 +206,9 @@ class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1ClaimRulesItem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "claims") || $data->claims === null) { throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null"); }
+        if (!property_exists($data, "claims") || $data->claims === null) {
+            throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null");
+        }
         return new self(
             claims: SdkClient::mapValues(SdkClient::stringMapValue($data->claims), static fn($item) => ($item === null ? null : (is_array($item) ? array_values(array_map(static fn($item2) => SdkClient::stringValue($item2), SdkClient::arrayValue($item))) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),
             when: (property_exists($data, "when") && $data->when !== null ? SdkClient::hydrateClass($data->when, UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1ClaimRulesItemWhen::class) : SdkNotGiven::Value),
@@ -247,8 +257,12 @@ class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1 implements Up
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
-        if (!property_exists($data, "claimRules") || $data->claimRules === null) { throw new SdkValidationError("claimRules", 'required', "Required property 'claimRules' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
+        if (!property_exists($data, "claimRules") || $data->claimRules === null) {
+            throw new SdkValidationError("claimRules", 'required', "Required property 'claimRules' is missing or null");
+        }
         return new self(
             kind: SdkClient::stringValue($data->kind),
             claimRules: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1ClaimRulesItem::class), SdkClient::arrayValue($data->claimRules))),

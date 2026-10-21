@@ -101,9 +101,15 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderCon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) { throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null"); }
-        if (!property_exists($data, "root") || $data->root === null) { throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) {
+            throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null");
+        }
+        if (!property_exists($data, "root") || $data->root === null) {
+            throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             entrypoint: SdkClient::stringValue($data->entrypoint),
             root: SdkClient::stringValue($data->root),
@@ -121,11 +127,26 @@ final readonly class CreateDeploymentResponseVariant1ServicesItemExperimentalSer
 {
     public const STRICT = "strict";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfigFunctionsValueAffinity implements \JsonSerializable
@@ -159,7 +180,9 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderCon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderConfigFunctionsValueAffinityModeEnum::class),
         );
@@ -171,11 +194,26 @@ final readonly class CreateDeploymentResponseVariant1ServicesItemExperimentalSer
     public const ARM64 = "arm64";
     public const X86_64 = "x86_64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -292,9 +330,15 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesBuilderCon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consumer") || $data->consumer === null) { throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null"); }
-        if (!property_exists($data, "topic") || $data->topic === null) { throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "consumer") || $data->consumer === null) {
+            throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null");
+        }
+        if (!property_exists($data, "topic") || $data->topic === null) {
+            throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             consumer: SdkClient::stringValue($data->consumer),
             topic: SdkClient::stringValue($data->topic),

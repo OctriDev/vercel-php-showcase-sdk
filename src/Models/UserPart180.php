@@ -45,7 +45,9 @@ class UserEventPayloadVariant325OldOptionsAllowlist implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paths") || $data->paths === null) { throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null"); }
+        if (!property_exists($data, "paths") || $data->paths === null) {
+            throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null");
+        }
         return new self(
             paths: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant325OldOptionsAllowlistPathsItem::class), SdkClient::arrayValue($data->paths))),
         );
@@ -90,7 +92,9 @@ class UserEventPayloadVariant325OptionsAllowlistPathsItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             value: SdkClient::stringValue($data->value),
         );
@@ -135,7 +139,9 @@ class UserEventPayloadVariant325OptionsAllowlist implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paths") || $data->paths === null) { throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null"); }
+        if (!property_exists($data, "paths") || $data->paths === null) {
+            throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null");
+        }
         return new self(
             paths: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant325OptionsAllowlistPathsItem::class), SdkClient::arrayValue($data->paths))),
         );
@@ -211,8 +217,12 @@ class UserEventPayloadVariant325 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "projectName") || $data->projectName === null) {
+            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -232,11 +242,26 @@ final readonly class UserEventPayloadVariant326OldPasswordProtectionVariant0Depl
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -277,7 +302,9 @@ class UserEventPayloadVariant326OldPasswordProtectionVariant0 implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UserEventPayloadVariant326OldPasswordProtectionVariant0DeploymentTypeEnum::class),
         );
@@ -294,11 +321,26 @@ final readonly class UserEventPayloadVariant326OldPasswordProtectionEnum impleme
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -311,9 +353,24 @@ final readonly class UserEventPayloadVariant326PasswordProtectionVariant0Deploym
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

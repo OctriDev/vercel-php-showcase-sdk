@@ -56,11 +56,26 @@ final readonly class GetDrainResponseVariant0FilterV2FilterBasicLogSourcesItemEn
     public const REDIRECT = "redirect";
     public const STATIC = "static";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDrainResponseVariant0FilterV2FilterBasicLog implements \JsonSerializable
@@ -210,7 +225,9 @@ class GetDrainResponseVariant0FilterV2FilterBasic implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, GetDrainResponseVariant0FilterV2FilterBasicTypeEnum::class),
             deployment: (property_exists($data, "deployment") && $data->deployment !== null ? SdkClient::hydrateClass($data->deployment, GetDrainResponseVariant0FilterV2FilterBasicDeployment::class) : SdkNotGiven::Value),
@@ -262,8 +279,12 @@ class GetDrainResponseVariant0FilterV2FilterOdata implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "text") || $data->text === null) { throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "text") || $data->text === null) {
+            throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             text: SdkClient::stringValue($data->text),
             type: SdkClient::hydrateEnum($data->type, GetDrainResponseVariant0FilterV2FilterOdataTypeEnum::class),
@@ -275,11 +296,26 @@ final readonly class GetDrainResponseVariant0FilterV2VersionEnum implements SdkO
 {
     public const V2 = "v2";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDrainResponseVariant0FilterV2 implements \JsonSerializable
@@ -319,8 +355,12 @@ class GetDrainResponseVariant0FilterV2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "filter") || $data->filter === null) { throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "filter") || $data->filter === null) {
+            throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             filter: SdkClient::hydrateUnion($data->filter, [GetDrainResponseVariant0FilterV2FilterBasic::class, GetDrainResponseVariant0FilterV2FilterOdata::class], null, []),
             version: SdkClient::hydrateStringEnumOrString($data->version, GetDrainResponseVariant0FilterV2VersionEnum::class),

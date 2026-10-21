@@ -82,11 +82,21 @@ class UserEventPayloadVariant394 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eventId") || $data->eventId === null) { throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null"); }
-        if (!property_exists($data, "occurredAt") || $data->occurredAt === null) { throw new SdkValidationError("occurredAt", 'required', "Required property 'occurredAt' is missing or null"); }
-        if (!property_exists($data, "sessionId") || $data->sessionId === null) { throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null"); }
-        if (!property_exists($data, "sessionKind") || $data->sessionKind === null) { throw new SdkValidationError("sessionKind", 'required', "Required property 'sessionKind' is missing or null"); }
-        if (!property_exists($data, "surface") || $data->surface === null) { throw new SdkValidationError("surface", 'required', "Required property 'surface' is missing or null"); }
+        if (!property_exists($data, "eventId") || $data->eventId === null) {
+            throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null");
+        }
+        if (!property_exists($data, "occurredAt") || $data->occurredAt === null) {
+            throw new SdkValidationError("occurredAt", 'required', "Required property 'occurredAt' is missing or null");
+        }
+        if (!property_exists($data, "sessionId") || $data->sessionId === null) {
+            throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null");
+        }
+        if (!property_exists($data, "sessionKind") || $data->sessionKind === null) {
+            throw new SdkValidationError("sessionKind", 'required', "Required property 'sessionKind' is missing or null");
+        }
+        if (!property_exists($data, "surface") || $data->surface === null) {
+            throw new SdkValidationError("surface", 'required', "Required property 'surface' is missing or null");
+        }
         return new self(
             eventId: SdkClient::stringValue($data->eventId),
             occurredAt: SdkClient::floatValue($data->occurredAt),
@@ -262,20 +272,48 @@ class UserEventPayloadVariant395 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eventId") || $data->eventId === null) { throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null"); }
-        if (!property_exists($data, "occurredAt") || $data->occurredAt === null) { throw new SdkValidationError("occurredAt", 'required', "Required property 'occurredAt' is missing or null"); }
-        if (!property_exists($data, "sessionId") || $data->sessionId === null) { throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null"); }
-        if (!property_exists($data, "sessionKind") || $data->sessionKind === null) { throw new SdkValidationError("sessionKind", 'required', "Required property 'sessionKind' is missing or null"); }
-        if (!property_exists($data, "surface") || $data->surface === null) { throw new SdkValidationError("surface", 'required', "Required property 'surface' is missing or null"); }
-        if (!property_exists($data, "elevatedScopeCount") || $data->elevatedScopeCount === null) { throw new SdkValidationError("elevatedScopeCount", 'required', "Required property 'elevatedScopeCount' is missing or null"); }
-        if (!property_exists($data, "elevatedScopes") || $data->elevatedScopes === null) { throw new SdkValidationError("elevatedScopes", 'required', "Required property 'elevatedScopes' is missing or null"); }
-        if (!property_exists($data, "githubScopeCount") || $data->githubScopeCount === null) { throw new SdkValidationError("githubScopeCount", 'required', "Required property 'githubScopeCount' is missing or null"); }
-        if (!property_exists($data, "githubScopes") || $data->githubScopes === null) { throw new SdkValidationError("githubScopes", 'required', "Required property 'githubScopes' is missing or null"); }
-        if (!property_exists($data, "mergedScopeCount") || $data->mergedScopeCount === null) { throw new SdkValidationError("mergedScopeCount", 'required', "Required property 'mergedScopeCount' is missing or null"); }
-        if (!property_exists($data, "mergedScopes") || $data->mergedScopes === null) { throw new SdkValidationError("mergedScopes", 'required', "Required property 'mergedScopes' is missing or null"); }
-        if (!property_exists($data, "planId") || $data->planId === null) { throw new SdkValidationError("planId", 'required', "Required property 'planId' is missing or null"); }
-        if (!property_exists($data, "requestedScopeCount") || $data->requestedScopeCount === null) { throw new SdkValidationError("requestedScopeCount", 'required', "Required property 'requestedScopeCount' is missing or null"); }
-        if (!property_exists($data, "requestedScopes") || $data->requestedScopes === null) { throw new SdkValidationError("requestedScopes", 'required', "Required property 'requestedScopes' is missing or null"); }
+        if (!property_exists($data, "eventId") || $data->eventId === null) {
+            throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null");
+        }
+        if (!property_exists($data, "occurredAt") || $data->occurredAt === null) {
+            throw new SdkValidationError("occurredAt", 'required', "Required property 'occurredAt' is missing or null");
+        }
+        if (!property_exists($data, "sessionId") || $data->sessionId === null) {
+            throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null");
+        }
+        if (!property_exists($data, "sessionKind") || $data->sessionKind === null) {
+            throw new SdkValidationError("sessionKind", 'required', "Required property 'sessionKind' is missing or null");
+        }
+        if (!property_exists($data, "surface") || $data->surface === null) {
+            throw new SdkValidationError("surface", 'required', "Required property 'surface' is missing or null");
+        }
+        if (!property_exists($data, "elevatedScopeCount") || $data->elevatedScopeCount === null) {
+            throw new SdkValidationError("elevatedScopeCount", 'required', "Required property 'elevatedScopeCount' is missing or null");
+        }
+        if (!property_exists($data, "elevatedScopes") || $data->elevatedScopes === null) {
+            throw new SdkValidationError("elevatedScopes", 'required', "Required property 'elevatedScopes' is missing or null");
+        }
+        if (!property_exists($data, "githubScopeCount") || $data->githubScopeCount === null) {
+            throw new SdkValidationError("githubScopeCount", 'required', "Required property 'githubScopeCount' is missing or null");
+        }
+        if (!property_exists($data, "githubScopes") || $data->githubScopes === null) {
+            throw new SdkValidationError("githubScopes", 'required', "Required property 'githubScopes' is missing or null");
+        }
+        if (!property_exists($data, "mergedScopeCount") || $data->mergedScopeCount === null) {
+            throw new SdkValidationError("mergedScopeCount", 'required', "Required property 'mergedScopeCount' is missing or null");
+        }
+        if (!property_exists($data, "mergedScopes") || $data->mergedScopes === null) {
+            throw new SdkValidationError("mergedScopes", 'required', "Required property 'mergedScopes' is missing or null");
+        }
+        if (!property_exists($data, "planId") || $data->planId === null) {
+            throw new SdkValidationError("planId", 'required', "Required property 'planId' is missing or null");
+        }
+        if (!property_exists($data, "requestedScopeCount") || $data->requestedScopeCount === null) {
+            throw new SdkValidationError("requestedScopeCount", 'required', "Required property 'requestedScopeCount' is missing or null");
+        }
+        if (!property_exists($data, "requestedScopes") || $data->requestedScopes === null) {
+            throw new SdkValidationError("requestedScopes", 'required', "Required property 'requestedScopes' is missing or null");
+        }
         return new self(
             eventId: SdkClient::stringValue($data->eventId),
             occurredAt: SdkClient::floatValue($data->occurredAt),
@@ -304,11 +342,26 @@ final readonly class UserEventPayloadVariant396NextEnum implements SdkOpenEnum
     public const BLOCK = "block";
     public const MANUAL_APPROVAL = "manual-approval";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -320,9 +373,24 @@ final readonly class UserEventPayloadVariant396PreviousEnum implements SdkOpenEn
     public const BLOCK = "block";
     public const MANUAL_APPROVAL = "manual-approval";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

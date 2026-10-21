@@ -62,9 +62,15 @@ class UserEventPayloadVariant385 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "store") || $data->store === null) { throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null"); }
-        if (!property_exists($data, "destinationTeamId") || $data->destinationTeamId === null) { throw new SdkValidationError("destinationTeamId", 'required', "Required property 'destinationTeamId' is missing or null"); }
-        if (!property_exists($data, "destinationTeamName") || $data->destinationTeamName === null) { throw new SdkValidationError("destinationTeamName", 'required', "Required property 'destinationTeamName' is missing or null"); }
+        if (!property_exists($data, "store") || $data->store === null) {
+            throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null");
+        }
+        if (!property_exists($data, "destinationTeamId") || $data->destinationTeamId === null) {
+            throw new SdkValidationError("destinationTeamId", 'required', "Required property 'destinationTeamId' is missing or null");
+        }
+        if (!property_exists($data, "destinationTeamName") || $data->destinationTeamName === null) {
+            throw new SdkValidationError("destinationTeamName", 'required', "Required property 'destinationTeamName' is missing or null");
+        }
         return new self(
             store: SdkClient::hydrateClass($data->store, UserEventPayloadVariant385Store::class),
             destinationTeamId: SdkClient::stringValue($data->destinationTeamId),
@@ -84,11 +90,26 @@ final readonly class UserEventPayloadVariant386StoreTypeEnum implements SdkOpenE
     public const POSTGRES = "postgres";
     public const REDIS = "redis";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -151,8 +172,12 @@ class UserEventPayloadVariant386Store implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant386StoreTypeEnum::class),
@@ -216,9 +241,15 @@ class UserEventPayloadVariant386 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "store") || $data->store === null) { throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null"); }
-        if (!property_exists($data, "originTeamId") || $data->originTeamId === null) { throw new SdkValidationError("originTeamId", 'required', "Required property 'originTeamId' is missing or null"); }
-        if (!property_exists($data, "originTeamName") || $data->originTeamName === null) { throw new SdkValidationError("originTeamName", 'required', "Required property 'originTeamName' is missing or null"); }
+        if (!property_exists($data, "store") || $data->store === null) {
+            throw new SdkValidationError("store", 'required', "Required property 'store' is missing or null");
+        }
+        if (!property_exists($data, "originTeamId") || $data->originTeamId === null) {
+            throw new SdkValidationError("originTeamId", 'required', "Required property 'originTeamId' is missing or null");
+        }
+        if (!property_exists($data, "originTeamName") || $data->originTeamName === null) {
+            throw new SdkValidationError("originTeamName", 'required', "Required property 'originTeamName' is missing or null");
+        }
         return new self(
             store: SdkClient::hydrateClass($data->store, UserEventPayloadVariant386Store::class),
             originTeamId: SdkClient::stringValue($data->originTeamId),
@@ -235,11 +266,26 @@ final readonly class UserEventPayloadVariant387AccessEnum implements SdkOpenEnum
     public const PRIVATE = "private";
     public const PUBLIC = "public";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -253,9 +299,24 @@ final readonly class UserEventPayloadVariant387TypeEnum implements SdkOpenEnum
     public const POSTGRES = "postgres";
     public const REDIS = "redis";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

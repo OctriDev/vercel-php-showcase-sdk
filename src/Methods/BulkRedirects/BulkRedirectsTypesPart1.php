@@ -13,11 +13,26 @@ final readonly class GetRedirectsSortBy implements SdkOpenEnum
     public const DESTINATION = "destination";
     public const STATUSCODE = "statusCode";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetRedirectsSortOrder implements SdkOpenEnum
@@ -25,11 +40,26 @@ final readonly class GetRedirectsSortOrder implements SdkOpenEnum
     public const ASC = "asc";
     public const DESC = "desc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateVersionAction implements SdkOpenEnum
@@ -38,11 +68,26 @@ final readonly class UpdateVersionAction implements SdkOpenEnum
     public const RESTORE = "restore";
     public const DISCARD = "discard";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class StageRedirectsRedirectsItem implements \JsonSerializable
@@ -122,8 +167,12 @@ class StageRedirectsRedirectsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
-        if (!property_exists($data, "destination") || $data->destination === null) { throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
+        if (!property_exists($data, "destination") || $data->destination === null) {
+            throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null");
+        }
         return new self(
             source: SdkClient::stringValue($data->source),
             destination: SdkClient::stringValue($data->destination),
@@ -253,10 +302,18 @@ class StageRedirectsResponseVersion implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
+            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
+            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
+        }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -308,8 +365,12 @@ class StageRedirectsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias")) { throw new SdkValidationError("alias", 'required', "Missing required property 'alias'"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "alias")) {
+            throw new SdkValidationError("alias", 'required', "Missing required property 'alias'");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             alias: ($data->alias === null ? null : SdkClient::stringValue($data->alias)),
             version: SdkClient::hydrateClass($data->version, StageRedirectsResponseVersion::class),
@@ -321,9 +382,24 @@ final readonly class GetRedirectsDiffEnum implements SdkOpenEnum
 {
     public const ONLY = "only";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

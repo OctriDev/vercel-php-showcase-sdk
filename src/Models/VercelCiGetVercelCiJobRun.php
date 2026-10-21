@@ -39,7 +39,9 @@ class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant0 implements GetV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
+        if (!property_exists($data, "result") || $data->result === null) {
+            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
+        }
         Validation::validateConst("result", $data->result, "succeeded");
         return new self(
             result: SdkClient::stringValue($data->result),
@@ -85,8 +87,12 @@ class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant1 implements GetV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
+        if (!property_exists($data, "result") || $data->result === null) {
+            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
+        }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
         Validation::validateConst("result", $data->result, "failed");
         return new self(
             result: SdkClient::stringValue($data->result),
@@ -133,8 +139,12 @@ class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant2 implements GetV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
-        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
+        if (!property_exists($data, "result") || $data->result === null) {
+            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
+        }
+        if (!property_exists($data, "reason") || $data->reason === null) {
+            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
+        }
         Validation::validateConst("result", $data->result, "skipped");
         return new self(
             result: SdkClient::stringValue($data->result),

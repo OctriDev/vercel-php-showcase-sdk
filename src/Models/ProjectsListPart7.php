@@ -62,11 +62,21 @@ class ListProjectsResponseItemEnvItemContentHintVariant15 implements ListProject
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
-        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) { throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null"); }
-        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
+            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) {
+            throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null");
+        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) {
+            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -119,8 +129,12 @@ class ListProjectsResponseItemEnvItemContentHintVariant16 implements ListProject
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemEnvItemContentHintVariant16TypeEnum::class),
@@ -173,8 +187,12 @@ class ListProjectsResponseItemInternalRoutesItemVariant0 implements ListProjects
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "src") || $data->src === null) {
+            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             src: SdkClient::stringValue($data->src),
             status: SdkClient::floatValue($data->status),
@@ -187,11 +205,26 @@ final readonly class ListProjectsResponseItemInternalRoutesItemVariant1HasItemHe
 {
     public const X_VERCEL_IP_COUNTRY = "x-vercel-ip-country";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum ListProjectsResponseItemInternalRoutesItemVariant1HasItemHeaderTypeEnum: string implements SdkWireEnum
@@ -230,7 +263,9 @@ class ListProjectsResponseItemInternalRoutesItemVariant1HasItemHeaderValue imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
+        if (!property_exists($data, "eq") || $data->eq === null) {
+            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
+        }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );
@@ -280,9 +315,15 @@ class ListProjectsResponseItemInternalRoutesItemVariant1HasItemHeader implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             key: SdkClient::hydrateStringEnumOrString($data->key, ListProjectsResponseItemInternalRoutesItemVariant1HasItemHeaderKeyEnum::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemInternalRoutesItemVariant1HasItemHeaderTypeEnum::class),
@@ -327,7 +368,9 @@ class ListProjectsResponseItemInternalRoutesItemVariant1HasItemHostValue impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
+        if (!property_exists($data, "eq") || $data->eq === null) {
+            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
+        }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );

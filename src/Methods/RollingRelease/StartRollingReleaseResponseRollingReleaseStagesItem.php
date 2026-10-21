@@ -97,11 +97,21 @@ class StartRollingReleaseResponseRollingReleaseStagesItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
-        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "duration")) {
+            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
+        }
+        if (!property_exists($data, "index") || $data->index === null) {
+            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
+        }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
+            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
+        }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
+            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
+        }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),
@@ -122,11 +132,26 @@ final readonly class StartRollingReleaseResponseRollingReleaseStateEnum implemen
     public const ACTIVE = "ACTIVE";
     public const COMPLETE = "COMPLETE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -136,11 +161,26 @@ final readonly class StartRollingReleaseResponseRollingReleaseSubstateEnum imple
 {
     public const PAUSED = "PAUSED";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -293,17 +333,39 @@ class StartRollingReleaseResponseRollingRelease implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "activeStage")) { throw new SdkValidationError("activeStage", 'required', "Missing required property 'activeStage'"); }
-        if (!property_exists($data, "advancementType") || $data->advancementType === null) { throw new SdkValidationError("advancementType", 'required', "Required property 'advancementType' is missing or null"); }
-        if (!property_exists($data, "canaryDeployment")) { throw new SdkValidationError("canaryDeployment", 'required', "Missing required property 'canaryDeployment'"); }
-        if (!property_exists($data, "currentDeployment")) { throw new SdkValidationError("currentDeployment", 'required', "Missing required property 'currentDeployment'"); }
-        if (!property_exists($data, "nextStage")) { throw new SdkValidationError("nextStage", 'required', "Missing required property 'nextStage'"); }
-        if (!property_exists($data, "queuedDeploymentId")) { throw new SdkValidationError("queuedDeploymentId", 'required', "Missing required property 'queuedDeploymentId'"); }
-        if (!property_exists($data, "stages") || $data->stages === null) { throw new SdkValidationError("stages", 'required', "Required property 'stages' is missing or null"); }
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "substate")) { throw new SdkValidationError("substate", 'required', "Missing required property 'substate'"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "activeStage")) {
+            throw new SdkValidationError("activeStage", 'required', "Missing required property 'activeStage'");
+        }
+        if (!property_exists($data, "advancementType") || $data->advancementType === null) {
+            throw new SdkValidationError("advancementType", 'required', "Required property 'advancementType' is missing or null");
+        }
+        if (!property_exists($data, "canaryDeployment")) {
+            throw new SdkValidationError("canaryDeployment", 'required', "Missing required property 'canaryDeployment'");
+        }
+        if (!property_exists($data, "currentDeployment")) {
+            throw new SdkValidationError("currentDeployment", 'required', "Missing required property 'currentDeployment'");
+        }
+        if (!property_exists($data, "nextStage")) {
+            throw new SdkValidationError("nextStage", 'required', "Missing required property 'nextStage'");
+        }
+        if (!property_exists($data, "queuedDeploymentId")) {
+            throw new SdkValidationError("queuedDeploymentId", 'required', "Missing required property 'queuedDeploymentId'");
+        }
+        if (!property_exists($data, "stages") || $data->stages === null) {
+            throw new SdkValidationError("stages", 'required', "Required property 'stages' is missing or null");
+        }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
+            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "substate")) {
+            throw new SdkValidationError("substate", 'required', "Missing required property 'substate'");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             activeStage: ($data->activeStage === null ? null : SdkClient::hydrateClass($data->activeStage, StartRollingReleaseResponseRollingReleaseActiveStage::class)),
             advancementType: SdkClient::hydrateStringEnumOrString($data->advancementType, StartRollingReleaseResponseRollingReleaseAdvancementTypeEnum::class),

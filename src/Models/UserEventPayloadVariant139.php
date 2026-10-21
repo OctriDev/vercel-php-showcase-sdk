@@ -62,9 +62,15 @@ class UserEventPayloadVariant139 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customNameservers")) { throw new SdkValidationError("customNameservers", 'required', "Missing required property 'customNameservers'"); }
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "prevCustomNameservers")) { throw new SdkValidationError("prevCustomNameservers", 'required', "Missing required property 'prevCustomNameservers'"); }
+        if (!property_exists($data, "customNameservers")) {
+            throw new SdkValidationError("customNameservers", 'required', "Missing required property 'customNameservers'");
+        }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "prevCustomNameservers")) {
+            throw new SdkValidationError("prevCustomNameservers", 'required', "Missing required property 'prevCustomNameservers'");
+        }
         return new self(
             customNameservers: ($data->customNameservers === null ? null : array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->customNameservers)))),
             domain: SdkClient::stringValue($data->domain),
@@ -108,7 +114,9 @@ class UserEventPayloadVariant140 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
         );
@@ -124,11 +132,26 @@ final readonly class UserEventPayloadVariant141EchModeEnum implements SdkOpenEnu
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -140,11 +163,26 @@ final readonly class UserEventPayloadVariant141PreviousEchModeEnum implements Sd
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant141 implements UserEventPayload, \JsonSerializable
@@ -202,9 +240,15 @@ class UserEventPayloadVariant141 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "echMode") || $data->echMode === null) { throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null"); }
-        if (!property_exists($data, "previousEchMode") || $data->previousEchMode === null) { throw new SdkValidationError("previousEchMode", 'required', "Required property 'previousEchMode' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "echMode") || $data->echMode === null) {
+            throw new SdkValidationError("echMode", 'required', "Required property 'echMode' is missing or null");
+        }
+        if (!property_exists($data, "previousEchMode") || $data->previousEchMode === null) {
+            throw new SdkValidationError("previousEchMode", 'required', "Required property 'previousEchMode' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             echMode: SdkClient::hydrateStringEnumOrString($data->echMode, UserEventPayloadVariant141EchModeEnum::class),
@@ -258,8 +302,12 @@ class UserEventPayloadVariant142 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "zone") || $data->zone === null) { throw new SdkValidationError("zone", 'required', "Required property 'zone' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "zone") || $data->zone === null) {
+            throw new SdkValidationError("zone", 'required', "Required property 'zone' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             zone: SdkClient::boolValue($data->zone),
@@ -275,9 +323,24 @@ final readonly class UserEventPayloadVariant143InitiatorEnum implements SdkOpenE
     public const SYSTEM = "system";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

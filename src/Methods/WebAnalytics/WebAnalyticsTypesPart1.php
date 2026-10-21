@@ -182,7 +182,9 @@ class AggregatePageviewsResponseDataItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
+            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
+        }
         return new self(
             timestamp: SdkClient::stringValue($data->timestamp),
             browserName: (property_exists($data, "browserName") && $data->browserName !== null ? SdkClient::stringValue($data->browserName) : SdkNotGiven::Value),
@@ -224,11 +226,26 @@ final readonly class AggregatePageviewsResponseQueryGroupByItemEnum implements S
     public const UTMSOURCE = "utmSource";
     public const UTMTERM = "utmTerm";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class AggregatePageviewsResponseQuery implements \JsonSerializable
@@ -290,9 +307,15 @@ class AggregatePageviewsResponseQuery implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
-        if (!property_exists($data, "since") || $data->since === null) { throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null"); }
-        if (!property_exists($data, "until") || $data->until === null) { throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null"); }
+        if (!property_exists($data, "limit") || $data->limit === null) {
+            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
+        }
+        if (!property_exists($data, "since") || $data->since === null) {
+            throw new SdkValidationError("since", 'required', "Required property 'since' is missing or null");
+        }
+        if (!property_exists($data, "until") || $data->until === null) {
+            throw new SdkValidationError("until", 'required', "Required property 'until' is missing or null");
+        }
         return new self(
             limit: SdkClient::floatValue($data->limit),
             since: SdkClient::stringValue($data->since),

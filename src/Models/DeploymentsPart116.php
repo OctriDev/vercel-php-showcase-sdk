@@ -104,10 +104,18 @@ class GetDeploymentEventsResponseItemVariant2Payload implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "serial") || $data->serial === null) { throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null"); }
+        if (!property_exists($data, "date") || $data->date === null) {
+            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
+        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
+            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "serial") || $data->serial === null) {
+            throw new SdkValidationError("serial", 'required', "Required property 'serial' is missing or null");
+        }
         return new self(
             date: SdkClient::floatValue($data->date),
             deploymentId: SdkClient::stringValue($data->deploymentId),
@@ -138,11 +146,26 @@ final readonly class GetDeploymentEventsResponseItemVariant2TypeEnum implements 
     public const STDERR = "stderr";
     public const STDOUT = "stdout";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentEventsResponseItemVariant2 implements GetDeploymentEventsResponseItem, \JsonSerializable
@@ -188,9 +211,15 @@ class GetDeploymentEventsResponseItemVariant2 implements GetDeploymentEventsResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "payload") || $data->payload === null) { throw new SdkValidationError("payload", 'required', "Required property 'payload' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "payload") || $data->payload === null) {
+            throw new SdkValidationError("payload", 'required', "Required property 'payload' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             created: SdkClient::floatValue($data->created),
             payload: SdkClient::hydrateClass($data->payload, GetDeploymentEventsResponseItemVariant2Payload::class),
@@ -276,8 +305,12 @@ class GetDeploymentEventsResponseItemVariant3Info implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             type: SdkClient::stringValue($data->type),
@@ -295,11 +328,26 @@ final readonly class GetDeploymentEventsResponseItemVariant3LevelEnum implements
     public const ERROR = "error";
     public const WARNING = "warning";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class GetDeploymentEventsResponseItemVariant3TypeEnum implements SdkOpenEnum
@@ -317,9 +365,24 @@ final readonly class GetDeploymentEventsResponseItemVariant3TypeEnum implements 
     public const STDERR = "stderr";
     public const STDOUT = "stdout";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

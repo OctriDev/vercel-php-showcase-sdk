@@ -72,10 +72,18 @@ class GetDeploymentResponseVariant2GitSourceGithubLimited3 implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "sha") || $data->sha === null) {
+            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             ref: SdkClient::stringValue($data->ref),
             repoId: SdkClient::floatValue($data->repoId),
@@ -91,11 +99,26 @@ final readonly class GetDeploymentResponseVariant2GitSourceGitlab2TypeEnum imple
 {
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentResponseVariant2GitSourceGitlab2 implements \JsonSerializable
@@ -147,10 +170,18 @@ class GetDeploymentResponseVariant2GitSourceGitlab2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "sha") || $data->sha === null) {
+            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             projectId: SdkClient::floatValue($data->projectId),
             ref: SdkClient::stringValue($data->ref),
@@ -164,11 +195,26 @@ final readonly class GetDeploymentResponseVariant2GitSourceBitbucket3TypeEnum im
 {
     public const BITBUCKET = "bitbucket";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDeploymentResponseVariant2GitSourceBitbucket3 implements \JsonSerializable
@@ -242,11 +288,21 @@ class GetDeploymentResponseVariant2GitSourceBitbucket3 implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "repoUuid") || $data->repoUuid === null) { throw new SdkValidationError("repoUuid", 'required', "Required property 'repoUuid' is missing or null"); }
-        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "workspaceUuid") || $data->workspaceUuid === null) { throw new SdkValidationError("workspaceUuid", 'required', "Required property 'workspaceUuid' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "repoUuid") || $data->repoUuid === null) {
+            throw new SdkValidationError("repoUuid", 'required', "Required property 'repoUuid' is missing or null");
+        }
+        if (!property_exists($data, "sha") || $data->sha === null) {
+            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "workspaceUuid") || $data->workspaceUuid === null) {
+            throw new SdkValidationError("workspaceUuid", 'required', "Required property 'workspaceUuid' is missing or null");
+        }
         return new self(
             ref: SdkClient::stringValue($data->ref),
             repoUuid: SdkClient::stringValue($data->repoUuid),
@@ -302,9 +358,15 @@ class GetDeploymentResponseVariant2GitSourceVercel2CommitMetadataAuthor implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "date") || $data->date === null) {
+            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             date: SdkClient::stringValue($data->date),
             email: SdkClient::stringValue($data->email),

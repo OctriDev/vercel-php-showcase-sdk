@@ -91,15 +91,33 @@ class CancelDeploymentResponseGitRepoVariant0 implements CancelDeploymentRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) { throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "namespace") || $data->namespace === null) { throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null"); }
-        if (!property_exists($data, "ownerType") || $data->ownerType === null) { throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null"); }
-        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
-        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) {
+            throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "namespace") || $data->namespace === null) {
+            throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null");
+        }
+        if (!property_exists($data, "ownerType") || $data->ownerType === null) {
+            throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null");
+        }
+        if (!property_exists($data, "path") || $data->path === null) {
+            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
+        }
+        if (!property_exists($data, "private") || $data->private === null) {
+            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             defaultBranch: SdkClient::stringValue($data->defaultBranch),
             name: SdkClient::stringValue($data->name),
@@ -119,11 +137,26 @@ final readonly class CancelDeploymentResponseGitRepoVariant1OwnerTypeEnum implem
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum CancelDeploymentResponseGitRepoVariant1TypeEnum: string implements SdkWireEnum
@@ -216,16 +249,36 @@ class CancelDeploymentResponseGitRepoVariant1 implements CancelDeploymentRespons
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) { throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "ownerType") || $data->ownerType === null) { throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null"); }
-        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
-        if (!property_exists($data, "private") || $data->private === null) { throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "repoOwnerId") || $data->repoOwnerId === null) { throw new SdkValidationError("repoOwnerId", 'required', "Required property 'repoOwnerId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "defaultBranch") || $data->defaultBranch === null) {
+            throw new SdkValidationError("defaultBranch", 'required', "Required property 'defaultBranch' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "ownerType") || $data->ownerType === null) {
+            throw new SdkValidationError("ownerType", 'required', "Required property 'ownerType' is missing or null");
+        }
+        if (!property_exists($data, "path") || $data->path === null) {
+            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
+        }
+        if (!property_exists($data, "private") || $data->private === null) {
+            throw new SdkValidationError("private", 'required', "Required property 'private' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "repoOwnerId") || $data->repoOwnerId === null) {
+            throw new SdkValidationError("repoOwnerId", 'required', "Required property 'repoOwnerId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             defaultBranch: SdkClient::stringValue($data->defaultBranch),
             name: SdkClient::stringValue($data->name),
@@ -246,11 +299,26 @@ final readonly class CancelDeploymentResponseGitRepoVariant2OwnerTypeEnum implem
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum CancelDeploymentResponseGitRepoVariant2TypeEnum: string implements SdkWireEnum

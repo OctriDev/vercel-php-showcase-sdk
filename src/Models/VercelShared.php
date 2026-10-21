@@ -55,8 +55,12 @@ class VercelBadRequestErrorError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -102,7 +106,9 @@ class VercelBadRequestError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
+        if (!property_exists($data, "error") || $data->error === null) {
+            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
+        }
         return new self(
             error: SdkClient::hydrateClass($data->error, VercelBadRequestErrorError::class),
         );
@@ -157,8 +163,12 @@ class VercelBaseError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -214,8 +224,12 @@ class VercelForbiddenErrorError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -261,7 +275,9 @@ class VercelForbiddenError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
+        if (!property_exists($data, "error") || $data->error === null) {
+            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
+        }
         return new self(
             error: SdkClient::hydrateClass($data->error, VercelForbiddenErrorError::class),
         );
@@ -316,8 +332,12 @@ class VercelNotFoundErrorError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),

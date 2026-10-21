@@ -57,7 +57,9 @@ class ConnectUpdateConnectorRequestRequestDataTypeOauthUserAuthorization impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             scopes: (property_exists($data, "scopes") && $data->scopes !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->scopes))) : SdkNotGiven::Value),
@@ -103,7 +105,9 @@ class ConnectUpdateConnectorRequestRequestDataTypeOauthRefreshTokens implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
         );
@@ -160,7 +164,9 @@ class ConnectUpdateConnectorRequestRequestDataTypeOauthClientCredentials impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             scopes: (property_exists($data, "scopes") && $data->scopes !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->scopes))) : SdkNotGiven::Value),

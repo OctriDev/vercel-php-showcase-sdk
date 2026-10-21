@@ -113,9 +113,15 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "consumer") || $data->consumer === null) { throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null"); }
-        if (!property_exists($data, "topic") || $data->topic === null) { throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "consumer") || $data->consumer === null) {
+            throw new SdkValidationError("consumer", 'required', "Required property 'consumer' is missing or null");
+        }
+        if (!property_exists($data, "topic") || $data->topic === null) {
+            throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             consumer: SdkClient::stringValue($data->consumer),
             topic: SdkClient::stringValue($data->topic),
@@ -232,8 +238,12 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "topic") || $data->topic === null) { throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "topic") || $data->topic === null) {
+            throw new SdkValidationError("topic", 'required', "Required property 'topic' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             topic: SdkClient::stringValue($data->topic),
             type: SdkClient::hydrateEnum($data->type, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigFunctionsValueExperimentalTriggersItemQueueV2betaTypeEnum::class),
@@ -288,7 +298,9 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigFunctionsValueExperimentalTriggersItemScheduleV1betaTypeEnum::class),
         );
@@ -299,9 +311,24 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
 {
     public const MAX = "max";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

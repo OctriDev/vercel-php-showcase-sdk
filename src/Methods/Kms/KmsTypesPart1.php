@@ -19,11 +19,26 @@ final readonly class CreateKmsIssuerAlgorithm implements SdkOpenEnum
     public const ES384 = "ES384";
     public const ES512 = "ES512";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateKmsSigningKeyActivation implements SdkOpenEnum
@@ -31,33 +46,78 @@ final readonly class CreateKmsSigningKeyActivation implements SdkOpenEnum
     public const AUTOMATIC = "automatic";
     public const MANUAL = "manual";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class CreateKmsIssuerPolicyKind implements SdkOpenEnum
 {
     public const PROJECT_GRANT = "project-grant";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class UpdateKmsIssuerPolicyKind implements SdkOpenEnum
 {
     public const PROJECT_GRANT = "project-grant";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class DeleteKmsIssuerPolicyKind implements SdkOpenEnum
@@ -65,11 +125,26 @@ final readonly class DeleteKmsIssuerPolicyKind implements SdkOpenEnum
     public const PROJECT_GRANT = "project-grant";
     public const CONNEX_GRANT = "connex-grant";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class SignKmsMessageResponse implements \JsonSerializable
@@ -137,10 +212,18 @@ class SignKmsMessageResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
-        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) { throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null"); }
-        if (!property_exists($data, "keyId") || $data->keyId === null) { throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null"); }
-        if (!property_exists($data, "signature") || $data->signature === null) { throw new SdkValidationError("signature", 'required', "Required property 'signature' is missing or null"); }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
+            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
+        }
+        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) {
+            throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null");
+        }
+        if (!property_exists($data, "keyId") || $data->keyId === null) {
+            throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null");
+        }
+        if (!property_exists($data, "signature") || $data->signature === null) {
+            throw new SdkValidationError("signature", 'required', "Required property 'signature' is missing or null");
+        }
         return new self(
             algorithm: SdkClient::stringValue($data->algorithm),
             fingerprint: SdkClient::stringValue($data->fingerprint),
@@ -215,10 +298,18 @@ class SignKmsTokenResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
-        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) { throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null"); }
-        if (!property_exists($data, "keyId") || $data->keyId === null) { throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null"); }
-        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
+            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
+        }
+        if (!property_exists($data, "fingerprint") || $data->fingerprint === null) {
+            throw new SdkValidationError("fingerprint", 'required', "Required property 'fingerprint' is missing or null");
+        }
+        if (!property_exists($data, "keyId") || $data->keyId === null) {
+            throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null");
+        }
+        if (!property_exists($data, "token") || $data->token === null) {
+            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
+        }
         return new self(
             algorithm: SdkClient::stringValue($data->algorithm),
             fingerprint: SdkClient::stringValue($data->fingerprint),
@@ -240,11 +331,26 @@ final readonly class ListKmsIssuersResponseIssuersItemAlgorithmEnum implements S
     public const RS384 = "RS384";
     public const RS512 = "RS512";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListKmsIssuersResponseIssuersItemOriginEnum implements SdkOpenEnum
@@ -252,9 +358,24 @@ final readonly class ListKmsIssuersResponseIssuersItemOriginEnum implements SdkO
     public const EXTERNAL = "external";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

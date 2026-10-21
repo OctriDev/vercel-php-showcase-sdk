@@ -85,11 +85,26 @@ final readonly class GetDeploymentsResponseDeploymentsItemChecksDeploymentAliasS
     public const PENDING = "pending";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -140,8 +155,12 @@ class GetDeploymentsResponseDeploymentsItemChecksDeploymentAlias implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
+            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
         return new self(
             startedAt: SdkClient::floatValue($data->startedAt),
             state: SdkClient::hydrateStringEnumOrString($data->state, GetDeploymentsResponseDeploymentsItemChecksDeploymentAliasStateEnum::class),
@@ -188,7 +207,9 @@ class GetDeploymentsResponseDeploymentsItemChecks implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployment-alias") || get_object_vars($data)["deployment-alias"] === null) { throw new SdkValidationError("deployment-alias", 'required', "Required property 'deployment-alias' is missing or null"); }
+        if (!property_exists($data, "deployment-alias") || get_object_vars($data)["deployment-alias"] === null) {
+            throw new SdkValidationError("deployment-alias", 'required', "Required property 'deployment-alias' is missing or null");
+        }
         return new self(
             deploymentAlias: SdkClient::hydrateClass(get_object_vars($data)["deployment-alias"], GetDeploymentsResponseDeploymentsItemChecksDeploymentAlias::class),
         );
@@ -205,11 +226,26 @@ final readonly class GetDeploymentsResponseDeploymentsItemChecksConclusionEnum i
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -221,11 +257,26 @@ final readonly class GetDeploymentsResponseDeploymentsItemChecksStateEnum implem
     public const REGISTERED = "registered";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -238,9 +289,24 @@ final readonly class GetDeploymentsResponseDeploymentsItemCreatorTypeEnum implem
     public const SYSTEM = "system";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

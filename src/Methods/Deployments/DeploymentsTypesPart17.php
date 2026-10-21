@@ -42,7 +42,9 @@ class UploadFileResponseVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "urls") || $data->urls === null) { throw new SdkValidationError("urls", 'required', "Required property 'urls' is missing or null"); }
+        if (!property_exists($data, "urls") || $data->urls === null) {
+            throw new SdkValidationError("urls", 'required', "Required property 'urls' is missing or null");
+        }
         return new self(
             urls: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->urls))),
         );
@@ -89,8 +91,12 @@ class GetDeploymentsResponseDeploymentsItemAliasError implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -238,8 +244,12 @@ class GetDeploymentsResponseDeploymentsItemAttributionGitUser implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "login") || $data->login === null) { throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "login") || $data->login === null) {
+            throw new SdkValidationError("login", 'required', "Required property 'login' is missing or null");
+        }
         return new self(
             id: (is_float($data->id) || is_int($data->id) ? SdkClient::floatValue($data->id) : SdkClient::stringValue($data->id)),
             login: SdkClient::stringValue($data->login),
@@ -309,8 +319,12 @@ class GetDeploymentsResponseDeploymentsItemAttributionVercelUser implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             username: SdkClient::stringValue($data->username),

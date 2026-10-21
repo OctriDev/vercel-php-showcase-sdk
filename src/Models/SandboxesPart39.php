@@ -81,7 +81,9 @@ class UpdateSandboxRequestNetworkPolicyVariant1AllowValueItemResponse implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "statusCode") || $data->statusCode === null) { throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null"); }
+        if (!property_exists($data, "statusCode") || $data->statusCode === null) {
+            throw new SdkValidationError("statusCode", 'required', "Required property 'statusCode' is missing or null");
+        }
         return new self(
             statusCode: SdkClient::intValue($data->statusCode),
             headers: (property_exists($data, "headers") && $data->headers !== null ? SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)) : SdkNotGiven::Value),
@@ -306,8 +308,12 @@ class UpdateSandboxResponseVariant0 implements UpdateSandboxResponse, \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "routes") || $data->routes === null) {
+            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
+        }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
+            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
+        }
         return new self(
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),

@@ -64,8 +64,12 @@ class UserEventPayloadVariant158 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
+            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
+        }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
+            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
+        }
         return new self(
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
             edgeConfigSlug: SdkClient::stringValue($data->edgeConfigSlug),
@@ -131,8 +135,12 @@ class UserEventPayloadVariant159 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
-        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) { throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
+            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
+        }
+        if (!property_exists($data, "edgeConfigSlug") || $data->edgeConfigSlug === null) {
+            throw new SdkValidationError("edgeConfigSlug", 'required', "Required property 'edgeConfigSlug' is missing or null");
+        }
         return new self(
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
             edgeConfigSlug: SdkClient::stringValue($data->edgeConfigSlug),
@@ -189,8 +197,12 @@ class UserEventPayloadVariant160EdgeConfig implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "slug") || $data->slug === null) {
+            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             slug: SdkClient::stringValue($data->slug),
@@ -206,11 +218,26 @@ final readonly class UserEventPayloadVariant160FromAccountTypeEnum implements Sd
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -285,8 +312,12 @@ class UserEventPayloadVariant160FromAccount implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant160FromAccountTypeEnum::class),
@@ -304,9 +335,24 @@ final readonly class UserEventPayloadVariant160ToAccountTypeEnum implements SdkO
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

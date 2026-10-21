@@ -122,7 +122,9 @@ class ConnectCreateConnectorRequestTriggerDestinationVariant1 implements Connect
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "branch") || $data->branch === null) { throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null"); }
+        if (!property_exists($data, "branch") || $data->branch === null) {
+            throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null");
+        }
         return new self(
             branch: SdkClient::stringValue($data->branch),
             projectId: (property_exists($data, "projectId") && $data->projectId !== null ? SdkClient::stringValue($data->projectId) : SdkNotGiven::Value),
@@ -190,7 +192,9 @@ class ConnectCreateConnectorRequestTriggerDestinationVariant2 implements Connect
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
+            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
+        }
         return new self(
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
             projectId: (property_exists($data, "projectId") && $data->projectId !== null ? SdkClient::stringValue($data->projectId) : SdkNotGiven::Value),
@@ -253,8 +257,12 @@ class ConnectErrorError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -301,7 +309,9 @@ class ConnectError implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "error") || $data->error === null) { throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null"); }
+        if (!property_exists($data, "error") || $data->error === null) {
+            throw new SdkValidationError("error", 'required', "Required property 'error' is missing or null");
+        }
         return new self(
             error: SdkClient::hydrateClass($data->error, ConnectErrorError::class),
         );
@@ -346,7 +356,9 @@ class ConnectPagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "next")) {
+            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
+        }
         return new self(
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
         );

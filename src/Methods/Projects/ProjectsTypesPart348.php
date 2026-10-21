@@ -50,9 +50,15 @@ class ListPromoteAliasesResponseVariant1AliasesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "alias") || $data->alias === null) {
+            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             alias: SdkClient::stringValue($data->alias),
             id: SdkClient::stringValue($data->id),
@@ -102,8 +108,12 @@ class ListPromoteAliasesResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "aliases") || $data->aliases === null) { throw new SdkValidationError("aliases", 'required', "Required property 'aliases' is missing or null"); }
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "aliases") || $data->aliases === null) {
+            throw new SdkValidationError("aliases", 'required', "Required property 'aliases' is missing or null");
+        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
         return new self(
             aliases: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListPromoteAliasesResponseVariant1AliasesItem::class), SdkClient::arrayValue($data->aliases))),
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),

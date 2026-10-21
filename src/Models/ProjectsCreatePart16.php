@@ -116,14 +116,30 @@ class CreateProjectResponseLinkVariant7 implements CreateProjectResponseLink, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) { throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null"); }
-        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) { throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null"); }
-        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) { throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null"); }
-        if (!property_exists($data, "repo") || $data->repo === null) { throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null"); }
-        if (!property_exists($data, "repoId") || $data->repoId === null) { throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) {
+            throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null");
+        }
+        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) {
+            throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null");
+        }
+        if (!property_exists($data, "owner") || $data->owner === null) {
+            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) {
+            throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null");
+        }
+        if (!property_exists($data, "repo") || $data->repo === null) {
+            throw new SdkValidationError("repo", 'required', "Required property 'repo' is missing or null");
+        }
+        if (!property_exists($data, "repoId") || $data->repoId === null) {
+            throw new SdkValidationError("repoId", 'required', "Required property 'repoId' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             deployHooks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateProjectResponseLinkVariant7DeployHooksItem::class), SdkClient::arrayValue($data->deployHooks))),
             gitCredentialId: SdkClient::stringValue($data->gitCredentialId),
@@ -225,10 +241,18 @@ class CreateProjectResponseMicrofrontendsVariant0 implements CreateProjectRespon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
-        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) { throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
+            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
+        }
+        if (!property_exists($data, "isDefaultApp") || $data->isDefaultApp === null) {
+            throw new SdkValidationError("isDefaultApp", 'required', "Required property 'isDefaultApp' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),

@@ -117,11 +117,21 @@ class ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployment implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "readyState") || $data->readyState === null) { throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "readyState") || $data->readyState === null) {
+            throw new SdkValidationError("readyState", 'required', "Required property 'readyState' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),
@@ -225,11 +235,21 @@ class ApproveRollingReleaseStageResponseRollingReleaseNextStage implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
-        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "duration")) {
+            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
+        }
+        if (!property_exists($data, "index") || $data->index === null) {
+            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
+        }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
+            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
+        }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
+            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
+        }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),
@@ -331,11 +351,21 @@ class ApproveRollingReleaseStageResponseRollingReleaseStagesItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
-        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "duration")) {
+            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
+        }
+        if (!property_exists($data, "index") || $data->index === null) {
+            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
+        }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
+            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
+        }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
+            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
+        }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),

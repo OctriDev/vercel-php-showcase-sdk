@@ -64,10 +64,18 @@ class GetFirewallConfigResponseRulesetsValueRateLimit implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algo") || $data->algo === null) { throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null"); }
-        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
-        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
-        if (!property_exists($data, "window") || $data->window === null) { throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null"); }
+        if (!property_exists($data, "algo") || $data->algo === null) {
+            throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null");
+        }
+        if (!property_exists($data, "keys") || $data->keys === null) {
+            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
+        }
+        if (!property_exists($data, "limit") || $data->limit === null) {
+            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
+        }
+        if (!property_exists($data, "window") || $data->window === null) {
+            throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null");
+        }
         return new self(
             algo: SdkClient::hydrateStringEnumOrString($data->algo, GetFirewallConfigResponseRulesetsValueRateLimitAlgoEnum::class),
             keys: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->keys))),
@@ -115,8 +123,12 @@ class GetFirewallConfigResponseRulesetsValueRedirect implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "location") || $data->location === null) { throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null"); }
-        if (!property_exists($data, "permanent") || $data->permanent === null) { throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null"); }
+        if (!property_exists($data, "location") || $data->location === null) {
+            throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null");
+        }
+        if (!property_exists($data, "permanent") || $data->permanent === null) {
+            throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null");
+        }
         return new self(
             location: SdkClient::stringValue($data->location),
             permanent: SdkClient::boolValue($data->permanent),
@@ -195,7 +207,9 @@ class GetFirewallConfigResponseRulesetsValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, GetFirewallConfigResponseRulesetsValueActionEnum::class),
             actionDuration: (property_exists($data, "actionDuration") ? ($data->actionDuration === null ? null : SdkClient::stringValue($data->actionDuration)) : SdkNotGiven::Value),

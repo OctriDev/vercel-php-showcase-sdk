@@ -38,7 +38,9 @@ class UpdateProjectResponseInternalRoutesItemVariant1HasItemHostValue implements
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
+        if (!property_exists($data, "eq") || $data->eq === null) {
+            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
+        }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );
@@ -82,8 +84,12 @@ class UpdateProjectResponseInternalRoutesItemVariant1HasItemHost implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, UpdateProjectResponseInternalRoutesItemVariant1HasItemHostTypeEnum::class),
             value: SdkClient::hydrateClass($data->value, UpdateProjectResponseInternalRoutesItemVariant1HasItemHostValue::class),
@@ -95,11 +101,26 @@ final readonly class UpdateProjectResponseInternalRoutesItemVariant1MitigateActi
 {
     public const BLOCK_LEGAL_CWC = "block_legal_cwc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UpdateProjectResponseInternalRoutesItemVariant1Mitigate implements \JsonSerializable
@@ -133,7 +154,9 @@ class UpdateProjectResponseInternalRoutesItemVariant1Mitigate implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UpdateProjectResponseInternalRoutesItemVariant1MitigateActionEnum::class),
         );
@@ -185,8 +208,12 @@ class UpdateProjectResponseInternalRoutesItemVariant1 implements UpdateProjectRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "has") || $data->has === null) { throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null"); }
-        if (!property_exists($data, "mitigate") || $data->mitigate === null) { throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null"); }
+        if (!property_exists($data, "has") || $data->has === null) {
+            throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null");
+        }
+        if (!property_exists($data, "mitigate") || $data->mitigate === null) {
+            throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null");
+        }
         return new self(
             has: array_values(array_map(static fn($item) => SdkClient::hydrateUnion($item, [UpdateProjectResponseInternalRoutesItemVariant1HasItemHeader::class, UpdateProjectResponseInternalRoutesItemVariant1HasItemHost::class], null, []), SdkClient::arrayValue($data->has))),
             mitigate: SdkClient::hydrateClass($data->mitigate, UpdateProjectResponseInternalRoutesItemVariant1Mitigate::class),
@@ -252,10 +279,18 @@ class UpdateProjectResponseLinkVariant0DeployHooksItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

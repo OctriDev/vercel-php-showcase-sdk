@@ -38,7 +38,9 @@ class GetConnectorTokenRequestSubjectVariant0 implements GetConnectorTokenReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConnectorTokenRequestSubjectVariant0TypeEnum::class),
         );
@@ -49,11 +51,26 @@ final readonly class GetConnectorTokenRequestSubjectVariant1TypeEnum implements 
 {
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConnectorTokenRequestSubjectVariant1 implements GetConnectorTokenRequestSubject, \JsonSerializable
@@ -103,7 +120,9 @@ class GetConnectorTokenRequestSubjectVariant1 implements GetConnectorTokenReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConnectorTokenRequestSubjectVariant1TypeEnum::class),
             id: (property_exists($data, "id") && $data->id !== null ? SdkClient::stringValue($data->id) : SdkNotGiven::Value),
@@ -116,11 +135,26 @@ final readonly class GetConnectorTokenRequestSubjectVariant2TypeEnum implements 
 {
     public const JWT_BEARER = "jwt-bearer";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConnectorTokenRequestSubjectVariant2 implements GetConnectorTokenRequestSubject, \JsonSerializable
@@ -186,7 +220,9 @@ class GetConnectorTokenRequestSubjectVariant2 implements GetConnectorTokenReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConnectorTokenRequestSubjectVariant2TypeEnum::class),
             sub: (property_exists($data, "sub") && $data->sub !== null ? SdkClient::stringValue($data->sub) : SdkNotGiven::Value),
@@ -201,11 +237,26 @@ final readonly class GetConnectorTokenRequestSubjectVariant3TypeEnum implements 
 {
     public const TOKEN = "token";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetConnectorTokenRequestSubjectVariant3 implements GetConnectorTokenRequestSubject, \JsonSerializable
@@ -245,8 +296,12 @@ class GetConnectorTokenRequestSubjectVariant3 implements GetConnectorTokenReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "token") || $data->token === null) { throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "token") || $data->token === null) {
+            throw new SdkValidationError("token", 'required', "Required property 'token' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConnectorTokenRequestSubjectVariant3TypeEnum::class),
             token: SdkClient::stringValue($data->token),
@@ -285,7 +340,9 @@ class GetConnectorTokenRequestSubjectVariant4 implements GetConnectorTokenReques
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::stringValue($data->type),
         );

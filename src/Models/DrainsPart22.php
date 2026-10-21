@@ -154,7 +154,9 @@ class GetDrainResponseVariant1FilterV2FilterBasic implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, GetDrainResponseVariant1FilterV2FilterBasicTypeEnum::class),
             deployment: (property_exists($data, "deployment") && $data->deployment !== null ? SdkClient::hydrateClass($data->deployment, GetDrainResponseVariant1FilterV2FilterBasicDeployment::class) : SdkNotGiven::Value),
@@ -206,8 +208,12 @@ class GetDrainResponseVariant1FilterV2FilterOdata implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "text") || $data->text === null) { throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "text") || $data->text === null) {
+            throw new SdkValidationError("text", 'required', "Required property 'text' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             text: SdkClient::stringValue($data->text),
             type: SdkClient::hydrateEnum($data->type, GetDrainResponseVariant1FilterV2FilterOdataTypeEnum::class),
@@ -219,11 +225,26 @@ final readonly class GetDrainResponseVariant1FilterV2VersionEnum implements SdkO
 {
     public const V2 = "v2";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDrainResponseVariant1FilterV2 implements \JsonSerializable
@@ -263,8 +284,12 @@ class GetDrainResponseVariant1FilterV2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "filter") || $data->filter === null) { throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "filter") || $data->filter === null) {
+            throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             filter: SdkClient::hydrateUnion($data->filter, [GetDrainResponseVariant1FilterV2FilterBasic::class, GetDrainResponseVariant1FilterV2FilterOdata::class], null, []),
             version: SdkClient::hydrateStringEnumOrString($data->version, GetDrainResponseVariant1FilterV2VersionEnum::class),
@@ -282,11 +307,26 @@ final readonly class GetDrainResponseVariant1ProjectAccessAllManagedByEnum imple
     public const DRAIN = "drain";
     public const INTEGRATION = "integration";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDrainResponseVariant1ProjectAccessAll implements \JsonSerializable
@@ -326,8 +366,12 @@ class GetDrainResponseVariant1ProjectAccessAll implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access") || $data->access === null) { throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null"); }
-        if (!property_exists($data, "managedBy") || $data->managedBy === null) { throw new SdkValidationError("managedBy", 'required', "Required property 'managedBy' is missing or null"); }
+        if (!property_exists($data, "access") || $data->access === null) {
+            throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null");
+        }
+        if (!property_exists($data, "managedBy") || $data->managedBy === null) {
+            throw new SdkValidationError("managedBy", 'required', "Required property 'managedBy' is missing or null");
+        }
         return new self(
             access: SdkClient::hydrateEnum($data->access, GetDrainResponseVariant1ProjectAccessAllAccessEnum::class),
             managedBy: SdkClient::hydrateStringEnumOrString($data->managedBy, GetDrainResponseVariant1ProjectAccessAllManagedByEnum::class),
