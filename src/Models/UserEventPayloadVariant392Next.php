@@ -77,15 +77,9 @@ class UserEventPayloadVariant392Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "includeDrafts") || $data->includeDrafts === null) {
-            throw new SdkValidationError("includeDrafts", 'required', "Required property 'includeDrafts' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "includeDrafts") || $data->includeDrafts === null) { throw new SdkValidationError("includeDrafts", 'required', "Required property 'includeDrafts' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             includeDrafts: SdkClient::boolValue($data->includeDrafts),
@@ -105,26 +99,11 @@ final readonly class UserEventPayloadVariant392PreviousScopeEnum implements SdkO
     public const PUBLIC = "public";
     public const SELECTED_REPOS = "selected_repos";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -197,15 +176,9 @@ class UserEventPayloadVariant392Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "includeDrafts") || $data->includeDrafts === null) {
-            throw new SdkValidationError("includeDrafts", 'required', "Required property 'includeDrafts' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "includeDrafts") || $data->includeDrafts === null) { throw new SdkValidationError("includeDrafts", 'required', "Required property 'includeDrafts' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             includeDrafts: SdkClient::boolValue($data->includeDrafts),
@@ -262,9 +235,7 @@ class UserEventPayloadVariant392 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant392Next::class),
             previous: (property_exists($data, "previous") && $data->previous !== null ? SdkClient::hydrateClass($data->previous, UserEventPayloadVariant392Previous::class) : SdkNotGiven::Value),
@@ -337,18 +308,10 @@ class UserEventPayloadVariant393 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) {
-            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
-        }
-        if (!property_exists($data, "currency") || $data->currency === null) {
-            throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "trialCreditsIssuedAt") || $data->trialCreditsIssuedAt === null) {
-            throw new SdkValidationError("trialCreditsIssuedAt", 'required', "Required property 'trialCreditsIssuedAt' is missing or null");
-        }
+        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
+        if (!property_exists($data, "currency") || $data->currency === null) { throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "trialCreditsIssuedAt") || $data->trialCreditsIssuedAt === null) { throw new SdkValidationError("trialCreditsIssuedAt", 'required', "Required property 'trialCreditsIssuedAt' is missing or null"); }
         return new self(
             amount: SdkClient::stringValue($data->amount),
             currency: SdkClient::stringValue($data->currency),

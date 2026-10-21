@@ -50,15 +50,9 @@ class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsRegex impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "flags") || $data->flags === null) {
-            throw new SdkValidationError("flags", 'required', "Required property 'flags' is missing or null");
-        }
-        if (!property_exists($data, "pattern") || $data->pattern === null) {
-            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "flags") || $data->flags === null) { throw new SdkValidationError("flags", 'required', "Required property 'flags' is missing or null"); }
+        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             flags: SdkClient::stringValue($data->flags),
             pattern: SdkClient::stringValue($data->pattern),
@@ -120,12 +114,8 @@ class CreateFlagResponseEnvironmentsValueRulesItemConditionsItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cmp") || $data->cmp === null) {
-            throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null");
-        }
-        if (!property_exists($data, "lhs") || $data->lhs === null) {
-            throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null");
-        }
+        if (!property_exists($data, "cmp") || $data->cmp === null) { throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null"); }
+        if (!property_exists($data, "lhs") || $data->lhs === null) { throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null"); }
         return new self(
             cmp: SdkClient::hydrateStringEnumOrString($data->cmp, CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum::class),
             lhs: SdkClient::hydrateUnion($data->lhs, [CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsSegment::class, CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsEntity::class], null, []),
@@ -177,12 +167,8 @@ class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "variantId") || $data->variantId === null) {
-            throw new SdkValidationError("variantId", 'required', "Required property 'variantId' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "variantId") || $data->variantId === null) { throw new SdkValidationError("variantId", 'required', "Required property 'variantId' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariantTypeEnum::class),
             variantId: SdkClient::stringValue($data->variantId),
@@ -194,26 +180,11 @@ final readonly class CreateFlagResponseEnvironmentsValueRulesItemOutcomeSplitBas
 {
     public const ENTITY = "entity";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateFlagResponseEnvironmentsValueRulesItemOutcomeSplitBase implements \JsonSerializable
@@ -259,15 +230,9 @@ class CreateFlagResponseEnvironmentsValueRulesItemOutcomeSplitBase implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attribute") || $data->attribute === null) {
-            throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "attribute") || $data->attribute === null) { throw new SdkValidationError("attribute", 'required', "Required property 'attribute' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             attribute: SdkClient::stringValue($data->attribute),
             kind: SdkClient::stringValue($data->kind),
@@ -330,18 +295,10 @@ class CreateFlagResponseEnvironmentsValueRulesItemOutcomeSplit implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "base") || $data->base === null) {
-            throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null");
-        }
-        if (!property_exists($data, "defaultVariantId") || $data->defaultVariantId === null) {
-            throw new SdkValidationError("defaultVariantId", 'required', "Required property 'defaultVariantId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "weights") || $data->weights === null) {
-            throw new SdkValidationError("weights", 'required', "Required property 'weights' is missing or null");
-        }
+        if (!property_exists($data, "base") || $data->base === null) { throw new SdkValidationError("base", 'required', "Required property 'base' is missing or null"); }
+        if (!property_exists($data, "defaultVariantId") || $data->defaultVariantId === null) { throw new SdkValidationError("defaultVariantId", 'required', "Required property 'defaultVariantId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "weights") || $data->weights === null) { throw new SdkValidationError("weights", 'required', "Required property 'weights' is missing or null"); }
         return new self(
             base: SdkClient::hydrateClass($data->base, CreateFlagResponseEnvironmentsValueRulesItemOutcomeSplitBase::class),
             defaultVariantId: SdkClient::stringValue($data->defaultVariantId),
@@ -355,24 +312,9 @@ final readonly class CreateFlagResponseEnvironmentsValueRulesItemOutcomeRolloutB
 {
     public const ENTITY = "entity";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

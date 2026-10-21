@@ -62,15 +62,9 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) {
-            throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null");
-        }
-        if (!property_exists($data, "scheduleNames") || $data->scheduleNames === null) {
-            throw new SdkValidationError("scheduleNames", 'required', "Required property 'scheduleNames' is missing or null");
-        }
-        if (!property_exists($data, "sourceFile") || $data->sourceFile === null) {
-            throw new SdkValidationError("sourceFile", 'required', "Required property 'sourceFile' is missing or null");
-        }
+        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) { throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null"); }
+        if (!property_exists($data, "scheduleNames") || $data->scheduleNames === null) { throw new SdkValidationError("scheduleNames", 'required', "Required property 'scheduleNames' is missing or null"); }
+        if (!property_exists($data, "sourceFile") || $data->sourceFile === null) { throw new SdkValidationError("sourceFile", 'required', "Required property 'sourceFile' is missing or null"); }
         return new self(
             entrypoint: SdkClient::stringValue($data->entrypoint),
             scheduleNames: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->scheduleNames))),
@@ -123,12 +117,8 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "entrypoints") || $data->entrypoints === null) {
-            throw new SdkValidationError("entrypoints", 'required', "Required property 'entrypoints' is missing or null");
-        }
-        if (!property_exists($data, "outputPath") || $data->outputPath === null) {
-            throw new SdkValidationError("outputPath", 'required', "Required property 'outputPath' is missing or null");
-        }
+        if (!property_exists($data, "entrypoints") || $data->entrypoints === null) { throw new SdkValidationError("entrypoints", 'required', "Required property 'entrypoints' is missing or null"); }
+        if (!property_exists($data, "outputPath") || $data->outputPath === null) { throw new SdkValidationError("outputPath", 'required', "Required property 'outputPath' is missing or null"); }
         return new self(
             entrypoints: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigScheduleFunctionEntrypointsItem::class), SdkClient::arrayValue($data->entrypoints))),
             outputPath: SdkClient::stringValue($data->outputPath),

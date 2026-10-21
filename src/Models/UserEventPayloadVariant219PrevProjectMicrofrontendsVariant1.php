@@ -125,15 +125,9 @@ class UserEventPayloadVariant219PrevProjectMicrofrontendsVariant1 implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->groupIds))),
@@ -217,15 +211,9 @@ class UserEventPayloadVariant219PrevProjectMicrofrontendsVariant2 implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "groupIds") || $data->groupIds === null) {
-            throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "groupIds") || $data->groupIds === null) { throw new SdkValidationError("groupIds", 'required', "Required property 'groupIds' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             groupIds: array_values(array_map(static fn($item) => $item, SdkClient::arrayValue($data->groupIds))),
@@ -319,9 +307,7 @@ class UserEventPayloadVariant219Prev implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
         return new self(
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant219PrevProject::class),
         );

@@ -45,9 +45,7 @@ class UserEventPayloadVariant493GeolocationCity implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant493GeolocationCityNames::class),
         );
@@ -92,9 +90,7 @@ class UserEventPayloadVariant493GeolocationCountryNames implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) {
-            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
-        }
+        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
         return new self(
             en: SdkClient::stringValue($data->en),
         );
@@ -139,9 +135,7 @@ class UserEventPayloadVariant493GeolocationCountry implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant493GeolocationCountryNames::class),
         );
@@ -186,9 +180,7 @@ class UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) {
-            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
-        }
+        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
         return new self(
             en: SdkClient::stringValue($data->en),
         );
@@ -233,9 +225,7 @@ class UserEventPayloadVariant493GeolocationMostSpecificSubdivision implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant493GeolocationMostSpecificSubdivisionNames::class),
         );
@@ -316,9 +306,7 @@ class UserEventPayloadVariant493Geolocation implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "country") || $data->country === null) {
-            throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null");
-        }
+        if (!property_exists($data, "country") || $data->country === null) { throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null"); }
         return new self(
             country: SdkClient::hydrateClass($data->country, UserEventPayloadVariant493GeolocationCountry::class),
             city: (property_exists($data, "city") && $data->city !== null ? SdkClient::hydrateClass($data->city, UserEventPayloadVariant493GeolocationCity::class) : SdkNotGiven::Value),

@@ -106,52 +106,22 @@ final readonly class GetDrainsResponseDrainsItemStatusEnum implements SdkOpenEnu
     public const ENABLED = "enabled";
     public const ERRORED = "errored";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetDrainsResponseDrainsItemFilterV2VersionEnum implements SdkOpenEnum
 {
     public const V2 = "v2";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetDrainsResponseDrainsItemFilterV2 implements \JsonSerializable
@@ -195,12 +165,8 @@ class GetDrainsResponseDrainsItemFilterV2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "filter") || $data->filter === null) {
-            throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "filter") || $data->filter === null) { throw new SdkValidationError("filter", 'required', "Required property 'filter' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             filter: SdkClient::hydrateUnionAs($data->filter, GetDrainsResponseDrainsItemFilterV2Filter::class, [GetDrainsResponseDrainsItemFilterV2FilterVariant0::class, GetDrainsResponseDrainsItemFilterV2FilterVariant1::class], null, []),
             version: SdkClient::hydrateStringEnumOrString($data->version, GetDrainsResponseDrainsItemFilterV2VersionEnum::class),

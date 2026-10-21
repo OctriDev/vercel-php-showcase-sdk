@@ -112,30 +112,14 @@ class UserEventPayloadVariant484 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "chatId") || $data->chatId === null) {
-            throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null");
-        }
-        if (!property_exists($data, "events") || $data->events === null) {
-            throw new SdkValidationError("events", 'required', "Required property 'events' is missing or null");
-        }
-        if (!property_exists($data, "inputTokens") || $data->inputTokens === null) {
-            throw new SdkValidationError("inputTokens", 'required', "Required property 'inputTokens' is missing or null");
-        }
-        if (!property_exists($data, "messageId") || $data->messageId === null) {
-            throw new SdkValidationError("messageId", 'required', "Required property 'messageId' is missing or null");
-        }
-        if (!property_exists($data, "model") || $data->model === null) {
-            throw new SdkValidationError("model", 'required', "Required property 'model' is missing or null");
-        }
-        if (!property_exists($data, "outputTokens") || $data->outputTokens === null) {
-            throw new SdkValidationError("outputTokens", 'required', "Required property 'outputTokens' is missing or null");
-        }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
-            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
-        }
-        if (!property_exists($data, "useCase") || $data->useCase === null) {
-            throw new SdkValidationError("useCase", 'required', "Required property 'useCase' is missing or null");
-        }
+        if (!property_exists($data, "chatId") || $data->chatId === null) { throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null"); }
+        if (!property_exists($data, "events") || $data->events === null) { throw new SdkValidationError("events", 'required', "Required property 'events' is missing or null"); }
+        if (!property_exists($data, "inputTokens") || $data->inputTokens === null) { throw new SdkValidationError("inputTokens", 'required', "Required property 'inputTokens' is missing or null"); }
+        if (!property_exists($data, "messageId") || $data->messageId === null) { throw new SdkValidationError("messageId", 'required', "Required property 'messageId' is missing or null"); }
+        if (!property_exists($data, "model") || $data->model === null) { throw new SdkValidationError("model", 'required', "Required property 'model' is missing or null"); }
+        if (!property_exists($data, "outputTokens") || $data->outputTokens === null) { throw new SdkValidationError("outputTokens", 'required', "Required property 'outputTokens' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "useCase") || $data->useCase === null) { throw new SdkValidationError("useCase", 'required', "Required property 'useCase' is missing or null"); }
         return new self(
             chatId: SdkClient::stringValue($data->chatId),
             events: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UserEventPayloadVariant484EventsItem::class), SdkClient::arrayValue($data->events))),
@@ -206,12 +190,8 @@ class UserEventPayloadVariant485 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "chatId") || $data->chatId === null) {
-            throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null");
-        }
-        if (!property_exists($data, "messageId") || $data->messageId === null) {
-            throw new SdkValidationError("messageId", 'required', "Required property 'messageId' is missing or null");
-        }
+        if (!property_exists($data, "chatId") || $data->chatId === null) { throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null"); }
+        if (!property_exists($data, "messageId") || $data->messageId === null) { throw new SdkValidationError("messageId", 'required', "Required property 'messageId' is missing or null"); }
         return new self(
             chatId: SdkClient::stringValue($data->chatId),
             messageId: SdkClient::stringValue($data->messageId),
@@ -287,15 +267,9 @@ class UserEventPayloadVariant486 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
-            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "runId") || $data->runId === null) {
-            throw new SdkValidationError("runId", 'required', "Required property 'runId' is missing or null");
-        }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "runId") || $data->runId === null) { throw new SdkValidationError("runId", 'required', "Required property 'runId' is missing or null"); }
         return new self(
             deploymentId: SdkClient::stringValue($data->deploymentId),
             projectId: SdkClient::stringValue($data->projectId),
@@ -317,24 +291,9 @@ final readonly class UserEventPayloadVariant487AppClientAuthenticationUsedMethod
     public const OIDC_TOKEN = "oidc_token";
     public const PRIVATE_KEY_JWT = "private_key_jwt";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

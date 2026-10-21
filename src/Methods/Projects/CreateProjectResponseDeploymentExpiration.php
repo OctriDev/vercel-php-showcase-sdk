@@ -117,26 +117,11 @@ final readonly class CreateProjectResponseDeploymentPolicyDeploymentSourcesItemS
     public const REST_API = "rest-api";
     public const V0 = "v0";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -185,15 +170,9 @@ class CreateProjectResponseDeploymentPolicyDeploymentSourcesItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "environments") || $data->environments === null) {
-            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
-        }
-        if (!property_exists($data, "sources") || $data->sources === null) {
-            throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "sources") || $data->sources === null) { throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             environments: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, CreateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItem::class, [CreateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant0::class, CreateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant1::class], null, []), SdkClient::arrayValue($data->environments))),
@@ -248,15 +227,9 @@ class CreateProjectResponseDeploymentPolicyGitSourcesItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "environments") || $data->environments === null) {
-            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
-        }
-        if (!property_exists($data, "sources") || $data->sources === null) {
-            throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "sources") || $data->sources === null) { throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             environments: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, CreateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem::class, [CreateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0::class, CreateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1::class], null, []), SdkClient::arrayValue($data->environments))),
@@ -322,26 +295,11 @@ final readonly class CreateProjectResponseDismissedToastsItemActionEnum implemen
     public const CANCEL = "cancel";
     public const DELETE = "delete";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateProjectResponseDismissedToastsItemValueVariant2 implements \JsonSerializable
@@ -381,12 +339,8 @@ class CreateProjectResponseDismissedToastsItemValueVariant2 implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "currentValue") || $data->currentValue === null) {
-            throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null");
-        }
-        if (!property_exists($data, "previousValue") || $data->previousValue === null) {
-            throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null");
-        }
+        if (!property_exists($data, "currentValue") || $data->currentValue === null) { throw new SdkValidationError("currentValue", 'required', "Required property 'currentValue' is missing or null"); }
+        if (!property_exists($data, "previousValue") || $data->previousValue === null) { throw new SdkValidationError("previousValue", 'required', "Required property 'previousValue' is missing or null"); }
         return new self(
             currentValue: (is_bool($data->currentValue) ? SdkClient::boolValue($data->currentValue) : (is_float($data->currentValue) || is_int($data->currentValue) ? SdkClient::floatValue($data->currentValue) : SdkClient::stringValue($data->currentValue))),
             previousValue: (is_bool($data->previousValue) ? SdkClient::boolValue($data->previousValue) : (is_float($data->previousValue) || is_int($data->previousValue) ? SdkClient::floatValue($data->previousValue) : SdkClient::stringValue($data->previousValue))),

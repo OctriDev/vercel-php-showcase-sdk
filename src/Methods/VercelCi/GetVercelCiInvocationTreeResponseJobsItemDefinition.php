@@ -74,27 +74,13 @@ class GetVercelCiInvocationTreeResponseJobsItemDefinition implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
-            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
-        }
-        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) {
-            throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null");
-        }
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
-            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "command") || $data->command === null) {
-            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
+        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) { throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null"); }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             invocationAttempt: SdkClient::floatValue($data->invocationAttempt),
@@ -138,9 +124,7 @@ class GetVercelCiInvocationTreeResponseJobsItemRunStarted implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
-            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
-        }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
         return new self(
             startedAt: SdkClient::floatValue($data->startedAt),
         );
@@ -188,12 +172,8 @@ class GetVercelCiInvocationTreeResponseJobsItemRunCompleted implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "completedAt") || $data->completedAt === null) {
-            throw new SdkValidationError("completedAt", 'required', "Required property 'completedAt' is missing or null");
-        }
-        if (!property_exists($data, "conclusion") || $data->conclusion === null) {
-            throw new SdkValidationError("conclusion", 'required', "Required property 'conclusion' is missing or null");
-        }
+        if (!property_exists($data, "completedAt") || $data->completedAt === null) { throw new SdkValidationError("completedAt", 'required', "Required property 'completedAt' is missing or null"); }
+        if (!property_exists($data, "conclusion") || $data->conclusion === null) { throw new SdkValidationError("conclusion", 'required', "Required property 'conclusion' is missing or null"); }
         return new self(
             completedAt: SdkClient::floatValue($data->completedAt),
             conclusion: SdkClient::hydrateUnionAs($data->conclusion, GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion::class, [GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant0::class, GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant1::class, GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant2::class], null, []),
@@ -272,21 +252,11 @@ class GetVercelCiInvocationTreeResponseJobsItemRun implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "invocationId") || $data->invocationId === null) {
-            throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null");
-        }
-        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) {
-            throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null");
-        }
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
-            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
-        }
-        if (!property_exists($data, "attempt") || $data->attempt === null) {
-            throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
+        if (!property_exists($data, "invocationId") || $data->invocationId === null) { throw new SdkValidationError("invocationId", 'required', "Required property 'invocationId' is missing or null"); }
+        if (!property_exists($data, "invocationAttempt") || $data->invocationAttempt === null) { throw new SdkValidationError("invocationAttempt", 'required', "Required property 'invocationAttempt' is missing or null"); }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
+        if (!property_exists($data, "attempt") || $data->attempt === null) { throw new SdkValidationError("attempt", 'required', "Required property 'attempt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
         return new self(
             invocationId: SdkClient::stringValue($data->invocationId),
             invocationAttempt: SdkClient::floatValue($data->invocationAttempt),

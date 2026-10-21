@@ -79,12 +79,8 @@ class SegmentDataRulesItemConditionsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cmp") || $data->cmp === null) {
-            throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null");
-        }
-        if (!property_exists($data, "lhs") || $data->lhs === null) {
-            throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null");
-        }
+        if (!property_exists($data, "cmp") || $data->cmp === null) { throw new SdkValidationError("cmp", 'required', "Required property 'cmp' is missing or null"); }
+        if (!property_exists($data, "lhs") || $data->lhs === null) { throw new SdkValidationError("lhs", 'required', "Required property 'lhs' is missing or null"); }
         return new self(
             cmp: SdkClient::hydrateStringEnumOrString($data->cmp, SegmentDataRulesItemConditionsItemCmpEnum::class),
             lhs: SdkClient::hydrateUnionAs($data->lhs, SegmentDataRulesItemConditionsItemLhs::class, [SegmentDataRulesItemConditionsItemLhsVariant0::class, SegmentDataRulesItemConditionsItemLhsVariant1::class], null, []),
@@ -152,15 +148,9 @@ class SegmentDataRulesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "outcome") || $data->outcome === null) {
-            throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "outcome") || $data->outcome === null) { throw new SdkValidationError("outcome", 'required', "Required property 'outcome' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SegmentDataRulesItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
             id: SdkClient::stringValue($data->id),
@@ -248,26 +238,11 @@ final readonly class SegmentTypeNameEnum implements SdkOpenEnum
 {
     public const SEGMENT = "segment";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -318,12 +293,8 @@ class SegmentMetadataCreator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

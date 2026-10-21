@@ -62,15 +62,9 @@ class UserEventPayloadVariant295 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "previewDeploymentSuffix")) {
-            throw new SdkValidationError("previewDeploymentSuffix", 'required', "Missing required property 'previewDeploymentSuffix'");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "previewDeploymentSuffix")) { throw new SdkValidationError("previewDeploymentSuffix", 'required', "Missing required property 'previewDeploymentSuffix'"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             previewDeploymentSuffix: ($data->previewDeploymentSuffix === null ? null : SdkClient::stringValue($data->previewDeploymentSuffix)),
             projectId: SdkClient::stringValue($data->projectId),
@@ -134,15 +128,9 @@ class UserEventPayloadVariant296 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "newProjectName") || $data->newProjectName === null) {
-            throw new SdkValidationError("newProjectName", 'required', "Required property 'newProjectName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "newProjectName") || $data->newProjectName === null) { throw new SdkValidationError("newProjectName", 'required', "Required property 'newProjectName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             newProjectName: SdkClient::stringValue($data->newProjectName),
             projectId: SdkClient::stringValue($data->projectId),
@@ -165,26 +153,11 @@ final readonly class UserEventPayloadVariant297NextGitProviderEnum implements Sd
     public const V0 = "v0";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -245,15 +218,9 @@ class UserEventPayloadVariant297Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) {
-            throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null");
-        }
-        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) {
-            throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null");
-        }
-        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) {
-            throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null");
-        }
+        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) { throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null"); }
+        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) { throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null"); }
+        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) { throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null"); }
         return new self(
             gitProvider: SdkClient::hydrateStringEnumOrString($data->gitProvider, UserEventPayloadVariant297NextGitProviderEnum::class),
             gitRepoId: SdkClient::stringValue($data->gitRepoId),
@@ -276,26 +243,11 @@ final readonly class UserEventPayloadVariant297PreviousGitProviderEnum implement
     public const V0 = "v0";
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -356,15 +308,9 @@ class UserEventPayloadVariant297Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) {
-            throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null");
-        }
-        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) {
-            throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null");
-        }
-        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) {
-            throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null");
-        }
+        if (!property_exists($data, "gitProvider") || $data->gitProvider === null) { throw new SdkValidationError("gitProvider", 'required', "Required property 'gitProvider' is missing or null"); }
+        if (!property_exists($data, "gitRepoId") || $data->gitRepoId === null) { throw new SdkValidationError("gitRepoId", 'required', "Required property 'gitRepoId' is missing or null"); }
+        if (!property_exists($data, "gitRepositoryName") || $data->gitRepositoryName === null) { throw new SdkValidationError("gitRepositoryName", 'required', "Required property 'gitRepositoryName' is missing or null"); }
         return new self(
             gitProvider: SdkClient::hydrateStringEnumOrString($data->gitProvider, UserEventPayloadVariant297PreviousGitProviderEnum::class),
             gitRepoId: SdkClient::stringValue($data->gitRepoId),

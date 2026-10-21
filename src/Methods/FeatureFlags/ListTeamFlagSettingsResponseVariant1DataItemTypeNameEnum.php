@@ -11,26 +11,11 @@ final readonly class ListTeamFlagSettingsResponseVariant1DataItemTypeNameEnum im
 {
     public const SETTINGS = "settings";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListTeamFlagSettingsResponseVariant1DataItem implements \JsonSerializable
@@ -118,24 +103,12 @@ class ListTeamFlagSettingsResponseVariant1DataItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "entities") || $data->entities === null) {
-            throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null");
-        }
-        if (!property_exists($data, "environments") || $data->environments === null) {
-            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
-        }
-        if (!property_exists($data, "metadata") || $data->metadata === null) {
-            throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "typeName") || $data->typeName === null) {
-            throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "entities") || $data->entities === null) { throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "metadata") || $data->metadata === null) { throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "typeName") || $data->typeName === null) { throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             entities: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListTeamFlagSettingsResponseVariant1DataItemEntitiesItem::class), SdkClient::arrayValue($data->entities))),
@@ -181,9 +154,7 @@ class ListTeamFlagSettingsResponseVariant1Pagination implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
         );
@@ -227,12 +198,8 @@ class ListTeamFlagSettingsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             data: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListTeamFlagSettingsResponseVariant1DataItem::class), SdkClient::arrayValue($data->data))),
             pagination: SdkClient::hydrateClass($data->pagination, ListTeamFlagSettingsResponseVariant1Pagination::class),
@@ -271,9 +238,7 @@ class ListTeamFlagsV2ResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
         );
@@ -317,12 +282,8 @@ class ListTeamFlagsV2Response implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, ListTeamFlagsV2ResponsePagination::class),
             data: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, ListTeamFlagsV2ResponseDataItem::class, [Flag::class, MarketplaceFlag::class], "typeName", ["flag" => Flag::class, "marketplaceFlag" => MarketplaceFlag::class], UnknownListTeamFlagsV2ResponseDataItem::class), SdkClient::arrayValue($data->data))),
@@ -361,9 +322,7 @@ class ListTeamFlagsResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
         );

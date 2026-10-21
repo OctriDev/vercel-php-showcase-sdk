@@ -38,9 +38,7 @@ class ListProjectsResponseVariant2ProjectsItemJobsTypecheck implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -121,26 +119,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemLastAliasRequestJob
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListProjectsResponseVariant2ProjectsItemLastAliasRequestTypeEnum implements SdkOpenEnum
@@ -148,26 +131,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemLastAliasRequestTyp
     public const PROMOTE = "promote";
     public const ROLLBACK = "rollback";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant2ProjectsItemLastAliasRequest implements \JsonSerializable
@@ -237,21 +205,11 @@ class ListProjectsResponseVariant2ProjectsItemLastAliasRequest implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fromDeploymentId")) {
-            throw new SdkValidationError("fromDeploymentId", 'required', "Missing required property 'fromDeploymentId'");
-        }
-        if (!property_exists($data, "jobStatus") || $data->jobStatus === null) {
-            throw new SdkValidationError("jobStatus", 'required', "Required property 'jobStatus' is missing or null");
-        }
-        if (!property_exists($data, "requestedAt") || $data->requestedAt === null) {
-            throw new SdkValidationError("requestedAt", 'required', "Required property 'requestedAt' is missing or null");
-        }
-        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) {
-            throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "fromDeploymentId")) { throw new SdkValidationError("fromDeploymentId", 'required', "Missing required property 'fromDeploymentId'"); }
+        if (!property_exists($data, "jobStatus") || $data->jobStatus === null) { throw new SdkValidationError("jobStatus", 'required', "Required property 'jobStatus' is missing or null"); }
+        if (!property_exists($data, "requestedAt") || $data->requestedAt === null) { throw new SdkValidationError("requestedAt", 'required', "Required property 'requestedAt' is missing or null"); }
+        if (!property_exists($data, "toDeploymentId") || $data->toDeploymentId === null) { throw new SdkValidationError("toDeploymentId", 'required', "Required property 'toDeploymentId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             fromDeploymentId: ($data->fromDeploymentId === null ? null : SdkClient::stringValue($data->fromDeploymentId)),
             jobStatus: SdkClient::hydrateStringEnumOrString($data->jobStatus, ListProjectsResponseVariant2ProjectsItemLastAliasRequestJobStatusEnum::class),
@@ -300,12 +258,8 @@ class ListProjectsResponseVariant2ProjectsItemLatestDeploymentsItemAliasError im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -322,26 +276,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemLatestDeploymentsIt
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ListProjectsResponseVariant2ProjectsItemLatestDeploymentsItemBranchMatcher implements \JsonSerializable
@@ -389,12 +328,8 @@ class ListProjectsResponseVariant2ProjectsItemLatestDeploymentsItemBranchMatcher
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pattern") || $data->pattern === null) {
-            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             pattern: SdkClient::stringValue($data->pattern),
             type: SdkClient::hydrateStringEnumOrString($data->type, ListProjectsResponseVariant2ProjectsItemLatestDeploymentsItemBranchMatcherTypeEnum::class),

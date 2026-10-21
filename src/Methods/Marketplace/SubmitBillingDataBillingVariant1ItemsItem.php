@@ -140,24 +140,12 @@ class SubmitBillingDataBillingVariant1ItemsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "billingPlanId") || $data->billingPlanId === null) {
-            throw new SdkValidationError("billingPlanId", 'required', "Required property 'billingPlanId' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "price") || $data->price === null) {
-            throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null");
-        }
-        if (!property_exists($data, "quantity") || $data->quantity === null) {
-            throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null");
-        }
-        if (!property_exists($data, "units") || $data->units === null) {
-            throw new SdkValidationError("units", 'required', "Required property 'units' is missing or null");
-        }
-        if (!property_exists($data, "total") || $data->total === null) {
-            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
-        }
+        if (!property_exists($data, "billingPlanId") || $data->billingPlanId === null) { throw new SdkValidationError("billingPlanId", 'required', "Required property 'billingPlanId' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "price") || $data->price === null) { throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null"); }
+        if (!property_exists($data, "quantity") || $data->quantity === null) { throw new SdkValidationError("quantity", 'required', "Required property 'quantity' is missing or null"); }
+        if (!property_exists($data, "units") || $data->units === null) { throw new SdkValidationError("units", 'required', "Required property 'units' is missing or null"); }
+        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
         return new self(
             billingPlanId: SdkClient::stringValue($data->billingPlanId),
             name: SdkClient::stringValue($data->name),
@@ -276,15 +264,9 @@ class SubmitBillingDataBillingVariant1DiscountsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "billingPlanId") || $data->billingPlanId === null) {
-            throw new SdkValidationError("billingPlanId", 'required', "Required property 'billingPlanId' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "amount") || $data->amount === null) {
-            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
-        }
+        if (!property_exists($data, "billingPlanId") || $data->billingPlanId === null) { throw new SdkValidationError("billingPlanId", 'required', "Required property 'billingPlanId' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
         return new self(
             billingPlanId: SdkClient::stringValue($data->billingPlanId),
             name: SdkClient::stringValue($data->name),
@@ -336,9 +318,7 @@ class SubmitBillingDataBillingVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "items") || $data->items === null) {
-            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
-        }
+        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
         return new self(
             items: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SubmitBillingDataBillingVariant1ItemsItem::class), SdkClient::arrayValue($data->items))),
             discounts: (property_exists($data, "discounts") && $data->discounts !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SubmitBillingDataBillingVariant1DiscountsItem::class), SdkClient::arrayValue($data->discounts))) : SdkNotGiven::Value),
@@ -355,24 +335,9 @@ final readonly class SubmitBillingDataUsageItemTypeEnum implements SdkOpenEnum
     public const INTERVAL = "interval";
     public const RATE = "rate";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

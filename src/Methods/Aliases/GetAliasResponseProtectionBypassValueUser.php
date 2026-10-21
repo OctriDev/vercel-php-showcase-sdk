@@ -65,21 +65,11 @@ class GetAliasResponseProtectionBypassValueUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access") || $data->access === null) {
-            throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "lastUpdatedAt") || $data->lastUpdatedAt === null) {
-            throw new SdkValidationError("lastUpdatedAt", 'required', "Required property 'lastUpdatedAt' is missing or null");
-        }
-        if (!property_exists($data, "lastUpdatedBy") || $data->lastUpdatedBy === null) {
-            throw new SdkValidationError("lastUpdatedBy", 'required', "Required property 'lastUpdatedBy' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "access") || $data->access === null) { throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "lastUpdatedAt") || $data->lastUpdatedAt === null) { throw new SdkValidationError("lastUpdatedAt", 'required', "Required property 'lastUpdatedAt' is missing or null"); }
+        if (!property_exists($data, "lastUpdatedBy") || $data->lastUpdatedBy === null) { throw new SdkValidationError("lastUpdatedBy", 'required', "Required property 'lastUpdatedBy' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             access: SdkClient::hydrateStringEnumOrString($data->access, GetAliasResponseProtectionBypassValueUserAccessEnum::class),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -141,15 +131,9 @@ class GetAliasResponseProtectionBypassValueAliasProtectionOverride implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             createdBy: SdkClient::stringValue($data->createdBy),
@@ -215,18 +199,10 @@ class GetAliasResponseProtectionBypassValueEmailInvite implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "lastUpdatedAt") || $data->lastUpdatedAt === null) {
-            throw new SdkValidationError("lastUpdatedAt", 'required', "Required property 'lastUpdatedAt' is missing or null");
-        }
-        if (!property_exists($data, "lastUpdatedBy") || $data->lastUpdatedBy === null) {
-            throw new SdkValidationError("lastUpdatedBy", 'required', "Required property 'lastUpdatedBy' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "lastUpdatedAt") || $data->lastUpdatedAt === null) { throw new SdkValidationError("lastUpdatedAt", 'required', "Required property 'lastUpdatedAt' is missing or null"); }
+        if (!property_exists($data, "lastUpdatedBy") || $data->lastUpdatedBy === null) { throw new SdkValidationError("lastUpdatedBy", 'required', "Required property 'lastUpdatedBy' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             lastUpdatedAt: SdkClient::floatValue($data->lastUpdatedAt),

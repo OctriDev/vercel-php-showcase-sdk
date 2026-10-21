@@ -82,21 +82,11 @@ class GetDomainConfigResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "acceptedChallenges") || $data->acceptedChallenges === null) {
-            throw new SdkValidationError("acceptedChallenges", 'required', "Required property 'acceptedChallenges' is missing or null");
-        }
-        if (!property_exists($data, "configuredBy")) {
-            throw new SdkValidationError("configuredBy", 'required', "Missing required property 'configuredBy'");
-        }
-        if (!property_exists($data, "recommendedCNAME") || $data->recommendedCNAME === null) {
-            throw new SdkValidationError("recommendedCNAME", 'required', "Required property 'recommendedCNAME' is missing or null");
-        }
-        if (!property_exists($data, "recommendedIPv4") || $data->recommendedIPv4 === null) {
-            throw new SdkValidationError("recommendedIPv4", 'required', "Required property 'recommendedIPv4' is missing or null");
-        }
-        if (!property_exists($data, "misconfigured") || $data->misconfigured === null) {
-            throw new SdkValidationError("misconfigured", 'required', "Required property 'misconfigured' is missing or null");
-        }
+        if (!property_exists($data, "acceptedChallenges") || $data->acceptedChallenges === null) { throw new SdkValidationError("acceptedChallenges", 'required', "Required property 'acceptedChallenges' is missing or null"); }
+        if (!property_exists($data, "configuredBy")) { throw new SdkValidationError("configuredBy", 'required', "Missing required property 'configuredBy'"); }
+        if (!property_exists($data, "recommendedCNAME") || $data->recommendedCNAME === null) { throw new SdkValidationError("recommendedCNAME", 'required', "Required property 'recommendedCNAME' is missing or null"); }
+        if (!property_exists($data, "recommendedIPv4") || $data->recommendedIPv4 === null) { throw new SdkValidationError("recommendedIPv4", 'required', "Required property 'recommendedIPv4' is missing or null"); }
+        if (!property_exists($data, "misconfigured") || $data->misconfigured === null) { throw new SdkValidationError("misconfigured", 'required', "Required property 'misconfigured' is missing or null"); }
         return new self(
             acceptedChallenges: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, GetDomainConfigResponseAcceptedChallengesItemEnum::class), SdkClient::arrayValue($data->acceptedChallenges))),
             configuredBy: ($data->configuredBy === null ? null : SdkClient::hydrateStringEnumOrString($data->configuredBy, GetDomainConfigResponseConfiguredByEnum::class)),
@@ -144,12 +134,8 @@ class GetDomainVerificationRecordResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "txtRecord") || $data->txtRecord === null) {
-            throw new SdkValidationError("txtRecord", 'required', "Required property 'txtRecord' is missing or null");
-        }
-        if (!property_exists($data, "verificationDomain") || $data->verificationDomain === null) {
-            throw new SdkValidationError("verificationDomain", 'required', "Required property 'verificationDomain' is missing or null");
-        }
+        if (!property_exists($data, "txtRecord") || $data->txtRecord === null) { throw new SdkValidationError("txtRecord", 'required', "Required property 'txtRecord' is missing or null"); }
+        if (!property_exists($data, "verificationDomain") || $data->verificationDomain === null) { throw new SdkValidationError("verificationDomain", 'required', "Required property 'verificationDomain' is missing or null"); }
         return new self(
             txtRecord: SdkClient::stringValue($data->txtRecord),
             verificationDomain: SdkClient::stringValue($data->verificationDomain),
@@ -219,15 +205,9 @@ class ClaimDomainOwnershipResponseDomainCreator implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             id: SdkClient::stringValue($data->id),
@@ -247,26 +227,11 @@ final readonly class ClaimDomainOwnershipResponseDomainEchModeEnum implements Sd
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -278,24 +243,9 @@ final readonly class ClaimDomainOwnershipResponseDomainServiceTypeEnum implement
     public const NA = "na";
     public const ZEIT_WORLD = "zeit.world";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

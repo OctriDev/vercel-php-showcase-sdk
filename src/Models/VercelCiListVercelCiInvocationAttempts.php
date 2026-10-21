@@ -39,9 +39,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant0 implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         Validation::validateConst("type", $data->type, "vercel-ci");
         return new self(
             type: SdkClient::stringValue($data->type),
@@ -99,18 +97,10 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant1 implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
-            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "deploymentTargetSlug") || $data->deploymentTargetSlug === null) {
-            throw new SdkValidationError("deploymentTargetSlug", 'required', "Required property 'deploymentTargetSlug' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "deploymentTargetSlug") || $data->deploymentTargetSlug === null) { throw new SdkValidationError("deploymentTargetSlug", 'required', "Required property 'deploymentTargetSlug' is missing or null"); }
         Validation::validateConst("type", $data->type, "vercel-native-checks");
         return new self(
             type: SdkClient::stringValue($data->type),

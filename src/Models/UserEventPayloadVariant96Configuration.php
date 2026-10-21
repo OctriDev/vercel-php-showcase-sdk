@@ -57,9 +57,7 @@ class UserEventPayloadVariant96Configuration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -117,9 +115,7 @@ class UserEventPayloadVariant96Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -175,12 +171,8 @@ class UserEventPayloadVariant96Team implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -255,15 +247,9 @@ class UserEventPayloadVariant96 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) {
-            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
-        }
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
-        if (!property_exists($data, "team") || $data->team === null) {
-            throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null");
-        }
+        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "team") || $data->team === null) { throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null"); }
         return new self(
             configuration: SdkClient::hydrateClass($data->configuration, UserEventPayloadVariant96Configuration::class),
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant96Project::class),
@@ -323,9 +309,7 @@ class UserEventPayloadVariant97Configuration implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),

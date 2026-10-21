@@ -17,26 +17,11 @@ final readonly class AiGatewayBudgetRefreshPeriodEnum implements SdkOpenEnum
     public const NONE = "none";
     public const WEEKLY = "weekly";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -49,26 +34,11 @@ final readonly class AiGatewayBudgetScopeTypeEnum implements SdkOpenEnum
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -78,26 +48,11 @@ final readonly class AiGatewayBudgetSourceEnum implements SdkOpenEnum
 {
     public const DEFAULT = "default";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -284,42 +239,18 @@ class AiGatewayBudget implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
-        if (!property_exists($data, "archived") || $data->archived === null) {
-            throw new SdkValidationError("archived", 'required', "Required property 'archived' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "currentByokSpend") || $data->currentByokSpend === null) {
-            throw new SdkValidationError("currentByokSpend", 'required', "Required property 'currentByokSpend' is missing or null");
-        }
-        if (!property_exists($data, "currentSpend") || $data->currentSpend === null) {
-            throw new SdkValidationError("currentSpend", 'required', "Required property 'currentSpend' is missing or null");
-        }
-        if (!property_exists($data, "includeByokInQuota") || $data->includeByokInQuota === null) {
-            throw new SdkValidationError("includeByokInQuota", 'required', "Required property 'includeByokInQuota' is missing or null");
-        }
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
-            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
-        }
-        if (!property_exists($data, "quotaEntityId") || $data->quotaEntityId === null) {
-            throw new SdkValidationError("quotaEntityId", 'required', "Required property 'quotaEntityId' is missing or null");
-        }
-        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) {
-            throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null");
-        }
-        if (!property_exists($data, "scopeId") || $data->scopeId === null) {
-            throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null");
-        }
-        if (!property_exists($data, "scopeType") || $data->scopeType === null) {
-            throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "archived") || $data->archived === null) { throw new SdkValidationError("archived", 'required', "Required property 'archived' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "currentByokSpend") || $data->currentByokSpend === null) { throw new SdkValidationError("currentByokSpend", 'required', "Required property 'currentByokSpend' is missing or null"); }
+        if (!property_exists($data, "currentSpend") || $data->currentSpend === null) { throw new SdkValidationError("currentSpend", 'required', "Required property 'currentSpend' is missing or null"); }
+        if (!property_exists($data, "includeByokInQuota") || $data->includeByokInQuota === null) { throw new SdkValidationError("includeByokInQuota", 'required', "Required property 'includeByokInQuota' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
+        if (!property_exists($data, "quotaEntityId") || $data->quotaEntityId === null) { throw new SdkValidationError("quotaEntityId", 'required', "Required property 'quotaEntityId' is missing or null"); }
+        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) { throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null"); }
+        if (!property_exists($data, "scopeId") || $data->scopeId === null) { throw new SdkValidationError("scopeId", 'required', "Required property 'scopeId' is missing or null"); }
+        if (!property_exists($data, "scopeType") || $data->scopeType === null) { throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             archived: SdkClient::boolValue($data->archived),
@@ -350,26 +281,11 @@ final readonly class AiGatewayBudgetDefaultRefreshPeriodEnum implements SdkOpenE
     public const NONE = "none";
     public const WEEKLY = "weekly";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -382,24 +298,9 @@ final readonly class AiGatewayBudgetDefaultScopeTypeEnum implements SdkOpenEnum
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

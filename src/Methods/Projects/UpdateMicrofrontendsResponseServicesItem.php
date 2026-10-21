@@ -78,9 +78,7 @@ class UpdateMicrofrontendsResponseServicesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "serviceName") || $data->serviceName === null) {
-            throw new SdkValidationError("serviceName", 'required', "Required property 'serviceName' is missing or null");
-        }
+        if (!property_exists($data, "serviceName") || $data->serviceName === null) { throw new SdkValidationError("serviceName", 'required', "Required property 'serviceName' is missing or null"); }
         return new self(
             serviceName: SdkClient::stringValue($data->serviceName),
             framework: (property_exists($data, "framework") && $data->framework !== null ? SdkClient::hydrateStringEnumOrString($data->framework, UpdateMicrofrontendsResponseServicesItemFrameworkEnum::class) : SdkNotGiven::Value),
@@ -173,9 +171,7 @@ class UpdateMicrofrontendsResponseSpeedInsights implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             canceledAt: (property_exists($data, "canceledAt") && $data->canceledAt !== null ? SdkClient::floatValue($data->canceledAt) : SdkNotGiven::Value),
@@ -195,26 +191,11 @@ final readonly class UpdateMicrofrontendsResponseSsoProtectionApril2026SecurityI
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateMicrofrontendsResponseSsoProtectionCve55182MigrationAppliedFromEnum implements SdkOpenEnum
@@ -224,26 +205,11 @@ final readonly class UpdateMicrofrontendsResponseSsoProtectionCve55182MigrationA
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateMicrofrontendsResponseSsoProtectionDeploymentTypeEnum implements SdkOpenEnum
@@ -253,26 +219,11 @@ final readonly class UpdateMicrofrontendsResponseSsoProtectionDeploymentTypeEnum
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateMicrofrontendsResponseSsoProtection implements \JsonSerializable
@@ -322,9 +273,7 @@ class UpdateMicrofrontendsResponseSsoProtection implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UpdateMicrofrontendsResponseSsoProtectionDeploymentTypeEnum::class),
             april2026SecurityIncidentMigrationAppliedFrom: (property_exists($data, "april2026SecurityIncidentMigrationAppliedFrom") ? ($data->april2026SecurityIncidentMigrationAppliedFrom === null ? null : SdkClient::hydrateStringEnumOrString($data->april2026SecurityIncidentMigrationAppliedFrom, UpdateMicrofrontendsResponseSsoProtectionApril2026SecurityIncidentMigrationAppliedFromEnum::class)) : SdkNotGiven::Value),
@@ -376,15 +325,9 @@ class UpdateMicrofrontendsResponseStaticIps implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builds") || $data->builds === null) {
-            throw new SdkValidationError("builds", 'required', "Required property 'builds' is missing or null");
-        }
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "regions") || $data->regions === null) {
-            throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null");
-        }
+        if (!property_exists($data, "builds") || $data->builds === null) { throw new SdkValidationError("builds", 'required', "Required property 'builds' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "regions") || $data->regions === null) { throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null"); }
         return new self(
             builds: SdkClient::boolValue($data->builds),
             enabled: SdkClient::boolValue($data->enabled),

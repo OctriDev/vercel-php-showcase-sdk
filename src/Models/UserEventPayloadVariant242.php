@@ -96,18 +96,10 @@ class UserEventPayloadVariant242 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "justification") || $data->justification === null) {
-            throw new SdkValidationError("justification", 'required', "Required property 'justification' is missing or null");
-        }
-        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) {
-            throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "justification") || $data->justification === null) { throw new SdkValidationError("justification", 'required', "Required property 'justification' is missing or null"); }
+        if (!property_exists($data, "previousStatus") || $data->previousStatus === null) { throw new SdkValidationError("previousStatus", 'required', "Required property 'previousStatus' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             justification: SdkClient::stringValue($data->justification),
             previousStatus: SdkClient::stringValue($data->previousStatus),
@@ -126,26 +118,11 @@ final readonly class UserEventPayloadVariant243TypeEnum implements SdkOpenEnum
 {
     public const SCRIPT = "script";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant243 implements UserEventPayload, \JsonSerializable
@@ -203,15 +180,9 @@ class UserEventPayloadVariant243 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "resourceUrl") || $data->resourceUrl === null) {
-            throw new SdkValidationError("resourceUrl", 'required', "Required property 'resourceUrl' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "resourceUrl") || $data->resourceUrl === null) { throw new SdkValidationError("resourceUrl", 'required', "Required property 'resourceUrl' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             resourceUrl: SdkClient::stringValue($data->resourceUrl),
@@ -227,26 +198,11 @@ final readonly class UserEventPayloadVariant244TypeEnum implements SdkOpenEnum
 {
     public const HEADER = "header";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant244 implements UserEventPayload, \JsonSerializable
@@ -304,15 +260,9 @@ class UserEventPayloadVariant244 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "headerName") || $data->headerName === null) {
-            throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "headerName") || $data->headerName === null) { throw new SdkValidationError("headerName", 'required', "Required property 'headerName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             headerName: SdkClient::stringValue($data->headerName),
             projectId: SdkClient::stringValue($data->projectId),
@@ -328,26 +278,11 @@ final readonly class UserEventPayloadVariant245TypeEnum implements SdkOpenEnum
 {
     public const CONNECTSRC = "connectSrc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant245 implements UserEventPayload, \JsonSerializable
@@ -405,15 +340,9 @@ class UserEventPayloadVariant245 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "resourceUrl") || $data->resourceUrl === null) {
-            throw new SdkValidationError("resourceUrl", 'required', "Required property 'resourceUrl' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "resourceUrl") || $data->resourceUrl === null) { throw new SdkValidationError("resourceUrl", 'required', "Required property 'resourceUrl' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             resourceUrl: SdkClient::stringValue($data->resourceUrl),

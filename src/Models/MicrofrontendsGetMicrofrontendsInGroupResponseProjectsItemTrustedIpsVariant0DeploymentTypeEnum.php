@@ -15,26 +15,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVaria
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant0ProtectionModeEnum implements SdkOpenEnum
@@ -42,26 +27,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVaria
     public const ADDITIONAL = "additional";
     public const EXCLUSIVE = "exclusive";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant0 implements GetMicrofrontendsInGroupResponseProjectsItemTrustedIps, \JsonSerializable
@@ -107,15 +77,9 @@ class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant0 implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "addresses") || $data->addresses === null) {
-            throw new SdkValidationError("addresses", 'required', "Required property 'addresses' is missing or null");
-        }
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
-        if (!property_exists($data, "protectionMode") || $data->protectionMode === null) {
-            throw new SdkValidationError("protectionMode", 'required', "Required property 'protectionMode' is missing or null");
-        }
+        if (!property_exists($data, "addresses") || $data->addresses === null) { throw new SdkValidationError("addresses", 'required', "Required property 'addresses' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "protectionMode") || $data->protectionMode === null) { throw new SdkValidationError("protectionMode", 'required', "Required property 'protectionMode' is missing or null"); }
         return new self(
             addresses: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant0AddressesItem::class), SdkClient::arrayValue($data->addresses))),
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant0DeploymentTypeEnum::class),
@@ -132,26 +96,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVaria
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant1 implements GetMicrofrontendsInGroupResponseProjectsItemTrustedIps, \JsonSerializable
@@ -185,9 +134,7 @@ class GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant1 implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, GetMicrofrontendsInGroupResponseProjectsItemTrustedIpsVariant1DeploymentTypeEnum::class),
         );

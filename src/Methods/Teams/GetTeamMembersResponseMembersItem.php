@@ -200,24 +200,12 @@ class GetTeamMembersResponseMembersItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "confirmed") || $data->confirmed === null) {
-            throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "role") || $data->role === null) {
-            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "confirmed") || $data->confirmed === null) { throw new SdkValidationError("confirmed", 'required', "Required property 'confirmed' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             confirmed: SdkClient::boolValue($data->confirmed),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -299,18 +287,10 @@ class GetTeamMembersResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
-        if (!property_exists($data, "hasNext") || $data->hasNext === null) {
-            throw new SdkValidationError("hasNext", 'required', "Required property 'hasNext' is missing or null");
-        }
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
-        if (!property_exists($data, "prev")) {
-            throw new SdkValidationError("prev", 'required', "Missing required property 'prev'");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "hasNext") || $data->hasNext === null) { throw new SdkValidationError("hasNext", 'required', "Required property 'hasNext' is missing or null"); }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
+        if (!property_exists($data, "prev")) { throw new SdkValidationError("prev", 'required', "Missing required property 'prev'"); }
         return new self(
             count: SdkClient::floatValue($data->count),
             hasNext: SdkClient::boolValue($data->hasNext),
@@ -365,12 +345,8 @@ class GetTeamMembersResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "members") || $data->members === null) {
-            throw new SdkValidationError("members", 'required', "Required property 'members' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "members") || $data->members === null) { throw new SdkValidationError("members", 'required', "Required property 'members' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             members: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetTeamMembersResponseMembersItem::class), SdkClient::arrayValue($data->members))),
             pagination: SdkClient::hydrateClass($data->pagination, GetTeamMembersResponsePagination::class),

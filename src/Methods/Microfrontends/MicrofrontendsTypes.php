@@ -14,26 +14,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemAliasItemConfig
     public const DNS_01 = "dns-01";
     public const HTTP = "http";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentAliasError implements \JsonSerializable
@@ -73,12 +58,8 @@ class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentAliasError 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
             message: SdkClient::stringValue($data->message),
@@ -95,26 +76,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploy
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentBranchMatcher implements \JsonSerializable
@@ -162,12 +128,8 @@ class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentBranchMatch
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pattern") || $data->pattern === null) {
-            throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "pattern") || $data->pattern === null) { throw new SdkValidationError("pattern", 'required', "Required property 'pattern' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             pattern: SdkClient::stringValue($data->pattern),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentBranchMatcherTypeEnum::class),
@@ -222,9 +184,7 @@ class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentBuildsItem 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "use") || $data->use === null) {
-            throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null");
-        }
+        if (!property_exists($data, "use") || $data->use === null) { throw new SdkValidationError("use", 'required', "Required property 'use' is missing or null"); }
         return new self(
             use_: SdkClient::stringValue($data->use),
             dest: (property_exists($data, "dest") && $data->dest !== null ? SdkClient::stringValue($data->dest) : SdkNotGiven::Value),
@@ -240,26 +200,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploy
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentChecksStateEnum implements SdkOpenEnum
@@ -268,26 +213,11 @@ final readonly class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploy
     public const REGISTERED = "registered";
     public const RUNNING = "running";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentCreator implements \JsonSerializable
@@ -349,15 +279,9 @@ class GetMicrofrontendsInGroupResponseProjectsItemAliasItemDeploymentCreator imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             uid: SdkClient::stringValue($data->uid),

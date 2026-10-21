@@ -66,9 +66,7 @@ class UserEventPayloadVariant148 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             currency: (property_exists($data, "currency") && $data->currency !== null ? SdkClient::stringValue($data->currency) : SdkNotGiven::Value),
@@ -112,9 +110,7 @@ class UserEventPayloadVariant149 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
         );
@@ -178,12 +174,8 @@ class UserEventPayloadVariant150 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drainName")) {
-            throw new SdkValidationError("drainName", 'required', "Missing required property 'drainName'");
-        }
-        if (!property_exists($data, "drainUrl")) {
-            throw new SdkValidationError("drainUrl", 'required', "Missing required property 'drainUrl'");
-        }
+        if (!property_exists($data, "drainName")) { throw new SdkValidationError("drainName", 'required', "Missing required property 'drainName'"); }
+        if (!property_exists($data, "drainUrl")) { throw new SdkValidationError("drainUrl", 'required', "Missing required property 'drainUrl'"); }
         return new self(
             drainName: ($data->drainName === null ? null : SdkClient::stringValue($data->drainName)),
             drainUrl: ($data->drainUrl === null ? null : SdkClient::stringValue($data->drainUrl)),
@@ -239,9 +231,7 @@ class UserEventPayloadVariant151 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drainUrl")) {
-            throw new SdkValidationError("drainUrl", 'required', "Missing required property 'drainUrl'");
-        }
+        if (!property_exists($data, "drainUrl")) { throw new SdkValidationError("drainUrl", 'required', "Missing required property 'drainUrl'"); }
         return new self(
             drainUrl: ($data->drainUrl === null ? null : SdkClient::stringValue($data->drainUrl)),
             integrationName: (property_exists($data, "integrationName") && $data->integrationName !== null ? SdkClient::stringValue($data->integrationName) : SdkNotGiven::Value),
@@ -304,15 +294,9 @@ class UserEventPayloadVariant152 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "srcImages") || $data->srcImages === null) {
-            throw new SdkValidationError("srcImages", 'required', "Required property 'srcImages' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "srcImages") || $data->srcImages === null) { throw new SdkValidationError("srcImages", 'required', "Required property 'srcImages' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),

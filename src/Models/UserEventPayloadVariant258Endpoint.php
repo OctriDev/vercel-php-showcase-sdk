@@ -97,21 +97,11 @@ class UserEventPayloadVariant258Endpoint implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) {
-            throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) {
-            throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null");
-        }
+        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) { throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) { throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null"); }
         return new self(
             awsServiceName: SdkClient::stringValue($data->awsServiceName),
             id: SdkClient::stringValue($data->id),
@@ -130,26 +120,11 @@ final readonly class UserEventPayloadVariant258ScopeEnum implements SdkOpenEnum
 {
     public const PROJECT = "project";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant258 implements UserEventPayload, \JsonSerializable
@@ -211,9 +186,7 @@ class UserEventPayloadVariant258 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
-            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
-        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
         return new self(
             endpoint: SdkClient::hydrateClass($data->endpoint, UserEventPayloadVariant258Endpoint::class),
             projectName: (property_exists($data, "projectName") && $data->projectName !== null ? SdkClient::stringValue($data->projectName) : SdkNotGiven::Value),
@@ -270,12 +243,8 @@ class UserEventPayloadVariant259PrivateLinkEndpoint implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -290,26 +259,11 @@ final readonly class UserEventPayloadVariant259ScopeEnum implements SdkOpenEnum
 {
     public const PROJECT = "project";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant259 implements UserEventPayload, \JsonSerializable
@@ -381,12 +335,8 @@ class UserEventPayloadVariant259 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "privateLinkEndpoint") || $data->privateLinkEndpoint === null) {
-            throw new SdkValidationError("privateLinkEndpoint", 'required', "Required property 'privateLinkEndpoint' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "privateLinkEndpoint") || $data->privateLinkEndpoint === null) { throw new SdkValidationError("privateLinkEndpoint", 'required', "Required property 'privateLinkEndpoint' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             privateLinkEndpoint: SdkClient::hydrateClass($data->privateLinkEndpoint, UserEventPayloadVariant259PrivateLinkEndpoint::class),
             projectId: SdkClient::stringValue($data->projectId),

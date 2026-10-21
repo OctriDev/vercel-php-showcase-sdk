@@ -44,12 +44,8 @@ class RemoveProjectEnvResponseItemContentHintVariant12 implements RemoveProjectE
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseItemContentHintVariant12TypeEnum::class),
@@ -99,12 +95,8 @@ class RemoveProjectEnvResponseItemContentHintVariant13 implements RemoveProjectE
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseItemContentHintVariant13TypeEnum::class),
@@ -154,12 +146,8 @@ class RemoveProjectEnvResponseItemContentHintVariant14 implements RemoveProjectE
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseItemContentHintVariant14TypeEnum::class),
@@ -227,21 +215,11 @@ class RemoveProjectEnvResponseItemContentHintVariant15 implements RemoveProjectE
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
-            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) {
-            throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null");
-        }
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "integrationProductId") || $data->integrationProductId === null) { throw new SdkValidationError("integrationProductId", 'required', "Required property 'integrationProductId' is missing or null"); }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -294,12 +272,8 @@ class RemoveProjectEnvResponseItemContentHintVariant16 implements RemoveProjectE
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             type: SdkClient::hydrateEnum($data->type, RemoveProjectEnvResponseItemContentHintVariant16TypeEnum::class),

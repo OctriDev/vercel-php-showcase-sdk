@@ -64,18 +64,10 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "filters") || $data->filters === null) {
-            throw new SdkValidationError("filters", 'required', "Required property 'filters' is missing or null");
-        }
-        if (!property_exists($data, "job") || $data->job === null) {
-            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "task") || $data->task === null) {
-            throw new SdkValidationError("task", 'required', "Required property 'task' is missing or null");
-        }
+        if (!property_exists($data, "filters") || $data->filters === null) { throw new SdkValidationError("filters", 'required', "Required property 'filters' is missing or null"); }
+        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "task") || $data->task === null) { throw new SdkValidationError("task", 'required', "Required property 'task' is missing or null"); }
         return new self(
             filters: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->filters))),
             job: SdkClient::hydrateStringEnumOrString($data->job, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepoJobEnum::class),
@@ -90,26 +82,11 @@ final readonly class ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSub
 {
     public const VERCEL_CI_CHECK = "vercel-ci-check";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -158,15 +135,9 @@ class ListDeploymentCheckRunsResponseRunsItemVariant0SourceApi implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
-        if (!property_exists($data, "selection") || $data->selection === null) {
-            throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null");
-        }
-        if (!property_exists($data, "subKind") || $data->subKind === null) {
-            throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
+        if (!property_exists($data, "selection") || $data->selection === null) { throw new SdkValidationError("selection", 'required', "Required property 'selection' is missing or null"); }
+        if (!property_exists($data, "subKind") || $data->subKind === null) { throw new SdkValidationError("subKind", 'required', "Required property 'subKind' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiOriginEnum::class),
             selection: SdkClient::hydrateUnion($data->selection, [ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionInvocation::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionDeployment::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionJob::class, ListDeploymentCheckRunsResponseRunsItemVariant0SourceApiSelectionTurborepo::class], null, []),

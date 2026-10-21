@@ -64,12 +64,8 @@ class UserEventPayloadVariant355 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectionId") || $data->connectionId === null) {
-            throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null");
-        }
-        if (!property_exists($data, "actorType") || $data->actorType === null) {
-            throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null");
-        }
+        if (!property_exists($data, "connectionId") || $data->connectionId === null) { throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null"); }
+        if (!property_exists($data, "actorType") || $data->actorType === null) { throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null"); }
         return new self(
             connectionId: SdkClient::stringValue($data->connectionId),
             actorType: SdkClient::hydrateStringEnumOrString($data->actorType, UserEventPayloadVariant355ActorTypeEnum::class),
@@ -85,26 +81,11 @@ final readonly class UserEventPayloadVariant356ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant356 implements UserEventPayload, \JsonSerializable
@@ -174,15 +155,9 @@ class UserEventPayloadVariant356 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectionId") || $data->connectionId === null) {
-            throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null");
-        }
-        if (!property_exists($data, "actorType") || $data->actorType === null) {
-            throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null");
-        }
-        if (!property_exists($data, "created") || $data->created === null) {
-            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
-        }
+        if (!property_exists($data, "connectionId") || $data->connectionId === null) { throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null"); }
+        if (!property_exists($data, "actorType") || $data->actorType === null) { throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
         return new self(
             connectionId: SdkClient::stringValue($data->connectionId),
             actorType: SdkClient::hydrateStringEnumOrString($data->actorType, UserEventPayloadVariant356ActorTypeEnum::class),
@@ -199,26 +174,11 @@ final readonly class UserEventPayloadVariant357ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant357 implements UserEventPayload, \JsonSerializable
@@ -288,15 +248,9 @@ class UserEventPayloadVariant357 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectionId") || $data->connectionId === null) {
-            throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null");
-        }
-        if (!property_exists($data, "actorType") || $data->actorType === null) {
-            throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null");
-        }
-        if (!property_exists($data, "keyId") || $data->keyId === null) {
-            throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null");
-        }
+        if (!property_exists($data, "connectionId") || $data->connectionId === null) { throw new SdkValidationError("connectionId", 'required', "Required property 'connectionId' is missing or null"); }
+        if (!property_exists($data, "actorType") || $data->actorType === null) { throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null"); }
+        if (!property_exists($data, "keyId") || $data->keyId === null) { throw new SdkValidationError("keyId", 'required', "Required property 'keyId' is missing or null"); }
         return new self(
             connectionId: SdkClient::stringValue($data->connectionId),
             actorType: SdkClient::hydrateStringEnumOrString($data->actorType, UserEventPayloadVariant357ActorTypeEnum::class),
@@ -313,24 +267,9 @@ final readonly class UserEventPayloadVariant358ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

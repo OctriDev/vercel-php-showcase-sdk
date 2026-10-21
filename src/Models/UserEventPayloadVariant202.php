@@ -84,18 +84,10 @@ class UserEventPayloadVariant202 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
-            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
-        }
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
-            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
-        }
-        if (!property_exists($data, "issuerName") || $data->issuerName === null) {
-            throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null");
-        }
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
+        if (!property_exists($data, "issuerName") || $data->issuerName === null) { throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             algorithm: SdkClient::stringValue($data->algorithm),
             issuerId: SdkClient::stringValue($data->issuerId),
@@ -163,12 +155,8 @@ class UserEventPayloadVariant203 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
-            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
-        }
-        if (!property_exists($data, "issuerName") || $data->issuerName === null) {
-            throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null");
-        }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
+        if (!property_exists($data, "issuerName") || $data->issuerName === null) { throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null"); }
         return new self(
             issuerId: SdkClient::stringValue($data->issuerId),
             issuerName: SdkClient::stringValue($data->issuerName),
@@ -234,12 +222,8 @@ class UserEventPayloadVariant204 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
-            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
-        }
-        if (!property_exists($data, "issuerName") || $data->issuerName === null) {
-            throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null");
-        }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
+        if (!property_exists($data, "issuerName") || $data->issuerName === null) { throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null"); }
         return new self(
             issuerId: SdkClient::stringValue($data->issuerId),
             issuerName: SdkClient::stringValue($data->issuerName),
@@ -339,15 +323,9 @@ class UserEventPayloadVariant205 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "issuerId") || $data->issuerId === null) {
-            throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null");
-        }
-        if (!property_exists($data, "issuerName") || $data->issuerName === null) {
-            throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
+        if (!property_exists($data, "issuerId") || $data->issuerId === null) { throw new SdkValidationError("issuerId", 'required', "Required property 'issuerId' is missing or null"); }
+        if (!property_exists($data, "issuerName") || $data->issuerName === null) { throw new SdkValidationError("issuerName", 'required', "Required property 'issuerName' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
         return new self(
             issuerId: SdkClient::stringValue($data->issuerId),
             issuerName: SdkClient::stringValue($data->issuerName),

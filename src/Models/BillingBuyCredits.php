@@ -44,12 +44,8 @@ class BuyCreditsResponseVariant0 implements BuyCreditsResponse, \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "checkoutSessionId") || $data->checkoutSessionId === null) {
-            throw new SdkValidationError("checkoutSessionId", 'required', "Required property 'checkoutSessionId' is missing or null");
-        }
-        if (!property_exists($data, "checkoutSessionUrl") || $data->checkoutSessionUrl === null) {
-            throw new SdkValidationError("checkoutSessionUrl", 'required', "Required property 'checkoutSessionUrl' is missing or null");
-        }
+        if (!property_exists($data, "checkoutSessionId") || $data->checkoutSessionId === null) { throw new SdkValidationError("checkoutSessionId", 'required', "Required property 'checkoutSessionId' is missing or null"); }
+        if (!property_exists($data, "checkoutSessionUrl") || $data->checkoutSessionUrl === null) { throw new SdkValidationError("checkoutSessionUrl", 'required', "Required property 'checkoutSessionUrl' is missing or null"); }
         return new self(
             checkoutSessionId: SdkClient::stringValue($data->checkoutSessionId),
             checkoutSessionUrl: SdkClient::stringValue($data->checkoutSessionUrl),
@@ -68,26 +64,11 @@ final readonly class BuyCreditsResponseVariant1PurchaseIntentConfigurationCredit
     public const V0_USER_CREDITS = "v0_user_credits";
     public const VERCEL_AGENT_CREDITS = "vercel_agent_credits";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -150,12 +131,8 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationCreditTopupOptions im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) {
-            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
-        }
-        if (!property_exists($data, "currency") || $data->currency === null) {
-            throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null");
-        }
+        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
+        if (!property_exists($data, "currency") || $data->currency === null) { throw new SdkValidationError("currency", 'required', "Required property 'currency' is missing or null"); }
         return new self(
             amount: SdkClient::stringValue($data->amount),
             currency: SdkClient::hydrateStringEnumOrString($data->currency, BuyCreditsResponseVariant1PurchaseIntentConfigurationCreditTopupOptionsCurrencyEnum::class),
@@ -219,15 +196,9 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationCreditTopup implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) {
-            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
-        }
-        if (!property_exists($data, "output")) {
-            throw new SdkValidationError("output", 'required', "Missing required property 'output'");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
+        if (!property_exists($data, "output")) { throw new SdkValidationError("output", 'required', "Missing required property 'output'"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant1PurchaseIntentConfigurationCreditTopupOptions::class),
             output: ($data->output === null ? null : $data->output),
@@ -242,26 +213,11 @@ final readonly class BuyCreditsResponseVariant1PurchaseIntentConfigurationDomain
     public const RENEWAL = "renewal";
     public const TRANSFER = "transfer";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainNameOptionsItemsItem implements \JsonSerializable
@@ -321,18 +277,10 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainNameOptionsItem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "subtotal") || $data->subtotal === null) {
-            throw new SdkValidationError("subtotal", 'required', "Required property 'subtotal' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "years") || $data->years === null) {
-            throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "subtotal") || $data->subtotal === null) { throw new SdkValidationError("subtotal", 'required', "Required property 'subtotal' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "years") || $data->years === null) { throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             subtotal: SdkClient::stringValue($data->subtotal),
@@ -383,12 +331,8 @@ class BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainNameOptions imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "items") || $data->items === null) {
-            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
-        }
-        if (!property_exists($data, "orderId") || $data->orderId === null) {
-            throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null");
-        }
+        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
+        if (!property_exists($data, "orderId") || $data->orderId === null) { throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null"); }
         return new self(
             items: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, BuyCreditsResponseVariant1PurchaseIntentConfigurationDomainNameOptionsItemsItem::class), SdkClient::arrayValue($data->items))),
             orderId: SdkClient::stringValue($data->orderId),

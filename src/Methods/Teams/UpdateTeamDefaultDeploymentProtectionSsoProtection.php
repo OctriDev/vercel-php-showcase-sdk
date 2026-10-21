@@ -45,9 +45,7 @@ class UpdateTeamDefaultDeploymentProtectionSsoProtection implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
-            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
-        }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum::class),
         );
@@ -120,26 +118,11 @@ final readonly class UpdateTeamDefaultPassportDeploymentTypeEnum implements SdkO
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     public const ALL_EXCEPT_CUSTOM_DOMAINS = "all_except_custom_domains";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -184,9 +167,7 @@ class UpdateTeamDefaultPassport implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connectorId") || $data->connectorId === null) {
-            throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null");
-        }
+        if (!property_exists($data, "connectorId") || $data->connectorId === null) { throw new SdkValidationError("connectorId", 'required', "Required property 'connectorId' is missing or null"); }
         return new self(
             connectorId: SdkClient::stringValue($data->connectorId),
             deploymentType: (property_exists($data, "deploymentType") && $data->deploymentType !== null ? SdkClient::hydrateStringEnumOrString($data->deploymentType, UpdateTeamDefaultPassportDeploymentTypeEnum::class) : SdkNotGiven::Value),
@@ -211,26 +192,11 @@ final readonly class UpdateTeamDefaultExpirationSettingsExpirationEnum implement
     public const _1D = "1d";
     public const UNLIMITED = "unlimited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -250,26 +216,11 @@ final readonly class UpdateTeamDefaultExpirationSettingsExpirationProductionEnum
     public const _1D = "1d";
     public const UNLIMITED = "unlimited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -287,26 +238,11 @@ final readonly class UpdateTeamDefaultExpirationSettingsExpirationCanceledEnum i
     public const _1D = "1d";
     public const UNLIMITED = "unlimited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -324,24 +260,9 @@ final readonly class UpdateTeamDefaultExpirationSettingsExpirationErroredEnum im
     public const _1D = "1d";
     public const UNLIMITED = "unlimited";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

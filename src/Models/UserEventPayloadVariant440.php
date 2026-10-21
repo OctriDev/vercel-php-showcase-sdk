@@ -42,9 +42,7 @@ class UserEventPayloadVariant440 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
-            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
-        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
         return new self(
             organizationId: SdkClient::stringValue($data->organizationId),
         );
@@ -96,12 +94,8 @@ class UserEventPayloadVariant441 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "organizationId") || $data->organizationId === null) {
-            throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null");
-        }
-        if (!property_exists($data, "teamIds") || $data->teamIds === null) {
-            throw new SdkValidationError("teamIds", 'required', "Required property 'teamIds' is missing or null");
-        }
+        if (!property_exists($data, "organizationId") || $data->organizationId === null) { throw new SdkValidationError("organizationId", 'required', "Required property 'organizationId' is missing or null"); }
+        if (!property_exists($data, "teamIds") || $data->teamIds === null) { throw new SdkValidationError("teamIds", 'required', "Required property 'teamIds' is missing or null"); }
         return new self(
             organizationId: SdkClient::stringValue($data->organizationId),
             teamIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->teamIds))),
@@ -160,26 +154,11 @@ final readonly class UserEventPayloadVariant443ActorTypeEnum implements SdkOpenE
     public const ADMIN = "admin";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant443 implements UserEventPayload, \JsonSerializable
@@ -275,12 +254,8 @@ class UserEventPayloadVariant443 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "recoveryCodes") || $data->recoveryCodes === null) {
-            throw new SdkValidationError("recoveryCodes", 'required', "Required property 'recoveryCodes' is missing or null");
-        }
-        if (!property_exists($data, "totp") || $data->totp === null) {
-            throw new SdkValidationError("totp", 'required', "Required property 'totp' is missing or null");
-        }
+        if (!property_exists($data, "recoveryCodes") || $data->recoveryCodes === null) { throw new SdkValidationError("recoveryCodes", 'required', "Required property 'recoveryCodes' is missing or null"); }
+        if (!property_exists($data, "totp") || $data->totp === null) { throw new SdkValidationError("totp", 'required', "Required property 'totp' is missing or null"); }
         return new self(
             recoveryCodes: SdkClient::floatValue($data->recoveryCodes),
             totp: SdkClient::boolValue($data->totp),
@@ -339,9 +314,7 @@ class UserEventPayloadVariant444 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             username: SdkClient::stringValue($data->username),
             deletedAt: (property_exists($data, "deletedAt") ? ($data->deletedAt === null ? null : SdkClient::floatValue($data->deletedAt)) : SdkNotGiven::Value),
@@ -356,24 +329,9 @@ final readonly class UserEventPayloadVariant445ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

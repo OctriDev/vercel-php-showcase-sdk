@@ -97,21 +97,11 @@ class UserEventPayloadVariant260Current implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) {
-            throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null");
-        }
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) {
-            throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null");
-        }
+        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) { throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null"); }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) { throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null"); }
         return new self(
             awsServiceName: SdkClient::stringValue($data->awsServiceName),
             configurationId: SdkClient::stringValue($data->configurationId),
@@ -213,21 +203,11 @@ class UserEventPayloadVariant260Prev implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) {
-            throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null");
-        }
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) {
-            throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null");
-        }
+        if (!property_exists($data, "awsServiceName") || $data->awsServiceName === null) { throw new SdkValidationError("awsServiceName", 'required', "Required property 'awsServiceName' is missing or null"); }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "vercelRegion") || $data->vercelRegion === null) { throw new SdkValidationError("vercelRegion", 'required', "Required property 'vercelRegion' is missing or null"); }
         return new self(
             awsServiceName: SdkClient::stringValue($data->awsServiceName),
             configurationId: SdkClient::stringValue($data->configurationId),
@@ -246,26 +226,11 @@ final readonly class UserEventPayloadVariant260ScopeEnum implements SdkOpenEnum
 {
     public const NETWORK = "network";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant260 implements UserEventPayload, \JsonSerializable
@@ -335,15 +300,9 @@ class UserEventPayloadVariant260 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "current") || $data->current === null) {
-            throw new SdkValidationError("current", 'required', "Required property 'current' is missing or null");
-        }
-        if (!property_exists($data, "prev") || $data->prev === null) {
-            throw new SdkValidationError("prev", 'required', "Required property 'prev' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
+        if (!property_exists($data, "current") || $data->current === null) { throw new SdkValidationError("current", 'required', "Required property 'current' is missing or null"); }
+        if (!property_exists($data, "prev") || $data->prev === null) { throw new SdkValidationError("prev", 'required', "Required property 'prev' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
         return new self(
             current: SdkClient::hydrateClass($data->current, UserEventPayloadVariant260Current::class),
             prev: SdkClient::hydrateClass($data->prev, UserEventPayloadVariant260Prev::class),

@@ -134,33 +134,15 @@ class CreateSecurityFirewallConfigByConfigVersionActivateResponse implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "changes") || $data->changes === null) {
-            throw new SdkValidationError("changes", 'required', "Required property 'changes' is missing or null");
-        }
-        if (!property_exists($data, "firewallEnabled") || $data->firewallEnabled === null) {
-            throw new SdkValidationError("firewallEnabled", 'required', "Required property 'firewallEnabled' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "ips") || $data->ips === null) {
-            throw new SdkValidationError("ips", 'required', "Required property 'ips' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "projectKey") || $data->projectKey === null) {
-            throw new SdkValidationError("projectKey", 'required', "Required property 'projectKey' is missing or null");
-        }
-        if (!property_exists($data, "rules") || $data->rules === null) {
-            throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "changes") || $data->changes === null) { throw new SdkValidationError("changes", 'required', "Required property 'changes' is missing or null"); }
+        if (!property_exists($data, "firewallEnabled") || $data->firewallEnabled === null) { throw new SdkValidationError("firewallEnabled", 'required', "Required property 'firewallEnabled' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "ips") || $data->ips === null) { throw new SdkValidationError("ips", 'required', "Required property 'ips' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "projectKey") || $data->projectKey === null) { throw new SdkValidationError("projectKey", 'required', "Required property 'projectKey' is missing or null"); }
+        if (!property_exists($data, "rules") || $data->rules === null) { throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             changes: array_values(array_map(static fn($item) => SdkClient::stringMapValue($item), SdkClient::arrayValue($data->changes))),
             firewallEnabled: SdkClient::boolValue($data->firewallEnabled),
@@ -236,21 +218,11 @@ class GetActiveAttackStatusResponseVariant1AnomaliesItemAffectedHostMapValueAnom
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "at_minute") || $data->at_minute === null) {
-            throw new SdkValidationError("at_minute", 'required', "Required property 'at_minute' is missing or null");
-        }
-        if (!property_exists($data, "avg_requests") || $data->avg_requests === null) {
-            throw new SdkValidationError("avg_requests", 'required', "Required property 'avg_requests' is missing or null");
-        }
-        if (!property_exists($data, "stddev_requests") || $data->stddev_requests === null) {
-            throw new SdkValidationError("stddev_requests", 'required', "Required property 'stddev_requests' is missing or null");
-        }
-        if (!property_exists($data, "total_requests_minute") || $data->total_requests_minute === null) {
-            throw new SdkValidationError("total_requests_minute", 'required', "Required property 'total_requests_minute' is missing or null");
-        }
-        if (!property_exists($data, "zscore") || $data->zscore === null) {
-            throw new SdkValidationError("zscore", 'required', "Required property 'zscore' is missing or null");
-        }
+        if (!property_exists($data, "at_minute") || $data->at_minute === null) { throw new SdkValidationError("at_minute", 'required', "Required property 'at_minute' is missing or null"); }
+        if (!property_exists($data, "avg_requests") || $data->avg_requests === null) { throw new SdkValidationError("avg_requests", 'required', "Required property 'avg_requests' is missing or null"); }
+        if (!property_exists($data, "stddev_requests") || $data->stddev_requests === null) { throw new SdkValidationError("stddev_requests", 'required', "Required property 'stddev_requests' is missing or null"); }
+        if (!property_exists($data, "total_requests_minute") || $data->total_requests_minute === null) { throw new SdkValidationError("total_requests_minute", 'required', "Required property 'total_requests_minute' is missing or null"); }
+        if (!property_exists($data, "zscore") || $data->zscore === null) { throw new SdkValidationError("zscore", 'required', "Required property 'zscore' is missing or null"); }
         return new self(
             atMinute: SdkClient::stringValue($data->at_minute),
             avgRequests: SdkClient::floatValue($data->avg_requests),
@@ -298,12 +270,8 @@ class GetActiveAttackStatusResponseVariant1AnomaliesItemAffectedHostMapValueDdos
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "atMinute") || $data->atMinute === null) {
-            throw new SdkValidationError("atMinute", 'required', "Required property 'atMinute' is missing or null");
-        }
-        if (!property_exists($data, "totalReqs") || $data->totalReqs === null) {
-            throw new SdkValidationError("totalReqs", 'required', "Required property 'totalReqs' is missing or null");
-        }
+        if (!property_exists($data, "atMinute") || $data->atMinute === null) { throw new SdkValidationError("atMinute", 'required', "Required property 'atMinute' is missing or null"); }
+        if (!property_exists($data, "totalReqs") || $data->totalReqs === null) { throw new SdkValidationError("totalReqs", 'required', "Required property 'totalReqs' is missing or null"); }
         return new self(
             atMinute: SdkClient::stringValue($data->atMinute),
             totalReqs: SdkClient::floatValue($data->totalReqs),

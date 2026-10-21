@@ -50,15 +50,9 @@ class CreateProjectCheckResponseSourceVariant2 implements CreateProjectCheckResp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) {
-            throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null");
-        }
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "provider") || $data->provider === null) {
-            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
-        }
+        if (!property_exists($data, "externalCheckName") || $data->externalCheckName === null) { throw new SdkValidationError("externalCheckName", 'required', "Required property 'externalCheckName' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
         return new self(
             externalCheckName: SdkClient::stringValue($data->externalCheckName),
             kind: SdkClient::hydrateEnum($data->kind, CreateProjectCheckResponseSourceVariant2KindEnum::class),

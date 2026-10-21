@@ -46,9 +46,7 @@ class UpdateMicrofrontendsResponseSecurityManagedRulesAiBots implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UpdateMicrofrontendsResponseSecurityManagedRulesAiBotsActionEnum::class) : SdkNotGiven::Value),
@@ -62,26 +60,11 @@ final readonly class UpdateMicrofrontendsResponseSecurityManagedRulesBotFilterAc
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateMicrofrontendsResponseSecurityManagedRulesBotFilter implements \JsonSerializable
@@ -123,9 +106,7 @@ class UpdateMicrofrontendsResponseSecurityManagedRulesBotFilter implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UpdateMicrofrontendsResponseSecurityManagedRulesBotFilterActionEnum::class) : SdkNotGiven::Value),
@@ -139,26 +120,11 @@ final readonly class UpdateMicrofrontendsResponseSecurityManagedRulesOwaspAction
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateMicrofrontendsResponseSecurityManagedRulesOwasp implements \JsonSerializable
@@ -200,9 +166,7 @@ class UpdateMicrofrontendsResponseSecurityManagedRulesOwasp implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UpdateMicrofrontendsResponseSecurityManagedRulesOwaspActionEnum::class) : SdkNotGiven::Value),
@@ -216,26 +180,11 @@ final readonly class UpdateMicrofrontendsResponseSecurityManagedRulesTrafficSour
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateMicrofrontendsResponseSecurityManagedRulesTrafficSources implements \JsonSerializable
@@ -277,9 +226,7 @@ class UpdateMicrofrontendsResponseSecurityManagedRulesTrafficSources implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UpdateMicrofrontendsResponseSecurityManagedRulesTrafficSourcesActionEnum::class) : SdkNotGiven::Value),
@@ -293,26 +240,11 @@ final readonly class UpdateMicrofrontendsResponseSecurityManagedRulesVercelRules
     public const DENY = "deny";
     public const LOG = "log";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UpdateMicrofrontendsResponseSecurityManagedRulesVercelRuleset implements \JsonSerializable
@@ -354,9 +286,7 @@ class UpdateMicrofrontendsResponseSecurityManagedRulesVercelRuleset implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
         return new self(
             active: SdkClient::boolValue($data->active),
             action: (property_exists($data, "action") && $data->action !== null ? SdkClient::hydrateStringEnumOrString($data->action, UpdateMicrofrontendsResponseSecurityManagedRulesVercelRulesetActionEnum::class) : SdkNotGiven::Value),

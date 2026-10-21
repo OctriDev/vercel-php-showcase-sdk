@@ -90,9 +90,7 @@ class ListProjectsResponseVariant2ProjectsItemGitProviderOptions implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createDeployments") || $data->createDeployments === null) {
-            throw new SdkValidationError("createDeployments", 'required', "Required property 'createDeployments' is missing or null");
-        }
+        if (!property_exists($data, "createDeployments") || $data->createDeployments === null) { throw new SdkValidationError("createDeployments", 'required', "Required property 'createDeployments' is missing or null"); }
         return new self(
             createDeployments: SdkClient::hydrateStringEnumOrString($data->createDeployments, ListProjectsResponseVariant2ProjectsItemGitProviderOptionsCreateDeploymentsEnum::class),
             consolidatedGitCommitStatus: (property_exists($data, "consolidatedGitCommitStatus") && $data->consolidatedGitCommitStatus !== null ? SdkClient::hydrateClass($data->consolidatedGitCommitStatus, ListProjectsResponseVariant2ProjectsItemGitProviderOptionsConsolidatedGitCommitStatus::class) : SdkNotGiven::Value),
@@ -148,12 +146,8 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant0 impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) {
-            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             src: SdkClient::stringValue($data->src),
             status: SdkClient::floatValue($data->status),
@@ -166,26 +160,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemV
 {
     public const X_VERCEL_IP_COUNTRY = "x-vercel-ip-country";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 enum ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHeaderTypeEnum: string implements SdkWireEnum
@@ -224,9 +203,7 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemH
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) {
-            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
-        }
+        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );
@@ -276,15 +253,9 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemH
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             key: SdkClient::hydrateStringEnumOrString($data->key, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHeaderKeyEnum::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemHeaderTypeEnum::class),
@@ -329,9 +300,7 @@ class ListProjectsResponseVariant2ProjectsItemInternalRoutesItemVariant1HasItemH
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "eq") || $data->eq === null) {
-            throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null");
-        }
+        if (!property_exists($data, "eq") || $data->eq === null) { throw new SdkValidationError("eq", 'required', "Required property 'eq' is missing or null"); }
         return new self(
             eq: SdkClient::stringValue($data->eq),
         );

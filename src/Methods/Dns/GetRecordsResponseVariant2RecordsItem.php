@@ -124,36 +124,16 @@ class GetRecordsResponseVariant2RecordsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created")) {
-            throw new SdkValidationError("created", 'required', "Missing required property 'created'");
-        }
-        if (!property_exists($data, "createdAt")) {
-            throw new SdkValidationError("createdAt", 'required', "Missing required property 'createdAt'");
-        }
-        if (!property_exists($data, "creator") || $data->creator === null) {
-            throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "updated")) {
-            throw new SdkValidationError("updated", 'required', "Missing required property 'updated'");
-        }
-        if (!property_exists($data, "updatedAt")) {
-            throw new SdkValidationError("updatedAt", 'required', "Missing required property 'updatedAt'");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "created")) { throw new SdkValidationError("created", 'required', "Missing required property 'created'"); }
+        if (!property_exists($data, "createdAt")) { throw new SdkValidationError("createdAt", 'required', "Missing required property 'createdAt'"); }
+        if (!property_exists($data, "creator") || $data->creator === null) { throw new SdkValidationError("creator", 'required', "Required property 'creator' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "updated")) { throw new SdkValidationError("updated", 'required', "Missing required property 'updated'"); }
+        if (!property_exists($data, "updatedAt")) { throw new SdkValidationError("updatedAt", 'required', "Missing required property 'updatedAt'"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             created: ($data->created === null ? null : SdkClient::floatValue($data->created)),
             createdAt: ($data->createdAt === null ? null : SdkClient::floatValue($data->createdAt)),
@@ -217,12 +197,8 @@ class GetRecordsResponseVariant2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "records") || $data->records === null) {
-            throw new SdkValidationError("records", 'required', "Required property 'records' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "records") || $data->records === null) { throw new SdkValidationError("records", 'required', "Required property 'records' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),
             records: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetRecordsResponseVariant2RecordsItem::class), SdkClient::arrayValue($data->records))),
@@ -279,18 +255,10 @@ class UpdateRecordSrv implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "target")) {
-            throw new SdkValidationError("target", 'required', "Missing required property 'target'");
-        }
-        if (!property_exists($data, "weight")) {
-            throw new SdkValidationError("weight", 'required', "Missing required property 'weight'");
-        }
-        if (!property_exists($data, "port")) {
-            throw new SdkValidationError("port", 'required', "Missing required property 'port'");
-        }
-        if (!property_exists($data, "priority")) {
-            throw new SdkValidationError("priority", 'required', "Missing required property 'priority'");
-        }
+        if (!property_exists($data, "target")) { throw new SdkValidationError("target", 'required', "Missing required property 'target'"); }
+        if (!property_exists($data, "weight")) { throw new SdkValidationError("weight", 'required', "Missing required property 'weight'"); }
+        if (!property_exists($data, "port")) { throw new SdkValidationError("port", 'required', "Missing required property 'port'"); }
+        if (!property_exists($data, "priority")) { throw new SdkValidationError("priority", 'required', "Missing required property 'priority'"); }
         return new self(
             target: ($data->target === null ? null : SdkClient::stringValue($data->target)),
             weight: ($data->weight === null ? null : SdkClient::intValue($data->weight)),
@@ -345,12 +313,8 @@ class UpdateRecordHttps implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "priority")) {
-            throw new SdkValidationError("priority", 'required', "Missing required property 'priority'");
-        }
-        if (!property_exists($data, "target")) {
-            throw new SdkValidationError("target", 'required', "Missing required property 'target'");
-        }
+        if (!property_exists($data, "priority")) { throw new SdkValidationError("priority", 'required', "Missing required property 'priority'"); }
+        if (!property_exists($data, "target")) { throw new SdkValidationError("target", 'required', "Missing required property 'target'"); }
         return new self(
             priority: ($data->priority === null ? null : SdkClient::intValue($data->priority)),
             target: ($data->target === null ? null : SdkClient::stringValue($data->target)),
@@ -372,24 +336,9 @@ final readonly class UpdateRecordResponseRecordTypeEnum implements SdkOpenEnum
     public const SRV = "SRV";
     public const TXT = "TXT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

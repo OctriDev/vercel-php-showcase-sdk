@@ -54,9 +54,7 @@ class UserEventPayloadVariant100 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) {
-            throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null");
-        }
+        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) { throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null"); }
         return new self(
             githubLogin: SdkClient::stringValue($data->githubLogin),
             host: (property_exists($data, "host") && $data->host !== null ? SdkClient::stringValue($data->host) : SdkNotGiven::Value),
@@ -99,9 +97,7 @@ class UserEventPayloadVariant101 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) {
-            throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null");
-        }
+        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) { throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null"); }
         return new self(
             githubLogin: SdkClient::stringValue($data->githubLogin),
         );
@@ -153,12 +149,8 @@ class UserEventPayloadVariant102 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) {
-            throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null");
-        }
-        if (!property_exists($data, "host") || $data->host === null) {
-            throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null");
-        }
+        if (!property_exists($data, "githubLogin") || $data->githubLogin === null) { throw new SdkValidationError("githubLogin", 'required', "Required property 'githubLogin' is missing or null"); }
+        if (!property_exists($data, "host") || $data->host === null) { throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null"); }
         return new self(
             githubLogin: SdkClient::stringValue($data->githubLogin),
             host: SdkClient::stringValue($data->host),
@@ -247,12 +239,8 @@ class UserEventPayloadVariant103 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitlabEmail") || $data->gitlabEmail === null) {
-            throw new SdkValidationError("gitlabEmail", 'required', "Required property 'gitlabEmail' is missing or null");
-        }
-        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) {
-            throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null");
-        }
+        if (!property_exists($data, "gitlabEmail") || $data->gitlabEmail === null) { throw new SdkValidationError("gitlabEmail", 'required', "Required property 'gitlabEmail' is missing or null"); }
+        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) { throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null"); }
         return new self(
             gitlabEmail: SdkClient::stringValue($data->gitlabEmail),
             gitlabLogin: SdkClient::stringValue($data->gitlabLogin),
@@ -308,12 +296,8 @@ class UserEventPayloadVariant104 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) {
-            throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null");
-        }
-        if (!property_exists($data, "gitlabUserId") || $data->gitlabUserId === null) {
-            throw new SdkValidationError("gitlabUserId", 'required', "Required property 'gitlabUserId' is missing or null");
-        }
+        if (!property_exists($data, "gitlabLogin") || $data->gitlabLogin === null) { throw new SdkValidationError("gitlabLogin", 'required', "Required property 'gitlabLogin' is missing or null"); }
+        if (!property_exists($data, "gitlabUserId") || $data->gitlabUserId === null) { throw new SdkValidationError("gitlabUserId", 'required', "Required property 'gitlabUserId' is missing or null"); }
         return new self(
             gitlabLogin: SdkClient::stringValue($data->gitlabLogin),
             gitlabUserId: SdkClient::floatValue($data->gitlabUserId),

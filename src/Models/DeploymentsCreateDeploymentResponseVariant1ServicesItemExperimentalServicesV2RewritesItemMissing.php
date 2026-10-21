@@ -44,12 +44,8 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2Rewrites
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemMissingItemHostTypeEnum::class),
             value: (is_object($data->value) ? SdkClient::hydrateClass($data->value, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemMissingItemHostValueVariant1::class) : (is_string($data->value) ? SdkClient::stringValue($data->value) : SdkClient::hydrateClass($data->value, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemMissingItemHostValueVariant1::class))),
@@ -63,26 +59,11 @@ final readonly class CreateDeploymentResponseVariant1ServicesItemExperimentalSer
     public const HEADER = "header";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemMissingItemVariant1ValueVariant1 implements \JsonSerializable
@@ -259,12 +240,8 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2Rewrites
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemMissingItemVariant1TypeEnum::class),
@@ -277,52 +254,22 @@ final readonly class CreateDeploymentResponseVariant1ServicesItemExperimentalSer
 {
     public const SET = "set";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemTransformsItemTypeEnum implements SdkOpenEnum
 {
     public const REQUEST_PATH = "request.path";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemTransformsItem implements \JsonSerializable
@@ -376,15 +323,9 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2Rewrites
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "args") || $data->args === null) {
-            throw new SdkValidationError("args", 'required', "Required property 'args' is missing or null");
-        }
-        if (!property_exists($data, "op") || $data->op === null) {
-            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "args") || $data->args === null) { throw new SdkValidationError("args", 'required', "Required property 'args' is missing or null"); }
+        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             args: SdkClient::stringValue($data->args),
             op: SdkClient::hydrateStringEnumOrString($data->op, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2RewritesItemTransformsItemOpEnum::class),

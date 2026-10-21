@@ -45,9 +45,7 @@ class UserEventPayloadVariant293Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) {
-            throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null");
-        }
+        if (!property_exists($data, "functionDefaultRegions") || $data->functionDefaultRegions === null) { throw new SdkValidationError("functionDefaultRegions", 'required', "Required property 'functionDefaultRegions' is missing or null"); }
         return new self(
             functionDefaultRegions: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions))),
         );
@@ -92,9 +90,7 @@ class UserEventPayloadVariant293Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionDefaultRegions")) {
-            throw new SdkValidationError("functionDefaultRegions", 'required', "Missing required property 'functionDefaultRegions'");
-        }
+        if (!property_exists($data, "functionDefaultRegions")) { throw new SdkValidationError("functionDefaultRegions", 'required', "Missing required property 'functionDefaultRegions'"); }
         return new self(
             functionDefaultRegions: ($data->functionDefaultRegions === null ? null : array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->functionDefaultRegions)))),
         );
@@ -166,18 +162,10 @@ class UserEventPayloadVariant293 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant293Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant293Previous::class),
@@ -225,9 +213,7 @@ class UserEventPayloadVariant294Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionZeroConfigFailover") || $data->functionZeroConfigFailover === null) {
-            throw new SdkValidationError("functionZeroConfigFailover", 'required', "Required property 'functionZeroConfigFailover' is missing or null");
-        }
+        if (!property_exists($data, "functionZeroConfigFailover") || $data->functionZeroConfigFailover === null) { throw new SdkValidationError("functionZeroConfigFailover", 'required', "Required property 'functionZeroConfigFailover' is missing or null"); }
         return new self(
             functionZeroConfigFailover: SdkClient::boolValue($data->functionZeroConfigFailover),
         );
@@ -272,9 +258,7 @@ class UserEventPayloadVariant294Previous implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionZeroConfigFailover")) {
-            throw new SdkValidationError("functionZeroConfigFailover", 'required', "Missing required property 'functionZeroConfigFailover'");
-        }
+        if (!property_exists($data, "functionZeroConfigFailover")) { throw new SdkValidationError("functionZeroConfigFailover", 'required', "Missing required property 'functionZeroConfigFailover'"); }
         return new self(
             functionZeroConfigFailover: ($data->functionZeroConfigFailover === null ? null : SdkClient::boolValue($data->functionZeroConfigFailover)),
         );
@@ -346,18 +330,10 @@ class UserEventPayloadVariant294 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant294Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant294Previous::class),

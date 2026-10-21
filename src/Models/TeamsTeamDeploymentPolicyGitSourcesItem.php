@@ -65,15 +65,9 @@ class TeamDeploymentPolicyGitSourcesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "environments") || $data->environments === null) {
-            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
-        }
-        if (!property_exists($data, "sources") || $data->sources === null) {
-            throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "sources") || $data->sources === null) { throw new SdkValidationError("sources", 'required', "Required property 'sources' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             environments: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, TeamDeploymentPolicyGitSourcesItemEnvironmentsItem::class, [TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0::class, TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1::class], null, []), SdkClient::arrayValue($data->environments))),
@@ -154,26 +148,11 @@ final readonly class TeamDeploymentStorageRolloutCohortEnum implements SdkOpenEn
     public const MEDIUM_PLUS = "medium_plus";
     public const METERED_OPT_IN = "metered_opt_in";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -185,26 +164,11 @@ final readonly class TeamDeploymentStorageRolloutMeterReasonEnum implements SdkO
     public const MEDIUM_SCHEDULED = "medium_scheduled";
     public const RETENTION_OPT_OUT = "retention_opt_out";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -293,9 +257,7 @@ class TeamDeploymentStorageRollout implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cohort") || $data->cohort === null) {
-            throw new SdkValidationError("cohort", 'required', "Required property 'cohort' is missing or null");
-        }
+        if (!property_exists($data, "cohort") || $data->cohort === null) { throw new SdkValidationError("cohort", 'required', "Required property 'cohort' is missing or null"); }
         return new self(
             cohort: SdkClient::hydrateStringEnumOrString($data->cohort, TeamDeploymentStorageRolloutCohortEnum::class),
             meteredAt: (property_exists($data, "meteredAt") && $data->meteredAt !== null ? SdkClient::floatValue($data->meteredAt) : SdkNotGiven::Value),
@@ -315,26 +277,11 @@ final readonly class TeamDisjunctiveProductionSecretPolicyEnum implements SdkOpe
     public const OFF = "off";
     public const ON = "on";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -346,26 +293,11 @@ final readonly class TeamDpAccessRequestsModeEnum implements SdkOpenEnum
     public const EMAIL_DOMAIN = "email-domain";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -380,26 +312,11 @@ final readonly class TeamEnablePreviewFeedbackEnum implements SdkOpenEnum
     public const ON = "on";
     public const ON_FORCE = "on-force";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -414,24 +331,9 @@ final readonly class TeamEnableProductionFeedbackEnum implements SdkOpenEnum
     public const ON = "on";
     public const ON_FORCE = "on-force";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

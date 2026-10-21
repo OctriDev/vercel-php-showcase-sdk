@@ -66,9 +66,7 @@ class UserEventPayloadVariant378 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "budget") || $data->budget === null) {
-            throw new SdkValidationError("budget", 'required', "Required property 'budget' is missing or null");
-        }
+        if (!property_exists($data, "budget") || $data->budget === null) { throw new SdkValidationError("budget", 'required', "Required property 'budget' is missing or null"); }
         return new self(
             budget: SdkClient::hydrateClass($data->budget, UserEventPayloadVariant378Budget::class),
             projectId: (property_exists($data, "projectId") && $data->projectId !== null ? SdkClient::stringValue($data->projectId) : SdkNotGiven::Value),
@@ -88,26 +86,11 @@ final readonly class UserEventPayloadVariant379BudgetPricingPlanEnum implements 
     public const PLUS = "plus";
     public const UNBUNDLED = "unbundled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -119,26 +102,11 @@ final readonly class UserEventPayloadVariant379BudgetScopeEnum implements SdkOpe
     public const PROJECT = "project";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -148,26 +116,11 @@ final readonly class UserEventPayloadVariant379BudgetTypeEnum implements SdkOpen
 {
     public const FIXED = "fixed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -362,30 +315,14 @@ class UserEventPayloadVariant379Budget implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "fixedBudget") || $data->fixedBudget === null) {
-            throw new SdkValidationError("fixedBudget", 'required', "Required property 'fixedBudget' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "isActive") || $data->isActive === null) {
-            throw new SdkValidationError("isActive", 'required', "Required property 'isActive' is missing or null");
-        }
-        if (!property_exists($data, "notifiedAt") || $data->notifiedAt === null) {
-            throw new SdkValidationError("notifiedAt", 'required', "Required property 'notifiedAt' is missing or null");
-        }
-        if (!property_exists($data, "previousSpend") || $data->previousSpend === null) {
-            throw new SdkValidationError("previousSpend", 'required', "Required property 'previousSpend' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "fixedBudget") || $data->fixedBudget === null) { throw new SdkValidationError("fixedBudget", 'required', "Required property 'fixedBudget' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "isActive") || $data->isActive === null) { throw new SdkValidationError("isActive", 'required', "Required property 'isActive' is missing or null"); }
+        if (!property_exists($data, "notifiedAt") || $data->notifiedAt === null) { throw new SdkValidationError("notifiedAt", 'required', "Required property 'notifiedAt' is missing or null"); }
+        if (!property_exists($data, "previousSpend") || $data->previousSpend === null) { throw new SdkValidationError("previousSpend", 'required', "Required property 'previousSpend' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             fixedBudget: SdkClient::floatValue($data->fixedBudget),

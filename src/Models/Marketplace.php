@@ -55,9 +55,7 @@ class CreateEventRequestEventVariant0 implements CreateEventRequestEvent, \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, CreateEventRequestEventVariant0TypeEnum::class),
             billingPlanId: (property_exists($data, "billingPlanId") && $data->billingPlanId !== null ? SdkClient::stringValue($data->billingPlanId) : SdkNotGiven::Value),
@@ -123,12 +121,8 @@ class CreateEventRequestEventVariant1 implements CreateEventRequestEvent, \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "resourceId") || $data->resourceId === null) {
-            throw new SdkValidationError("resourceId", 'required', "Required property 'resourceId' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "resourceId") || $data->resourceId === null) { throw new SdkValidationError("resourceId", 'required', "Required property 'resourceId' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, CreateEventRequestEventVariant1TypeEnum::class),
             resourceId: SdkClient::stringValue($data->resourceId),

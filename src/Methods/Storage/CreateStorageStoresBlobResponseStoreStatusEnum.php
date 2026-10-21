@@ -18,26 +18,11 @@ final readonly class CreateStorageStoresBlobResponseStoreStatusEnum implements S
     public const SUSPENDED = "suspended";
     public const UNINSTALLED = "uninstalled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateStorageStoresBlobResponseStoreAccessEnum implements SdkOpenEnum
@@ -45,26 +30,11 @@ final readonly class CreateStorageStoresBlobResponseStoreAccessEnum implements S
     public const PRIVATE = "private";
     public const PUBLIC = "public";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -75,26 +45,11 @@ final readonly class CreateStorageStoresBlobResponseStoreKindEnum implements Sdk
     public const PROJECT_DEFAULT = "project-default";
     public const USER_CREATED = "user-created";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateStorageStoresBlobResponseStoreRegionEnum implements SdkOpenEnum
@@ -120,26 +75,11 @@ final readonly class CreateStorageStoresBlobResponseStoreRegionEnum implements S
     public const SYD1 = "syd1";
     public const YUL1 = "yul1";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateStorageStoresBlobResponseStore implements \JsonSerializable
@@ -257,27 +197,13 @@ class CreateStorageStoresBlobResponseStore implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectsMetadata") || $data->projectsMetadata === null) {
-            throw new SdkValidationError("projectsMetadata", 'required', "Required property 'projectsMetadata' is missing or null");
-        }
-        if (!property_exists($data, "status")) {
-            throw new SdkValidationError("status", 'required', "Missing required property 'status'");
-        }
-        if (!property_exists($data, "usageQuotaExceeded") || $data->usageQuotaExceeded === null) {
-            throw new SdkValidationError("usageQuotaExceeded", 'required', "Required property 'usageQuotaExceeded' is missing or null");
-        }
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
-        if (!property_exists($data, "isTokenExpired") || $data->isTokenExpired === null) {
-            throw new SdkValidationError("isTokenExpired", 'required', "Required property 'isTokenExpired' is missing or null");
-        }
-        if (!property_exists($data, "region") || $data->region === null) {
-            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
-        }
-        if (!property_exists($data, "size") || $data->size === null) {
-            throw new SdkValidationError("size", 'required', "Required property 'size' is missing or null");
-        }
+        if (!property_exists($data, "projectsMetadata") || $data->projectsMetadata === null) { throw new SdkValidationError("projectsMetadata", 'required', "Required property 'projectsMetadata' is missing or null"); }
+        if (!property_exists($data, "status")) { throw new SdkValidationError("status", 'required', "Missing required property 'status'"); }
+        if (!property_exists($data, "usageQuotaExceeded") || $data->usageQuotaExceeded === null) { throw new SdkValidationError("usageQuotaExceeded", 'required', "Required property 'usageQuotaExceeded' is missing or null"); }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "isTokenExpired") || $data->isTokenExpired === null) { throw new SdkValidationError("isTokenExpired", 'required', "Required property 'isTokenExpired' is missing or null"); }
+        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
+        if (!property_exists($data, "size") || $data->size === null) { throw new SdkValidationError("size", 'required', "Required property 'size' is missing or null"); }
         return new self(
             projectsMetadata: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateStorageStoresBlobResponseStoreProjectsMetadataItem::class), SdkClient::arrayValue($data->projectsMetadata))),
             status: ($data->status === null ? null : SdkClient::hydrateStringEnumOrString($data->status, CreateStorageStoresBlobResponseStoreStatusEnum::class)),
@@ -326,9 +252,7 @@ class CreateStorageStoresBlobResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "store")) {
-            throw new SdkValidationError("store", 'required', "Missing required property 'store'");
-        }
+        if (!property_exists($data, "store")) { throw new SdkValidationError("store", 'required', "Missing required property 'store'"); }
         return new self(
             store: ($data->store === null ? null : SdkClient::hydrateClass($data->store, CreateStorageStoresBlobResponseStore::class)),
         );
@@ -366,9 +290,7 @@ class DeleteStorageStoresBlobByIdResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
         );

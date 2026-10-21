@@ -117,27 +117,13 @@ class SessionCommand implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "args") || $data->args === null) {
-            throw new SdkValidationError("args", 'required', "Required property 'args' is missing or null");
-        }
-        if (!property_exists($data, "cwd") || $data->cwd === null) {
-            throw new SdkValidationError("cwd", 'required', "Required property 'cwd' is missing or null");
-        }
-        if (!property_exists($data, "exitCode")) {
-            throw new SdkValidationError("exitCode", 'required', "Missing required property 'exitCode'");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "sessionId") || $data->sessionId === null) {
-            throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null");
-        }
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
-            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
-        }
+        if (!property_exists($data, "args") || $data->args === null) { throw new SdkValidationError("args", 'required', "Required property 'args' is missing or null"); }
+        if (!property_exists($data, "cwd") || $data->cwd === null) { throw new SdkValidationError("cwd", 'required', "Required property 'cwd' is missing or null"); }
+        if (!property_exists($data, "exitCode")) { throw new SdkValidationError("exitCode", 'required', "Missing required property 'exitCode'"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "sessionId") || $data->sessionId === null) { throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null"); }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
         return new self(
             args: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->args))),
             cwd: SdkClient::stringValue($data->cwd),
@@ -159,26 +145,11 @@ final readonly class SnapshotArchitectureEnum implements SdkOpenEnum
     public const AMD64 = "amd64";
     public const ARM64 = "arm64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -189,26 +160,11 @@ final readonly class SnapshotCreationMethodEnum implements SdkOpenEnum
     public const AUTOMATIC = "automatic";
     public const MANUAL = "manual";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -220,24 +176,9 @@ final readonly class SnapshotStatusEnum implements SdkOpenEnum
     public const DELETED = "deleted";
     public const FAILED = "failed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

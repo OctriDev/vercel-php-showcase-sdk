@@ -123,18 +123,10 @@ class DeleteRoutesResponseVersion implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
-            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
-        }
-        if (!property_exists($data, "s3Key") || $data->s3Key === null) {
-            throw new SdkValidationError("s3Key", 'required', "Required property 's3Key' is missing or null");
-        }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "s3Key") || $data->s3Key === null) { throw new SdkValidationError("s3Key", 'required', "Required property 's3Key' is missing or null"); }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -189,12 +181,8 @@ class DeleteRoutesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) {
-            throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) { throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             deletedCount: SdkClient::floatValue($data->deletedCount),
             version: SdkClient::hydrateClass($data->version, DeleteRoutesResponseVersion::class),
@@ -211,26 +199,11 @@ final readonly class EditRouteRouteSrcSyntaxEnum implements SdkOpenEnum
     public const PATH_TO_REGEXP = "path-to-regexp";
     public const REGEX = "regex";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class EditRouteRouteRouteHasItemTypeEnum implements SdkOpenEnum
@@ -240,26 +213,11 @@ final readonly class EditRouteRouteRouteHasItemTypeEnum implements SdkOpenEnum
     public const COOKIE = "cookie";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class EditRouteRouteRouteHasItem implements \JsonSerializable
@@ -326,26 +284,11 @@ final readonly class EditRouteRouteRouteMissingItemTypeEnum implements SdkOpenEn
     public const COOKIE = "cookie";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class EditRouteRouteRouteMissingItem implements \JsonSerializable

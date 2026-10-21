@@ -75,18 +75,10 @@ class UserEventPayloadVariant116JobDeployHook implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "ref") || $data->ref === null) {
-            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             id: SdkClient::stringValue($data->id),
@@ -144,12 +136,8 @@ class UserEventPayloadVariant116Job implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployHook") || $data->deployHook === null) {
-            throw new SdkValidationError("deployHook", 'required', "Required property 'deployHook' is missing or null");
-        }
-        if (!property_exists($data, "state") || $data->state === null) {
-            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
-        }
+        if (!property_exists($data, "deployHook") || $data->deployHook === null) { throw new SdkValidationError("deployHook", 'required', "Required property 'deployHook' is missing or null"); }
+        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
         return new self(
             deployHook: SdkClient::hydrateClass($data->deployHook, UserEventPayloadVariant116JobDeployHook::class),
             state: SdkClient::stringValue($data->state),
@@ -195,9 +183,7 @@ class UserEventPayloadVariant116Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
         );
@@ -249,12 +235,8 @@ class UserEventPayloadVariant116 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "job") || $data->job === null) {
-            throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null");
-        }
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
+        if (!property_exists($data, "job") || $data->job === null) { throw new SdkValidationError("job", 'required', "Required property 'job' is missing or null"); }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
         return new self(
             job: SdkClient::hydrateClass($data->job, UserEventPayloadVariant116Job::class),
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant116Project::class),
@@ -327,18 +309,10 @@ class UserEventPayloadVariant117 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "checkId") || $data->checkId === null) {
-            throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null");
-        }
-        if (!property_exists($data, "checkName") || $data->checkName === null) {
-            throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "checkId") || $data->checkId === null) { throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null"); }
+        if (!property_exists($data, "checkName") || $data->checkName === null) { throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             checkId: SdkClient::stringValue($data->checkId),
             checkName: SdkClient::stringValue($data->checkName),
@@ -359,24 +333,9 @@ final readonly class UserEventPayloadVariant119DeploymentAllowListedReadyStateRe
     public const UNAFFECTED_PROJECT = "UNAFFECTED_PROJECT";
     public const UNVERIFIED_COMMIT = "UNVERIFIED_COMMIT";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

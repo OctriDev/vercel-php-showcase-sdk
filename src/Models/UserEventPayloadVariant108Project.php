@@ -55,12 +55,8 @@ class UserEventPayloadVariant108Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -123,15 +119,9 @@ class UserEventPayloadVariant108 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "prevPurchasedAmount") || $data->prevPurchasedAmount === null) {
-            throw new SdkValidationError("prevPurchasedAmount", 'required', "Required property 'prevPurchasedAmount' is missing or null");
-        }
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
-        if (!property_exists($data, "purchasedAmount") || $data->purchasedAmount === null) {
-            throw new SdkValidationError("purchasedAmount", 'required', "Required property 'purchasedAmount' is missing or null");
-        }
+        if (!property_exists($data, "prevPurchasedAmount") || $data->prevPurchasedAmount === null) { throw new SdkValidationError("prevPurchasedAmount", 'required', "Required property 'prevPurchasedAmount' is missing or null"); }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "purchasedAmount") || $data->purchasedAmount === null) { throw new SdkValidationError("purchasedAmount", 'required', "Required property 'purchasedAmount' is missing or null"); }
         return new self(
             prevPurchasedAmount: SdkClient::floatValue($data->prevPurchasedAmount),
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant108Project::class),
@@ -175,9 +165,7 @@ class UserEventPayloadVariant109 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "metricName") || $data->metricName === null) {
-            throw new SdkValidationError("metricName", 'required', "Required property 'metricName' is missing or null");
-        }
+        if (!property_exists($data, "metricName") || $data->metricName === null) { throw new SdkValidationError("metricName", 'required', "Required property 'metricName' is missing or null"); }
         return new self(
             metricName: SdkClient::stringValue($data->metricName),
         );
@@ -231,9 +219,7 @@ class UserEventPayloadVariant110 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "suffix") || $data->suffix === null) {
-            throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null");
-        }
+        if (!property_exists($data, "suffix") || $data->suffix === null) { throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null"); }
         return new self(
             suffix: SdkClient::stringValue($data->suffix),
             reason: (property_exists($data, "reason") && $data->reason !== null ? SdkClient::stringValue($data->reason) : SdkNotGiven::Value),
@@ -286,12 +272,8 @@ class UserEventPayloadVariant111 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
-        if (!property_exists($data, "suffix") || $data->suffix === null) {
-            throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "suffix") || $data->suffix === null) { throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null"); }
         return new self(
             status: SdkClient::stringValue($data->status),
             suffix: SdkClient::stringValue($data->suffix),
@@ -334,9 +316,7 @@ class UserEventPayloadVariant112 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "suffix") || $data->suffix === null) {
-            throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null");
-        }
+        if (!property_exists($data, "suffix") || $data->suffix === null) { throw new SdkValidationError("suffix", 'required', "Required property 'suffix' is missing or null"); }
         return new self(
             suffix: SdkClient::stringValue($data->suffix),
         );
@@ -353,24 +333,9 @@ final readonly class UserEventPayloadVariant113OldPasswordProtectionDeploymentTy
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

@@ -462,33 +462,15 @@ class ListProjectsResponseItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accountId") || $data->accountId === null) {
-            throw new SdkValidationError("accountId", 'required', "Required property 'accountId' is missing or null");
-        }
-        if (!property_exists($data, "alias") || $data->alias === null) {
-            throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null");
-        }
-        if (!property_exists($data, "deploymentExpiration") || $data->deploymentExpiration === null) {
-            throw new SdkValidationError("deploymentExpiration", 'required', "Required property 'deploymentExpiration' is missing or null");
-        }
-        if (!property_exists($data, "directoryListing") || $data->directoryListing === null) {
-            throw new SdkValidationError("directoryListing", 'required', "Required property 'directoryListing' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "nodeVersion") || $data->nodeVersion === null) {
-            throw new SdkValidationError("nodeVersion", 'required', "Required property 'nodeVersion' is missing or null");
-        }
-        if (!property_exists($data, "resourceConfig") || $data->resourceConfig === null) {
-            throw new SdkValidationError("resourceConfig", 'required', "Required property 'resourceConfig' is missing or null");
-        }
-        if (!property_exists($data, "serverlessFunctionRegion") || $data->serverlessFunctionRegion === null) {
-            throw new SdkValidationError("serverlessFunctionRegion", 'required', "Required property 'serverlessFunctionRegion' is missing or null");
-        }
+        if (!property_exists($data, "accountId") || $data->accountId === null) { throw new SdkValidationError("accountId", 'required', "Required property 'accountId' is missing or null"); }
+        if (!property_exists($data, "alias") || $data->alias === null) { throw new SdkValidationError("alias", 'required', "Required property 'alias' is missing or null"); }
+        if (!property_exists($data, "deploymentExpiration") || $data->deploymentExpiration === null) { throw new SdkValidationError("deploymentExpiration", 'required', "Required property 'deploymentExpiration' is missing or null"); }
+        if (!property_exists($data, "directoryListing") || $data->directoryListing === null) { throw new SdkValidationError("directoryListing", 'required', "Required property 'directoryListing' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "nodeVersion") || $data->nodeVersion === null) { throw new SdkValidationError("nodeVersion", 'required', "Required property 'nodeVersion' is missing or null"); }
+        if (!property_exists($data, "resourceConfig") || $data->resourceConfig === null) { throw new SdkValidationError("resourceConfig", 'required', "Required property 'resourceConfig' is missing or null"); }
+        if (!property_exists($data, "serverlessFunctionRegion") || $data->serverlessFunctionRegion === null) { throw new SdkValidationError("serverlessFunctionRegion", 'required', "Required property 'serverlessFunctionRegion' is missing or null"); }
         return new self(
             accountId: SdkClient::stringValue($data->accountId),
             alias: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseItemAliasItem::class), SdkClient::arrayValue($data->alias))),

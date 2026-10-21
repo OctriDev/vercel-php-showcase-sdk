@@ -52,12 +52,8 @@ class SearchDomainsResponseResultsItemVariant0 implements SearchDomainsResponseR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) {
-            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
-        }
-        if (!property_exists($data, "available") || $data->available === null) {
-            throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null");
-        }
+        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "available") || $data->available === null) { throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null"); }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             available: SdkClient::boolValue($data->available),
@@ -130,24 +126,12 @@ class SearchDomainsResponseResultsItemVariant1 implements SearchDomainsResponseR
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) {
-            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
-        }
-        if (!property_exists($data, "available") || $data->available === null) {
-            throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null");
-        }
-        if (!property_exists($data, "years") || $data->years === null) {
-            throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null");
-        }
-        if (!property_exists($data, "price") || $data->price === null) {
-            throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null");
-        }
-        if (!property_exists($data, "renewalPrice") || $data->renewalPrice === null) {
-            throw new SdkValidationError("renewalPrice", 'required', "Required property 'renewalPrice' is missing or null");
-        }
-        if (!property_exists($data, "premium") || $data->premium === null) {
-            throw new SdkValidationError("premium", 'required', "Required property 'premium' is missing or null");
-        }
+        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "available") || $data->available === null) { throw new SdkValidationError("available", 'required', "Required property 'available' is missing or null"); }
+        if (!property_exists($data, "years") || $data->years === null) { throw new SdkValidationError("years", 'required', "Required property 'years' is missing or null"); }
+        if (!property_exists($data, "price") || $data->price === null) { throw new SdkValidationError("price", 'required', "Required property 'price' is missing or null"); }
+        if (!property_exists($data, "renewalPrice") || $data->renewalPrice === null) { throw new SdkValidationError("renewalPrice", 'required', "Required property 'renewalPrice' is missing or null"); }
+        if (!property_exists($data, "premium") || $data->premium === null) { throw new SdkValidationError("premium", 'required', "Required property 'premium' is missing or null"); }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             available: SdkClient::boolValue($data->available),

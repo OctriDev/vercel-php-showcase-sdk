@@ -97,21 +97,11 @@ class GlobalConfigItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),
@@ -213,21 +203,11 @@ class GlobalConfigToken implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) {
-            throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
-        if (!property_exists($data, "partialToken") || $data->partialToken === null) {
-            throw new SdkValidationError("partialToken", 'required', "Required property 'partialToken' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "edgeConfigId") || $data->edgeConfigId === null) { throw new SdkValidationError("edgeConfigId", 'required', "Required property 'edgeConfigId' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "partialToken") || $data->partialToken === null) { throw new SdkValidationError("partialToken", 'required', "Required property 'partialToken' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             edgeConfigId: SdkClient::stringValue($data->edgeConfigId),

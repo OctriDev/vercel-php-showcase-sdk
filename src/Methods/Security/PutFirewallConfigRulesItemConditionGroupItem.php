@@ -38,9 +38,7 @@ class PutFirewallConfigRulesItemConditionGroupItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, PutFirewallConfigRulesItemConditionGroupItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );
@@ -56,26 +54,11 @@ final readonly class PutFirewallConfigRulesItemActionMitigateActionEnum implemen
     public const RATE_LIMIT = "rate_limit";
     public const REDIRECT = "redirect";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0AlgoEnum implements SdkOpenEnum
@@ -83,26 +66,11 @@ final readonly class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0Al
     public const FIXED_WINDOW = "fixed_window";
     public const TOKEN_BUCKET = "token_bucket";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0ActionEnum implements SdkOpenEnum
@@ -112,26 +80,11 @@ final readonly class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0Ac
     public const DENY = "deny";
     public const RATE_LIMIT = "rate_limit";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0 implements \JsonSerializable
@@ -191,18 +144,10 @@ class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0 implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algo") || $data->algo === null) {
-            throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null");
-        }
-        if (!property_exists($data, "window") || $data->window === null) {
-            throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null");
-        }
-        if (!property_exists($data, "limit") || $data->limit === null) {
-            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
-        }
-        if (!property_exists($data, "keys") || $data->keys === null) {
-            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
-        }
+        if (!property_exists($data, "algo") || $data->algo === null) { throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null"); }
+        if (!property_exists($data, "window") || $data->window === null) { throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null"); }
+        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
+        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
         return new self(
             algo: SdkClient::hydrateStringEnumOrString($data->algo, PutFirewallConfigRulesItemActionMitigateRateLimitVariant0AlgoEnum::class),
             window: SdkClient::floatValue($data->window),
@@ -250,12 +195,8 @@ class PutFirewallConfigRulesItemActionMitigateRedirectVariant0 implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "location") || $data->location === null) {
-            throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null");
-        }
-        if (!property_exists($data, "permanent") || $data->permanent === null) {
-            throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null");
-        }
+        if (!property_exists($data, "location") || $data->location === null) { throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null"); }
+        if (!property_exists($data, "permanent") || $data->permanent === null) { throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null"); }
         return new self(
             location: SdkClient::stringValue($data->location),
             permanent: SdkClient::boolValue($data->permanent),
@@ -334,9 +275,7 @@ class PutFirewallConfigRulesItemActionMitigate implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, PutFirewallConfigRulesItemActionMitigateActionEnum::class),
             rateLimit: (property_exists($data, "rateLimit") ? ($data->rateLimit === null ? null : $data->rateLimit) : SdkNotGiven::Value),

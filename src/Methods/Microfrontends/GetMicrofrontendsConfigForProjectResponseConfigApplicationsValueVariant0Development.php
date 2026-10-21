@@ -65,9 +65,7 @@ class GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant0De
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fallback") || $data->fallback === null) {
-            throw new SdkValidationError("fallback", 'required', "Required property 'fallback' is missing or null");
-        }
+        if (!property_exists($data, "fallback") || $data->fallback === null) { throw new SdkValidationError("fallback", 'required', "Required property 'fallback' is missing or null"); }
         return new self(
             fallback: SdkClient::stringValue($data->fallback),
             local: (property_exists($data, "local") && $data->local !== null ? (is_float($data->local) || is_int($data->local) ? SdkClient::floatValue($data->local) : SdkClient::stringValue($data->local)) : SdkNotGiven::Value),
@@ -129,12 +127,8 @@ class GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant0 i
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "development") || $data->development === null) {
-            throw new SdkValidationError("development", 'required', "Required property 'development' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "development") || $data->development === null) { throw new SdkValidationError("development", 'required', "Required property 'development' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             development: SdkClient::hydrateClass($data->development, GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant0Development::class),
             projectId: SdkClient::stringValue($data->projectId),
@@ -273,9 +267,7 @@ class GetMicrofrontendsConfigForProjectResponseConfigApplicationsValueVariant1Ro
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "paths") || $data->paths === null) {
-            throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null");
-        }
+        if (!property_exists($data, "paths") || $data->paths === null) { throw new SdkValidationError("paths", 'required', "Required property 'paths' is missing or null"); }
         return new self(
             paths: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->paths))),
             flag: (property_exists($data, "flag") && $data->flag !== null ? SdkClient::stringValue($data->flag) : SdkNotGiven::Value),

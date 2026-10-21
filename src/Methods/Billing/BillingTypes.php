@@ -14,26 +14,11 @@ final readonly class ListBillingChargesResponseBillingCurrencyEnum implements Sd
 {
     public const USD = "USD";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -47,26 +32,11 @@ final readonly class ListBillingChargesResponseChargeCategoryEnum implements Sdk
     public const TAX = "Tax";
     public const USAGE = "Usage";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -79,52 +49,22 @@ final readonly class ListBillingChargesResponsePricingCategoryEnum implements Sd
     public const OTHER = "Other";
     public const STANDARD = "Standard";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class ListBillingChargesResponsePricingCurrencyEnum implements SdkOpenEnum
 {
     public const USD = "USD";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -152,26 +92,11 @@ final readonly class ListBillingChargesResponseServiceCategoryEnum implements Sd
     public const STORAGE = "Storage";
     public const WEB = "Web";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -386,54 +311,22 @@ class ListBillingChargesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "BilledCost") || $data->BilledCost === null) {
-            throw new SdkValidationError("BilledCost", 'required', "Required property 'BilledCost' is missing or null");
-        }
-        if (!property_exists($data, "BillingCurrency") || $data->BillingCurrency === null) {
-            throw new SdkValidationError("BillingCurrency", 'required', "Required property 'BillingCurrency' is missing or null");
-        }
-        if (!property_exists($data, "ChargeCategory") || $data->ChargeCategory === null) {
-            throw new SdkValidationError("ChargeCategory", 'required', "Required property 'ChargeCategory' is missing or null");
-        }
-        if (!property_exists($data, "ChargePeriodEnd") || $data->ChargePeriodEnd === null) {
-            throw new SdkValidationError("ChargePeriodEnd", 'required', "Required property 'ChargePeriodEnd' is missing or null");
-        }
-        if (!property_exists($data, "ChargePeriodStart") || $data->ChargePeriodStart === null) {
-            throw new SdkValidationError("ChargePeriodStart", 'required', "Required property 'ChargePeriodStart' is missing or null");
-        }
-        if (!property_exists($data, "ConsumedQuantity")) {
-            throw new SdkValidationError("ConsumedQuantity", 'required', "Missing required property 'ConsumedQuantity'");
-        }
-        if (!property_exists($data, "ConsumedUnit")) {
-            throw new SdkValidationError("ConsumedUnit", 'required', "Missing required property 'ConsumedUnit'");
-        }
-        if (!property_exists($data, "EffectiveCost") || $data->EffectiveCost === null) {
-            throw new SdkValidationError("EffectiveCost", 'required', "Required property 'EffectiveCost' is missing or null");
-        }
-        if (!property_exists($data, "PricingCategory") || $data->PricingCategory === null) {
-            throw new SdkValidationError("PricingCategory", 'required', "Required property 'PricingCategory' is missing or null");
-        }
-        if (!property_exists($data, "PricingCurrency") || $data->PricingCurrency === null) {
-            throw new SdkValidationError("PricingCurrency", 'required', "Required property 'PricingCurrency' is missing or null");
-        }
-        if (!property_exists($data, "PricingQuantity") || $data->PricingQuantity === null) {
-            throw new SdkValidationError("PricingQuantity", 'required', "Required property 'PricingQuantity' is missing or null");
-        }
-        if (!property_exists($data, "PricingUnit") || $data->PricingUnit === null) {
-            throw new SdkValidationError("PricingUnit", 'required', "Required property 'PricingUnit' is missing or null");
-        }
-        if (!property_exists($data, "ServiceName") || $data->ServiceName === null) {
-            throw new SdkValidationError("ServiceName", 'required', "Required property 'ServiceName' is missing or null");
-        }
-        if (!property_exists($data, "ServiceProviderName") || $data->ServiceProviderName === null) {
-            throw new SdkValidationError("ServiceProviderName", 'required', "Required property 'ServiceProviderName' is missing or null");
-        }
-        if (!property_exists($data, "SkuId") || $data->SkuId === null) {
-            throw new SdkValidationError("SkuId", 'required', "Required property 'SkuId' is missing or null");
-        }
-        if (!property_exists($data, "Tags") || $data->Tags === null) {
-            throw new SdkValidationError("Tags", 'required', "Required property 'Tags' is missing or null");
-        }
+        if (!property_exists($data, "BilledCost") || $data->BilledCost === null) { throw new SdkValidationError("BilledCost", 'required', "Required property 'BilledCost' is missing or null"); }
+        if (!property_exists($data, "BillingCurrency") || $data->BillingCurrency === null) { throw new SdkValidationError("BillingCurrency", 'required', "Required property 'BillingCurrency' is missing or null"); }
+        if (!property_exists($data, "ChargeCategory") || $data->ChargeCategory === null) { throw new SdkValidationError("ChargeCategory", 'required', "Required property 'ChargeCategory' is missing or null"); }
+        if (!property_exists($data, "ChargePeriodEnd") || $data->ChargePeriodEnd === null) { throw new SdkValidationError("ChargePeriodEnd", 'required', "Required property 'ChargePeriodEnd' is missing or null"); }
+        if (!property_exists($data, "ChargePeriodStart") || $data->ChargePeriodStart === null) { throw new SdkValidationError("ChargePeriodStart", 'required', "Required property 'ChargePeriodStart' is missing or null"); }
+        if (!property_exists($data, "ConsumedQuantity")) { throw new SdkValidationError("ConsumedQuantity", 'required', "Missing required property 'ConsumedQuantity'"); }
+        if (!property_exists($data, "ConsumedUnit")) { throw new SdkValidationError("ConsumedUnit", 'required', "Missing required property 'ConsumedUnit'"); }
+        if (!property_exists($data, "EffectiveCost") || $data->EffectiveCost === null) { throw new SdkValidationError("EffectiveCost", 'required', "Required property 'EffectiveCost' is missing or null"); }
+        if (!property_exists($data, "PricingCategory") || $data->PricingCategory === null) { throw new SdkValidationError("PricingCategory", 'required', "Required property 'PricingCategory' is missing or null"); }
+        if (!property_exists($data, "PricingCurrency") || $data->PricingCurrency === null) { throw new SdkValidationError("PricingCurrency", 'required', "Required property 'PricingCurrency' is missing or null"); }
+        if (!property_exists($data, "PricingQuantity") || $data->PricingQuantity === null) { throw new SdkValidationError("PricingQuantity", 'required', "Required property 'PricingQuantity' is missing or null"); }
+        if (!property_exists($data, "PricingUnit") || $data->PricingUnit === null) { throw new SdkValidationError("PricingUnit", 'required', "Required property 'PricingUnit' is missing or null"); }
+        if (!property_exists($data, "ServiceName") || $data->ServiceName === null) { throw new SdkValidationError("ServiceName", 'required', "Required property 'ServiceName' is missing or null"); }
+        if (!property_exists($data, "ServiceProviderName") || $data->ServiceProviderName === null) { throw new SdkValidationError("ServiceProviderName", 'required', "Required property 'ServiceProviderName' is missing or null"); }
+        if (!property_exists($data, "SkuId") || $data->SkuId === null) { throw new SdkValidationError("SkuId", 'required', "Required property 'SkuId' is missing or null"); }
+        if (!property_exists($data, "Tags") || $data->Tags === null) { throw new SdkValidationError("Tags", 'required', "Required property 'Tags' is missing or null"); }
         return new self(
             billedCost: SdkClient::floatValue($data->BilledCost),
             billingCurrency: SdkClient::hydrateStringEnumOrString($data->BillingCurrency, ListBillingChargesResponseBillingCurrencyEnum::class),

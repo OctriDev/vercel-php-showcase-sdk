@@ -264,12 +264,8 @@ class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) {
-            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
-        }
-        if (!property_exists($data, "headers") || $data->headers === null) {
-            throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null");
-        }
+        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "headers") || $data->headers === null) { throw new SdkValidationError("headers", 'required', "Required property 'headers' is missing or null"); }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             headers: SdkClient::mapValues(SdkClient::stringMapValue($data->headers), static fn($item) => SdkClient::stringValue($item)),

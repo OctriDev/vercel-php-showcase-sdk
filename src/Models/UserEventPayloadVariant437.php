@@ -76,12 +76,8 @@ class UserEventPayloadVariant437 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actorId") || $data->actorId === null) {
-            throw new SdkValidationError("actorId", 'required', "Required property 'actorId' is missing or null");
-        }
-        if (!property_exists($data, "actorType") || $data->actorType === null) {
-            throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null");
-        }
+        if (!property_exists($data, "actorId") || $data->actorId === null) { throw new SdkValidationError("actorId", 'required', "Required property 'actorId' is missing or null"); }
+        if (!property_exists($data, "actorType") || $data->actorType === null) { throw new SdkValidationError("actorType", 'required', "Required property 'actorType' is missing or null"); }
         return new self(
             actorId: SdkClient::stringValue($data->actorId),
             actorType: SdkClient::hydrateStringEnumOrString($data->actorType, UserEventPayloadVariant437ActorTypeEnum::class),
@@ -99,26 +95,11 @@ final readonly class UserEventPayloadVariant438SamplingItemEnvEnum implements Sd
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -128,26 +109,11 @@ final readonly class UserEventPayloadVariant438SamplingItemTypeEnum implements S
 {
     public const HEAD_SAMPLING = "head_sampling";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -222,12 +188,8 @@ class UserEventPayloadVariant438SamplingItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rate") || $data->rate === null) {
-            throw new SdkValidationError("rate", 'required', "Required property 'rate' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "rate") || $data->rate === null) { throw new SdkValidationError("rate", 'required', "Required property 'rate' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             rate: SdkClient::floatValue($data->rate),
             type: SdkClient::hydrateStringEnumOrString($data->type, UserEventPayloadVariant438SamplingItemTypeEnum::class),
@@ -294,12 +256,8 @@ class UserEventPayloadVariant438 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -315,26 +273,11 @@ final readonly class UserEventPayloadVariant439ReasonEnum implements SdkOpenEnum
 {
     public const LIMITS_EXCEEDED = "limits-exceeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant439 implements UserEventPayload, \JsonSerializable
@@ -372,9 +315,7 @@ class UserEventPayloadVariant439 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             reason: SdkClient::hydrateStringEnumOrString($data->reason, UserEventPayloadVariant439ReasonEnum::class),
         );

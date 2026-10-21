@@ -54,9 +54,7 @@ class UserEventPayloadVariant41 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rule") || $data->rule === null) {
-            throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null");
-        }
+        if (!property_exists($data, "rule") || $data->rule === null) { throw new SdkValidationError("rule", 'required', "Required property 'rule' is missing or null"); }
         return new self(
             rule: SdkClient::hydrateClass($data->rule, UserEventPayloadVariant41Rule::class),
             enabled: (property_exists($data, "enabled") && $data->enabled !== null ? SdkClient::boolValue($data->enabled) : SdkNotGiven::Value),
@@ -126,9 +124,7 @@ class UserEventPayloadVariant42VirtualModelConfig implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             displayName: (property_exists($data, "displayName") && $data->displayName !== null ? SdkClient::stringValue($data->displayName) : SdkNotGiven::Value),
@@ -172,9 +168,7 @@ class UserEventPayloadVariant42 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "virtualModelConfig") || $data->virtualModelConfig === null) {
-            throw new SdkValidationError("virtualModelConfig", 'required', "Required property 'virtualModelConfig' is missing or null");
-        }
+        if (!property_exists($data, "virtualModelConfig") || $data->virtualModelConfig === null) { throw new SdkValidationError("virtualModelConfig", 'required', "Required property 'virtualModelConfig' is missing or null"); }
         return new self(
             virtualModelConfig: SdkClient::hydrateClass($data->virtualModelConfig, UserEventPayloadVariant42VirtualModelConfig::class),
         );
@@ -212,26 +206,11 @@ final readonly class UserEventPayloadVariant43ChangedFieldsItemEnum implements S
     public const VISIBILITY = "visibility";
     public const ZERODATARETENTION = "zeroDataRetention";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -296,9 +275,7 @@ class UserEventPayloadVariant43VirtualModelConfig implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             displayName: (property_exists($data, "displayName") && $data->displayName !== null ? SdkClient::stringValue($data->displayName) : SdkNotGiven::Value),
@@ -354,9 +331,7 @@ class UserEventPayloadVariant43 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "virtualModelConfig") || $data->virtualModelConfig === null) {
-            throw new SdkValidationError("virtualModelConfig", 'required', "Required property 'virtualModelConfig' is missing or null");
-        }
+        if (!property_exists($data, "virtualModelConfig") || $data->virtualModelConfig === null) { throw new SdkValidationError("virtualModelConfig", 'required', "Required property 'virtualModelConfig' is missing or null"); }
         return new self(
             virtualModelConfig: SdkClient::hydrateClass($data->virtualModelConfig, UserEventPayloadVariant43VirtualModelConfig::class),
             changedFields: (property_exists($data, "changedFields") && $data->changedFields !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant43ChangedFieldsItemEnum::class), SdkClient::arrayValue($data->changedFields))) : SdkNotGiven::Value),

@@ -12,26 +12,11 @@ final readonly class UpdateCheckStatus implements SdkOpenEnum
     public const RUNNING = "running";
     public const COMPLETED = "completed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateCheckConclusion implements SdkOpenEnum
@@ -42,26 +27,11 @@ final readonly class UpdateCheckConclusion implements SdkOpenEnum
     public const SUCCEEDED = "succeeded";
     public const SKIPPED = "skipped";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateCheckResponseConclusionEnum implements SdkOpenEnum
@@ -73,52 +43,22 @@ final readonly class CreateCheckResponseConclusionEnum implements SdkOpenEnum
     public const STALE = "stale";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateCheckResponseOutputMetricsCLSSourceEnum implements SdkOpenEnum
 {
     public const WEB_VITALS = "web-vitals";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateCheckResponseOutputMetricsCLS implements \JsonSerializable
@@ -166,12 +106,8 @@ class CreateCheckResponseOutputMetricsCLS implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, CreateCheckResponseOutputMetricsCLSSourceEnum::class),
             value: ($data->value === null ? null : SdkClient::floatValue($data->value)),
@@ -184,26 +120,11 @@ final readonly class CreateCheckResponseOutputMetricsFCPSourceEnum implements Sd
 {
     public const WEB_VITALS = "web-vitals";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateCheckResponseOutputMetricsFCP implements \JsonSerializable
@@ -251,12 +172,8 @@ class CreateCheckResponseOutputMetricsFCP implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, CreateCheckResponseOutputMetricsFCPSourceEnum::class),
             value: ($data->value === null ? null : SdkClient::floatValue($data->value)),
@@ -269,26 +186,11 @@ final readonly class CreateCheckResponseOutputMetricsLCPSourceEnum implements Sd
 {
     public const WEB_VITALS = "web-vitals";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateCheckResponseOutputMetricsLCP implements \JsonSerializable
@@ -336,12 +238,8 @@ class CreateCheckResponseOutputMetricsLCP implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, CreateCheckResponseOutputMetricsLCPSourceEnum::class),
             value: ($data->value === null ? null : SdkClient::floatValue($data->value)),
@@ -354,26 +252,11 @@ final readonly class CreateCheckResponseOutputMetricsTBTSourceEnum implements Sd
 {
     public const WEB_VITALS = "web-vitals";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateCheckResponseOutputMetricsTBT implements \JsonSerializable
@@ -421,12 +304,8 @@ class CreateCheckResponseOutputMetricsTBT implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             source: SdkClient::hydrateStringEnumOrString($data->source, CreateCheckResponseOutputMetricsTBTSourceEnum::class),
             value: ($data->value === null ? null : SdkClient::floatValue($data->value)),
@@ -439,24 +318,9 @@ final readonly class CreateCheckResponseOutputMetricsVirtualExperienceScoreSourc
 {
     public const WEB_VITALS = "web-vitals";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

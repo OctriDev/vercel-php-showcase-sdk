@@ -64,12 +64,8 @@ class UserEventPayloadVariant369 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "newName") || $data->newName === null) {
-            throw new SdkValidationError("newName", 'required', "Required property 'newName' is missing or null");
-        }
-        if (!property_exists($data, "oldName") || $data->oldName === null) {
-            throw new SdkValidationError("oldName", 'required', "Required property 'oldName' is missing or null");
-        }
+        if (!property_exists($data, "newName") || $data->newName === null) { throw new SdkValidationError("newName", 'required', "Required property 'newName' is missing or null"); }
+        if (!property_exists($data, "oldName") || $data->oldName === null) { throw new SdkValidationError("oldName", 'required', "Required property 'oldName' is missing or null"); }
         return new self(
             newName: SdkClient::stringValue($data->newName),
             oldName: SdkClient::stringValue($data->oldName),
@@ -159,12 +155,8 @@ class UserEventPayloadVariant370 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             updatedAt: SdkClient::floatValue($data->updatedAt),
@@ -210,9 +202,7 @@ class UserEventPayloadVariant371 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bio") || $data->bio === null) {
-            throw new SdkValidationError("bio", 'required', "Required property 'bio' is missing or null");
-        }
+        if (!property_exists($data, "bio") || $data->bio === null) { throw new SdkValidationError("bio", 'required', "Required property 'bio' is missing or null"); }
         return new self(
             bio: SdkClient::stringValue($data->bio),
         );
@@ -256,12 +246,8 @@ class UserEventPayloadVariant372ScalingRulesValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "max") || $data->max === null) {
-            throw new SdkValidationError("max", 'required', "Required property 'max' is missing or null");
-        }
-        if (!property_exists($data, "min") || $data->min === null) {
-            throw new SdkValidationError("min", 'required', "Required property 'min' is missing or null");
-        }
+        if (!property_exists($data, "max") || $data->max === null) { throw new SdkValidationError("max", 'required', "Required property 'max' is missing or null"); }
+        if (!property_exists($data, "min") || $data->min === null) { throw new SdkValidationError("min", 'required', "Required property 'min' is missing or null"); }
         return new self(
             max: SdkClient::floatValue($data->max),
             min: SdkClient::floatValue($data->min),
@@ -334,18 +320,10 @@ class UserEventPayloadVariant372 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "max") || $data->max === null) {
-            throw new SdkValidationError("max", 'required', "Required property 'max' is missing or null");
-        }
-        if (!property_exists($data, "min") || $data->min === null) {
-            throw new SdkValidationError("min", 'required', "Required property 'min' is missing or null");
-        }
-        if (!property_exists($data, "scalingRules") || $data->scalingRules === null) {
-            throw new SdkValidationError("scalingRules", 'required', "Required property 'scalingRules' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "max") || $data->max === null) { throw new SdkValidationError("max", 'required', "Required property 'max' is missing or null"); }
+        if (!property_exists($data, "min") || $data->min === null) { throw new SdkValidationError("min", 'required', "Required property 'min' is missing or null"); }
+        if (!property_exists($data, "scalingRules") || $data->scalingRules === null) { throw new SdkValidationError("scalingRules", 'required', "Required property 'scalingRules' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             max: SdkClient::floatValue($data->max),
             min: SdkClient::floatValue($data->min),

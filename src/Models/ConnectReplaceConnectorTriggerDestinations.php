@@ -45,9 +45,7 @@ class ConnectReplaceTriggerDestinationsRequest implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "destinations") || $data->destinations === null) {
-            throw new SdkValidationError("destinations", 'required', "Required property 'destinations' is missing or null");
-        }
+        if (!property_exists($data, "destinations") || $data->destinations === null) { throw new SdkValidationError("destinations", 'required', "Required property 'destinations' is missing or null"); }
         return new self(
             destinations: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, ConnectTriggerDestinationInput::class, [ConnectTriggerDestinationInputVariant0::class, ConnectTriggerDestinationInputVariant1::class, ConnectTriggerDestinationInputVariant2::class], null, []), SdkClient::arrayValue($data->destinations))),
         );
@@ -101,9 +99,7 @@ class ConnectTriggerDestinationInputVariant0 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             path: (property_exists($data, "path") && $data->path !== null ? SdkClient::stringValue($data->path) : SdkNotGiven::Value),
@@ -168,12 +164,8 @@ class ConnectTriggerDestinationInputVariant1 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "branch") || $data->branch === null) {
-            throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "branch") || $data->branch === null) { throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             branch: SdkClient::stringValue($data->branch),
@@ -239,12 +231,8 @@ class ConnectTriggerDestinationInputVariant2 implements ConnectTriggerDestinatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),

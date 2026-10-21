@@ -122,9 +122,7 @@ class ConnectCreateConnectorRequestTriggerDestinationVariant1 implements Connect
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "branch") || $data->branch === null) {
-            throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null");
-        }
+        if (!property_exists($data, "branch") || $data->branch === null) { throw new SdkValidationError("branch", 'required', "Required property 'branch' is missing or null"); }
         return new self(
             branch: SdkClient::stringValue($data->branch),
             projectId: (property_exists($data, "projectId") && $data->projectId !== null ? SdkClient::stringValue($data->projectId) : SdkNotGiven::Value),
@@ -192,9 +190,7 @@ class ConnectCreateConnectorRequestTriggerDestinationVariant2 implements Connect
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) {
-            throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null");
-        }
+        if (!property_exists($data, "customEnvironmentId") || $data->customEnvironmentId === null) { throw new SdkValidationError("customEnvironmentId", 'required', "Required property 'customEnvironmentId' is missing or null"); }
         return new self(
             customEnvironmentId: SdkClient::stringValue($data->customEnvironmentId),
             projectId: (property_exists($data, "projectId") && $data->projectId !== null ? SdkClient::stringValue($data->projectId) : SdkNotGiven::Value),

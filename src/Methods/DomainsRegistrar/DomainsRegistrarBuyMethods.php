@@ -28,7 +28,7 @@ trait DomainsRegistrarBuyMethods
 
         Validation::validateRange('expectedPrice', $expectedPrice, min: 0.01);
 
-        $sdkResponse = SdkClient::request('POST', "/v1/registrar/domains/" . SdkClient::encodePathSegment($domain) . "/buy", $clientConfig, query: ['teamId' => new SdkQueryValue($teamId, "form", true)], body: ['autoRenew' => $autoRenew, 'years' => $years, 'expectedPrice' => $expectedPrice, 'contactInformation' => $contactInformation, 'languageCode' => $languageCode], returnType: BuySingleDomainResponse::class, decoder: 'json', operationId: 'buySingleDomain', requestOptions: $requestOptions, errors: [401 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, Unauthorized::class), 429 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, TooManyRequests::class), 500 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, InternalServerError::class)]);
+        $sdkResponse = SdkClient::request('POST', "/v1/registrar/domains/" . SdkClient::encodePathSegment($domain) . "/buy", $clientConfig, query: ['teamId' => new SdkQueryValue($teamId, "form", true)], body: ['autoRenew' => $autoRenew, 'years' => $years, 'expectedPrice' => $expectedPrice, 'contactInformation' => $contactInformation, 'languageCode' => $languageCode], returnType: BuySingleDomainResponse::class, decoder: 'json', operationId: 'buySingleDomain', requestOptions: $requestOptions, errors: [401 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, Unauthorized::class), 429 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, TooManyRequests::class), 500 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, InternalServerError::class)]);
         return SdkClient::decoded($sdkResponse, static fn() => SdkClient::typedData($sdkResponse, BuySingleDomainResponse::class));
     }
 
@@ -48,7 +48,7 @@ trait DomainsRegistrarBuyMethods
 
         Validation::validateItems('domains', $domains, min: 1);
 
-        $sdkResponse = SdkClient::request('POST', "/v1/registrar/domains/buy", $clientConfig, query: ['teamId' => new SdkQueryValue($teamId, "form", true)], body: ['domains' => $domains, 'contactInformation' => $contactInformation], returnType: BuyDomainsResponse::class, decoder: 'json', operationId: 'buyDomains', requestOptions: $requestOptions, errors: [401 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, Unauthorized::class), 429 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, TooManyRequests::class), 500 => static fn(mixed $value): mixed => SdkClient::hydrateClass($value, InternalServerError::class)]);
+        $sdkResponse = SdkClient::request('POST', "/v1/registrar/domains/buy", $clientConfig, query: ['teamId' => new SdkQueryValue($teamId, "form", true)], body: ['domains' => $domains, 'contactInformation' => $contactInformation], returnType: BuyDomainsResponse::class, decoder: 'json', operationId: 'buyDomains', requestOptions: $requestOptions, errors: [401 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, Unauthorized::class), 429 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, TooManyRequests::class), 500 => static fn (mixed $value): mixed => SdkClient::hydrateClass($value, InternalServerError::class)]);
         return SdkClient::decoded($sdkResponse, static fn() => SdkClient::typedData($sdkResponse, BuyDomainsResponse::class));
     }
 }

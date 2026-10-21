@@ -182,21 +182,11 @@ class CancelDeploymentResponseServicesItemVariant0 implements CancelDeploymentRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builder") || $data->builder === null) {
-            throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "schema") || $data->schema === null) {
-            throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "workspace") || $data->workspace === null) {
-            throw new SdkValidationError("workspace", 'required', "Required property 'workspace' is missing or null");
-        }
+        if (!property_exists($data, "builder") || $data->builder === null) { throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "schema") || $data->schema === null) { throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "workspace") || $data->workspace === null) { throw new SdkValidationError("workspace", 'required', "Required property 'workspace' is missing or null"); }
         return new self(
             builder: SdkClient::hydrateClass($data->builder, CancelDeploymentResponseServicesItemVariant0Builder::class),
             name: SdkClient::stringValue($data->name),
@@ -229,26 +219,11 @@ final readonly class CancelDeploymentResponseServicesItemVariant1BindingsItemFor
 {
     public const URL = "url";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -258,26 +233,11 @@ final readonly class CancelDeploymentResponseServicesItemVariant1BindingsItemTyp
 {
     public const SERVICE = "service";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -350,15 +310,9 @@ class CancelDeploymentResponseServicesItemVariant1BindingsItem implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "env") || $data->env === null) {
-            throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null");
-        }
-        if (!property_exists($data, "format") || $data->format === null) {
-            throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null");
-        }
-        if (!property_exists($data, "service") || $data->service === null) {
-            throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null");
-        }
+        if (!property_exists($data, "env") || $data->env === null) { throw new SdkValidationError("env", 'required', "Required property 'env' is missing or null"); }
+        if (!property_exists($data, "format") || $data->format === null) { throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null"); }
+        if (!property_exists($data, "service") || $data->service === null) { throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null"); }
         return new self(
             env: SdkClient::stringValue($data->env),
             format: SdkClient::hydrateStringEnumOrString($data->format, CancelDeploymentResponseServicesItemVariant1BindingsItemFormatEnum::class),
@@ -375,24 +329,9 @@ final readonly class CancelDeploymentResponseServicesItemVariant1BuilderConfigDa
     public const _4GI = "4Gi";
     public const _8GI = "8Gi";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

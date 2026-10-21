@@ -62,15 +62,9 @@ class UserEventPayloadVariant8 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "boardId") || $data->boardId === null) {
-            throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null");
-        }
-        if (!property_exists($data, "operationId") || $data->operationId === null) {
-            throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null");
-        }
-        if (!property_exists($data, "spaceId") || $data->spaceId === null) {
-            throw new SdkValidationError("spaceId", 'required', "Required property 'spaceId' is missing or null");
-        }
+        if (!property_exists($data, "boardId") || $data->boardId === null) { throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null"); }
+        if (!property_exists($data, "operationId") || $data->operationId === null) { throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null"); }
+        if (!property_exists($data, "spaceId") || $data->spaceId === null) { throw new SdkValidationError("spaceId", 'required', "Required property 'spaceId' is missing or null"); }
         return new self(
             boardId: SdkClient::stringValue($data->boardId),
             operationId: SdkClient::stringValue($data->operationId),
@@ -144,18 +138,10 @@ class UserEventPayloadVariant9 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "boardId") || $data->boardId === null) {
-            throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null");
-        }
-        if (!property_exists($data, "fields") || $data->fields === null) {
-            throw new SdkValidationError("fields", 'required', "Required property 'fields' is missing or null");
-        }
-        if (!property_exists($data, "operationId") || $data->operationId === null) {
-            throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null");
-        }
-        if (!property_exists($data, "spaceId") || $data->spaceId === null) {
-            throw new SdkValidationError("spaceId", 'required', "Required property 'spaceId' is missing or null");
-        }
+        if (!property_exists($data, "boardId") || $data->boardId === null) { throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null"); }
+        if (!property_exists($data, "fields") || $data->fields === null) { throw new SdkValidationError("fields", 'required', "Required property 'fields' is missing or null"); }
+        if (!property_exists($data, "operationId") || $data->operationId === null) { throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null"); }
+        if (!property_exists($data, "spaceId") || $data->spaceId === null) { throw new SdkValidationError("spaceId", 'required', "Required property 'spaceId' is missing or null"); }
         return new self(
             boardId: SdkClient::stringValue($data->boardId),
             fields: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->fields))),
@@ -173,26 +159,11 @@ final readonly class UserEventPayloadVariant10VisibilityEnum implements SdkOpenE
     public const PRIVATE = "private";
     public const TEAM = "team";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant10 implements UserEventPayload, \JsonSerializable
@@ -250,15 +221,9 @@ class UserEventPayloadVariant10 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "boardId") || $data->boardId === null) {
-            throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null");
-        }
-        if (!property_exists($data, "operationId") || $data->operationId === null) {
-            throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null");
-        }
-        if (!property_exists($data, "visibility") || $data->visibility === null) {
-            throw new SdkValidationError("visibility", 'required', "Required property 'visibility' is missing or null");
-        }
+        if (!property_exists($data, "boardId") || $data->boardId === null) { throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null"); }
+        if (!property_exists($data, "operationId") || $data->operationId === null) { throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null"); }
+        if (!property_exists($data, "visibility") || $data->visibility === null) { throw new SdkValidationError("visibility", 'required', "Required property 'visibility' is missing or null"); }
         return new self(
             boardId: SdkClient::stringValue($data->boardId),
             operationId: SdkClient::stringValue($data->operationId),
@@ -312,12 +277,8 @@ class UserEventPayloadVariant11 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operationId") || $data->operationId === null) {
-            throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null");
-        }
-        if (!property_exists($data, "schemaId") || $data->schemaId === null) {
-            throw new SdkValidationError("schemaId", 'required', "Required property 'schemaId' is missing or null");
-        }
+        if (!property_exists($data, "operationId") || $data->operationId === null) { throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null"); }
+        if (!property_exists($data, "schemaId") || $data->schemaId === null) { throw new SdkValidationError("schemaId", 'required', "Required property 'schemaId' is missing or null"); }
         return new self(
             operationId: SdkClient::stringValue($data->operationId),
             schemaId: SdkClient::stringValue($data->schemaId),
@@ -333,24 +294,9 @@ final readonly class UserEventPayloadVariant12ProviderEnum implements SdkOpenEnu
     public const CHATGPT = "chatgpt";
     public const STRIPE = "stripe";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

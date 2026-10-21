@@ -12,26 +12,11 @@ final readonly class CreateConfigurableLogDrainDeliveryFormat implements SdkOpen
     public const JSON = "json";
     public const NDJSON = "ndjson";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateLogDrainDeliveryFormat implements SdkOpenEnum
@@ -39,26 +24,11 @@ final readonly class CreateLogDrainDeliveryFormat implements SdkOpenEnum
     public const JSON = "json";
     public const NDJSON = "ndjson";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetConfigurableLogDrainResponseProjectsMetadataItemFrameworkEnum implements SdkOpenEnum
@@ -138,26 +108,11 @@ final readonly class GetConfigurableLogDrainResponseProjectsMetadataItemFramewor
     public const XMCP = "xmcp";
     public const ZOLA = "zola";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConfigurableLogDrainResponseProjectsMetadataItem implements \JsonSerializable
@@ -213,12 +168,8 @@ class GetConfigurableLogDrainResponseProjectsMetadataItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -307,9 +258,7 @@ class GetConfigurableLogDrainResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdFrom") || $data->createdFrom === null) {
-            throw new SdkValidationError("createdFrom", 'required', "Required property 'createdFrom' is missing or null");
-        }
+        if (!property_exists($data, "createdFrom") || $data->createdFrom === null) { throw new SdkValidationError("createdFrom", 'required', "Required property 'createdFrom' is missing or null"); }
         return new self(
             createdFrom: SdkClient::stringValue($data->createdFrom),
             clientId: (property_exists($data, "clientId") && $data->clientId !== null ? SdkClient::stringValue($data->clientId) : SdkNotGiven::Value),

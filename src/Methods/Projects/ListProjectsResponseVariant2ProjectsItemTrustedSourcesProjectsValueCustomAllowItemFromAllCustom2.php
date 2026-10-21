@@ -53,9 +53,7 @@ class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "preset") || $data->preset === null) {
-            throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null");
-        }
+        if (!property_exists($data, "preset") || $data->preset === null) { throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null"); }
         return new self(
             preset: SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemFromAllCustom2PresetEnum::class),
             slugs: (property_exists($data, "slugs") && $data->slugs !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))) : SdkNotGiven::Value),
@@ -67,26 +65,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProje
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -135,9 +118,7 @@ class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "slugs") || $data->slugs === null) {
-            throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null");
-        }
+        if (!property_exists($data, "slugs") || $data->slugs === null) { throw new SdkValidationError("slugs", 'required', "Required property 'slugs' is missing or null"); }
         return new self(
             slugs: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))),
             preset: (property_exists($data, "preset") && $data->preset !== null ? SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemToAllCustomPresetEnum::class) : SdkNotGiven::Value),
@@ -149,26 +130,11 @@ final readonly class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProje
 {
     public const ALL_CUSTOM = "all-custom";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -217,9 +183,7 @@ class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "preset") || $data->preset === null) {
-            throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null");
-        }
+        if (!property_exists($data, "preset") || $data->preset === null) { throw new SdkValidationError("preset", 'required', "Required property 'preset' is missing or null"); }
         return new self(
             preset: SdkClient::hydrateStringEnumOrString($data->preset, ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemToAllCustom2PresetEnum::class),
             slugs: (property_exists($data, "slugs") && $data->slugs !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->slugs))) : SdkNotGiven::Value),
@@ -267,12 +231,8 @@ class ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomA
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "from") || $data->from === null) {
-            throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null");
-        }
-        if (!property_exists($data, "to") || $data->to === null) {
-            throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null");
-        }
+        if (!property_exists($data, "from") || $data->from === null) { throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null"); }
+        if (!property_exists($data, "to") || $data->to === null) { throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null"); }
         return new self(
             from: SdkClient::hydrateUnion($data->from, [ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemFromAllCustom::class, ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemFromAllCustom2::class], null, []),
             to: SdkClient::hydrateUnion($data->to, [ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemToAllCustom::class, ListProjectsResponseVariant2ProjectsItemTrustedSourcesProjectsValueCustomAllowItemToAllCustom2::class], null, []),

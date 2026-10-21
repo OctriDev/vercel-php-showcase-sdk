@@ -112,30 +112,14 @@ class VcrImageLayerVariant0 implements VcrImageLayer, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy")) {
-            throw new SdkValidationError("createdBy", 'required', "Missing required property 'createdBy'");
-        }
-        if (!property_exists($data, "digest")) {
-            throw new SdkValidationError("digest", 'required', "Missing required property 'digest'");
-        }
-        if (!property_exists($data, "operation") || $data->operation === null) {
-            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
-        }
-        if (!property_exists($data, "sizeBytes")) {
-            throw new SdkValidationError("sizeBytes", 'required', "Missing required property 'sizeBytes'");
-        }
-        if (!property_exists($data, "baseImage")) {
-            throw new SdkValidationError("baseImage", 'required', "Missing required property 'baseImage'");
-        }
-        if (!property_exists($data, "collapsedDigests") || $data->collapsedDigests === null) {
-            throw new SdkValidationError("collapsedDigests", 'required', "Required property 'collapsedDigests' is missing or null");
-        }
-        if (!property_exists($data, "collapsedLayerCount") || $data->collapsedLayerCount === null) {
-            throw new SdkValidationError("collapsedLayerCount", 'required', "Required property 'collapsedLayerCount' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "createdBy")) { throw new SdkValidationError("createdBy", 'required', "Missing required property 'createdBy'"); }
+        if (!property_exists($data, "digest")) { throw new SdkValidationError("digest", 'required', "Missing required property 'digest'"); }
+        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
+        if (!property_exists($data, "sizeBytes")) { throw new SdkValidationError("sizeBytes", 'required', "Missing required property 'sizeBytes'"); }
+        if (!property_exists($data, "baseImage")) { throw new SdkValidationError("baseImage", 'required', "Missing required property 'baseImage'"); }
+        if (!property_exists($data, "collapsedDigests") || $data->collapsedDigests === null) { throw new SdkValidationError("collapsedDigests", 'required', "Required property 'collapsedDigests' is missing or null"); }
+        if (!property_exists($data, "collapsedLayerCount") || $data->collapsedLayerCount === null) { throw new SdkValidationError("collapsedLayerCount", 'required', "Required property 'collapsedLayerCount' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             createdBy: ($data->createdBy === null ? null : SdkClient::stringValue($data->createdBy)),
             digest: ($data->digest === null ? null : SdkClient::stringValue($data->digest)),
@@ -173,26 +157,11 @@ final readonly class VcrImageLayerVariant1OperationEnum implements SdkOpenEnum
     public const VOLUME = "VOLUME";
     public const WORKDIR = "WORKDIR";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -202,26 +171,11 @@ final readonly class VcrImageLayerVariant1TypeEnum implements SdkOpenEnum
 {
     public const RUN = "RUN";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class VcrImageLayerVariant1 implements VcrImageLayer, \JsonSerializable
@@ -309,24 +263,12 @@ class VcrImageLayerVariant1 implements VcrImageLayer, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy")) {
-            throw new SdkValidationError("createdBy", 'required', "Missing required property 'createdBy'");
-        }
-        if (!property_exists($data, "digest")) {
-            throw new SdkValidationError("digest", 'required', "Missing required property 'digest'");
-        }
-        if (!property_exists($data, "operation") || $data->operation === null) {
-            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
-        }
-        if (!property_exists($data, "sizeBytes")) {
-            throw new SdkValidationError("sizeBytes", 'required', "Missing required property 'sizeBytes'");
-        }
-        if (!property_exists($data, "command")) {
-            throw new SdkValidationError("command", 'required', "Missing required property 'command'");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "createdBy")) { throw new SdkValidationError("createdBy", 'required', "Missing required property 'createdBy'"); }
+        if (!property_exists($data, "digest")) { throw new SdkValidationError("digest", 'required', "Missing required property 'digest'"); }
+        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
+        if (!property_exists($data, "sizeBytes")) { throw new SdkValidationError("sizeBytes", 'required', "Missing required property 'sizeBytes'"); }
+        if (!property_exists($data, "command")) { throw new SdkValidationError("command", 'required', "Missing required property 'command'"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             createdBy: ($data->createdBy === null ? null : SdkClient::stringValue($data->createdBy)),
             digest: ($data->digest === null ? null : SdkClient::stringValue($data->digest)),
@@ -362,26 +304,11 @@ final readonly class VcrImageLayerVariant2OperationEnum implements SdkOpenEnum
     public const VOLUME = "VOLUME";
     public const WORKDIR = "WORKDIR";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -391,24 +318,9 @@ final readonly class VcrImageLayerVariant2TypeEnum implements SdkOpenEnum
 {
     public const ENV = "ENV";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

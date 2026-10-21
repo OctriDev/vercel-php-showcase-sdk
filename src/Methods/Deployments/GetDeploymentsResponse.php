@@ -48,12 +48,8 @@ class GetDeploymentsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployments") || $data->deployments === null) {
-            throw new SdkValidationError("deployments", 'required', "Required property 'deployments' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "deployments") || $data->deployments === null) { throw new SdkValidationError("deployments", 'required', "Required property 'deployments' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             deployments: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetDeploymentsResponseDeploymentsItem::class), SdkClient::arrayValue($data->deployments))),
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),
@@ -68,26 +64,11 @@ final readonly class DeleteDeploymentResponseStateEnum implements SdkOpenEnum
 {
     public const DELETED = "DELETED";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class DeleteDeploymentResponse implements \JsonSerializable
@@ -135,12 +116,8 @@ class DeleteDeploymentResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "state") || $data->state === null) {
-            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             state: SdkClient::hydrateStringEnumOrString($data->state, DeleteDeploymentResponseStateEnum::class),
             uid: SdkClient::stringValue($data->uid),

@@ -18,26 +18,11 @@ final readonly class TeamSamlRolesValueVariant1TeamRolesItemEnum implements SdkO
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -82,9 +67,7 @@ class TeamSamlRolesValueVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) {
-            throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null");
-        }
+        if (!property_exists($data, "teamRoles") || $data->teamRoles === null) { throw new SdkValidationError("teamRoles", 'required', "Required property 'teamRoles' is missing or null"); }
         return new self(
             teamRoles: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, TeamSamlRolesValueVariant1TeamRolesItemEnum::class), SdkClient::arrayValue($data->teamRoles))),
             teamPermissions: (property_exists($data, "teamPermissions") && $data->teamPermissions !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, TeamSamlRolesValueVariant1TeamPermissionsItemEnum::class), SdkClient::arrayValue($data->teamPermissions))) : SdkNotGiven::Value),
@@ -103,26 +86,11 @@ final readonly class TeamSamlRolesValueEnum implements SdkOpenEnum
     public const VIEWER = "VIEWER";
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -211,9 +179,7 @@ class TeamSaml implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enforced") || $data->enforced === null) {
-            throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null");
-        }
+        if (!property_exists($data, "enforced") || $data->enforced === null) { throw new SdkValidationError("enforced", 'required', "Required property 'enforced' is missing or null"); }
         return new self(
             enforced: SdkClient::boolValue($data->enforced),
             connection: (property_exists($data, "connection") && $data->connection !== null ? SdkClient::hydrateClass($data->connection, TeamSamlConnection::class) : SdkNotGiven::Value),
@@ -233,26 +199,11 @@ final readonly class TeamSensitiveEnvironmentVariablePolicyEnum implements SdkOp
     public const OFF = "off";
     public const ON = "on";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -303,12 +254,8 @@ class TeamStrictConnectors implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             updatedAt: SdkClient::floatValue($data->updatedAt),
@@ -364,12 +311,8 @@ class TeamStrictDeploymentProtectionSettings implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             updatedAt: SdkClient::floatValue($data->updatedAt),

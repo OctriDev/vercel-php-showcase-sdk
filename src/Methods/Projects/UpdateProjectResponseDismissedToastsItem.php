@@ -60,18 +60,10 @@ class UpdateProjectResponseDismissedToastsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) {
-            throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "dismissedAt") || $data->dismissedAt === null) { throw new SdkValidationError("dismissedAt", 'required', "Required property 'dismissedAt' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UpdateProjectResponseDismissedToastsItemActionEnum::class),
             dismissedAt: SdkClient::floatValue($data->dismissedAt),
@@ -85,26 +77,11 @@ final readonly class UpdateProjectResponseEnvItemInternalContentHintTypeEnum imp
 {
     public const FLAGS_SECRET = "flags-secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -151,12 +128,8 @@ class UpdateProjectResponseEnvItemInternalContentHint implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "encryptedValue") || $data->encryptedValue === null) {
-            throw new SdkValidationError("encryptedValue", 'required', "Required property 'encryptedValue' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "encryptedValue") || $data->encryptedValue === null) { throw new SdkValidationError("encryptedValue", 'required', "Required property 'encryptedValue' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             encryptedValue: SdkClient::stringValue($data->encryptedValue),
             type: SdkClient::hydrateStringEnumOrString($data->type, UpdateProjectResponseEnvItemInternalContentHintTypeEnum::class),
@@ -170,26 +143,11 @@ final readonly class UpdateProjectResponseEnvItemTargetEnum implements SdkOpenEn
     public const PREVIEW = "preview";
     public const DEVELOPMENT = "development";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateProjectResponseEnvItemTypeEnum implements SdkOpenEnum
@@ -200,26 +158,11 @@ final readonly class UpdateProjectResponseEnvItemTypeEnum implements SdkOpenEnum
     public const SENSITIVE = "sensitive";
     public const SYSTEM = "system";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -230,24 +173,9 @@ final readonly class UpdateProjectResponseEnvItemVisibilityEnum implements SdkOp
     public const CONFIG = "config";
     public const SECRET = "secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

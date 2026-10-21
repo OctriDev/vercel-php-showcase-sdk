@@ -125,15 +125,9 @@ class ConnectConnectorAppTokens implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) {
-            throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null");
-        }
-        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) {
-            throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null");
-        }
-        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) {
-            throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null");
-        }
+        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) { throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null"); }
+        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) { throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null"); }
+        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) { throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null"); }
         return new self(
             crossInstallation: SdkClient::boolValue($data->crossInstallation),
             isStaticCredential: SdkClient::boolValue($data->isStaticCredential),
@@ -155,26 +149,11 @@ final readonly class ConnectConnectorCreationModeEnum implements SdkOpenEnum
     public const MANAGED = "managed";
     public const MANUAL = "manual";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -230,26 +209,11 @@ final readonly class ConnectConnectorSupportsIconEnum implements SdkOpenEnum
 {
     public const MAYBE = "maybe";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -275,24 +239,9 @@ final readonly class ConnectConnectorTypeEnum implements SdkOpenEnum
     public const SNOWFLAKE_WIF = "snowflake-wif";
     public const STRIPE_API_KEY = "stripe-api-key";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

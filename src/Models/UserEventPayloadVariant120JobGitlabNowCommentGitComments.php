@@ -55,12 +55,8 @@ class UserEventPayloadVariant120JobGitlabNowCommentGitComments implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onCommit") || $data->onCommit === null) {
-            throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null");
-        }
-        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) {
-            throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null");
-        }
+        if (!property_exists($data, "onCommit") || $data->onCommit === null) { throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null"); }
+        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) { throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null"); }
         return new self(
             onCommit: SdkClient::boolValue($data->onCommit),
             onPullRequest: SdkClient::boolValue($data->onPullRequest),
@@ -166,9 +162,7 @@ class UserEventPayloadVariant120JobGitlabNowCommentHeadInfoProject implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             defaultBranch: (property_exists($data, "defaultBranch") ? ($data->defaultBranch === null ? null : SdkClient::stringValue($data->defaultBranch)) : SdkNotGiven::Value),
@@ -238,15 +232,9 @@ class UserEventPayloadVariant120JobGitlabNowCommentHeadInfo implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
-        if (!property_exists($data, "ref") || $data->ref === null) {
-            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
-        }
-        if (!property_exists($data, "sha") || $data->sha === null) {
-            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
-        }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
+        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
         return new self(
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant120JobGitlabNowCommentHeadInfoProject::class),
             ref: SdkClient::stringValue($data->ref),
@@ -353,9 +341,7 @@ class UserEventPayloadVariant120JobGitlabNowCommentProject implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             defaultBranch: (property_exists($data, "defaultBranch") ? ($data->defaultBranch === null ? null : SdkClient::stringValue($data->defaultBranch)) : SdkNotGiven::Value),

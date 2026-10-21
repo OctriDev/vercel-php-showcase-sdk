@@ -147,36 +147,16 @@ class APIKeyQuota implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "quotaEntityId") || $data->quotaEntityId === null) {
-            throw new SdkValidationError("quotaEntityId", 'required', "Required property 'quotaEntityId' is missing or null");
-        }
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
-            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
-        }
-        if (!property_exists($data, "currentSpend") || $data->currentSpend === null) {
-            throw new SdkValidationError("currentSpend", 'required', "Required property 'currentSpend' is missing or null");
-        }
-        if (!property_exists($data, "currentByokSpend") || $data->currentByokSpend === null) {
-            throw new SdkValidationError("currentByokSpend", 'required', "Required property 'currentByokSpend' is missing or null");
-        }
-        if (!property_exists($data, "includeByokInQuota") || $data->includeByokInQuota === null) {
-            throw new SdkValidationError("includeByokInQuota", 'required', "Required property 'includeByokInQuota' is missing or null");
-        }
-        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) {
-            throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null");
-        }
-        if (!property_exists($data, "active") || $data->active === null) {
-            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
-        }
-        if (!property_exists($data, "archived") || $data->archived === null) {
-            throw new SdkValidationError("archived", 'required', "Required property 'archived' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "quotaEntityId") || $data->quotaEntityId === null) { throw new SdkValidationError("quotaEntityId", 'required', "Required property 'quotaEntityId' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
+        if (!property_exists($data, "currentSpend") || $data->currentSpend === null) { throw new SdkValidationError("currentSpend", 'required', "Required property 'currentSpend' is missing or null"); }
+        if (!property_exists($data, "currentByokSpend") || $data->currentByokSpend === null) { throw new SdkValidationError("currentByokSpend", 'required', "Required property 'currentByokSpend' is missing or null"); }
+        if (!property_exists($data, "includeByokInQuota") || $data->includeByokInQuota === null) { throw new SdkValidationError("includeByokInQuota", 'required', "Required property 'includeByokInQuota' is missing or null"); }
+        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) { throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null"); }
+        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
+        if (!property_exists($data, "archived") || $data->archived === null) { throw new SdkValidationError("archived", 'required', "Required property 'archived' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             quotaEntityId: SdkClient::stringValue($data->quotaEntityId),
             limitAmount: SdkClient::floatValue($data->limitAmount),

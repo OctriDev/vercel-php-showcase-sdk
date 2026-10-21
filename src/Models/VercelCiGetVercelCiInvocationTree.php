@@ -39,9 +39,7 @@ class GetVercelCiInvocationTreeResponseInvocationSourceVariant0 implements GetVe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         Validation::validateConst("type", $data->type, "vercel-ci");
         return new self(
             type: SdkClient::stringValue($data->type),
@@ -99,18 +97,10 @@ class GetVercelCiInvocationTreeResponseInvocationSourceVariant1 implements GetVe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) {
-            throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "deploymentTargetSlug") || $data->deploymentTargetSlug === null) {
-            throw new SdkValidationError("deploymentTargetSlug", 'required', "Required property 'deploymentTargetSlug' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "deploymentId") || $data->deploymentId === null) { throw new SdkValidationError("deploymentId", 'required', "Required property 'deploymentId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "deploymentTargetSlug") || $data->deploymentTargetSlug === null) { throw new SdkValidationError("deploymentTargetSlug", 'required', "Required property 'deploymentTargetSlug' is missing or null"); }
         Validation::validateConst("type", $data->type, "vercel-native-checks");
         return new self(
             type: SdkClient::stringValue($data->type),
@@ -153,9 +143,7 @@ class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant0 im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) {
-            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
-        }
+        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
         Validation::validateConst("result", $data->result, "succeeded");
         return new self(
             result: SdkClient::stringValue($data->result),
@@ -201,12 +189,8 @@ class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant1 im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) {
-            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         Validation::validateConst("result", $data->result, "failed");
         return new self(
             result: SdkClient::stringValue($data->result),
@@ -253,12 +237,8 @@ class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant2 im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) {
-            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
-        }
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         Validation::validateConst("result", $data->result, "skipped");
         return new self(
             result: SdkClient::stringValue($data->result),
@@ -305,12 +285,8 @@ class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperationVaria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "command") || $data->command === null) {
-            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
-        }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
         Validation::validateConst("kind", $data->kind, "command");
         return new self(
             kind: SdkClient::stringValue($data->kind),
@@ -363,15 +339,9 @@ class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperationVaria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) {
-            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "target") || $data->target === null) {
-            throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null");
-        }
+        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "target") || $data->target === null) { throw new SdkValidationError("target", 'required', "Required property 'target' is missing or null"); }
         Validation::validateConst("kind", $data->kind, "deployment");
         return new self(
             kind: SdkClient::stringValue($data->kind),

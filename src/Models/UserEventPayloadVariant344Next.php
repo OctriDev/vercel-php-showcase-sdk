@@ -45,9 +45,7 @@ class UserEventPayloadVariant344Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "skewProtectionBoundaryAt") || $data->skewProtectionBoundaryAt === null) {
-            throw new SdkValidationError("skewProtectionBoundaryAt", 'required', "Required property 'skewProtectionBoundaryAt' is missing or null");
-        }
+        if (!property_exists($data, "skewProtectionBoundaryAt") || $data->skewProtectionBoundaryAt === null) { throw new SdkValidationError("skewProtectionBoundaryAt", 'required', "Required property 'skewProtectionBoundaryAt' is missing or null"); }
         return new self(
             skewProtectionBoundaryAt: SdkClient::floatValue($data->skewProtectionBoundaryAt),
         );
@@ -165,18 +163,10 @@ class UserEventPayloadVariant344 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant344Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant344Previous::class),
@@ -224,9 +214,7 @@ class UserEventPayloadVariant345Next implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "skewProtectionMaxAge") || $data->skewProtectionMaxAge === null) {
-            throw new SdkValidationError("skewProtectionMaxAge", 'required', "Required property 'skewProtectionMaxAge' is missing or null");
-        }
+        if (!property_exists($data, "skewProtectionMaxAge") || $data->skewProtectionMaxAge === null) { throw new SdkValidationError("skewProtectionMaxAge", 'required', "Required property 'skewProtectionMaxAge' is missing or null"); }
         return new self(
             skewProtectionMaxAge: SdkClient::floatValue($data->skewProtectionMaxAge),
         );
@@ -344,18 +332,10 @@ class UserEventPayloadVariant345 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant345Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant345Previous::class),

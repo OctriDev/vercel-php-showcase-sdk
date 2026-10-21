@@ -44,12 +44,8 @@ class CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "href") || $data->href === null) {
-            throw new SdkValidationError("href", 'required', "Required property 'href' is missing or null");
-        }
-        if (!property_exists($data, "title") || $data->title === null) {
-            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
-        }
+        if (!property_exists($data, "href") || $data->href === null) { throw new SdkValidationError("href", 'required', "Required property 'href' is missing or null"); }
+        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
         return new self(
             href: SdkClient::stringValue($data->href),
             title: SdkClient::stringValue($data->title),
@@ -117,26 +113,11 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProductTagsItemEnu
     public const VIDEO = "video";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateIntegrationStoreDirectResponseStoreProductRepl implements \JsonSerializable
@@ -184,12 +165,8 @@ class CreateIntegrationStoreDirectResponseStoreProductRepl implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "supportsReadOnlyMode") || $data->supportsReadOnlyMode === null) {
-            throw new SdkValidationError("supportsReadOnlyMode", 'required', "Required property 'supportsReadOnlyMode' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "supportsReadOnlyMode") || $data->supportsReadOnlyMode === null) { throw new SdkValidationError("supportsReadOnlyMode", 'required', "Required property 'supportsReadOnlyMode' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             supportsReadOnlyMode: SdkClient::boolValue($data->supportsReadOnlyMode),
@@ -204,26 +181,11 @@ final readonly class CreateIntegrationStoreDirectResponseStoreProductGuidesItemS
     public const CONFIGURE_PROJECT_CONNECTIONS = "configure_project_connections";
     public const CONNECT_TO_PROJECT = "connect_to_project";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItemActionsItem implements \JsonSerializable
@@ -257,9 +219,7 @@ class CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItemActions
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItemActionsItemTypeEnum::class),
         );
@@ -311,12 +271,8 @@ class CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "content") || $data->content === null) {
-            throw new SdkValidationError("content", 'required', "Required property 'content' is missing or null");
-        }
-        if (!property_exists($data, "title") || $data->title === null) {
-            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
-        }
+        if (!property_exists($data, "content") || $data->content === null) { throw new SdkValidationError("content", 'required', "Required property 'content' is missing or null"); }
+        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
         return new self(
             content: SdkClient::stringValue($data->content),
             title: SdkClient::stringValue($data->title),
@@ -368,15 +324,9 @@ class CreateIntegrationStoreDirectResponseStoreProductGuidesItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "framework") || $data->framework === null) {
-            throw new SdkValidationError("framework", 'required', "Required property 'framework' is missing or null");
-        }
-        if (!property_exists($data, "steps") || $data->steps === null) {
-            throw new SdkValidationError("steps", 'required', "Required property 'steps' is missing or null");
-        }
-        if (!property_exists($data, "title") || $data->title === null) {
-            throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null");
-        }
+        if (!property_exists($data, "framework") || $data->framework === null) { throw new SdkValidationError("framework", 'required', "Required property 'framework' is missing or null"); }
+        if (!property_exists($data, "steps") || $data->steps === null) { throw new SdkValidationError("steps", 'required', "Required property 'steps' is missing or null"); }
+        if (!property_exists($data, "title") || $data->title === null) { throw new SdkValidationError("title", 'required', "Required property 'title' is missing or null"); }
         return new self(
             framework: SdkClient::stringValue($data->framework),
             steps: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem::class), SdkClient::arrayValue($data->steps))),

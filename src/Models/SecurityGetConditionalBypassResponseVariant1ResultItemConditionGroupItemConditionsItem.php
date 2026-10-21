@@ -68,12 +68,8 @@ class GetConditionalBypassResponseVariant1ResultItemConditionGroupItemConditions
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "op") || $data->op === null) {
-            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             op: SdkClient::hydrateStringEnumOrString($data->op, GetConditionalBypassResponseVariant1ResultItemConditionGroupItemConditionsItemOpEnum::class),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConditionalBypassResponseVariant1ResultItemConditionGroupItemConditionsItemTypeEnum::class),
@@ -115,9 +111,7 @@ class GetConditionalBypassResponseVariant1ResultItemConditionGroupItem implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetConditionalBypassResponseVariant1ResultItemConditionGroupItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );
@@ -161,12 +155,8 @@ class GetConditionalBypassResponseVariant1ResultItem implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditionGroup") || $data->conditionGroup === null) {
-            throw new SdkValidationError("conditionGroup", 'required', "Required property 'conditionGroup' is missing or null");
-        }
-        if (!property_exists($data, "domain") || $data->domain === null) {
-            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
-        }
+        if (!property_exists($data, "conditionGroup") || $data->conditionGroup === null) { throw new SdkValidationError("conditionGroup", 'required', "Required property 'conditionGroup' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
         return new self(
             conditionGroup: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetConditionalBypassResponseVariant1ResultItemConditionGroupItem::class), SdkClient::arrayValue($data->conditionGroup))),
             domain: SdkClient::stringValue($data->domain),
@@ -211,12 +201,8 @@ class GetConditionalBypassResponseVariant1 implements GetConditionalBypassRespon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "result") || $data->result === null) {
-            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, GetConditionalBypassResponseVariant1Pagination::class),
             result: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetConditionalBypassResponseVariant1ResultItem::class), SdkClient::arrayValue($data->result))),

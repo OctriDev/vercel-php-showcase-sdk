@@ -66,9 +66,7 @@ class UserEventPayloadVariant165 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "team") || $data->team === null) {
-            throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null");
-        }
+        if (!property_exists($data, "team") || $data->team === null) { throw new SdkValidationError("team", 'required', "Required property 'team' is missing or null"); }
         return new self(
             team: SdkClient::hydrateClass($data->team, UserEventPayloadVariant165Team::class),
             nextRule: (property_exists($data, "nextRule") && $data->nextRule !== null ? SdkClient::hydrateClass($data->nextRule, UserEventPayloadVariant165NextRule::class) : SdkNotGiven::Value),
@@ -125,12 +123,8 @@ class UserEventPayloadVariant166DeletedUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "username") || $data->username === null) {
-            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
-        }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
         return new self(
             email: SdkClient::stringValue($data->email),
             username: SdkClient::stringValue($data->username),

@@ -44,12 +44,8 @@ class CreateIntegrationStoreDirectResponseStoreBillingPlanQuoteItem implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "amount") || $data->amount === null) {
-            throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null");
-        }
-        if (!property_exists($data, "line") || $data->line === null) {
-            throw new SdkValidationError("line", 'required', "Required property 'line' is missing or null");
-        }
+        if (!property_exists($data, "amount") || $data->amount === null) { throw new SdkValidationError("amount", 'required', "Required property 'amount' is missing or null"); }
+        if (!property_exists($data, "line") || $data->line === null) { throw new SdkValidationError("line", 'required', "Required property 'line' is missing or null"); }
         return new self(
             amount: SdkClient::stringValue($data->amount),
             line: SdkClient::stringValue($data->line),
@@ -62,26 +58,11 @@ final readonly class CreateIntegrationStoreDirectResponseStoreBillingPlanScopeEn
     public const INSTALLATION = "installation";
     public const RESOURCE = "resource";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateIntegrationStoreDirectResponseStoreBillingPlanTypeEnum implements SdkOpenEnum
@@ -89,26 +70,11 @@ final readonly class CreateIntegrationStoreDirectResponseStoreBillingPlanTypeEnu
     public const PREPAYMENT = "prepayment";
     public const SUBSCRIPTION = "subscription";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateIntegrationStoreDirectResponseStoreBillingPlan implements \JsonSerializable
@@ -260,24 +226,12 @@ class CreateIntegrationStoreDirectResponseStoreBillingPlan implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "paymentMethodRequired") || $data->paymentMethodRequired === null) {
-            throw new SdkValidationError("paymentMethodRequired", 'required', "Required property 'paymentMethodRequired' is missing or null");
-        }
-        if (!property_exists($data, "scope") || $data->scope === null) {
-            throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "paymentMethodRequired") || $data->paymentMethodRequired === null) { throw new SdkValidationError("paymentMethodRequired", 'required', "Required property 'paymentMethodRequired' is missing or null"); }
+        if (!property_exists($data, "scope") || $data->scope === null) { throw new SdkValidationError("scope", 'required', "Required property 'scope' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             description: SdkClient::stringValue($data->description),
             id: SdkClient::stringValue($data->id),
@@ -339,9 +293,7 @@ class CreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotationVariant
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "maxDelayHours") || $data->maxDelayHours === null) {
-            throw new SdkValidationError("maxDelayHours", 'required', "Required property 'maxDelayHours' is missing or null");
-        }
+        if (!property_exists($data, "maxDelayHours") || $data->maxDelayHours === null) { throw new SdkValidationError("maxDelayHours", 'required', "Required property 'maxDelayHours' is missing or null"); }
         return new self(
             maxDelayHours: SdkClient::floatValue($data->maxDelayHours),
             customRotationWarning: (property_exists($data, "customRotationWarning") && $data->customRotationWarning !== null ? SdkClient::stringValue($data->customRotationWarning) : SdkNotGiven::Value),

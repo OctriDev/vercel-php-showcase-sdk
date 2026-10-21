@@ -76,24 +76,12 @@ class GetActiveAttackStatusResponseVariant1AnomaliesItem implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "affectedHostMap") || $data->affectedHostMap === null) {
-            throw new SdkValidationError("affectedHostMap", 'required', "Required property 'affectedHostMap' is missing or null");
-        }
-        if (!property_exists($data, "atMinute") || $data->atMinute === null) {
-            throw new SdkValidationError("atMinute", 'required', "Required property 'atMinute' is missing or null");
-        }
-        if (!property_exists($data, "endTime")) {
-            throw new SdkValidationError("endTime", 'required', "Missing required property 'endTime'");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "startTime") || $data->startTime === null) {
-            throw new SdkValidationError("startTime", 'required', "Required property 'startTime' is missing or null");
-        }
+        if (!property_exists($data, "affectedHostMap") || $data->affectedHostMap === null) { throw new SdkValidationError("affectedHostMap", 'required', "Required property 'affectedHostMap' is missing or null"); }
+        if (!property_exists($data, "atMinute") || $data->atMinute === null) { throw new SdkValidationError("atMinute", 'required', "Required property 'atMinute' is missing or null"); }
+        if (!property_exists($data, "endTime")) { throw new SdkValidationError("endTime", 'required', "Missing required property 'endTime'"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "startTime") || $data->startTime === null) { throw new SdkValidationError("startTime", 'required', "Required property 'startTime' is missing or null"); }
         return new self(
             affectedHostMap: SdkClient::mapValues(SdkClient::stringMapValue($data->affectedHostMap), static fn($item) => SdkClient::hydrateClass($item, GetActiveAttackStatusResponseVariant1AnomaliesItemAffectedHostMapValue::class)),
             atMinute: SdkClient::floatValue($data->atMinute),
@@ -137,9 +125,7 @@ class GetActiveAttackStatusResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "anomalies") || $data->anomalies === null) {
-            throw new SdkValidationError("anomalies", 'required', "Required property 'anomalies' is missing or null");
-        }
+        if (!property_exists($data, "anomalies") || $data->anomalies === null) { throw new SdkValidationError("anomalies", 'required', "Required property 'anomalies' is missing or null"); }
         return new self(
             anomalies: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetActiveAttackStatusResponseVariant1AnomaliesItem::class), SdkClient::arrayValue($data->anomalies))),
         );
@@ -183,12 +169,8 @@ class GetBypassIpResponsePagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "Id") || $data->Id === null) {
-            throw new SdkValidationError("Id", 'required', "Required property 'Id' is missing or null");
-        }
-        if (!property_exists($data, "OwnerId") || $data->OwnerId === null) {
-            throw new SdkValidationError("OwnerId", 'required', "Required property 'OwnerId' is missing or null");
-        }
+        if (!property_exists($data, "Id") || $data->Id === null) { throw new SdkValidationError("Id", 'required', "Required property 'Id' is missing or null"); }
+        if (!property_exists($data, "OwnerId") || $data->OwnerId === null) { throw new SdkValidationError("OwnerId", 'required', "Required property 'OwnerId' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->Id),
             ownerId: SdkClient::stringValue($data->OwnerId),
@@ -201,26 +183,11 @@ final readonly class GetBypassIpResponseResultItemActionEnum implements SdkOpenE
     public const BLOCK = "block";
     public const BYPASS = "bypass";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetBypassIpResponseResultItem implements \JsonSerializable
@@ -346,27 +313,13 @@ class GetBypassIpResponseResultItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "CreatedAt") || $data->CreatedAt === null) {
-            throw new SdkValidationError("CreatedAt", 'required', "Required property 'CreatedAt' is missing or null");
-        }
-        if (!property_exists($data, "Domain") || $data->Domain === null) {
-            throw new SdkValidationError("Domain", 'required', "Required property 'Domain' is missing or null");
-        }
-        if (!property_exists($data, "Id") || $data->Id === null) {
-            throw new SdkValidationError("Id", 'required', "Required property 'Id' is missing or null");
-        }
-        if (!property_exists($data, "Ip") || $data->Ip === null) {
-            throw new SdkValidationError("Ip", 'required', "Required property 'Ip' is missing or null");
-        }
-        if (!property_exists($data, "OwnerId") || $data->OwnerId === null) {
-            throw new SdkValidationError("OwnerId", 'required', "Required property 'OwnerId' is missing or null");
-        }
-        if (!property_exists($data, "UpdatedAt") || $data->UpdatedAt === null) {
-            throw new SdkValidationError("UpdatedAt", 'required', "Required property 'UpdatedAt' is missing or null");
-        }
-        if (!property_exists($data, "UpdatedAtHour") || $data->UpdatedAtHour === null) {
-            throw new SdkValidationError("UpdatedAtHour", 'required', "Required property 'UpdatedAtHour' is missing or null");
-        }
+        if (!property_exists($data, "CreatedAt") || $data->CreatedAt === null) { throw new SdkValidationError("CreatedAt", 'required', "Required property 'CreatedAt' is missing or null"); }
+        if (!property_exists($data, "Domain") || $data->Domain === null) { throw new SdkValidationError("Domain", 'required', "Required property 'Domain' is missing or null"); }
+        if (!property_exists($data, "Id") || $data->Id === null) { throw new SdkValidationError("Id", 'required', "Required property 'Id' is missing or null"); }
+        if (!property_exists($data, "Ip") || $data->Ip === null) { throw new SdkValidationError("Ip", 'required', "Required property 'Ip' is missing or null"); }
+        if (!property_exists($data, "OwnerId") || $data->OwnerId === null) { throw new SdkValidationError("OwnerId", 'required', "Required property 'OwnerId' is missing or null"); }
+        if (!property_exists($data, "UpdatedAt") || $data->UpdatedAt === null) { throw new SdkValidationError("UpdatedAt", 'required', "Required property 'UpdatedAt' is missing or null"); }
+        if (!property_exists($data, "UpdatedAtHour") || $data->UpdatedAtHour === null) { throw new SdkValidationError("UpdatedAtHour", 'required', "Required property 'UpdatedAtHour' is missing or null"); }
         return new self(
             createdAt: SdkClient::stringValue($data->CreatedAt),
             domain: SdkClient::stringValue($data->Domain),

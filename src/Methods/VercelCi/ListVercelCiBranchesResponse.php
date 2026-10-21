@@ -38,9 +38,7 @@ class ListVercelCiBranchesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "branches") || $data->branches === null) {
-            throw new SdkValidationError("branches", 'required', "Required property 'branches' is missing or null");
-        }
+        if (!property_exists($data, "branches") || $data->branches === null) { throw new SdkValidationError("branches", 'required', "Required property 'branches' is missing or null"); }
         return new self(
             branches: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListVercelCiBranchesResponseBranchesItem::class), SdkClient::arrayValue($data->branches))),
         );
@@ -84,12 +82,8 @@ class CreateVercelCiTaskAnalysisResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "analysisId") || $data->analysisId === null) {
-            throw new SdkValidationError("analysisId", 'required', "Required property 'analysisId' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "analysisId") || $data->analysisId === null) { throw new SdkValidationError("analysisId", 'required', "Required property 'analysisId' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             analysisId: SdkClient::stringValue($data->analysisId),
             status: SdkClient::stringValue($data->status),
@@ -142,12 +136,8 @@ class GetVercelCiTaskAnalysisResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "analysisId") || $data->analysisId === null) {
-            throw new SdkValidationError("analysisId", 'required', "Required property 'analysisId' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "analysisId") || $data->analysisId === null) { throw new SdkValidationError("analysisId", 'required', "Required property 'analysisId' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             analysisId: SdkClient::stringValue($data->analysisId),
             status: SdkClient::stringValue($data->status),
@@ -193,12 +183,8 @@ class CreateVercelCiTaskConfigurationPullRequestTasksItem implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "configPath") || $data->configPath === null) {
-            throw new SdkValidationError("configPath", 'required', "Required property 'configPath' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "configPath") || $data->configPath === null) { throw new SdkValidationError("configPath", 'required', "Required property 'configPath' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             configPath: SdkClient::stringValue($data->configPath),
@@ -243,12 +229,8 @@ class CreateVercelCiTaskConfigurationPullRequestResponse implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
-        if (!property_exists($data, "changedTaskNames") || $data->changedTaskNames === null) {
-            throw new SdkValidationError("changedTaskNames", 'required', "Required property 'changedTaskNames' is missing or null");
-        }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "changedTaskNames") || $data->changedTaskNames === null) { throw new SdkValidationError("changedTaskNames", 'required', "Required property 'changedTaskNames' is missing or null"); }
         return new self(
             url: SdkClient::stringValue($data->url),
             changedTaskNames: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->changedTaskNames))),
@@ -299,15 +281,9 @@ class ListVercelCiTaskAnalysisTasksResponseTasksItem implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "configPath") || $data->configPath === null) {
-            throw new SdkValidationError("configPath", 'required', "Required property 'configPath' is missing or null");
-        }
-        if (!property_exists($data, "recommendationReasons") || $data->recommendationReasons === null) {
-            throw new SdkValidationError("recommendationReasons", 'required', "Required property 'recommendationReasons' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "configPath") || $data->configPath === null) { throw new SdkValidationError("configPath", 'required', "Required property 'configPath' is missing or null"); }
+        if (!property_exists($data, "recommendationReasons") || $data->recommendationReasons === null) { throw new SdkValidationError("recommendationReasons", 'required', "Required property 'recommendationReasons' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             configPath: SdkClient::stringValue($data->configPath),

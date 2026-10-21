@@ -84,24 +84,12 @@ class DeleteProjectAvatarResponseConnectConfigurationsItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) {
-            throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null");
-        }
-        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) {
-            throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "envId") || $data->envId === null) {
-            throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null");
-        }
-        if (!property_exists($data, "passive") || $data->passive === null) {
-            throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) { throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null"); }
+        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) { throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "envId") || $data->envId === null) { throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null"); }
+        if (!property_exists($data, "passive") || $data->passive === null) { throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             buildsEnabled: SdkClient::boolValue($data->buildsEnabled),
             connectConfigurationId: SdkClient::stringValue($data->connectConfigurationId),
@@ -122,26 +110,11 @@ final readonly class DeleteProjectAvatarResponseCronsDefinitionsItemSourceEnum i
 {
     public const API = "api";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class DeleteProjectAvatarResponseCronsDefinitionsItem implements \JsonSerializable
@@ -235,15 +208,9 @@ class DeleteProjectAvatarResponseCronsDefinitionsItem implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "host") || $data->host === null) {
-            throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null");
-        }
-        if (!property_exists($data, "path") || $data->path === null) {
-            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
-        }
-        if (!property_exists($data, "schedule") || $data->schedule === null) {
-            throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null");
-        }
+        if (!property_exists($data, "host") || $data->host === null) { throw new SdkValidationError("host", 'required', "Required property 'host' is missing or null"); }
+        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
+        if (!property_exists($data, "schedule") || $data->schedule === null) { throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null"); }
         return new self(
             host: SdkClient::stringValue($data->host),
             path: SdkClient::stringValue($data->path),
@@ -322,21 +289,11 @@ class DeleteProjectAvatarResponseCrons implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "definitions") || $data->definitions === null) {
-            throw new SdkValidationError("definitions", 'required', "Required property 'definitions' is missing or null");
-        }
-        if (!property_exists($data, "deploymentId")) {
-            throw new SdkValidationError("deploymentId", 'required', "Missing required property 'deploymentId'");
-        }
-        if (!property_exists($data, "disabledAt")) {
-            throw new SdkValidationError("disabledAt", 'required', "Missing required property 'disabledAt'");
-        }
-        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) {
-            throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "definitions") || $data->definitions === null) { throw new SdkValidationError("definitions", 'required', "Required property 'definitions' is missing or null"); }
+        if (!property_exists($data, "deploymentId")) { throw new SdkValidationError("deploymentId", 'required', "Missing required property 'deploymentId'"); }
+        if (!property_exists($data, "disabledAt")) { throw new SdkValidationError("disabledAt", 'required', "Missing required property 'disabledAt'"); }
+        if (!property_exists($data, "enabledAt") || $data->enabledAt === null) { throw new SdkValidationError("enabledAt", 'required', "Required property 'enabledAt' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             definitions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, DeleteProjectAvatarResponseCronsDefinitionsItem::class), SdkClient::arrayValue($data->definitions))),
             deploymentId: ($data->deploymentId === null ? null : SdkClient::stringValue($data->deploymentId)),
@@ -356,24 +313,9 @@ final readonly class DeleteProjectAvatarResponseCustomEnvironmentsItemBranchMatc
     public const EQUALS = "equals";
     public const STARTSWITH = "startsWith";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

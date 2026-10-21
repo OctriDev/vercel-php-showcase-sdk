@@ -50,15 +50,9 @@ class GetRedirectsResponseVariant2Pagination implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "numPages") || $data->numPages === null) {
-            throw new SdkValidationError("numPages", 'required', "Required property 'numPages' is missing or null");
-        }
-        if (!property_exists($data, "page") || $data->page === null) {
-            throw new SdkValidationError("page", 'required', "Required property 'page' is missing or null");
-        }
-        if (!property_exists($data, "per_page") || $data->per_page === null) {
-            throw new SdkValidationError("per_page", 'required', "Required property 'per_page' is missing or null");
-        }
+        if (!property_exists($data, "numPages") || $data->numPages === null) { throw new SdkValidationError("numPages", 'required', "Required property 'numPages' is missing or null"); }
+        if (!property_exists($data, "page") || $data->page === null) { throw new SdkValidationError("page", 'required', "Required property 'page' is missing or null"); }
+        if (!property_exists($data, "per_page") || $data->per_page === null) { throw new SdkValidationError("per_page", 'required', "Required property 'per_page' is missing or null"); }
         return new self(
             numPages: SdkClient::floatValue($data->numPages),
             page: SdkClient::floatValue($data->page),
@@ -152,12 +146,8 @@ class GetRedirectsResponseVariant2RedirectsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "destination") || $data->destination === null) {
-            throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null");
-        }
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
+        if (!property_exists($data, "destination") || $data->destination === null) { throw new SdkValidationError("destination", 'required', "Required property 'destination' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
         return new self(
             destination: SdkClient::stringValue($data->destination),
             source: SdkClient::stringValue($data->source),
@@ -288,18 +278,10 @@ class GetRedirectsResponseVariant2Version implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
-            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
-        }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -357,15 +339,9 @@ class GetRedirectsResponseVariant2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
-        if (!property_exists($data, "redirects") || $data->redirects === null) {
-            throw new SdkValidationError("redirects", 'required', "Required property 'redirects' is missing or null");
-        }
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
+        if (!property_exists($data, "redirects") || $data->redirects === null) { throw new SdkValidationError("redirects", 'required', "Required property 'redirects' is missing or null"); }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             pagination: SdkClient::hydrateClass($data->pagination, GetRedirectsResponseVariant2Pagination::class),
             redirects: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetRedirectsResponseVariant2RedirectsItem::class), SdkClient::arrayValue($data->redirects))),

@@ -55,12 +55,8 @@ class AiGatewayRuleList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "nextCursor")) {
-            throw new SdkValidationError("nextCursor", 'required', "Missing required property 'nextCursor'");
-        }
-        if (!property_exists($data, "rules") || $data->rules === null) {
-            throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null");
-        }
+        if (!property_exists($data, "nextCursor")) { throw new SdkValidationError("nextCursor", 'required', "Missing required property 'nextCursor'"); }
+        if (!property_exists($data, "rules") || $data->rules === null) { throw new SdkValidationError("rules", 'required', "Required property 'rules' is missing or null"); }
         return new self(
             nextCursor: ($data->nextCursor === null ? null : SdkClient::stringValue($data->nextCursor)),
             rules: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayRule::class), SdkClient::arrayValue($data->rules))),

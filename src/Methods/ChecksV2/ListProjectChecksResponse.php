@@ -44,12 +44,8 @@ class ListProjectChecksResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "availableNativeChecks") || $data->availableNativeChecks === null) {
-            throw new SdkValidationError("availableNativeChecks", 'required', "Required property 'availableNativeChecks' is missing or null");
-        }
-        if (!property_exists($data, "checks") || $data->checks === null) {
-            throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null");
-        }
+        if (!property_exists($data, "availableNativeChecks") || $data->availableNativeChecks === null) { throw new SdkValidationError("availableNativeChecks", 'required', "Required property 'availableNativeChecks' is missing or null"); }
+        if (!property_exists($data, "checks") || $data->checks === null) { throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null"); }
         return new self(
             availableNativeChecks: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->availableNativeChecks))),
             checks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectChecksResponseChecksItem::class), SdkClient::arrayValue($data->checks))),
@@ -65,26 +61,11 @@ final readonly class CreateProjectCheckResponseBlocksEnum implements SdkOpenEnum
     public const DEPLOYMENT_START = "deployment-start";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateProjectCheckResponseRequiresEnum implements SdkOpenEnum
@@ -93,26 +74,11 @@ final readonly class CreateProjectCheckResponseRequiresEnum implements SdkOpenEn
     public const DEPLOYMENT_URL = "deployment-url";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateProjectCheckResponseSourceKindEnum implements SdkOpenEnum
@@ -122,26 +88,11 @@ final readonly class CreateProjectCheckResponseSourceKindEnum implements SdkOpen
     public const VERCEL = "vercel";
     public const WEBHOOK = "webhook";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateProjectCheckResponse implements \JsonSerializable
@@ -267,45 +218,19 @@ class CreateProjectCheckResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "blocks") || $data->blocks === null) {
-            throw new SdkValidationError("blocks", 'required', "Required property 'blocks' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "isRerequestable") || $data->isRerequestable === null) {
-            throw new SdkValidationError("isRerequestable", 'required', "Required property 'isRerequestable' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "requires") || $data->requires === null) {
-            throw new SdkValidationError("requires", 'required', "Required property 'requires' is missing or null");
-        }
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "sourceKind") || $data->sourceKind === null) {
-            throw new SdkValidationError("sourceKind", 'required', "Required property 'sourceKind' is missing or null");
-        }
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
-        if (!property_exists($data, "timeout") || $data->timeout === null) {
-            throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "blocks") || $data->blocks === null) { throw new SdkValidationError("blocks", 'required', "Required property 'blocks' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "isRerequestable") || $data->isRerequestable === null) { throw new SdkValidationError("isRerequestable", 'required', "Required property 'isRerequestable' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "requires") || $data->requires === null) { throw new SdkValidationError("requires", 'required', "Required property 'requires' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "sourceKind") || $data->sourceKind === null) { throw new SdkValidationError("sourceKind", 'required', "Required property 'sourceKind' is missing or null"); }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
+        if (!property_exists($data, "timeout") || $data->timeout === null) { throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             blocks: SdkClient::hydrateStringEnumOrString($data->blocks, CreateProjectCheckResponseBlocksEnum::class),
             createdAt: SdkClient::floatValue($data->createdAt),
@@ -334,26 +259,11 @@ final readonly class GetProjectCheckResponseBlocksEnum implements SdkOpenEnum
     public const DEPLOYMENT_START = "deployment-start";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetProjectCheckResponseRequiresEnum implements SdkOpenEnum
@@ -362,26 +272,11 @@ final readonly class GetProjectCheckResponseRequiresEnum implements SdkOpenEnum
     public const DEPLOYMENT_URL = "deployment-url";
     public const NONE = "none";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetProjectCheckResponseSourceKindEnum implements SdkOpenEnum
@@ -391,24 +286,9 @@ final readonly class GetProjectCheckResponseSourceKindEnum implements SdkOpenEnu
     public const VERCEL = "vercel";
     public const WEBHOOK = "webhook";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

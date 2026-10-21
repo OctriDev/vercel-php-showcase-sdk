@@ -69,9 +69,7 @@ class CreateSandboxesV3KeepLastSnapshots implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "count") || $data->count === null) {
-            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
-        }
+        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
         return new self(
             count: SdkClient::intValue($data->count),
             expiration: (property_exists($data, "expiration") ? ($data->expiration === null ? null : $data->expiration) : SdkNotGiven::Value),
@@ -131,15 +129,9 @@ class CreateSandboxesV3Response implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),
@@ -193,12 +185,8 @@ class CreateSandboxesSessionsBySessionIdSnapshotV3Response implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
-        if (!property_exists($data, "snapshot") || $data->snapshot === null) {
-            throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null");
-        }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
+        if (!property_exists($data, "snapshot") || $data->snapshot === null) { throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null"); }
         return new self(
             session: SdkClient::hydrateClass($data->session, Session::class),
             snapshot: SdkClient::hydrateClass($data->snapshot, Snapshot::class),
@@ -316,15 +304,9 @@ class CreateSandboxesByNameForkV3Response implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routes") || $data->routes === null) {
-            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
-        }
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, SandboxPublicRoute::class), SdkClient::arrayValue($data->routes))),
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),

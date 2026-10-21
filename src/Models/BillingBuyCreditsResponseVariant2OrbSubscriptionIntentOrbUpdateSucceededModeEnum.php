@@ -11,52 +11,22 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSuc
 {
     public const ASYNC = "async";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSucceededStatusEnum implements SdkOpenEnum
 {
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -109,15 +79,9 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSucceeded implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appliedAt") || $data->appliedAt === null) {
-            throw new SdkValidationError("appliedAt", 'required', "Required property 'appliedAt' is missing or null");
-        }
-        if (!property_exists($data, "mode") || $data->mode === null) {
-            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "appliedAt") || $data->appliedAt === null) { throw new SdkValidationError("appliedAt", 'required', "Required property 'appliedAt' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             appliedAt: SdkClient::stringValue($data->appliedAt),
             mode: SdkClient::hydrateStringEnumOrString($data->mode, BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateSucceededModeEnum::class),
@@ -135,26 +99,11 @@ final readonly class BuyCreditsResponseVariant2OrbSubscriptionIntentStatusEnum i
     public const PENDING = "pending";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class BuyCreditsResponseVariant2OrbSubscriptionIntent implements \JsonSerializable
@@ -266,30 +215,14 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntent implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configuration") || $data->configuration === null) {
-            throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) {
-            throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null");
-        }
-        if (!property_exists($data, "orbUpdate") || $data->orbUpdate === null) {
-            throw new SdkValidationError("orbUpdate", 'required', "Required property 'orbUpdate' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "configuration") || $data->configuration === null) { throw new SdkValidationError("configuration", 'required', "Required property 'configuration' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "orbSubscriptionId") || $data->orbSubscriptionId === null) { throw new SdkValidationError("orbSubscriptionId", 'required', "Required property 'orbSubscriptionId' is missing or null"); }
+        if (!property_exists($data, "orbUpdate") || $data->orbUpdate === null) { throw new SdkValidationError("orbUpdate", 'required', "Required property 'orbUpdate' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             configuration: SdkClient::hydrateUnion($data->configuration, [BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQuantity::class, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationIncreasePlanItemQuantity::class, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationDecreasePlanItemQuantity::class, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationAdjustPlanItemQuantity::class], null, []),
             createdAt: SdkClient::stringValue($data->createdAt),
@@ -335,9 +268,7 @@ class BuyCreditsResponseVariant2 implements BuyCreditsResponse, \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "orbSubscriptionIntent") || $data->orbSubscriptionIntent === null) {
-            throw new SdkValidationError("orbSubscriptionIntent", 'required', "Required property 'orbSubscriptionIntent' is missing or null");
-        }
+        if (!property_exists($data, "orbSubscriptionIntent") || $data->orbSubscriptionIntent === null) { throw new SdkValidationError("orbSubscriptionIntent", 'required', "Required property 'orbSubscriptionIntent' is missing or null"); }
         return new self(
             orbSubscriptionIntent: SdkClient::hydrateClass($data->orbSubscriptionIntent, BuyCreditsResponseVariant2OrbSubscriptionIntent::class),
         );

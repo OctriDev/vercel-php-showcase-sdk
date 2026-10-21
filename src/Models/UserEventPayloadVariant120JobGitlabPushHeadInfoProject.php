@@ -105,9 +105,7 @@ class UserEventPayloadVariant120JobGitlabPushHeadInfoProject implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             defaultBranch: (property_exists($data, "defaultBranch") ? ($data->defaultBranch === null ? null : SdkClient::stringValue($data->defaultBranch)) : SdkNotGiven::Value),
@@ -177,15 +175,9 @@ class UserEventPayloadVariant120JobGitlabPushHeadInfo implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "project") || $data->project === null) {
-            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
-        }
-        if (!property_exists($data, "ref") || $data->ref === null) {
-            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
-        }
-        if (!property_exists($data, "sha") || $data->sha === null) {
-            throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null");
-        }
+        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
+        if (!property_exists($data, "sha") || $data->sha === null) { throw new SdkValidationError("sha", 'required', "Required property 'sha' is missing or null"); }
         return new self(
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant120JobGitlabPushHeadInfoProject::class),
             ref: SdkClient::stringValue($data->ref),
@@ -202,26 +194,11 @@ final readonly class UserEventPayloadVariant120JobGitlabPushNsnbSideEffectAction
     public const AUTO_APPROVED_MEMBER = "auto-approved-member";
     public const AUTO_APPROVED_PENDING_INVITE = "auto-approved-pending-invite";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -272,12 +249,8 @@ class UserEventPayloadVariant120JobGitlabPushNsnbSideEffect implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "gitUserLogin") || $data->gitUserLogin === null) {
-            throw new SdkValidationError("gitUserLogin", 'required', "Required property 'gitUserLogin' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "gitUserLogin") || $data->gitUserLogin === null) { throw new SdkValidationError("gitUserLogin", 'required', "Required property 'gitUserLogin' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant120JobGitlabPushNsnbSideEffectActionEnum::class),
             gitUserLogin: SdkClient::stringValue($data->gitUserLogin),

@@ -123,18 +123,10 @@ class UpdateRouteVersionsResponseVersion implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "lastModified") || $data->lastModified === null) {
-            throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null");
-        }
-        if (!property_exists($data, "s3Key") || $data->s3Key === null) {
-            throw new SdkValidationError("s3Key", 'required', "Required property 's3Key' is missing or null");
-        }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "lastModified") || $data->lastModified === null) { throw new SdkValidationError("lastModified", 'required', "Required property 'lastModified' is missing or null"); }
+        if (!property_exists($data, "s3Key") || $data->s3Key === null) { throw new SdkValidationError("s3Key", 'required', "Required property 's3Key' is missing or null"); }
         return new self(
             createdBy: SdkClient::stringValue($data->createdBy),
             id: SdkClient::stringValue($data->id),
@@ -183,9 +175,7 @@ class UpdateRouteVersionsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "version") || $data->version === null) {
-            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
-        }
+        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
         return new self(
             version: SdkClient::hydrateClass($data->version, UpdateRouteVersionsResponseVersion::class),
         );

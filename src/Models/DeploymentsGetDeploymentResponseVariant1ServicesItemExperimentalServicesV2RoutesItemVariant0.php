@@ -230,9 +230,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "src") || $data->src === null) {
-            throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null");
-        }
+        if (!property_exists($data, "src") || $data->src === null) { throw new SdkValidationError("src", 'required', "Required property 'src' is missing or null"); }
         return new self(
             src: SdkClient::stringValue($data->src),
             caseSensitive: (property_exists($data, "caseSensitive") && $data->caseSensitive !== null ? SdkClient::boolValue($data->caseSensitive) : SdkNotGiven::Value),
@@ -270,26 +268,11 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
     public const RESOURCE = "resource";
     public const REWRITE = "rewrite";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemVariant1 implements \JsonSerializable
@@ -347,9 +330,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemV
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "handle") || $data->handle === null) {
-            throw new SdkValidationError("handle", 'required', "Required property 'handle' is missing or null");
-        }
+        if (!property_exists($data, "handle") || $data->handle === null) { throw new SdkValidationError("handle", 'required', "Required property 'handle' is missing or null"); }
         return new self(
             handle: SdkClient::hydrateStringEnumOrString($data->handle, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2RoutesItemVariant1HandleEnum::class),
             dest: (property_exists($data, "dest") && $data->dest !== null ? SdkClient::stringValue($data->dest) : SdkNotGiven::Value),

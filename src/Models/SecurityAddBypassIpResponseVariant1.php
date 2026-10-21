@@ -46,9 +46,7 @@ class AddBypassIpResponseVariant1 implements AddBypassIpResponse, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ok") || $data->ok === null) {
-            throw new SdkValidationError("ok", 'required', "Required property 'ok' is missing or null");
-        }
+        if (!property_exists($data, "ok") || $data->ok === null) { throw new SdkValidationError("ok", 'required', "Required property 'ok' is missing or null"); }
         return new self(
             ok: SdkClient::boolValue($data->ok),
             result: (property_exists($data, "result") && $data->result !== null ? array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AddBypassIpResponseVariant1ResultItem::class), SdkClient::arrayValue($data->result))) : SdkNotGiven::Value),

@@ -72,18 +72,10 @@ class GetFlagSettingsResponseMetadata implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "activeFlagCount") || $data->activeFlagCount === null) {
-            throw new SdkValidationError("activeFlagCount", 'required', "Required property 'activeFlagCount' is missing or null");
-        }
-        if (!property_exists($data, "archivedFlagCount") || $data->archivedFlagCount === null) {
-            throw new SdkValidationError("archivedFlagCount", 'required', "Required property 'archivedFlagCount' is missing or null");
-        }
-        if (!property_exists($data, "packSizeInBytes") || $data->packSizeInBytes === null) {
-            throw new SdkValidationError("packSizeInBytes", 'required', "Required property 'packSizeInBytes' is missing or null");
-        }
-        if (!property_exists($data, "segmentCount") || $data->segmentCount === null) {
-            throw new SdkValidationError("segmentCount", 'required', "Required property 'segmentCount' is missing or null");
-        }
+        if (!property_exists($data, "activeFlagCount") || $data->activeFlagCount === null) { throw new SdkValidationError("activeFlagCount", 'required', "Required property 'activeFlagCount' is missing or null"); }
+        if (!property_exists($data, "archivedFlagCount") || $data->archivedFlagCount === null) { throw new SdkValidationError("archivedFlagCount", 'required', "Required property 'archivedFlagCount' is missing or null"); }
+        if (!property_exists($data, "packSizeInBytes") || $data->packSizeInBytes === null) { throw new SdkValidationError("packSizeInBytes", 'required', "Required property 'packSizeInBytes' is missing or null"); }
+        if (!property_exists($data, "segmentCount") || $data->segmentCount === null) { throw new SdkValidationError("segmentCount", 'required', "Required property 'segmentCount' is missing or null"); }
         return new self(
             activeFlagCount: SdkClient::floatValue($data->activeFlagCount),
             archivedFlagCount: SdkClient::floatValue($data->archivedFlagCount),
@@ -99,26 +91,11 @@ final readonly class GetFlagSettingsResponseTypeNameEnum implements SdkOpenEnum
 {
     public const SETTINGS = "settings";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetFlagSettingsResponse implements \JsonSerializable
@@ -206,24 +183,12 @@ class GetFlagSettingsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) {
-            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
-        }
-        if (!property_exists($data, "entities") || $data->entities === null) {
-            throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null");
-        }
-        if (!property_exists($data, "environments") || $data->environments === null) {
-            throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null");
-        }
-        if (!property_exists($data, "metadata") || $data->metadata === null) {
-            throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "typeName") || $data->typeName === null) {
-            throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null");
-        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "entities") || $data->entities === null) { throw new SdkValidationError("entities", 'required', "Required property 'entities' is missing or null"); }
+        if (!property_exists($data, "environments") || $data->environments === null) { throw new SdkValidationError("environments", 'required', "Required property 'environments' is missing or null"); }
+        if (!property_exists($data, "metadata") || $data->metadata === null) { throw new SdkValidationError("metadata", 'required', "Required property 'metadata' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "typeName") || $data->typeName === null) { throw new SdkValidationError("typeName", 'required', "Required property 'typeName' is missing or null"); }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             entities: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetFlagSettingsResponseEntitiesItem::class), SdkClient::arrayValue($data->entities))),
@@ -275,12 +240,8 @@ class UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             label: SdkClient::stringValue($data->label),
             value: SdkClient::stringValue($data->value),
@@ -333,12 +294,8 @@ class UpdateFlagSettingsEntitiesItemAttributesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::stringValue($data->type),

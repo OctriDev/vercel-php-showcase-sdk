@@ -22,26 +22,11 @@ final readonly class UserEventPayloadVariant373FactorsItemOriginEnum implements 
     public const OTP = "otp";
     public const SAML = "saml";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -130,9 +115,7 @@ class UserEventPayloadVariant373FactorsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) {
-            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
-        }
+        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, UserEventPayloadVariant373FactorsItemOriginEnum::class),
             legacy: (property_exists($data, "legacy") && $data->legacy !== null ? SdkClient::boolValue($data->legacy) : SdkNotGiven::Value),
@@ -181,9 +164,7 @@ class UserEventPayloadVariant373GeolocationCityNames implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) {
-            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
-        }
+        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
         return new self(
             en: SdkClient::stringValue($data->en),
         );
@@ -228,9 +209,7 @@ class UserEventPayloadVariant373GeolocationCity implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant373GeolocationCityNames::class),
         );
@@ -275,9 +254,7 @@ class UserEventPayloadVariant373GeolocationCountryNames implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) {
-            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
-        }
+        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
         return new self(
             en: SdkClient::stringValue($data->en),
         );
@@ -322,9 +299,7 @@ class UserEventPayloadVariant373GeolocationCountry implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: SdkClient::hydrateClass($data->names, UserEventPayloadVariant373GeolocationCountryNames::class),
         );
@@ -369,9 +344,7 @@ class UserEventPayloadVariant373GeolocationMostSpecificSubdivisionNames implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) {
-            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
-        }
+        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
         return new self(
             en: SdkClient::stringValue($data->en),
         );

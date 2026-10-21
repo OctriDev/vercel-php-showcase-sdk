@@ -119,24 +119,12 @@ class UserEventPayloadVariant279ProjectNewConnectConfigurationsItem implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) {
-            throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null");
-        }
-        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) {
-            throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "envId") || $data->envId === null) {
-            throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null");
-        }
-        if (!property_exists($data, "passive") || $data->passive === null) {
-            throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) { throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null"); }
+        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) { throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "envId") || $data->envId === null) { throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null"); }
+        if (!property_exists($data, "passive") || $data->passive === null) { throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             buildsEnabled: SdkClient::boolValue($data->buildsEnabled),
             connectConfigurationId: SdkClient::stringValue($data->connectConfigurationId),
@@ -200,9 +188,7 @@ class UserEventPayloadVariant279ProjectOldConnectConfigurationsItemAws implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "subnetIds") || $data->subnetIds === null) {
-            throw new SdkValidationError("subnetIds", 'required', "Required property 'subnetIds' is missing or null");
-        }
+        if (!property_exists($data, "subnetIds") || $data->subnetIds === null) { throw new SdkValidationError("subnetIds", 'required', "Required property 'subnetIds' is missing or null"); }
         return new self(
             subnetIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->subnetIds))),
             securityGroupId: (property_exists($data, "securityGroupId") && $data->securityGroupId !== null ? SdkClient::stringValue($data->securityGroupId) : SdkNotGiven::Value),
@@ -215,26 +201,11 @@ final readonly class UserEventPayloadVariant279ProjectOldConnectConfigurationsIt
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -349,24 +320,12 @@ class UserEventPayloadVariant279ProjectOldConnectConfigurationsItem implements \
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) {
-            throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null");
-        }
-        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) {
-            throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "envId") || $data->envId === null) {
-            throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null");
-        }
-        if (!property_exists($data, "passive") || $data->passive === null) {
-            throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "buildsEnabled") || $data->buildsEnabled === null) { throw new SdkValidationError("buildsEnabled", 'required', "Required property 'buildsEnabled' is missing or null"); }
+        if (!property_exists($data, "connectConfigurationId") || $data->connectConfigurationId === null) { throw new SdkValidationError("connectConfigurationId", 'required', "Required property 'connectConfigurationId' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "envId") || $data->envId === null) { throw new SdkValidationError("envId", 'required', "Required property 'envId' is missing or null"); }
+        if (!property_exists($data, "passive") || $data->passive === null) { throw new SdkValidationError("passive", 'required', "Required property 'passive' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             buildsEnabled: SdkClient::boolValue($data->buildsEnabled),
             connectConfigurationId: SdkClient::stringValue($data->connectConfigurationId),

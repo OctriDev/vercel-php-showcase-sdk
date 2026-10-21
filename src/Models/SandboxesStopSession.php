@@ -42,9 +42,7 @@ class StopSessionResponseVariant0 implements StopSessionResponse, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
         return new self(
             session: SdkClient::hydrateClass($data->session, Session::class),
         );
@@ -106,15 +104,9 @@ class StopSessionResponseVariant1 implements StopSessionResponse, \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sandbox") || $data->sandbox === null) {
-            throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null");
-        }
-        if (!property_exists($data, "session") || $data->session === null) {
-            throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null");
-        }
-        if (!property_exists($data, "snapshot") || $data->snapshot === null) {
-            throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null");
-        }
+        if (!property_exists($data, "sandbox") || $data->sandbox === null) { throw new SdkValidationError("sandbox", 'required', "Required property 'sandbox' is missing or null"); }
+        if (!property_exists($data, "session") || $data->session === null) { throw new SdkValidationError("session", 'required', "Required property 'session' is missing or null"); }
+        if (!property_exists($data, "snapshot") || $data->snapshot === null) { throw new SdkValidationError("snapshot", 'required', "Required property 'snapshot' is missing or null"); }
         return new self(
             sandbox: SdkClient::hydrateClass($data->sandbox, NamedSandbox::class),
             session: SdkClient::hydrateClass($data->session, Session::class),

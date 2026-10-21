@@ -62,15 +62,9 @@ class UserEventPayloadVariant342 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
-        if (!property_exists($data, "publicSource") || $data->publicSource === null) {
-            throw new SdkValidationError("publicSource", 'required', "Required property 'publicSource' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
+        if (!property_exists($data, "publicSource") || $data->publicSource === null) { throw new SdkValidationError("publicSource", 'required', "Required property 'publicSource' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             projectName: SdkClient::stringValue($data->projectName),
@@ -318,12 +312,8 @@ class UserEventPayloadVariant343 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next") || $data->next === null) {
-            throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null");
-        }
-        if (!property_exists($data, "previous") || $data->previous === null) {
-            throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null");
-        }
+        if (!property_exists($data, "next") || $data->next === null) { throw new SdkValidationError("next", 'required', "Required property 'next' is missing or null"); }
+        if (!property_exists($data, "previous") || $data->previous === null) { throw new SdkValidationError("previous", 'required', "Required property 'previous' is missing or null"); }
         return new self(
             next: SdkClient::hydrateClass($data->next, UserEventPayloadVariant343Next::class),
             previous: SdkClient::hydrateClass($data->previous, UserEventPayloadVariant343Previous::class),

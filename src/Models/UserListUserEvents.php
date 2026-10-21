@@ -45,9 +45,7 @@ class DeploymentCheckUpdatedPayloadNext implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -92,9 +90,7 @@ class DeploymentCheckUpdatedPayloadPrevious implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -193,18 +189,10 @@ class DeploymentCheckUpdatedPayload implements UserEventPayload, \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "checkId") || $data->checkId === null) {
-            throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null");
-        }
-        if (!property_exists($data, "checkName") || $data->checkName === null) {
-            throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "checkId") || $data->checkId === null) { throw new SdkValidationError("checkId", 'required', "Required property 'checkId' is missing or null"); }
+        if (!property_exists($data, "checkName") || $data->checkName === null) { throw new SdkValidationError("checkName", 'required', "Required property 'checkName' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             checkId: SdkClient::stringValue($data->checkId),
             checkName: SdkClient::stringValue($data->checkName),
@@ -245,26 +233,11 @@ final readonly class UserEventCategoriesItemEnum implements SdkOpenEnum
     public const VERCEL_APP = "vercel-app";
     public const WORKFLOW = "workflow";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -296,26 +269,11 @@ final readonly class UserEventEntitiesItemTypeEnum implements SdkOpenEnum
     public const SYSTEM = "system";
     public const TARGET = "target";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -376,15 +334,9 @@ class UserEventEntitiesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "end") || $data->end === null) {
-            throw new SdkValidationError("end", 'required', "Required property 'end' is missing or null");
-        }
-        if (!property_exists($data, "start") || $data->start === null) {
-            throw new SdkValidationError("start", 'required', "Required property 'start' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "end") || $data->end === null) { throw new SdkValidationError("end", 'required', "Required property 'end' is missing or null"); }
+        if (!property_exists($data, "start") || $data->start === null) { throw new SdkValidationError("start", 'required', "Required property 'start' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             end: SdkClient::floatValue($data->end),
             start: SdkClient::floatValue($data->start),

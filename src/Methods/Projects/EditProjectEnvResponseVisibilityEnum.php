@@ -15,26 +15,11 @@ final readonly class EditProjectEnvResponseVisibilityEnum implements SdkOpenEnum
     public const CONFIG = "config";
     public const SECRET = "secret";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class EditProjectEnvResponse implements \JsonSerializable
@@ -244,15 +229,9 @@ class EditProjectEnvResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "value") || $data->value === null) {
-            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
-        }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
         return new self(
             key: SdkClient::stringValue($data->key),
             type: SdkClient::hydrateStringEnumOrString($data->type, EditProjectEnvResponseTypeEnum::class),
@@ -316,12 +295,8 @@ class BatchRemoveProjectEnvResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deleted") || $data->deleted === null) {
-            throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null");
-        }
-        if (!property_exists($data, "ids") || $data->ids === null) {
-            throw new SdkValidationError("ids", 'required', "Required property 'ids' is missing or null");
-        }
+        if (!property_exists($data, "deleted") || $data->deleted === null) { throw new SdkValidationError("deleted", 'required', "Required property 'deleted' is missing or null"); }
+        if (!property_exists($data, "ids") || $data->ids === null) { throw new SdkValidationError("ids", 'required', "Required property 'ids' is missing or null"); }
         return new self(
             deleted: SdkClient::floatValue($data->deleted),
             ids: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->ids))),
@@ -360,9 +335,7 @@ class CreateProjectTransferRequestResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) {
-            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
-        }
+        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
         return new self(
             code: SdkClient::stringValue($data->code),
         );

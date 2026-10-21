@@ -100,12 +100,8 @@ class CreateSandboxesV2RequestSourceVariant0 implements CreateSandboxesV2Request
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) {
-            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             type: $data->type,
             url: SdkClient::stringValue($data->url),
@@ -162,12 +158,8 @@ class CreateSandboxesV2RequestSourceVariant1 implements CreateSandboxesV2Request
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) {
-            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             type: $data->type,
             url: SdkClient::stringValue($data->url),
@@ -220,12 +212,8 @@ class CreateSandboxesV2RequestSourceVariant2 implements CreateSandboxesV2Request
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type")) {
-            throw new SdkValidationError("type", 'required', "Missing required property 'type'");
-        }
-        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) {
-            throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null");
-        }
+        if (!property_exists($data, "type")) { throw new SdkValidationError("type", 'required', "Missing required property 'type'"); }
+        if (!property_exists($data, "snapshotId") || $data->snapshotId === null) { throw new SdkValidationError("snapshotId", 'required', "Required property 'snapshotId' is missing or null"); }
         return new self(
             type: $data->type,
             snapshotId: SdkClient::stringValue($data->snapshotId),

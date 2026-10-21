@@ -44,12 +44,8 @@ class CancelDeploymentResponseCronsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "path") || $data->path === null) {
-            throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null");
-        }
-        if (!property_exists($data, "schedule") || $data->schedule === null) {
-            throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null");
-        }
+        if (!property_exists($data, "path") || $data->path === null) { throw new SdkValidationError("path", 'required', "Required property 'path' is missing or null"); }
+        if (!property_exists($data, "schedule") || $data->schedule === null) { throw new SdkValidationError("schedule", 'required', "Required property 'schedule' is missing or null"); }
         return new self(
             path: SdkClient::stringValue($data->path),
             schedule: SdkClient::stringValue($data->schedule),
@@ -217,9 +213,7 @@ class CancelDeploymentResponseFlagsVariant0DefinitionsValueOptionsItem implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "value")) {
-            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
-        }
+        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
         return new self(
             value: ($data->value === null ? null : (is_array($data->value) ? array_values(array_map(static fn($item) => ($item === null ? null : $item), SdkClient::arrayValue($data->value))) : (is_bool($data->value) ? SdkClient::boolValue($data->value) : (is_float($data->value) || is_int($data->value) ? SdkClient::floatValue($data->value) : SdkClient::stringValue($data->value))))),
             label: (property_exists($data, "label") && $data->label !== null ? SdkClient::stringValue($data->label) : SdkNotGiven::Value),
@@ -318,9 +312,7 @@ class CancelDeploymentResponseFlagsVariant0 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "definitions") || $data->definitions === null) {
-            throw new SdkValidationError("definitions", 'required', "Required property 'definitions' is missing or null");
-        }
+        if (!property_exists($data, "definitions") || $data->definitions === null) { throw new SdkValidationError("definitions", 'required', "Required property 'definitions' is missing or null"); }
         return new self(
             definitions: SdkClient::mapValues(SdkClient::stringMapValue($data->definitions), static fn($item) => SdkClient::hydrateClass($item, CancelDeploymentResponseFlagsVariant0DefinitionsValue::class)),
         );
@@ -331,24 +323,9 @@ final readonly class CancelDeploymentResponseFunctionsValueAffinityModeEnum impl
 {
     public const STRICT = "strict";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

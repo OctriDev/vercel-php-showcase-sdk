@@ -46,9 +46,7 @@ class ListRepositoryTagsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tags") || $data->tags === null) {
-            throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null");
-        }
+        if (!property_exists($data, "tags") || $data->tags === null) { throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null"); }
         return new self(
             tags: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListRepositoryTagsResponseTagsItem::class), SdkClient::arrayValue($data->tags))),
             nextCursor: (property_exists($data, "nextCursor") && $data->nextCursor !== null ? SdkClient::stringValue($data->nextCursor) : SdkNotGiven::Value),
@@ -91,9 +89,7 @@ class GetRepositoryTagResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tag") || $data->tag === null) {
-            throw new SdkValidationError("tag", 'required', "Required property 'tag' is missing or null");
-        }
+        if (!property_exists($data, "tag") || $data->tag === null) { throw new SdkValidationError("tag", 'required', "Required property 'tag' is missing or null"); }
         return new self(
             tag: SdkClient::hydrateClass($data->tag, VcrTag::class),
         );
@@ -135,9 +131,7 @@ class GetRepositoryImageResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "image") || $data->image === null) {
-            throw new SdkValidationError("image", 'required', "Required property 'image' is missing or null");
-        }
+        if (!property_exists($data, "image") || $data->image === null) { throw new SdkValidationError("image", 'required', "Required property 'image' is missing or null"); }
         return new self(
             image: SdkClient::hydrateClass($data->image, VcrImageDetail::class),
         );
@@ -181,12 +175,8 @@ class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "tags") || $data->tags === null) {
-            throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null");
-        }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "tags") || $data->tags === null) { throw new SdkValidationError("tags", 'required', "Required property 'tags' is missing or null"); }
         return new self(
             name: SdkClient::stringValue($data->name),
             tags: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->tags))),

@@ -12,26 +12,11 @@ final readonly class CreateObservabilityQueryOrderDirection implements SdkOpenEn
     public const ASC = "asc";
     public const DESC = "desc";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetObservabilityConfigurationProjectsResponseDisabledProjectsItem implements \JsonSerializable
@@ -79,12 +64,8 @@ class GetObservabilityConfigurationProjectsResponseDisabledProjectsItem implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) {
-            throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "disabledAt") || $data->disabledAt === null) { throw new SdkValidationError("disabledAt", 'required', "Required property 'disabledAt' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             disabledAt: SdkClient::floatValue($data->disabledAt),
             id: SdkClient::stringValue($data->id),
@@ -124,9 +105,7 @@ class GetObservabilityConfigurationProjectsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "disabledProjects") || $data->disabledProjects === null) {
-            throw new SdkValidationError("disabledProjects", 'required', "Required property 'disabledProjects' is missing or null");
-        }
+        if (!property_exists($data, "disabledProjects") || $data->disabledProjects === null) { throw new SdkValidationError("disabledProjects", 'required', "Required property 'disabledProjects' is missing or null"); }
         return new self(
             disabledProjects: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetObservabilityConfigurationProjectsResponseDisabledProjectsItem::class), SdkClient::arrayValue($data->disabledProjects))),
         );
@@ -172,9 +151,7 @@ class UpdateObservabilityConfigurationProjectResponse implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             disabledAt: (property_exists($data, "disabledAt") && $data->disabledAt !== null ? SdkClient::floatValue($data->disabledAt) : SdkNotGiven::Value),
@@ -219,12 +196,8 @@ class GetObservabilitySchemaResponseMetricsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             description: SdkClient::stringValue($data->description),
             id: SdkClient::stringValue($data->id),
@@ -263,9 +236,7 @@ class GetObservabilitySchemaResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "metrics") || $data->metrics === null) {
-            throw new SdkValidationError("metrics", 'required', "Required property 'metrics' is missing or null");
-        }
+        if (!property_exists($data, "metrics") || $data->metrics === null) { throw new SdkValidationError("metrics", 'required', "Required property 'metrics' is missing or null"); }
         return new self(
             metrics: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetObservabilitySchemaResponseMetricsItem::class), SdkClient::arrayValue($data->metrics))),
         );
@@ -317,12 +288,8 @@ class GetObservabilitySchemaByMetricIdResponseItemDimensionsItem implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "label") || $data->label === null) {
-            throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "label") || $data->label === null) { throw new SdkValidationError("label", 'required', "Required property 'label' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             label: SdkClient::stringValue($data->label),
             name: SdkClient::stringValue($data->name),

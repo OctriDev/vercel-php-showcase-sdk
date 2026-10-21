@@ -54,9 +54,7 @@ class ListProjectsResponseItemCreatorVariant1App implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             clientId: (property_exists($data, "clientId") && $data->clientId !== null ? SdkClient::stringValue($data->clientId) : SdkNotGiven::Value),
@@ -106,12 +104,8 @@ class ListProjectsResponseItemCreatorVariant1 implements ListProjectsResponseIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "app") || $data->app === null) {
-            throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "app") || $data->app === null) { throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             app: SdkClient::hydrateClass($data->app, ListProjectsResponseItemCreatorVariant1App::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemCreatorVariant1TypeEnum::class),
@@ -156,12 +150,8 @@ class ListProjectsResponseItemCreatorVariant2Integration implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
-            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
-        }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
-            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
-        }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -211,12 +201,8 @@ class ListProjectsResponseItemCreatorVariant2 implements ListProjectsResponseIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integration") || $data->integration === null) {
-            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             integration: SdkClient::hydrateClass($data->integration, ListProjectsResponseItemCreatorVariant2Integration::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemCreatorVariant2TypeEnum::class),
@@ -260,9 +246,7 @@ class ListProjectsResponseItemCreatorVariant3 implements ListProjectsResponseIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemCreatorVariant3TypeEnum::class),
         );
@@ -311,12 +295,8 @@ class ListProjectsResponseItemEnvItemContentHintVariant0 implements ListProjects
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "storeId") || $data->storeId === null) {
-            throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "storeId") || $data->storeId === null) { throw new SdkValidationError("storeId", 'required', "Required property 'storeId' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             storeId: SdkClient::stringValue($data->storeId),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseItemEnvItemContentHintVariant0TypeEnum::class),

@@ -270,21 +270,11 @@ class ListSharedEnvVariableResponseDataItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created") || $data->created === null) {
-            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
-        }
-        if (!property_exists($data, "decrypted") || $data->decrypted === null) {
-            throw new SdkValidationError("decrypted", 'required', "Required property 'decrypted' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "key") || $data->key === null) {
-            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
-        }
-        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) {
-            throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null");
-        }
+        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
+        if (!property_exists($data, "decrypted") || $data->decrypted === null) { throw new SdkValidationError("decrypted", 'required', "Required property 'decrypted' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "securityIssues") || $data->securityIssues === null) { throw new SdkValidationError("securityIssues", 'required', "Required property 'securityIssues' is missing or null"); }
         return new self(
             created: SdkClient::stringValue($data->created),
             decrypted: SdkClient::boolValue($data->decrypted),
@@ -352,12 +342,8 @@ class ListSharedEnvVariableResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) {
-            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             data: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListSharedEnvVariableResponseDataItem::class), SdkClient::arrayValue($data->data))),
             pagination: SdkClient::hydrateClass($data->pagination, Pagination::class),

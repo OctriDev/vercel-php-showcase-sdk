@@ -38,9 +38,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "memory") || $data->memory === null) {
-            throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null");
-        }
+        if (!property_exists($data, "memory") || $data->memory === null) { throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null"); }
         return new self(
             memory: SdkClient::hydrateStringEnumOrString($data->memory, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigDaemonResourcesRequestsMemoryEnum::class),
         );
@@ -78,9 +76,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "requests") || $data->requests === null) {
-            throw new SdkValidationError("requests", 'required', "Required property 'requests' is missing or null");
-        }
+        if (!property_exists($data, "requests") || $data->requests === null) { throw new SdkValidationError("requests", 'required', "Required property 'requests' is missing or null"); }
         return new self(
             requests: SdkClient::hydrateClass($data->requests, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigDaemonResourcesRequests::class),
         );
@@ -181,15 +177,9 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) {
-            throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null");
-        }
-        if (!property_exists($data, "root") || $data->root === null) {
-            throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "entrypoint") || $data->entrypoint === null) { throw new SdkValidationError("entrypoint", 'required', "Required property 'entrypoint' is missing or null"); }
+        if (!property_exists($data, "root") || $data->root === null) { throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             entrypoint: SdkClient::stringValue($data->entrypoint),
             root: SdkClient::stringValue($data->root),
@@ -207,26 +197,11 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
 {
     public const STRICT = "strict";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigFunctionsValueAffinity implements \JsonSerializable
@@ -260,9 +235,7 @@ class GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConf
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) {
-            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
-        }
+        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, GetDeploymentResponseVariant1ServicesItemExperimentalServicesV2BuilderConfigFunctionsValueAffinityModeEnum::class),
         );
@@ -274,26 +247,11 @@ final readonly class GetDeploymentResponseVariant1ServicesItemExperimentalServic
     public const ARM64 = "arm64";
     public const X86_64 = "x86_64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**

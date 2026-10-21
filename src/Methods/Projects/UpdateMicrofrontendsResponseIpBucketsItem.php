@@ -54,9 +54,7 @@ class UpdateMicrofrontendsResponseIpBucketsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bucket") || $data->bucket === null) {
-            throw new SdkValidationError("bucket", 'required', "Required property 'bucket' is missing or null");
-        }
+        if (!property_exists($data, "bucket") || $data->bucket === null) { throw new SdkValidationError("bucket", 'required', "Required property 'bucket' is missing or null"); }
         return new self(
             bucket: SdkClient::stringValue($data->bucket),
             default_: (property_exists($data, "default") && $data->default !== null ? SdkClient::boolValue($data->default) : SdkNotGiven::Value),
@@ -96,9 +94,7 @@ class UpdateMicrofrontendsResponseJobsFlagDefinitionsPresent implements \JsonSer
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -136,9 +132,7 @@ class UpdateMicrofrontendsResponseJobsLint implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -176,9 +170,7 @@ class UpdateMicrofrontendsResponseJobsMfeConfigPresent implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -216,9 +208,7 @@ class UpdateMicrofrontendsResponseJobsTypecheck implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targets") || $data->targets === null) {
-            throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null");
-        }
+        if (!property_exists($data, "targets") || $data->targets === null) { throw new SdkValidationError("targets", 'required', "Required property 'targets' is missing or null"); }
         return new self(
             targets: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->targets))),
         );
@@ -299,26 +289,11 @@ final readonly class UpdateMicrofrontendsResponseLastAliasRequestJobStatusEnum i
     public const SKIPPED = "skipped";
     public const SUCCEEDED = "succeeded";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UpdateMicrofrontendsResponseLastAliasRequestTypeEnum implements SdkOpenEnum
@@ -326,24 +301,9 @@ final readonly class UpdateMicrofrontendsResponseLastAliasRequestTypeEnum implem
     public const PROMOTE = "promote";
     public const ROLLBACK = "rollback";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

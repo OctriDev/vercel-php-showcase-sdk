@@ -15,26 +15,11 @@ final readonly class CreateDeploymentResponseVariant1ConfigResourceConfigBuildQu
     public const SKIP_NAMESPACE_QUEUE = "SKIP_NAMESPACE_QUEUE";
     public const WAIT_FOR_NAMESPACE_QUEUE = "WAIT_FOR_NAMESPACE_QUEUE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -92,26 +77,11 @@ final readonly class CreateDeploymentResponseVariant1ConfigResourceConfigElastic
     public const SKIP_QUEUE = "SKIP_QUEUE";
     public const TEAM_SETTING = "TEAM_SETTING";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -124,26 +94,11 @@ final readonly class CreateDeploymentResponseVariant1ConfigResourceConfigBuildMa
     public const STANDARD = "standard";
     public const TURBO = "turbo";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachine implements \JsonSerializable
@@ -343,21 +298,11 @@ class CreateDeploymentResponseVariant1Config implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "functionMemoryType") || $data->functionMemoryType === null) {
-            throw new SdkValidationError("functionMemoryType", 'required', "Required property 'functionMemoryType' is missing or null");
-        }
-        if (!property_exists($data, "functionTimeout")) {
-            throw new SdkValidationError("functionTimeout", 'required', "Missing required property 'functionTimeout'");
-        }
-        if (!property_exists($data, "functionType") || $data->functionType === null) {
-            throw new SdkValidationError("functionType", 'required', "Required property 'functionType' is missing or null");
-        }
-        if (!property_exists($data, "secureComputeFallbackRegion")) {
-            throw new SdkValidationError("secureComputeFallbackRegion", 'required', "Missing required property 'secureComputeFallbackRegion'");
-        }
-        if (!property_exists($data, "secureComputePrimaryRegion")) {
-            throw new SdkValidationError("secureComputePrimaryRegion", 'required', "Missing required property 'secureComputePrimaryRegion'");
-        }
+        if (!property_exists($data, "functionMemoryType") || $data->functionMemoryType === null) { throw new SdkValidationError("functionMemoryType", 'required', "Required property 'functionMemoryType' is missing or null"); }
+        if (!property_exists($data, "functionTimeout")) { throw new SdkValidationError("functionTimeout", 'required', "Missing required property 'functionTimeout'"); }
+        if (!property_exists($data, "functionType") || $data->functionType === null) { throw new SdkValidationError("functionType", 'required', "Required property 'functionType' is missing or null"); }
+        if (!property_exists($data, "secureComputeFallbackRegion")) { throw new SdkValidationError("secureComputeFallbackRegion", 'required', "Missing required property 'secureComputeFallbackRegion'"); }
+        if (!property_exists($data, "secureComputePrimaryRegion")) { throw new SdkValidationError("secureComputePrimaryRegion", 'required', "Missing required property 'secureComputePrimaryRegion'"); }
         return new self(
             functionMemoryType: SdkClient::hydrateStringEnumOrString($data->functionMemoryType, CreateDeploymentResponseVariant1ConfigFunctionMemoryTypeEnum::class),
             functionTimeout: ($data->functionTimeout === null ? null : SdkClient::floatValue($data->functionTimeout)),
@@ -381,24 +326,9 @@ final readonly class CreateDeploymentResponseVariant1CreatorTypeEnum implements 
     public const SYSTEM = "system";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

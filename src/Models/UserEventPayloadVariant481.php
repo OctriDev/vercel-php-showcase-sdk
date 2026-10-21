@@ -42,9 +42,7 @@ class UserEventPayloadVariant481 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tier") || $data->tier === null) {
-            throw new SdkValidationError("tier", 'required', "Required property 'tier' is missing or null");
-        }
+        if (!property_exists($data, "tier") || $data->tier === null) { throw new SdkValidationError("tier", 'required', "Required property 'tier' is missing or null"); }
         return new self(
             tier: SdkClient::hydrateStringEnumOrString($data->tier, UserEventPayloadVariant481TierEnum::class),
         );
@@ -96,12 +94,8 @@ class UserEventPayloadVariant482 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             url: SdkClient::stringValue($data->url),
@@ -156,9 +150,7 @@ class UserEventPayloadVariant483 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "chatId") || $data->chatId === null) {
-            throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null");
-        }
+        if (!property_exists($data, "chatId") || $data->chatId === null) { throw new SdkValidationError("chatId", 'required', "Required property 'chatId' is missing or null"); }
         return new self(
             chatId: SdkClient::stringValue($data->chatId),
             chatTitle: (property_exists($data, "chatTitle") && $data->chatTitle !== null ? SdkClient::stringValue($data->chatTitle) : SdkNotGiven::Value),
@@ -274,30 +266,14 @@ class UserEventPayloadVariant484EventsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "cacheCreationInputTokens") || $data->cacheCreationInputTokens === null) {
-            throw new SdkValidationError("cacheCreationInputTokens", 'required', "Required property 'cacheCreationInputTokens' is missing or null");
-        }
-        if (!property_exists($data, "cacheReadInputTokens") || $data->cacheReadInputTokens === null) {
-            throw new SdkValidationError("cacheReadInputTokens", 'required', "Required property 'cacheReadInputTokens' is missing or null");
-        }
-        if (!property_exists($data, "eventId") || $data->eventId === null) {
-            throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null");
-        }
-        if (!property_exists($data, "inputTokens") || $data->inputTokens === null) {
-            throw new SdkValidationError("inputTokens", 'required', "Required property 'inputTokens' is missing or null");
-        }
-        if (!property_exists($data, "modelId") || $data->modelId === null) {
-            throw new SdkValidationError("modelId", 'required', "Required property 'modelId' is missing or null");
-        }
-        if (!property_exists($data, "outputTokens") || $data->outputTokens === null) {
-            throw new SdkValidationError("outputTokens", 'required', "Required property 'outputTokens' is missing or null");
-        }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
-            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
-        }
-        if (!property_exists($data, "totalTokens") || $data->totalTokens === null) {
-            throw new SdkValidationError("totalTokens", 'required', "Required property 'totalTokens' is missing or null");
-        }
+        if (!property_exists($data, "cacheCreationInputTokens") || $data->cacheCreationInputTokens === null) { throw new SdkValidationError("cacheCreationInputTokens", 'required', "Required property 'cacheCreationInputTokens' is missing or null"); }
+        if (!property_exists($data, "cacheReadInputTokens") || $data->cacheReadInputTokens === null) { throw new SdkValidationError("cacheReadInputTokens", 'required', "Required property 'cacheReadInputTokens' is missing or null"); }
+        if (!property_exists($data, "eventId") || $data->eventId === null) { throw new SdkValidationError("eventId", 'required', "Required property 'eventId' is missing or null"); }
+        if (!property_exists($data, "inputTokens") || $data->inputTokens === null) { throw new SdkValidationError("inputTokens", 'required', "Required property 'inputTokens' is missing or null"); }
+        if (!property_exists($data, "modelId") || $data->modelId === null) { throw new SdkValidationError("modelId", 'required', "Required property 'modelId' is missing or null"); }
+        if (!property_exists($data, "outputTokens") || $data->outputTokens === null) { throw new SdkValidationError("outputTokens", 'required', "Required property 'outputTokens' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "totalTokens") || $data->totalTokens === null) { throw new SdkValidationError("totalTokens", 'required', "Required property 'totalTokens' is missing or null"); }
         return new self(
             cacheCreationInputTokens: SdkClient::floatValue($data->cacheCreationInputTokens),
             cacheReadInputTokens: SdkClient::floatValue($data->cacheReadInputTokens),

@@ -11,26 +11,11 @@ final readonly class GetDeploymentResponseVariant1GitSourceBitbucket2TypeEnum im
 {
     public const BITBUCKET = "bitbucket";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetDeploymentResponseVariant1GitSourceBitbucket2 implements \JsonSerializable
@@ -100,15 +85,9 @@ class GetDeploymentResponseVariant1GitSourceBitbucket2 implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "owner") || $data->owner === null) {
-            throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null");
-        }
-        if (!property_exists($data, "slug") || $data->slug === null) {
-            throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "owner") || $data->owner === null) { throw new SdkValidationError("owner", 'required', "Required property 'owner' is missing or null"); }
+        if (!property_exists($data, "slug") || $data->slug === null) { throw new SdkValidationError("slug", 'required', "Required property 'slug' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             owner: SdkClient::stringValue($data->owner),
             slug: SdkClient::stringValue($data->slug),
@@ -163,15 +142,9 @@ class GetDeploymentResponseVariant1GitSourceVercelCommitMetadataAuthor implement
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "date") || $data->date === null) {
-            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
-        }
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             date: SdkClient::stringValue($data->date),
             email: SdkClient::stringValue($data->email),
@@ -223,15 +196,9 @@ class GetDeploymentResponseVariant1GitSourceVercelCommitMetadataCommitter implem
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "date") || $data->date === null) {
-            throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null");
-        }
-        if (!property_exists($data, "email") || $data->email === null) {
-            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
+        if (!property_exists($data, "date") || $data->date === null) { throw new SdkValidationError("date", 'required', "Required property 'date' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
         return new self(
             date: SdkClient::stringValue($data->date),
             email: SdkClient::stringValue($data->email),
@@ -283,15 +250,9 @@ class GetDeploymentResponseVariant1GitSourceVercelCommitMetadata implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "author") || $data->author === null) {
-            throw new SdkValidationError("author", 'required', "Required property 'author' is missing or null");
-        }
-        if (!property_exists($data, "committer") || $data->committer === null) {
-            throw new SdkValidationError("committer", 'required', "Required property 'committer' is missing or null");
-        }
-        if (!property_exists($data, "message") || $data->message === null) {
-            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
-        }
+        if (!property_exists($data, "author") || $data->author === null) { throw new SdkValidationError("author", 'required', "Required property 'author' is missing or null"); }
+        if (!property_exists($data, "committer") || $data->committer === null) { throw new SdkValidationError("committer", 'required', "Required property 'committer' is missing or null"); }
+        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
         return new self(
             author: SdkClient::hydrateClass($data->author, GetDeploymentResponseVariant1GitSourceVercelCommitMetadataAuthor::class),
             committer: SdkClient::hydrateClass($data->committer, GetDeploymentResponseVariant1GitSourceVercelCommitMetadataCommitter::class),
@@ -304,24 +265,9 @@ final readonly class GetDeploymentResponseVariant1GitSourceVercelTypeEnum implem
 {
     public const VERCEL = "vercel";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

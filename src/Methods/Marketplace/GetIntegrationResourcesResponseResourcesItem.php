@@ -132,18 +132,10 @@ class GetIntegrationResourcesResponseResourcesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "internalId") || $data->internalId === null) {
-            throw new SdkValidationError("internalId", 'required', "Required property 'internalId' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "partnerId") || $data->partnerId === null) {
-            throw new SdkValidationError("partnerId", 'required', "Required property 'partnerId' is missing or null");
-        }
-        if (!property_exists($data, "productId") || $data->productId === null) {
-            throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null");
-        }
+        if (!property_exists($data, "internalId") || $data->internalId === null) { throw new SdkValidationError("internalId", 'required', "Required property 'internalId' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "partnerId") || $data->partnerId === null) { throw new SdkValidationError("partnerId", 'required', "Required property 'partnerId' is missing or null"); }
+        if (!property_exists($data, "productId") || $data->productId === null) { throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null"); }
         return new self(
             internalId: SdkClient::stringValue($data->internalId),
             name: SdkClient::stringValue($data->name),
@@ -189,9 +181,7 @@ class GetIntegrationResourcesResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "resources") || $data->resources === null) {
-            throw new SdkValidationError("resources", 'required', "Required property 'resources' is missing or null");
-        }
+        if (!property_exists($data, "resources") || $data->resources === null) { throw new SdkValidationError("resources", 'required', "Required property 'resources' is missing or null"); }
         return new self(
             resources: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetIntegrationResourcesResponseResourcesItem::class), SdkClient::arrayValue($data->resources))),
         );
@@ -285,9 +275,7 @@ class GetIntegrationResourceResponseCustomClaimsClaimRulesItem implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "claims") || $data->claims === null) {
-            throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null");
-        }
+        if (!property_exists($data, "claims") || $data->claims === null) { throw new SdkValidationError("claims", 'required', "Required property 'claims' is missing or null"); }
         return new self(
             claims: SdkClient::mapValues(SdkClient::stringMapValue($data->claims), static fn($item) => ($item === null ? null : (is_array($item) ? array_values(array_map(static fn($item2) => SdkClient::stringValue($item2), SdkClient::arrayValue($item))) : (is_bool($item) ? SdkClient::boolValue($item) : (is_float($item) || is_int($item) ? SdkClient::floatValue($item) : SdkClient::stringValue($item)))))),
             when: (property_exists($data, "when") && $data->when !== null ? SdkClient::hydrateClass($data->when, GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen::class) : SdkNotGiven::Value),

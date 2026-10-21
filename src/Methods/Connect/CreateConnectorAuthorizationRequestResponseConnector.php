@@ -106,21 +106,11 @@ class CreateConnectorAuthorizationRequestResponseConnector implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "displayName") || $data->displayName === null) {
-            throw new SdkValidationError("displayName", 'required', "Required property 'displayName' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "uid") || $data->uid === null) {
-            throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null");
-        }
+        if (!property_exists($data, "displayName") || $data->displayName === null) { throw new SdkValidationError("displayName", 'required', "Required property 'displayName' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "uid") || $data->uid === null) { throw new SdkValidationError("uid", 'required', "Required property 'uid' is missing or null"); }
         return new self(
             displayName: SdkClient::stringValue($data->displayName),
             id: SdkClient::stringValue($data->id),
@@ -196,21 +186,11 @@ class CreateConnectorAuthorizationRequestResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "connector") || $data->connector === null) {
-            throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null");
-        }
-        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) {
-            throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null");
-        }
-        if (!property_exists($data, "request") || $data->request === null) {
-            throw new SdkValidationError("request", 'required', "Required property 'request' is missing or null");
-        }
-        if (!property_exists($data, "url") || $data->url === null) {
-            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
-        }
-        if (!property_exists($data, "verifier") || $data->verifier === null) {
-            throw new SdkValidationError("verifier", 'required', "Required property 'verifier' is missing or null");
-        }
+        if (!property_exists($data, "connector") || $data->connector === null) { throw new SdkValidationError("connector", 'required', "Required property 'connector' is missing or null"); }
+        if (!property_exists($data, "expiresAt") || $data->expiresAt === null) { throw new SdkValidationError("expiresAt", 'required', "Required property 'expiresAt' is missing or null"); }
+        if (!property_exists($data, "request") || $data->request === null) { throw new SdkValidationError("request", 'required', "Required property 'request' is missing or null"); }
+        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "verifier") || $data->verifier === null) { throw new SdkValidationError("verifier", 'required', "Required property 'verifier' is missing or null"); }
         return new self(
             connector: SdkClient::hydrateClass($data->connector, CreateConnectorAuthorizationRequestResponseConnector::class),
             expiresAt: SdkClient::floatValue($data->expiresAt),

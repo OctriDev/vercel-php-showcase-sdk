@@ -189,45 +189,19 @@ class APIKey implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "partialKey") || $data->partialKey === null) {
-            throw new SdkValidationError("partialKey", 'required', "Required property 'partialKey' is missing or null");
-        }
-        if (!property_exists($data, "teamId") || $data->teamId === null) {
-            throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null");
-        }
-        if (!property_exists($data, "purpose") || $data->purpose === null) {
-            throw new SdkValidationError("purpose", 'required', "Required property 'purpose' is missing or null");
-        }
-        if (!property_exists($data, "projectId")) {
-            throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'");
-        }
-        if (!property_exists($data, "expiresAt")) {
-            throw new SdkValidationError("expiresAt", 'required', "Missing required property 'expiresAt'");
-        }
-        if (!property_exists($data, "activeAt") || $data->activeAt === null) {
-            throw new SdkValidationError("activeAt", 'required', "Required property 'activeAt' is missing or null");
-        }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "createdBy") || $data->createdBy === null) {
-            throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null");
-        }
-        if (!property_exists($data, "leakedAt")) {
-            throw new SdkValidationError("leakedAt", 'required', "Missing required property 'leakedAt'");
-        }
-        if (!property_exists($data, "leakedUrl")) {
-            throw new SdkValidationError("leakedUrl", 'required', "Missing required property 'leakedUrl'");
-        }
-        if (!property_exists($data, "createdByAppId")) {
-            throw new SdkValidationError("createdByAppId", 'required', "Missing required property 'createdByAppId'");
-        }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "partialKey") || $data->partialKey === null) { throw new SdkValidationError("partialKey", 'required', "Required property 'partialKey' is missing or null"); }
+        if (!property_exists($data, "teamId") || $data->teamId === null) { throw new SdkValidationError("teamId", 'required', "Required property 'teamId' is missing or null"); }
+        if (!property_exists($data, "purpose") || $data->purpose === null) { throw new SdkValidationError("purpose", 'required', "Required property 'purpose' is missing or null"); }
+        if (!property_exists($data, "projectId")) { throw new SdkValidationError("projectId", 'required', "Missing required property 'projectId'"); }
+        if (!property_exists($data, "expiresAt")) { throw new SdkValidationError("expiresAt", 'required', "Missing required property 'expiresAt'"); }
+        if (!property_exists($data, "activeAt") || $data->activeAt === null) { throw new SdkValidationError("activeAt", 'required', "Required property 'activeAt' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "createdBy") || $data->createdBy === null) { throw new SdkValidationError("createdBy", 'required', "Required property 'createdBy' is missing or null"); }
+        if (!property_exists($data, "leakedAt")) { throw new SdkValidationError("leakedAt", 'required', "Missing required property 'leakedAt'"); }
+        if (!property_exists($data, "leakedUrl")) { throw new SdkValidationError("leakedUrl", 'required', "Missing required property 'leakedUrl'"); }
+        if (!property_exists($data, "createdByAppId")) { throw new SdkValidationError("createdByAppId", 'required', "Missing required property 'createdByAppId'"); }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),

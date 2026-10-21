@@ -152,30 +152,14 @@ class ListLogDrainsResponseVariant1DrainsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
-            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
-        }
-        if (!property_exists($data, "delivery") || $data->delivery === null) {
-            throw new SdkValidationError("delivery", 'required', "Required property 'delivery' is missing or null");
-        }
-        if (!property_exists($data, "id") || $data->id === null) {
-            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
-            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
-        }
-        if (!property_exists($data, "schemas") || $data->schemas === null) {
-            throw new SdkValidationError("schemas", 'required', "Required property 'schemas' is missing or null");
-        }
-        if (!property_exists($data, "source") || $data->source === null) {
-            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
-        }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
-            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
-        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
+        if (!property_exists($data, "delivery") || $data->delivery === null) { throw new SdkValidationError("delivery", 'required', "Required property 'delivery' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
+        if (!property_exists($data, "schemas") || $data->schemas === null) { throw new SdkValidationError("schemas", 'required', "Required property 'schemas' is missing or null"); }
+        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             delivery: SdkClient::hydrateUnion($data->delivery, [ListLogDrainsResponseVariant1DrainsItemDeliveryHttp::class, ListLogDrainsResponseVariant1DrainsItemDeliveryOtlphttp::class, ListLogDrainsResponseVariant1DrainsItemDeliveryClickhouse::class, ListLogDrainsResponseVariant1DrainsItemDeliveryS3::class, ListLogDrainsResponseVariant1DrainsItemDeliveryInternal::class], null, []),
@@ -229,9 +213,7 @@ class ListLogDrainsResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "drains") || $data->drains === null) {
-            throw new SdkValidationError("drains", 'required', "Required property 'drains' is missing or null");
-        }
+        if (!property_exists($data, "drains") || $data->drains === null) { throw new SdkValidationError("drains", 'required', "Required property 'drains' is missing or null"); }
         return new self(
             drains: SdkClient::decodeUnionValue($data->drains, [static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListLogDrainsResponseVariant1DrainsItem::class), SdkClient::arrayValue($value))), static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListLogDrainsResponseVariant1DrainsItem::class), SdkClient::arrayValue($value)))]),
         );
@@ -246,26 +228,11 @@ final readonly class GetIntegrationLogDrainsResponseItemCreatedFromEnum implemen
     public const INTEGRATION = "integration";
     public const SELF_SERVED = "self-served";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -277,26 +244,11 @@ final readonly class GetIntegrationLogDrainsResponseItemDeliveryFormatEnum imple
     public const NDJSON = "ndjson";
     public const PROTOBUF = "protobuf";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -307,26 +259,11 @@ final readonly class GetIntegrationLogDrainsResponseItemEnvironmentsItemEnum imp
     public const PREVIEW = "preview";
     public const PRODUCTION = "production";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -342,24 +279,9 @@ final readonly class GetIntegrationLogDrainsResponseItemSourcesItemEnum implemen
     public const REDIRECT = "redirect";
     public const STATIC = "static";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

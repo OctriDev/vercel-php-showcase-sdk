@@ -88,26 +88,11 @@ final readonly class UserEventPayloadVariant62PermissionsItemEnum implements Sdk
     public const READ_WEBHOOKS = "read:webhooks";
     public const USE_AI_GATEWAY = "use:ai-gateway";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -120,26 +105,11 @@ final readonly class UserEventPayloadVariant62ScopesItemEnum implements SdkOpenE
     public const OPENID = "openid";
     public const PROFILE = "profile";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant62 implements UserEventPayload, \JsonSerializable
@@ -211,12 +181,8 @@ class UserEventPayloadVariant62 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appName") || $data->appName === null) {
-            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
-        }
-        if (!property_exists($data, "scopes") || $data->scopes === null) {
-            throw new SdkValidationError("scopes", 'required', "Required property 'scopes' is missing or null");
-        }
+        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
+        if (!property_exists($data, "scopes") || $data->scopes === null) { throw new SdkValidationError("scopes", 'required', "Required property 'scopes' is missing or null"); }
         return new self(
             appName: SdkClient::stringValue($data->appName),
             scopes: array_values(array_map(static fn($item) => SdkClient::hydrateStringEnumOrString($item, UserEventPayloadVariant62ScopesItemEnum::class), SdkClient::arrayValue($data->scopes))),
@@ -273,9 +239,7 @@ class UserEventPayloadVariant63 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "appName") || $data->appName === null) {
-            throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null");
-        }
+        if (!property_exists($data, "appName") || $data->appName === null) { throw new SdkValidationError("appName", 'required', "Required property 'appName' is missing or null"); }
         return new self(
             appName: SdkClient::stringValue($data->appName),
             appId: (property_exists($data, "appId") && $data->appId !== null ? SdkClient::stringValue($data->appId) : SdkNotGiven::Value),
@@ -364,26 +328,11 @@ final readonly class UserEventPayloadVariant64NextPermissionsItemEnum implements
     public const READ_WEBHOOKS = "read:webhooks";
     public const USE_AI_GATEWAY = "use:ai-gateway";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -396,24 +345,9 @@ final readonly class UserEventPayloadVariant64NextScopesItemEnum implements SdkO
     public const OPENID = "openid";
     public const PROFILE = "profile";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

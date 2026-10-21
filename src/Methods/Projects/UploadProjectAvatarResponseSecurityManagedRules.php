@@ -62,21 +62,11 @@ class UploadProjectAvatarResponseSecurityManagedRules implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "ai_bots") || $data->ai_bots === null) {
-            throw new SdkValidationError("ai_bots", 'required', "Required property 'ai_bots' is missing or null");
-        }
-        if (!property_exists($data, "bot_filter") || $data->bot_filter === null) {
-            throw new SdkValidationError("bot_filter", 'required', "Required property 'bot_filter' is missing or null");
-        }
-        if (!property_exists($data, "owasp") || $data->owasp === null) {
-            throw new SdkValidationError("owasp", 'required', "Required property 'owasp' is missing or null");
-        }
-        if (!property_exists($data, "traffic_sources") || $data->traffic_sources === null) {
-            throw new SdkValidationError("traffic_sources", 'required', "Required property 'traffic_sources' is missing or null");
-        }
-        if (!property_exists($data, "vercel_ruleset") || $data->vercel_ruleset === null) {
-            throw new SdkValidationError("vercel_ruleset", 'required', "Required property 'vercel_ruleset' is missing or null");
-        }
+        if (!property_exists($data, "ai_bots") || $data->ai_bots === null) { throw new SdkValidationError("ai_bots", 'required', "Required property 'ai_bots' is missing or null"); }
+        if (!property_exists($data, "bot_filter") || $data->bot_filter === null) { throw new SdkValidationError("bot_filter", 'required', "Required property 'bot_filter' is missing or null"); }
+        if (!property_exists($data, "owasp") || $data->owasp === null) { throw new SdkValidationError("owasp", 'required', "Required property 'owasp' is missing or null"); }
+        if (!property_exists($data, "traffic_sources") || $data->traffic_sources === null) { throw new SdkValidationError("traffic_sources", 'required', "Required property 'traffic_sources' is missing or null"); }
+        if (!property_exists($data, "vercel_ruleset") || $data->vercel_ruleset === null) { throw new SdkValidationError("vercel_ruleset", 'required', "Required property 'vercel_ruleset' is missing or null"); }
         return new self(
             aiBots: SdkClient::hydrateClass($data->ai_bots, UploadProjectAvatarResponseSecurityManagedRulesAiBots::class),
             botFilter: SdkClient::hydrateClass($data->bot_filter, UploadProjectAvatarResponseSecurityManagedRulesBotFilter::class),
@@ -97,52 +87,22 @@ final readonly class UploadProjectAvatarResponseSecurityRulesetsValueActionEnum 
     public const RATE_LIMIT = "rate_limit";
     public const REDIRECT = "redirect";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UploadProjectAvatarResponseSecurityRulesetsValueLogHeadersEnum implements SdkOpenEnum
 {
     public const UNKNOWN = "*";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class UploadProjectAvatarResponseSecurityRulesetsValueRateLimitAlgoEnum implements SdkOpenEnum
@@ -150,26 +110,11 @@ final readonly class UploadProjectAvatarResponseSecurityRulesetsValueRateLimitAl
     public const FIXED_WINDOW = "fixed_window";
     public const TOKEN_BUCKET = "token_bucket";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UploadProjectAvatarResponseSecurityRulesetsValueRateLimit implements \JsonSerializable
@@ -221,18 +166,10 @@ class UploadProjectAvatarResponseSecurityRulesetsValueRateLimit implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algo") || $data->algo === null) {
-            throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null");
-        }
-        if (!property_exists($data, "keys") || $data->keys === null) {
-            throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null");
-        }
-        if (!property_exists($data, "limit") || $data->limit === null) {
-            throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null");
-        }
-        if (!property_exists($data, "window") || $data->window === null) {
-            throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null");
-        }
+        if (!property_exists($data, "algo") || $data->algo === null) { throw new SdkValidationError("algo", 'required', "Required property 'algo' is missing or null"); }
+        if (!property_exists($data, "keys") || $data->keys === null) { throw new SdkValidationError("keys", 'required', "Required property 'keys' is missing or null"); }
+        if (!property_exists($data, "limit") || $data->limit === null) { throw new SdkValidationError("limit", 'required', "Required property 'limit' is missing or null"); }
+        if (!property_exists($data, "window") || $data->window === null) { throw new SdkValidationError("window", 'required', "Required property 'window' is missing or null"); }
         return new self(
             algo: SdkClient::hydrateStringEnumOrString($data->algo, UploadProjectAvatarResponseSecurityRulesetsValueRateLimitAlgoEnum::class),
             keys: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->keys))),
@@ -279,12 +216,8 @@ class UploadProjectAvatarResponseSecurityRulesetsValueRedirect implements \JsonS
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "location") || $data->location === null) {
-            throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null");
-        }
-        if (!property_exists($data, "permanent") || $data->permanent === null) {
-            throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null");
-        }
+        if (!property_exists($data, "location") || $data->location === null) { throw new SdkValidationError("location", 'required', "Required property 'location' is missing or null"); }
+        if (!property_exists($data, "permanent") || $data->permanent === null) { throw new SdkValidationError("permanent", 'required', "Required property 'permanent' is missing or null"); }
         return new self(
             location: SdkClient::stringValue($data->location),
             permanent: SdkClient::boolValue($data->permanent),
@@ -363,9 +296,7 @@ class UploadProjectAvatarResponseSecurityRulesetsValue implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UploadProjectAvatarResponseSecurityRulesetsValueActionEnum::class),
             actionDuration: (property_exists($data, "actionDuration") ? ($data->actionDuration === null ? null : SdkClient::stringValue($data->actionDuration)) : SdkNotGiven::Value),

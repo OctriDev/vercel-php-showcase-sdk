@@ -76,12 +76,8 @@ class ConnectUpdateConnectorRequestRequestDataTypeSlackSlashCommandsItem impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "command") || $data->command === null) {
-            throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null");
-        }
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
+        if (!property_exists($data, "command") || $data->command === null) { throw new SdkValidationError("command", 'required', "Required property 'command' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
         return new self(
             command: SdkClient::stringValue($data->command),
             description: SdkClient::stringValue($data->description),
@@ -99,26 +95,11 @@ final readonly class ConnectUpdateConnectorRequestRequestDataTypeSlackShortcutsI
     public const GLOBAL = "global";
     public const MESSAGE = "message";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class ConnectUpdateConnectorRequestRequestDataTypeSlackShortcutsItem implements \JsonSerializable
@@ -186,18 +167,10 @@ class ConnectUpdateConnectorRequestRequestDataTypeSlackShortcutsItem implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "callbackId") || $data->callbackId === null) {
-            throw new SdkValidationError("callbackId", 'required', "Required property 'callbackId' is missing or null");
-        }
-        if (!property_exists($data, "description") || $data->description === null) {
-            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
-        }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "callbackId") || $data->callbackId === null) { throw new SdkValidationError("callbackId", 'required', "Required property 'callbackId' is missing or null"); }
+        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, ConnectUpdateConnectorRequestRequestDataTypeSlackShortcutsItemTypeEnum::class),
             name: SdkClient::stringValue($data->name),

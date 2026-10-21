@@ -117,9 +117,7 @@ class ConnectCreateConnectorRequestDataTypePhoton implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
         );

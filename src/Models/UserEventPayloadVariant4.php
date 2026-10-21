@@ -88,12 +88,8 @@ class UserEventPayloadVariant4 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant4ActionEnum::class),
             environment: SdkClient::stringValue($data->environment),
@@ -111,26 +107,11 @@ final readonly class UserEventPayloadVariant5ActionEnum implements SdkOpenEnum
 {
     public const READ = "read";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class UserEventPayloadVariant5 implements UserEventPayload, \JsonSerializable
@@ -202,12 +183,8 @@ class UserEventPayloadVariant5 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) {
-            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
-        }
-        if (!property_exists($data, "environment") || $data->environment === null) {
-            throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null");
-        }
+        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "environment") || $data->environment === null) { throw new SdkValidationError("environment", 'required', "Required property 'environment' is missing or null"); }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UserEventPayloadVariant5ActionEnum::class),
             environment: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->environment))),
@@ -272,15 +249,9 @@ class UserEventPayloadVariant6 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "policyId") || $data->policyId === null) {
-            throw new SdkValidationError("policyId", 'required', "Required property 'policyId' is missing or null");
-        }
-        if (!property_exists($data, "projectId") || $data->projectId === null) {
-            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
-        }
-        if (!property_exists($data, "projectName") || $data->projectName === null) {
-            throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null");
-        }
+        if (!property_exists($data, "policyId") || $data->policyId === null) { throw new SdkValidationError("policyId", 'required', "Required property 'policyId' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
+        if (!property_exists($data, "projectName") || $data->projectName === null) { throw new SdkValidationError("projectName", 'required', "Required property 'projectName' is missing or null"); }
         return new self(
             policyId: SdkClient::stringValue($data->policyId),
             projectId: SdkClient::stringValue($data->projectId),
@@ -334,12 +305,8 @@ class UserEventPayloadVariant7 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "boardId") || $data->boardId === null) {
-            throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null");
-        }
-        if (!property_exists($data, "operationId") || $data->operationId === null) {
-            throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null");
-        }
+        if (!property_exists($data, "boardId") || $data->boardId === null) { throw new SdkValidationError("boardId", 'required', "Required property 'boardId' is missing or null"); }
+        if (!property_exists($data, "operationId") || $data->operationId === null) { throw new SdkValidationError("operationId", 'required', "Required property 'operationId' is missing or null"); }
         return new self(
             boardId: SdkClient::stringValue($data->boardId),
             operationId: SdkClient::stringValue($data->operationId),

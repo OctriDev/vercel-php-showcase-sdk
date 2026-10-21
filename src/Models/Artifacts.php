@@ -38,9 +38,7 @@ class StatusResponseVariant0 implements StatusResponse, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::stringValue($data->status),
         );
@@ -54,26 +52,11 @@ final readonly class StatusResponseVariant1StatusEnum implements SdkOpenEnum
     public const OVER_LIMIT = "over_limit";
     public const PAUSED = "paused";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class StatusResponseVariant1 implements StatusResponse, \JsonSerializable
@@ -107,9 +90,7 @@ class StatusResponseVariant1 implements StatusResponse, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, StatusResponseVariant1StatusEnum::class),
         );
@@ -123,26 +104,11 @@ final readonly class StatusResponseVariant2StatusEnum implements SdkOpenEnum
     public const OVER_LIMIT = "over_limit";
     public const PAUSED = "paused";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class StatusResponseVariant2 implements StatusResponse, \JsonSerializable
@@ -188,9 +154,7 @@ class StatusResponseVariant2 implements StatusResponse, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) {
-            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
-        }
+        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, StatusResponseVariant2StatusEnum::class),
             readOnly: (property_exists($data, "readOnly") && $data->readOnly !== null ? SdkClient::boolValue($data->readOnly) : SdkNotGiven::Value),

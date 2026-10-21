@@ -219,18 +219,10 @@ class CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2 impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builder") || $data->builder === null) {
-            throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null");
-        }
-        if (!property_exists($data, "name") || $data->name === null) {
-            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
-        }
-        if (!property_exists($data, "root") || $data->root === null) {
-            throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null");
-        }
-        if (!property_exists($data, "schema") || $data->schema === null) {
-            throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null");
-        }
+        if (!property_exists($data, "builder") || $data->builder === null) { throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "root") || $data->root === null) { throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null"); }
+        if (!property_exists($data, "schema") || $data->schema === null) { throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null"); }
         return new self(
             builder: SdkClient::hydrateClass($data->builder, CreateDeploymentResponseVariant1ServicesItemExperimentalServicesV2Builder::class),
             name: SdkClient::stringValue($data->name),
@@ -273,26 +265,11 @@ final readonly class CreateDeploymentResponseVariant1SourceEnum implements SdkOp
     public const REDEPLOY = "redeploy";
     public const V0_WEB = "v0-web";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class CreateDeploymentResponseVariant1StatusEnum implements SdkOpenEnum
@@ -305,26 +282,11 @@ final readonly class CreateDeploymentResponseVariant1StatusEnum implements SdkOp
     public const QUEUED = "QUEUED";
     public const READY = "READY";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 /**
@@ -335,24 +297,9 @@ final readonly class CreateDeploymentResponseVariant1TargetEnum implements SdkOp
     public const PRODUCTION = "production";
     public const STAGING = "staging";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

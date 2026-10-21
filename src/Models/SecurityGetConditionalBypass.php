@@ -25,26 +25,11 @@ final readonly class GetConditionalBypassResponseVariant0ResultItemConditionsIte
     public const SUB = "sub";
     public const SUF = "suf";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetConditionalBypassResponseVariant0ResultItemConditionsItemTypeEnum implements SdkOpenEnum
@@ -84,26 +69,11 @@ final readonly class GetConditionalBypassResponseVariant0ResultItemConditionsIte
     public const TRUSTED_SOURCE = "trusted_source";
     public const USER_AGENT = "user_agent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 class GetConditionalBypassResponseVariant0ResultItemConditionsItem implements \JsonSerializable
@@ -167,12 +137,8 @@ class GetConditionalBypassResponseVariant0ResultItemConditionsItem implements \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "op") || $data->op === null) {
-            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             op: SdkClient::hydrateStringEnumOrString($data->op, GetConditionalBypassResponseVariant0ResultItemConditionsItemOpEnum::class),
             type: SdkClient::hydrateStringEnumOrString($data->type, GetConditionalBypassResponseVariant0ResultItemConditionsItemTypeEnum::class),
@@ -214,9 +180,7 @@ class GetConditionalBypassResponseVariant0ResultItem implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) {
-            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
-        }
+        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetConditionalBypassResponseVariant0ResultItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );
@@ -254,9 +218,7 @@ class GetConditionalBypassResponseVariant0 implements GetConditionalBypassRespon
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "result") || $data->result === null) {
-            throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null");
-        }
+        if (!property_exists($data, "result") || $data->result === null) { throw new SdkValidationError("result", 'required', "Required property 'result' is missing or null"); }
         return new self(
             result: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetConditionalBypassResponseVariant0ResultItem::class), SdkClient::arrayValue($data->result))),
         );
@@ -294,9 +256,7 @@ class GetConditionalBypassResponseVariant1Pagination implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "next")) {
-            throw new SdkValidationError("next", 'required', "Missing required property 'next'");
-        }
+        if (!property_exists($data, "next")) { throw new SdkValidationError("next", 'required', "Missing required property 'next'"); }
         return new self(
             next: ($data->next === null ? null : SdkClient::stringValue($data->next)),
         );
@@ -321,26 +281,11 @@ final readonly class GetConditionalBypassResponseVariant1ResultItemConditionGrou
     public const SUB = "sub";
     public const SUF = "suf";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }
 
 final readonly class GetConditionalBypassResponseVariant1ResultItemConditionGroupItemConditionsItemTypeEnum implements SdkOpenEnum
@@ -380,24 +325,9 @@ final readonly class GetConditionalBypassResponseVariant1ResultItemConditionGrou
     public const TRUSTED_SOURCE = "trusted_source";
     public const USER_AGENT = "user_agent";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static
-    {
-        return new self((string) $value);
-    }
-    public static function tryFrom(string|int|null $value): ?static
-    {
-        return $value === null ? null : self::from($value);
-    }
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-    public function jsonSerialize(): string
-    {
-        return $this->value;
-    }
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
+    public static function from(string|int $value): static { return new self((string) $value); }
+    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
+    public function getValue(): string { return $this->value; }
+    public function jsonSerialize(): string { return $this->value; }
+    public function __toString(): string { return (string) $this->value; }
 }

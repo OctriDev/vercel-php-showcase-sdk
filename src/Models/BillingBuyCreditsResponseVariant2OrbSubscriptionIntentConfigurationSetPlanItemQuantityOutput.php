@@ -135,18 +135,10 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQua
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "effectiveBehavior") || $data->effectiveBehavior === null) {
-            throw new SdkValidationError("effectiveBehavior", 'required', "Required property 'effectiveBehavior' is missing or null");
-        }
-        if (!property_exists($data, "orbPriceId") || $data->orbPriceId === null) {
-            throw new SdkValidationError("orbPriceId", 'required', "Required property 'orbPriceId' is missing or null");
-        }
-        if (!property_exists($data, "pricingSource") || $data->pricingSource === null) {
-            throw new SdkValidationError("pricingSource", 'required', "Required property 'pricingSource' is missing or null");
-        }
-        if (!property_exists($data, "productId") || $data->productId === null) {
-            throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null");
-        }
+        if (!property_exists($data, "effectiveBehavior") || $data->effectiveBehavior === null) { throw new SdkValidationError("effectiveBehavior", 'required', "Required property 'effectiveBehavior' is missing or null"); }
+        if (!property_exists($data, "orbPriceId") || $data->orbPriceId === null) { throw new SdkValidationError("orbPriceId", 'required', "Required property 'orbPriceId' is missing or null"); }
+        if (!property_exists($data, "pricingSource") || $data->pricingSource === null) { throw new SdkValidationError("pricingSource", 'required', "Required property 'pricingSource' is missing or null"); }
+        if (!property_exists($data, "productId") || $data->productId === null) { throw new SdkValidationError("productId", 'required', "Required property 'productId' is missing or null"); }
         return new self(
             effectiveBehavior: SdkClient::hydrateStringEnumOrString($data->effectiveBehavior, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQuantityOutputEffectiveBehaviorEnum::class),
             orbPriceId: SdkClient::stringValue($data->orbPriceId),
@@ -220,15 +212,9 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQua
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "options") || $data->options === null) {
-            throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null");
-        }
-        if (!property_exists($data, "output") || $data->output === null) {
-            throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null");
-        }
-        if (!property_exists($data, "type") || $data->type === null) {
-            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
-        }
+        if (!property_exists($data, "options") || $data->options === null) { throw new SdkValidationError("options", 'required', "Required property 'options' is missing or null"); }
+        if (!property_exists($data, "output") || $data->output === null) { throw new SdkValidationError("output", 'required', "Required property 'output' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
         return new self(
             options: SdkClient::hydrateClass($data->options, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQuantityOptions::class),
             output: SdkClient::hydrateClass($data->output, BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationSetPlanItemQuantityOutput::class),
@@ -285,12 +271,8 @@ class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationIncreasePlanIt
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "productAlias") || $data->productAlias === null) {
-            throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null");
-        }
-        if (!property_exists($data, "resourceIds") || $data->resourceIds === null) {
-            throw new SdkValidationError("resourceIds", 'required', "Required property 'resourceIds' is missing or null");
-        }
+        if (!property_exists($data, "productAlias") || $data->productAlias === null) { throw new SdkValidationError("productAlias", 'required', "Required property 'productAlias' is missing or null"); }
+        if (!property_exists($data, "resourceIds") || $data->resourceIds === null) { throw new SdkValidationError("resourceIds", 'required', "Required property 'resourceIds' is missing or null"); }
         return new self(
             productAlias: SdkClient::stringValue($data->productAlias),
             resourceIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->resourceIds))),

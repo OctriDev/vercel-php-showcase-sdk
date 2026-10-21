@@ -44,12 +44,8 @@ class ListVercelCiTaskAnalysisTasksResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tasks") || $data->tasks === null) {
-            throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null");
-        }
-        if (!property_exists($data, "pagination") || $data->pagination === null) {
-            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
-        }
+        if (!property_exists($data, "tasks") || $data->tasks === null) { throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
         return new self(
             tasks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListVercelCiTaskAnalysisTasksResponseTasksItem::class), SdkClient::arrayValue($data->tasks))),
             pagination: SdkClient::hydrateClass($data->pagination, ListVercelCiTaskAnalysisTasksResponsePagination::class),
@@ -88,9 +84,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             reason: SdkClient::stringValue($data->reason),
         );
@@ -128,9 +122,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "startedAt") || $data->startedAt === null) {
-            throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null");
-        }
+        if (!property_exists($data, "startedAt") || $data->startedAt === null) { throw new SdkValidationError("startedAt", 'required', "Required property 'startedAt' is missing or null"); }
         return new self(
             startedAt: SdkClient::floatValue($data->startedAt),
         );
@@ -168,9 +160,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingFailed impl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "reason") || $data->reason === null) {
-            throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null");
-        }
+        if (!property_exists($data, "reason") || $data->reason === null) { throw new SdkValidationError("reason", 'required', "Required property 'reason' is missing or null"); }
         return new self(
             reason: SdkClient::stringValue($data->reason),
         );
@@ -222,12 +212,8 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxSnapshotted imple
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sandboxSnapshotId") || $data->sandboxSnapshotId === null) {
-            throw new SdkValidationError("sandboxSnapshotId", 'required', "Required property 'sandboxSnapshotId' is missing or null");
-        }
-        if (!property_exists($data, "workingDirectory") || $data->workingDirectory === null) {
-            throw new SdkValidationError("workingDirectory", 'required', "Required property 'workingDirectory' is missing or null");
-        }
+        if (!property_exists($data, "sandboxSnapshotId") || $data->sandboxSnapshotId === null) { throw new SdkValidationError("sandboxSnapshotId", 'required', "Required property 'sandboxSnapshotId' is missing or null"); }
+        if (!property_exists($data, "workingDirectory") || $data->workingDirectory === null) { throw new SdkValidationError("workingDirectory", 'required', "Required property 'workingDirectory' is missing or null"); }
         return new self(
             sandboxSnapshotId: SdkClient::stringValue($data->sandboxSnapshotId),
             workingDirectory: SdkClient::stringValue($data->workingDirectory),
@@ -281,12 +267,8 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxNamed implements 
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sandboxName") || $data->sandboxName === null) {
-            throw new SdkValidationError("sandboxName", 'required', "Required property 'sandboxName' is missing or null");
-        }
-        if (!property_exists($data, "workingDirectory") || $data->workingDirectory === null) {
-            throw new SdkValidationError("workingDirectory", 'required', "Required property 'workingDirectory' is missing or null");
-        }
+        if (!property_exists($data, "sandboxName") || $data->sandboxName === null) { throw new SdkValidationError("sandboxName", 'required', "Required property 'sandboxName' is missing or null"); }
+        if (!property_exists($data, "workingDirectory") || $data->workingDirectory === null) { throw new SdkValidationError("workingDirectory", 'required', "Required property 'workingDirectory' is missing or null"); }
         return new self(
             sandboxName: SdkClient::stringValue($data->sandboxName),
             workingDirectory: SdkClient::stringValue($data->workingDirectory),
@@ -342,9 +324,7 @@ class ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated im
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "names") || $data->names === null) {
-            throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null");
-        }
+        if (!property_exists($data, "names") || $data->names === null) { throw new SdkValidationError("names", 'required', "Required property 'names' is missing or null"); }
         return new self(
             names: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->names))),
             source: (property_exists($data, "source") && $data->source !== null ? SdkClient::stringValue($data->source) : SdkNotGiven::Value),
