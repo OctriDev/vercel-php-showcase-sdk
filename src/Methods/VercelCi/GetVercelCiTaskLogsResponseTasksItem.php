@@ -88,12 +88,24 @@ class GetVercelCiTaskLogsResponseTasksItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
-        if (!property_exists($data, "jobName") || $data->jobName === null) { throw new SdkValidationError("jobName", 'required', "Required property 'jobName' is missing or null"); }
-        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) { throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null"); }
-        if (!property_exists($data, "taskDefinitionId") || $data->taskDefinitionId === null) { throw new SdkValidationError("taskDefinitionId", 'required', "Required property 'taskDefinitionId' is missing or null"); }
-        if (!property_exists($data, "taskName") || $data->taskName === null) { throw new SdkValidationError("taskName", 'required', "Required property 'taskName' is missing or null"); }
-        if (!property_exists($data, "lines") || $data->lines === null) { throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null"); }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
+            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "jobName") || $data->jobName === null) {
+            throw new SdkValidationError("jobName", 'required', "Required property 'jobName' is missing or null");
+        }
+        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) {
+            throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null");
+        }
+        if (!property_exists($data, "taskDefinitionId") || $data->taskDefinitionId === null) {
+            throw new SdkValidationError("taskDefinitionId", 'required', "Required property 'taskDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "taskName") || $data->taskName === null) {
+            throw new SdkValidationError("taskName", 'required', "Required property 'taskName' is missing or null");
+        }
+        if (!property_exists($data, "lines") || $data->lines === null) {
+            throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null");
+        }
         return new self(
             jobDefinitionId: SdkClient::stringValue($data->jobDefinitionId),
             jobName: SdkClient::stringValue($data->jobName),
@@ -148,8 +160,12 @@ class GetVercelCiTaskLogsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tasks") || $data->tasks === null) { throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null"); }
-        if (!property_exists($data, "hasMore") || $data->hasMore === null) { throw new SdkValidationError("hasMore", 'required', "Required property 'hasMore' is missing or null"); }
+        if (!property_exists($data, "tasks") || $data->tasks === null) {
+            throw new SdkValidationError("tasks", 'required', "Required property 'tasks' is missing or null");
+        }
+        if (!property_exists($data, "hasMore") || $data->hasMore === null) {
+            throw new SdkValidationError("hasMore", 'required', "Required property 'hasMore' is missing or null");
+        }
         return new self(
             tasks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetVercelCiTaskLogsResponseTasksItem::class), SdkClient::arrayValue($data->tasks))),
             hasMore: SdkClient::boolValue($data->hasMore),
@@ -200,9 +216,15 @@ class SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem implements \Js
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "level") || $data->level === null) { throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null"); }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
-        if (!property_exists($data, "message") || $data->message === null) { throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null"); }
+        if (!property_exists($data, "level") || $data->level === null) {
+            throw new SdkValidationError("level", 'required', "Required property 'level' is missing or null");
+        }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
+            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
+        }
+        if (!property_exists($data, "message") || $data->message === null) {
+            throw new SdkValidationError("message", 'required', "Required property 'message' is missing or null");
+        }
         return new self(
             level: SdkClient::stringValue($data->level),
             timestamp: SdkClient::floatValue($data->timestamp),
@@ -292,12 +314,24 @@ class SearchVercelCiLogsResponseInvocationsItemTasksItem implements \JsonSeriali
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) { throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null"); }
-        if (!property_exists($data, "jobName") || $data->jobName === null) { throw new SdkValidationError("jobName", 'required', "Required property 'jobName' is missing or null"); }
-        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) { throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null"); }
-        if (!property_exists($data, "taskDefinitionId") || $data->taskDefinitionId === null) { throw new SdkValidationError("taskDefinitionId", 'required', "Required property 'taskDefinitionId' is missing or null"); }
-        if (!property_exists($data, "taskName") || $data->taskName === null) { throw new SdkValidationError("taskName", 'required', "Required property 'taskName' is missing or null"); }
-        if (!property_exists($data, "lines") || $data->lines === null) { throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null"); }
+        if (!property_exists($data, "jobDefinitionId") || $data->jobDefinitionId === null) {
+            throw new SdkValidationError("jobDefinitionId", 'required', "Required property 'jobDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "jobName") || $data->jobName === null) {
+            throw new SdkValidationError("jobName", 'required', "Required property 'jobName' is missing or null");
+        }
+        if (!property_exists($data, "jobRunAttempt") || $data->jobRunAttempt === null) {
+            throw new SdkValidationError("jobRunAttempt", 'required', "Required property 'jobRunAttempt' is missing or null");
+        }
+        if (!property_exists($data, "taskDefinitionId") || $data->taskDefinitionId === null) {
+            throw new SdkValidationError("taskDefinitionId", 'required', "Required property 'taskDefinitionId' is missing or null");
+        }
+        if (!property_exists($data, "taskName") || $data->taskName === null) {
+            throw new SdkValidationError("taskName", 'required', "Required property 'taskName' is missing or null");
+        }
+        if (!property_exists($data, "lines") || $data->lines === null) {
+            throw new SdkValidationError("lines", 'required', "Required property 'lines' is missing or null");
+        }
         return new self(
             jobDefinitionId: SdkClient::stringValue($data->jobDefinitionId),
             jobName: SdkClient::stringValue($data->jobName),

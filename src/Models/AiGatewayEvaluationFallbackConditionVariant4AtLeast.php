@@ -55,8 +55,12 @@ class AiGatewayEvaluationFallbackConditionVariant4AtLeast implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
-        if (!property_exists($data, "count") || $data->count === null) { throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null"); }
+        if (!property_exists($data, "conditions") || $data->conditions === null) {
+            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
+        }
+        if (!property_exists($data, "count") || $data->count === null) {
+            throw new SdkValidationError("count", 'required', "Required property 'count' is missing or null");
+        }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, AiGatewayEvaluationFallbackCondition::class, [AiGatewayEvaluationFallbackConditionVariant0::class, AiGatewayEvaluationFallbackConditionVariant1::class, AiGatewayEvaluationFallbackConditionVariant2::class, AiGatewayEvaluationFallbackConditionVariant3::class, AiGatewayEvaluationFallbackConditionVariant4::class], null, []), SdkClient::arrayValue($data->conditions))),
             count: SdkClient::floatValue($data->count),
@@ -99,7 +103,9 @@ class AiGatewayEvaluationFallbackConditionVariant4 implements AiGatewayEvaluatio
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "atLeast") || $data->atLeast === null) { throw new SdkValidationError("atLeast", 'required', "Required property 'atLeast' is missing or null"); }
+        if (!property_exists($data, "atLeast") || $data->atLeast === null) {
+            throw new SdkValidationError("atLeast", 'required', "Required property 'atLeast' is missing or null");
+        }
         return new self(
             atLeast: SdkClient::hydrateClass($data->atLeast, AiGatewayEvaluationFallbackConditionVariant4AtLeast::class),
         );
@@ -219,9 +225,24 @@ final readonly class AiGatewayRuleTypeEnum implements SdkOpenEnum
     public const DENY = "deny";
     public const REWRITE = "rewrite";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

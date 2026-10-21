@@ -15,11 +15,26 @@ final readonly class RecordEventsBodyItemSourceEnum implements SdkOpenEnum
     public const LOCAL = "LOCAL";
     public const REMOTE = "REMOTE";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -30,11 +45,26 @@ final readonly class RecordEventsBodyItemEventEnum implements SdkOpenEnum
     public const HIT = "HIT";
     public const MISS = "MISS";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class RecordEventsBodyItem implements \JsonSerializable
@@ -114,10 +144,18 @@ class RecordEventsBodyItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "sessionId") || $data->sessionId === null) { throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null"); }
-        if (!property_exists($data, "source") || $data->source === null) { throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null"); }
-        if (!property_exists($data, "event") || $data->event === null) { throw new SdkValidationError("event", 'required', "Required property 'event' is missing or null"); }
-        if (!property_exists($data, "hash") || $data->hash === null) { throw new SdkValidationError("hash", 'required', "Required property 'hash' is missing or null"); }
+        if (!property_exists($data, "sessionId") || $data->sessionId === null) {
+            throw new SdkValidationError("sessionId", 'required', "Required property 'sessionId' is missing or null");
+        }
+        if (!property_exists($data, "source") || $data->source === null) {
+            throw new SdkValidationError("source", 'required', "Required property 'source' is missing or null");
+        }
+        if (!property_exists($data, "event") || $data->event === null) {
+            throw new SdkValidationError("event", 'required', "Required property 'event' is missing or null");
+        }
+        if (!property_exists($data, "hash") || $data->hash === null) {
+            throw new SdkValidationError("hash", 'required', "Required property 'hash' is missing or null");
+        }
         return new self(
             sessionId: SdkClient::stringValue($data->sessionId),
             source: SdkClient::hydrateStringEnumOrString($data->source, RecordEventsBodyItemSourceEnum::class),
@@ -159,7 +197,9 @@ class UploadArtifactResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "urls") || $data->urls === null) { throw new SdkValidationError("urls", 'required', "Required property 'urls' is missing or null"); }
+        if (!property_exists($data, "urls") || $data->urls === null) {
+            throw new SdkValidationError("urls", 'required', "Required property 'urls' is missing or null");
+        }
         return new self(
             urls: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->urls))),
         );
@@ -197,7 +237,9 @@ class DeleteAllArtifactsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) { throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null"); }
+        if (!property_exists($data, "deletedCount") || $data->deletedCount === null) {
+            throw new SdkValidationError("deletedCount", 'required', "Required property 'deletedCount' is missing or null");
+        }
         return new self(
             deletedCount: SdkClient::floatValue($data->deletedCount),
         );

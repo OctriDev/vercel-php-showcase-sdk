@@ -11,11 +11,26 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant0OperationEnum i
 {
     public const CREATE = "create";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class PatchEdgeConfigItemsRequestItemsItemVariant0 implements PatchEdgeConfigItemsRequestItemsItem, \JsonSerializable
@@ -69,9 +84,15 @@ class PatchEdgeConfigItemsRequestItemsItemVariant0 implements PatchEdgeConfigIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
+        if (!property_exists($data, "operation") || $data->operation === null) {
+            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "value")) {
+            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
+        }
         return new self(
             operation: SdkClient::hydrateStringEnumOrString($data->operation, PatchEdgeConfigItemsRequestItemsItemVariant0OperationEnum::class),
             key: SdkClient::stringValue($data->key),
@@ -86,11 +107,26 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant1OperationEnum i
     public const UPDATE = "update";
     public const UPSERT = "upsert";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class PatchEdgeConfigItemsRequestItemsItemVariant1 implements PatchEdgeConfigItemsRequestItemsItem, \JsonSerializable
@@ -144,9 +180,15 @@ class PatchEdgeConfigItemsRequestItemsItemVariant1 implements PatchEdgeConfigIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "value")) { throw new SdkValidationError("value", 'required', "Missing required property 'value'"); }
+        if (!property_exists($data, "operation") || $data->operation === null) {
+            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "value")) {
+            throw new SdkValidationError("value", 'required', "Missing required property 'value'");
+        }
         return new self(
             operation: SdkClient::hydrateStringEnumOrString($data->operation, PatchEdgeConfigItemsRequestItemsItemVariant1OperationEnum::class),
             key: SdkClient::stringValue($data->key),
@@ -161,11 +203,26 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant2OperationEnum i
     public const UPDATE = "update";
     public const UPSERT = "upsert";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class PatchEdgeConfigItemsRequestItemsItemVariant2 implements PatchEdgeConfigItemsRequestItemsItem, \JsonSerializable
@@ -219,9 +276,15 @@ class PatchEdgeConfigItemsRequestItemsItemVariant2 implements PatchEdgeConfigIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
-        if (!property_exists($data, "description")) { throw new SdkValidationError("description", 'required', "Missing required property 'description'"); }
+        if (!property_exists($data, "operation") || $data->operation === null) {
+            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
+        if (!property_exists($data, "description")) {
+            throw new SdkValidationError("description", 'required', "Missing required property 'description'");
+        }
         return new self(
             operation: SdkClient::hydrateStringEnumOrString($data->operation, PatchEdgeConfigItemsRequestItemsItemVariant2OperationEnum::class),
             key: SdkClient::stringValue($data->key),
@@ -235,11 +298,26 @@ final readonly class PatchEdgeConfigItemsRequestItemsItemVariant3OperationEnum i
 {
     public const DELETE = "delete";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class PatchEdgeConfigItemsRequestItemsItemVariant3 implements PatchEdgeConfigItemsRequestItemsItem, \JsonSerializable
@@ -295,8 +373,12 @@ class PatchEdgeConfigItemsRequestItemsItemVariant3 implements PatchEdgeConfigIte
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "operation") || $data->operation === null) { throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "operation") || $data->operation === null) {
+            throw new SdkValidationError("operation", 'required', "Required property 'operation' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
         return new self(
             operation: SdkClient::hydrateStringEnumOrString($data->operation, PatchEdgeConfigItemsRequestItemsItemVariant3OperationEnum::class),
             key: SdkClient::stringValue($data->key),

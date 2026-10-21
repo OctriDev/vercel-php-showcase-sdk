@@ -52,8 +52,12 @@ class ListProjectsResponseVariant2ProjectsItemExpirationVariant1 implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "lockedAt") || $data->lockedAt === null) { throw new SdkValidationError("lockedAt", 'required', "Required property 'lockedAt' is missing or null"); }
-        if (!property_exists($data, "lockedBy") || $data->lockedBy === null) { throw new SdkValidationError("lockedBy", 'required', "Required property 'lockedBy' is missing or null"); }
+        if (!property_exists($data, "lockedAt") || $data->lockedAt === null) {
+            throw new SdkValidationError("lockedAt", 'required', "Required property 'lockedAt' is missing or null");
+        }
+        if (!property_exists($data, "lockedBy") || $data->lockedBy === null) {
+            throw new SdkValidationError("lockedBy", 'required', "Required property 'lockedBy' is missing or null");
+        }
         return new self(
             lockedAt: SdkClient::floatValue($data->lockedAt),
             lockedBy: SdkClient::stringValue($data->lockedBy),
@@ -177,11 +181,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemFrameworkEnum imple
     public const XMCP = "xmcp";
     public const ZOLA = "zola";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemGitComments implements \JsonSerializable
@@ -229,8 +248,12 @@ class ListProjectsResponseVariant2ProjectsItemGitComments implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "onCommit") || $data->onCommit === null) { throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null"); }
-        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) { throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null"); }
+        if (!property_exists($data, "onCommit") || $data->onCommit === null) {
+            throw new SdkValidationError("onCommit", 'required', "Required property 'onCommit' is missing or null");
+        }
+        if (!property_exists($data, "onPullRequest") || $data->onPullRequest === null) {
+            throw new SdkValidationError("onPullRequest", 'required', "Required property 'onPullRequest' is missing or null");
+        }
         return new self(
             onCommit: SdkClient::boolValue($data->onCommit),
             onPullRequest: SdkClient::boolValue($data->onPullRequest),
@@ -286,8 +309,12 @@ class ListProjectsResponseVariant2ProjectsItemGitProviderOptionsConsolidatedGitC
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) { throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null"); }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "propagateFailures") || $data->propagateFailures === null) {
+            throw new SdkValidationError("propagateFailures", 'required', "Required property 'propagateFailures' is missing or null");
+        }
         return new self(
             enabled: SdkClient::boolValue($data->enabled),
             propagateFailures: SdkClient::boolValue($data->propagateFailures),
@@ -303,9 +330,24 @@ final readonly class ListProjectsResponseVariant2ProjectsItemGitProviderOptionsC
     public const DISABLED = "disabled";
     public const ENABLED = "enabled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

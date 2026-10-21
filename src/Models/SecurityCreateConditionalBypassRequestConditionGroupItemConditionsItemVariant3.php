@@ -50,9 +50,15 @@ class CreateConditionalBypassRequestConditionGroupItemConditionsItemVariant3 imp
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
-        if (!property_exists($data, "key") || $data->key === null) { throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "op") || $data->op === null) {
+            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
+        }
+        if (!property_exists($data, "key") || $data->key === null) {
+            throw new SdkValidationError("key", 'required', "Required property 'key' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateConditionalBypassRequestConditionGroupItemConditionsItemVariant3TypeEnum::class),
             op: SdkClient::hydrateStringEnumOrString($data->op, CreateConditionalBypassRequestConditionGroupItemConditionsItemVariant3OpEnum::class),

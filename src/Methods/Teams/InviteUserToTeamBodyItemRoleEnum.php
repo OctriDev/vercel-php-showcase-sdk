@@ -21,11 +21,26 @@ final readonly class InviteUserToTeamBodyItemRoleEnum implements SdkOpenEnum
     public const VIEWER_FOR_PLUS = "VIEWER_FOR_PLUS";
     public const CONTRIBUTOR = "CONTRIBUTOR";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -38,11 +53,26 @@ final readonly class InviteUserToTeamBodyItemProjectsItemRoleEnum implements Sdk
     public const PROJECT_DEVELOPER = "PROJECT_DEVELOPER";
     public const PROJECT_GUEST = "PROJECT_GUEST";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class InviteUserToTeamBodyItemProjectsItem implements \JsonSerializable
@@ -90,8 +120,12 @@ class InviteUserToTeamBodyItemProjectsItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "role") || $data->role === null) { throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null"); }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "role") || $data->role === null) {
+            throw new SdkValidationError("role", 'required', "Required property 'role' is missing or null");
+        }
         return new self(
             projectId: SdkClient::stringValue($data->projectId),
             role: SdkClient::hydrateStringEnumOrString($data->role, InviteUserToTeamBodyItemProjectsItemRoleEnum::class),
@@ -154,7 +188,9 @@ class InviteUserToTeamBodyItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             role: (property_exists($data, "role") && $data->role !== null ? SdkClient::hydrateStringEnumOrString($data->role, InviteUserToTeamBodyItemRoleEnum::class) : SdkNotGiven::Value),
@@ -176,11 +212,26 @@ final readonly class RequestAccessToTeamJoinedFromOriginEnum implements SdkOpenE
     public const FEEDBACK = "feedback";
     public const ORGANIZATION_TEAMS = "organization-teams";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class RequestAccessToTeamJoinedFrom implements \JsonSerializable
@@ -278,7 +329,9 @@ class RequestAccessToTeamJoinedFrom implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
         return new self(
             origin: SdkClient::hydrateStringEnumOrString($data->origin, RequestAccessToTeamJoinedFromOriginEnum::class),
             commitId: (property_exists($data, "commitId") && $data->commitId !== null ? SdkClient::stringValue($data->commitId) : SdkNotGiven::Value),

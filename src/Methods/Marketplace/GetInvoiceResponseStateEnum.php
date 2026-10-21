@@ -22,11 +22,26 @@ final readonly class GetInvoiceResponseStateEnum implements SdkOpenEnum
     public const REFUNDED = "refunded";
     public const SCHEDULED = "scheduled";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetInvoiceResponse implements \JsonSerializable
@@ -242,14 +257,30 @@ class GetInvoiceResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "created") || $data->created === null) { throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null"); }
-        if (!property_exists($data, "invoiceDate") || $data->invoiceDate === null) { throw new SdkValidationError("invoiceDate", 'required', "Required property 'invoiceDate' is missing or null"); }
-        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) { throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null"); }
-        if (!property_exists($data, "items") || $data->items === null) { throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null"); }
-        if (!property_exists($data, "period") || $data->period === null) { throw new SdkValidationError("period", 'required', "Required property 'period' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "total") || $data->total === null) { throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null"); }
-        if (!property_exists($data, "updated") || $data->updated === null) { throw new SdkValidationError("updated", 'required', "Required property 'updated' is missing or null"); }
+        if (!property_exists($data, "created") || $data->created === null) {
+            throw new SdkValidationError("created", 'required', "Required property 'created' is missing or null");
+        }
+        if (!property_exists($data, "invoiceDate") || $data->invoiceDate === null) {
+            throw new SdkValidationError("invoiceDate", 'required', "Required property 'invoiceDate' is missing or null");
+        }
+        if (!property_exists($data, "invoiceId") || $data->invoiceId === null) {
+            throw new SdkValidationError("invoiceId", 'required', "Required property 'invoiceId' is missing or null");
+        }
+        if (!property_exists($data, "items") || $data->items === null) {
+            throw new SdkValidationError("items", 'required', "Required property 'items' is missing or null");
+        }
+        if (!property_exists($data, "period") || $data->period === null) {
+            throw new SdkValidationError("period", 'required', "Required property 'period' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "total") || $data->total === null) {
+            throw new SdkValidationError("total", 'required', "Required property 'total' is missing or null");
+        }
+        if (!property_exists($data, "updated") || $data->updated === null) {
+            throw new SdkValidationError("updated", 'required', "Required property 'updated' is missing or null");
+        }
         return new self(
             created: SdkClient::stringValue($data->created),
             invoiceDate: SdkClient::stringValue($data->invoiceDate),
@@ -346,7 +377,9 @@ class SubmitPrepaymentBalancesBalancesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "currencyValueInCents") || $data->currencyValueInCents === null) { throw new SdkValidationError("currencyValueInCents", 'required', "Required property 'currencyValueInCents' is missing or null"); }
+        if (!property_exists($data, "currencyValueInCents") || $data->currencyValueInCents === null) {
+            throw new SdkValidationError("currencyValueInCents", 'required', "Required property 'currencyValueInCents' is missing or null");
+        }
         return new self(
             currencyValueInCents: SdkClient::floatValue($data->currencyValueInCents),
             resourceId: (property_exists($data, "resourceId") && $data->resourceId !== null ? SdkClient::stringValue($data->resourceId) : SdkNotGiven::Value),

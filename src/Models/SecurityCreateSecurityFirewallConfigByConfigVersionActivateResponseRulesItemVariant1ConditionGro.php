@@ -68,8 +68,12 @@ class CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVarian
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "op") || $data->op === null) { throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "op") || $data->op === null) {
+            throw new SdkValidationError("op", 'required', "Required property 'op' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             op: SdkClient::hydrateStringEnumOrString($data->op, CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVariant1ConditionGroupItemConditionsItemOpEnum::class),
             type: SdkClient::hydrateStringEnumOrString($data->type, CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVariant1ConditionGroupItemConditionsItemTypeEnum::class),
@@ -111,7 +115,9 @@ class CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVarian
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "conditions") || $data->conditions === null) { throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null"); }
+        if (!property_exists($data, "conditions") || $data->conditions === null) {
+            throw new SdkValidationError("conditions", 'required', "Required property 'conditions' is missing or null");
+        }
         return new self(
             conditions: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVariant1ConditionGroupItemConditionsItem::class), SdkClient::arrayValue($data->conditions))),
         );
@@ -193,13 +199,27 @@ class CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVarian
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "active") || $data->active === null) { throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null"); }
-        if (!property_exists($data, "conditionGroup") || $data->conditionGroup === null) { throw new SdkValidationError("conditionGroup", 'required', "Required property 'conditionGroup' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "valid") || $data->valid === null) { throw new SdkValidationError("valid", 'required', "Required property 'valid' is missing or null"); }
-        if (!property_exists($data, "validationErrors") || $data->validationErrors === null) { throw new SdkValidationError("validationErrors", 'required', "Required property 'validationErrors' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "active") || $data->active === null) {
+            throw new SdkValidationError("active", 'required', "Required property 'active' is missing or null");
+        }
+        if (!property_exists($data, "conditionGroup") || $data->conditionGroup === null) {
+            throw new SdkValidationError("conditionGroup", 'required', "Required property 'conditionGroup' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "valid") || $data->valid === null) {
+            throw new SdkValidationError("valid", 'required', "Required property 'valid' is missing or null");
+        }
+        if (!property_exists($data, "validationErrors") || $data->validationErrors === null) {
+            throw new SdkValidationError("validationErrors", 'required', "Required property 'validationErrors' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateClass($data->action, CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItemVariant1Action::class),
             active: SdkClient::boolValue($data->active),

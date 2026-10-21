@@ -67,8 +67,12 @@ class UserEventPayloadVariant21Member implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             kind: SdkClient::hydrateStringEnumOrString($data->kind, UserEventPayloadVariant21MemberKindEnum::class),
@@ -122,8 +126,12 @@ class UserEventPayloadVariant21 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessPolicy") || $data->accessPolicy === null) { throw new SdkValidationError("accessPolicy", 'required', "Required property 'accessPolicy' is missing or null"); }
-        if (!property_exists($data, "member") || $data->member === null) { throw new SdkValidationError("member", 'required', "Required property 'member' is missing or null"); }
+        if (!property_exists($data, "accessPolicy") || $data->accessPolicy === null) {
+            throw new SdkValidationError("accessPolicy", 'required', "Required property 'accessPolicy' is missing or null");
+        }
+        if (!property_exists($data, "member") || $data->member === null) {
+            throw new SdkValidationError("member", 'required', "Required property 'member' is missing or null");
+        }
         return new self(
             accessPolicy: SdkClient::hydrateClass($data->accessPolicy, UserEventPayloadVariant21AccessPolicy::class),
             member: SdkClient::hydrateClass($data->member, UserEventPayloadVariant21Member::class),
@@ -179,8 +187,12 @@ class UserEventPayloadVariant22ApiKey implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -198,11 +210,26 @@ final readonly class UserEventPayloadVariant22BudgetRefreshPeriodEnum implements
     public const NONE = "none";
     public const WEEKLY = "weekly";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -265,8 +292,12 @@ class UserEventPayloadVariant22Budget implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
-        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) { throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
+            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
+        }
+        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) {
+            throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null");
+        }
         return new self(
             limitAmount: SdkClient::floatValue($data->limitAmount),
             refreshPeriod: SdkClient::hydrateStringEnumOrString($data->refreshPeriod, UserEventPayloadVariant22BudgetRefreshPeriodEnum::class),

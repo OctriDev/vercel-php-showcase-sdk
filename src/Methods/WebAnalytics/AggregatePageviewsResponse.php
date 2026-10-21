@@ -50,9 +50,15 @@ class AggregatePageviewsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
-        if (!property_exists($data, "query") || $data->query === null) { throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
+        if (!property_exists($data, "query") || $data->query === null) {
+            throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             data: SdkClient::decodeUnionValue($data->data, [static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AggregatePageviewsResponseDataItem::class), SdkClient::arrayValue($value))), static fn(mixed $value) => array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AggregatePageviewsResponseDataItem::class), SdkClient::arrayValue($value)))]),
             query: SdkClient::hydrateClass($data->query, AggregatePageviewsResponseQuery::class),
@@ -252,7 +258,9 @@ class AggregateEventsResponseDataItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
+            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
+        }
         return new self(
             timestamp: SdkClient::stringValue($data->timestamp),
             browserName: (property_exists($data, "browserName") && $data->browserName !== null ? SdkClient::stringValue($data->browserName) : SdkNotGiven::Value),
@@ -298,9 +306,24 @@ final readonly class AggregateEventsResponseQueryGroupByItemEnum implements SdkO
     public const UTMSOURCE = "utmSource";
     public const UTMTERM = "utmTerm";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -23,11 +23,26 @@ final readonly class GetDomainTransferInResponseStatusEnum implements SdkOpenEnu
     public const REJECTED = "rejected";
     public const SUBMITTING_TRANSFER = "submitting_transfer";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetDomainTransferInResponse implements \JsonSerializable
@@ -61,7 +76,9 @@ class GetDomainTransferInResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             status: SdkClient::hydrateStringEnumOrString($data->status, GetDomainTransferInResponseStatusEnum::class),
         );
@@ -219,15 +236,33 @@ class RenewDomainContactInformation implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "firstName") || $data->firstName === null) { throw new SdkValidationError("firstName", 'required', "Required property 'firstName' is missing or null"); }
-        if (!property_exists($data, "lastName") || $data->lastName === null) { throw new SdkValidationError("lastName", 'required', "Required property 'lastName' is missing or null"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "phone") || $data->phone === null) { throw new SdkValidationError("phone", 'required', "Required property 'phone' is missing or null"); }
-        if (!property_exists($data, "address1") || $data->address1 === null) { throw new SdkValidationError("address1", 'required', "Required property 'address1' is missing or null"); }
-        if (!property_exists($data, "city") || $data->city === null) { throw new SdkValidationError("city", 'required', "Required property 'city' is missing or null"); }
-        if (!property_exists($data, "state") || $data->state === null) { throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null"); }
-        if (!property_exists($data, "zip") || $data->zip === null) { throw new SdkValidationError("zip", 'required', "Required property 'zip' is missing or null"); }
-        if (!property_exists($data, "country") || $data->country === null) { throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null"); }
+        if (!property_exists($data, "firstName") || $data->firstName === null) {
+            throw new SdkValidationError("firstName", 'required', "Required property 'firstName' is missing or null");
+        }
+        if (!property_exists($data, "lastName") || $data->lastName === null) {
+            throw new SdkValidationError("lastName", 'required', "Required property 'lastName' is missing or null");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "phone") || $data->phone === null) {
+            throw new SdkValidationError("phone", 'required', "Required property 'phone' is missing or null");
+        }
+        if (!property_exists($data, "address1") || $data->address1 === null) {
+            throw new SdkValidationError("address1", 'required', "Required property 'address1' is missing or null");
+        }
+        if (!property_exists($data, "city") || $data->city === null) {
+            throw new SdkValidationError("city", 'required', "Required property 'city' is missing or null");
+        }
+        if (!property_exists($data, "state") || $data->state === null) {
+            throw new SdkValidationError("state", 'required', "Required property 'state' is missing or null");
+        }
+        if (!property_exists($data, "zip") || $data->zip === null) {
+            throw new SdkValidationError("zip", 'required', "Required property 'zip' is missing or null");
+        }
+        if (!property_exists($data, "country") || $data->country === null) {
+            throw new SdkValidationError("country", 'required', "Required property 'country' is missing or null");
+        }
         return new self(
             firstName: SdkClient::stringValue($data->firstName),
             lastName: SdkClient::stringValue($data->lastName),
@@ -253,11 +288,26 @@ final readonly class RenewDomainResponseLinksValueMethodEnum implements SdkOpenE
     public const DELETE = "DELETE";
     public const PATCH = "PATCH";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class RenewDomainResponseLinksValue implements \JsonSerializable
@@ -297,8 +347,12 @@ class RenewDomainResponseLinksValue implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "href") || $data->href === null) { throw new SdkValidationError("href", 'required', "Required property 'href' is missing or null"); }
-        if (!property_exists($data, "method") || $data->method === null) { throw new SdkValidationError("method", 'required', "Required property 'method' is missing or null"); }
+        if (!property_exists($data, "href") || $data->href === null) {
+            throw new SdkValidationError("href", 'required', "Required property 'href' is missing or null");
+        }
+        if (!property_exists($data, "method") || $data->method === null) {
+            throw new SdkValidationError("method", 'required', "Required property 'method' is missing or null");
+        }
         return new self(
             href: SdkClient::stringValue($data->href),
             method: SdkClient::hydrateStringEnumOrString($data->method, RenewDomainResponseLinksValueMethodEnum::class),

@@ -323,18 +323,42 @@ class AuthUser implements GetAuthUserResponseUser, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "avatar")) { throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'"); }
-        if (!property_exists($data, "billing")) { throw new SdkValidationError("billing", 'required', "Missing required property 'billing'"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "defaultTeamId")) { throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'"); }
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "hasTrialAvailable") || $data->hasTrialAvailable === null) { throw new SdkValidationError("hasTrialAvailable", 'required', "Required property 'hasTrialAvailable' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name")) { throw new SdkValidationError("name", 'required', "Missing required property 'name'"); }
-        if (!property_exists($data, "resourceConfig") || $data->resourceConfig === null) { throw new SdkValidationError("resourceConfig", 'required', "Required property 'resourceConfig' is missing or null"); }
-        if (!property_exists($data, "softBlock")) { throw new SdkValidationError("softBlock", 'required', "Missing required property 'softBlock'"); }
-        if (!property_exists($data, "stagingPrefix") || $data->stagingPrefix === null) { throw new SdkValidationError("stagingPrefix", 'required', "Required property 'stagingPrefix' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "avatar")) {
+            throw new SdkValidationError("avatar", 'required', "Missing required property 'avatar'");
+        }
+        if (!property_exists($data, "billing")) {
+            throw new SdkValidationError("billing", 'required', "Missing required property 'billing'");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "defaultTeamId")) {
+            throw new SdkValidationError("defaultTeamId", 'required', "Missing required property 'defaultTeamId'");
+        }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "hasTrialAvailable") || $data->hasTrialAvailable === null) {
+            throw new SdkValidationError("hasTrialAvailable", 'required', "Required property 'hasTrialAvailable' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name")) {
+            throw new SdkValidationError("name", 'required', "Missing required property 'name'");
+        }
+        if (!property_exists($data, "resourceConfig") || $data->resourceConfig === null) {
+            throw new SdkValidationError("resourceConfig", 'required', "Required property 'resourceConfig' is missing or null");
+        }
+        if (!property_exists($data, "softBlock")) {
+            throw new SdkValidationError("softBlock", 'required', "Missing required property 'softBlock'");
+        }
+        if (!property_exists($data, "stagingPrefix") || $data->stagingPrefix === null) {
+            throw new SdkValidationError("stagingPrefix", 'required', "Required property 'stagingPrefix' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             avatar: ($data->avatar === null ? null : SdkClient::stringValue($data->avatar)),
             billing: ($data->billing === null ? null : SdkClient::stringMapValue($data->billing)),

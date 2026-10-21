@@ -102,15 +102,33 @@ class UpdateKmsIssuerResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "algorithm") || $data->algorithm === null) { throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null"); }
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "origin") || $data->origin === null) { throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null"); }
-        if (!property_exists($data, "ownerId") || $data->ownerId === null) { throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null"); }
-        if (!property_exists($data, "policies") || $data->policies === null) { throw new SdkValidationError("policies", 'required', "Required property 'policies' is missing or null"); }
-        if (!property_exists($data, "signingKeys") || $data->signingKeys === null) { throw new SdkValidationError("signingKeys", 'required', "Required property 'signingKeys' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
+        if (!property_exists($data, "algorithm") || $data->algorithm === null) {
+            throw new SdkValidationError("algorithm", 'required', "Required property 'algorithm' is missing or null");
+        }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "origin") || $data->origin === null) {
+            throw new SdkValidationError("origin", 'required', "Required property 'origin' is missing or null");
+        }
+        if (!property_exists($data, "ownerId") || $data->ownerId === null) {
+            throw new SdkValidationError("ownerId", 'required', "Required property 'ownerId' is missing or null");
+        }
+        if (!property_exists($data, "policies") || $data->policies === null) {
+            throw new SdkValidationError("policies", 'required', "Required property 'policies' is missing or null");
+        }
+        if (!property_exists($data, "signingKeys") || $data->signingKeys === null) {
+            throw new SdkValidationError("signingKeys", 'required', "Required property 'signingKeys' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
         return new self(
             algorithm: SdkClient::hydrateStringEnumOrString($data->algorithm, UpdateKmsIssuerResponseAlgorithmEnum::class),
             createdAt: SdkClient::stringValue($data->createdAt),

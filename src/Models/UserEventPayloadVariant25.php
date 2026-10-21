@@ -78,7 +78,9 @@ class UserEventPayloadVariant25 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "change") || $data->change === null) { throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null"); }
+        if (!property_exists($data, "change") || $data->change === null) {
+            throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null");
+        }
         return new self(
             change: SdkClient::hydrateStringEnumOrString($data->change, UserEventPayloadVariant25ChangeEnum::class),
             commitment: (property_exists($data, "commitment") && $data->commitment !== null ? SdkClient::hydrateClass($data->commitment, UserEventPayloadVariant25Commitment::class) : SdkNotGiven::Value),
@@ -98,11 +100,26 @@ final readonly class UserEventPayloadVariant26BudgetRefreshPeriodEnum implements
     public const NONE = "none";
     public const WEEKLY = "weekly";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -165,8 +182,12 @@ class UserEventPayloadVariant26Budget implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) { throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null"); }
-        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) { throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null"); }
+        if (!property_exists($data, "limitAmount") || $data->limitAmount === null) {
+            throw new SdkValidationError("limitAmount", 'required', "Required property 'limitAmount' is missing or null");
+        }
+        if (!property_exists($data, "refreshPeriod") || $data->refreshPeriod === null) {
+            throw new SdkValidationError("refreshPeriod", 'required', "Required property 'refreshPeriod' is missing or null");
+        }
         return new self(
             limitAmount: SdkClient::floatValue($data->limitAmount),
             refreshPeriod: SdkClient::hydrateStringEnumOrString($data->refreshPeriod, UserEventPayloadVariant26BudgetRefreshPeriodEnum::class),
@@ -185,11 +206,26 @@ final readonly class UserEventPayloadVariant26ChangeEnum implements SdkOpenEnum
     public const REMOVE = "remove";
     public const SET = "set";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -202,11 +238,26 @@ final readonly class UserEventPayloadVariant26ScopeTypeEnum implements SdkOpenEn
     public const TEAM = "team";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant26 implements UserEventPayload, \JsonSerializable
@@ -266,8 +317,12 @@ class UserEventPayloadVariant26 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "change") || $data->change === null) { throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null"); }
-        if (!property_exists($data, "scopeType") || $data->scopeType === null) { throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null"); }
+        if (!property_exists($data, "change") || $data->change === null) {
+            throw new SdkValidationError("change", 'required', "Required property 'change' is missing or null");
+        }
+        if (!property_exists($data, "scopeType") || $data->scopeType === null) {
+            throw new SdkValidationError("scopeType", 'required', "Required property 'scopeType' is missing or null");
+        }
         return new self(
             change: SdkClient::hydrateStringEnumOrString($data->change, UserEventPayloadVariant26ChangeEnum::class),
             scopeType: SdkClient::hydrateStringEnumOrString($data->scopeType, UserEventPayloadVariant26ScopeTypeEnum::class),
@@ -286,9 +341,24 @@ final readonly class UserEventPayloadVariant27BudgetRefreshPeriodEnum implements
     public const NONE = "none";
     public const WEEKLY = "weekly";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

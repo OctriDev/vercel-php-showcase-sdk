@@ -78,7 +78,9 @@ class ListProjectsResponseVariant2ProjectsItemServicesItem implements \JsonSeria
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "serviceName") || $data->serviceName === null) { throw new SdkValidationError("serviceName", 'required', "Required property 'serviceName' is missing or null"); }
+        if (!property_exists($data, "serviceName") || $data->serviceName === null) {
+            throw new SdkValidationError("serviceName", 'required', "Required property 'serviceName' is missing or null");
+        }
         return new self(
             serviceName: SdkClient::stringValue($data->serviceName),
             framework: (property_exists($data, "framework") && $data->framework !== null ? SdkClient::hydrateStringEnumOrString($data->framework, ListProjectsResponseVariant2ProjectsItemServicesItemFrameworkEnum::class) : SdkNotGiven::Value),
@@ -171,7 +173,9 @@ class ListProjectsResponseVariant2ProjectsItemSpeedInsights implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             canceledAt: (property_exists($data, "canceledAt") && $data->canceledAt !== null ? SdkClient::floatValue($data->canceledAt) : SdkNotGiven::Value),
@@ -191,11 +195,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSsoProtectionApril2
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListProjectsResponseVariant2ProjectsItemSsoProtectionCve55182MigrationAppliedFromEnum implements SdkOpenEnum
@@ -205,11 +224,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSsoProtectionCve551
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 final readonly class ListProjectsResponseVariant2ProjectsItemSsoProtectionDeploymentTypeEnum implements SdkOpenEnum
@@ -219,11 +253,26 @@ final readonly class ListProjectsResponseVariant2ProjectsItemSsoProtectionDeploy
     public const PREVIEW = "preview";
     public const PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = "prod_deployment_urls_and_all_previews";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class ListProjectsResponseVariant2ProjectsItemSsoProtection implements \JsonSerializable
@@ -273,7 +322,9 @@ class ListProjectsResponseVariant2ProjectsItemSsoProtection implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) { throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null"); }
+        if (!property_exists($data, "deploymentType") || $data->deploymentType === null) {
+            throw new SdkValidationError("deploymentType", 'required', "Required property 'deploymentType' is missing or null");
+        }
         return new self(
             deploymentType: SdkClient::hydrateStringEnumOrString($data->deploymentType, ListProjectsResponseVariant2ProjectsItemSsoProtectionDeploymentTypeEnum::class),
             april2026SecurityIncidentMigrationAppliedFrom: (property_exists($data, "april2026SecurityIncidentMigrationAppliedFrom") ? ($data->april2026SecurityIncidentMigrationAppliedFrom === null ? null : SdkClient::hydrateStringEnumOrString($data->april2026SecurityIncidentMigrationAppliedFrom, ListProjectsResponseVariant2ProjectsItemSsoProtectionApril2026SecurityIncidentMigrationAppliedFromEnum::class)) : SdkNotGiven::Value),
@@ -325,9 +376,15 @@ class ListProjectsResponseVariant2ProjectsItemStaticIps implements \JsonSerializ
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builds") || $data->builds === null) { throw new SdkValidationError("builds", 'required', "Required property 'builds' is missing or null"); }
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
-        if (!property_exists($data, "regions") || $data->regions === null) { throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null"); }
+        if (!property_exists($data, "builds") || $data->builds === null) {
+            throw new SdkValidationError("builds", 'required', "Required property 'builds' is missing or null");
+        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
+        if (!property_exists($data, "regions") || $data->regions === null) {
+            throw new SdkValidationError("regions", 'required', "Required property 'regions' is missing or null");
+        }
         return new self(
             builds: SdkClient::boolValue($data->builds),
             enabled: SdkClient::boolValue($data->enabled),

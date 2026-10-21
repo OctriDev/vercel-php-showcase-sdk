@@ -216,10 +216,18 @@ class CancelDeploymentResponseServicesItemVariant1 implements CancelDeploymentRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "builder") || $data->builder === null) { throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "root") || $data->root === null) { throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null"); }
-        if (!property_exists($data, "schema") || $data->schema === null) { throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null"); }
+        if (!property_exists($data, "builder") || $data->builder === null) {
+            throw new SdkValidationError("builder", 'required', "Required property 'builder' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "root") || $data->root === null) {
+            throw new SdkValidationError("root", 'required', "Required property 'root' is missing or null");
+        }
+        if (!property_exists($data, "schema") || $data->schema === null) {
+            throw new SdkValidationError("schema", 'required', "Required property 'schema' is missing or null");
+        }
         return new self(
             builder: SdkClient::hydrateClass($data->builder, CancelDeploymentResponseServicesItemVariant1Builder::class),
             name: SdkClient::stringValue($data->name),

@@ -38,7 +38,9 @@ class CreateProjectResponseInternalRoutesItemVariant1Mitigate implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, CreateProjectResponseInternalRoutesItemVariant1MitigateActionEnum::class),
         );
@@ -90,8 +92,12 @@ class CreateProjectResponseInternalRoutesItemVariant1 implements CreateProjectRe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "has") || $data->has === null) { throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null"); }
-        if (!property_exists($data, "mitigate") || $data->mitigate === null) { throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null"); }
+        if (!property_exists($data, "has") || $data->has === null) {
+            throw new SdkValidationError("has", 'required', "Required property 'has' is missing or null");
+        }
+        if (!property_exists($data, "mitigate") || $data->mitigate === null) {
+            throw new SdkValidationError("mitigate", 'required', "Required property 'mitigate' is missing or null");
+        }
         return new self(
             has: array_values(array_map(static fn($item) => SdkClient::hydrateUnion($item, [CreateProjectResponseInternalRoutesItemVariant1HasItemHeader::class, CreateProjectResponseInternalRoutesItemVariant1HasItemHost::class], null, []), SdkClient::arrayValue($data->has))),
             mitigate: SdkClient::hydrateClass($data->mitigate, CreateProjectResponseInternalRoutesItemVariant1Mitigate::class),
@@ -157,10 +163,18 @@ class CreateProjectResponseLinkVariant0DeployHooksItem implements \JsonSerializa
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "ref") || $data->ref === null) { throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "ref") || $data->ref === null) {
+            throw new SdkValidationError("ref", 'required', "Required property 'ref' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -283,11 +297,21 @@ class CreateProjectResponseLinkVariant0 implements CreateProjectResponseLink, \J
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) { throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null"); }
-        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) { throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null"); }
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) { throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "deployHooks") || $data->deployHooks === null) {
+            throw new SdkValidationError("deployHooks", 'required', "Required property 'deployHooks' is missing or null");
+        }
+        if (!property_exists($data, "gitCredentialId") || $data->gitCredentialId === null) {
+            throw new SdkValidationError("gitCredentialId", 'required', "Required property 'gitCredentialId' is missing or null");
+        }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "productionBranch") || $data->productionBranch === null) {
+            throw new SdkValidationError("productionBranch", 'required', "Required property 'productionBranch' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             deployHooks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, CreateProjectResponseLinkVariant0DeployHooksItem::class), SdkClient::arrayValue($data->deployHooks))),
             gitCredentialId: SdkClient::stringValue($data->gitCredentialId),

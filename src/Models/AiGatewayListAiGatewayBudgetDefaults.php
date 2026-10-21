@@ -45,7 +45,9 @@ class AiGatewayBudgetDefaultList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "defaults") || $data->defaults === null) { throw new SdkValidationError("defaults", 'required', "Required property 'defaults' is missing or null"); }
+        if (!property_exists($data, "defaults") || $data->defaults === null) {
+            throw new SdkValidationError("defaults", 'required', "Required property 'defaults' is missing or null");
+        }
         return new self(
             defaults: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayBudgetDefault::class), SdkClient::arrayValue($data->defaults))),
         );

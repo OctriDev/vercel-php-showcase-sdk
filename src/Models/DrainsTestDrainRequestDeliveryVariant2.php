@@ -90,13 +90,27 @@ class TestDrainRequestDeliveryVariant2 implements TestDrainRequestDelivery, \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "endpoint") || $data->endpoint === null) { throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null"); }
-        if (!property_exists($data, "encoding") || $data->encoding === null) { throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null"); }
-        if (!property_exists($data, "compression") || $data->compression === null) { throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null"); }
-        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) { throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null"); }
-        if (!property_exists($data, "roleArn") || $data->roleArn === null) { throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "endpoint") || $data->endpoint === null) {
+            throw new SdkValidationError("endpoint", 'required', "Required property 'endpoint' is missing or null");
+        }
+        if (!property_exists($data, "encoding") || $data->encoding === null) {
+            throw new SdkValidationError("encoding", 'required', "Required property 'encoding' is missing or null");
+        }
+        if (!property_exists($data, "compression") || $data->compression === null) {
+            throw new SdkValidationError("compression", 'required', "Required property 'compression' is missing or null");
+        }
+        if (!property_exists($data, "fileStructure") || $data->fileStructure === null) {
+            throw new SdkValidationError("fileStructure", 'required', "Required property 'fileStructure' is missing or null");
+        }
+        if (!property_exists($data, "roleArn") || $data->roleArn === null) {
+            throw new SdkValidationError("roleArn", 'required', "Required property 'roleArn' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
         return new self(
             type: SdkClient::stringValue($data->type),
             endpoint: SdkClient::stringValue($data->endpoint),

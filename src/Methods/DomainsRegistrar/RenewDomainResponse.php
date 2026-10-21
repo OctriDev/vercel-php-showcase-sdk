@@ -48,8 +48,12 @@ class RenewDomainResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "orderId") || $data->orderId === null) { throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null"); }
-        if (!property_exists($data, "_links") || $data->_links === null) { throw new SdkValidationError("_links", 'required', "Required property '_links' is missing or null"); }
+        if (!property_exists($data, "orderId") || $data->orderId === null) {
+            throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null");
+        }
+        if (!property_exists($data, "_links") || $data->_links === null) {
+            throw new SdkValidationError("_links", 'required', "Required property '_links' is missing or null");
+        }
         return new self(
             orderId: SdkClient::stringValue($data->orderId),
             links: SdkClient::mapValues(SdkClient::stringMapValue($data->_links), static fn($item) => SdkClient::hydrateClass($item, RenewDomainResponseLinksValue::class)),
@@ -64,11 +68,26 @@ final readonly class GetOrderResponseStatusEnum implements SdkOpenEnum
     public const COMPLETED = "completed";
     public const FAILED = "failed";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetOrderResponse implements \JsonSerializable
@@ -130,9 +149,15 @@ class GetOrderResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "orderId") || $data->orderId === null) { throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null"); }
-        if (!property_exists($data, "domains") || $data->domains === null) { throw new SdkValidationError("domains", 'required', "Required property 'domains' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
+        if (!property_exists($data, "orderId") || $data->orderId === null) {
+            throw new SdkValidationError("orderId", 'required', "Required property 'orderId' is missing or null");
+        }
+        if (!property_exists($data, "domains") || $data->domains === null) {
+            throw new SdkValidationError("domains", 'required', "Required property 'domains' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
         return new self(
             orderId: SdkClient::stringValue($data->orderId),
             domains: array_values(array_map(static fn($item) => SdkClient::hydrateUnionAs($item, GetOrderResponseDomainsItem::class, [GetOrderResponseDomainsItemVariant0::class, GetOrderResponseDomainsItemVariant1::class, GetOrderResponseDomainsItemVariant2::class], null, []), SdkClient::arrayValue($data->domains))),

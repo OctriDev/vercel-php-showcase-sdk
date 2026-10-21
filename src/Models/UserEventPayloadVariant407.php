@@ -126,7 +126,9 @@ class UserEventPayloadVariant407 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "teamName") || $data->teamName === null) { throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null"); }
+        if (!property_exists($data, "teamName") || $data->teamName === null) {
+            throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null");
+        }
         return new self(
             teamName: SdkClient::stringValue($data->teamName),
             bitbucketUsername: (property_exists($data, "bitbucketUsername") ? ($data->bitbucketUsername === null ? null : SdkClient::stringValue($data->bitbucketUsername)) : SdkNotGiven::Value),
@@ -235,7 +237,9 @@ class UserEventPayloadVariant408 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "teamName") || $data->teamName === null) { throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null"); }
+        if (!property_exists($data, "teamName") || $data->teamName === null) {
+            throw new SdkValidationError("teamName", 'required', "Required property 'teamName' is missing or null");
+        }
         return new self(
             teamName: SdkClient::stringValue($data->teamName),
             bitbucketUsername: (property_exists($data, "bitbucketUsername") ? ($data->bitbucketUsername === null ? null : SdkClient::stringValue($data->bitbucketUsername)) : SdkNotGiven::Value),
@@ -295,8 +299,12 @@ class UserEventPayloadVariant409DeletedUser implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "email") || $data->email === null) { throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "email") || $data->email === null) {
+            throw new SdkValidationError("email", 'required', "Required property 'email' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             email: SdkClient::stringValue($data->email),
             username: SdkClient::stringValue($data->username),
@@ -313,11 +321,26 @@ final readonly class UserEventPayloadVariant409NewPlanEnum implements SdkOpenEnu
     public const HOBBY = "hobby";
     public const PRO = "pro";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -329,9 +352,24 @@ final readonly class UserEventPayloadVariant409PreviousPlanEnum implements SdkOp
     public const HOBBY = "hobby";
     public const PRO = "pro";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

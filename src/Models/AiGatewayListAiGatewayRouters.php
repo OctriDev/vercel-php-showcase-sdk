@@ -45,7 +45,9 @@ class AiGatewayRouterList implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "routers") || $data->routers === null) { throw new SdkValidationError("routers", 'required', "Required property 'routers' is missing or null"); }
+        if (!property_exists($data, "routers") || $data->routers === null) {
+            throw new SdkValidationError("routers", 'required', "Required property 'routers' is missing or null");
+        }
         return new self(
             routers: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, AiGatewayVirtualModelConfig::class), SdkClient::arrayValue($data->routers))),
         );

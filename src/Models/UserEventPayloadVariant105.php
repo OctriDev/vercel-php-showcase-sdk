@@ -64,8 +64,12 @@ class UserEventPayloadVariant105 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bitbucketEmail") || $data->bitbucketEmail === null) { throw new SdkValidationError("bitbucketEmail", 'required', "Required property 'bitbucketEmail' is missing or null"); }
-        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) { throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null"); }
+        if (!property_exists($data, "bitbucketEmail") || $data->bitbucketEmail === null) {
+            throw new SdkValidationError("bitbucketEmail", 'required', "Required property 'bitbucketEmail' is missing or null");
+        }
+        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) {
+            throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null");
+        }
         return new self(
             bitbucketEmail: SdkClient::stringValue($data->bitbucketEmail),
             bitbucketLogin: SdkClient::stringValue($data->bitbucketLogin),
@@ -119,8 +123,12 @@ class UserEventPayloadVariant106 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "bitbucketAccountId") || $data->bitbucketAccountId === null) { throw new SdkValidationError("bitbucketAccountId", 'required', "Required property 'bitbucketAccountId' is missing or null"); }
-        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) { throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null"); }
+        if (!property_exists($data, "bitbucketAccountId") || $data->bitbucketAccountId === null) {
+            throw new SdkValidationError("bitbucketAccountId", 'required', "Required property 'bitbucketAccountId' is missing or null");
+        }
+        if (!property_exists($data, "bitbucketLogin") || $data->bitbucketLogin === null) {
+            throw new SdkValidationError("bitbucketLogin", 'required', "Required property 'bitbucketLogin' is missing or null");
+        }
         return new self(
             bitbucketAccountId: SdkClient::stringValue($data->bitbucketAccountId),
             bitbucketLogin: SdkClient::stringValue($data->bitbucketLogin),
@@ -136,11 +144,26 @@ final readonly class UserEventPayloadVariant107SubjectTypeEnum implements SdkOpe
     public const APP = "app";
     public const USER = "user";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class UserEventPayloadVariant107 implements UserEventPayload, \JsonSerializable

@@ -50,9 +50,15 @@ class GetDrainsResponseDrainsItemProjectAccessVariant1 implements GetDrainsRespo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "access") || $data->access === null) { throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null"); }
-        if (!property_exists($data, "projectIds") || $data->projectIds === null) { throw new SdkValidationError("projectIds", 'required', "Required property 'projectIds' is missing or null"); }
-        if (!property_exists($data, "managedBy") || $data->managedBy === null) { throw new SdkValidationError("managedBy", 'required', "Required property 'managedBy' is missing or null"); }
+        if (!property_exists($data, "access") || $data->access === null) {
+            throw new SdkValidationError("access", 'required', "Required property 'access' is missing or null");
+        }
+        if (!property_exists($data, "projectIds") || $data->projectIds === null) {
+            throw new SdkValidationError("projectIds", 'required', "Required property 'projectIds' is missing or null");
+        }
+        if (!property_exists($data, "managedBy") || $data->managedBy === null) {
+            throw new SdkValidationError("managedBy", 'required', "Required property 'managedBy' is missing or null");
+        }
         return new self(
             access: SdkClient::hydrateEnum($data->access, GetDrainsResponseDrainsItemProjectAccessVariant1AccessEnum::class),
             projectIds: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->projectIds))),
@@ -68,11 +74,26 @@ final readonly class GetDrainsResponseDrainsItemSourceVariant0DefaultForEnum imp
 {
     public const EVE_TRACING = "eve-tracing";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum GetDrainsResponseDrainsItemSourceVariant0KindEnum: string implements SdkWireEnum
@@ -123,7 +144,9 @@ class GetDrainsResponseDrainsItemSourceVariant0 implements GetDrainsResponseDrai
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, GetDrainsResponseDrainsItemSourceVariant0KindEnum::class),
             defaultFor: (property_exists($data, "defaultFor") && $data->defaultFor !== null ? SdkClient::hydrateStringEnumOrString($data->defaultFor, GetDrainsResponseDrainsItemSourceVariant0DefaultForEnum::class) : SdkNotGiven::Value),
@@ -195,9 +218,15 @@ class GetDrainsResponseDrainsItemSourceVariant1 implements GetDrainsResponseDrai
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) { throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "integrationConfigurationId") || $data->integrationConfigurationId === null) {
+            throw new SdkValidationError("integrationConfigurationId", 'required', "Required property 'integrationConfigurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             integrationConfigurationId: SdkClient::stringValue($data->integrationConfigurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -215,11 +244,26 @@ final readonly class GetDrainsResponseDrainsItemSource2Variant0DefaultForEnum im
 {
     public const EVE_TRACING = "eve-tracing";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 enum GetDrainsResponseDrainsItemSource2Variant0KindEnum: string implements SdkWireEnum
@@ -270,7 +314,9 @@ class GetDrainsResponseDrainsItemSource2Variant0 implements GetDrainsResponseDra
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "kind") || $data->kind === null) { throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null"); }
+        if (!property_exists($data, "kind") || $data->kind === null) {
+            throw new SdkValidationError("kind", 'required', "Required property 'kind' is missing or null");
+        }
         return new self(
             kind: SdkClient::hydrateEnum($data->kind, GetDrainsResponseDrainsItemSource2Variant0KindEnum::class),
             defaultFor: (property_exists($data, "defaultFor") && $data->defaultFor !== null ? SdkClient::hydrateStringEnumOrString($data->defaultFor, GetDrainsResponseDrainsItemSource2Variant0DefaultForEnum::class) : SdkNotGiven::Value),

@@ -38,7 +38,9 @@ class UpdateRollingReleaseConfigResponseVariant0 implements UpdateRollingRelease
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rollingRelease")) { throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'"); }
+        if (!property_exists($data, "rollingRelease")) {
+            throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'");
+        }
         return new self(
             rollingRelease: ($data->rollingRelease === null ? null : $data->rollingRelease),
         );
@@ -119,7 +121,9 @@ class UpdateRollingReleaseConfigResponseVariant1RollingReleaseStagesItem impleme
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             targetPercentage: SdkClient::floatValue($data->targetPercentage),
             duration: (property_exists($data, "duration") && $data->duration !== null ? SdkClient::floatValue($data->duration) : SdkNotGiven::Value),
@@ -199,7 +203,9 @@ class UpdateRollingReleaseConfigResponseVariant1 implements UpdateRollingRelease
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rollingRelease")) { throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'"); }
+        if (!property_exists($data, "rollingRelease")) {
+            throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'");
+        }
         return new self(
             rollingRelease: ($data->rollingRelease === null ? null : SdkClient::hydrateClass($data->rollingRelease, UpdateRollingReleaseConfigResponseVariant1RollingRelease::class)),
         );

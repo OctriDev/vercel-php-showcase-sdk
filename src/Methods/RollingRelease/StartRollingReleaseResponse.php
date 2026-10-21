@@ -45,7 +45,9 @@ class StartRollingReleaseResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "rollingRelease")) { throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'"); }
+        if (!property_exists($data, "rollingRelease")) {
+            throw new SdkValidationError("rollingRelease", 'required', "Missing required property 'rollingRelease'");
+        }
         return new self(
             rollingRelease: ($data->rollingRelease === null ? null : SdkClient::hydrateClass($data->rollingRelease, StartRollingReleaseResponseRollingRelease::class)),
         );
@@ -142,11 +144,21 @@ class CompleteRollingReleaseResponseRollingReleaseActiveStage implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "duration")) { throw new SdkValidationError("duration", 'required', "Missing required property 'duration'"); }
-        if (!property_exists($data, "index") || $data->index === null) { throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null"); }
-        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) { throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null"); }
-        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) { throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null"); }
-        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) { throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null"); }
+        if (!property_exists($data, "duration")) {
+            throw new SdkValidationError("duration", 'required', "Missing required property 'duration'");
+        }
+        if (!property_exists($data, "index") || $data->index === null) {
+            throw new SdkValidationError("index", 'required', "Required property 'index' is missing or null");
+        }
+        if (!property_exists($data, "isFinalStage") || $data->isFinalStage === null) {
+            throw new SdkValidationError("isFinalStage", 'required', "Required property 'isFinalStage' is missing or null");
+        }
+        if (!property_exists($data, "requireApproval") || $data->requireApproval === null) {
+            throw new SdkValidationError("requireApproval", 'required', "Required property 'requireApproval' is missing or null");
+        }
+        if (!property_exists($data, "targetPercentage") || $data->targetPercentage === null) {
+            throw new SdkValidationError("targetPercentage", 'required', "Required property 'targetPercentage' is missing or null");
+        }
         return new self(
             duration: ($data->duration === null ? null : SdkClient::floatValue($data->duration)),
             index: SdkClient::floatValue($data->index),
@@ -166,11 +178,26 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseAdvancementType
     public const AUTOMATIC = "automatic";
     public const MANUAL_APPROVAL = "manual-approval";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -186,11 +213,26 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseCanaryDeploymen
     public const QUEUED = "QUEUED";
     public const READY = "READY";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -209,11 +251,26 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseCanaryDeploymen
     public const REDEPLOY = "redeploy";
     public const V0_WEB = "v0-web";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -224,9 +281,24 @@ final readonly class CompleteRollingReleaseResponseRollingReleaseCanaryDeploymen
     public const PRODUCTION = "production";
     public const STAGING = "staging";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

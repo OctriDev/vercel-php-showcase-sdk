@@ -54,9 +54,15 @@ class GetRoutesResponseVariant1 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "diffCount") || $data->diffCount === null) { throw new SdkValidationError("diffCount", 'required', "Required property 'diffCount' is missing or null"); }
-        if (!property_exists($data, "routes") || $data->routes === null) { throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "diffCount") || $data->diffCount === null) {
+            throw new SdkValidationError("diffCount", 'required', "Required property 'diffCount' is missing or null");
+        }
+        if (!property_exists($data, "routes") || $data->routes === null) {
+            throw new SdkValidationError("routes", 'required', "Required property 'routes' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             diffCount: SdkClient::floatValue($data->diffCount),
             routes: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, GetRoutesResponseVariant1RoutesItem::class), SdkClient::arrayValue($data->routes))),
@@ -72,11 +78,26 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteDestinationServiceT
 {
     public const SERVICE = "service";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetRoutesResponseVariant2RoutesItemRouteDestinationService implements \JsonSerializable
@@ -134,7 +155,9 @@ class GetRoutesResponseVariant2RoutesItemRouteDestinationService implements \Jso
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "service") || $data->service === null) { throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null"); }
+        if (!property_exists($data, "service") || $data->service === null) {
+            throw new SdkValidationError("service", 'required', "Required property 'service' is missing or null");
+        }
         return new self(
             service: SdkClient::stringValue($data->service),
             path: (property_exists($data, "path") && $data->path !== null ? SdkClient::stringValue($data->path) : SdkNotGiven::Value),
@@ -147,11 +170,26 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteHasItemHostTypeEnum
 {
     public const HOST = "host";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class GetRoutesResponseVariant2RoutesItemRouteHasItemHostValueVariant1 implements \JsonSerializable
@@ -320,8 +358,12 @@ class GetRoutesResponseVariant2RoutesItemRouteHasItemHost implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "value") || $data->value === null) { throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "value") || $data->value === null) {
+            throw new SdkValidationError("value", 'required', "Required property 'value' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, GetRoutesResponseVariant2RoutesItemRouteHasItemHostTypeEnum::class),
             value: (is_object($data->value) ? SdkClient::hydrateClass($data->value, GetRoutesResponseVariant2RoutesItemRouteHasItemHostValueVariant1::class) : (is_string($data->value) ? SdkClient::stringValue($data->value) : SdkClient::hydrateClass($data->value, GetRoutesResponseVariant2RoutesItemRouteHasItemHostValueVariant1::class))),
@@ -335,9 +377,24 @@ final readonly class GetRoutesResponseVariant2RoutesItemRouteHasItemVariant1Type
     public const HEADER = "header";
     public const QUERY = "query";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

@@ -64,8 +64,12 @@ class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0 implements TeamDeplo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "org") || $data->org === null) { throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "org") || $data->org === null) {
+            throw new SdkValidationError("org", 'required', "Required property 'org' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             org: SdkClient::stringValue($data->org),
             provider: SdkClient::hydrateStringEnumOrString($data->provider, TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum::class),
@@ -81,11 +85,26 @@ final readonly class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1Provid
 {
     public const GITLAB = "gitlab";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1 implements TeamDeploymentPolicyGitSourcesItemSourcesItem, \JsonSerializable
@@ -145,8 +164,12 @@ class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1 implements TeamDeplo
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "namespace") || $data->namespace === null) { throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null"); }
-        if (!property_exists($data, "provider") || $data->provider === null) { throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null"); }
+        if (!property_exists($data, "namespace") || $data->namespace === null) {
+            throw new SdkValidationError("namespace", 'required', "Required property 'namespace' is missing or null");
+        }
+        if (!property_exists($data, "provider") || $data->provider === null) {
+            throw new SdkValidationError("provider", 'required', "Required property 'provider' is missing or null");
+        }
         return new self(
             namespace_: SdkClient::stringValue($data->namespace),
             provider: SdkClient::hydrateStringEnumOrString($data->provider, TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum::class),

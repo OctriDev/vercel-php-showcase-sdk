@@ -309,19 +309,45 @@ class Session implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "cwd") || $data->cwd === null) { throw new SdkValidationError("cwd", 'required', "Required property 'cwd' is missing or null"); }
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "memory") || $data->memory === null) { throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null"); }
-        if (!property_exists($data, "projectId") || $data->projectId === null) { throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null"); }
-        if (!property_exists($data, "region") || $data->region === null) { throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null"); }
-        if (!property_exists($data, "requestedAt") || $data->requestedAt === null) { throw new SdkValidationError("requestedAt", 'required', "Required property 'requestedAt' is missing or null"); }
-        if (!property_exists($data, "runtime") || $data->runtime === null) { throw new SdkValidationError("runtime", 'required', "Required property 'runtime' is missing or null"); }
-        if (!property_exists($data, "sourceSandboxName") || $data->sourceSandboxName === null) { throw new SdkValidationError("sourceSandboxName", 'required', "Required property 'sourceSandboxName' is missing or null"); }
-        if (!property_exists($data, "status") || $data->status === null) { throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null"); }
-        if (!property_exists($data, "timeout") || $data->timeout === null) { throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null"); }
-        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) { throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null"); }
-        if (!property_exists($data, "vcpus") || $data->vcpus === null) { throw new SdkValidationError("vcpus", 'required', "Required property 'vcpus' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "cwd") || $data->cwd === null) {
+            throw new SdkValidationError("cwd", 'required', "Required property 'cwd' is missing or null");
+        }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "memory") || $data->memory === null) {
+            throw new SdkValidationError("memory", 'required', "Required property 'memory' is missing or null");
+        }
+        if (!property_exists($data, "projectId") || $data->projectId === null) {
+            throw new SdkValidationError("projectId", 'required', "Required property 'projectId' is missing or null");
+        }
+        if (!property_exists($data, "region") || $data->region === null) {
+            throw new SdkValidationError("region", 'required', "Required property 'region' is missing or null");
+        }
+        if (!property_exists($data, "requestedAt") || $data->requestedAt === null) {
+            throw new SdkValidationError("requestedAt", 'required', "Required property 'requestedAt' is missing or null");
+        }
+        if (!property_exists($data, "runtime") || $data->runtime === null) {
+            throw new SdkValidationError("runtime", 'required', "Required property 'runtime' is missing or null");
+        }
+        if (!property_exists($data, "sourceSandboxName") || $data->sourceSandboxName === null) {
+            throw new SdkValidationError("sourceSandboxName", 'required', "Required property 'sourceSandboxName' is missing or null");
+        }
+        if (!property_exists($data, "status") || $data->status === null) {
+            throw new SdkValidationError("status", 'required', "Required property 'status' is missing or null");
+        }
+        if (!property_exists($data, "timeout") || $data->timeout === null) {
+            throw new SdkValidationError("timeout", 'required', "Required property 'timeout' is missing or null");
+        }
+        if (!property_exists($data, "updatedAt") || $data->updatedAt === null) {
+            throw new SdkValidationError("updatedAt", 'required', "Required property 'updatedAt' is missing or null");
+        }
+        if (!property_exists($data, "vcpus") || $data->vcpus === null) {
+            throw new SdkValidationError("vcpus", 'required', "Required property 'vcpus' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             cwd: SdkClient::stringValue($data->cwd),

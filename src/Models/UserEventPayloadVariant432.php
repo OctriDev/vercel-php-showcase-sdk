@@ -52,8 +52,12 @@ class UserEventPayloadVariant432 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
-        if (!property_exists($data, "ips") || $data->ips === null) { throw new SdkValidationError("ips", 'required', "Required property 'ips' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
+        if (!property_exists($data, "ips") || $data->ips === null) {
+            throw new SdkValidationError("ips", 'required', "Required property 'ips' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             ips: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->ips))),
@@ -96,7 +100,9 @@ class UserEventPayloadVariant433 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "tokenTypes") || $data->tokenTypes === null) { throw new SdkValidationError("tokenTypes", 'required', "Required property 'tokenTypes' is missing or null"); }
+        if (!property_exists($data, "tokenTypes") || $data->tokenTypes === null) {
+            throw new SdkValidationError("tokenTypes", 'required', "Required property 'tokenTypes' is missing or null");
+        }
         return new self(
             tokenTypes: array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->tokenTypes))),
         );
@@ -168,10 +174,18 @@ class UserEventPayloadVariant434 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "exportId") || $data->exportId === null) { throw new SdkValidationError("exportId", 'required', "Required property 'exportId' is missing or null"); }
-        if (!property_exists($data, "format") || $data->format === null) { throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null"); }
-        if (!property_exists($data, "from") || $data->from === null) { throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null"); }
-        if (!property_exists($data, "to") || $data->to === null) { throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null"); }
+        if (!property_exists($data, "exportId") || $data->exportId === null) {
+            throw new SdkValidationError("exportId", 'required', "Required property 'exportId' is missing or null");
+        }
+        if (!property_exists($data, "format") || $data->format === null) {
+            throw new SdkValidationError("format", 'required', "Required property 'format' is missing or null");
+        }
+        if (!property_exists($data, "from") || $data->from === null) {
+            throw new SdkValidationError("from", 'required', "Required property 'from' is missing or null");
+        }
+        if (!property_exists($data, "to") || $data->to === null) {
+            throw new SdkValidationError("to", 'required', "Required property 'to' is missing or null");
+        }
         return new self(
             exportId: SdkClient::stringValue($data->exportId),
             format: SdkClient::stringValue($data->format),
@@ -216,7 +230,9 @@ class UserEventPayloadVariant435 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "fileId") || $data->fileId === null) { throw new SdkValidationError("fileId", 'required', "Required property 'fileId' is missing or null"); }
+        if (!property_exists($data, "fileId") || $data->fileId === null) {
+            throw new SdkValidationError("fileId", 'required', "Required property 'fileId' is missing or null");
+        }
         return new self(
             fileId: SdkClient::stringValue($data->fileId),
         );
@@ -273,9 +289,24 @@ final readonly class UserEventPayloadVariant437ActorTypeEnum implements SdkOpenE
 {
     public const ADMIN = "admin";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

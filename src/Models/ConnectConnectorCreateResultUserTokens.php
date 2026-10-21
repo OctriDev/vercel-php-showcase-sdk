@@ -113,9 +113,15 @@ class ConnectConnectorCreateResultUserTokens implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) { throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null"); }
-        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) { throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null"); }
-        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) { throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null"); }
+        if (!property_exists($data, "crossInstallation") || $data->crossInstallation === null) {
+            throw new SdkValidationError("crossInstallation", 'required', "Required property 'crossInstallation' is missing or null");
+        }
+        if (!property_exists($data, "isStaticCredential") || $data->isStaticCredential === null) {
+            throw new SdkValidationError("isStaticCredential", 'required', "Required property 'isStaticCredential' is missing or null");
+        }
+        if (!property_exists($data, "supportsRefinement") || $data->supportsRefinement === null) {
+            throw new SdkValidationError("supportsRefinement", 'required', "Required property 'supportsRefinement' is missing or null");
+        }
         return new self(
             crossInstallation: SdkClient::boolValue($data->crossInstallation),
             isStaticCredential: SdkClient::boolValue($data->isStaticCredential),

@@ -252,10 +252,18 @@ class UserEventPayloadVariant492 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "actorTokenId") || $data->actorTokenId === null) { throw new SdkValidationError("actorTokenId", 'required', "Required property 'actorTokenId' is missing or null"); }
-        if (!property_exists($data, "tokenId") || $data->tokenId === null) { throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null"); }
-        if (!property_exists($data, "tokenName") || $data->tokenName === null) { throw new SdkValidationError("tokenName", 'required', "Required property 'tokenName' is missing or null"); }
-        if (!property_exists($data, "tokenType") || $data->tokenType === null) { throw new SdkValidationError("tokenType", 'required', "Required property 'tokenType' is missing or null"); }
+        if (!property_exists($data, "actorTokenId") || $data->actorTokenId === null) {
+            throw new SdkValidationError("actorTokenId", 'required', "Required property 'actorTokenId' is missing or null");
+        }
+        if (!property_exists($data, "tokenId") || $data->tokenId === null) {
+            throw new SdkValidationError("tokenId", 'required', "Required property 'tokenId' is missing or null");
+        }
+        if (!property_exists($data, "tokenName") || $data->tokenName === null) {
+            throw new SdkValidationError("tokenName", 'required', "Required property 'tokenName' is missing or null");
+        }
+        if (!property_exists($data, "tokenType") || $data->tokenType === null) {
+            throw new SdkValidationError("tokenType", 'required', "Required property 'tokenType' is missing or null");
+        }
         return new self(
             actorTokenId: SdkClient::stringValue($data->actorTokenId),
             tokenId: SdkClient::stringValue($data->tokenId),
@@ -318,7 +326,9 @@ class UserEventPayloadVariant493GeolocationCityNames implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "en") || $data->en === null) { throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null"); }
+        if (!property_exists($data, "en") || $data->en === null) {
+            throw new SdkValidationError("en", 'required', "Required property 'en' is missing or null");
+        }
         return new self(
             en: SdkClient::stringValue($data->en),
         );

@@ -57,7 +57,9 @@ class SandboxInjectionRule implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "domain") || $data->domain === null) { throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null"); }
+        if (!property_exists($data, "domain") || $data->domain === null) {
+            throw new SdkValidationError("domain", 'required', "Required property 'domain' is missing or null");
+        }
         return new self(
             domain: SdkClient::stringValue($data->domain),
             headerNames: (property_exists($data, "headerNames") && $data->headerNames !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->headerNames))) : SdkNotGiven::Value),
@@ -74,11 +76,26 @@ final readonly class SandboxNetworkPolicyModeEnum implements SdkOpenEnum
     public const CUSTOM = "custom";
     public const DENY_ALL = "deny-all";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -167,7 +184,9 @@ class SandboxNetworkPolicy implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "mode") || $data->mode === null) { throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null"); }
+        if (!property_exists($data, "mode") || $data->mode === null) {
+            throw new SdkValidationError("mode", 'required', "Required property 'mode' is missing or null");
+        }
         return new self(
             mode: SdkClient::hydrateStringEnumOrString($data->mode, SandboxNetworkPolicyModeEnum::class),
             allowedCidrs: (property_exists($data, "allowedCIDRs") && $data->allowedCIDRs !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->allowedCIDRs))) : SdkNotGiven::Value),
@@ -248,9 +267,15 @@ class SandboxPublicRoute implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "port") || $data->port === null) { throw new SdkValidationError("port", 'required', "Required property 'port' is missing or null"); }
-        if (!property_exists($data, "subdomain") || $data->subdomain === null) { throw new SdkValidationError("subdomain", 'required', "Required property 'subdomain' is missing or null"); }
-        if (!property_exists($data, "url") || $data->url === null) { throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null"); }
+        if (!property_exists($data, "port") || $data->port === null) {
+            throw new SdkValidationError("port", 'required', "Required property 'port' is missing or null");
+        }
+        if (!property_exists($data, "subdomain") || $data->subdomain === null) {
+            throw new SdkValidationError("subdomain", 'required', "Required property 'subdomain' is missing or null");
+        }
+        if (!property_exists($data, "url") || $data->url === null) {
+            throw new SdkValidationError("url", 'required', "Required property 'url' is missing or null");
+        }
         return new self(
             port: SdkClient::floatValue($data->port),
             subdomain: SdkClient::stringValue($data->subdomain),
@@ -268,11 +293,26 @@ final readonly class SessionArchitectureEnum implements SdkOpenEnum
     public const AMD64 = "amd64";
     public const ARM64 = "arm64";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -323,8 +363,12 @@ class SessionNetworkTransfer implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "egress") || $data->egress === null) { throw new SdkValidationError("egress", 'required', "Required property 'egress' is missing or null"); }
-        if (!property_exists($data, "ingress") || $data->ingress === null) { throw new SdkValidationError("ingress", 'required', "Required property 'ingress' is missing or null"); }
+        if (!property_exists($data, "egress") || $data->egress === null) {
+            throw new SdkValidationError("egress", 'required', "Required property 'egress' is missing or null");
+        }
+        if (!property_exists($data, "ingress") || $data->ingress === null) {
+            throw new SdkValidationError("ingress", 'required', "Required property 'ingress' is missing or null");
+        }
         return new self(
             egress: SdkClient::floatValue($data->egress),
             ingress: SdkClient::floatValue($data->ingress),
@@ -345,9 +389,24 @@ final readonly class SessionStatusEnum implements SdkOpenEnum
     public const STOPPED = "stopped";
     public const STOPPING = "stopping";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }

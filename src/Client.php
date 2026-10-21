@@ -35,7 +35,8 @@ class SdkClient
     public const TRANSPORT_ENGINE = 'curl';
 
     private const IDEMPOTENT_METHODS = ['GET', 'HEAD', 'PUT', 'DELETE', 'OPTIONS'];
-    private const ALWAYS_RETRYABLE = [429, 503];    private const REDIRECT_STATUSES = [301, 302, 303, 307, 308];
+    private const ALWAYS_RETRYABLE = [429, 503];
+    private const REDIRECT_STATUSES = [301, 302, 303, 307, 308];
     private const MAX_REDIRECTS = 5;
     /** Headers another origin never sees when a redirect is followed. */
     private const CREDENTIAL_HEADERS = ['authorization', 'proxy-authorization', 'cookie'];

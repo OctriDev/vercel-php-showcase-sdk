@@ -57,7 +57,9 @@ class UserEventPayloadVariant46Project implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: (property_exists($data, "name") && $data->name !== null ? SdkClient::stringValue($data->name) : SdkNotGiven::Value),
@@ -134,8 +136,12 @@ class UserEventPayloadVariant46 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessGroup") || $data->accessGroup === null) { throw new SdkValidationError("accessGroup", 'required', "Required property 'accessGroup' is missing or null"); }
-        if (!property_exists($data, "project") || $data->project === null) { throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null"); }
+        if (!property_exists($data, "accessGroup") || $data->accessGroup === null) {
+            throw new SdkValidationError("accessGroup", 'required', "Required property 'accessGroup' is missing or null");
+        }
+        if (!property_exists($data, "project") || $data->project === null) {
+            throw new SdkValidationError("project", 'required', "Required property 'project' is missing or null");
+        }
         return new self(
             accessGroup: SdkClient::hydrateClass($data->accessGroup, UserEventPayloadVariant46AccessGroup::class),
             project: SdkClient::hydrateClass($data->project, UserEventPayloadVariant46Project::class),
@@ -193,8 +199,12 @@ class UserEventPayloadVariant47AccessGroup implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             name: SdkClient::stringValue($data->name),
@@ -333,7 +343,9 @@ class UserEventPayloadVariant47 implements UserEventPayload, \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "accessGroup") || $data->accessGroup === null) { throw new SdkValidationError("accessGroup", 'required', "Required property 'accessGroup' is missing or null"); }
+        if (!property_exists($data, "accessGroup") || $data->accessGroup === null) {
+            throw new SdkValidationError("accessGroup", 'required', "Required property 'accessGroup' is missing or null");
+        }
         return new self(
             accessGroup: SdkClient::hydrateClass($data->accessGroup, UserEventPayloadVariant47AccessGroup::class),
             entitlementsAdded: (property_exists($data, "entitlementsAdded") && $data->entitlementsAdded !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->entitlementsAdded))) : SdkNotGiven::Value),

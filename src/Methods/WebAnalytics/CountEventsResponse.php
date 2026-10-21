@@ -54,9 +54,15 @@ class CountEventsResponse implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "data") || $data->data === null) { throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null"); }
-        if (!property_exists($data, "query") || $data->query === null) { throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null"); }
-        if (!property_exists($data, "version") || $data->version === null) { throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null"); }
+        if (!property_exists($data, "data") || $data->data === null) {
+            throw new SdkValidationError("data", 'required', "Required property 'data' is missing or null");
+        }
+        if (!property_exists($data, "query") || $data->query === null) {
+            throw new SdkValidationError("query", 'required', "Required property 'query' is missing or null");
+        }
+        if (!property_exists($data, "version") || $data->version === null) {
+            throw new SdkValidationError("version", 'required', "Required property 'version' is missing or null");
+        }
         return new self(
             data: SdkClient::hydrateUnionAs($data->data, CountEventsResponseData::class, [CountEventsResponseDataVariant0::class, CountEventsResponseDataVariant1::class], null, []),
             query: SdkClient::hydrateClass($data->query, CountEventsResponseQuery::class),

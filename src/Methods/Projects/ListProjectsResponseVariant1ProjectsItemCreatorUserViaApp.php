@@ -47,8 +47,12 @@ class ListProjectsResponseVariant1ProjectsItemCreatorUserViaApp implements \Json
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "app") || $data->app === null) { throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "app") || $data->app === null) {
+            throw new SdkValidationError("app", 'required', "Required property 'app' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             app: SdkClient::hydrateClass($data->app, ListProjectsResponseVariant1ProjectsItemCreatorUserViaAppApp::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant1ProjectsItemCreatorUserViaAppTypeEnum::class),
@@ -93,8 +97,12 @@ class ListProjectsResponseVariant1ProjectsItemCreatorUserViaIntegrationIntegrati
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "configurationId") || $data->configurationId === null) { throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null"); }
-        if (!property_exists($data, "integrationId") || $data->integrationId === null) { throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null"); }
+        if (!property_exists($data, "configurationId") || $data->configurationId === null) {
+            throw new SdkValidationError("configurationId", 'required', "Required property 'configurationId' is missing or null");
+        }
+        if (!property_exists($data, "integrationId") || $data->integrationId === null) {
+            throw new SdkValidationError("integrationId", 'required', "Required property 'integrationId' is missing or null");
+        }
         return new self(
             configurationId: SdkClient::stringValue($data->configurationId),
             integrationId: SdkClient::stringValue($data->integrationId),
@@ -147,8 +155,12 @@ class ListProjectsResponseVariant1ProjectsItemCreatorUserViaIntegration implemen
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "integration") || $data->integration === null) { throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null"); }
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "integration") || $data->integration === null) {
+            throw new SdkValidationError("integration", 'required', "Required property 'integration' is missing or null");
+        }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             integration: SdkClient::hydrateClass($data->integration, ListProjectsResponseVariant1ProjectsItemCreatorUserViaIntegrationIntegration::class),
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant1ProjectsItemCreatorUserViaIntegrationTypeEnum::class),
@@ -187,7 +199,9 @@ class ListProjectsResponseVariant1ProjectsItemCreatorUserUser implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
         );
@@ -237,9 +251,15 @@ class ListProjectsResponseVariant1ProjectsItemCreatorUser implements \JsonSerial
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
-        if (!property_exists($data, "via")) { throw new SdkValidationError("via", 'required', "Missing required property 'via'"); }
-        if (!property_exists($data, "user") || $data->user === null) { throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
+        if (!property_exists($data, "via")) {
+            throw new SdkValidationError("via", 'required', "Missing required property 'via'");
+        }
+        if (!property_exists($data, "user") || $data->user === null) {
+            throw new SdkValidationError("user", 'required', "Required property 'user' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateEnum($data->type, ListProjectsResponseVariant1ProjectsItemCreatorUserTypeEnum::class),
             via: ($data->via === null ? null : SdkClient::hydrateUnion($data->via, [ListProjectsResponseVariant1ProjectsItemCreatorUserViaApp::class, ListProjectsResponseVariant1ProjectsItemCreatorUserViaIntegration::class], null, [])),
@@ -295,7 +315,9 @@ class ListProjectsResponseVariant1ProjectsItemCreatorAppApp implements \JsonSeri
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "id") || $data->id === null) { throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null"); }
+        if (!property_exists($data, "id") || $data->id === null) {
+            throw new SdkValidationError("id", 'required', "Required property 'id' is missing or null");
+        }
         return new self(
             id: SdkClient::stringValue($data->id),
             clientId: (property_exists($data, "clientId") && $data->clientId !== null ? SdkClient::stringValue($data->clientId) : SdkNotGiven::Value),

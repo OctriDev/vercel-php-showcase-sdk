@@ -44,8 +44,12 @@ class ListProjectsResponseVariant2 implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "pagination") || $data->pagination === null) { throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null"); }
-        if (!property_exists($data, "projects") || $data->projects === null) { throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null"); }
+        if (!property_exists($data, "pagination") || $data->pagination === null) {
+            throw new SdkValidationError("pagination", 'required', "Required property 'pagination' is missing or null");
+        }
+        if (!property_exists($data, "projects") || $data->projects === null) {
+            throw new SdkValidationError("projects", 'required', "Required property 'projects' is missing or null");
+        }
         return new self(
             pagination: SdkClient::hydrateUnionAs($data->pagination, ListProjectsResponseVariant2PaginationVariant0::class, [Pagination::class], null, []),
             projects: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, ListProjectsResponseVariant2ProjectsItem::class), SdkClient::arrayValue($data->projects))),
@@ -90,8 +94,12 @@ class GetProjectTraceResponseTraceResourcesItem implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attributes") || $data->attributes === null) { throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "attributes") || $data->attributes === null) {
+            throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             attributes: SdkClient::mapValues(SdkClient::stringMapValue($data->attributes), static fn($item) => SdkClient::stringValue($item)),
             name: SdkClient::stringValue($data->name),
@@ -142,9 +150,15 @@ class GetProjectTraceResponseTraceSpansItemEventsItem implements \JsonSerializab
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "attributes") || $data->attributes === null) { throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null"); }
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
-        if (!property_exists($data, "timestamp") || $data->timestamp === null) { throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null"); }
+        if (!property_exists($data, "attributes") || $data->attributes === null) {
+            throw new SdkValidationError("attributes", 'required', "Required property 'attributes' is missing or null");
+        }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
+        if (!property_exists($data, "timestamp") || $data->timestamp === null) {
+            throw new SdkValidationError("timestamp", 'required', "Required property 'timestamp' is missing or null");
+        }
         return new self(
             attributes: SdkClient::stringMapValue($data->attributes),
             name: SdkClient::stringValue($data->name),
@@ -192,7 +206,9 @@ class GetProjectTraceResponseTraceSpansItemLibrary implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "name") || $data->name === null) { throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null"); }
+        if (!property_exists($data, "name") || $data->name === null) {
+            throw new SdkValidationError("name", 'required', "Required property 'name' is missing or null");
+        }
         return new self(
             name: SdkClient::stringValue($data->name),
             version: (property_exists($data, "version") && $data->version !== null ? SdkClient::stringValue($data->version) : SdkNotGiven::Value),
@@ -239,7 +255,9 @@ class GetProjectTraceResponseTraceSpansItemStatus implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "code") || $data->code === null) { throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null"); }
+        if (!property_exists($data, "code") || $data->code === null) {
+            throw new SdkValidationError("code", 'required', "Required property 'code' is missing or null");
+        }
         return new self(
             code: SdkClient::floatValue($data->code),
             message: (property_exists($data, "message") && $data->message !== null ? SdkClient::stringValue($data->message) : SdkNotGiven::Value),

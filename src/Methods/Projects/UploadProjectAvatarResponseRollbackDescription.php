@@ -75,10 +75,18 @@ class UploadProjectAvatarResponseRollbackDescription implements \JsonSerializabl
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "createdAt") || $data->createdAt === null) { throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null"); }
-        if (!property_exists($data, "description") || $data->description === null) { throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null"); }
-        if (!property_exists($data, "userId") || $data->userId === null) { throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null"); }
-        if (!property_exists($data, "username") || $data->username === null) { throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null"); }
+        if (!property_exists($data, "createdAt") || $data->createdAt === null) {
+            throw new SdkValidationError("createdAt", 'required', "Required property 'createdAt' is missing or null");
+        }
+        if (!property_exists($data, "description") || $data->description === null) {
+            throw new SdkValidationError("description", 'required', "Required property 'description' is missing or null");
+        }
+        if (!property_exists($data, "userId") || $data->userId === null) {
+            throw new SdkValidationError("userId", 'required', "Required property 'userId' is missing or null");
+        }
+        if (!property_exists($data, "username") || $data->username === null) {
+            throw new SdkValidationError("username", 'required', "Required property 'username' is missing or null");
+        }
         return new self(
             createdAt: SdkClient::floatValue($data->createdAt),
             description: SdkClient::stringValue($data->description),
@@ -96,11 +104,26 @@ final readonly class UploadProjectAvatarResponseRollingReleaseGateActionEnum imp
     public const PAUSE = "pause";
     public const ROLLBACK = "rollback";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -110,11 +133,26 @@ final readonly class UploadProjectAvatarResponseRollingReleaseGateChecksItemType
 {
     public const ERROR_RATE_5XX = "error-rate-5xx";
     private function __construct(public string $value) {}
-    public static function from(string|int $value): static { return new self((string) $value); }
-    public static function tryFrom(string|int|null $value): ?static { return $value === null ? null : self::from($value); }
-    public function getValue(): string { return $this->value; }
-    public function jsonSerialize(): string { return $this->value; }
-    public function __toString(): string { return (string) $this->value; }
+    public static function from(string|int $value): static
+    {
+        return new self((string) $value);
+    }
+    public static function tryFrom(string|int|null $value): ?static
+    {
+        return $value === null ? null : self::from($value);
+    }
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function jsonSerialize(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->value;
+    }
 }
 
 /**
@@ -203,7 +241,9 @@ class UploadProjectAvatarResponseRollingReleaseGateChecksItem implements \JsonSe
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "type") || $data->type === null) { throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null"); }
+        if (!property_exists($data, "type") || $data->type === null) {
+            throw new SdkValidationError("type", 'required', "Required property 'type' is missing or null");
+        }
         return new self(
             type: SdkClient::hydrateStringEnumOrString($data->type, UploadProjectAvatarResponseRollingReleaseGateChecksItemTypeEnum::class),
             excludePaths: (property_exists($data, "excludePaths") && $data->excludePaths !== null ? array_values(array_map(static fn($item) => SdkClient::stringValue($item), SdkClient::arrayValue($data->excludePaths))) : SdkNotGiven::Value),
@@ -306,10 +346,18 @@ class UploadProjectAvatarResponseRollingReleaseGate implements \JsonSerializable
 
     public static function fromObject(object $data): self
     {
-        if (!property_exists($data, "action") || $data->action === null) { throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null"); }
-        if (!property_exists($data, "checks") || $data->checks === null) { throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null"); }
-        if (!property_exists($data, "dryRun") || $data->dryRun === null) { throw new SdkValidationError("dryRun", 'required', "Required property 'dryRun' is missing or null"); }
-        if (!property_exists($data, "enabled") || $data->enabled === null) { throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null"); }
+        if (!property_exists($data, "action") || $data->action === null) {
+            throw new SdkValidationError("action", 'required', "Required property 'action' is missing or null");
+        }
+        if (!property_exists($data, "checks") || $data->checks === null) {
+            throw new SdkValidationError("checks", 'required', "Required property 'checks' is missing or null");
+        }
+        if (!property_exists($data, "dryRun") || $data->dryRun === null) {
+            throw new SdkValidationError("dryRun", 'required', "Required property 'dryRun' is missing or null");
+        }
+        if (!property_exists($data, "enabled") || $data->enabled === null) {
+            throw new SdkValidationError("enabled", 'required', "Required property 'enabled' is missing or null");
+        }
         return new self(
             action: SdkClient::hydrateStringEnumOrString($data->action, UploadProjectAvatarResponseRollingReleaseGateActionEnum::class),
             checks: array_values(array_map(static fn($item) => SdkClient::hydrateClass($item, UploadProjectAvatarResponseRollingReleaseGateChecksItem::class), SdkClient::arrayValue($data->checks))),
