@@ -9,6 +9,9 @@ namespace octridev_vercel;
 
 class FeatureFlags
 {
-    use FeatureFlagsMethodsPart1;
-    use FeatureFlagsMethodsPart2;
+    use FeatureFlagsMethods;
+    use FeatureFlagsVersionsMethods;
+    use FeatureFlagsSettingsMethods;
+    use FeatureFlagsSegmentsMethods;
+    use FeatureFlagsSdkKeysMethods;
 }

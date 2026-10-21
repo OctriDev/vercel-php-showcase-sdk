@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class WebAnalytics
 {
-    use WebAnalyticsMethodsPart1;
+    use WebAnalyticsMethods;
 }

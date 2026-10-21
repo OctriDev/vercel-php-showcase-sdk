@@ -9,6 +9,8 @@ namespace octridev_vercel;
 
 class Connect
 {
-    use ConnectMethodsPart1;
-    use ConnectMethodsPart2;
+    use ConnectConnectorsMethods;
+    use ConnectProjectsMethods;
+    use ConnectTokenMethods;
+    use ConnectAuthorizeMethods;
 }

@@ -9,8 +9,10 @@ namespace octridev_vercel;
 
 class Vcr
 {
-    use VcrMethodsPart1;
-    use VcrMethodsPart2;
-    use VcrMethodsPart3;
-    use VcrMethodsPart4;
+    use VcrRepositoryMethods;
+    use VcrListRepositoryPermissionsMethods;
+    use VcrMethods;
+    use VcrBlobsMethods;
+    use VcrManifestsMethods;
+    use VcrTagsMethods;
 }

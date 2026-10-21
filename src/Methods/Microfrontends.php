@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Microfrontends
 {
-    use MicrofrontendsMethodsPart1;
+    use MicrofrontendsMethods;
 }

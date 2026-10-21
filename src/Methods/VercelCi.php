@@ -9,6 +9,10 @@ namespace octridev_vercel;
 
 class VercelCi
 {
-    use VercelCiMethodsPart1;
-    use VercelCiMethodsPart2;
+    use VercelCiRepositorySettingsMethods;
+    use VercelCiInvocationsMethods;
+    use VercelCiGetVercelCiJobRunLogsMethods;
+    use VercelCiBranchesMethods;
+    use VercelCiTaskAnalysesMethods;
+    use VercelCiLogSearchMethods;
 }

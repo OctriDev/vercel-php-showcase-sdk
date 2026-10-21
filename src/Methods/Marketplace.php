@@ -9,6 +9,6 @@ namespace octridev_vercel;
 
 class Marketplace
 {
-    use MarketplaceMethodsPart1;
-    use MarketplaceMethodsPart2;
+    use MarketplaceInstallationsMethods;
+    use MarketplaceUpdateInvoiceMethods;
 }

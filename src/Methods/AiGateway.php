@@ -9,6 +9,8 @@ namespace octridev_vercel;
 
 class AiGateway
 {
-    use AiGatewayMethodsPart1;
-    use AiGatewayMethodsPart2;
+    use AiGatewayVirtualModelConfigsMethods;
+    use AiGatewayRoutersMethods;
+    use AiGatewayRulesMethods;
+    use AiGatewayBudgetsMethods;
 }

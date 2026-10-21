@@ -9,8 +9,10 @@ namespace octridev_vercel;
 
 class Sandboxes
 {
-    use SandboxesMethodsPart1;
-    use SandboxesMethodsPart2;
-    use SandboxesMethodsPart3;
-    use SandboxesMethodsPart4;
+    use SandboxesMethods;
+    use SandboxesDrivesMethods;
+    use SandboxesSnapshotsMethods;
+    use SandboxesSessionsMethods;
+    use SandboxesReadSessionFileMethods;
+    use SandboxesForkMethods;
 }

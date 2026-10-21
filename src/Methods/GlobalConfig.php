@@ -9,6 +9,11 @@ namespace octridev_vercel;
 
 class GlobalConfig
 {
-    use GlobalConfigMethodsPart1;
-    use GlobalConfigMethodsPart2;
+    use GlobalConfigMethods;
+    use GlobalConfigItemsMethods;
+    use GlobalConfigSchemaMethods;
+    use GlobalConfigItemMethods;
+    use GlobalConfigTokensMethods;
+    use GlobalConfigTokenMethods;
+    use GlobalConfigBackupsMethods;
 }

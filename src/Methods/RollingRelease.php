@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class RollingRelease
 {
-    use RollingReleaseMethodsPart1;
+    use RollingReleaseMethods;
 }

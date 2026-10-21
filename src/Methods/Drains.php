@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Drains
 {
-    use DrainsMethodsPart1;
+    use DrainsMethods;
 }

@@ -9,6 +9,7 @@ namespace octridev_vercel;
 
 class Security
 {
-    use SecurityMethodsPart1;
-    use SecurityMethodsPart2;
+    use SecurityAttackModeMethods;
+    use SecurityFirewallMethods;
+    use SecurityGetSecurityFirewallEventsMethods;
 }

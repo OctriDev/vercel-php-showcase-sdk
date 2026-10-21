@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Environment
 {
-    use EnvironmentMethodsPart1;
+    use EnvironmentMethods;
 }

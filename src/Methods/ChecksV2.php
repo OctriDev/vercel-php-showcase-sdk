@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class ChecksV2
 {
-    use ChecksV2MethodsPart1;
+    use ChecksV2Methods;
 }

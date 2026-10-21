@@ -9,6 +9,11 @@ namespace octridev_vercel;
 
 class Teams
 {
-    use TeamsMethodsPart1;
-    use TeamsMethodsPart2;
+    use TeamsMembersMethods;
+    use TeamsRequestMethods;
+    use TeamsJoinMethods;
+    use TeamsMethods;
+    use TeamsDsyncRolesMethods;
+    use TeamsInvitesMethods;
+    use TeamsMicrofrontendsMethods;
 }

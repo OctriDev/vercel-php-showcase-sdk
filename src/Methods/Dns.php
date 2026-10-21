@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Dns
 {
-    use DnsMethodsPart1;
+    use DnsMethods;
 }
