@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Kms
 {
-    use KmsMethodsPart1;
+    use KmsMethods;
 }

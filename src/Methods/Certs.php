@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Certs
 {
-    use CertsMethodsPart1;
+    use CertsMethods;
 }

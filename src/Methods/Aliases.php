@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Aliases
 {
-    use AliasesMethodsPart1;
+    use AliasesMethods;
 }

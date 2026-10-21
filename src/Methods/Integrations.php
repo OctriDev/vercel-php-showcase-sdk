@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Integrations
 {
-    use IntegrationsMethodsPart1;
+    use IntegrationsMethods;
 }

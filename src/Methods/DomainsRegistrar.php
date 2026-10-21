@@ -9,6 +9,17 @@ namespace octridev_vercel;
 
 class DomainsRegistrar
 {
-    use DomainsRegistrarMethodsPart1;
-    use DomainsRegistrarMethodsPart2;
+    use DomainsRegistrarSearchMethods;
+    use DomainsRegistrarTldsMethods;
+    use DomainsRegistrarAvailabilityMethods;
+    use DomainsRegistrarPriceMethods;
+    use DomainsRegistrarContactInfoMethods;
+    use DomainsRegistrarAuthCodeMethods;
+    use DomainsRegistrarBuyMethods;
+    use DomainsRegistrarTransferMethods;
+    use DomainsRegistrarRenewMethods;
+    use DomainsRegistrarAutoRenewMethods;
+    use DomainsRegistrarNameserversMethods;
+    use DomainsRegistrarContactVerificationMethods;
+    use DomainsRegistrarOrdersMethods;
 }

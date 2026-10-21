@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class ProjectRoutes
 {
-    use ProjectRoutesMethodsPart1;
+    use ProjectRoutesMethods;
 }

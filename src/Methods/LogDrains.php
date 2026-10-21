@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class LogDrains
 {
-    use LogDrainsMethodsPart1;
+    use LogDrainsMethods;
 }

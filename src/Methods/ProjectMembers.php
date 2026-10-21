@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class ProjectMembers
 {
-    use ProjectMembersMethodsPart1;
+    use ProjectMembersMethods;
 }

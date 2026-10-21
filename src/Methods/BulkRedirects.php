@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class BulkRedirects
 {
-    use BulkRedirectsMethodsPart1;
+    use BulkRedirectsMethods;
 }

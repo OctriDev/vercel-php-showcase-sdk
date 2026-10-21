@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Domains
 {
-    use DomainsMethodsPart1;
+    use DomainsMethods;
 }

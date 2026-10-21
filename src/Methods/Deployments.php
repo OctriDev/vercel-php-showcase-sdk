@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Deployments
 {
-    use DeploymentsMethodsPart1;
+    use DeploymentsMethods;
 }

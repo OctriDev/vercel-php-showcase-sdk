@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Observability
 {
-    use ObservabilityMethodsPart1;
+    use ObservabilityMethods;
 }

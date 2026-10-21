@@ -9,7 +9,17 @@ namespace octridev_vercel;
 
 class Projects
 {
-    use ProjectsMethodsPart1;
-    use ProjectsMethodsPart2;
-    use ProjectsMethodsPart3;
+    use ProjectsMethods;
+    use ProjectsTracesMethods;
+    use ProjectsTokenMethods;
+    use ProjectsAvatarMethods;
+    use ProjectsDomainsMethods;
+    use ProjectsEnvMethods;
+    use ProjectsTransferRequestMethods;
+    use ProjectsProtectionBypassMethods;
+    use ProjectsRollbackMethods;
+    use ProjectsMicrofrontendsMethods;
+    use ProjectsPromoteMethods;
+    use ProjectsPauseMethods;
+    use ProjectsUnpauseMethods;
 }

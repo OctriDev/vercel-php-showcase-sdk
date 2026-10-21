@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Networking
 {
-    use NetworkingMethodsPart1;
+    use NetworkingMethods;
 }

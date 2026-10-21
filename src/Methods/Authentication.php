@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Authentication
 {
-    use AuthenticationMethodsPart1;
+    use AuthenticationMethods;
 }

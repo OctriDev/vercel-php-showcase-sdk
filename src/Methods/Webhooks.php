@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Webhooks
 {
-    use WebhooksMethodsPart1;
+    use WebhooksMethods;
 }

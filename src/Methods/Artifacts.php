@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class Artifacts
 {
-    use ArtifactsMethodsPart1;
+    use ArtifactsMethods;
 }

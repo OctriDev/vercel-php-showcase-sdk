@@ -9,5 +9,5 @@ namespace octridev_vercel;
 
 class AccessGroups
 {
-    use AccessGroupsMethodsPart1;
+    use AccessGroupsMethods;
 }
