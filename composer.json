@@ -1,0 +1,43 @@
+{
+    "name": "octridev-vercel/sdk",
+    "description": "Vercel API SDK",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/OctriDev/vercel-php-showcase-sdk",
+    "support": {
+        "source": "https://github.com/OctriDev/vercel-php-showcase-sdk",
+        "issues": "https://github.com/OctriDev/vercel-php-showcase-sdk/issues"
+    },
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    },
+    "scripts": {
+        "check-style": "php-cs-fixer fix --dry-run --diff --sequential",
+        "analyse": "phpstan analyse --memory-limit=2G",
+        "test": "phpunit",
+        "verify": [
+            "@check-style",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
